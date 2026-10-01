@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pippy's Word Quest - WW Book 4 Lesson 5 Master Edition</title>
+  <style>
+    :root {
+      --primary: #00bcd4;
+      --primary-dark: #00838f;
+      --secondary: #ff9800;
+      --card-bg: #ffffff;
+      --text: #263238;
+      --correct: #2e7d32;
+      --correct-bg: #e8f5e9;
+      --wrong: #c62828;
+      --wrong-bg: #ffebee;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Fredoka', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #b2ebf2 0%, #80deea 100%);
+      margin: 0;
+      padding: 16px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text);
+    }
+
+    .game-container {
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 920px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .game-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .penguin-stage {
+      background: #e0f7fa;
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: 3px solid #b2ebf2;
+    }
+
+    .stage-header {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--primary-dark);
+      text-align: center;
+    }
+
+    .penguin-avatar {
+      width: 190px;
+      height: 230px;
+      position: relative;
+    }
+
+    .acc {
+      display: none;
+    }
+
+    .acc.active {
+      display: block;
+      animation: popIn 0.3s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes shiver {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      60% { transform: translateX(6px); }
+    }
+
+    .shiver {
+      animation: shiver 0.4s ease-in-out;
+    }
+
+    .outfit-tracker {
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .outfit-list {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .game-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      background: #e1f5fe;
+      color: var(--primary-dark);
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .score-box {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--secondary);
+    }
+
+    .timer-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #eceff1;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .timer-bar-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 100%;
+      transition: width 1s linear, background-color 0.3s;
+    }
+
+    .question-card {
+      background: #fafafa;
+      border: 2px solid #eceff1;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      min-height: 95px;
+      display: flex;
+      align-items: center;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 500px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-btn {
+      background: white;
+      border: 2px solid #cfd8dc;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.92rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: left;
+      color: var(--text);
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: #e0f7fa;
+    }
+
+    .option-btn.correct {
+      background: var(--correct-bg) !important;
+      border-color: var(--correct) !important;
+      color: var(--correct) !important;
+    }
+
+    .option-btn.wrong {
+      background: var(--wrong-bg) !important;
+      border-color: var(--wrong) !important;
+      color: var(--wrong) !important;
+    }
+
+    .feedback-box {
+      min-height: 42px;
+      font-weight: bold;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      font-size: 0.9rem;
+    }
+
+    .feedback-box.correct { background: var(--correct-bg); color: var(--correct); }
+    .feedback-box.wrong { background: var(--wrong-bg); color: var(--wrong); }
+
+    .btn-next {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+      margin-left: auto;
+    }
+
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    .episode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .ep-card {
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ep-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .ep-card.completed {
+      border-color: var(--correct);
+      background: #f1f8e9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="game-container">
+  
+  <!-- Left Column: Dynamic SVG Penguin -->
+  <div class="penguin-stage">
+    <div class="stage-header">Pippy the Penguin 🐧</div>
+    
+    <div class="penguin-avatar" id="penguinAvatar">
+      <svg width="190" height="230" viewBox="0 0 200 240">
+        <!-- Castle & Party Aura -->
+        <g id="acc-castle" class="acc">
+          <path d="M 20 220 L 20 120 L 40 100 L 60 120 L 140 120 L 160 100 L 180 120 L 180 220 Z" fill="#b3e5fc" opacity="0.6"/>
+          <text x="100" y="50" font-size="20" text-anchor="middle">🏰✨ 🎉</text>
+        </g>
+        
+        <!-- Cape Layer -->
+        <g id="acc-cape" class="acc">
+          <path d="M 50 110 Q 20 160 30 210 L 170 210 Q 180 160 150 110 Z" fill="#e91e63"/>
+        </g>
+
+        <!-- Base Penguin Body -->
+        <ellipse cx="100" cy="140" rx="65" ry="75" fill="#263238" />
+        <ellipse cx="100" cy="148" rx="48" ry="58" fill="#ffffff" />
+        
+        <!-- Eyes -->
+        <circle cx="82" cy="105" r="8" fill="#ffffff"/>
+        <circle cx="118" cy="105" r="8" fill="#ffffff"/>
+        <circle cx="84" cy="105" r="4" fill="#000000"/>
+        <circle cx="116" cy="105" r="4" fill="#000000"/>
+        
+        <!-- Beak & Feet -->
+        <polygon points="90,115 110,115 100,130" fill="#ff9800" />
+        <ellipse cx="75" cy="212" rx="16" ry="8" fill="#ff9800"/>
+        <ellipse cx="125" cy="212" rx="16" ry="8" fill="#ff9800"/>
+        
+        <!-- Flippers -->
+        <ellipse cx="38" cy="145" rx="12" ry="30" fill="#263238" transform="rotate(20 38 145)"/>
+        <ellipse cx="162" cy="145" rx="12" ry="30" fill="#263238" transform="rotate(-20 162 145)"/>
+
+        <!-- ACC 1: Sunglasses -->
+        <g id="acc-sunglasses" class="acc">
+          <rect x="68" y="96" width="28" height="18" rx="4" fill="#111"/>
+          <rect x="104" y="96" width="28" height="18" rx="4" fill="#111"/>
+          <line x1="96" y1="102" x2="104" y2="102" stroke="#111" stroke-width="4"/>
+        </g>
+
+        <!-- ACC 2: Scarf -->
+        <g id="acc-scarf" class="acc">
+          <path d="M 60 125 Q 100 138 140 125 Q 145 135 140 145 Q 100 155 60 145 Z" fill="#ff5722"/>
+          <rect x="115" y="140" width="18" height="40" rx="4" fill="#ff5722"/>
+        </g>
+
+        <!-- ACC 3: Top Hat -->
+        <g id="acc-tophat" class="acc">
+          <rect x="60" y="65" width="80" height="8" fill="#212121"/>
+          <rect x="72" y="30" width="56" height="36" fill="#212121"/>
+          <rect x="72" y="58" width="56" height="8" fill="#e91e63"/>
+        </g>
+
+        <!-- ACC 4: Headphones -->
+        <g id="acc-headphones" class="acc">
+          <path d="M 60 100 A 45 45 0 0 1 140 100" fill="none" stroke="#9c27b0" stroke-width="6"/>
+          <rect x="52" y="90" width="14" height="26" rx="6" fill="#9c27b0"/>
+          <rect x="134" y="90" width="14" height="26" rx="6" fill="#9c27b0"/>
+        </g>
+
+        <!-- ACC 5: Bowtie -->
+        <g id="acc-bowtie" class="acc">
+          <polygon points="85,130 85,146 100,138" fill="#00bcd4"/>
+          <polygon points="115,130 115,146 100,138" fill="#00bcd4"/>
+          <circle cx="100" cy="138" r="4" fill="#00838f"/>
+        </g>
+
+        <!-- ACC 6: Snow Boots -->
+        <g id="acc-boots" class="acc">
+          <rect x="60" y="202" width="28" height="16" rx="6" fill="#76ff03"/>
+          <rect x="112" y="202" width="28" height="16" rx="6" fill="#76ff03"/>
+        </g>
+
+        <!-- ACC 7: Hot Cocoa -->
+        <g id="acc-cocoa" class="acc">
+          <rect x="145" y="150" width="22" height="28" rx="4" fill="#d81b60"/>
+          <path d="M 167 156 Q 175 164 167 172" fill="none" stroke="#d81b60" stroke-width="3"/>
+        </g>
+
+        <!-- ACC 8: Crown -->
+        <g id="acc-crown" class="acc">
+          <polygon points="70,35 80,15 90,30 100,10 110,30 120,15 130,35" fill="#ffd54f" stroke="#ffb300" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="outfit-tracker">
+      <div style="font-size:0.75rem; font-weight:bold; color:#78909c;">EQUIPPED ITEMS</div>
+      <div class="outfit-list" id="outfitIcons">
+        <span style="opacity:0.25">🕶️</span>
+        <span style="opacity:0.25">🧣</span>
+        <span style="opacity:0.25">🎩</span>
+        <span style="opacity:0.25">🎧</span>
+        <span style="opacity:0.25">🦋</span>
+        <span style="opacity:0.25">🥾</span>
+        <span style="opacity:0.25">☕</span>
+        <span style="opacity:0.25">🦸‍♂️</span>
+        <span style="opacity:0.25">👑</span>
+        <span style="opacity:0.25">🏰</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: Game Engine -->
+  <div class="game-area">
+    
+    <!-- Episode Menu -->
+    <div id="screen-episodes" class="screen active">
+      <h3 style="margin-top:0; color:var(--primary-dark);">Wordly Wise Book 4 - Lesson 5 Campaign 🏆</h3>
+      <p style="color:#546e7a; font-size:0.88rem; margin-bottom:12px;">Choose an episode to test your word mastery and deck out Pippy!</p>
+      
+      <div class="episode-grid" id="epGrid">
+        <!-- Generated Dynamically -->
+      </div>
+    </div>
+
+    <!-- Active Quiz View -->
+    <div id="screen-quiz" class="screen">
+      <div class="top-bar">
+        <div class="badge" id="epTitle">Episode</div>
+        <button class="badge" style="background:#fff3e0; color:#e65100; border:none; cursor:pointer;" onclick="returnToMenu()">📋 Map</button>
+        <div class="score-box">Score: <span id="scoreVal">0</span> ⭐</div>
+      </div>
+
+      <div class="timer-bar-bg">
+        <div class="timer-bar-fill" id="timerFill"></div>
+      </div>
+
+      <div class="question-card" id="qText">Question...</div>
+
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <div class="feedback-box" id="feedbackBox"></div>
+
+      <div style="margin-top:10px; display:flex;">
+        <button class="btn-next" id="nextBtn" onclick="nextQuestion()">Next Question ➔</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Comprehensive Exhaustive Question Bank covering all 15 Lesson 5 words & all sub-forms
+  const episodes = [
+    {
+      title: "Ep 1: Core Definitions (Part 1)",
+      desc: "abrupt, achieve, attempt, contempt, entertain, glimpse",
+      questions: [
+        { q: "When a bus comes to an ABRUPT stop, it means the stop was:", options: ["Slow and steady", "Happening suddenly, without warning", "Announced in advance", "Gentle and quiet"], answer: 1, hint: "Abrupt = happening suddenly, without warning." },
+        { q: "To ACHIEVE a goal means to:", options: ["Forget what you wanted to do", "Do what one sets out to do", "Ask someone else to do it", "Try but fail"], answer: 1, hint: "Achieve = to do what one sets out to do." },
+        { q: "When you ATTEMPT a tricky high jump, you:", options: ["Give up immediately", "Try or make an effort", "Watch someone else", "Refuse to run"], answer: 1, hint: "Attempt (verb) = to try; to make an effort." },
+        { q: "Feeling CONTEMPT for someone means having:", options: ["High praise and admiration", "A feeling that someone is bad or unworthy", "Fear and horror", "Deep curiosity"], answer: 1, hint: "Contempt = feeling that someone or something is bad or unworthy." },
+        { q: "Ramon ENTERTAINED himself for hours with new paints. Here, entertain means:", options: ["To have guests over", "To interest and amuse", "To consider an idea", "To feel sleepy"], answer: 1, hint: "Entertain (sense 1) = to interest and amuse." },
+        { q: "I GLIMPSED a black bear near our campground. GLIMPSED means:", options: ["Studied for a long time", "Got a quick look at", "Photographed with a zoom lens", "Heard from far away"], answer: 1, hint: "Glimpse (verb) = to get a quick look at." },
+        { q: "Which of these is an example of an ABRUPT change in weather?", options: ["A bright sunny sky turning into a sudden thunderstorm in two seconds", "Summer turning into autumn over three months", "Night gradually turning into morning sunrise", "A slow light breeze"], answer: 0, hint: "Abrupt means sudden and unexpected." },
+        { q: "Which student is trying to ACHIEVE something?", options: ["Helen studying hard to graduate from college", "Leo sitting on the couch doing nothing", "Sam dropping his book on the floor", "May sleeping in late"], answer: 0, hint: "Achieving is accomplishing a set goal." }
+      ]
+    },
+    {
+      title: "Ep 2: Core Definitions (Part 2)",
+      desc: "mock, persist, persuade, phase, quaint, recall",
+      questions: [
+        { q: "The stepsisters MOCKED Cinderella for wanting to go to the ball. MOCKED means:", options: ["Helped her dress up", "Made fun of her", "Invited her politely", "Cheered her on"], answer: 1, hint: "Mock (verb) = to make fun of." },
+        { q: "In spite of many falls, I PERSISTED and learned to skate. PERSISTED means:", options: ["Gave up and went home", "Kept on doing or trying", "Asked for a blanket", "Stood still"], answer: 1, hint: "Persist (sense 1) = to keep on doing or trying." },
+        { q: "Frank PERSUADED me to read Tom Sawyer. PERSUADED means:", options: ["Forced me by law", "Won someone over by arguing or asking", "Tricked me into reading", "Ordered me sternly"], answer: 1, hint: "Persuade = to win someone over by arguing or asking." },
+        { q: "The full moon is one of the PHASES of the moon. A PHASE is:", options: ["A picture in a book", "A stage in a series of changes", "A shadow caused by clouds", "A flash of lightning"], answer: 1, hint: "Phase = a stage in a series of changes." },
+        { q: "Wooden shoes seem QUAINT to Americans. QUAINT means:", options: ["Broken and dirty", "Odd or unusual in a pleasing, old-fashioned way", "Modern and super fast", "Very expensive"], answer: 1, hint: "Quaint = odd/unusual in a pleasing, old-fashioned way." },
+        { q: "Do you RECALL what time we left for the game? RECALL means:", options: ["Forget", "To remember", "To guess", "To shout"], answer: 1, hint: "Recall (sense 1) = to remember." },
+        { q: "If rain PERSISTS all afternoon, it means the rain:", options: ["Stops completely", "Goes on and on without stopping", "Turns into snow", "Gets very warm"], answer: 1, hint: "Persist (sense 2) = to go on and on." },
+        { q: "Which object is most likely to be called QUAINT?", options: ["A high-speed bullet train", "A charming 100-year-old stone windmill", "A brand new smartphone", "A plastic shopping bag"], answer: 1, hint: "Quaint describes pleasingly old-fashioned items." }
+      ]
+    },
+    {
+      title: "Ep 3: Definitions & Senses (Part 3)",
+      desc: "reject, revise, sensitive, and multi-meaning words",
+      questions: [
+        { q: "The school board REJECTED the gym plan because of cost. REJECTED means:", options: ["Approved enthusiastically", "Refused to accept or use", "Built immediately", "Painted bright blue"], answer: 1, hint: "Reject (verb) = to refuse to accept or use." },
+        { q: "I don't like to REVISE my stories, but they get better when I do. REVISE means:", options: ["Erase completely", "To go over carefully in order to correct or improve", "Read out loud once", "Publish in a newspaper"], answer: 1, hint: "Revise (sense 1) = to go over carefully to correct/improve." },
+        { q: "My mom is very SENSITIVE to my feelings. Here, SENSITIVE means:", options: ["Unaware and cold", "Quick to notice or feel", "Strict and angry", "Loud and boisterous"], answer: 1, hint: "Sensitive (sense 1) = quick to notice or feel." },
+        { q: "I wear sunglasses because my eyes are SENSITIVE to light. Here, SENSITIVE means:", options: ["Able to see in dark", "Easily affected by even slight change", "Strong and tough", "Large and round"], answer: 1, hint: "Sensitive (sense 2) = easily affected by slight change." },
+        { q: "We ENTERTAINED old friends on Thanksgiving weekend. ENTERTAINED means:", options: ["Amused them with magic", "Had guests", "Thought about them", "Sent them mail"], answer: 1, hint: "Entertain (sense 2) = to have guests." },
+        { q: "Lin is ENTERTAINING the idea of going to camp. ENTERTAINING means:", options: ["Amusing campers", "Having guests over", "Having in mind or considering", "Forgetting about"], answer: 2, hint: "Entertain (sense 3) = to have in mind." },
+        { q: "The builder RECALLED the baby cribs. Here, RECALLED means:", options: ["Remembered making them", "To call or take back", "Repainted them", "Sold more of them"], answer: 1, hint: "Recall (sense 2) = to call or take back." },
+        { q: "Our soccer league REVISED the rules. Here, REVISED means:", options: ["Cancelled the league", "Changed in order to bring up to date", "Copied by hand", "Ignored"], answer: 1, hint: "Revise (sense 2) = to change in order to bring up to date." }
+      ]
+    },
+    {
+      title: "Ep 4: Nouns, Verbs & Adjectives",
+      desc: "Mastering words that change parts of speech",
+      questions: [
+        { q: "The athlete cleared the bar on her third ATTEMPT. Here, ATTEMPT is a:", options: ["Verb meaning to jump", "Noun meaning a try", "Adjective meaning fast", "Adverb"], answer: 1, hint: "Attempt can be a noun meaning 'a try'." },
+        { q: "I was excited to get a GLIMPSE of the author. Here, GLIMPSE is a:", options: ["Verb meaning to look", "Noun meaning a quick or hasty look", "Adjective", "Preposition"], answer: 1, hint: "Glimpse can be a noun meaning 'a quick look'." },
+        { q: "I pretended to be a lawyer at the MOCK trial. Here, MOCK is an:", options: ["Verb meaning to tease", "Adjective meaning not real; pretend", "Noun meaning a test", "Adverb"], answer: 1, hint: "Mock as an adjective means 'not real; pretend'." },
+        { q: "Peter buys clothing REJECTS and sews them into better styles. Here, REJECT is a:", options: ["Verb meaning to refuse", "Noun meaning something that falls short of acceptable", "Adjective", "Adverb"], answer: 1, hint: "Reject as a noun means 'something that falls short'." },
+        { q: "When you ATTEMPT to leave class early, ATTEMPT is used as a:", options: ["Noun", "Verb", "Adjective", "Pronoun"], answer: 1, hint: "'To attempt' functions as an action verb." },
+        { q: "Cinderella's sisters MOCKED her clothes. MOCKED is used as a:", options: ["Verb", "Noun", "Adjective", "Conjunction"], answer: 0, hint: "Mocked is the past-tense action verb." },
+        { q: "Which of the following uses REJECT as a VERB?", options: ["The school board rejected the new building plan.", "The store sold the shirt cheap because it was a reject.", "He placed the reject in the discount bin.", "She collected factory rejects."], answer: 0, hint: "'Rejected the plan' is an action verb." },
+        { q: "Which of the following uses MOCK as an ADJECTIVE?", options: ["Don't mock your little brother.", "They held a mock election in 3rd grade.", "They mocked his silly hat.", "It is unkind to mock people."], answer: 1, hint: "'Mock election' uses mock to describe the noun." }
+      ]
+    },
+    {
+      title: "Ep 5: Word Families & Derivatives",
+      desc: "achievement, persistence, persistent, persuasive",
+      questions: [
+        { q: "Landing astronauts on the moon was a great ACHIEVEMENT. An ACHIEVEMENT is:", options: ["Something done that takes skill or effort", "An accidental mistake", "A long vacation", "A lazy afternoon"], answer: 0, hint: "Achievement (noun) comes from achieve." },
+        { q: "Ramon's PERSISTENCE was rewarded. PERSISTENCE means:", options: ["Giving up quickly", "Sticking to something; not giving up", "Loud complaining", "Forgetting the rules"], answer: 1, hint: "Persistence (noun) = sticking to something." },
+        { q: "The PERSISTENT teacher would not stop until we understood. PERSISTENT means:", options: ["Refusing to give up", "Easily confused", "Sleepy and quiet", "Strict and mean"], answer: 0, hint: "Persistent (adj) = refusing to give up." },
+        { q: "Mary was so PERSUASIVE that we helped paint her room. PERSUASIVE means:", options: ["Having the power to persuade", "Noisy and rude", "Slow at painting", "Unfriendly"], answer: 0, hint: "Persuasive (adj) comes from persuade." },
+        { q: "Fill in: Hard work lead to the ________ of her dream.", options: ["achieve", "achievement", "achievingly", "achieved"], answer: 1, hint: "Achievement is the noun form needed here." },
+        { q: "Fill in: The runner was ________ and finished the marathon despite the rain.", options: ["persist", "persistence", "persistent", "persisted"], answer: 2, hint: "Persistent is the adjective describing the runner." },
+        { q: "Fill in: She made a ________ argument that convinced everyone.", options: ["persuade", "persuasion", "persuasive", "persuaded"], answer: 2, hint: "Persuasive is the adjective describing argument." },
+        { q: "Which word family member is an ADJECTIVE meaning 'refusing to give up'?", options: ["Persist", "Persistence", "Persistent", "Persisted"], answer: 2, hint: "Persistent is the adjective." }
+      ]
+    },
+    {
+      title: "Ep 6: Sentence Fill-in-the-Blanks",
+      desc: "Applying words in full sentence contexts",
+      questions: [
+        { q: "When the power went out suddenly, the room was plunged into ________ darkness.", options: ["quaint", "abrupt", "sensitive", "persistent"], answer: 1, hint: "Abrupt fits sudden events." },
+        { q: "After months of practice, Mia was able to ________ her goal of playing the piano piece perfectly.", options: ["reject", "achieve", "mock", "revise"], answer: 1, hint: "Achieve means to accomplish a goal." },
+        { q: "Their unfair behavior made everyone feel nothing but ________ for the cheaters.", options: ["contempt", "achievement", "phase", "glimpse"], answer: 0, hint: "Contempt fits feelings against bad behavior." },
+        { q: "We managed to catch a quick ________ of the rare bird before it flew away.", options: ["reject", "glimpse", "phase", "persistence"], answer: 1, hint: "Glimpse fits a quick look." },
+        { q: "The toddler was easily ________ by the bright colored balloons at the party.", options: ["entertained", "recalled", "rejected", "revised"], answer: 0, hint: "Entertained means amused/interested." },
+        { q: "Even though the puzzle was tough, his ________ helped him solve it.", options: ["contempt", "persistence", "reject", "phase"], answer: 1, hint: "Persistence means not giving up." },
+        { q: "The small fishing village was full of ________ old cottages and cobblestone streets.", options: ["abrupt", "quaint", "sensitive", "mock"], answer: 1, hint: "Quaint describes pleasing old-fashioned places." },
+        { q: "After checking my spelling, I had to ________ the second paragraph of my essay.", options: ["mock", "recall", "revise", "glimpse"], answer: 2, hint: "Revise means to correct/improve writing." }
+      ]
+    },
+    {
+      title: "Ep 7: Phonetics, Stress & Syllables",
+      desc: "Pronunciation keys, accents & rhyming sounds",
+      questions: [
+        { q: "Look at the phonetic key: ABRUPT [ə brəpt']. Which syllable gets the accent?", options: ["First [ə]", "Second [brəpt']", "Both", "Neither"], answer: 1, hint: "Stress mark ' is on the second syllable." },
+        { q: "Look at ACHIEVE [ə chēv']. Which syllable is stressed?", options: ["First [ə]", "Second [chēv']", "Both", "Neither"], answer: 1, hint: "Stress mark ' is on [chēv']." },
+        { q: "How many syllables are in SENSITIVE [sen' sə tiv]?", options: ["2", "3", "4", "5"], answer: 1, hint: "Sen-si-tive = 3 syllables." },
+        { q: "Look at QUAINT [kwānt]. Which word has the exact same vowel sound?", options: ["Paint [pānt]", "Plant [plant]", "Cat [kat]", "Pint [pīnt]"], answer: 0, hint: "Quaint [kwānt] rhymes with Paint [pānt]." },
+        { q: "Look at REJECT as a noun [rē' jekt] vs verb [ri jekt']. Where is the stress for the NOUN ('factory reject')?", options: ["First syllable [rē']", "Second syllable [jekt']", "Both", "Neither"], answer: 0, hint: "Noun REJECT is stressed on the first syllable [rē']." },
+        { q: "Look at REJECT as a verb ('to reject an offer') [ri jekt']. Where is the stress for the VERB?", options: ["First syllable [ri]", "Second syllable [jekt']", "Both", "Neither"], answer: 1, hint: "Verb REJECT is stressed on the second syllable [jekt']." },
+        { q: "Which word has stress on the THIRD syllable?", options: ["entertain [en tər tān']", "sensitive [sen' sə tiv]", "persuasive [pər swā' siv]", "achievement [ə chēv' mənt]"], answer: 0, hint: "En-ter-TAIN has stress on 3rd syllable." },
+        { q: "In RECALL [ri kôl'], the vowel sound [ô] sounds like the vowel in:", options: ["ball / wall", "cat / hat", "pin / tin", "bus / cup"], answer: 0, hint: "[ô] in kôl sounds like ball." }
+      ]
+    },
+    {
+      title: "Ep 8: Antonyms & Synonyms",
+      desc: "Opposites and matching word meanings",
+      questions: [
+        { q: "Which word is an ANTONYM (opposite) of ABRUPT?", options: ["Sudden", "Gradual", "Hasty", "Hurried"], answer: 1, hint: "Gradual is the opposite of abrupt." },
+        { q: "Which word is an ANTONYM of CONTEMPT?", options: ["Scorn", "Respect", "Dislike", "Hatred"], answer: 1, hint: "Respect is the opposite of contempt." },
+        { q: "Which word is a SYNONYM (same meaning) for MOCK (verb)?", options: ["Praise", "Tease / make fun of", "Help", "Admires"], answer: 1, hint: "Mocking means teasing or making fun of." },
+        { q: "Which word is an ANTONYM of REJECT?", options: ["Refuse", "Accept", "Decline", "Turn down"], answer: 1, hint: "Accept is the opposite of reject." },
+        { q: "Which word is a SYNONYM for REVISE?", options: ["Destroy", "Alter / improve", "Forget", "Ignore"], answer: 1, hint: "Revise means alter or improve." },
+        { q: "Which word is an ANTONYM of PERSISTENT?", options: ["Determined", "Giving up easily", "Stubborn", "Relentless"], answer: 1, hint: "Giving up easily is the opposite of persistent." },
+        { q: "Which word is a SYNONYM for GLIMPSE (noun)?", options: ["Peek / hasty look", "Long gaze", "Microscope view", "Blind spot"], answer: 0, hint: "Peek or hasty look = glimpse." },
+        { q: "Which word is an ANTONYM of QUAINT?", options: ["Old-fashioned", "Modern / high-tech", "Charming", "Unusual"], answer: 1, hint: "Modern is the opposite of quaint." }
+      ]
+    },
+    {
+      title: "Ep 9: Real-World Scenarios",
+      desc: "Critical thinking & practical application",
+      questions: [
+        { q: "A company sends out a notice that a toy has a flaw and parents should return it for a refund. What did the company do?", options: ["They achieved the toy.", "They recalled the toy.", "They mocked the toy.", "They revised the toy."], answer: 1, hint: "Recalling product = calling or taking it back." },
+        { q: "You notice your skin gets red quickly when you go out in bright sun. Your skin is:", options: ["Sensitive to sunlight", "Quaint in sunlight", "Abrupt in sunlight", "Contempt in sunlight"], answer: 0, hint: "Sensitive = easily affected by slight change." },
+        { q: "A caterpillar turns into a chrysalis, and then into a butterfly. These steps are called:", options: ["Rejects", "Phases", "Attempts", "Glimpses"], answer: 1, hint: "Phases = stages in a series of changes." },
+        { q: "Someone wants you to join the chess club and lists 5 great reasons why you'll love it. This person is being:", options: ["Quaint", "Persuasive", "Abrupt", "Sensitive"], answer: 1, hint: "Persuasive = having the power to win someone over." },
+        { q: "A factory inspector throws away 10 bottles that have cracks in them. Those 10 bottles are:", options: ["Achievements", "Rejects", "Phases", "Attempts"], answer: 1, hint: "Rejects = items falling short of acceptable." },
+        { q: "You try 4 times to land a skateboard trick before you finally succeed on try #5. Your success shows:", options: ["Contempt", "Persistence", "Mocking", "Abruptness"], answer: 1, hint: "Persistence = sticking to something, not giving up." },
+        { q: "An author re-reads her chapter and rewrites three sentences to make them clearer. She is:", options: ["Recalling her book", "Revising her book", "Rejecting her book", "Mocking her book"], answer: 1, hint: "Revising = going over carefully to correct/improve." },
+        { q: "A puppy spends two hours happily chewing on a squeaky toy. The puppy is:", options: ["Entertaining itself", "Rejecting itself", "Recalling itself", "Persuading itself"], answer: 0, hint: "Entertaining = amusing or interesting." }
+      ]
+    },
+    {
+      title: "Ep 10: Grand Championship Review",
+      desc: "Ultimate test across all Lesson 5 words!",
+      questions: [
+        { q: "Match definition: 'To win someone over by arguing or asking'", options: ["Persuade", "Persist", "Recall", "Revise"], answer: 0, hint: "Persuade = win over by arguing/asking." },
+        { q: "Match definition: 'A feeling that someone or something is bad or unworthy'", options: ["Contempt", "Achievement", "Glimpse", "Phase"], answer: 0, hint: "Contempt = feeling unworthy/bad." },
+        { q: "Match definition: 'Odd or unusual in a pleasing or old-fashioned way'", options: ["Quaint", "Abrupt", "Mock", "Sensitive"], answer: 0, hint: "Quaint = pleasingly old-fashioned." },
+        { q: "Which word can mean BOTH 'to remember' AND 'to call back an unsafe product'?", options: ["Recall", "Reject", "Revise", "Entertain"], answer: 0, hint: "Recall has both meanings." },
+        { q: "Which word can mean BOTH 'to tease' AND 'pretend / not real'?", options: ["Mock", "Attempt", "Glimpse", "Phase"], answer: 0, hint: "Mock works as verb and adjective." },
+        { q: "Which word means 'something done that takes skill or effort'?", options: ["Achievement", "Attempt", "Persistence", "Glimpse"], answer: 0, hint: "Achievement = noun form of achieve." },
+        { q: "If weather changes ABRUPTLY, the change is:", options: ["Gradual", "Sudden", "Expected", "Slow"], answer: 1, hint: "Abrupt = sudden without warning." },
+        { q: "To REVISE a sentence is to:", options: ["Erase it forever", "Change it to improve or update it", "Say it out loud fast", "Forget it"], answer: 1, hint: "Revise = change to correct/improve/update." }
+      ]
+    }
+  ];
+
+  // Engine State Variables
+  let currentEpIndex = 0;
+  let currentQIndex = 0;
+  let score = 0;
+  let accessoriesEarned = 0;
+  let timerInterval = null;
+  let timeLeft = 30;
+  let completedEpisodes = new Set();
+
+  const accOrder = [
+    'acc-sunglasses', 'acc-scarf', 'acc-tophat', 'acc-headphones',
+    'acc-bowtie', 'acc-boots', 'acc-cocoa', 'acc-cape', 'acc-crown', 'acc-castle'
+  ];
+
+  // Web Audio Synthesizer
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  function playSound(type) {
+    if (!audioCtx) return;
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.25);
+        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.25);
+      } else {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.35);
+        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.35);
+      }
+    } catch(e){}
+  }
+
+  function renderEpisodeGrid() {
+    const grid = document.getElementById('epGrid');
+    grid.innerHTML = '';
+    episodes.forEach((ep, idx) => {
+      const card = document.createElement('div');
+      card.className = `ep-card ${completedEpisodes.has(idx) ? 'completed' : ''}`;
+      card.onclick = () => startEpisode(idx);
+      card.innerHTML = `
+        <h4 style="margin:4px 0; color:var(--primary-dark);">${ep.title} ${completedEpisodes.has(idx) ? '✅' : ''}</h4>
+        <p style="margin:4px 0; font-size:0.78rem; color:#546e7a;">${ep.desc}</p>
+        <span style="font-size:0.75rem; font-weight:bold; color:var(--secondary);">${ep.questions.length} Questions</span>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function returnToMenu() {
+    clearInterval(timerInterval);
+    document.getElementById('screen-quiz').classList.remove('active');
+    document.getElementById('screen-episodes').classList.add('active');
+    renderEpisodeGrid();
+  }
+
+  function startEpisode(epIdx) {
+    currentEpIndex = epIdx;
+    currentQIndex = 0;
+    document.getElementById('screen-episodes').classList.remove('active');
+    document.getElementById('screen-quiz').classList.add('active');
+    document.getElementById('epTitle').innerText = episodes[epIdx].title;
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    clearInterval(timerInterval);
+    const qData = episodes[currentEpIndex].questions[currentQIndex];
+    document.getElementById('qText').innerText = `Q${currentQIndex + 1}: ${qData.q}`;
+    document.getElementById('feedbackBox').innerText = '';
+    document.getElementById('feedbackBox').className = 'feedback-box';
+    document.getElementById('nextBtn').style.display = 'none';
+
+    const grid = document.getElementById('optionsGrid');
+    grid.innerHTML = '';
+
+    qData.options.forEach((optText, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerText = `${String.fromCharCode(65 + idx)}) ${optText}`;
+      btn.onclick = () => selectOption(idx);
+      grid.appendChild(btn);
+    });
+
+    timeLeft = 30;
+    updateTimerFill();
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimerFill();
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        handleTimeout();
+      }
+    }, 1000);
+  }
+
+  function updateTimerFill() {
+    const fill = document.getElementById('timerFill');
+    fill.style.width = ((timeLeft / 30) * 100) + '%';
+    if (timeLeft > 15) fill.style.backgroundColor = 'var(--primary)';
+    else if (timeLeft > 7) fill.style.backgroundColor = 'var(--secondary)';
+    else fill.style.backgroundColor = 'var(--wrong)';
+  }
+
+  function selectOption(selectedIdx) {
+    clearInterval(timerInterval);
+    const qData = episodes[currentEpIndex].questions[currentQIndex];
+    const btns = document.querySelectorAll('.option-btn');
+    btns.forEach(b => b.disabled = true);
+
+    if (selectedIdx === qData.answer) {
+      btns[selectedIdx].classList.add('correct');
+      playSound('correct');
+      let pts = 100 + (timeLeft * 2);
+      score += pts;
+      document.getElementById('scoreVal').innerText = score;
+      document.getElementById('feedbackBox').className = 'feedback-box correct';
+      document.getElementById('feedbackBox').innerText = `✨ Correct! +${pts} pts! ${qData.hint}`;
+      addAccessory();
+    } else {
+      btns[selectedIdx].classList.add('wrong');
+      btns[qData.answer].classList.add('correct');
+      playSound('wrong');
+      document.getElementById('feedbackBox').className = 'feedback-box wrong';
+      document.getElementById('feedbackBox').innerText = `Brrr! ❄️ Incorrect. ${qData.hint}`;
+      removeAccessory();
+    }
+    document.getElementById('nextBtn').style.display = 'block';
+  }
+
+  function handleTimeout() {
+    const qData = episodes[currentEpIndex].questions[currentQIndex];
+    const btns = document.querySelectorAll('.option-btn');
+    btns.forEach(b => b.disabled = true);
+    btns[qData.answer].classList.add('correct');
+    playSound('wrong');
+    document.getElementById('feedbackBox').className = 'feedback-box wrong';
+    document.getElementById('feedbackBox').innerText = `⏳ Time's up! ${qData.hint}`;
+    removeAccessory();
+    document.getElementById('nextBtn').style.display = 'block';
+  }
+
+  function addAccessory() {
+    if (accessoriesEarned < accOrder.length) {
+      document.getElementById(accOrder[accessoriesEarned]).classList.add('active');
+      const icons = document.getElementById('outfitIcons').children;
+      if (icons[accessoriesEarned]) icons[accessoriesEarned].style.opacity = '1.0';
+      accessoriesEarned++;
+    }
+  }
+
+  function removeAccessory() {
+    const avatar = document.getElementById('penguinAvatar');
+    avatar.classList.add('shiver');
+    setTimeout(() => avatar.classList.remove('shiver'), 400);
+
+    if (accessoriesEarned > 0) {
+      accessoriesEarned--;
+      document.getElementById(accOrder[accessoriesEarned]).classList.remove('active');
+      const icons = document.getElementById('outfitIcons').children;
+      if (icons[accessoriesEarned]) icons[accessoriesEarned].style.opacity = '0.25';
+    }
+  }
+
+  function nextQuestion() {
+    currentQIndex++;
+    if (currentQIndex < episodes[currentEpIndex].questions.length) {
+      loadQuestion();
+    } else {
+      completedEpisodes.add(currentEpIndex);
+      alert(`🎉 Episode Complete! You cleared ${episodes[currentEpIndex].title}!\nTotal Score: ${score} ⭐`);
+      returnToMenu();
+    }
+  }
+
+  // Init Game
+  renderEpisodeGrid();
+</script>
+
+</body>
+</html>
