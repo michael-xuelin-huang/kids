@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pippy's Word Quest - Master Edition</title>
+  <style>
+    :root {
+      --primary: #00bcd4;
+      --primary-dark: #00838f;
+      --secondary: #ff9800;
+      --bg-gradient: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+      --card-bg: #ffffff;
+      --text: #263238;
+      --correct: #2e7d32;
+      --wrong: #c62828;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      margin: 0;
+      padding: 12px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text);
+    }
+
+    .stage-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      width: 100%;
+      max-width: 920px;
+    }
+
+    .stage-tab {
+      flex: 1;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 3px solid #b2ebf2;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--primary-dark);
+    }
+
+    .stage-tab.active {
+      background: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 6px 16px rgba(0, 188, 212, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .game-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 920px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .view-stage { display: none; }
+    .view-stage.active { display: block; }
+
+    /* STAGE 1 LAYOUT */
+    .s1-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 720px) { .s1-grid { grid-template-columns: 1fr; } }
+
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+      font-size: 1.2rem;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .gear-item { opacity: 0.2; transition: opacity 0.3s; }
+    .gear-item.unlocked { opacity: 1; }
+
+    /* STAGE 2 MAZE LAYOUT */
+    .maze-container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .maze-container { grid-template-columns: 1fr; } }
+
+    .maze-board-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .maze-board {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      gap: 4px;
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 1 / 1;
+      background: #b2ebf2;
+      border: 6px solid #00838f;
+      border-radius: 16px;
+      padding: 6px;
+    }
+
+    .tile {
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      position: relative;
+      user-select: none;
+    }
+
+    .tile.wall { background: #0097a7; box-shadow: inset 0 -4px 0 #006064; }
+    .tile.path { background: #e0f7fa; }
+    .tile.scroll { background: #fff9c4; animation: pulse 1.5s infinite; cursor: pointer; }
+    .tile.gate { background: #b0bec5; border: 2px dashed #37474f; }
+    .tile.goal { background: #ffd54f; animation: bounce 1s infinite alternate; }
+
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+
+    .dpad {
+      display: grid;
+      grid-template-columns: repeat(3, 48px);
+      grid-template-rows: repeat(3, 48px);
+      gap: 6px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+
+    .dpad-btn {
+      background: #ffffff;
+      border: 3px solid var(--primary);
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 0 var(--primary);
+    }
+    .dpad-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--primary); }
+
+    /* MODAL */
+    .modal-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 24px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 100;
+    }
+    .modal-overlay.active { display: flex; }
+
+    .modal-card {
+      background: white;
+      border-radius: 20px;
+      padding: 22px;
+      max-width: 500px;
+      width: 100%;
+      border: 4px solid var(--primary);
+    }
+
+    .options-grid { display: grid; gap: 8px; margin: 12px 0; }
+
+    .opt-btn {
+      background: #f5f5f5;
+      border: 2px solid #cfd8dc;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .opt-btn:hover { background: #e0f7fa; border-color: var(--primary); }
+    .opt-btn.correct { background: #e8f5e9 !important; border-color: var(--correct) !important; color: var(--correct); }
+    .opt-btn.wrong { background: #ffebee !important; border-color: var(--wrong) !important; color: var(--wrong); }
+
+    .feedback-box { font-weight: bold; min-height: 36px; display: flex; align-items: center; font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="stage-nav">
+    <div class="stage-tab active" id="tab-stage1" onclick="switchStage(1)">
+      🎩 Stage 1: Penguin Wardrobe (20 Items)
+    </div>
+    <div class="stage-tab" id="tab-stage2" onclick="switchStage(2)">
+      🧩 Stage 2: Secret Ice Maze Campaign
+    </div>
+  </div>
+
+  <div class="game-card">
+
+    <!-- ================= STAGE 1 ================= -->
+    <div id="stage1-view" class="view-stage active">
+      <div class="s1-grid">
+        <div style="background:#e0f7fa; border-radius:16px; padding:16px; text-align:center;">
+          <h3 style="margin-top:0; color:var(--primary-dark);">Pippy's Outfit</h3>
+          
+          <!-- FULL REUSABLE SVG PENGUIN -->
+          <div id="s1-avatar-container"></div>
+
+          <div style="font-size:0.85rem; font-weight:bold; color:#546e7a; margin-top:6px;">
+            Gear Unlocked: <span id="s1-item-count">0</span>/20 🏆
+          </div>
+
+          <div class="gear-grid" id="gearGrid">
+            <!-- 20 Gear Icons populated dynamically -->
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; color:var(--primary-dark);" id="s1-mode-title">Wardrobe Challenge</h3>
+            <span id="review-badge" style="display:none; background:#ffe0b2; color:#e65100; padding:4px 10px; border-radius:12px; font-size:0.8rem; font-weight:bold;">📚 Review Mode</span>
+          </div>
+
+          <p style="font-size:0.88rem; color:#546e7a; margin:6px 0 14px 0;">
+            Answer questions correctly to earn up to 20 decorations for Pippy before entering the Ice Maze!
+          </p>
+          
+          <div id="s1-qcard" style="background:#fafafa; border:2px solid #cfd8dc; border-radius:12px; padding:16px; margin-bottom:12px; font-weight:bold; font-size:0.98rem; min-height:80px;">
+            Loading question...
+          </div>
+
+          <div id="s1-options" class="options-grid"></div>
+
+          <div id="s1-feedback" class="feedback-box"></div>
+
+          <button id="s1-next" onclick="s1NextQuestion()" style="display:none; width:100%; background:var(--secondary); color:white; border:none; padding:12px; border-radius:12px; font-weight:bold; font-size:0.95rem; margin-top:10px; cursor:pointer;">
+            Next Question ➔
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STAGE 2 ================= -->
+    <div id="stage2-view" class="view-stage">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <div>
+          <h3 style="margin:0; color:var(--primary-dark);" id="mazeEpTitle">Episode 1: The Frosty Pass 🏰</h3>
+          <span style="font-size:0.8rem; color:#546e7a;">Solve secret notes to melt corresponding ice barriers!</span>
+        </div>
+        <div style="font-weight:bold; color:var(--secondary); font-size:1.05rem;">Keys: <span id="keys-count">0</span>/<span id="max-keys">2</span> 🔑</div>
+      </div>
+
+      <div class="maze-container">
+        <!-- Maze Grid -->
+        <div class="maze-board-wrapper">
+          <div class="maze-board" id="mazeBoard"></div>
+
+          <div class="dpad">
+            <div></div>
+            <div class="dpad-btn" onclick="movePlayer(0, -1)">▲</div>
+            <div></div>
+            <div class="dpad-btn" onclick="movePlayer(-1, 0)">◄</div>
+            <div class="dpad-btn" style="background:#e0f7fa; font-size:0.75rem;">PUSH</div>
+            <div class="dpad-btn" onclick="movePlayer(1, 0)">►</div>
+            <div></div>
+            <div class="dpad-btn" onclick="movePlayer(0, 1)">▼</div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- Sidebar Avatar HUD -->
+        <div style="background:#f9f9f9; border-radius:16px; padding:14px; border:2px solid #e0e0e0;">
+          <h4 style="margin-top:0; color:var(--primary-dark); text-align:center;">Explorer Pippy 🐧</h4>
+          
+          <!-- Stage 1 Avatar carried over -->
+          <div id="s2-avatar-container" style="text-align:center;"></div>
+
+          <div style="margin-top:10px; background:#e0f7fa; padding:10px; border-radius:12px; border:2px solid #b2ebf2;">
+            <div style="font-size:0.78rem; font-weight:bold; color:#00838f;">MAZE OBJECTIVE:</div>
+            <div id="active-clue-text" style="font-size:0.82rem; margin-top:4px; font-style:italic; color:#37474f;">
+              Find Secret Scroll #1 to unlock Gate #1!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECRET NOTE MODAL -->
+    <div class="modal-overlay" id="questionModal">
+      <div class="modal-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="background:#e1f5fe; color:var(--primary-dark); padding:4px 10px; border-radius:12px; font-weight:bold; font-size:0.85rem;" id="modalScrollTitle">📜 Secret Ice Scroll</span>
+          <span style="font-size:0.8rem; color:#78909c;">Wordly Wise L5</span>
+        </div>
+
+        <div id="modalQText" style="font-size:0.98rem; font-weight:bold; line-height:1.4; margin-bottom:10px;"></div>
+
+        <div class="options-grid" id="modalOptions"></div>
+
+        <div class="feedback-box" id="modalFeedback"></div>
+
+        <button id="modalContinueBtn" onclick="closeModalAndUnlock()" style="display:none; width:100%; background:var(--correct); color:white; border:none; padding:12px; border-radius:12px; font-weight:bold; font-size:0.95rem; cursor:pointer; margin-top:10px;">
+          Melt Ice Barrier & Continue 🔓
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  // 20 Wardrobe Accessories Definitions
+  const accessoriesList = [
+    { id: "acc-sunglasses", icon: "🕶️", name: "Sunglasses" },
+    { id: "acc-scarf", icon: "🧣", name: "Winter Scarf" },
+    { id: "acc-tophat", icon: "🎩", name: "Fancy Top Hat" },
+    { id: "acc-headphones", icon: "🎧", name: "Beats Headphones" },
+    { id: "acc-bowtie", icon: "🦋", name: "Sparkly Bowtie" },
+    { id: "acc-boots", icon: "🥾", name: "Neon Boots" },
+    { id: "acc-cocoa", icon: "☕", name: "Hot Cocoa" },
+    { id: "acc-cape", icon: "🦸", name: "Hero Cape" },
+    { id: "acc-crown", icon: "👑", name: "Golden Crown" },
+    { id: "acc-castle", icon: "🏰", name: "Castle Aura" },
+    { id: "acc-earmuffs", icon: "🫐", name: "Cozy Earmuffs" },
+    { id: "acc-goggles", icon: "🥽", name: "Arctic Goggles" },
+    { id: "acc-wand", icon: "🪄", name: "Magic Wand" },
+    { id: "acc-medal", icon: "🏅", name: "Gold Medal" },
+    { id: "acc-backpack", icon: "🎒", name: "Adventure Pack" },
+    { id: "acc-skates", icon: "⛸️", name: "Ice Skates" },
+    { id: "acc-balloon", icon: "🎈", name: "Party Balloon" },
+    { id: "acc-star", icon: "⭐", name: "Star Badge" },
+    { id: "acc-shield", icon: "🛡️", name: "Ice Shield" },
+    { id: "acc-throne", icon: "🪑", name: "Royal Throne" }
+  ];
+
+  // Global Word Bank (Wordly Wise Book 4, Lesson 5)
+  const masterQuestions = [
+    { q: "When a bus makes an ABRUPT stop, it means the stop was:", options: ["Slow and gentle", "Sudden and without warning", "Announced earlier"], ans: 1, hint: "Abrupt = happening suddenly." },
+    { q: "To ACHIEVE a goal means to:", options: ["Do what one sets out to do", "Give up completely", "Forget about it"], ans: 0, hint: "Achieve = accomplish set goal." },
+    { q: "Landing astronauts on the moon was a great ACHIEVEMENT. An achievement is:", options: ["A lucky guess", "Something done taking skill/effort", "A quick dream"], ans: 1, hint: "Achievement takes skill or effort." },
+    { q: "When you ATTEMPT a tricky high jump, you:", options: ["Try or make an effort", "Refuse to run", "Watch others"], ans: 0, hint: "Attempt = to try." },
+    { q: "Feeling CONTEMPT for someone means feeling they are:", options: ["Bad or unworthy", "Very helpful", "Smart and kind"], ans: 0, hint: "Contempt = feeling unworthy or bad." },
+    { q: "Ramon ENTERTAINED himself with paints. ENTERTAINED means:", options: ["Interested and amused", "Considered an idea", "Had guests over"], ans: 0, hint: "Entertain = interest or amuse." },
+    { q: "We ENTERTAINED friends on Thanksgiving. Here, ENTERTAINED means:", options: ["Amused with magic", "Had guests over", "Thought about"], ans: 1, hint: "Entertain sense 2 = have guests." },
+    { q: "Lin is ENTERTAINING going to soccer camp. Here, ENTERTAINING means:", options: ["Having in mind / considering", "Putting on a show", "Making fun of"], ans: 0, hint: "Entertain sense 3 = consider an idea." },
+    { q: "I GLIMPSED a black bear. GLIMPSED means:", options: ["Got a quick or hasty look at", "Studied for an hour", "Photographed"], ans: 0, hint: "Glimpse = quick or hasty look." },
+    { q: "Stepsisters MOCKED Cinderella. MOCKED means:", options: ["Made fun of her", "Helped her dress", "Cheered for her"], ans: 0, hint: "Mock = make fun of." },
+    { q: "We had a MOCK trial at school. MOCK here means:", options: ["Not real; pretend", "Scary", "Official"], ans: 0, hint: "Mock (adj) = pretend / not real." },
+    { q: "In spite of falls, I PERSISTED and learned to skate. PERSISTED means:", options: ["Gave up", "Kept on doing or trying", "Stood still"], ans: 1, hint: "Persist = keep on trying." },
+    { q: "Ramon's PERSISTENCE was rewarded. PERSISTENCE means:", options: ["Sticking to something; not giving up", "Loud crying", "Asking for help"], ans: 0, hint: "Persistence = not giving up." },
+    { q: "The PERSISTENT teacher kept explaining division. PERSISTENT means:", options: ["Refusing to give up", "Sleepy", "Easily confused"], ans: 0, hint: "Persistent = refusing to give up." },
+    { q: "Frank PERSUADED me to read Tom Sawyer. PERSUADED means:", options: ["Won someone over by asking/arguing", "Forced by law", "Tricked"], ans: 0, hint: "Persuade = win someone over." },
+    { q: "Mary was very PERSUASIVE. PERSUASIVE means:", options: ["Having power to persuade", "Noisy and rude", "Slow"], ans: 0, hint: "Persuasive = power to convince." },
+    { q: "Full moon is one of the PHASES of the moon. A PHASE is:", options: ["A stage in a series of changes", "A sudden flash", "A shadow"], ans: 0, hint: "Phase = stage in changes." },
+    { q: "Wooden shoes seem QUAINT. QUAINT means:", options: ["Odd or unusual in a pleasing, old-fashioned way", "Dirty", "High-tech"], ans: 0, hint: "Quaint = pleasingly old-fashioned." },
+    { q: "Do you RECALL what time we left? RECALL means:", options: ["To remember", "To forget", "To shout"], ans: 0, hint: "Recall = remember." },
+    { q: "The builder RECALLED the unsafe cribs. RECALLED means:", options: ["Called or took back", "Remembered making", "Sold more"], ans: 0, hint: "Recall sense 2 = call/take back." },
+    { q: "School board REJECTED the gym plan. REJECTED means:", options: ["Refused to accept or use", "Approved with joy", "Painted blue"], ans: 0, hint: "Reject = refuse to accept." },
+    { q: "Store sold clothing REJECTS cheap. A REJECT here is:", options: ["Something that falls short of acceptable", "A gold coin", "A new coat"], ans: 0, hint: "Reject (noun) = flawed item." },
+    { q: "I had to REVISE my essay paragraph. REVISE means:", options: ["Go over carefully to correct/improve", "Erase completely", "Publish"], ans: 0, hint: "Revise = correct or improve." },
+    { q: "Mom is SENSITIVE to my feelings. SENSITIVE means:", options: ["Quick to notice or feel", "Unaware", "Strict"], ans: 0, hint: "Sensitive = quick to notice/feel." },
+    { q: "Eyes are SENSITIVE to bright light. SENSITIVE means:", options: ["Easily affected by slight change", "Able to see in dark", "Blind"], ans: 0, hint: "Sensitive = easily affected." }
+  ];
+
+  // SVG Penguin Generator
+  function generatePenguinSVG(idPrefix) {
+    return `
+      <svg width="150" height="180" viewBox="0 0 200 240">
+        <g id="${idPrefix}-acc-castle" style="display:none;"><text x="100" y="45" font-size="22" text-anchor="middle">🏰✨</text></g>
+        <g id="${idPrefix}-acc-cape" style="display:none;"><path d="M 50 110 Q 20 160 30 210 L 170 210 Q 180 160 150 110 Z" fill="#e91e63"/></g>
+        <ellipse cx="100" cy="140" rx="65" ry="75" fill="#263238" />
+        <ellipse cx="100" cy="148" rx="48" ry="58" fill="#ffffff" />
+        <circle cx="82" cy="105" r="8" fill="#fff"/><circle cx="118" cy="105" r="8" fill="#fff"/>
+        <circle cx="84" cy="105" r="4" fill="#000"/><circle cx="116" cy="105" r="4" fill="#000"/>
+        <polygon points="90,115 110,115 100,130" fill="#ff9800" />
+        <ellipse cx="75" cy="212" rx="16" ry="8" fill="#ff9800"/><ellipse cx="125" cy="212" rx="16" ry="8" fill="#ff9800"/>
+        
+        <!-- Accessories -->
+        <g id="${idPrefix}-acc-sunglasses" style="display:none;"><rect x="68" y="96" width="28" height="18" rx="4" fill="#111"/><rect x="104" y="96" width="28" height="18" rx="4" fill="#111"/><line x1="96" y1="102" x2="104" y2="102" stroke="#111" stroke-width="4"/></g>
+        <g id="${idPrefix}-acc-scarf" style="display:none;"><path d="M 60 125 Q 100 138 140 125 Q 145 135 140 145 Q 100 155 60 145 Z" fill="#ff5722"/><rect x="115" y="140" width="18" height="35" rx="4" fill="#ff5722"/></g>
+        <g id="${idPrefix}-acc-tophat" style="display:none;"><rect x="60" y="65" width="80" height="8" fill="#212121"/><rect x="72" y="30" width="56" height="36" fill="#212121"/></g>
+        <g id="${idPrefix}-acc-headphones" style="display:none;"><path d="M 60 100 A 45 45 0 0 1 140 100" fill="none" stroke="#9c27b0" stroke-width="6"/><rect x="52" y="90" width="14" height="26" rx="6" fill="#9c27b0"/><rect x="134" y="90" width="14" height="26" rx="6" fill="#9c27b0"/></g>
+        <g id="${idPrefix}-acc-bowtie" style="display:none;"><polygon points="85,130 85,146 100,138" fill="#00bcd4"/><polygon points="115,130 115,146 100,138" fill="#00bcd4"/><circle cx="100" cy="138" r="4" fill="#00838f"/></g>
+        <g id="${idPrefix}-acc-boots" style="display:none;"><rect x="60" y="202" width="28" height="16" rx="6" fill="#76ff03"/><rect x="112" y="202" width="28" height="16" rx="6" fill="#76ff03"/></g>
+        <g id="${idPrefix}-acc-cocoa" style="display:none;"><rect x="145" y="150" width="22" height="28" rx="4" fill="#d81b60"/></g>
+        <g id="${idPrefix}-acc-crown" style="display:none;"><polygon points="70,35 80,15 90,30 100,10 110,30 120,15 130,35" fill="#ffd54f" stroke="#ffb300" stroke-width="2"/></g>
+        <g id="${idPrefix}-acc-earmuffs" style="display:none;"><circle cx="55" cy="105" r="12" fill="#00bcd4"/><circle cx="145" cy="105" r="12" fill="#00bcd4"/></g>
+        <g id="${idPrefix}-acc-goggles" style="display:none;"><rect x="66" y="94" width="68" height="20" rx="8" fill="#ff9800" opacity="0.8"/></g>
+        <g id="${idPrefix}-acc-wand" style="display:none;"><line x1="160" y1="140" x2="185" y2="100" stroke="#795548" stroke-width="4"/><text x="188" y="98" font-size="14">⭐</text></g>
+        <g id="${idPrefix}-acc-medal" style="display:none;"><circle cx="100" cy="165" r="10" fill="#ffd54f"/><text x="100" y="169" font-size="10" text-anchor="middle">1</text></g>
+        <g id="${idPrefix}-acc-backpack" style="display:none;"><rect x="40" y="130" width="20" height="40" rx="4" fill="#8d6e63"/></g>
+        <g id="${idPrefix}-acc-skates" style="display:none;"><line x1="55" y1="222" x2="90" y2="222" stroke="#cfd8dc" stroke-width="3"/><line x1="110" y1="222" x2="145" y2="222" stroke="#cfd8dc" stroke-width="3"/></g>
+        <g id="${idPrefix}-acc-balloon" style="display:none;"><circle cx="30" cy="60" r="16" fill="#f44336"/><line x1="30" y1="76" x2="45" y2="130" stroke="#ccc" stroke-width="2"/></g>
+        <g id="${idPrefix}-acc-star" style="display:none;"><text x="100" y="195" font-size="18" text-anchor="middle">⭐</text></g>
+        <g id="${idPrefix}-acc-shield" style="display:none;"><polygon points="150,130 175,130 175,160 162,175 150,160" fill="#29b6f6"/></g>
+        <g id="${idPrefix}-acc-throne" style="display:none;"><rect x="20" y="180" width="160" height="20" fill="#ab47bc"/></g>
+      </svg>
+    `;
+  }
+
+  // Audio Engine
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function playBeep(type) {
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      if (type === 'good') {
+        osc.frequency.setValueAtTime(523, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.2);
+      } else {
+        osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.3);
+      }
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.25);
+    } catch(e){}
+  }
+
+  // State
+  let unlockedAccCount = 0;
+  let s1Pool = [...masterQuestions];
+  let missedQueue = [];
+  let currentS1Q = null;
+  let isReviewMode = false;
+
+  // Render Initial Avatars & Gear Grid
+  document.getElementById('s1-avatar-container').innerHTML = generatePenguinSVG('s1');
+  document.getElementById('s2-avatar-container').innerHTML = generatePenguinSVG('s2');
+
+  const gearGrid = document.getElementById('gearGrid');
+  accessoriesList.forEach((acc, idx) => {
+    const div = document.createElement('div');
+    div.className = 'gear-item';
+    div.id = `gear-icon-${idx}`;
+    div.innerText = acc.icon;
+    div.title = acc.name;
+    gearGrid.appendChild(div);
+  });
+
+  function updateAvatarVisuals() {
+    for (let i = 0; i < accessoriesList.length; i++) {
+      const acc = accessoriesList[i];
+      const show = i < unlockedAccCount;
+      
+      const el1 = document.getElementById(`s1-${acc.id}`);
+      if (el1) el1.style.display = show ? 'block' : 'none';
+
+      const el2 = document.getElementById(`s2-${acc.id}`);
+      if (el2) el2.style.display = show ? 'block' : 'none';
+
+      const iconEl = document.getElementById(`gear-icon-${i}`);
+      if (iconEl) iconEl.classList.toggle('unlocked', show);
+    }
+    document.getElementById('s1-item-count').innerText = unlockedAccCount;
+  }
+
+  // --- STAGE 1 ENGINE ---
+  function loadS1Question() {
+    document.getElementById('s1-feedback').innerText = '';
+    document.getElementById('s1-next').style.display = 'none';
+
+    if (unlockedAccCount >= 20) {
+      document.getElementById('s1-qcard').innerText = "🏆 Fantastic! You unlocked ALL 20 items for Pippy! Proceed to Stage 2!";
+      document.getElementById('s1-options').innerHTML = '';
+      return;
+    }
+
+    if (s1Pool.length === 0) {
+      if (missedQueue.length > 0) {
+        isReviewMode = true;
+        s1Pool = [...missedQueue];
+        missedQueue = [];
+        document.getElementById('review-badge').style.display = 'inline-block';
+      } else {
+        document.getElementById('s1-qcard').innerText = "🎉 All questions completed! Proceed to Stage 2!";
+        document.getElementById('s1-options').innerHTML = '';
+        return;
+      }
+    }
+
+    currentS1Q = s1Pool.shift();
+    document.getElementById('s1-qcard').innerText = currentS1Q.q;
+    const optsDiv = document.getElementById('s1-options');
+    optsDiv.innerHTML = '';
+
+    currentS1Q.options.forEach((optText, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.innerText = `${String.fromCharCode(65 + idx)}) ${optText}`;
+      btn.onclick = () => selectS1Answer(idx);
+      optsDiv.appendChild(btn);
+    });
+  }
+
+  function selectS1Answer(idx) {
+    const btns = document.querySelectorAll('#s1-options button');
+    btns.forEach(b => b.disabled = true);
+
+    if (idx === currentS1Q.ans) {
+      btns[idx].classList.add('correct');
+      playBeep('good');
+      unlockedAccCount++;
+      updateAvatarVisuals();
+      document.getElementById('s1-feedback').innerText = `✨ Correct! Earned item #${unlockedAccCount}: ${accessoriesList[unlockedAccCount-1].name}!`;
+    } else {
+      btns[idx].classList.add('wrong');
+      btns[currentS1Q.ans].classList.add('correct');
+      playBeep('bad');
+      missedQueue.push(currentS1Q);
+      document.getElementById('s1-feedback').innerText = `Brrr! Added to Review Queue. ${currentS1Q.hint}`;
+    }
+    document.getElementById('s1-next').style.display = 'block';
+  }
+
+  function s1NextQuestion() {
+    loadS1Question();
+  }
+
+  // --- STAGE 2 MULTI-MAZE CAMPAIGN ENGINE ---
+  const mazeEpisodes = [
+    {
+      title: "Episode 1: The Frosty Pass 🏰",
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 2, 0, 0, 0, 1],
+        [1, 1, 0, 1, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1, 0, 1],
+        [1, 0, 1, 1, 81, 1, 1, 3, 1],
+        [1, 0, 0, 1, 0, 0, 0, 0, 1],
+        [1, 1, 0, 1, 1, 1, 0, 1, 1],
+        [1, 0, 0, 0, 82, 0, 0, 9, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      scrolls: {
+        2: { gate: 81, q: "Ramon's PERSISTENCE was rewarded. PERSISTENCE means:", options: ["Sticking to something; not giving up", "Giving up easily"], ans: 0 },
+        3: { gate: 82, q: "Our soccer league REVISED the rules. REVISED means:", options: ["Cancelled the league", "Changed to correct or update"], ans: 1 }
+      }
+    },
+    {
+      title: "Episode 2: The Crystal Cavern 💎",
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 2, 1, 0, 0, 0, 3, 1],
+        [1, 0, 1, 1, 0, 1, 1, 0, 1],
+        [1, 0, 81, 0, 0, 0, 82, 0, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1],
+        [1, 4, 0, 83, 0, 0, 0, 5, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 0, 0, 0, 84, 0, 0, 9, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      scrolls: {
+        2: { gate: 81, q: "The builder RECALLED the cribs. RECALLED means:", options: ["Called or took back", "Remembered making"], ans: 0 },
+        3: { gate: 82, q: "Which word means 'odd or unusual in a pleasing, old-fashioned way'?", options: ["Quaint", "Abrupt"], ans: 0 },
+        4: { gate: 83, q: "School board REJECTED the gym plan. REJECTED means:", options: ["Refused to accept", "Approved with joy"], ans: 0 },
+        5: { gate: 84, q: "Mom is SENSITIVE to my feelings. SENSITIVE means:", options: ["Quick to notice or feel", "Unaware"], ans: 0 }
+      }
+    }
+  ];
+
+  let currentMazeEpIndex = 0;
+  let activeMazeGrid = [];
+  let playerPos = { x: 1, y: 1 };
+  let currentScrollVal = null;
+  let keysFound = 0;
+
+  function loadMazeEpisode(epIdx) {
+    currentMazeEpIndex = epIdx;
+    const ep = mazeEpisodes[epIdx];
+    document.getElementById('mazeEpTitle').innerText = ep.title;
+    
+    // Clone grid
+    activeMazeGrid = JSON.parse(JSON.stringify(ep.grid));
+    playerPos = { x: 1, y: 1 };
+    keysFound = 0;
+
+    const totalScrolls = Object.keys(ep.scrolls).length;
+    document.getElementById('max-keys').innerText = totalScrolls;
+    document.getElementById('keys-count').innerText = 0;
+    document.getElementById('active-clue-text').innerText = "Find Secret Scroll #1 to unlock Gate #1!";
+
+    renderMaze();
+  }
+
+  function renderMaze() {
+    const board = document.getElementById('mazeBoard');
+    board.innerHTML = '';
+
+    for (let r = 0; r < 9; r++) {
+      for (let c = 0; c < 9; c++) {
+        const val = activeMazeGrid[r][c];
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+
+        if (r === playerPos.y && c === playerPos.x) {
+          tile.innerText = unlockedAccCount > 8 ? '👑' : '🐧';
+          tile.classList.add('path');
+        } else if (val === 1) {
+          tile.classList.add('wall');
+        } else if (val >= 2 && val <= 7) {
+          tile.classList.add('scroll');
+          tile.innerText = '📜';
+        } else if (val >= 81 && val <= 89) {
+          tile.classList.add('gate');
+          tile.innerText = '🧊';
+        } else if (val === 9) {
+          tile.classList.add('goal');
+          tile.innerText = '🏰';
+        } else {
+          tile.classList.add('path');
+        }
+        board.appendChild(tile);
+      }
+    }
+  }
+
+  function movePlayer(dx, dy) {
+    const nx = playerPos.x + dx;
+    const ny = playerPos.y + dy;
+
+    if (nx < 0 || nx >= 9 || ny < 0 || ny >= 9) return;
+    const target = activeMazeGrid[ny][nx];
+
+    if (target === 1) return; // Wall
+    if (target >= 81 && target <= 89) {
+      alert("🧊 This specific Ice Gate is locked! Find its matching Secret Ice Scroll first!");
+      return;
+    }
+
+    playerPos.x = nx;
+    playerPos.y = ny;
+    renderMaze();
+
+    if (target >= 2 && target <= 7) {
+      openScrollModal(target);
+    } else if (target === 9) {
+      setTimeout(() => {
+        if (currentMazeEpIndex + 1 < mazeEpisodes.length) {
+          alert(`🎉 Episode Completed! Moving to ${mazeEpisodes[currentMazeEpIndex + 1].title}!`);
+          loadMazeEpisode(currentMazeEpIndex + 1);
+        } else {
+          alert("🏆 CHAMPION! You cleared all Maze Episodes and mastered Wordly Wise Lesson 5!");
+        }
+      }, 100);
+    }
+  }
+
+  function openScrollModal(scrollVal) {
+    currentScrollVal = scrollVal;
+    const ep = mazeEpisodes[currentMazeEpIndex];
+    const data = ep.scrolls[scrollVal];
+
+    document.getElementById('modalScrollTitle').innerText = `📜 Secret Scroll #${scrollVal - 1}`;
+    document.getElementById('modalQText').innerText = data.q;
+    document.getElementById('modalFeedback').innerText = '';
+    document.getElementById('modalContinueBtn').style.display = 'none';
+
+    const optsDiv = document.getElementById('modalOptions');
+    optsDiv.innerHTML = '';
+
+    data.options.forEach((optText, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.innerText = `${String.fromCharCode(65 + idx)}) ${optText}`;
+      btn.onclick = () => {
+        if (idx === data.ans) {
+          btn.classList.add('correct');
+          playBeep('good');
+          document.getElementById('modalFeedback').innerText = "✨ Correct! Corresponding Ice Gate Melted!";
+          document.getElementById('modalContinueBtn').style.display = 'block';
+        } else {
+          btn.classList.add('wrong');
+          playBeep('bad');
+          document.getElementById('modalFeedback').innerText = "Brrr! Try another option!";
+        }
+      };
+      optsDiv.appendChild(btn);
+    });
+
+    document.getElementById('questionModal').classList.add('active');
+  }
+
+  function closeModalAndUnlock() {
+    document.getElementById('questionModal').classList.remove('active');
+    const ep = mazeEpisodes[currentMazeEpIndex];
+    const targetGate = ep.scrolls[currentScrollVal].gate;
+
+    // Remove Scroll tile
+    activeMazeGrid[playerPos.y][playerPos.x] = 0;
+
+    // Remove ONLY corresponding Gate
+    for (let r = 0; r < 9; r++) {
+      for (let c = 0; c < 9; c++) {
+        if (activeMazeGrid[r][c] === targetGate) {
+          activeMazeGrid[r][c] = 0;
+        }
+      }
+    }
+
+    keysFound++;
+    document.getElementById('keys-count').innerText = keysFound;
+    document.getElementById('active-clue-text').innerText = "Barrier melted! Proceed through the open path!";
+    renderMaze();
+  }
+
+  function switchStage(stageNum) {
+    document.getElementById('tab-stage1').classList.toggle('active', stageNum === 1);
+    document.getElementById('tab-stage2').classList.toggle('active', stageNum === 2);
+    document.getElementById('stage1-view').classList.toggle('active', stageNum === 1);
+    document.getElementById('stage2-view').classList.toggle('active', stageNum === 2);
+    if (stageNum === 2) updateAvatarVisuals();
+  }
+
+  // Keyboard Navigation
+  window.addEventListener('keydown', (e) => {
+    if (document.getElementById('stage2-view').classList.contains('active')) {
+      if (e.key === 'ArrowUp' || e.key === 'w') movePlayer(0, -1);
+      if (e.key === 'ArrowDown' || e.key === 's') movePlayer(0, 1);
+      if (e.key === 'ArrowLeft' || e.key === 'a') movePlayer(-1, 0);
+      if (e.key === 'ArrowRight' || e.key === 'd') movePlayer(1, 0);
+    }
+  });
+
+  // Init
+  loadS1Question();
+  loadMazeEpisode(0);
+</script>
+
+</body>
+</html>
