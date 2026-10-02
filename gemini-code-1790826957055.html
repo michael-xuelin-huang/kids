@@ -18,7 +18,7 @@
 
     * {
       box-sizing: border-box;
-      font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+      font-family: 'Fredoka', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
     }
 
     body {
@@ -123,22 +123,24 @@
     }
 
     .tile {
-      border-radius: 6px;
+      border-radius: 8px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       position: relative;
       user-select: none;
     }
 
     .tile.wall { background: #0097a7; box-shadow: inset 0 -4px 0 #006064; }
     .tile.path { background: #e0f7fa; }
-    .tile.scroll { background: #fff9c4; animation: pulse 1.5s infinite; cursor: pointer; }
-    .tile.gate { background: #b0bec5; border: 2px dashed #37474f; }
-    .tile.goal { background: #ffd54f; animation: bounce 1s infinite alternate; }
+    .tile.scroll { background: #fff9c4; animation: pulse 1.5s infinite; cursor: pointer; border: 2px solid #fbc02d; }
+    .tile.goal-locked { background: #eceff1; opacity: 0.6; filter: grayscale(1); border: 2px dashed #90a4ae; }
+    .tile.goal-unlocked { background: #ffd54f; animation: bounce 1s infinite alternate; border: 2px solid #ffa000; cursor: pointer; }
+    .tile.player-tile { background: #80deea; border: 3px solid var(--primary-dark); box-shadow: 0 0 8px var(--primary); }
 
     @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+    @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-4px); } }
 
     .dpad {
       display: grid;
@@ -269,9 +271,9 @@
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
         <div>
           <h3 style="margin:0; color:var(--primary-dark);" id="mazeEpTitle">Episode 1: The Frosty Pass 🏰</h3>
-          <span style="font-size:0.8rem; color:#546e7a;">Solve secret notes to melt corresponding ice barriers!</span>
+          <span style="font-size:0.8rem; color:#546e7a;">Solve all secret notes in the maze to unlock the Golden Castle!</span>
         </div>
-        <div style="font-weight:bold; color:var(--secondary); font-size:1.05rem;">Keys: <span id="keys-count">0</span>/<span id="max-keys">2</span> 🔑</div>
+        <div style="font-weight:bold; color:var(--secondary); font-size:1.05rem;">Notes Solved: <span id="keys-count">0</span>/<span id="max-keys">2</span> 📜</div>
       </div>
 
       <div class="maze-container">
@@ -284,7 +286,7 @@
             <div class="dpad-btn" onclick="movePlayer(0, -1)">▲</div>
             <div></div>
             <div class="dpad-btn" onclick="movePlayer(-1, 0)">◄</div>
-            <div class="dpad-btn" style="background:#e0f7fa; font-size:0.75rem;">PUSH</div>
+            <div class="dpad-btn" style="background:#e0f7fa; font-size:0.75rem;">MOVE</div>
             <div class="dpad-btn" onclick="movePlayer(1, 0)">►</div>
             <div></div>
             <div class="dpad-btn" onclick="movePlayer(0, 1)">▼</div>
@@ -302,7 +304,7 @@
           <div style="margin-top:10px; background:#e0f7fa; padding:10px; border-radius:12px; border:2px solid #b2ebf2;">
             <div style="font-size:0.78rem; font-weight:bold; color:#00838f;">MAZE OBJECTIVE:</div>
             <div id="active-clue-text" style="font-size:0.82rem; margin-top:4px; font-style:italic; color:#37474f;">
-              Find Secret Scroll #1 to unlock Gate #1!
+              Find and answer all 📜 Secret Notes to unlock the 🏰 Castle!
             </div>
           </div>
         </div>
@@ -313,7 +315,7 @@
     <div class="modal-overlay" id="questionModal">
       <div class="modal-card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <span style="background:#e1f5fe; color:var(--primary-dark); padding:4px 10px; border-radius:12px; font-weight:bold; font-size:0.85rem;" id="modalScrollTitle">📜 Secret Ice Scroll</span>
+          <span style="background:#e1f5fe; color:var(--primary-dark); padding:4px 10px; border-radius:12px; font-weight:bold; font-size:0.85rem;" id="modalScrollTitle">📜 Secret Ice Note</span>
           <span style="font-size:0.8rem; color:#78909c;">Wordly Wise L5</span>
         </div>
 
@@ -323,8 +325,8 @@
 
         <div class="feedback-box" id="modalFeedback"></div>
 
-        <button id="modalContinueBtn" onclick="closeModalAndUnlock()" style="display:none; width:100%; background:var(--correct); color:white; border:none; padding:12px; border-radius:12px; font-weight:bold; font-size:0.95rem; cursor:pointer; margin-top:10px;">
-          Melt Ice Barrier & Continue 🔓
+        <button id="modalContinueBtn" onclick="closeModalAndResume()" style="display:none; width:100%; background:var(--correct); color:white; border:none; padding:12px; border-radius:12px; font-weight:bold; font-size:0.95rem; cursor:pointer; margin-top:10px;">
+          Collect Clue & Return to Maze ➔
         </button>
       </div>
     </div>
@@ -542,43 +544,63 @@
   }
 
   // --- STAGE 2 MULTI-MAZE CAMPAIGN ENGINE ---
+  // Simplified Mazes: Open paths, Secret Scrolls (📜 = 2,3,4,5), Castle (🏰 = 9)
   const mazeEpisodes = [
     {
       title: "Episode 1: The Frosty Pass 🏰",
       grid: [
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 0, 1, 2, 0, 0, 0, 1],
-        [1, 1, 0, 1, 1, 1, 1, 0, 1],
-        [1, 0, 0, 0, 0, 0, 1, 0, 1],
-        [1, 0, 1, 1, 81, 1, 1, 3, 1],
-        [1, 0, 0, 1, 0, 0, 0, 0, 1],
-        [1, 1, 0, 1, 1, 1, 0, 1, 1],
-        [1, 0, 0, 0, 82, 0, 0, 9, 1],
+        [1, 0, 0, 0, 2, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 0, 0, 1, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 1, 0, 1],
+        [1, 3, 0, 0, 0, 0, 0, 9, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1]
       ],
       scrolls: {
-        2: { gate: 81, q: "Ramon's PERSISTENCE was rewarded. PERSISTENCE means:", options: ["Sticking to something; not giving up", "Giving up easily"], ans: 0 },
-        3: { gate: 82, q: "Our soccer league REVISED the rules. REVISED means:", options: ["Cancelled the league", "Changed to correct or update"], ans: 1 }
+        2: { q: "Ramon's PERSISTENCE was rewarded. PERSISTENCE means:", options: ["Sticking to something; not giving up", "Giving up easily"], ans: 0 },
+        3: { q: "Our soccer league REVISED the rules. REVISED means:", options: ["Cancelled the league", "Changed to correct or update"], ans: 1 }
       }
     },
     {
       title: "Episode 2: The Crystal Cavern 💎",
       grid: [
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 2, 1, 0, 0, 0, 3, 1],
-        [1, 0, 1, 1, 0, 1, 1, 0, 1],
-        [1, 0, 81, 0, 0, 0, 82, 0, 1],
-        [1, 1, 1, 1, 0, 1, 1, 1, 1],
-        [1, 4, 0, 83, 0, 0, 0, 5, 1],
-        [1, 1, 1, 1, 1, 1, 0, 1, 1],
-        [1, 0, 0, 0, 84, 0, 0, 9, 1],
+        [1, 0, 0, 0, 0, 0, 0, 2, 1],
+        [1, 0, 1, 1, 1, 1, 1, 0, 1],
+        [1, 3, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 0, 0, 1, 0, 0, 4, 1],
+        [1, 0, 1, 1, 1, 1, 1, 0, 1],
+        [1, 0, 0, 5, 0, 0, 0, 9, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1]
       ],
       scrolls: {
-        2: { gate: 81, q: "The builder RECALLED the cribs. RECALLED means:", options: ["Called or took back", "Remembered making"], ans: 0 },
-        3: { gate: 82, q: "Which word means 'odd or unusual in a pleasing, old-fashioned way'?", options: ["Quaint", "Abrupt"], ans: 0 },
-        4: { gate: 83, q: "School board REJECTED the gym plan. REJECTED means:", options: ["Refused to accept", "Approved with joy"], ans: 0 },
-        5: { gate: 84, q: "Mom is SENSITIVE to my feelings. SENSITIVE means:", options: ["Quick to notice or feel", "Unaware"], ans: 0 }
+        2: { q: "The builder RECALLED the cribs. RECALLED means:", options: ["Called or took back", "Remembered making"], ans: 0 },
+        3: { q: "Which word means 'odd or unusual in a pleasing, old-fashioned way'?", options: ["Quaint", "Abrupt"], ans: 0 },
+        4: { q: "School board REJECTED the gym plan. REJECTED means:", options: ["Refused to accept", "Approved with joy"], ans: 0 },
+        5: { q: "Mom is SENSITIVE to my feelings. SENSITIVE means:", options: ["Quick to notice or feel", "Unaware"], ans: 0 }
+      }
+    },
+    {
+      title: "Episode 3: The Summit of Wisdom 🏔️",
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 2, 0, 1, 0, 3, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 0, 0, 1, 0, 1],
+        [1, 0, 1, 1, 0, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 1, 0, 1],
+        [1, 4, 0, 0, 0, 0, 0, 9, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      scrolls: {
+        2: { q: "An ACHIEVEMENT is something done that takes:", options: ["Skill or effort", "No work"], ans: 0 },
+        3: { q: "A GLIMPSE of a bear means a:", options: ["Quick or hasty look", "Long photograph"], ans: 0 },
+        4: { q: "To ENTERTAIN an idea means to:", options: ["Have in mind or consider it", "Make fun of it"], ans: 0 }
       }
     }
   ];
@@ -587,7 +609,8 @@
   let activeMazeGrid = [];
   let playerPos = { x: 1, y: 1 };
   let currentScrollVal = null;
-  let keysFound = 0;
+  let notesSolvedInCurrentEp = 0;
+  let totalNotesInCurrentEp = 0;
 
   function loadMazeEpisode(epIdx) {
     currentMazeEpIndex = epIdx;
@@ -597,12 +620,12 @@
     // Clone grid
     activeMazeGrid = JSON.parse(JSON.stringify(ep.grid));
     playerPos = { x: 1, y: 1 };
-    keysFound = 0;
+    notesSolvedInCurrentEp = 0;
 
-    const totalScrolls = Object.keys(ep.scrolls).length;
-    document.getElementById('max-keys').innerText = totalScrolls;
+    totalNotesInCurrentEp = Object.keys(ep.scrolls).length;
+    document.getElementById('max-keys').innerText = totalNotesInCurrentEp;
     document.getElementById('keys-count').innerText = 0;
-    document.getElementById('active-clue-text').innerText = "Find Secret Scroll #1 to unlock Gate #1!";
+    document.getElementById('active-clue-text').innerText = `Find and solve all ${totalNotesInCurrentEp} Secret Notes to unlock the Castle!`;
 
     renderMaze();
   }
@@ -611,6 +634,8 @@
     const board = document.getElementById('mazeBoard');
     board.innerHTML = '';
 
+    const isCastleUnlocked = notesSolvedInCurrentEp >= totalNotesInCurrentEp;
+
     for (let r = 0; r < 9; r++) {
       for (let c = 0; c < 9; c++) {
         const val = activeMazeGrid[r][c];
@@ -618,19 +643,21 @@
         tile.className = 'tile';
 
         if (r === playerPos.y && c === playerPos.x) {
-          tile.innerText = unlockedAccCount > 8 ? '👑' : '🐧';
-          tile.classList.add('path');
+          tile.innerText = '🐧'; // Pippy
+          tile.classList.add('player-tile');
         } else if (val === 1) {
           tile.classList.add('wall');
         } else if (val >= 2 && val <= 7) {
           tile.classList.add('scroll');
           tile.innerText = '📜';
-        } else if (val >= 81 && val <= 89) {
-          tile.classList.add('gate');
-          tile.innerText = '🧊';
         } else if (val === 9) {
-          tile.classList.add('goal');
-          tile.innerText = '🏰';
+          if (isCastleUnlocked) {
+            tile.classList.add('goal-unlocked');
+            tile.innerText = '🏰';
+          } else {
+            tile.classList.add('goal-locked');
+            tile.innerText = '🔒';
+          }
         } else {
           tile.classList.add('path');
         }
@@ -647,9 +674,25 @@
     const target = activeMazeGrid[ny][nx];
 
     if (target === 1) return; // Wall
-    if (target >= 81 && target <= 89) {
-      alert("🧊 This specific Ice Gate is locked! Find its matching Secret Ice Scroll first!");
-      return;
+
+    if (target === 9) { // Castle Tile
+      if (notesSolvedInCurrentEp < totalNotesInCurrentEp) {
+        alert(`🔒 The Castle is locked! Solve all Secret Notes first (${notesSolvedInCurrentEp}/${totalNotesInCurrentEp} completed)!`);
+        return;
+      } else {
+        playerPos.x = nx;
+        playerPos.y = ny;
+        renderMaze();
+        setTimeout(() => {
+          if (currentMazeEpIndex + 1 < mazeEpisodes.length) {
+            alert(`🎉 Episode Complete! Unlocking Next Challenge: ${mazeEpisodes[currentMazeEpIndex + 1].title}!`);
+            loadMazeEpisode(currentMazeEpIndex + 1);
+          } else {
+            alert("🏆 GRAND CHAMPION! You cleared all Maze Episodes and mastered Wordly Wise Lesson 5!");
+          }
+        }, 150);
+        return;
+      }
     }
 
     playerPos.x = nx;
@@ -658,15 +701,6 @@
 
     if (target >= 2 && target <= 7) {
       openScrollModal(target);
-    } else if (target === 9) {
-      setTimeout(() => {
-        if (currentMazeEpIndex + 1 < mazeEpisodes.length) {
-          alert(`🎉 Episode Completed! Moving to ${mazeEpisodes[currentMazeEpIndex + 1].title}!`);
-          loadMazeEpisode(currentMazeEpIndex + 1);
-        } else {
-          alert("🏆 CHAMPION! You cleared all Maze Episodes and mastered Wordly Wise Lesson 5!");
-        }
-      }, 100);
     }
   }
 
@@ -675,7 +709,7 @@
     const ep = mazeEpisodes[currentMazeEpIndex];
     const data = ep.scrolls[scrollVal];
 
-    document.getElementById('modalScrollTitle').innerText = `📜 Secret Scroll #${scrollVal - 1}`;
+    document.getElementById('modalScrollTitle').innerText = `📜 Secret Note`;
     document.getElementById('modalQText').innerText = data.q;
     document.getElementById('modalFeedback').innerText = '';
     document.getElementById('modalContinueBtn').style.display = 'none';
@@ -691,7 +725,7 @@
         if (idx === data.ans) {
           btn.classList.add('correct');
           playBeep('good');
-          document.getElementById('modalFeedback').innerText = "✨ Correct! Corresponding Ice Gate Melted!";
+          document.getElementById('modalFeedback').innerText = "✨ Correct! Clue collected!";
           document.getElementById('modalContinueBtn').style.display = 'block';
         } else {
           btn.classList.add('wrong');
@@ -705,26 +739,22 @@
     document.getElementById('questionModal').classList.add('active');
   }
 
-  function closeModalAndUnlock() {
+  function closeModalAndResume() {
     document.getElementById('questionModal').classList.remove('active');
-    const ep = mazeEpisodes[currentMazeEpIndex];
-    const targetGate = ep.scrolls[currentScrollVal].gate;
 
-    // Remove Scroll tile
+    // Remove Scroll tile from grid
     activeMazeGrid[playerPos.y][playerPos.x] = 0;
 
-    // Remove ONLY corresponding Gate
-    for (let r = 0; r < 9; r++) {
-      for (let c = 0; c < 9; c++) {
-        if (activeMazeGrid[r][c] === targetGate) {
-          activeMazeGrid[r][c] = 0;
-        }
-      }
+    notesSolvedInCurrentEp++;
+    document.getElementById('keys-count').innerText = notesSolvedInCurrentEp;
+
+    if (notesSolvedInCurrentEp >= totalNotesInCurrentEp) {
+      playBeep('good');
+      document.getElementById('active-clue-text').innerText = "✨ All secret notes solved! Head to the unlocked Golden Castle 🏰!";
+    } else {
+      document.getElementById('active-clue-text').innerText = `Note solved! Find the remaining ${totalNotesInCurrentEp - notesSolvedInCurrentEp} Secret Note(s)!`;
     }
 
-    keysFound++;
-    document.getElementById('keys-count').innerText = keysFound;
-    document.getElementById('active-clue-text').innerText = "Barrier melted! Proceed through the open path!";
     renderMaze();
   }
 
@@ -738,7 +768,7 @@
 
   // Keyboard Navigation
   window.addEventListener('keydown', (e) => {
-    if (document.getElementById('stage2-view').classList.contains('active')) {
+    if (document.getElementById('stage2-view').classList.contains('active') && !document.getElementById('questionModal').classList.contains('active')) {
       if (e.key === 'ArrowUp' || e.key === 'w') movePlayer(0, -1);
       if (e.key === 'ArrowDown' || e.key === 's') movePlayer(0, 1);
       if (e.key === 'ArrowLeft' || e.key === 'a') movePlayer(-1, 0);
