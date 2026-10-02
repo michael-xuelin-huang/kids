@@ -276,8 +276,8 @@
     <script>
         // State
         let currentLevel = 1;
-        let maxLevel = 7;
-        let gridSize = 3; // Starts at 3x3 for Level 1
+        let maxLevel = 6;
+        let gridSize = 4; // Starts at 4x4 for Level 1
         let timeLimit = 12.0;
         
         let currentA = 0;
@@ -293,26 +293,67 @@
         
         // Gear configuration per level
         const gearConfig = {
-            1: { emoji: "", text: "None" },
-            2: { emoji: "🕶️ 🎧", text: "Sunglasses & Headphones", time: 10.0, grid: 4 },
-            3: { emoji: "🧢", text: "Cool Cap", time: 9.0, grid: 5 },
-            4: { emoji: "🧣", text: "Hero Scarf", time: 8.0, grid: 6 },
-            5: { emoji: "🪄", text: "Magic Wand", time: 7.0, grid: 7 },
-            6: { emoji: "👑", text: "Royal Crown", time: 6.0, grid: 8 },
-            7: { emoji: "🚀", text: "Jetpack", time: 5.0, grid: 9 }
+            1: { emoji: "🎀", text: "Bowtie", time: 12.0, grid: 4 },
+            2: { emoji: "🕶️ 🎧", text: "Sunglasses & Headphones", time: 10.0, grid: 5 },
+            3: { emoji: "🦸", text: "Hero Cape", time: 9.0, grid: 6 },
+            4: { emoji: "🧙 🪄", text: "Wizard Hat & Wand", time: 8.0, grid: 7 },
+            5: { emoji: "👑", text: "Royal Crown", time: 7.0, grid: 8 },
+            6: { emoji: "🚀", text: "Jetpack", time: 6.0, grid: 9 }
         };
 
-        // Word to number mapping for robust voice parsing
-        const wordToNumber = {
-            'zero':0, 'one':1, 'won':1, 'two':2, 'to':2, 'too':2, 'three':3, 'tree':3, 'four':4, 'for':4, 
-            'five':5, 'six':6, 'seven':7, 'eight':8, 'ate':8, 'nine':9, 'ten':10,
-            'eleven':11, 'twelve':12, 'thirteen':13, 'fourteen':14, 'fifteen':15,
-            'sixteen':16, 'seventeen':17, 'eighteen':18, 'nineteen':19, 'twenty':20,
-            'twenty one':21, 'twenty two':22, 'twenty three':23, 'twenty four':24,
-            'twenty five':25, 'twenty six':26, 'twenty seven':27, 'twenty eight':28, 'twenty nine':29,
-            'thirty':30, 'forty':40, 'fourty':40, 'fifty':50, 'sixty':60, 'seventy':70, 'eighty':80, 'ninety':90,
-            'hundred':100
+        // Fuzzy Matching Retrieval Engine Dictionary
+        const vocab = {};
+        const ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+        const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+        
+        function numToWord(n) {
+            if (n < 20) return ones[n];
+            let t = Math.floor(n / 10);
+            let o = n % 10;
+            return tens[t] + (o ? ' ' + ones[o] : '');
+        }
+
+        // Populate vocabulary 1-81
+        for (let i = 1; i <= 81; i++) {
+            vocab[i.toString()] = i;
+            let word = numToWord(i);
+            vocab[word] = i;
+            if (word.includes(' ')) {
+                vocab[word.replace(' ', '-')] = i;
+                vocab[word.replace(' ', '')] = i;
+            }
+        }
+        
+        // Common ASR Misrecognitions & Homophones
+        const homophones = {
+            'won': 1, 'to': 2, 'too': 2, 'tree': 3, 'free': 3, 'for': 4,
+            'hive': 5, 'sex': 6, 'sics': 6, 'heaven': 7, 'ate': 8,
+            'mine': 9, 'nein': 9, 'tin': 10, 'tree time': 9,
+            'for time': 16, 'tree times tree': 9, 'sixes': 6
         };
+        Object.assign(vocab, homophones);
+
+        // Levenshtein Distance function
+        function levenshtein(a, b) {
+            const matrix = [];
+            for (let i = 0; i <= b.length; i++) { matrix[i] = [i]; }
+            for (let j = 0; j <= a.length; j++) { matrix[0][j] = j; }
+            
+            for (let i = 1; i <= b.length; i++) {
+                for (let j = 1; j <= a.length; j++) {
+                    if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(
+                            matrix[i - 1][j - 1] + 1, // substitution
+                            Math.min(matrix[i][j - 1] + 1, // insertion
+                            matrix[i - 1][j] + 1) // deletion
+                        );
+                    }
+                }
+            }
+            return matrix[b.length][a.length];
+        }
 
         function initSpeechRecognition() {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -494,25 +535,50 @@
         }
 
         function parseSpokenNumber(text) {
-            // First check direct math evaluation in transcript (e.g. "4 times 4 is 16")
+            text = text.toLowerCase().trim();
+            // Remove common conversational fillers
+            text = text.replace(/the answer is|it is|it's|is|equals/g, '').trim();
+            
+            // First check direct math evaluation in transcript (e.g., direct digits)
             let numMatch = text.match(/\d+/);
-            if (numMatch) return parseInt(numMatch[0]);
-
-            // Check dictionary
-            let words = text.split(' ');
-            for (let word of words) {
-                if (wordToNumber[word] !== undefined) {
-                    return wordToNumber[word];
-                }
+            if (numMatch && parseInt(numMatch[0]) >= 1 && parseInt(numMatch[0]) <= 81) {
+                return parseInt(numMatch[0]);
             }
 
-            // Handle composites like "twenty four"
-            for(let key in wordToNumber) {
-                if (text.includes(key)) {
-                    // Very simplistic, might catch partials but usually good enough for kids game
-                    return wordToNumber[key]; 
+            // Exact match in vocab
+            if (vocab[text] !== undefined) {
+                return vocab[text];
+            }
+
+            // Fuzzy match using Levenshtein distance
+            let bestMatch = null;
+            let lowestDist = Infinity;
+            
+            for (let key in vocab) {
+                let dist = levenshtein(text, key);
+                if (dist < lowestDist) {
+                    lowestDist = dist;
+                    bestMatch = vocab[key];
                 }
             }
+            
+            // Threshold logic: allow 1 error for short words, 2 errors for longer strings
+            let threshold = text.length <= 4 ? 1 : 2;
+            if (lowestDist <= threshold) {
+                return bestMatch;
+            }
+
+            // Fallback: check individual words just in case it caught trailing noise
+            let words = text.split(/\s+/);
+            for (let w of words) {
+                if (w.match(/\d+/)) return parseInt(w.match(/\d+/)[0]);
+                for (let key in vocab) {
+                    if (levenshtein(w, key) <= (w.length <= 4 ? 1 : 2)) {
+                        return vocab[key];
+                    }
+                }
+            }
+            
             return null;
         }
 
@@ -641,28 +707,29 @@
         function checkLevelUp() {
             if (currentLevel >= maxLevel) return false;
             
-            let maxPossibleStreaks = gridSize * gridSize * 3;
-            let currentTotal = 0;
-            
+            // 100% accuracy requirement for all cells in the current grid
+            // A streak of 1 or more indicates they've gotten it right recently without failing.
             for(let i=1; i<=gridSize; i++) {
                 for(let j=1; j<=gridSize; j++) {
-                    currentTotal += getStreak(i, j);
+                    if (getStreak(i, j) < 1) { 
+                        return false;
+                    }
                 }
             }
-            
-            // 85% threshold
-            return currentTotal >= (maxPossibleStreaks * 0.85);
+            return true;
         }
 
         function updateMasteryUI() {
-            let maxPossibleStreaks = gridSize * gridSize * 3;
-            let currentTotal = 0;
+            let totalCells = gridSize * gridSize;
+            let masteredCells = 0;
             for(let i=1; i<=gridSize; i++) {
                 for(let j=1; j<=gridSize; j++) {
-                    currentTotal += getStreak(i, j);
+                    if (getStreak(i, j) >= 1) {
+                        masteredCells++;
+                    }
                 }
             }
-            let percent = (currentTotal / maxPossibleStreaks) * 100;
+            let percent = (masteredCells / totalCells) * 100;
             document.getElementById('mastery-bar').style.width = `${Math.min(100, percent)}%`;
         }
 
