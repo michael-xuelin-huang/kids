@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quest: Adaptive Voice Penguin Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Pingo Animations */
+        @keyframes jump {
+            0%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-40px) scale(1.05); }
+            60% { transform: translateY(-45px) scale(0.95); }
+        }
+        .animate-jump { animation: jump 0.6s cubic-bezier(0.28, 0.84, 0.42, 1); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+        .animate-shake { animation: shake 0.5s ease-in-out; }
+
+        /* Blue Shell Freeze Effect */
+        .frozen {
+            filter: sepia(100%) hue-rotate(180deg) saturate(300%) brightness(80%);
+            transition: filter 0.3s;
+        }
+
+        /* Timer Bar */
+        .timer-bar {
+            transition: width 0.1s linear, background-color 0.3s;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Specific Level Up Modal Styling Matching Request */
+        .levelup-modal-content {
+            background-color: #0b132b;
+            border: 6px solid #f9d71c;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 40px rgba(249, 215, 28, 0.3);
+        }
+        
+        .levelup-title {
+            color: #f9d71c;
+            text-shadow: 2px 2px 0 #8b7300, -1px -1px 0 #8b7300, 1px -1px 0 #8b7300, -1px 1px 0 #8b7300;
+            letter-spacing: 1px;
+        }
+
+        .levelup-subtitle {
+            color: #26c6da;
+        }
+
+        .gear-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #7c6c2e;
+            border-radius: 1rem;
+        }
+
+        .speed-pill {
+            background: #2a2411;
+            border: 1px solid #7c6c2e;
+            color: #ffe680;
+        }
+
+        .continue-btn {
+            background: linear-gradient(to bottom, #ffe14d, #f9d71c);
+            color: #1a1a1a;
+            border: none;
+            box-shadow: 0 6px 0 #ccaa00, 0 10px 20px rgba(0,0,0,0.5);
+            transition: all 0.1s;
+        }
+        .continue-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 0 0 #ccaa00, 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Dot Array Visualizer */
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #fca5a5;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 2px;
+        }
+        
+        /* Grid Matrix Visualizer */
+        .matrix-cell {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .matrix-header { background: rgba(255,255,255,0.2); font-weight: bold; }
+        .matrix-highlight { background: rgba(255, 255, 0, 0.3); }
+        .matrix-target { background: #ef4444; font-weight: bold; color: white; border-radius: 4px; box-shadow: 0 0 10px red; }
+
+    </style>
+</head>
+<body class="h-screen w-screen flex items-center justify-center">
+
+    <div id="start-screen" class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#0b132b]">
+        <h1 class="text-6xl font-black text-[#f9d71c] mb-4 text-center drop-shadow-lg">MATH QUEST</h1>
+        <h2 class="text-3xl font-bold text-[#26c6da] mb-12 text-center">Adaptive Voice Penguin Hero</h2>
+        <button onclick="startGame()" class="continue-btn text-2xl font-black px-12 py-4 rounded-full">
+            START ADVENTURE 🎙️
+        </button>
+        <p class="mt-6 text-gray-400 text-sm max-w-md text-center">Allow microphone access when prompted. Simply say the answer out loud!</p>
+    </div>
+
+    <div id="game-container" class="hidden w-full h-full max-w-6xl p-4 flex flex-col md:flex-row gap-6">
+        
+        <!-- Left Panel: Pingo -->
+        <div class="glass-panel rounded-3xl p-6 flex flex-col items-center justify-between md:w-1/3 h-full relative">
+            <div class="w-full flex justify-between items-center mb-4">
+                <div class="bg-blue-900/50 px-4 py-2 rounded-full border border-blue-500 text-xl font-bold">
+                    Level <span id="level-display">1</span>
+                </div>
+                <div class="bg-blue-900/50 px-4 py-2 rounded-full border border-blue-500 text-sm">
+                    Grid: <span id="grid-display">3x3</span>
+                </div>
+            </div>
+
+            <!-- Pingo SVG -->
+            <div id="pingo-container" class="relative w-48 h-48 md:w-64 md:h-64 animate-float mt-8">
+                <!-- Base Penguin -->
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-2xl">
+                    <path d="M100,20 C140,20 160,60 160,110 C160,160 140,190 100,190 C60,190 40,160 40,110 C40,60 60,20 100,20 Z" fill="#1a1a2e"/>
+                    <path d="M100,40 C125,40 140,70 140,110 C140,150 120,180 100,180 C80,180 60,150 60,110 C60,70 75,40 100,40 Z" fill="#ffffff"/>
+                    <!-- Eyes -->
+                    <circle cx="85" cy="70" r="8" fill="#000"/>
+                    <circle cx="115" cy="70" r="8" fill="#000"/>
+                    <circle cx="87" cy="67" r="3" fill="#fff"/>
+                    <circle cx="117" cy="67" r="3" fill="#fff"/>
+                    <!-- Beak -->
+                    <path d="M90,85 L110,85 L100,100 Z" fill="#ff9900"/>
+                    <!-- Flippers -->
+                    <path d="M45,100 C30,120 20,140 35,145 C45,150 55,120 50,110 Z" fill="#1a1a2e"/>
+                    <path d="M155,100 C170,120 180,140 165,145 C155,150 145,120 150,110 Z" fill="#1a1a2e"/>
+                    <!-- Feet -->
+                    <path d="M70,185 C60,195 50,195 65,190 C75,185 80,185 70,185 Z" fill="#ff9900"/>
+                    <path d="M130,185 C140,195 150,195 135,190 C125,185 120,185 130,185 Z" fill="#ff9900"/>
+                </svg>
+                
+                <!-- Dynamic Gear Overlay (Centered absolutely) -->
+                <div id="gear-overlay" class="absolute inset-0 flex items-center justify-center text-6xl pointer-events-none" style="top: -20px;">
+                    <!-- Emojis injected via JS based on level -->
+                </div>
+            </div>
+
+            <div class="mt-8 w-full">
+                <div class="text-center text-sm text-gray-300 mb-2">Mastery Progress</div>
+                <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden border border-gray-500">
+                    <div id="mastery-bar" class="h-full bg-gradient-to-r from-green-400 to-emerald-500 w-0 transition-all duration-500"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Game Area -->
+        <div class="glass-panel rounded-3xl p-8 flex flex-col justify-center items-center md:w-2/3 h-full relative">
+            
+            <div class="absolute top-8 left-8 right-8">
+                <div class="flex justify-between text-lg font-bold mb-2">
+                    <span>Time</span>
+                    <span id="time-text">12.0s</span>
+                </div>
+                <div class="w-full bg-gray-700 h-6 rounded-full overflow-hidden border border-gray-500">
+                    <div id="timer-bar" class="h-full bg-green-500 w-full timer-bar"></div>
+                </div>
+            </div>
+
+            <!-- Question Display -->
+            <div class="flex flex-col items-center justify-center mt-12">
+                <div id="question-text" class="text-8xl md:text-9xl font-black drop-shadow-2xl tracking-tighter text-white">
+                    2 × 3
+                </div>
+                
+                <!-- Listening Indicator -->
+                <div id="listening-indicator" class="mt-12 flex items-center gap-3 bg-white/10 px-6 py-3 rounded-full animate-pulse">
+                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                    <span class="text-xl font-bold text-green-400 tracking-wide">Listening...</span>
+                </div>
+                <div id="speech-feedback" class="h-8 mt-4 text-xl text-gray-300 italic">
+                    <!-- Shows what was heard if incorrect -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-modal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="glass-panel bg-[#1a1a2e] rounded-3xl p-8 max-w-2xl w-full flex flex-col items-center border border-red-500 shadow-[0_0_50px_rgba(239,68,68,0.3)]">
+            <h2 class="text-4xl font-black text-red-400 mb-2">Oops! Time's Up / Wrong</h2>
+            <p id="correct-answer-text" class="text-2xl font-bold text-white mb-6">3 × 4 = 12</p>
+            
+            <div class="flex flex-col md:flex-row gap-8 w-full justify-center items-start mb-8">
+                <!-- Matrix -->
+                <div class="flex flex-col items-center">
+                    <span class="text-sm text-gray-400 mb-2">Multiplication Table</span>
+                    <div id="matrix-container" class="grid bg-black/30 p-2 rounded-lg border border-gray-600">
+                        <!-- Generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Dot Array -->
+                <div class="flex flex-col items-center">
+                    <span class="text-sm text-gray-400 mb-2">Visual Array</span>
+                    <div id="dot-array-container" class="bg-black/30 p-4 rounded-lg border border-gray-600 flex flex-col items-center justify-center min-w-[150px] min-h-[150px]">
+                        <!-- Generated via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="resumeAfterError()" class="bg-red-500 hover:bg-red-600 text-white font-black px-10 py-3 rounded-full text-xl transition-transform transform hover:scale-105 active:scale-95">
+                GOT IT!
+            </button>
+        </div>
+    </div>
+
+    <div id="levelup-modal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="levelup-modal-content max-w-lg w-full p-8 flex flex-col items-center relative text-center">
+            <!-- Trophy -->
+            <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 text-7xl drop-shadow-xl">
+                🏆
+            </div>
+            
+            <h2 class="levelup-title text-5xl font-black mt-8 mb-2">PINGO LEVEL UP!</h2>
+            <h3 class="levelup-subtitle text-2xl font-bold mb-6">Pingo reached Level <span id="lu-level">2</span>!</h3>
+            
+            <div class="gear-box w-full p-6 mb-6 flex flex-col items-center">
+                <span class="text-gray-300 text-sm font-bold tracking-wider mb-3">NEW GEAR UNLOCKED!</span>
+                <div id="lu-gear-emoji" class="text-5xl mb-3 drop-shadow-md">🕶️ 🎧</div>
+                <div id="lu-gear-text" class="text-xl font-bold text-[#f9d71c]">Sunglasses & Headphones</div>
+            </div>
+            
+            <div class="speed-pill px-6 py-2 rounded-full font-bold text-sm mb-8 flex items-center gap-2 shadow-inner">
+                ⚡ Speed Challenge: <span id="lu-speed">10.0</span>s per question!
+            </div>
+            
+            <button onclick="resumeAfterLevelUp()" class="continue-btn w-full py-4 text-xl font-black rounded-full uppercase tracking-wide">
+                CONTINUE QUEST 🚀
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let currentLevel = 1;
+        let maxLevel = 7;
+        let gridSize = 3; // Starts at 3x3 for Level 1
+        let timeLimit = 12.0;
+        
+        let currentA = 0;
+        let currentB = 0;
+        let streaks = {}; // Key: "AxB", Value: 0-3
+        
+        let timerInterval;
+        let timeRemaining;
+        
+        let recognition;
+        let synth = window.speechSynthesis;
+        let isListening = false;
+        
+        // Gear configuration per level
+        const gearConfig = {
+            1: { emoji: "", text: "None" },
+            2: { emoji: "🕶️ 🎧", text: "Sunglasses & Headphones", time: 10.0, grid: 4 },
+            3: { emoji: "🧢", text: "Cool Cap", time: 9.0, grid: 5 },
+            4: { emoji: "🧣", text: "Hero Scarf", time: 8.0, grid: 6 },
+            5: { emoji: "🪄", text: "Magic Wand", time: 7.0, grid: 7 },
+            6: { emoji: "👑", text: "Royal Crown", time: 6.0, grid: 8 },
+            7: { emoji: "🚀", text: "Jetpack", time: 5.0, grid: 9 }
+        };
+
+        // Word to number mapping for robust voice parsing
+        const wordToNumber = {
+            'zero':0, 'one':1, 'won':1, 'two':2, 'to':2, 'too':2, 'three':3, 'tree':3, 'four':4, 'for':4, 
+            'five':5, 'six':6, 'seven':7, 'eight':8, 'ate':8, 'nine':9, 'ten':10,
+            'eleven':11, 'twelve':12, 'thirteen':13, 'fourteen':14, 'fifteen':15,
+            'sixteen':16, 'seventeen':17, 'eighteen':18, 'nineteen':19, 'twenty':20,
+            'twenty one':21, 'twenty two':22, 'twenty three':23, 'twenty four':24,
+            'twenty five':25, 'twenty six':26, 'twenty seven':27, 'twenty eight':28, 'twenty nine':29,
+            'thirty':30, 'forty':40, 'fourty':40, 'fifty':50, 'sixty':60, 'seventy':70, 'eighty':80, 'ninety':90,
+            'hundred':100
+        };
+
+        function initSpeechRecognition() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                alert("Speech recognition is not supported in this browser. Please use Chrome.");
+                return;
+            }
+            
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            recognition.onstart = () => {
+                isListening = true;
+                document.getElementById('listening-indicator').style.opacity = 1;
+            };
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript.toLowerCase().trim();
+                document.getElementById('speech-feedback').innerText = `Heard: "${transcript}"`;
+                handleAnswer(transcript);
+            };
+
+            recognition.onerror = (event) => {
+                console.warn("Speech error:", event.error);
+                // If it fails (e.g. no speech), it will automatically trigger onend
+            };
+
+            recognition.onend = () => {
+                isListening = false;
+                document.getElementById('listening-indicator').style.opacity = 0.3;
+                
+                // If timer is still running and we haven't processed a right/wrong answer that stopped it,
+                // restart listening to be robust.
+                if (document.getElementById('game-container').classList.contains('hidden') === false && 
+                    document.getElementById('error-modal').classList.contains('hidden') &&
+                    document.getElementById('levelup-modal').classList.contains('hidden') &&
+                    timeRemaining > 0) {
+                    try { recognition.start(); } catch(e){}
+                }
+            };
+        }
+
+        function startGame() {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('game-container').classList.remove('hidden');
+            initSpeechRecognition();
+            updateUIState();
+            nextQuestion();
+        }
+
+        function getStreak(a, b) {
+            return streaks[`${a}x${b}`] || 0;
+        }
+
+        function setStreak(a, b, val) {
+            streaks[`${a}x${b}`] = Math.min(3, Math.max(0, val));
+        }
+
+        function pickQuestion() {
+            let options = [];
+            let totalWeight = 0;
+
+            // Weighted selection based on current grid
+            for(let i=1; i<=gridSize; i++) {
+                for(let j=1; j<=gridSize; j++) {
+                    let streak = getStreak(i, j);
+                    let weight = 4 - streak; // 0 streak = 4 weight, 3 streak = 1 weight
+                    options.push({a: i, b: j, weight: weight});
+                    totalWeight += weight;
+                }
+            }
+
+            let random = Math.random() * totalWeight;
+            let currentWeight = 0;
+            for(let opt of options) {
+                currentWeight += opt.weight;
+                if (random <= currentWeight) {
+                    return opt;
+                }
+            }
+            return options[0]; // fallback
+        }
+
+        function playChime() {
+            // Web Audio API simple chime
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+            osc.connect(gainNode);
+            gainNode.connect(ctx.destination);
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(880, ctx.currentTime); // A5
+            osc.frequency.exponentialRampToValueAtTime(1760, ctx.currentTime + 0.1); // A6
+            
+            gainNode.gain.setValueAtTime(0, ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+            
+            osc.start(ctx.currentTime);
+            osc.stop(ctx.currentTime + 0.5);
+        }
+
+        function playErrorSound() {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+            osc.connect(gainNode);
+            gainNode.connect(ctx.destination);
+            
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(150, ctx.currentTime); 
+            osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 0.3); 
+            
+            gainNode.gain.setValueAtTime(0, ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+            
+            osc.start(ctx.currentTime);
+            osc.stop(ctx.currentTime + 0.3);
+        }
+
+        function nextQuestion() {
+            clearInterval(timerInterval);
+            document.getElementById('speech-feedback').innerText = '';
+            
+            // Check level up before next question
+            if (checkLevelUp()) {
+                triggerLevelUp();
+                return;
+            }
+
+            let q = pickQuestion();
+            currentA = q.a;
+            currentB = q.b;
+            
+            document.getElementById('question-text').innerText = `${currentA} × ${currentB}`;
+            
+            timeRemaining = timeLimit;
+            updateTimerUI();
+
+            // Speak question
+            synth.cancel();
+            let utterance = new SpeechSynthesisUtterance(`${currentA} times ${currentB}`);
+            utterance.rate = 1.1;
+            
+            // Wait for TTS to finish before STT starts? 
+            // Better UX: start immediately so if kid is fast, we catch it.
+            try { recognition.stop(); } catch(e){}
+            setTimeout(() => {
+                try { recognition.start(); } catch(e){}
+            }, 100); 
+
+            synth.speak(utterance);
+
+            // Start timer
+            timerInterval = setInterval(() => {
+                timeRemaining -= 0.1;
+                updateTimerUI();
+                
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    handleWrongAnswer(); // Timeout
+                }
+            }, 100);
+        }
+
+        function updateTimerUI() {
+            let percentage = Math.max(0, (timeRemaining / timeLimit) * 100);
+            let timerBar = document.getElementById('timer-bar');
+            timerBar.style.width = `${percentage}%`;
+            document.getElementById('time-text').innerText = `${Math.max(0, timeRemaining).toFixed(1)}s`;
+            
+            if (percentage > 50) timerBar.style.backgroundColor = '#22c55e'; // green
+            else if (percentage > 25) timerBar.style.backgroundColor = '#eab308'; // yellow
+            else timerBar.style.backgroundColor = '#ef4444'; // red
+        }
+
+        function parseSpokenNumber(text) {
+            // First check direct math evaluation in transcript (e.g. "4 times 4 is 16")
+            let numMatch = text.match(/\d+/);
+            if (numMatch) return parseInt(numMatch[0]);
+
+            // Check dictionary
+            let words = text.split(' ');
+            for (let word of words) {
+                if (wordToNumber[word] !== undefined) {
+                    return wordToNumber[word];
+                }
+            }
+
+            // Handle composites like "twenty four"
+            for(let key in wordToNumber) {
+                if (text.includes(key)) {
+                    // Very simplistic, might catch partials but usually good enough for kids game
+                    return wordToNumber[key]; 
+                }
+            }
+            return null;
+        }
+
+        function handleAnswer(transcript) {
+            let answer = parseSpokenNumber(transcript);
+            let expected = currentA * currentB;
+
+            if (answer === expected) {
+                // Correct!
+                clearInterval(timerInterval);
+                try { recognition.stop(); } catch(e){}
+                
+                setStreak(currentA, currentB, getStreak(currentA, currentB) + 1);
+                updateMasteryUI();
+                
+                // Animation & sound
+                playChime();
+                let pingo = document.getElementById('pingo-container');
+                pingo.classList.remove('animate-float');
+                pingo.classList.add('animate-jump');
+                
+                setTimeout(() => {
+                    pingo.classList.remove('animate-jump');
+                    pingo.classList.add('animate-float');
+                    nextQuestion();
+                }, 600); // Wait for jump animation
+
+            } else if (answer !== null) {
+                // Wrong explicit answer
+                clearInterval(timerInterval);
+                handleWrongAnswer();
+            }
+            // If null (couldn't parse), just ignore and let them keep talking/timer run out
+        }
+
+        function handleWrongAnswer() {
+            try { recognition.stop(); } catch(e){}
+            setStreak(currentA, currentB, 0); // Reset streak
+            updateMasteryUI();
+            
+            playErrorSound();
+
+            // Blue Shell Effect
+            let pingo = document.getElementById('pingo-container');
+            pingo.classList.add('frozen', 'animate-shake');
+            setTimeout(() => pingo.classList.remove('animate-shake'), 500);
+
+            // Show Error Modal
+            document.getElementById('correct-answer-text').innerText = `${currentA} × ${currentB} = ${currentA * currentB}`;
+            generateMatrix(currentA, currentB);
+            generateDotArray(currentA, currentB);
+            
+            document.getElementById('error-modal').classList.remove('hidden');
+        }
+
+        function resumeAfterError() {
+            document.getElementById('error-modal').classList.add('hidden');
+            document.getElementById('pingo-container').classList.remove('frozen');
+            nextQuestion();
+        }
+
+        function generateMatrix(targetA, targetB) {
+            let container = document.getElementById('matrix-container');
+            container.innerHTML = '';
+            
+            // Style grid columns based on dynamic grid size
+            container.style.gridTemplateColumns = `repeat(${gridSize + 1}, minmax(0, 1fr))`;
+            
+            // Top header row
+            for(let j=0; j<=gridSize; j++) {
+                let cell = document.createElement('div');
+                cell.className = 'matrix-cell matrix-header';
+                if (j === 0) cell.innerText = '×';
+                else {
+                    cell.innerText = j;
+                    if (j === targetB) cell.classList.add('text-red-400');
+                }
+                container.appendChild(cell);
+            }
+
+            // Matrix rows
+            for(let i=1; i<=gridSize; i++) {
+                // Row header
+                let header = document.createElement('div');
+                header.className = 'matrix-cell matrix-header';
+                header.innerText = i;
+                if (i === targetA) header.classList.add('text-red-400');
+                container.appendChild(header);
+
+                // Cells
+                for(let j=1; j<=gridSize; j++) {
+                    let cell = document.createElement('div');
+                    cell.className = 'matrix-cell';
+                    cell.innerText = i * j;
+                    
+                    if (i === targetA && j === targetB) {
+                        cell.classList.add('matrix-target');
+                    } else if (i === targetA || j === targetB) {
+                        cell.classList.add('matrix-highlight');
+                    }
+                    container.appendChild(cell);
+                }
+            }
+        }
+
+        function generateDotArray(rows, cols) {
+            let container = document.getElementById('dot-array-container');
+            container.innerHTML = '';
+            
+            for(let i=0; i<rows; i++) {
+                let rowDiv = document.createElement('div');
+                rowDiv.className = 'flex';
+                for(let j=0; j<cols; j++) {
+                    let dot = document.createElement('div');
+                    dot.className = 'dot';
+                    rowDiv.appendChild(dot);
+                }
+                container.appendChild(rowDiv);
+            }
+            let label = document.createElement('div');
+            label.className = 'text-white font-bold mt-2 text-sm';
+            label.innerText = `${rows} rows of ${cols} = ${rows * cols}`;
+            container.appendChild(label);
+        }
+
+        function checkLevelUp() {
+            if (currentLevel >= maxLevel) return false;
+            
+            let maxPossibleStreaks = gridSize * gridSize * 3;
+            let currentTotal = 0;
+            
+            for(let i=1; i<=gridSize; i++) {
+                for(let j=1; j<=gridSize; j++) {
+                    currentTotal += getStreak(i, j);
+                }
+            }
+            
+            // 85% threshold
+            return currentTotal >= (maxPossibleStreaks * 0.85);
+        }
+
+        function updateMasteryUI() {
+            let maxPossibleStreaks = gridSize * gridSize * 3;
+            let currentTotal = 0;
+            for(let i=1; i<=gridSize; i++) {
+                for(let j=1; j<=gridSize; j++) {
+                    currentTotal += getStreak(i, j);
+                }
+            }
+            let percent = (currentTotal / maxPossibleStreaks) * 100;
+            document.getElementById('mastery-bar').style.width = `${Math.min(100, percent)}%`;
+        }
+
+        function triggerLevelUp() {
+            currentLevel++;
+            let config = gearConfig[currentLevel];
+            gridSize = config.grid;
+            timeLimit = config.time;
+            
+            // Synthesize level up voice
+            synth.cancel();
+            synth.speak(new SpeechSynthesisUtterance(`Awesome! Level ${currentLevel} unlocked!`));
+            
+            // Populate modal
+            document.getElementById('lu-level').innerText = currentLevel;
+            document.getElementById('lu-gear-emoji').innerText = config.emoji;
+            document.getElementById('lu-gear-text').innerText = config.text;
+            document.getElementById('lu-speed').innerText = config.time.toFixed(1);
+            
+            // Play fanfare
+            playChime();
+            setTimeout(playChime, 150);
+            setTimeout(playChime, 300);
+
+            document.getElementById('levelup-modal').classList.remove('hidden');
+        }
+
+        function resumeAfterLevelUp() {
+            document.getElementById('levelup-modal').classList.add('hidden');
+            updateUIState();
+            // Reset streaks slightly to ensure they review old ones alongside new ones?
+            // Optional design choice. For now, keep streaks to preserve "moving window" knowledge base.
+            updateMasteryUI();
+            nextQuestion();
+        }
+
+        function updateUIState() {
+            document.getElementById('level-display').innerText = currentLevel;
+            document.getElementById('grid-display').innerText = `${gridSize}x${gridSize}`;
+            
+            let config = gearConfig[currentLevel] || gearConfig[1];
+            document.getElementById('gear-overlay').innerText = config.emoji;
+        }
+
+    </script>
+</body>
+</html>
