@@ -7,7 +7,11 @@ export function renderMiniHeatmap(container, adaptiveEngine, maxGridSize) {
             const entry = adaptiveEngine.stats[`${a}x${b}`];
             let bgClass = 'bg-slate-700/50';
             if (entry && entry.attempts > 0) {
-                bgClass = entry.errors === 0 ? 'bg-emerald-500/70' : 'bg-rose-500/70';
+                // Color by familiarity (accuracy + speed), not just "ever wrong".
+                const f = entry.familiarity;
+                if (f >= adaptiveEngine.masteryThreshold) bgClass = 'bg-emerald-500/70';
+                else if (f >= 0.5) bgClass = 'bg-amber-400/70';
+                else bgClass = 'bg-rose-500/70';
             }
             
             const cell = document.createElement('div');
