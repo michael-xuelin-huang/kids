@@ -1,49 +1,49 @@
-export class SpeechRecognizer {
-    constructor(onResultCallback) {
-        this.recognition = null;
-        this.onResult = onResultCallback;
-        this.isListening = false;
-        
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (SpeechRecognition) {
-            this.recognition = new SpeechRecognition();
-            this.recognition.continuous = true;
-            this.recognition.interimResults = true;
-            this.recognition.lang = 'en-US';
+import { pipeline } from '@huggingface/transformers';
 
-            this.recognition.onresult = (event) => {
-                let transcript = '';
-                for (let i = event.resultIndex; i < event.results.length; i++) {
-                    transcript += event.results[i][0].transcript;
-                }
-                if (transcript.trim() && this.onResult) {
-                    this.onResult(transcript.trim());
-                }
-            };
+let transcriber = null;
+let mediaRecorder = null;
+let audioChunks = [];
 
-            this.recognition.onerror = (e) => {
-                console.warn("Speech recognition error:", e.error);
-            };
+// Initialize Whisper pipeline in the background
+export async function initWhisper(onStatus) {
+  if (onStatus) onStatus('Loading Whisper AI Model...');
+  transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
+  if (onStatus) onStatus('Whisper Ready');
+}
 
-            this.recognition.onend = () => {
-                if (this.isListening) {
-                    try { this.recognition.start(); } catch (err) {}
-                }
-            };
+// Start listening & recording microphone input
+export async function startListening(onResult, onError) {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+
+    mediaRecorder.ondataavailable = (event) => {
+      if (event.data.size > 0) audioChunks.push(event.data);
+    };
+
+    mediaRecorder.onstop = async () => {
+      const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+      const audioUrl = URL.createObjectURL(audioBlob);
+
+      if (transcriber) {
+        // Transcribe audio locally using Whisper
+        const output = await transcriber(audioUrl);
+        if (output && output.text) {
+          onResult(output.text.trim());
         }
-    }
+      }
+    };
 
-    start() {
-        if (this.recognition && !this.isListening) {
-            this.isListening = true;
-            try { this.recognition.start(); } catch (e) {}
-        }
-    }
+    mediaRecorder.start();
+  } catch (err) {
+    if (onError) onError(err);
+  }
+}
 
-    stop() {
-        this.isListening = false;
-        if (this.recognition) {
-            try { this.recognition.stop(); } catch (e) {}
-        }
-    }
+// Stop recording and trigger Whisper transcription
+export function stopListening() {
+  if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+    mediaRecorder.stop();
+  }
 }
