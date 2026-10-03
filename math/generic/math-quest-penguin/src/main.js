@@ -1,5 +1,5 @@
 import { AdaptiveEngine } from './utils/adaptiveEngine.js';
-import { parseSpokenNumber, pickBestAlternative } from './utils/numberParser.js';
+import { pickBestAlternative, stripPrompt } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { sound } from './audio/soundEffects.js';
 import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
@@ -78,9 +78,16 @@ function handleSpeechResult(alternatives, meta) {
     if (isProcessingAnswer || overlaysOpen() || !timerStarted) return;
 
     const target = currentQuestion.a * currentQuestion.b;
-    const best = pickBestAlternative(alternatives, target);
 
-    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${alternatives[0]}"`;
+    // The engine is warm while the prompt plays, so a transcript can start with
+    // the echoed question ("four times three twelve"). Strip it; if nothing but
+    // the echo is left, ignore the result entirely (and don't show it).
+    const heard = stripPrompt(alternatives[0], currentQuestion.a, currentQuestion.b);
+    if (!heard) return;
+
+    const best = pickBestAlternative(alternatives, target, currentQuestion);
+
+    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${heard}"`;
 
     if (best === target) {
         // Answer time = when the first matching transcript arrived, not when
@@ -201,25 +208,49 @@ function beginListening(token) {
     if (elVoiceStatus && !recognizer.supported) elVoiceStatus.textContent = '⌨️ Type your answer and press Enter';
 }
 
+// Each spoken prompt gets an id. speechSynthesis.cancel() fires onend/onerror
+// for the utterance it interrupts (e.g. when "Repeat Question" is pressed), and
+// without this check that stale event would open the mic in the middle of the
+// NEW prompt.
+let utteranceSeq = 0;
+
 function speakQuestion() {
     const token = questionToken;
+    const myUtterance = ++utteranceSeq;
     recognizer.disarm();
 
     if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
+        window.speechSynthesis.cancel(); // its stale callbacks carry an old id
+
         const text = `${currentQuestion.a} times ${currentQuestion.b}`;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 0.9;
 
-        // Only listen (and only start the clock) AFTER the prompt has finished.
-        utterance.onend = () => beginListening(token);
-        utterance.onerror = () => beginListening(token);
+        let done = false;
+        let poll = null;
+        const finish = () => {
+            if (done || myUtterance !== utteranceSeq || token !== questionToken) {
+                clearInterval(poll);
+                return;
+            }
+            done = true;
+            clearInterval(poll);
+            beginListening(token);
+        };
 
-        // Some browsers never fire onend/onerror for a cancelled or blocked
-        // utterance; don't let the game hang waiting for it.
-        setTimeout(() => {
-            if (token === questionToken && !timerStarted) beginListening(token);
-        }, 4000);
+        // Only listen (and only start the clock) AFTER the prompt has finished.
+        utterance.onend = finish;
+        utterance.onerror = finish;
+
+        // Some browsers never fire onend/onerror (blocked autoplay, voices still
+        // loading). Fall back to polling, but only once the engine is genuinely
+        // idle - a fixed timeout could open the mic mid-prompt.
+        const waitStart = performance.now();
+        poll = setInterval(() => {
+            const idle = !window.speechSynthesis.speaking && !window.speechSynthesis.pending;
+            const waited = performance.now() - waitStart;
+            if ((idle && waited > 800) || waited > 10000) finish();
+        }, 250);
 
         window.speechSynthesis.speak(utterance);
     } else {

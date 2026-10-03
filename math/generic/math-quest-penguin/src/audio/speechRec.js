@@ -14,7 +14,10 @@
 //
 // No model downloads, no WASM, nothing on the main thread beyond event handlers.
 
-const TTS_TAIL_MS = 150; // ignore audio shortly after TTS ends (room echo)
+// speechSynthesis `onend` fires when synthesis finishes, which can be well
+// before the sound has left the speakers (more so on Bluetooth). Keep ignoring
+// results briefly after it so the tail of the prompt isn't heard as an answer.
+const TTS_TAIL_MS = 300;
 const MAX_FAST_RESTARTS = 5; // give up if the engine keeps dying immediately
 const FAST_RESTART_WINDOW_MS = 1500;
 
