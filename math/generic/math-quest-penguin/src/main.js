@@ -1,5 +1,5 @@
 import { AdaptiveEngine } from './utils/adaptiveEngine.js';
-import { parseSpokenNumber } from './utils/numberParser.js';
+import { parseSpokenNumber, pickBestAlternative } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { sound } from './audio/soundEffects.js';
 import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
@@ -15,8 +15,21 @@ let maxGridSize = 4;
 let timerDuration = 12.0; // Seconds
 let timeLeft = 12.0;
 let timerInterval = null;
-let questionStartTime = Date.now();
+// The clock starts when the microphone opens (after the spoken prompt ends),
+// NOT when the question is generated: TTS playback time is not thinking time.
+let listenStartTime = performance.now();
+let timerStarted = false;
+let questionToken = 0; // invalidates callbacks from a previous question
+let pendingCommit = null; // debounced interim match: { timer, ts }
 let isProcessingAnswer = false;
+
+// An interim transcript of "four" may still become "forty"; for answers that
+// are a possible prefix of a longer number, wait briefly for the transcript to
+// stay stable before accepting it.
+const INTERIM_STABLE_MS = 180;
+function answerNeedsStabilityWindow(target) {
+    return target < 21 || target % 10 === 0;
+}
 
 // Moving Window Level Progress Tracking
 let currentLevelWindow = { total: 0, required: 10, correctCount: 0 };
@@ -49,29 +62,95 @@ const elBtnContinueQuest = document.getElementById('btn-continue-quest');
 const elBtnReplayAudio = document.getElementById('btn-replay-audio');
 
 // Speech Recognition Init with Status Callback
-const recognizer = new SpeechRecognizer(
-    (transcript) => {
-        if (isProcessingAnswer || !elReviewOverlay.classList.contains('hidden') || !elLevelupOverlay.classList.contains('hidden')) return;
-        
-        if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${transcript}"`;
-        const parsed = parseSpokenNumber(transcript);
-        const target = currentQuestion.a * currentQuestion.b;
+function cancelPendingCommit() {
+    if (pendingCommit) {
+        clearTimeout(pendingCommit.timer);
+        pendingCommit = null;
+    }
+}
 
-        if (parsed === target) {
-            handleCorrectAnswer();
-        } else if (parsed !== null) {
-            // Heard a wrong number explicitly spoken
-            if (elVoiceStatus) elVoiceStatus.textContent = `❌ Heard: "${transcript}" (${parsed}), expected ${target}`;
+function overlaysOpen() {
+    return !elReviewOverlay.classList.contains('hidden') || !elLevelupOverlay.classList.contains('hidden');
+}
+
+// Handles every interim AND final transcript (all ASR alternatives at once).
+function handleSpeechResult(alternatives, meta) {
+    if (isProcessingAnswer || overlaysOpen() || !timerStarted) return;
+
+    const target = currentQuestion.a * currentQuestion.b;
+    const best = pickBestAlternative(alternatives, target);
+
+    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${alternatives[0]}"`;
+
+    if (best === target) {
+        // Answer time = when the first matching transcript arrived, not when
+        // the (slower) final result or the stability window completed.
+        const matchTs = pendingCommit ? pendingCommit.ts : meta.ts;
+
+        if (meta.isFinal || !answerNeedsStabilityWindow(target)) {
+            cancelPendingCommit();
+            handleCorrectAnswer((matchTs - listenStartTime) / 1000);
+        } else if (!pendingCommit) {
+            const token = questionToken;
+            pendingCommit = {
+                ts: meta.ts,
+                timer: setTimeout(() => {
+                    pendingCommit = null;
+                    if (token !== questionToken) return;
+                    handleCorrectAnswer((matchTs - listenStartTime) / 1000);
+                }, INTERIM_STABLE_MS),
+            };
         }
-    },
+        return;
+    }
+
+    // Transcript changed to something else: the earlier match was a prefix.
+    cancelPendingCommit();
+
+    // Only a final result is a real "wrong answer"; interims are partial
+    // ("twenty" on the way to "twenty four"). Wrong finals don't end the
+    // question - the child can try again until the timer runs out.
+    if (meta.isFinal && best !== null && elVoiceStatus) {
+        elVoiceStatus.textContent = `❌ Heard ${best}. Try again!`;
+    }
+}
+
+const recognizer = new SpeechRecognizer(
+    handleSpeechResult,
     (err) => {
         console.error('Speech Recognition Error:', err);
-        if (elVoiceStatus) elVoiceStatus.textContent = `⚠️ Speech recognition error`;
+        if (elVoiceStatus && err !== 'network' && err !== 'not-allowed' && err !== 'service-not-allowed' && err !== 'audio-capture') {
+            elVoiceStatus.textContent = `⚠️ Speech recognition error`;
+        }
     },
     (statusText) => {
         if (elVoiceStatus) elVoiceStatus.textContent = `🎤 ${statusText}`;
     }
 );
+
+// Keyboard fallback for browsers without the Web Speech API (e.g. Firefox).
+function installTypedFallback() {
+    if (recognizer.supported) return;
+    const box = document.getElementById('question-box');
+    if (!box) return;
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.inputMode = 'numeric';
+    input.placeholder = 'Type your answer';
+    input.className = 'mt-3 w-40 text-center text-2xl font-bold rounded-xl bg-black/40 border border-white/20 text-white py-2';
+    input.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' || isProcessingAnswer || !timerStarted || overlaysOpen()) return;
+        const typed = parseInt(input.value, 10);
+        input.value = '';
+        if (typed === currentQuestion.a * currentQuestion.b) {
+            handleCorrectAnswer((performance.now() - listenStartTime) / 1000);
+        } else if (elVoiceStatus) {
+            elVoiceStatus.textContent = `❌ ${Number.isNaN(typed) ? 'Type a number' : typed + ' is not it'}. Try again!`;
+        }
+    });
+    box.appendChild(input);
+}
+installTypedFallback();
 
 function updateGridSizeForLevel() {
     if (level === 1) maxGridSize = 4;
@@ -98,46 +177,63 @@ function nextQuestion() {
     renderPenguin(elPenguinContainer, level, 'normal');
     renderMiniHeatmap(elMiniHeatmap, adaptiveEngine, maxGridSize);
 
-    // Stop active recording if running, then play prompt & start listening
-    recognizer.stop();
+    // New question: invalidate old callbacks, close the answer gate, and reset
+    // the timer display. The clock itself starts when the prompt finishes.
+    questionToken++;
+    cancelPendingCommit();
+    timerStarted = false;
+    if (timerInterval) clearInterval(timerInterval);
+    if (elTimerBar) elTimerBar.style.width = '100%';
+    recognizer.disarm();
+    recognizer.ensureRunning(); // warm the engine while the prompt is spoken
+
     speakQuestion();
-    startTimer();
+}
+
+// Open the answer gate and start the clock. Idempotent per question.
+function beginListening(token) {
+    if (token !== questionToken || isProcessingAnswer) return;
+    if (!timerStarted) {
+        timerStarted = true;
+        startTimer();
+    }
+    recognizer.arm(); // ignores results for a short tail after TTS ends
+    if (elVoiceStatus && !recognizer.supported) elVoiceStatus.textContent = '⌨️ Type your answer and press Enter';
 }
 
 function speakQuestion() {
+    const token = questionToken;
+    recognizer.disarm();
+
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const text = `${currentQuestion.a} times ${currentQuestion.b}`;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 0.9;
 
-        // ONLY start microphone listening AFTER TTS finishes speaking prompt
-        utterance.onend = () => {
-            if (!isProcessingAnswer) {
-                recognizer.start();
-            }
-        };
+        // Only listen (and only start the clock) AFTER the prompt has finished.
+        utterance.onend = () => beginListening(token);
+        utterance.onerror = () => beginListening(token);
 
-        utterance.onerror = () => {
-            if (!isProcessingAnswer) {
-                recognizer.start();
-            }
-        };
+        // Some browsers never fire onend/onerror for a cancelled or blocked
+        // utterance; don't let the game hang waiting for it.
+        setTimeout(() => {
+            if (token === questionToken && !timerStarted) beginListening(token);
+        }, 4000);
 
         window.speechSynthesis.speak(utterance);
     } else {
-        // Fallback for browsers without speech synth
-        recognizer.start();
+        beginListening(token);
     }
 }
 
 function startTimer() {
     if (timerInterval) clearInterval(timerInterval);
-    questionStartTime = Date.now();
+    listenStartTime = performance.now();
     timeLeft = timerDuration;
 
     timerInterval = setInterval(() => {
-        const elapsed = (Date.now() - questionStartTime) / 1000;
+        const elapsed = (performance.now() - listenStartTime) / 1000;
         timeLeft = Math.max(0, timerDuration - elapsed);
         const pct = (timeLeft / timerDuration) * 100;
         if (elTimerBar) elTimerBar.style.width = `${pct}%`;
@@ -149,14 +245,25 @@ function startTimer() {
     }, 50);
 }
 
-function handleCorrectAnswer() {
+function updateMasteryDisplay() {
+    const el = document.getElementById('mastery-pct');
+    if (el) el.textContent = `${adaptiveEngine.getMasteryPercentage(maxGridSize)}% Mastered`;
+}
+
+// timeSpentSec: seconds from mic-open to the first transcript matching the
+// answer (so recognizer lag after the child spoke isn't charged to them).
+function handleCorrectAnswer(timeSpentSec) {
     if (isProcessingAnswer) return;
     isProcessingAnswer = true;
+    cancelPendingCommit();
     if (timerInterval) clearInterval(timerInterval);
-    recognizer.stop();
+    // Drop any in-flight audio and restart the engine in the background,
+    // hidden behind the feedback delay and the next spoken prompt.
+    recognizer.reset();
 
-    const timeSpent = (Date.now() - questionStartTime) / 1000;
+    const timeSpent = Math.max(0, timeSpentSec);
     adaptiveEngine.recordAttempt(currentQuestion.a, currentQuestion.b, true, timeSpent);
+    updateMasteryDisplay();
 
     score += 10 * level;
     streak++;
@@ -181,11 +288,13 @@ function handleCorrectAnswer() {
 function handleWrongAnswer(reason) {
     if (isProcessingAnswer) return;
     isProcessingAnswer = true;
+    cancelPendingCommit();
     if (timerInterval) clearInterval(timerInterval);
-    recognizer.stop();
+    recognizer.reset();
 
-    const timeSpent = (Date.now() - questionStartTime) / 1000;
+    const timeSpent = (performance.now() - listenStartTime) / 1000;
     adaptiveEngine.recordAttempt(currentQuestion.a, currentQuestion.b, false, timeSpent);
+    updateMasteryDisplay();
 
     streak = 0;
     if (elStreak) elStreak.textContent = streak;
@@ -208,6 +317,7 @@ function handleWrongAnswer(reason) {
 function triggerLevelUp() {
     level++;
     updateGridSizeForLevel();
+    updateMasteryDisplay();
     currentLevelWindow = { total: 0, required: 10, correctCount: 0 };
 
     sound.playLevelUp();
@@ -247,12 +357,15 @@ if (elBtnContinueQuest) {
 
 if (elBtnReplayAudio) {
     elBtnReplayAudio.addEventListener('click', () => {
-        recognizer.stop();
+        // Replaying doesn't pause the clock; the gate re-opens after the prompt.
+        if (isProcessingAnswer || overlaysOpen()) return;
+        cancelPendingCommit();
         speakQuestion();
     });
 }
 
 // Initialize Game
 updateGridSizeForLevel();
+updateMasteryDisplay();
 renderPenguin(elPenguinContainer, level, 'normal');
 nextQuestion();
