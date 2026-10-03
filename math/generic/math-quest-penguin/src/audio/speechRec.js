@@ -12,15 +12,24 @@ export class SpeechRecognizer {
     this.audioChunks = [];
     this.isListening = false;
     this.audioCtx = null;
-    this.silenceTimer = null;
 
     this.initModel();
   }
 
   async initModel() {
     try {
-      if (this.onStatus) this.onStatus('Downloading Whisper AI...');
-      this.transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
+      if (this.onStatus) this.onStatus('Loading Whisper AI (WebGPU)...');
+      
+      // Attempt WebGPU first for 10x-20x faster GPU execution
+      try {
+        this.transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en', {
+          device: 'webgpu',
+        });
+      } catch (gpuErr) {
+        console.warn('WebGPU fallback to WASM:', gpuErr);
+        this.transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
+      }
+      
       if (this.onStatus) this.onStatus('Whisper Ready');
     } catch (err) {
       console.error('Failed to initialize Whisper:', err);
@@ -31,15 +40,13 @@ export class SpeechRecognizer {
   async start() {
     if (this.isListening) return;
 
-    // Prevent feedback: Wait if TTS browser speech synth is actively speaking
     if (window.speechSynthesis && window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel(); 
+      window.speechSynthesis.cancel();
     }
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       
-      // Set up AudioContext & Analyser for dynamic silence detection
       this.audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
       const source = this.audioCtx.createMediaStreamSource(stream);
       const analyser = this.audioCtx.createAnalyser();
@@ -50,7 +57,7 @@ export class SpeechRecognizer {
       this.audioChunks = [];
       this.isListening = true;
 
-      if (this.onStatus) this.onStatus('Listening for your answer...');
+      if (this.onStatus) this.onStatus('Listening...');
 
       this.mediaRecorder.ondataavailable = (event) => {
         if (event.data.size > 0) this.audioChunks.push(event.data);
@@ -77,13 +84,12 @@ export class SpeechRecognizer {
           if (this.onError) this.onError(err);
         } finally {
           this.isListening = false;
-          if (this.onStatus) this.onStatus('Listening ready.');
         }
       };
 
-      this.mediaRecorder.start(100); // collect 100ms chunks
+      this.mediaRecorder.start(100);
 
-      // Dynamic Silence Detection Loop
+      // Fast Silence Detection
       const dataArray = new Uint8Array(analyser.frequencyBinCount);
       let silenceStart = Date.now();
       let hasSpoken = false;
@@ -94,12 +100,11 @@ export class SpeechRecognizer {
         analyser.getByteFrequencyData(dataArray);
         const volume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
 
-        // Sound threshold detected (user starts talking)
         if (volume > 15) {
           hasSpoken = true;
           silenceStart = Date.now();
-        } else if (hasSpoken && Date.now() - silenceStart > 1200) {
-          // 1.2 seconds of silence after speaking -> automatically finalize recording
+        } else if (hasSpoken && Date.now() - silenceStart > 600) {
+          // Cut silence delay down to 600ms for fast answer turnover
           this.stop();
           return;
         }
