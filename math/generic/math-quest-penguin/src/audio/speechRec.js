@@ -1,6 +1,5 @@
 import { pipeline, env } from '@huggingface/transformers';
 
-// Configure Hugging Face to allow remote model downloading directly in browser
 env.allowLocalModels = false;
 
 export class SpeechRecognizer {
@@ -13,20 +12,18 @@ export class SpeechRecognizer {
     this.audioChunks = [];
     this.isListening = false;
     this.audioCtx = null;
+    this.silenceTimer = null;
 
     this.initModel();
   }
 
   async initModel() {
     try {
-      if (this.onStatus) this.onStatus('Downloading Whisper AI (~39MB)...');
-      
-      // Load local Whisper tiny model via ONNX / WebAssembly
+      if (this.onStatus) this.onStatus('Downloading Whisper AI...');
       this.transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
-      
-      if (this.onStatus) this.onStatus('Whisper Ready! Click mic to speak.');
+      if (this.onStatus) this.onStatus('Whisper Ready');
     } catch (err) {
-      console.error('Failed to initialize Whisper model:', err);
+      console.error('Failed to initialize Whisper:', err);
       if (this.onError) this.onError(err);
     }
   }
@@ -34,33 +31,38 @@ export class SpeechRecognizer {
   async start() {
     if (this.isListening) return;
 
+    // Prevent feedback: Wait if TTS browser speech synth is actively speaking
+    if (window.speechSynthesis && window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel(); 
+    }
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      
+      // Set up AudioContext & Analyser for dynamic silence detection
+      this.audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
+      const source = this.audioCtx.createMediaStreamSource(stream);
+      const analyser = this.audioCtx.createAnalyser();
+      analyser.fftSize = 512;
+      source.connect(analyser);
+
       this.mediaRecorder = new MediaRecorder(stream);
       this.audioChunks = [];
       this.isListening = true;
 
-      if (this.onStatus) this.onStatus('Listening for voice (Speak answer)...');
+      if (this.onStatus) this.onStatus('Listening for your answer...');
 
       this.mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          this.audioChunks.push(event.data);
-        }
+        if (event.data.size > 0) this.audioChunks.push(event.data);
       };
 
       this.mediaRecorder.onstop = async () => {
         if (this.audioChunks.length === 0) return;
-
-        if (this.onStatus) this.onStatus('Transcribing answer...');
+        if (this.onStatus) this.onStatus('Transcribing...');
 
         try {
           const audioBlob = new Blob(this.audioChunks, { type: 'audio/wav' });
           const arrayBuffer = await audioBlob.arrayBuffer();
-
-          // Decode raw audio into 16kHz Float32 PCM buffer for Whisper
-          if (!this.audioCtx) {
-            this.audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
-          }
           const decodedAudio = await this.audioCtx.decodeAudioData(arrayBuffer);
           const pcmData = decodedAudio.getChannelData(0);
 
@@ -79,14 +81,33 @@ export class SpeechRecognizer {
         }
       };
 
-      this.mediaRecorder.start();
+      this.mediaRecorder.start(100); // collect 100ms chunks
 
-      // Automatically stop after 4 seconds of recording to process speech
-      setTimeout(() => {
-        if (this.isListening && this.mediaRecorder && this.mediaRecorder.state === 'recording') {
+      // Dynamic Silence Detection Loop
+      const dataArray = new Uint8Array(analyser.frequencyBinCount);
+      let silenceStart = Date.now();
+      let hasSpoken = false;
+
+      const checkVolume = () => {
+        if (!this.isListening) return;
+
+        analyser.getByteFrequencyData(dataArray);
+        const volume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
+
+        // Sound threshold detected (user starts talking)
+        if (volume > 15) {
+          hasSpoken = true;
+          silenceStart = Date.now();
+        } else if (hasSpoken && Date.now() - silenceStart > 1200) {
+          // 1.2 seconds of silence after speaking -> automatically finalize recording
           this.stop();
+          return;
         }
-      }, 4000);
+
+        requestAnimationFrame(checkVolume);
+      };
+
+      requestAnimationFrame(checkVolume);
 
     } catch (err) {
       this.isListening = false;
@@ -97,8 +118,9 @@ export class SpeechRecognizer {
   stop() {
     if (this.mediaRecorder && this.mediaRecorder.state === 'recording') {
       this.mediaRecorder.stop();
-      // Stop microphone stream tracks
-      this.mediaRecorder.stream.getTracks().forEach(track => track.stop());
+      if (this.mediaRecorder.stream) {
+        this.mediaRecorder.stream.getTracks().forEach(track => track.stop());
+      }
     }
     this.isListening = false;
   }
