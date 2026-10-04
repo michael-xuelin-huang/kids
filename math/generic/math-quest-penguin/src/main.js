@@ -1,4 +1,5 @@
 import { AdaptiveEngine } from './utils/adaptiveEngine.js';
+import { DifficultyController, GRID_SIZES } from './utils/difficultyController.js';
 import { pickBestAlternative, stripPrompt } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { sound } from './audio/soundEffects.js';
@@ -31,10 +32,25 @@ function answerNeedsStabilityWindow(target) {
     return target < 21 || target % 10 === 0;
 }
 
-// Moving Window Level Progress Tracking
-let currentLevelWindow = { total: 0, required: 10, correctCount: 0 };
-
 const adaptiveEngine = new AdaptiveEngine();
+
+// Level is no longer "10 correct answers per level". A PID-style controller
+// watches first-attempt results on facts the child has never practised and
+// moves the level up (possibly several levels at once) or back down, so the
+// child reaches their right level in a handful of questions.
+const difficulty = new DifficultyController({ targetTimeSec: adaptiveEngine.targetTimeSec });
+if (!difficulty.hasSavedState) {
+    // Existing practice data from before the controller existed: start above
+    // the levels that are already mastered instead of from level 1.
+    difficulty.bootstrapFromMastery((g) => adaptiveEngine.getMasteryPercentage(g));
+}
+level = difficulty.level;
+
+// Level-up celebrations: during rapid placement a child can climb several
+// levels in a few questions; don't bury them under back-to-back overlays.
+let questionsAnswered = 0;
+let lastOverlayAtQuestion = -99;
+const MIN_QUESTIONS_BETWEEN_OVERLAYS = 4;
 
 // DOM Elements
 const elLevel = document.getElementById('stat-level');
@@ -160,11 +176,7 @@ function installTypedFallback() {
 installTypedFallback();
 
 function updateGridSizeForLevel() {
-    if (level === 1) maxGridSize = 4;
-    else if (level === 2) maxGridSize = 6;
-    else if (level === 3) maxGridSize = 7;
-    else if (level === 4) maxGridSize = 8;
-    else maxGridSize = 9;
+    maxGridSize = GRID_SIZES[Math.min(level, GRID_SIZES.length) - 1];
 
     timerDuration = Math.max(5.0, 12.0 - (level - 1) * 1.5);
     if (elRangeLabel) elRangeLabel.textContent = `${maxGridSize} × ${maxGridSize} Grid`;
@@ -281,6 +293,29 @@ function updateMasteryDisplay() {
     if (el) el.textContent = `${adaptiveEngine.getMasteryPercentage(maxGridSize)}% Mastered`;
 }
 
+// Record the finished question with the adaptive engine and the difficulty
+// controller, and apply any level change. `wasCold` = the child had never
+// attempted this fact before (the controller's placement signal).
+function recordAndAdapt(isCorrect, timeSpent) {
+    const { a, b } = currentQuestion;
+    const wasCold = adaptiveEngine.isUnseen(a, b);
+    adaptiveEngine.recordAttempt(a, b, isCorrect, timeSpent);
+
+    const res = difficulty.update(isCorrect, timeSpent, {
+        cold: wasCold,
+        masteryPct: adaptiveEngine.getMasteryPercentage(maxGridSize),
+        coldLeft: adaptiveEngine.countUnseen(maxGridSize),
+    });
+    questionsAnswered++;
+
+    if (res.changed) {
+        level = difficulty.level;
+        updateGridSizeForLevel();
+    }
+    updateMasteryDisplay();
+    return res;
+}
+
 // timeSpentSec: seconds from mic-open to the first transcript matching the
 // answer (so recognizer lag after the child spoke isn't charged to them).
 function handleCorrectAnswer(timeSpentSec) {
@@ -292,14 +327,10 @@ function handleCorrectAnswer(timeSpentSec) {
     // hidden behind the feedback delay and the next spoken prompt.
     recognizer.reset();
 
-    const timeSpent = Math.max(0, timeSpentSec);
-    adaptiveEngine.recordAttempt(currentQuestion.a, currentQuestion.b, true, timeSpent);
-    updateMasteryDisplay();
-
-    score += 10 * level;
+    score += 10 * level; // points for the level the question was asked at
     streak++;
-    currentLevelWindow.correctCount++;
-    currentLevelWindow.total++;
+
+    const res = recordAndAdapt(true, Math.max(0, timeSpentSec));
 
     if (elScore) elScore.textContent = score;
     if (elStreak) elStreak.textContent = streak;
@@ -308,9 +339,8 @@ function handleCorrectAnswer(timeSpentSec) {
     renderPenguin(elPenguinContainer, level, 'happy');
     if (elPingoSpeech) elPingoSpeech.textContent = `"Awesome job! Keep soaring!"`;
 
-    // Check Level Up criteria
-    if (currentLevelWindow.correctCount >= currentLevelWindow.required && level < 5) {
-        triggerLevelUp();
+    if (res.changed === 'up') {
+        triggerLevelUp(res);
     } else {
         setTimeout(nextQuestion, 1200);
     }
@@ -323,20 +353,24 @@ function handleWrongAnswer(reason) {
     if (timerInterval) clearInterval(timerInterval);
     recognizer.reset();
 
-    const timeSpent = (performance.now() - listenStartTime) / 1000;
-    adaptiveEngine.recordAttempt(currentQuestion.a, currentQuestion.b, false, timeSpent);
-    updateMasteryDisplay();
+    // The review matrix must use the grid this question came from: a demotion
+    // below can shrink the grid so that the missed fact is no longer on it.
+    const gridAtQuestion = maxGridSize;
+    const res = recordAndAdapt(false, (performance.now() - listenStartTime) / 1000);
 
     streak = 0;
     if (elStreak) elStreak.textContent = streak;
-    currentLevelWindow.correctCount = Math.max(0, currentLevelWindow.correctCount - 1);
 
     sound.playWrong();
     renderPenguin(elPenguinContainer, level, 'frozen');
-    if (elPingoSpeech) elPingoSpeech.textContent = `"Blue shell hit! Let's review this fact."`;
+    if (elPingoSpeech) {
+        elPingoSpeech.textContent = res.changed === 'down'
+            ? `"That one's tricky! Let's practice closer to home - back to Level ${level}."`
+            : `"Blue shell hit! Let's review this fact."`;
+    }
 
     // Show Review Matrix Overlay
-    renderReviewMatrix(elReviewMatrix, currentQuestion.a, currentQuestion.b, maxGridSize);
+    renderReviewMatrix(elReviewMatrix, currentQuestion.a, currentQuestion.b, gridAtQuestion);
     renderGemArray(elGemArrayVisual, elGemArrayTitle, currentQuestion.a, currentQuestion.b);
 
     if (elReviewOverlay) {
@@ -345,16 +379,26 @@ function handleWrongAnswer(reason) {
     }
 }
 
-function triggerLevelUp() {
-    level++;
-    updateGridSizeForLevel();
-    updateMasteryDisplay();
-    currentLevelWindow = { total: 0, required: 10, correctCount: 0 };
-
+// `level` has already been advanced by recordAndAdapt(); this only celebrates.
+function triggerLevelUp(res) {
     sound.playLevelUp();
 
+    // Rapid placement can climb several levels within a few questions. Only the
+    // first gets the full-screen celebration; the rest stay in Pingo's bubble.
+    if (questionsAnswered - lastOverlayAtQuestion < MIN_QUESTIONS_BETWEEN_OVERLAYS) {
+        if (elPingoSpeech) {
+            elPingoSpeech.textContent = res.levelsGained > 1
+                ? `"Whoa, you're flying! Skipping ahead to Level ${level}!"`
+                : `"Level ${level}! Keep going!"`;
+        }
+        setTimeout(nextQuestion, 1200);
+        return;
+    }
+    lastOverlayAtQuestion = questionsAnswered;
+
     const gear = GEAR_CONFIGS[level];
-    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo reached Level ${level} (${maxGridSize}x${maxGridSize} Galaxy)!`;
+    const verb = res.levelsGained > 1 ? 'zoomed ahead to' : 'reached';
+    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo ${verb} Level ${level} (${maxGridSize}x${maxGridSize} Galaxy)!`;
     if (elUnlockedGearName) {
         elUnlockedGearName.innerHTML = `<span>${gear.badge === 'Bowtie' ? '🎀' : gear.badge === 'Cool Gear' ? '🕶️🎧' : gear.badge === 'Crown' ? '👑' : gear.badge === 'Wizard' ? '🧙‍♂️✨' : '🚀🛡️'}</span> ${gear.name}`;
     }
