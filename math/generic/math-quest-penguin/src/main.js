@@ -16,8 +16,8 @@ let maxGridSize = 4;
 let timerDuration = 12.0; // Seconds
 let timeLeft = 12.0;
 let timerInterval = null;
-// The clock starts when the microphone opens (after the spoken prompt ends),
-// NOT when the question is generated: TTS playback time is not thinking time.
+// The question is shown on screen (never spoken). The clock starts, and the
+// microphone is armed, just after the question has been painted.
 let listenStartTime = performance.now();
 let timerStarted = false;
 let questionToken = 0; // invalidates callbacks from a previous question
@@ -75,7 +75,6 @@ const elLevelupOverlay = document.getElementById('levelup-overlay');
 const elLevelupMessage = document.getElementById('levelup-message');
 const elUnlockedGearName = document.getElementById('unlocked-gear-name');
 const elBtnContinueQuest = document.getElementById('btn-continue-quest');
-const elBtnReplayAudio = document.getElementById('btn-replay-audio');
 
 // Speech Recognition Init with Status Callback
 function cancelPendingCommit() {
@@ -95,9 +94,9 @@ function handleSpeechResult(alternatives, meta) {
 
     const target = currentQuestion.a * currentQuestion.b;
 
-    // The engine is warm while the prompt plays, so a transcript can start with
-    // the echoed question ("four times three twelve"). Strip it; if nothing but
-    // the echo is left, ignore the result entirely (and don't show it).
+    // Children often read the question aloud before answering ("four times
+    // three... twelve"). Strip the question part; if nothing but the question
+    // is left, ignore the result entirely (and don't show it).
     const heard = stripPrompt(alternatives[0], currentQuestion.a, currentQuestion.b);
     if (!heard) return;
 
@@ -191,22 +190,26 @@ function nextQuestion() {
     if (recentQuestions.length > 4) recentQuestions.shift();
 
     if (elFormula) elFormula.textContent = `${currentQuestion.a} × ${currentQuestion.b} = ?`;
-    if (elVoiceStatus) elVoiceStatus.textContent = `🔊 Asking question...`;
+    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Say the answer!`;
 
     renderPenguin(elPenguinContainer, level, 'normal');
     renderMiniHeatmap(elMiniHeatmap, adaptiveEngine, maxGridSize);
 
     // New question: invalidate old callbacks, close the answer gate, and reset
-    // the timer display. The clock itself starts when the prompt finishes.
+    // the timer display. The question is only shown (never spoken), so the
+    // clock and the microphone start right after it appears.
     questionToken++;
+    const token = questionToken;
     cancelPendingCommit();
     timerStarted = false;
     if (timerInterval) clearInterval(timerInterval);
     if (elTimerBar) elTimerBar.style.width = '100%';
     recognizer.disarm();
-    recognizer.ensureRunning(); // warm the engine while the prompt is spoken
+    recognizer.ensureRunning(); // normally already warm from the previous question
 
-    speakQuestion();
+    // Give the browser a moment to paint the new question before the clock
+    // starts, so the child isn't charged for time they couldn't see it.
+    setTimeout(() => beginListening(token), 50);
 }
 
 // Open the answer gate and start the clock. Idempotent per question.
@@ -216,58 +219,8 @@ function beginListening(token) {
         timerStarted = true;
         startTimer();
     }
-    recognizer.arm(); // ignores results for a short tail after TTS ends
+    recognizer.arm(0); // nothing is played aloud, so there is no echo to wait out
     if (elVoiceStatus && !recognizer.supported) elVoiceStatus.textContent = '⌨️ Type your answer and press Enter';
-}
-
-// Each spoken prompt gets an id. speechSynthesis.cancel() fires onend/onerror
-// for the utterance it interrupts (e.g. when "Repeat Question" is pressed), and
-// without this check that stale event would open the mic in the middle of the
-// NEW prompt.
-let utteranceSeq = 0;
-
-function speakQuestion() {
-    const token = questionToken;
-    const myUtterance = ++utteranceSeq;
-    recognizer.disarm();
-
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel(); // its stale callbacks carry an old id
-
-        const text = `${currentQuestion.a} times ${currentQuestion.b}`;
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 0.9;
-
-        let done = false;
-        let poll = null;
-        const finish = () => {
-            if (done || myUtterance !== utteranceSeq || token !== questionToken) {
-                clearInterval(poll);
-                return;
-            }
-            done = true;
-            clearInterval(poll);
-            beginListening(token);
-        };
-
-        // Only listen (and only start the clock) AFTER the prompt has finished.
-        utterance.onend = finish;
-        utterance.onerror = finish;
-
-        // Some browsers never fire onend/onerror (blocked autoplay, voices still
-        // loading). Fall back to polling, but only once the engine is genuinely
-        // idle - a fixed timeout could open the mic mid-prompt.
-        const waitStart = performance.now();
-        poll = setInterval(() => {
-            const idle = !window.speechSynthesis.speaking && !window.speechSynthesis.pending;
-            const waited = performance.now() - waitStart;
-            if ((idle && waited > 800) || waited > 10000) finish();
-        }, 250);
-
-        window.speechSynthesis.speak(utterance);
-    } else {
-        beginListening(token);
-    }
 }
 
 function startTimer() {
@@ -427,15 +380,6 @@ if (elBtnContinueQuest) {
             setTimeout(() => elLevelupOverlay.classList.add('hidden'), 300);
         }
         nextQuestion();
-    });
-}
-
-if (elBtnReplayAudio) {
-    elBtnReplayAudio.addEventListener('click', () => {
-        // Replaying doesn't pause the clock; the gate re-opens after the prompt.
-        if (isProcessingAnswer || overlaysOpen()) return;
-        cancelPendingCommit();
-        speakQuestion();
     });
 }
 

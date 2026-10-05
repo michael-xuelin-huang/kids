@@ -8,16 +8,13 @@
 //    "armed"/"disarmed" with a flag, so the mic start-up cost (~200-600 ms)
 //    never lands on the child's answer time.
 //  * After an answer is accepted the session is reset (abort + restart) while
-//    the feedback/TTS prompt plays, so a late final result from the previous
+//    the feedback animation plays, so a late final result from the previous
 //    utterance can never be mistaken for the next answer.
-//  * Results are ignored while TTS is speaking and for a short tail after it.
+//  * The game never speaks the question aloud, so there is no echo of its own
+//    audio to filter out; the child's voice is the only input.
 //
 // No model downloads, no WASM, nothing on the main thread beyond event handlers.
 
-// speechSynthesis `onend` fires when synthesis finishes, which can be well
-// before the sound has left the speakers (more so on Bluetooth). Keep ignoring
-// results briefly after it so the tail of the prompt isn't heard as an answer.
-const TTS_TAIL_MS = 300;
 const MAX_FAST_RESTARTS = 5; // give up if the engine keeps dying immediately
 const FAST_RESTART_WINDOW_MS = 1500;
 
@@ -167,10 +164,10 @@ export class SpeechRecognizer {
     }
 
     /**
-     * Start accepting answers. `afterMs` lets the caller delay acceptance,
-     * e.g. TTS_TAIL_MS after the prompt finished speaking.
+     * Start accepting answers. `afterMs` optionally delays acceptance (results
+     * arriving earlier are dropped); by default answers are accepted at once.
      */
-    arm(afterMs = TTS_TAIL_MS) {
+    arm(afterMs = 0) {
         if (!this.supported) return;
         this.ensureRunning();
         this.speechStartTs = null;
@@ -188,8 +185,8 @@ export class SpeechRecognizer {
     /**
      * Drop any in-flight audio/results and restart the engine in the
      * background. Call after an answer is accepted: it discards the tail of
-     * the previous utterance, and the restart cost is hidden behind feedback
-     * and the next TTS prompt.
+     * the previous utterance, and the restart cost is hidden behind the
+     * feedback delay before the next question.
      */
     reset() {
         this.disarm();
