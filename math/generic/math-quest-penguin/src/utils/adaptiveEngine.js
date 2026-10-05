@@ -44,6 +44,21 @@ export class AdaptiveEngine {
         return entry ? entry.familiarity : 0;
     }
 
+    /** True if the child has never attempted this fact (a "cold" fact). */
+    isUnseen(a, b) {
+        const entry = this.stats[this.key(a, b)];
+        return !entry || entry.attempts === 0;
+    }
+
+    /** Number of never-attempted facts in the maxGridSize x maxGridSize grid. */
+    countUnseen(maxGridSize) {
+        let n = 0;
+        for (let a = 1; a <= maxGridSize; a++) {
+            for (let b = 1; b <= maxGridSize; b++) if (this.isUnseen(a, b)) n++;
+        }
+        return n;
+    }
+
     isMastered(a, b) {
         return this.getFamiliarity(a, b) >= this.masteryThreshold;
     }
@@ -55,6 +70,10 @@ export class AdaptiveEngine {
             this.stats[key] = { attempts: 0, errors: 0, avgTime: 0, familiarity: 0 };
         }
         const entry = this.stats[key];
+
+        // A non-finite time (bad timestamp) must not poison the running averages.
+        if (!Number.isFinite(timeSpentSec)) timeSpentSec = this.targetTimeSec;
+        timeSpentSec = Math.max(0, timeSpentSec);
 
         let performance;
         if (isCorrect) {

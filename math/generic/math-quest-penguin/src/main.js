@@ -1,5 +1,6 @@
 import { AdaptiveEngine } from './utils/adaptiveEngine.js';
-import { parseSpokenNumber, pickBestAlternative } from './utils/numberParser.js';
+import { DifficultyController, GRID_SIZES } from './utils/difficultyController.js';
+import { pickBestAlternative, stripPrompt } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { sound } from './audio/soundEffects.js';
 import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
@@ -15,8 +16,8 @@ let maxGridSize = 4;
 let timerDuration = 12.0; // Seconds
 let timeLeft = 12.0;
 let timerInterval = null;
-// The clock starts when the microphone opens (after the spoken prompt ends),
-// NOT when the question is generated: TTS playback time is not thinking time.
+// The question is shown on screen (never spoken). The clock starts, and the
+// microphone is armed, just after the question has been painted.
 let listenStartTime = performance.now();
 let timerStarted = false;
 let questionToken = 0; // invalidates callbacks from a previous question
@@ -31,10 +32,25 @@ function answerNeedsStabilityWindow(target) {
     return target < 21 || target % 10 === 0;
 }
 
-// Moving Window Level Progress Tracking
-let currentLevelWindow = { total: 0, required: 10, correctCount: 0 };
-
 const adaptiveEngine = new AdaptiveEngine();
+
+// Level is no longer "10 correct answers per level". A PID-style controller
+// watches first-attempt results on facts the child has never practised and
+// moves the level up (possibly several levels at once) or back down, so the
+// child reaches their right level in a handful of questions.
+const difficulty = new DifficultyController({ targetTimeSec: adaptiveEngine.targetTimeSec });
+if (!difficulty.hasSavedState) {
+    // Existing practice data from before the controller existed: start above
+    // the levels that are already mastered instead of from level 1.
+    difficulty.bootstrapFromMastery((g) => adaptiveEngine.getMasteryPercentage(g));
+}
+level = difficulty.level;
+
+// Level-up celebrations: during rapid placement a child can climb several
+// levels in a few questions; don't bury them under back-to-back overlays.
+let questionsAnswered = 0;
+let lastOverlayAtQuestion = -99;
+const MIN_QUESTIONS_BETWEEN_OVERLAYS = 4;
 
 // DOM Elements
 const elLevel = document.getElementById('stat-level');
@@ -59,7 +75,6 @@ const elLevelupOverlay = document.getElementById('levelup-overlay');
 const elLevelupMessage = document.getElementById('levelup-message');
 const elUnlockedGearName = document.getElementById('unlocked-gear-name');
 const elBtnContinueQuest = document.getElementById('btn-continue-quest');
-const elBtnReplayAudio = document.getElementById('btn-replay-audio');
 
 // Speech Recognition Init with Status Callback
 function cancelPendingCommit() {
@@ -78,9 +93,16 @@ function handleSpeechResult(alternatives, meta) {
     if (isProcessingAnswer || overlaysOpen() || !timerStarted) return;
 
     const target = currentQuestion.a * currentQuestion.b;
-    const best = pickBestAlternative(alternatives, target);
 
-    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${alternatives[0]}"`;
+    // Children often read the question aloud before answering ("four times
+    // three... twelve"). Strip the question part; if nothing but the question
+    // is left, ignore the result entirely (and don't show it).
+    const heard = stripPrompt(alternatives[0], currentQuestion.a, currentQuestion.b);
+    if (!heard) return;
+
+    const best = pickBestAlternative(alternatives, target, currentQuestion);
+
+    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${heard}"`;
 
     if (best === target) {
         // Answer time = when the first matching transcript arrived, not when
@@ -153,11 +175,7 @@ function installTypedFallback() {
 installTypedFallback();
 
 function updateGridSizeForLevel() {
-    if (level === 1) maxGridSize = 4;
-    else if (level === 2) maxGridSize = 6;
-    else if (level === 3) maxGridSize = 7;
-    else if (level === 4) maxGridSize = 8;
-    else maxGridSize = 9;
+    maxGridSize = GRID_SIZES[Math.min(level, GRID_SIZES.length) - 1];
 
     timerDuration = Math.max(5.0, 12.0 - (level - 1) * 1.5);
     if (elRangeLabel) elRangeLabel.textContent = `${maxGridSize} × ${maxGridSize} Grid`;
@@ -172,22 +190,26 @@ function nextQuestion() {
     if (recentQuestions.length > 4) recentQuestions.shift();
 
     if (elFormula) elFormula.textContent = `${currentQuestion.a} × ${currentQuestion.b} = ?`;
-    if (elVoiceStatus) elVoiceStatus.textContent = `🔊 Asking question...`;
+    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Say the answer!`;
 
     renderPenguin(elPenguinContainer, level, 'normal');
     renderMiniHeatmap(elMiniHeatmap, adaptiveEngine, maxGridSize);
 
     // New question: invalidate old callbacks, close the answer gate, and reset
-    // the timer display. The clock itself starts when the prompt finishes.
+    // the timer display. The question is only shown (never spoken), so the
+    // clock and the microphone start right after it appears.
     questionToken++;
+    const token = questionToken;
     cancelPendingCommit();
     timerStarted = false;
     if (timerInterval) clearInterval(timerInterval);
     if (elTimerBar) elTimerBar.style.width = '100%';
     recognizer.disarm();
-    recognizer.ensureRunning(); // warm the engine while the prompt is spoken
+    recognizer.ensureRunning(); // normally already warm from the previous question
 
-    speakQuestion();
+    // Give the browser a moment to paint the new question before the clock
+    // starts, so the child isn't charged for time they couldn't see it.
+    setTimeout(() => beginListening(token), 50);
 }
 
 // Open the answer gate and start the clock. Idempotent per question.
@@ -197,34 +219,8 @@ function beginListening(token) {
         timerStarted = true;
         startTimer();
     }
-    recognizer.arm(); // ignores results for a short tail after TTS ends
+    recognizer.arm(0); // nothing is played aloud, so there is no echo to wait out
     if (elVoiceStatus && !recognizer.supported) elVoiceStatus.textContent = '⌨️ Type your answer and press Enter';
-}
-
-function speakQuestion() {
-    const token = questionToken;
-    recognizer.disarm();
-
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const text = `${currentQuestion.a} times ${currentQuestion.b}`;
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 0.9;
-
-        // Only listen (and only start the clock) AFTER the prompt has finished.
-        utterance.onend = () => beginListening(token);
-        utterance.onerror = () => beginListening(token);
-
-        // Some browsers never fire onend/onerror for a cancelled or blocked
-        // utterance; don't let the game hang waiting for it.
-        setTimeout(() => {
-            if (token === questionToken && !timerStarted) beginListening(token);
-        }, 4000);
-
-        window.speechSynthesis.speak(utterance);
-    } else {
-        beginListening(token);
-    }
 }
 
 function startTimer() {
@@ -250,6 +246,29 @@ function updateMasteryDisplay() {
     if (el) el.textContent = `${adaptiveEngine.getMasteryPercentage(maxGridSize)}% Mastered`;
 }
 
+// Record the finished question with the adaptive engine and the difficulty
+// controller, and apply any level change. `wasCold` = the child had never
+// attempted this fact before (the controller's placement signal).
+function recordAndAdapt(isCorrect, timeSpent) {
+    const { a, b } = currentQuestion;
+    const wasCold = adaptiveEngine.isUnseen(a, b);
+    adaptiveEngine.recordAttempt(a, b, isCorrect, timeSpent);
+
+    const res = difficulty.update(isCorrect, timeSpent, {
+        cold: wasCold,
+        masteryPct: adaptiveEngine.getMasteryPercentage(maxGridSize),
+        coldLeft: adaptiveEngine.countUnseen(maxGridSize),
+    });
+    questionsAnswered++;
+
+    if (res.changed) {
+        level = difficulty.level;
+        updateGridSizeForLevel();
+    }
+    updateMasteryDisplay();
+    return res;
+}
+
 // timeSpentSec: seconds from mic-open to the first transcript matching the
 // answer (so recognizer lag after the child spoke isn't charged to them).
 function handleCorrectAnswer(timeSpentSec) {
@@ -261,14 +280,10 @@ function handleCorrectAnswer(timeSpentSec) {
     // hidden behind the feedback delay and the next spoken prompt.
     recognizer.reset();
 
-    const timeSpent = Math.max(0, timeSpentSec);
-    adaptiveEngine.recordAttempt(currentQuestion.a, currentQuestion.b, true, timeSpent);
-    updateMasteryDisplay();
-
-    score += 10 * level;
+    score += 10 * level; // points for the level the question was asked at
     streak++;
-    currentLevelWindow.correctCount++;
-    currentLevelWindow.total++;
+
+    const res = recordAndAdapt(true, Math.max(0, timeSpentSec));
 
     if (elScore) elScore.textContent = score;
     if (elStreak) elStreak.textContent = streak;
@@ -277,9 +292,8 @@ function handleCorrectAnswer(timeSpentSec) {
     renderPenguin(elPenguinContainer, level, 'happy');
     if (elPingoSpeech) elPingoSpeech.textContent = `"Awesome job! Keep soaring!"`;
 
-    // Check Level Up criteria
-    if (currentLevelWindow.correctCount >= currentLevelWindow.required && level < 5) {
-        triggerLevelUp();
+    if (res.changed === 'up') {
+        triggerLevelUp(res);
     } else {
         setTimeout(nextQuestion, 1200);
     }
@@ -292,20 +306,24 @@ function handleWrongAnswer(reason) {
     if (timerInterval) clearInterval(timerInterval);
     recognizer.reset();
 
-    const timeSpent = (performance.now() - listenStartTime) / 1000;
-    adaptiveEngine.recordAttempt(currentQuestion.a, currentQuestion.b, false, timeSpent);
-    updateMasteryDisplay();
+    // The review matrix must use the grid this question came from: a demotion
+    // below can shrink the grid so that the missed fact is no longer on it.
+    const gridAtQuestion = maxGridSize;
+    const res = recordAndAdapt(false, (performance.now() - listenStartTime) / 1000);
 
     streak = 0;
     if (elStreak) elStreak.textContent = streak;
-    currentLevelWindow.correctCount = Math.max(0, currentLevelWindow.correctCount - 1);
 
     sound.playWrong();
     renderPenguin(elPenguinContainer, level, 'frozen');
-    if (elPingoSpeech) elPingoSpeech.textContent = `"Blue shell hit! Let's review this fact."`;
+    if (elPingoSpeech) {
+        elPingoSpeech.textContent = res.changed === 'down'
+            ? `"That one's tricky! Let's practice closer to home - back to Level ${level}."`
+            : `"Blue shell hit! Let's review this fact."`;
+    }
 
     // Show Review Matrix Overlay
-    renderReviewMatrix(elReviewMatrix, currentQuestion.a, currentQuestion.b, maxGridSize);
+    renderReviewMatrix(elReviewMatrix, currentQuestion.a, currentQuestion.b, gridAtQuestion);
     renderGemArray(elGemArrayVisual, elGemArrayTitle, currentQuestion.a, currentQuestion.b);
 
     if (elReviewOverlay) {
@@ -314,16 +332,26 @@ function handleWrongAnswer(reason) {
     }
 }
 
-function triggerLevelUp() {
-    level++;
-    updateGridSizeForLevel();
-    updateMasteryDisplay();
-    currentLevelWindow = { total: 0, required: 10, correctCount: 0 };
-
+// `level` has already been advanced by recordAndAdapt(); this only celebrates.
+function triggerLevelUp(res) {
     sound.playLevelUp();
 
+    // Rapid placement can climb several levels within a few questions. Only the
+    // first gets the full-screen celebration; the rest stay in Pingo's bubble.
+    if (questionsAnswered - lastOverlayAtQuestion < MIN_QUESTIONS_BETWEEN_OVERLAYS) {
+        if (elPingoSpeech) {
+            elPingoSpeech.textContent = res.levelsGained > 1
+                ? `"Whoa, you're flying! Skipping ahead to Level ${level}!"`
+                : `"Level ${level}! Keep going!"`;
+        }
+        setTimeout(nextQuestion, 1200);
+        return;
+    }
+    lastOverlayAtQuestion = questionsAnswered;
+
     const gear = GEAR_CONFIGS[level];
-    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo reached Level ${level} (${maxGridSize}x${maxGridSize} Galaxy)!`;
+    const verb = res.levelsGained > 1 ? 'zoomed ahead to' : 'reached';
+    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo ${verb} Level ${level} (${maxGridSize}x${maxGridSize} Galaxy)!`;
     if (elUnlockedGearName) {
         elUnlockedGearName.innerHTML = `<span>${gear.badge === 'Bowtie' ? '🎀' : gear.badge === 'Cool Gear' ? '🕶️🎧' : gear.badge === 'Crown' ? '👑' : gear.badge === 'Wizard' ? '🧙‍♂️✨' : '🚀🛡️'}</span> ${gear.name}`;
     }
@@ -352,15 +380,6 @@ if (elBtnContinueQuest) {
             setTimeout(() => elLevelupOverlay.classList.add('hidden'), 300);
         }
         nextQuestion();
-    });
-}
-
-if (elBtnReplayAudio) {
-    elBtnReplayAudio.addEventListener('click', () => {
-        // Replaying doesn't pause the clock; the gate re-opens after the prompt.
-        if (isProcessingAnswer || overlaysOpen()) return;
-        cancelPendingCommit();
-        speakQuestion();
     });
 }
 
