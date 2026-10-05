@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latitude & Longitude Quest</title>
+<style>
+  :root{
+    --ink:#1f2a44; --bg:#eef6ff; --card:#ffffff; --blue:#2f80ed; --green:#27ae60;
+    --red:#eb5757; --yellow:#f2c94c; --purple:#9b51e0; --orange:#f2994a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;color:var(--ink);
+       background:linear-gradient(180deg,#d9ecff 0%,#f4faff 60%);min-height:100vh}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;
+         padding:12px 18px;background:var(--blue);color:#fff;flex-wrap:wrap}
+  header h1{margin:0;font-size:1.4rem}
+  #stars{background:#fff;color:var(--ink);padding:6px 14px;border-radius:999px;font-weight:bold}
+  nav{display:flex;gap:8px;padding:10px 14px;flex-wrap:wrap;background:#fff;border-bottom:3px solid #d5e6fb}
+  nav button{border:0;border-radius:999px;padding:9px 14px;font-size:.95rem;font-weight:bold;cursor:pointer;
+             background:#e8f1fd;color:var(--ink)}
+  nav button.active{background:var(--blue);color:#fff}
+  main{max-width:980px;margin:0 auto;padding:16px}
+  .card{background:var(--card);border-radius:18px;padding:18px;box-shadow:0 4px 14px rgba(31,42,68,.12);margin-bottom:16px}
+  h2{margin:.2em 0 .5em}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .tile{background:#fff;border-radius:18px;padding:16px;box-shadow:0 4px 14px rgba(31,42,68,.12);
+        cursor:pointer;border:3px solid transparent;text-align:left;font:inherit;color:inherit}
+  .tile:hover{border-color:var(--blue)}
+  .tile .big{font-size:2rem}
+  .tile b{display:block;font-size:1.15rem;margin:4px 0}
+  .tile small{color:#556}
+  .best{font-size:.8rem;color:#2a7;font-weight:bold;margin-top:6px}
+  .btn{border:0;border-radius:12px;padding:12px 18px;font-size:1rem;font-weight:bold;cursor:pointer;
+       background:var(--blue);color:#fff}
+  .btn.alt{background:#e8f1fd;color:var(--ink)}
+  .btn.green{background:var(--green)}
+  .btn:disabled{opacity:.5;cursor:default}
+  .options{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0}
+  .opt{border:3px solid #d5e6fb;background:#fff;border-radius:14px;padding:14px;font-size:1.05rem;
+       font-weight:bold;cursor:pointer;color:var(--ink);font-family:inherit}
+  .opt:hover:not(:disabled){border-color:var(--blue);background:#f2f8ff}
+  .opt.right{background:#d7f5e1;border-color:var(--green)}
+  .opt.wrong{background:#fde0e0;border-color:var(--red)}
+  .opt:disabled{cursor:default}
+  .q{font-size:1.25rem;font-weight:bold;line-height:1.35}
+  .progress{height:10px;background:#e1ecf9;border-radius:99px;overflow:hidden;margin-bottom:12px}
+  .progress>div{height:100%;background:var(--green);transition:width .3s}
+  .meta{display:flex;justify-content:space-between;color:#556;font-weight:bold;font-size:.9rem;margin-bottom:6px}
+  .fb{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:1rem;line-height:1.45}
+  .fb.good{background:#e4f8ea}
+  .fb.bad{background:#fff0dc}
+  .mapwrap{overflow-x:auto;border-radius:12px;border:2px solid #b9d6f5;background:#9fd4f5;margin:10px 0}
+  .mapwrap svg{display:block;width:100%;min-width:640px;height:auto}
+  .crosshair svg{cursor:crosshair}
+  #readout{font-weight:bold;background:#fff7d6;border-radius:10px;padding:6px 12px;display:inline-block;min-width:240px}
+  details{margin:8px 0}
+  summary{cursor:pointer;font-weight:bold;color:var(--blue)}
+  .vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+  .vocab div{background:#f4f9ff;border-left:6px solid var(--blue);border-radius:10px;padding:10px 12px}
+  .vocab div>b:first-child{display:block}
+  .center{text-align:center}
+  .score-big{font-size:3rem;font-weight:bold}
+  ul.missed{padding-left:20px;line-height:1.5}
+  @media (max-width:520px){header h1{font-size:1.1rem}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌍 Latitude &amp; Longitude Quest</h1>
+  <div id="stars">⭐ 0</div>
+</header>
+<nav id="nav"></nav>
+<main id="app"></main>
+
+<script>
+/* ---------- helpers ---------- */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('llq_'+k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('llq_'+k, JSON.stringify(v)); }catch(e){} }
+};
+const $ = s => document.querySelector(s);
+const app = $('#app');
+const rnd = (a,b) => Math.floor(Math.random()*(b-a+1))+a;
+const shuffle = arr => { const a = arr.slice(); for(let i=a.length-1;i>0;i--){ const j=rnd(0,i); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const fmtLat = l => Math.abs(l)+'°'+(l>0?' N':l<0?' S':'');
+const fmtLon = l => Math.abs(l)+'°'+(l>0&&l<180?' E':l<0?' W':'');
+const fmtPair = (lat,lon) => fmtLat(lat)+', '+fmtLon(lon);
+function addStars(n){ if(!n) return; store.set('stars', store.get('stars',0)+n); showStars(); }
+function showStars(){ $('#stars').textContent = '⭐ ' + store.get('stars',0); }
+function saveBest(mode, score, total){
+  const b = store.get('best_'+mode, null);
+  const pct = score/total;
+  if(!b || pct > b.pct){ store.set('best_'+mode, {score,total,pct}); return true; }
+  return false;
+}
+
+/* ---------- map data (rough, kid-friendly shapes in [lon,lat]) ---------- */
+const CONTINENTS = [
+  {name:'NORTH AMERICA', fill:'#8fd16a', label:[-102,50], pts:[[-168,66],[-140,70],[-95,72],[-80,70],[-62,60],[-55,52],[-66,45],[-76,35],[-81,31],[-80,25],[-83,29],[-90,30],[-97,26],[-97,21],[-90,21],[-87,21],[-88,15],[-83,10],[-77,8],[-80,7],[-86,11],[-92,14],[-105,20],[-110,27],[-115,30],[-117,33],[-124,40],[-125,48],[-135,58],[-150,60],[-165,60]]},
+  {name:'GREENLAND', fill:'#8fd16a', label:[-42,72], small:true, pts:[[-73,78],[-60,82],[-30,83],[-20,75],[-22,70],[-43,60],[-52,65],[-58,75]]},
+  {name:'SOUTH AMERICA', fill:'#f2a65a', label:[-60,-24], pts:[[-77,8],[-72,12],[-62,10],[-50,0],[-35,-6],[-39,-15],[-48,-26],[-58,-38],[-65,-42],[-68,-52],[-72,-54],[-75,-48],[-73,-38],[-71,-28],[-70,-18],[-76,-14],[-81,-5],[-79,2]]},
+  {name:'EUROPE', fill:'#b97fd0', label:[24,53], pts:[[-10,36],[-9,43],[-2,48],[-5,50],[3,51],[8,54],[10,58],[5,62],[15,69],[28,71],[40,67],[40,56],[30,47],[28,41],[22,37],[12,38],[8,44],[3,43],[-5,36]]},
+  {name:'ASIA', fill:'#f7dc6f', label:[88,48], pts:[[40,67],[60,70],[100,77],[140,72],[170,68],[180,65],[160,58],[142,52],[135,43],[127,38],[122,40],[122,30],[120,22],[108,18],[106,10],[104,1],[100,6],[98,16],[92,22],[80,15],[77,8],[72,20],[67,25],[59,22],[52,16],[43,13],[35,28],[34,31],[36,36],[28,37],[28,41],[30,47],[40,56]]},
+  {name:'AFRICA', fill:'#fbf3b0', label:[20,5], pts:[[-17,21],[-10,30],[-6,36],[10,37],[11,33],[20,31],[32,31],[34,28],[43,12],[51,12],[40,-3],[40,-15],[35,-25],[30,-31],[20,-35],[17,-30],[12,-17],[13,-5],[9,3],[5,5],[-8,4],[-17,14]]},
+  {name:'AUSTRALIA', fill:'#3d9a5f', label:[134,-25], pts:[[114,-22],[122,-18],[130,-12],[137,-12],[142,-11],[146,-19],[153,-27],[150,-37],[141,-38],[135,-34],[116,-35]]},
+  {name:'ANTARCTICA', fill:'#ffffff', label:[0,-80], pts:[[-180,-72],[-150,-75],[-120,-73],[-90,-72],[-60,-66],[-45,-72],[-10,-70],[30,-68],[70,-68],[110,-66],[150,-70],[180,-72],[180,-90],[-180,-90]]},
+  // small islands (no labels)
+  {name:'', fill:'#8fd16a', pts:[[-6,50],[1,51],[0,55],[-3,58],[-6,56]]},
+  {name:'', fill:'#f7dc6f', pts:[[130,31],[135,34],[141,38],[145,44],[141,45],[140,40],[135,35]]},
+  {name:'', fill:'#3d9a5f', pts:[[172,-35],[178,-38],[174,-41],[167,-46],[170,-44]]},
+  {name:'', fill:'#fbf3b0', pts:[[44,-25],[50,-15],[49,-12],[44,-17]]},
+  {name:'', fill:'#f7dc6f', pts:[[95,5],[106,-6],[104,-6],[95,2]]},
+  {name:'', fill:'#f7dc6f', pts:[[109,1],[117,7],[119,1],[115,-3],[110,-3]]},
+  {name:'', fill:'#f7dc6f', pts:[[120,-1],[125,1],[122,-5]]},
+];
+const OCEAN_LABELS = [
+  {t:'Pacific Ocean', lon:-140, lat:-8}, {t:'Pacific Ocean', lon:160, lat:12},
+  {t:'Atlantic Ocean', lon:-35, lat:22}, {t:'Atlantic Ocean', lon:-22, lat:-28},
+  {t:'Indian Ocean', lon:80, lat:-22}, {t:'Southern Ocean', lon:0, lat:-60},
+  {t:'Arctic Ocean', lon:0, lat:82}
+];
+const CITIES = [
+  {name:'Washington, D.C.', country:'United States', lat:39, lon:-77},
+  {name:'Ottawa', country:'Canada', lat:45, lon:-76},
+  {name:'Mexico City', country:'Mexico', lat:19, lon:-99},
+  {name:'Bogotá', country:'Colombia', lat:5, lon:-74},
+  {name:'Lima', country:'Peru', lat:-12, lon:-77},
+  {name:'Brasília', country:'Brazil', lat:-16, lon:-48},
+  {name:'Buenos Aires', country:'Argentina', lat:-35, lon:-58},
+  {name:'London', country:'United Kingdom', lat:51, lon:0},
+  {name:'Paris', country:'France', lat:49, lon:2},
+  {name:'Moscow', country:'Russia', lat:56, lon:38},
+  {name:'Cairo', country:'Egypt', lat:30, lon:31},
+  {name:'Pretoria', country:'South Africa', lat:-26, lon:28},
+  {name:'New Delhi', country:'India', lat:29, lon:77},
+  {name:'Beijing', country:'China', lat:40, lon:116},
+  {name:'Tokyo', country:'Japan', lat:36, lon:140},
+  {name:'Jakarta', country:'Indonesia', lat:-6, lon:107},
+  {name:'Canberra', country:'Australia', lat:-35, lon:149},
+  {name:'Wellington', country:'New Zealand', lat:-41, lon:175},
+  {name:'Nuuk', country:'Greenland', lat:64, lon:-52},
+];
+
+/* ---------- SVG world map ---------- */
+const X = lon => (lon+180)*2, Y = lat => (90-lat)*2;
+function mapSVG(o={}){
+  let s = `<svg viewBox="-36 -22 792 404" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map with latitude and longitude lines">`;
+  s += `<rect x="0" y="0" width="720" height="360" fill="#9fd4f5"/>`;
+  // continents
+  for(const c of CONTINENTS){
+    s += `<polygon points="${c.pts.map(p=>X(p[0])+','+Y(p[1])).join(' ')}" fill="${c.fill}" stroke="#4a5568" stroke-width=".8" stroke-linejoin="round"/>`;
+  }
+  // grid
+  for(let lon=-180; lon<=180; lon+=15){
+    const major = lon%30===0;
+    s += `<line x1="${X(lon)}" y1="0" x2="${X(lon)}" y2="360" stroke="#1d4f91" stroke-opacity="${major?.45:.18}" stroke-width="${major?.8:.5}"/>`;
+    if(major) s += `<text x="${X(lon)}" y="-6" font-size="9" text-anchor="middle" fill="#1d4f91" font-weight="bold">${lon===0?'0°':lon===180||lon===-180?'180°':fmtLon(lon).replace(' ','')}</text>`;
+  }
+  for(let lat=-90; lat<=90; lat+=15){
+    const major = lat%30===0;
+    s += `<line x1="0" y1="${Y(lat)}" x2="720" y2="${Y(lat)}" stroke="#1d4f91" stroke-opacity="${major?.45:.18}" stroke-width="${major?.8:.5}"/>`;
+    if(major) s += `<text x="-5" y="${Y(lat)+3}" font-size="9" text-anchor="end" fill="#1d4f91" font-weight="bold">${lat===0?'0°':fmtLat(lat).replace(' ','')}</text>`;
+  }
+  // equator & prime meridian
+  s += `<line x1="0" y1="${Y(0)}" x2="720" y2="${Y(0)}" stroke="#d62828" stroke-width="2" stroke-dasharray="6 3"/>`;
+  s += `<line x1="${X(0)}" y1="0" x2="${X(0)}" y2="360" stroke="#7b2cbf" stroke-width="2" stroke-dasharray="6 3"/>`;
+  s += `<text x="${X(-176)}" y="${Y(0)-4}" font-size="9" fill="#d62828" font-weight="bold" paint-order="stroke" stroke="#fff" stroke-width="2">Equator (0°)</text>`;
+  s += `<text x="${X(0)+4}" y="${Y(86)}" font-size="9" fill="#7b2cbf" font-weight="bold" paint-order="stroke" stroke="#fff" stroke-width="2">Prime Meridian (0°)</text>`;
+  // labels
+  for(const c of CONTINENTS){
+    if(c.name) s += `<text x="${X(c.label[0])}" y="${Y(c.label[1])}" font-size="${c.small?7:10}" text-anchor="middle" font-weight="bold" fill="#1f2a44" paint-order="stroke" stroke="#ffffffcc" stroke-width="2.5">${c.name}</text>`;
+  }
+  for(const l of OCEAN_LABELS){
+    s += `<text x="${X(l.lon)}" y="${Y(l.lat)}" font-size="10" text-anchor="middle" font-style="italic" font-weight="bold" fill="#1d4f91" opacity=".85">${l.t}</text>`;
+  }
+  // hemisphere tags
+  s += `<text x="${X(-90)}" y="${Y(-86)}" font-size="9" text-anchor="middle" fill="#1d4f91" font-weight="bold" opacity=".0">W</text>`;
+  // cities
+  if(o.cities){
+    for(const c of CITIES){
+      s += `<text x="${X(c.lon)}" y="${Y(c.lat)+3.5}" font-size="9" text-anchor="middle" fill="#d62828" stroke="#fff" stroke-width=".6">★</text>`;
+      s += `<text x="${X(c.lon)+6}" y="${Y(c.lat)-3}" font-size="7" fill="#1f2a44" paint-order="stroke" stroke="#ffffffcc" stroke-width="2">${c.name}</text>`;
+    }
+  }
+  s += `<rect x="0" y="0" width="720" height="360" fill="none" stroke="#1d4f91" stroke-width="2"/>`;
+  s += `<g id="pins">${o.pin ? pinSVG(o.pin.lat,o.pin.lon,'#eb5757','📍') : ''}</g>`;
+  s += `</svg>`;
+  return `<div class="mapwrap ${o.clickable?'crosshair':''}">${s}</div>`;
+}
+function pinSVG(lat,lon,color,label){
+  const x=X(lon), y=Y(lat);
+  return `<circle cx="${x}" cy="${y}" r="9" fill="${color}" fill-opacity=".25"/><circle cx="${x}" cy="${y}" r="4.5" fill="${color}" stroke="#fff" stroke-width="1.5"/>` +
+         (label?`<text x="${x}" y="${y-10}" font-size="9" text-anchor="middle" font-weight="bold" fill="${color}" paint-order="stroke" stroke="#fff" stroke-width="2.5">${label}</text>`:'');
+}
+function evToLL(svg,e){
+  const pt = svg.createSVGPoint(); pt.x=e.clientX; pt.y=e.clientY;
+  const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+  const lon = Math.round(p.x/2-180), lat = Math.round(90-p.y/2);
+  if(lon<-180||lon>180||lat<-90||lat>90) return null;
+  return {lat,lon};
+}
+
+/* ---------- navigation ---------- */
+const MODES = {
+  home:   {icon:'🏠', name:'Home'},
+  explore:{icon:'🗺️', name:'Explore'},
+  pin:    {icon:'📍', name:'Pin Hunt'},
+  mystery:{icon:'🔎', name:'Mystery Place'},
+  blitz:  {icon:'🧭', name:'Hemisphere Blitz'},
+  test:   {icon:'📝', name:'Mini Test'},
+};
+function buildNav(active){
+  $('#nav').innerHTML = Object.entries(MODES).map(([k,m]) =>
+    `<button data-m="${k}" class="${k===active?'active':''}">${m.icon} ${m.name}</button>`).join('');
+  $('#nav').querySelectorAll('button').forEach(b => b.onclick = () => go(b.dataset.m));
+}
+function go(mode){
+  buildNav(mode);
+  window.scrollTo(0,0);
+  ({home, explore, pin:startPinHunt, mystery:startMystery, blitz:startBlitz, test:startTest})[mode]();
+}
+
+/* ---------- home ---------- */
+function home(){
+  const best = k => { const b = store.get('best_'+k,null); return b ? `<div class="best">Best: ${b.score}/${b.total}</div>` : ''; };
+  app.innerHTML = `
+    <div class="card">
+      <h2>Welcome, explorer! 🧭</h2>
+      <p>Practice for your <b>Hemispheres</b> and <b>Latitude &amp; Longitude</b> test. Earn ⭐ stars in every game.
+      Remember: <b>latitude comes before longitude</b> (alphabet order!), and you can use the map on the test.</p>
+    </div>
+    <div class="tiles">
+      <button class="tile" data-m="explore"><span class="big">🗺️</span><b>Explore the Map</b><small>Move your mouse (or finger) over the map to see live coordinates. Study the key words.</small></button>
+      <button class="tile" data-m="pin"><span class="big">📍</span><b>Pin Hunt</b><small>Place a pin at a coordinate or find a capital city. Closer = more stars!</small>${best('pin')}</button>
+      <button class="tile" data-m="mystery"><span class="big">🔎</span><b>Mystery Place</b><small>Which continent, ocean or capital is at these coordinates? (Includes your homework questions.)</small>${best('mystery')}</button>
+      <button class="tile" data-m="blitz"><span class="big">🧭</span><b>Hemisphere Blitz</b><small>Quick! Is it Northern or Southern? Eastern or Western?</small>${best('blitz')}</button>
+      <button class="tile" data-m="test"><span class="big">📝</span><b>Mini Test</b><small>15 questions from the study guide. See your score at the end.</small>${best('test')}</button>
+    </div>`;
+  app.querySelectorAll('.tile').forEach(t => t.onclick = () => go(t.dataset.m));
+}
+
+/* ---------- explore ---------- */
+function explore(){
+  app.innerHTML = `
+    <div class="card">
+      <h2>🗺️ Explore the Map</h2>
+      <p>Move over the map to see the coordinates. <span style="color:#d62828"><b>Red dashed line = Equator</b></span>,
+         <span style="color:#7b2cbf"><b>purple dashed line = Prime Meridian</b></span>. Red stars are capital cities.</p>
+      <div id="readout">Move over the map…</div>
+      ${mapSVG({cities:true})}
+      <div class="vocab">
+        <div><b>🌐 Hemisphere</b>A “half-sphere” of Earth. There are four: Northern, Southern, Eastern, Western.</div>
+        <div><b>🔴 Equator (0° latitude)</b>Circles the middle of Earth. Splits <u>Northern</u> from <u>Southern</u>.</div>
+        <div><b>🟣 Prime Meridian (0° longitude)</b>Runs North Pole to South Pole. Splits <u>Eastern</u> from <u>Western</u>.</div>
+        <div><b>↔️ Latitude</b>How far <u>north or south</u> of the Equator. The lines run east to west.</div>
+        <div><b>↕️ Longitude</b>How far <u>east or west</u> of the Prime Meridian. The lines run north to south.</div>
+        <div><b>📍 Coordinates</b>Latitude first, then longitude: <b>40° N, 75° W</b>. They give an exact location.</div>
+        <div><b>🇺🇸 United States</b>Northern Hemisphere and Western Hemisphere.</div>
+        <div><b>🌗 Seasons</b>Earth is tilted, so when it is summer in the north, it is winter in the south.</div>
+      </div>
+    </div>`;
+  const svg = app.querySelector('svg'), ro = $('#readout');
+  const upd = e => { const p = evToLL(svg,e); if(p) ro.textContent = 'Cursor: ' + fmtPair(p.lat,p.lon); };
+  svg.addEventListener('pointermove', upd);
+  svg.addEventListener('click', upd);
+}
+
+/* ---------- Pin Hunt ---------- */
+function startPinHunt(){
+  const nz = v => v===0 ? 1 : v;
+  const rounds = shuffle([
+    ...shuffle(CITIES).slice(0,4).map(c => ({type:'city', ...c})),
+    ...Array.from({length:4}, () => ({type:'coord', lat:nz(rnd(-12,12))*5, lon:nz(rnd(-11,11))*15})),
+  ]);
+  let i = 0, total = 0;
+  const maxTotal = rounds.length*3;
+
+  function round(){
+    const r = rounds[i];
+    const prompt = r.type==='city'
+      ? `Find the capital <b>${r.name}</b>, ${r.country}`
+      : `Put a pin at <b>${fmtPair(r.lat,r.lon)}</b>`;
+    const hint = r.type==='city'
+      ? `${r.country} is in the ${r.lat>=0?'Northern':'Southern'} Hemisphere and the ${r.lon>=0?'Eastern':'Western'} Hemisphere.`
+      : `${fmtLat(r.lat)} means ${r.lat>0?'north':'south'} of the Equator. ${fmtLon(r.lon)} means ${r.lon>0?'east':'west'} of the Prime Meridian.`;
+    app.innerHTML = `
+      <div class="card">
+        <div class="meta"><span>Round ${i+1} of ${rounds.length}</span><span>⭐ ${total} / ${maxTotal}</span></div>
+        <div class="progress"><div style="width:${i/rounds.length*100}%"></div></div>
+        <div class="q">${prompt}</div>
+        <p>Click the map where you think it is. Within 10° = 3 stars, 20° = 2 stars, 35° = 1 star.</p>
+        <div id="readout">Move over the map…</div>
+        <button class="btn alt" id="hintBtn">💡 Hint</button>
+        <span id="hint" style="margin-left:8px"></span>
+        ${mapSVG({clickable:true})}
+        <div id="fb"></div>
+      </div>`;
+    const svg = app.querySelector('svg'), ro = $('#readout');
+    let done = false;
+    $('#hintBtn').onclick = () => { $('#hint').textContent = hint; };
+    svg.addEventListener('pointermove', e => { if(done) return; const p = evToLL(svg,e); if(p) ro.textContent = 'Cursor: ' + fmtPair(p.lat,p.lon); });
+    svg.addEventListener('click', e => {
+      if(done) return;
+      const p = evToLL(svg,e); if(!p) return;
+      done = true;
+      const d = Math.hypot(p.lat-r.lat, p.lon-r.lon);
+      const st = d<=10 ? 3 : d<=20 ? 2 : d<=35 ? 1 : 0;
+      total += st; addStars(st);
+      $('#pins').innerHTML =
+        `<line x1="${X(p.lon)}" y1="${Y(p.lat)}" x2="${X(r.lon)}" y2="${Y(r.lat)}" stroke="#333" stroke-dasharray="4 3"/>` +
+        pinSVG(r.lat,r.lon,'#27ae60','Answer') + pinSVG(p.lat,p.lon,'#eb5757','You');
+      const msg = st===3 ? '🎉 Bullseye!' : st===2 ? '👍 Great job!' : st===1 ? '🙂 Getting close!' : '😅 Not quite — look at the lines again.';
+      $('#fb').innerHTML = `<div class="fb ${st>=2?'good':'bad'}"><b>${msg}</b> You clicked ${fmtPair(p.lat,p.lon)}.
+        The answer was ${r.type==='city'?r.name+' at ':''}<b>${fmtPair(r.lat,r.lon)}</b> (${Math.round(d)}° away). You earned ${'⭐'.repeat(st)||'0 stars'}.<br><br>
+        <button class="btn green" id="nextBtn">${i+1<rounds.length?'Next ➜':'See results'}</button></div>`;
+      $('#nextBtn').onclick = () => { i++; i<rounds.length ? round() : finish(); };
+    });
+  }
+  function finish(){
+    const newBest = saveBest('pin', total, maxTotal);
+    results('Pin Hunt', total, maxTotal, 'stars', newBest, [], 'pin');
+  }
+  round();
+}
+
+/* ---------- generic multiple-choice quiz engine ---------- */
+function runQuiz({mode, title, questions, showMapFor}){
+  let i = 0, score = 0; const missed = [];
+  function show(){
+    const q = questions[i];
+    const opts = shuffle(q.opts);
+    let mapHTML = '';
+    if(q.pin) mapHTML = mapSVG({pin:{lat:q.pin[0], lon:q.pin[1]}});
+    else if(showMapFor) mapHTML = `<details><summary>🗺️ Open the map (allowed on the test!)</summary>${mapSVG({cities:true})}</details>`;
+    app.innerHTML = `
+      <div class="card">
+        <div class="meta"><span>${title} · Question ${i+1} of ${questions.length}</span><span>✅ ${score}</span></div>
+        <div class="progress"><div style="width:${i/questions.length*100}%"></div></div>
+        <div class="q">${q.q}</div>
+        ${mapHTML}
+        <div class="options">${opts.map(o => `<button class="opt">${o}</button>`).join('')}</div>
+        <div id="fb"></div>
+      </div>`;
+    const buttons = [...app.querySelectorAll('.opt')];
+    buttons.forEach(b => b.onclick = () => {
+      buttons.forEach(x => x.disabled = true);
+      const ok = b.textContent === q.a;
+      b.classList.add(ok?'right':'wrong');
+      if(!ok) buttons.find(x => x.textContent === q.a).classList.add('right');
+      if(ok){ score++; addStars(1); } else missed.push(q);
+      $('#fb').innerHTML = `<div class="fb ${ok?'good':'bad'}"><b>${ok?'✅ Correct!':'❌ The answer is '+q.a+'.'}</b> ${q.why||''}<br><br>
+        <button class="btn green" id="nextBtn">${i+1<questions.length?'Next ➜':'See results'}</button></div>`;
+      $('#nextBtn').onclick = () => { i++; i<questions.length ? show() : finish(); };
+      $('#nextBtn').focus();
+    });
+  }
+  function finish(){
+    const newBest = saveBest(mode, score, questions.length);
+    results(title, score, questions.length, 'correct', newBest, missed, mode);
+  }
+  show();
+}
+
+function results(title, score, total, unit, newBest, missed, mode){
+  const pct = score/total;
+  const msg = pct>=.9 ? '🏆 Amazing! You are a map master!' : pct>=.7 ? '🌟 Great work! Almost an expert!' : pct>=.5 ? '👍 Good start — keep practicing!' : '💪 Keep trying — read the study guide and play Explore!';
+  app.innerHTML = `
+    <div class="card center">
+      <h2>${title} complete!</h2>
+      <div class="score-big">${score} / ${total}</div>
+      <p>${unit==='stars'?'stars earned':'correct answers'} · ${Math.round(pct*100)}%</p>
+      <p><b>${msg}</b>${newBest?'<br>🎖️ New best score!':''}</p>
+      ${missed.length ? `<div style="text-align:left"><b>Review these:</b><ul class="missed">${missed.map(q => `<li>${q.q}<br><b>${q.a}</b> — ${q.why||''}</li>`).join('')}</ul></div>` : ''}
+      <button class="btn" id="again">🔁 Play again</button>
+      <button class="btn alt" id="menu">🏠 Home</button>
+    </div>`;
+  $('#again').onclick = () => go(mode);
+  $('#menu').onclick = () => go('home');
+}
+
+/* ---------- Mystery Place (homework-style questions) ---------- */
+const MYSTERY = [
+  // --- the six practice questions from the study guide (always included) ---
+  {core:1, lat:45, lon:-100, kind:'continent', a:'North America', opts:['North America','Asia','Africa','Europe'],
+   why:'45° N is north of the Equator and 100° W is west of the Prime Meridian — in the middle of North America.'},
+  {core:1, lat:-30, lon:90, kind:'ocean', a:'Indian Ocean', opts:['Indian Ocean','Atlantic Ocean','Pacific Ocean','Arctic Ocean'],
+   why:'30° S, 90° E is south of the Equator and east of the Prime Meridian, in the Indian Ocean.'},
+  {core:1, lat:35, lon:115, kind:'capital city', a:'Beijing', opts:['Beijing','Tokyo','Moscow','Cairo'],
+   why:'Go to 35° N and 115° E on the map — the capital nearby is Beijing, China.'},
+  {core:1, lat:-30, lon:130, kind:'continent', a:'Australia', opts:['Australia','Africa','South America','Antarctica'],
+   why:'30° S, 130° E is in the Southern and Eastern Hemispheres — Australia is there.'},
+  {core:1, lat:-25, lon:-40, kind:'ocean', a:'Atlantic Ocean', opts:['Atlantic Ocean','Pacific Ocean','Indian Ocean','Southern Ocean'],
+   why:'25° S, 40° W is between South America and Africa — the Atlantic Ocean.'},
+  {core:1, lat:35, lon:140, kind:'capital city', a:'Tokyo', opts:['Tokyo','Beijing','Manila','Canberra'],
+   why:'Go to 35° N and 140° E — the capital nearby is Tokyo, Japan.'},
+  // --- extra practice ---
+  {lat:0, lon:0, kind:'ocean', a:'Atlantic Ocean', opts:['Atlantic Ocean','Indian Ocean','Pacific Ocean','Arctic Ocean'],
+   why:'0°, 0° is where the Equator crosses the Prime Meridian — just off the coast of Africa, in the Atlantic Ocean.'},
+  {lat:51, lon:0, kind:'capital city', a:'London', opts:['London','Paris','Madrid','Berlin'],
+   why:'London sits almost exactly on the Prime Meridian at about 51° N.'},
+  {lat:30, lon:31, kind:'capital city', a:'Cairo', opts:['Cairo','Riyadh','Addis Ababa','Pretoria'],
+   why:'Cairo, Egypt is near 30° N, 31° E.'},
+  {lat:-35, lon:-58, kind:'capital city', a:'Buenos Aires', opts:['Buenos Aires','Lima','Brasília','Mexico City'],
+   why:'Buenos Aires, Argentina is near 35° S, 58° W.'},
+  {lat:-35, lon:149, kind:'capital city', a:'Canberra', opts:['Canberra','Wellington','Jakarta','Tokyo'],
+   why:'Canberra, Australia is near 35° S, 149° E.'},
+  {lat:19, lon:-99, kind:'capital city', a:'Mexico City', opts:['Mexico City','Ottawa','Bogotá','Lima'],
+   why:'Mexico City is near 19° N, 99° W.'},
+  {lat:-60, lon:0, kind:'ocean', a:'Southern Ocean', opts:['Southern Ocean','Arctic Ocean','Indian Ocean','Pacific Ocean'],
+   why:'60° S is far south, close to Antarctica — the Southern Ocean.'},
+  {lat:80, lon:0, kind:'ocean', a:'Arctic Ocean', opts:['Arctic Ocean','Southern Ocean','Atlantic Ocean','Indian Ocean'],
+   why:'80° N is near the North Pole — the Arctic Ocean.'},
+  {lat:-20, lon:25, kind:'continent', a:'Africa', opts:['Africa','Australia','South America','Asia'],
+   why:'20° S, 25° E is south of the Equator and east of the Prime Meridian — southern Africa.'},
+  {lat:-15, lon:-50, kind:'country', a:'Brazil', opts:['Brazil','Argentina','Peru','Chile'],
+   why:'15° S, 50° W is in the middle of Brazil (its capital Brasília is near here).'},
+  {lat:56, lon:38, kind:'capital city', a:'Moscow', opts:['Moscow','Beijing','New Delhi','Ottawa'],
+   why:'Moscow, Russia is near 56° N, 38° E.'},
+  {lat:-41, lon:175, kind:'capital city', a:'Wellington', opts:['Wellington','Canberra','Jakarta','Santiago'],
+   why:'Wellington, New Zealand is near 41° S, 175° E.'},
+  {lat:-26, lon:28, kind:'capital city', a:'Pretoria', opts:['Pretoria','Cairo','Nairobi','Canberra'],
+   why:'Pretoria, South Africa is near 26° S, 28° E.'},
+];
+function startMystery(){
+  const core = MYSTERY.filter(m => m.core), extra = shuffle(MYSTERY.filter(m => !m.core)).slice(0,4);
+  const qs = shuffle([...core, ...extra]).map(m => ({
+    q: `Which ${m.kind} is located near <b>${fmtPair(m.lat,m.lon)}</b>? (See the pin 📍 on the map.)`,
+    opts: m.opts, a: m.a, why: m.why, pin:[m.lat,m.lon]
+  }));
+  runQuiz({mode:'mystery', title:'Mystery Place', questions:qs});
+}
+
+/* ---------- Hemisphere Blitz ---------- */
+function startBlitz(){
+  const nz = v => v===0 ? 1 : v;
+  const OPTS = ['Northern & Eastern','Northern & Western','Southern & Eastern','Southern & Western'];
+  const qs = Array.from({length:10}, () => {
+    const lat = nz(rnd(-17,17))*5, lon = nz(rnd(-35,35))*5;
+    const ns = lat>0 ? 'Northern' : 'Southern', ew = lon>0 ? 'Eastern' : 'Western';
+    return {
+      q: `A place is at <b>${fmtPair(lat,lon)}</b>. Which two hemispheres is it in?`,
+      opts: OPTS, a: `${ns} & ${ew}`, pin:[lat,lon],
+      why: `${fmtLat(lat)} is ${lat>0?'north':'south'} of the Equator → ${ns}. ${fmtLon(lon)} is ${lon>0?'east':'west'} of the Prime Meridian → ${ew}.`
+    };
+  });
+  runQuiz({mode:'blitz', title:'Hemisphere Blitz', questions:qs});
+}
+
+/* ---------- Mini Test (concepts from the study guide) ---------- */
+const CONCEPTS = [
+  {q:'What is the imaginary line that circles the middle of Earth?', a:'The Equator', opts:['The Equator','The Prime Meridian','The Tropic line','The North Pole'],
+   why:'The Equator is at 0° latitude and circles the middle of Earth.'},
+  {q:'The Equator separates which two hemispheres?', a:'Northern and Southern', opts:['Northern and Southern','Eastern and Western','Northern and Eastern','Southern and Western'],
+   why:'The Equator divides Earth into the Northern and Southern Hemispheres.'},
+  {q:'The Prime Meridian separates which two hemispheres?', a:'Eastern and Western', opts:['Eastern and Western','Northern and Southern','Northern and Western','Southern and Eastern'],
+   why:'The Prime Meridian divides Earth into the Eastern and Western Hemispheres.'},
+  {q:'The Prime Meridian runs from the ______.', a:'North Pole to the South Pole', opts:['North Pole to the South Pole','east to west around the middle','Equator to the Arctic','Atlantic to the Pacific'],
+   why:'The Prime Meridian runs from pole to pole.'},
+  {q:'Latitude measures how far a place is…', a:'north or south of the Equator', opts:['north or south of the Equator','east or west of the Prime Meridian','above sea level','from the nearest ocean'],
+   why:'Latitude = distance north or south of the Equator.'},
+  {q:'Longitude measures how far a place is…', a:'east or west of the Prime Meridian', opts:['east or west of the Prime Meridian','north or south of the Equator','from the North Pole only','from the nearest city'],
+   why:'Longitude = distance east or west of the Prime Meridian.'},
+  {q:'The Equator is at what latitude?', a:'0°', opts:['0°','90°','180°','45°'],
+   why:'The Equator is 0° latitude.'},
+  {q:'The Prime Meridian is at what longitude?', a:'0°', opts:['0°','90°','180°','45°'],
+   why:'The Prime Meridian is 0° longitude.'},
+  {q:'Lines of latitude run in which direction?', a:'East to west', opts:['East to west','North to south','Diagonally','In circles around the poles only'],
+   why:'Lines of latitude run east to west, but they measure distance north or south.'},
+  {q:'Lines of longitude run in which direction?', a:'North to south', opts:['North to south','East to west','Diagonally','Only along the Equator'],
+   why:'Lines of longitude run north to south, but they measure distance east or west.'},
+  {q:'When writing coordinates, which comes first?', a:'Latitude', opts:['Latitude','Longitude','Whichever is bigger','The hemisphere'],
+   why:'Latitude comes first, then longitude — just like the alphabet (L-a-t before L-o-n).'},
+  {q:'Latitude and longitude are measured in…', a:'degrees (°)', opts:['degrees (°)','miles','kilometers','hours'],
+   why:'Coordinates are written in degrees, like 40° N, 75° W.'},
+  {q:'Which hemispheres is <b>40° N, 75° W</b> in?', a:'Northern and Western', opts:['Northern and Western','Northern and Eastern','Southern and Western','Southern and Eastern'],
+   why:'N means north of the Equator; W means west of the Prime Meridian.'},
+  {q:'The United States is located in which hemispheres?', a:'Northern and Western', opts:['Northern and Western','Northern and Eastern','Southern and Western','Southern and Eastern'],
+   why:'The U.S. is north of the Equator and west of the Prime Meridian.'},
+  {q:'California is ______ of the Equator.', a:'north', opts:['north','south','east','west'],
+   why:'California is in the Northern Hemisphere, north of the Equator.'},
+  {q:'When it is summer in the Northern Hemisphere, what season is it in the Southern Hemisphere?', a:'Winter', opts:['Winter','Summer','Spring','The same season'],
+   why:'The hemispheres have opposite seasons.'},
+  {q:'Why do the Northern and Southern Hemispheres have opposite seasons?', a:'Earth is tilted', opts:['Earth is tilted','Earth is flat','The Moon pulls on it','Earth stops spinning'],
+   why:'Earth’s tilt causes opposite seasons.'},
+  {q:'Which hemisphere includes most of South America, Australia, and Antarctica?', a:'Southern Hemisphere', opts:['Southern Hemisphere','Northern Hemisphere','Eastern Hemisphere','Western Hemisphere'],
+   why:'Most of South America, Australia, and Antarctica are south of the Equator.'},
+  {q:'Which hemisphere contains most of Africa, Europe, Asia, and Australia?', a:'Eastern Hemisphere', opts:['Eastern Hemisphere','Western Hemisphere','Southern Hemisphere only','Northern Hemisphere only'],
+   why:'Those continents are mostly east of the Prime Meridian.'},
+  {q:'Which hemisphere includes North and South America?', a:'Western Hemisphere', opts:['Western Hemisphere','Eastern Hemisphere','Northern Hemisphere only','Southern Hemisphere only'],
+   why:'North and South America are west of the Prime Meridian.'},
+  {q:'Which star can people in the Northern Hemisphere see in the night sky?', a:'The North Star', opts:['The North Star','The Southern Cross','Both are seen everywhere','Neither'],
+   why:'The North Star is seen in the north; the Southern Cross is seen in the Southern Hemisphere.'},
+  {q:'People in the Southern Hemisphere can see a group of stars called…', a:'The Southern Cross', opts:['The Southern Cross','The North Star','The Big Dipper only','The Equator'],
+   why:'The Southern Cross is visible from the Southern Hemisphere.'},
+  {q:'How many main hemispheres are there?', a:'Four', opts:['Four','Two','Three','Six'],
+   why:'Northern, Southern, Eastern, and Western.'},
+  {q:'What do coordinates help people do?', a:'Find exact locations on Earth', opts:['Find exact locations on Earth','Measure temperature','Count the continents','Tell time'],
+   why:'Latitude and longitude work together to give an exact spot.'},
+];
+function startTest(){
+  const qs = shuffle(CONCEPTS).slice(0,15);
+  runQuiz({mode:'test', title:'Mini Test', questions:qs, showMapFor:true});
+}
+
+/* ---------- start ---------- */
+showStars();
+go('home');
+</script>
+</body>
+</html>
