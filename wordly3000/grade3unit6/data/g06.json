@@ -1,0 +1,1006 @@
+{
+ "intend": [
+  {
+   "q": "What does INTEND mean?",
+   "options": [
+    "To forget about a job",
+    "To clap for a friend",
+    "To plan or have in mind"
+   ],
+   "ans": 2,
+   "hint": "INTEND means to plan something or have it in your mind."
+  },
+  {
+   "q": "Which meaning goes with the word INTEND?",
+   "options": [
+    "To have a plan to do it",
+    "To get very sleepy",
+    "To make a loud noise"
+   ],
+   "ans": 0,
+   "hint": "If you INTEND to do it, you have a plan to do it."
+  },
+  {
+   "q": "If you INTEND to build a snowman, what are you doing?",
+   "options": [
+    "Watching it melt",
+    "Hiding from it",
+    "Planning to build it"
+   ],
+   "ans": 2,
+   "hint": "To INTEND is to plan. You are planning to build it."
+  },
+  {
+   "q": "Which phrase explains INTEND best?",
+   "options": [
+    "to have in mind to do",
+    "to run away from",
+    "to be proud of"
+   ],
+   "ans": 0,
+   "hint": "INTEND means to have something in mind to do."
+  },
+  {
+   "q": "“I INTEND to read a book tonight.” What does INTEND mean here?",
+   "options": [
+    "plan",
+    "skip",
+    "lose"
+   ],
+   "ans": 0,
+   "hint": "I INTEND to read means I plan to read."
+  },
+  {
+   "q": "Mia says, “I INTEND to visit my aunt.” What does she mean?",
+   "options": [
+    "She already visited her.",
+    "She is scared to go.",
+    "She plans to visit her."
+   ],
+   "ans": 2,
+   "hint": "INTEND means plan. Mia has a plan to visit."
+  },
+  {
+   "q": "The word INTEND tells about something you ____.",
+   "options": [
+    "have in mind to do",
+    "finished last week",
+    "can never do"
+   ],
+   "ans": 0,
+   "hint": "When you INTEND something, you have it in mind to do."
+  },
+  {
+   "q": "Which sentence gives the meaning of INTEND?",
+   "options": [
+    "It means to cheer for someone.",
+    "It means to look at something closely.",
+    "It means to aim to do something."
+   ],
+   "ans": 2,
+   "hint": "INTEND means to aim or plan to do something."
+  },
+  {
+   "q": "We ____ to plant flowers in the garden this spring.",
+   "options": [
+    "applaud",
+    "intend",
+    "jeer"
+   ],
+   "ans": 1,
+   "hint": "We intend to means we plan to."
+  },
+  {
+   "q": "I ____ to ask my teacher for help with math.",
+   "options": [
+    "peer",
+    "refine",
+    "intend"
+   ],
+   "ans": 2,
+   "hint": "I intend to ask means I plan to ask."
+  },
+  {
+   "q": "Do you ____ to wear your red coat today?",
+   "options": [
+    "disclose",
+    "exclaim",
+    "intend"
+   ],
+   "ans": 2,
+   "hint": "Intend means plan. Do you plan to wear it?"
+  },
+  {
+   "q": "Tom does not ____ to be late for the bus.",
+   "options": [
+    "applaud",
+    "refine",
+    "intend"
+   ],
+   "ans": 2,
+   "hint": "Tom has no plan to be late, so he does not intend it."
+  },
+  {
+   "q": "My sister and I ____ to bake cookies on Saturday.",
+   "options": [
+    "exclaim",
+    "intend",
+    "peer"
+   ],
+   "ans": 1,
+   "hint": "We plan to bake, so we intend to bake."
+  },
+  {
+   "q": "“What do you ____ to do at recess?” asked Ben.",
+   "options": [
+    "jeer",
+    "progress",
+    "intend"
+   ],
+   "ans": 2,
+   "hint": "Ben asks what you plan to do."
+  },
+  {
+   "q": "Lena ____ to bring a gift, but she forgot it at home.",
+   "options": [
+    "applauded",
+    "intended",
+    "jeered"
+   ],
+   "ans": 1,
+   "hint": "Lena had a plan to bring it. She intended to."
+  },
+  {
+   "q": "Grandpa ____ to teach me how to fish this summer.",
+   "options": [
+    "refines",
+    "intends",
+    "peers"
+   ],
+   "ans": 1,
+   "hint": "Grandpa has a plan to teach me. He intends to."
+  },
+  {
+   "q": "The twins ____ to finish their project before dinner.",
+   "options": [
+    "intend",
+    "disclose",
+    "exclaim"
+   ],
+   "ans": 0,
+   "hint": "The twins plan to finish, so they intend to."
+  },
+  {
+   "q": "We ____ to win the race, so we trained every day.",
+   "options": [
+    "jeer",
+    "progress",
+    "intend"
+   ],
+   "ans": 2,
+   "hint": "We had a plan to win. We intend to win."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "I INTEND to walk the dog after lunch.",
+    "I INTEND the dog a big loud bark.",
+    "The dog INTEND on my red blanket."
+   ],
+   "ans": 0,
+   "hint": "INTEND goes with a plan: I INTEND to walk the dog."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "Sara INTENDS her book a nice blue.",
+    "Sara INTENDS to finish her book this week.",
+    "This book INTENDS under the table."
+   ],
+   "ans": 1,
+   "hint": "Sara has a plan to finish her book."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "The zoo INTEND us a big cold.",
+    "We INTEND to visit the zoo on Friday.",
+    "Friday INTEND the zoo very tall."
+   ],
+   "ans": 1,
+   "hint": "We INTEND to visit means we plan to visit."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "Did you INTEND my pencil quickly?",
+    "My pencil INTEND the table to eat.",
+    "Did you INTEND to take my pencil?"
+   ],
+   "ans": 2,
+   "hint": "Did you INTEND to means: did you plan to?"
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "Max INTENDED to say sorry to his friend.",
+    "Max INTENDED sorry a new, big box.",
+    "His friend INTENDED the sorry floor."
+   ],
+   "ans": 0,
+   "hint": "Max planned to say sorry, so he INTENDED to."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "They INTEND the fence a green sleep.",
+    "The paint INTEND to eat the fence.",
+    "They INTEND to paint the fence green."
+   ],
+   "ans": 2,
+   "hint": "They have a plan to paint the fence."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "I do not INTEND to miss the school play.",
+    "I do not INTEND the school play wet.",
+    "The play does INTEND me to missing."
+   ],
+   "ans": 0,
+   "hint": "I do not INTEND to miss means I do not plan to miss it."
+  },
+  {
+   "q": "Which sentence uses INTEND correctly?",
+   "options": [
+    "Ella INTENDS a tree for her loud lunch.",
+    "Ella INTENDS to plant a tree for Earth Day.",
+    "The tree INTENDS Ella on Earth Day."
+   ],
+   "ans": 1,
+   "hint": "Ella has a plan to plant a tree."
+  },
+  {
+   "q": "Which word is closest in meaning to INTEND?",
+   "options": [
+    "plan",
+    "forget",
+    "tease"
+   ],
+   "ans": 0,
+   "hint": "INTEND and plan mean almost the same."
+  },
+  {
+   "q": "Which words mean almost the same as INTEND?",
+   "options": [
+    "aim to",
+    "run from",
+    "wave at"
+   ],
+   "ans": 0,
+   "hint": "To aim to do something is to INTEND it."
+  },
+  {
+   "q": "“I INTEND to go” is most like “I ____ to go.”",
+   "options": [
+    "plan",
+    "forgot",
+    "hate"
+   ],
+   "ans": 0,
+   "hint": "I plan to go means I INTEND to go."
+  },
+  {
+   "q": "Which word can take the place of INTEND? “We INTEND to camp.”",
+   "options": [
+    "dislike",
+    "plan",
+    "invite"
+   ],
+   "ans": 1,
+   "hint": "We plan to camp means the same thing."
+  },
+  {
+   "q": "Which pair of words are synonyms?",
+   "options": [
+    "intend and jeer",
+    "intend and drab",
+    "intend and plan"
+   ],
+   "ans": 2,
+   "hint": "INTEND and plan both mean to have in mind to do."
+  },
+  {
+   "q": "Which is the best match for INTEND?",
+   "options": [
+    "shout out",
+    "look around",
+    "mean to do"
+   ],
+   "ans": 2,
+   "hint": "To INTEND is to mean to do something."
+  },
+  {
+   "q": "Which is the opposite of INTEND?",
+   "options": [
+    "aim to",
+    "have no plan to",
+    "mean to"
+   ],
+   "ans": 1,
+   "hint": "If you INTEND, you plan. The opposite is having no plan."
+  },
+  {
+   "q": "Sam INTENDS to join the club. Which sentence says the opposite?",
+   "options": [
+    "Sam has no plan to join the club.",
+    "Sam has a plan to join the club.",
+    "Sam is aiming to join the club."
+   ],
+   "ans": 0,
+   "hint": "The opposite of having a plan is having no plan."
+  },
+  {
+   "q": "Which person does NOT INTEND to go to the party?",
+   "options": [
+    "Kim, who has no plan to go",
+    "Lu, who plans to go",
+    "Pat, who aims to go"
+   ],
+   "ans": 0,
+   "hint": "Kim has no plan to go, so she does not INTEND to."
+  },
+  {
+   "q": "Which is the opposite of “I INTEND to try”?",
+   "options": [
+    "I mean to try.",
+    "I have no plan to try.",
+    "I aim to try."
+   ],
+   "ans": 1,
+   "hint": "INTEND means to plan, so the opposite is no plan."
+  },
+  {
+   "q": "Which choice is the opposite of having a plan to do something?",
+   "options": [
+    "to make a plan",
+    "to have no plan at all",
+    "to keep a plan"
+   ],
+   "ans": 1,
+   "hint": "To INTEND is to plan or have in mind; having no plan is the opposite."
+  },
+  {
+   "q": "Which sentence is the opposite of “Leo INTENDS to run in the race”?",
+   "options": [
+    "Leo aims to run in the race.",
+    "Leo will run in the race soon.",
+    "Leo has no plan to run in the race."
+   ],
+   "ans": 2,
+   "hint": "INTENDS means has a plan. The opposite is no plan."
+  },
+  {
+   "q": "Ravi tells his coach, “I INTEND to practice free throws every day.” What is Ravi sharing?",
+   "options": [
+    "His plan",
+    "His lunch",
+    "His score"
+   ],
+   "ans": 0,
+   "hint": "INTEND means plan, so Ravi is sharing his plan."
+  },
+  {
+   "q": "Grandma smells apple pie and says, “I INTEND to have two pieces!” What does she mean?",
+   "options": [
+    "She already ate two.",
+    "She plans to have two.",
+    "She dislikes pie."
+   ],
+   "ans": 1,
+   "hint": "INTEND means plan. Grandma plans to have two pieces."
+  },
+  {
+   "q": "A dog digs by the fence. Kai says, “I think he INTENDS to get out.” What does Kai think?",
+   "options": [
+    "The dog plans to escape.",
+    "The dog is fast asleep.",
+    "The dog is feeling sad."
+   ],
+   "ans": 0,
+   "hint": "Kai thinks the dog has a plan to get out."
+  },
+  {
+   "q": "On the first day of school, Zoe says she INTENDS to make a new friend. What is Zoe doing?",
+   "options": [
+    "Saying goodbye to a friend",
+    "Complaining about homework",
+    "Planning to meet someone"
+   ],
+   "ans": 2,
+   "hint": "Zoe has a plan to make a friend."
+  },
+  {
+   "q": "Dad says, “We INTEND to put up holiday lights on Saturday.” What does that tell you?",
+   "options": [
+    "They plan to do it Saturday.",
+    "They did it last Saturday.",
+    "They will not do it."
+   ],
+   "ans": 0,
+   "hint": "INTEND means plan. The lights are planned for Saturday."
+  },
+  {
+   "q": "Nina holds a board game and says, “I INTEND to win this time!” What does this show?",
+   "options": [
+    "She has already won.",
+    "She has it in mind to win.",
+    "She wants to quit."
+   ],
+   "ans": 1,
+   "hint": "INTEND means to have in mind. Nina plans to win."
+  },
+  {
+   "q": "A bird gathers sticks in a tree. Which sentence shows the bird INTENDS to build a nest?",
+   "options": [
+    "The bird is afraid of the sticks.",
+    "The bird has a plan to make a nest.",
+    "The bird is flying to the sea."
+   ],
+   "ans": 1,
+   "hint": "Gathering sticks fits a plan to build a nest."
+  },
+  {
+   "q": "Omar says, “I INTEND to clean my room after lunch.” What should Omar do after lunch?",
+   "options": [
+    "Leave his room messy",
+    "Clean his room, as planned",
+    "Eat lunch all over again"
+   ],
+   "ans": 1,
+   "hint": "INTEND means plan. Omar plans to clean his room."
+  },
+  {
+   "q": "Is INTEND a noun or a verb?",
+   "options": [
+    "A noun, a naming word",
+    "A verb, an action word",
+    "An adjective, a describing word"
+   ],
+   "ans": 1,
+   "hint": "INTEND is a verb. You INTEND to do something."
+  },
+  {
+   "q": "Which is the past tense of INTEND?",
+   "options": [
+    "intention",
+    "intended",
+    "intenting"
+   ],
+   "ans": 1,
+   "hint": "Add -ed to make the past tense: intended."
+  },
+  {
+   "q": "Pick the form that fits: Pablo ____ to help.",
+   "options": [
+    "intends",
+    "intention",
+    "intentions"
+   ],
+   "ans": 0,
+   "hint": "With Pablo, use the verb intends. Intention is a noun."
+  },
+  {
+   "q": "Which word names the plan or aim itself?",
+   "options": [
+    "intends",
+    "intending",
+    "intention"
+   ],
+   "ans": 2,
+   "hint": "Intention is the noun. It names a plan or aim."
+  }
+ ],
+ "intention": [
+  {
+   "q": "What does INTENTION mean?",
+   "options": [
+    "An aim, plan, or purpose",
+    "A loud shout of joy",
+    "A person who tricks"
+   ],
+   "ans": 0,
+   "hint": "INTENTION means an aim, a plan, or a purpose."
+  },
+  {
+   "q": "Which is the best meaning of INTENTION?",
+   "options": [
+    "What you plan to do",
+    "What you ate for lunch",
+    "Where you sit in class"
+   ],
+   "ans": 0,
+   "hint": "Your INTENTION is what you plan or aim to do."
+  },
+  {
+   "q": "Your INTENTION is the thing you ____.",
+   "options": [
+    "lost last week",
+    "aim to do",
+    "wore to school"
+   ],
+   "ans": 1,
+   "hint": "An INTENTION is an aim or plan."
+  },
+  {
+   "q": "“My INTENTION was to help.” What does INTENTION mean here?",
+   "options": [
+    "mistake",
+    "prize",
+    "plan"
+   ],
+   "ans": 2,
+   "hint": "My plan was to help. INTENTION means plan."
+  },
+  {
+   "q": "Which words mean the same as INTENTION?",
+   "options": [
+    "plan or purpose",
+    "fear or worry",
+    "prize or gift"
+   ],
+   "ans": 0,
+   "hint": "INTENTION means a plan or a purpose."
+  },
+  {
+   "q": "If you tell a friend your INTENTION, you are sharing your ____.",
+   "options": [
+    "plan",
+    "snack",
+    "pencil"
+   ],
+   "ans": 0,
+   "hint": "Your INTENTION is your plan."
+  },
+  {
+   "q": "Which sentence explains the word INTENTION?",
+   "options": [
+    "It is a cheer from a crowd.",
+    "It is the purpose you have in mind.",
+    "It is a very small snack."
+   ],
+   "ans": 1,
+   "hint": "An INTENTION is a purpose you have in mind."
+  },
+  {
+   "q": "INTENTION is a word for a ____.",
+   "options": [
+    "loud noise",
+    "plan or aim",
+    "funny joke"
+   ],
+   "ans": 1,
+   "hint": "INTENTION means a plan or an aim."
+  },
+  {
+   "q": "Her ____ was to make her grandma smile.",
+   "options": [
+    "intention",
+    "scoundrel",
+    "applause"
+   ],
+   "ans": 0,
+   "hint": "Her aim was to make Grandma smile. That is her intention."
+  },
+  {
+   "q": "It was never my ____ to hurt your feelings.",
+   "options": [
+    "progress",
+    "exclamation",
+    "intention"
+   ],
+   "ans": 2,
+   "hint": "It was never my plan or purpose to hurt you."
+  },
+  {
+   "q": "What is your ____ for the science fair?",
+   "options": [
+    "applause",
+    "intention",
+    "jeer"
+   ],
+   "ans": 1,
+   "hint": "Intention means plan. What is your plan?"
+  },
+  {
+   "q": "Jake’s good ____ was to share his snack.",
+   "options": [
+    "intention",
+    "scoundrel",
+    "entire"
+   ],
+   "ans": 0,
+   "hint": "Jake’s purpose was a kind one. That is his intention."
+  },
+  {
+   "q": "The team’s ____ is to win the cup.",
+   "options": [
+    "intention",
+    "jeer",
+    "drab"
+   ],
+   "ans": 0,
+   "hint": "The team’s aim is to win. That is its intention."
+  },
+  {
+   "q": "He had the best of ____ when he baked the cake.",
+   "options": [
+    "intentions",
+    "exclamations",
+    "scoundrels"
+   ],
+   "ans": 0,
+   "hint": "Good intentions means good plans or purposes."
+  },
+  {
+   "q": "Our ____ was to arrive early, but the bus was late.",
+   "options": [
+    "applause",
+    "progress",
+    "intention"
+   ],
+   "ans": 2,
+   "hint": "Our plan was to arrive early. That was our intention."
+  },
+  {
+   "q": "Nora carried the bags with the ____ of helping.",
+   "options": [
+    "jeer",
+    "exclamation",
+    "intention"
+   ],
+   "ans": 2,
+   "hint": "Nora’s purpose was to help. That is her intention."
+  },
+  {
+   "q": "The ____ behind the poster was to teach kids to recycle.",
+   "options": [
+    "exquisite",
+    "intention",
+    "peer"
+   ],
+   "ans": 1,
+   "hint": "The aim behind the poster was to teach. That is the intention."
+  },
+  {
+   "q": "Ana has no ____ of quitting the choir.",
+   "options": [
+    "applause",
+    "intention",
+    "progress"
+   ],
+   "ans": 1,
+   "hint": "Ana has no plan to quit. She has no intention."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "I INTENTION ten books to the sky.",
+    "Ten books INTENTION me very loud.",
+    "My INTENTION is to read ten books this year."
+   ],
+   "ans": 2,
+   "hint": "INTENTION is a noun: my plan is to read ten books."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "She INTENTION to be rude quickly.",
+    "Her INTENTION ran fast to the door.",
+    "It was never her INTENTION to be rude."
+   ],
+   "ans": 2,
+   "hint": "Her plan was never to be rude. That is her INTENTION."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "What is your INTENTION for the school fair?",
+    "The school fair INTENTION very loudly.",
+    "Please INTENTION me the school fair."
+   ],
+   "ans": 0,
+   "hint": "What is your INTENTION asks about your plan."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "We INTENTION the park by the lake.",
+    "Our INTENTION was to clean the park.",
+    "The park INTENTION us to clean."
+   ],
+   "ans": 1,
+   "hint": "Our plan was to clean the park."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "He had good INTENTIONS when he fed the fish.",
+    "He INTENTIONS the fish a snack.",
+    "The fish had INTENTIONED him a net."
+   ],
+   "ans": 0,
+   "hint": "Good INTENTIONS are kind plans or purposes."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "Her INTENTION was to surprise her mom with a card.",
+    "Her mom INTENTION a surprise card to eat.",
+    "Her card INTENTION was blue to mom."
+   ],
+   "ans": 0,
+   "hint": "Her purpose was to surprise her mom."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "The coach INTENTION the team a ball.",
+    "The team INTENTION the coach loud.",
+    "The coach explained his INTENTION to the team."
+   ],
+   "ans": 2,
+   "hint": "The coach told the team his plan, his INTENTION."
+  },
+  {
+   "q": "Which sentence uses INTENTION correctly?",
+   "options": [
+    "I have no INTENTION my project on the shelf.",
+    "I INTENTION no giving up of project.",
+    "I have no INTENTION of giving up on my project."
+   ],
+   "ans": 2,
+   "hint": "No INTENTION of giving up means no plan to give up."
+  },
+  {
+   "q": "Which word is closest in meaning to INTENTION?",
+   "options": [
+    "purpose",
+    "jeer",
+    "crowd"
+   ],
+   "ans": 0,
+   "hint": "INTENTION and purpose mean almost the same."
+  },
+  {
+   "q": "Which word is a synonym for INTENTION?",
+   "options": [
+    "scoundrel",
+    "aim",
+    "cheer"
+   ],
+   "ans": 1,
+   "hint": "An aim is the same as an INTENTION."
+  },
+  {
+   "q": "INTENTION is most like which word?",
+   "options": [
+    "trick",
+    "plan",
+    "prize"
+   ],
+   "ans": 1,
+   "hint": "An INTENTION is a plan."
+  },
+  {
+   "q": "Which word could replace INTENTION? “Her INTENTION was to win.”",
+   "options": [
+    "gift",
+    "fear",
+    "goal"
+   ],
+   "ans": 2,
+   "hint": "Her goal was to win. Goal and INTENTION are alike."
+  },
+  {
+   "q": "Which pair of words has almost the same meaning?",
+   "options": [
+    "intention and applause",
+    "intention and scoundrel",
+    "intention and purpose"
+   ],
+   "ans": 2,
+   "hint": "INTENTION and purpose both mean a plan or aim."
+  },
+  {
+   "q": "Choose the closest match for INTENTION.",
+   "options": [
+    "what you forgot to do",
+    "what you mean to do",
+    "what you cannot see"
+   ],
+   "ans": 1,
+   "hint": "Your INTENTION is what you mean to do."
+  },
+  {
+   "q": "Which word is the opposite of INTENTION?",
+   "options": [
+    "purpose",
+    "accident",
+    "plan"
+   ],
+   "ans": 1,
+   "hint": "An accident happens with no plan, the opposite of an INTENTION."
+  },
+  {
+   "q": "Which happens WITHOUT an INTENTION?",
+   "options": [
+    "A planned surprise",
+    "A goal you set",
+    "A spill by accident"
+   ],
+   "ans": 2,
+   "hint": "An accident has no plan or INTENTION behind it."
+  },
+  {
+   "q": "Which is the opposite of doing something with INTENTION?",
+   "options": [
+    "doing it on purpose",
+    "doing it by accident",
+    "doing it with a plan"
+   ],
+   "ans": 1,
+   "hint": "With INTENTION means on purpose. The opposite is by accident."
+  },
+  {
+   "q": "Kit knocked over the paint, but it was NOT her intention. How did it happen?",
+   "options": [
+    "By accident",
+    "On purpose",
+    "By a plan"
+   ],
+   "ans": 0,
+   "hint": "No INTENTION means no plan, so it was an accident."
+  },
+  {
+   "q": "Which is closest to the OPPOSITE of INTENTION?",
+   "options": [
+    "chance, with no plan",
+    "aim, with a plan",
+    "goal you set"
+   ],
+   "ans": 0,
+   "hint": "An INTENTION has a plan. Chance has none."
+  },
+  {
+   "q": "Which idea is the opposite of having an INTENTION?",
+   "options": [
+    "Having a clear aim",
+    "Having no plan at all",
+    "Having a purpose"
+   ],
+   "ans": 1,
+   "hint": "INTENTION means plan, so no plan is the opposite."
+  },
+  {
+   "q": "Ben says his INTENTION is to be a vet one day. What is Ben telling you?",
+   "options": [
+    "His favorite game",
+    "His lunch order",
+    "His plan for the future"
+   ],
+   "ans": 2,
+   "hint": "INTENTION means plan or aim. Ben shares his plan."
+  },
+  {
+   "q": "Priya dropped a cup. “It was not my INTENTION!” she said. What does she mean?",
+   "options": [
+    "She planned to drop it.",
+    "She wanted to break it.",
+    "She did not mean to do it."
+   ],
+   "ans": 2,
+   "hint": "No INTENTION means she did not plan it."
+  },
+  {
+   "q": "At the holiday party, Uncle Jo says, “My INTENTION is to sing three songs.” What is he sharing?",
+   "options": [
+    "What he just finished",
+    "What he plans to do",
+    "What he is afraid of"
+   ],
+   "ans": 1,
+   "hint": "INTENTION means plan. Uncle Jo plans to sing."
+  },
+  {
+   "q": "Coach asks, “What is your INTENTION for Saturday’s game?” What is she asking?",
+   "options": [
+    "What you ate today",
+    "Who your friend is",
+    "What you plan to do"
+   ],
+   "ans": 2,
+   "hint": "She asks about your plan for the game."
+  },
+  {
+   "q": "A puppy chews a shoe. Lina says, “His INTENTION was only to play.” What is she saying?",
+   "options": [
+    "He was trying to hide.",
+    "He only meant to play.",
+    "He was feeling sleepy."
+   ],
+   "ans": 1,
+   "hint": "INTENTION means purpose. His purpose was to play."
+  },
+  {
+   "q": "Eli’s INTENTION was to win the spelling bee, so he studied each night. What did Eli have?",
+   "options": [
+    "A new pet",
+    "A plan and a goal",
+    "A broken pencil"
+   ],
+   "ans": 1,
+   "hint": "INTENTION means plan or aim. Eli had a goal."
+  },
+  {
+   "q": "Maya saves coins in a jar. Her INTENTION is to buy a kite. Why does she save?",
+   "options": [
+    "To buy a kite",
+    "To hide the jar",
+    "To lose the coins"
+   ],
+   "ans": 0,
+   "hint": "Her aim, her INTENTION, is to buy a kite."
+  },
+  {
+   "q": "Dad says his INTENTION is to make pancakes on Sunday. What will Dad do?",
+   "options": [
+    "Sleep all day Sunday",
+    "Cook pancakes on Sunday",
+    "Wash the car on Monday"
+   ],
+   "ans": 1,
+   "hint": "INTENTION means plan. Dad plans to make pancakes."
+  },
+  {
+   "q": "Is INTENTION a noun or a verb?",
+   "options": [
+    "A verb, an action word",
+    "An adjective, a describing word",
+    "A noun, a naming word"
+   ],
+   "ans": 2,
+   "hint": "INTENTION is a noun. It names a plan or aim."
+  },
+  {
+   "q": "Which word is the verb that goes with INTENTION?",
+   "options": [
+    "intend",
+    "intention",
+    "intentions"
+   ],
+   "ans": 0,
+   "hint": "Intend is the verb. Intention is the noun."
+  },
+  {
+   "q": "Pick the word that fits: It was my ____ to help.",
+   "options": [
+    "intend",
+    "intending",
+    "intention"
+   ],
+   "ans": 2,
+   "hint": "After “my” we need a noun, so use intention."
+  },
+  {
+   "q": "Which sentence uses the plural form, INTENTIONS?",
+   "options": [
+    "Her INTENTIONS were good and kind.",
+    "She INTENTIONS the kind hat.",
+    "Kind INTENTIONS her to go."
+   ],
+   "ans": 0,
+   "hint": "INTENTIONS is plural. It means more than one plan or aim."
+  }
+ ]
+}

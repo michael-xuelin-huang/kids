@@ -1,0 +1,1006 @@
+{
+ "applaud": [
+  {
+   "q": "What does APPLAUD mean?",
+   "options": [
+    "To show approval by clapping",
+    "To make an angry noise",
+    "To walk away quietly"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To show approval by clapping\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "If you APPLAUD a performer, you...",
+   "options": [
+    "ask them to stop",
+    "clap to show you liked it",
+    "write down their name"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"clap to show you liked it\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which meaning matches APPLAUD?",
+   "options": [
+    "tell a secret to a friend",
+    "build something with blocks",
+    "show approval, often by clapping"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"show approval, often by clapping\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which action is the same as to APPLAUD?",
+   "options": [
+    "Clapping your hands for a winner",
+    "Hiding behind a door",
+    "Folding a paper plane"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Clapping your hands for a winner\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "To APPLAUD is to do what?",
+   "options": [
+    "Run past someone fast",
+    "Cheer and clap for someone",
+    "Draw a picture of someone"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Cheer and clap for someone\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "When people APPLAUD, what do their hands do?",
+   "options": [
+    "Hold a pencil",
+    "Cover their ears",
+    "Clap together"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Clap together\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which is the best meaning of the verb APPLAUD?",
+   "options": [
+    "to show you approve of something",
+    "to feel tired after a long day",
+    "to find a lost toy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to show you approve of something\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "A teacher says, \"Let's APPLAUD our helper.\" What does she want?",
+   "options": [
+    "Hide our helper",
+    "Clap to show we approve",
+    "Give our helper homework"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Clap to show we approve\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "The crowd stood up to ____ the brave firefighter.",
+   "options": [
+    "jeer",
+    "disclose",
+    "applaud"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "We will ____ when the choir finishes the song.",
+   "options": [
+    "applaud",
+    "peer",
+    "refine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "\"Please ____ for our spelling bee winner!\" said Mr. Lee.",
+   "options": [
+    "drab",
+    "applaud",
+    "uneasy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Everyone began to ____ after Mia's speech.",
+   "options": [
+    "disclose",
+    "progress",
+    "applaud"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "It is polite to ____ at the end of a play.",
+   "options": [
+    "applaud",
+    "peer",
+    "refine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "The fans ____ their team for winning the big game.",
+   "options": [
+    "peered",
+    "applauded",
+    "disclosed"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applauded\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Grandma will ____ when I finish my piano piece.",
+   "options": [
+    "crafty",
+    "entire",
+    "applaud"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "After the magic trick, the kids began to ____ loudly.",
+   "options": [
+    "applaud",
+    "refine",
+    "disclose"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "We always ____ for the winner of the race.",
+   "options": [
+    "peer",
+    "applaud",
+    "intend"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "The audience stood to ____ the dancers.",
+   "options": [
+    "uneasy",
+    "drab",
+    "applaud"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "The students applaud when the show ends.",
+    "The tree will applaud the cold rain.",
+    "My lunch applauded in the bag."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The students applaud when the show ends.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "The snow applauded down on the roof.",
+    "We applaud the runner who crossed the line first.",
+    "Jake applauded his bike to the park."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"We applaud the runner who crossed the line first.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "The clock applauds under the bed.",
+    "She applauded a book onto the shelf.",
+    "Parents applaud at the end of the school play."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Parents applaud at the end of the school play.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "Everyone began to applaud the kind helper.",
+    "The helper applauded the floor with soap.",
+    "We applaud the mud into a bucket."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Everyone began to applaud the kind helper.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "The goalie applauded the ball into a box.",
+    "The fans applauded when the goalie saved the ball.",
+    "The fans applaud a long, thin pencil."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The fans applauded when the goalie saved the ball.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "Let us applaud the milk to the store.",
+    "Let us applaud under the blue chair.",
+    "Let us applaud the winners of the race."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Let us applaud the winners of the race.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "I like to applaud my friends when they do well.",
+    "I like to applaud my crayons with a cup.",
+    "I like to applaud on the kitchen door."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"I like to applaud my friends when they do well.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUD correctly?",
+   "options": [
+    "The magician will applaud his coat on a hook.",
+    "The audience will applaud the magician's trick.",
+    "The audience will applaud the cold in a drawer."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The audience will applaud the magician's trick.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which phrase is closest in meaning to APPLAUD?",
+   "options": [
+    "run from",
+    "think about",
+    "clap for"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"clap for\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which word is closest in meaning to APPLAUD?",
+   "options": [
+    "cheer",
+    "sleep",
+    "whisper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"cheer\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which word means almost the same as APPLAUD?",
+   "options": [
+    "forget",
+    "praise",
+    "hide"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"praise\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which is another way to say APPLAUD?",
+   "options": [
+    "stare at",
+    "cut out",
+    "cheer for"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cheer for\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "APPLAUD goes best with which phrase?",
+   "options": [
+    "clap for",
+    "look for",
+    "wait for"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clap for\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which phrase is closest to \"APPLAUD the winner\"?",
+   "options": [
+    "race the winner",
+    "cheer for the winner",
+    "forget the winner"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"cheer for the winner\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which phrase is the opposite of APPLAUD?",
+   "options": [
+    "cheer for",
+    "clap for",
+    "jeer at"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"jeer at\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which word is the opposite of APPLAUD?",
+   "options": [
+    "jeer",
+    "exclaim",
+    "refine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"jeer\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which action is the OPPOSITE of to APPLAUD?",
+   "options": [
+    "to clap and cheer",
+    "to boo and mock",
+    "to smile and wave"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to boo and mock\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which phrase is the opposite of APPLAUD?",
+   "options": [
+    "praise",
+    "thank",
+    "make fun of"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"make fun of\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which pair has opposite meanings?",
+   "options": [
+    "applaud and jeer",
+    "applaud and cheer",
+    "applaud and praise"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applaud and jeer\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "The word jeer is the opposite of which word?",
+   "options": [
+    "refine",
+    "applaud",
+    "crafty"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applaud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Parents clap and cheer when Sam scores a goal. What are they doing?",
+   "options": [
+    "Peering at the grass",
+    "Disclosing a secret",
+    "Applauding the goal"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Applauding the goal\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "At the school concert, how could you APPLAUD the band?",
+   "options": [
+    "Clap your hands",
+    "Fall asleep",
+    "Leave early"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Clap your hands\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Lily finishes her book report and her class claps. What did the class do?",
+   "options": [
+    "jeered at Lily",
+    "applauded Lily",
+    "forgot Lily"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applauded Lily\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "At the zoo show, the seals do tricks. How could kids APPLAUD?",
+   "options": [
+    "Feed the seals",
+    "Draw a map",
+    "Clap and cheer"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Clap and cheer\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Your friend wins first place at the art fair. Which shows you APPLAUD her?",
+   "options": [
+    "Clap and say \"Great job!\"",
+    "Say her art is bad",
+    "Walk away"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Clap and say \"Great job!\"\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "On the last day, the class wants to APPLAUD the bus driver. What might they do?",
+   "options": [
+    "Hide her keys",
+    "Clap and cheer for her",
+    "Count the seats"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Clap and cheer for her\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "At the holiday show, the kids finish their song and the crowd APPLAUDS. What does the crowd do?",
+   "options": [
+    "Leaves to buy food",
+    "Covers their ears",
+    "Claps to show they liked it"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Claps to show they liked it\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Grandpa APPLAUDED when I rode my bike without help. What did Grandpa do?",
+   "options": [
+    "Clapped to show he was proud",
+    "Took my bike away",
+    "Looked for his glasses"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Clapped to show he was proud\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Is APPLAUD a noun or a verb?",
+   "options": [
+    "a noun",
+    "a verb",
+    "an adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a verb\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which sentence has the verb APPLAUD in it?",
+   "options": [
+    "The applause was very loud.",
+    "She heard the loud cheering.",
+    "The kids applaud the band."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The kids applaud the band.\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which word is the noun that goes with APPLAUD?",
+   "options": [
+    "applause",
+    "applauded",
+    "applauding"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". To applaud is to show approval, especially by clapping."
+  },
+  {
+   "q": "Which word fits? Yesterday, we ____ for the band.",
+   "options": [
+    "applause",
+    "applauded",
+    "applauding"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applauded\". To applaud is to show approval, especially by clapping."
+  }
+ ],
+ "applause": [
+  {
+   "q": "What does APPLAUSE mean?",
+   "options": [
+    "A quiet rest after lunch",
+    "Cheering or clapping to show you liked something",
+    "A prize given to the winner"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Cheering or clapping to show you liked something\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "APPLAUSE is...",
+   "options": [
+    "the sound of rain on a roof",
+    "a kind of loud toy",
+    "the sound of people clapping and cheering"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the sound of people clapping and cheering\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which best explains APPLAUSE?",
+   "options": [
+    "Approval shown by clapping",
+    "A fear of loud places",
+    "A list of class rules"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Approval shown by clapping\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "When you hear APPLAUSE, what are people doing?",
+   "options": [
+    "Whispering secrets",
+    "Clapping and cheering",
+    "Reading quietly"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Clapping and cheering\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "What is APPLAUSE a way to show?",
+   "options": [
+    "That you are lost",
+    "That you are sleepy",
+    "That you enjoyed something"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"That you enjoyed something\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "A teacher says, \"Give them a big round of APPLAUSE!\" She wants you to...",
+   "options": [
+    "clap for them",
+    "tell them to sit",
+    "pass out paper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clap for them\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which meaning fits APPLAUSE?",
+   "options": [
+    "The act of packing a bag",
+    "The showing of enjoyment by cheering",
+    "The shape of a round table"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The showing of enjoyment by cheering\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "If there is loud APPLAUSE after a show, the audience...",
+   "options": [
+    "was lost",
+    "was asleep",
+    "liked the show"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"liked the show\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "The ____ filled the room when the band finished.",
+   "options": [
+    "applause",
+    "progress",
+    "intention"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Her song earned a huge ____ from the crowd.",
+   "options": [
+    "scoundrel",
+    "applause",
+    "intention"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "A big ____ rose from the seats when the team won.",
+   "options": [
+    "peer",
+    "disclose",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "The actors bowed as the ____ grew louder.",
+   "options": [
+    "applause",
+    "crafty",
+    "entire"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Everyone gave the winner a round of ____.",
+   "options": [
+    "refine",
+    "applause",
+    "progress"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "We heard ____ coming from the gym.",
+   "options": [
+    "vain",
+    "drab",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "The loud ____ made the shy boy smile.",
+   "options": [
+    "applause",
+    "intend",
+    "drab"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "After her poem, there was a burst of ____.",
+   "options": [
+    "disclose",
+    "applause",
+    "peer"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "The singer waved at the ____ of the happy fans.",
+   "options": [
+    "exquisite",
+    "refined",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "____ is what the crowd gives when it likes a show.",
+   "options": [
+    "Applause",
+    "Scoundrel",
+    "Intention"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "The applause ate a sandwich at lunch.",
+    "The applause after the concert was very loud.",
+    "I put the applause in my backpack."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The applause after the concert was very loud.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "We sat on the applause by the door.",
+    "Please pour the applause into my cup.",
+    "We gave the clown a big round of applause."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"We gave the clown a big round of applause.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "Applause rang out when the runner won.",
+    "Applause grew in the garden last week.",
+    "The applause was cut into four squares."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Applause rang out when the runner won.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "The cat painted its applause blue.",
+    "The students earned applause for their play.",
+    "My shoes are made of applause and glue."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The students earned applause for their play.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "Mom wore the applause on her hand.",
+    "Mom baked the applause in the oven.",
+    "Mom heard the applause from the hall."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Mom heard the applause from the hall.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "Soft applause came from the small group.",
+    "I tied my applause to a kite string.",
+    "The applause jumped over the fence."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Soft applause came from the small group.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "He drank applause from a tall glass.",
+    "Her joke got applause and big smiles.",
+    "The bus drove over the applause."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Her joke got applause and big smiles.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence uses APPLAUSE correctly?",
+   "options": [
+    "The band tied the applause to a tree.",
+    "The band cooked a pot of applause.",
+    "The band bowed to thank the crowd for the applause."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The band bowed to thank the crowd for the applause.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which is closest in meaning to APPLAUSE?",
+   "options": [
+    "clapping and cheering",
+    "whispering",
+    "sleeping"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clapping and cheering\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which word is closest in meaning to APPLAUSE?",
+   "options": [
+    "frowns",
+    "cheers",
+    "naps"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"cheers\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which is another word for APPLAUSE?",
+   "options": [
+    "yawning",
+    "mumbling",
+    "clapping"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"clapping\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which is most like APPLAUSE?",
+   "options": [
+    "a cheer from the crowd",
+    "a hush in the library",
+    "a puddle on the road"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a cheer from the crowd\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "APPLAUSE goes with which pair of words?",
+   "options": [
+    "snoring, sleeping",
+    "clapping, cheering",
+    "digging, planting"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"clapping, cheering\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which means almost the same as a \"round of APPLAUSE\"?",
+   "options": [
+    "a round of homework",
+    "a round of whispers",
+    "a round of clapping"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a round of clapping\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which word is the opposite of APPLAUSE?",
+   "options": [
+    "jeers",
+    "cheers",
+    "praise"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"jeers\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which is the opposite of APPLAUSE?",
+   "options": [
+    "clapping and smiles",
+    "boos and rude shouting",
+    "happy cheers"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"boos and rude shouting\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which pair has opposite meanings?",
+   "options": [
+    "applause and cheers",
+    "applause and clapping",
+    "applause and jeers"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause and jeers\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which is the opposite of getting APPLAUSE?",
+   "options": [
+    "Hearing rude shouts and boos",
+    "Hearing loud claps",
+    "Hearing happy cheers"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Hearing rude shouts and boos\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "What would a mean crowd give instead of APPLAUSE?",
+   "options": [
+    "happy cheers",
+    "mocking cries",
+    "loud claps"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"mocking cries\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "The word jeers is the opposite of which word?",
+   "options": [
+    "exclamation",
+    "intention",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "After the school play, the room fills with clapping. What is that sound called?",
+   "options": [
+    "applause",
+    "a whisper",
+    "a snore"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "At the soccer game, parents clap loudly for the goal. What do they give the team?",
+   "options": [
+    "homework",
+    "applause",
+    "a ticket"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Ben finishes his solo and the audience claps. What did Ben get?",
+   "options": [
+    "a haircut",
+    "a map",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "At the talent show, the crowd cheers and claps. What is the crowd giving?",
+   "options": [
+    "applause",
+    "directions",
+    "snacks"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Why did the dancers smile at the end of the show?",
+   "options": [
+    "They lost their shoes",
+    "They heard the crowd's applause",
+    "They saw it start to rain"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"They heard the crowd's applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "At the holiday concert, the choir sings. What does the crowd give when it likes the song?",
+   "options": [
+    "a frown",
+    "a sneeze",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "The circus clown bows and the kids clap. The clapping is called what?",
+   "options": [
+    "applause",
+    "a trick",
+    "a costume"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which would you hear in a gym after a winning goal?",
+   "options": [
+    "a quiet snore",
+    "loud applause",
+    "a soft lullaby"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"loud applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Is APPLAUSE a noun or a verb?",
+   "options": [
+    "a verb",
+    "an adjective",
+    "a noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a noun\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which sentence has the noun APPLAUSE in it?",
+   "options": [
+    "The applause was warm and loud.",
+    "The kids applaud the band.",
+    "Please clap for them."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The applause was warm and loud.\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Which word is the verb form of APPLAUSE?",
+   "options": [
+    "applaused",
+    "applaud",
+    "applausing"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"applaud\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  },
+  {
+   "q": "Pick the right word: The crowd gave a loud ____.",
+   "options": [
+    "applaud",
+    "applauded",
+    "applause"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"applause\". Applause is the showing of approval or enjoyment by cheering or clapping."
+  }
+ ]
+}

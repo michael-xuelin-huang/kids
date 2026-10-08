@@ -1,0 +1,1006 @@
+{
+ "scoundrel": [
+  {
+   "q": "What does SCOUNDREL mean?",
+   "options": [
+    "a mean or wicked person",
+    "a happy singer",
+    "a very fast runner"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a mean or wicked person\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "A SCOUNDREL is a person who is...",
+   "options": [
+    "mean and wicked",
+    "tired and sleepy",
+    "gentle and kind"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"mean and wicked\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Which person is a SCOUNDREL?",
+   "options": [
+    "a boy who feeds the ducks",
+    "a girl who shares her lunch",
+    "a man who cheats and lies to get money"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a man who cheats and lies to get money\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "If a story calls a character a SCOUNDREL, he is...",
+   "options": [
+    "the bad guy",
+    "the hero",
+    "the funny helper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"the bad guy\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "A SCOUNDREL is a kind of...",
+   "options": [
+    "snack",
+    "person",
+    "weather"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"person\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "SCOUNDREL is a word for someone who...",
+   "options": [
+    "plays the drums",
+    "does wicked things",
+    "wins every race"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"does wicked things\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Which word describes a SCOUNDREL best?",
+   "options": [
+    "friendly",
+    "shy",
+    "wicked"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wicked\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Which sign shows someone is a SCOUNDREL?",
+   "options": [
+    "he tricks others to get what he wants",
+    "he says thank you",
+    "he waits his turn in line"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"he tricks others to get what he wants\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "What would a SCOUNDREL most likely do?",
+   "options": [
+    "help carry groceries",
+    "pick up trash at the park",
+    "play a mean trick on someone"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"play a mean trick on someone\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "In a fairy tale, a SCOUNDREL might...",
+   "options": [
+    "steal the king's golden crown",
+    "bake cookies for the whole town",
+    "rescue a kitten from a tree"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"steal the king's golden crown\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Which word means almost the same as SCOUNDREL?",
+   "options": [
+    "villain",
+    "hero",
+    "neighbor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"villain\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Another word for SCOUNDREL is...",
+   "options": [
+    "best friend",
+    "bad guy",
+    "helper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"bad guy\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "SCOUNDREL is closest in meaning to...",
+   "options": [
+    "brave soldier",
+    "polite guest",
+    "wicked person"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wicked person\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Which word goes with SCOUNDREL?",
+   "options": [
+    "champion",
+    "crook",
+    "princess"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"crook\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Which pair of words has the SAME meaning?",
+   "options": [
+    "scoundrel, friend",
+    "scoundrel, hero",
+    "scoundrel, villain"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel, villain\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Which is the OPPOSITE of a SCOUNDREL?",
+   "options": [
+    "a wicked villain",
+    "a kind hero",
+    "a sneaky crook"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a kind hero\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "A SCOUNDREL is the opposite of a...",
+   "options": [
+    "bad guy",
+    "mean bully",
+    "good neighbor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"good neighbor\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Which character is NOT a SCOUNDREL?",
+   "options": [
+    "a liar who tricks the king",
+    "a thief who robs the bakery",
+    "a knight who protects the village"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a knight who protects the village\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Which word is the OPPOSITE of SCOUNDREL?",
+   "options": [
+    "hero",
+    "villain",
+    "trickster"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"hero\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Which child is the opposite of a SCOUNDREL?",
+   "options": [
+    "Max, who steals other kids' crayons",
+    "Mia, who always tells the truth and shares",
+    "Zoe, who tricks kids in games"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Mia, who always tells the truth and shares\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "In the cartoon, Captain Grim stole the town's treasure and laughed. What is he?",
+   "options": [
+    "a helper",
+    "a hero",
+    "a scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "A man sold fake tickets to the fair and kept the money. What kind of person is he?",
+   "options": [
+    "a hero",
+    "a scoundrel",
+    "a champion"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Fox tricked Hen and ate her eggs. Fox is a...",
+   "options": [
+    "kind helper",
+    "good friend",
+    "scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Dex pushed a little kid and took his lunch money. Dex is acting like a...",
+   "options": [
+    "good sport",
+    "hero",
+    "scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "The new neighbor lied to everyone and took their mail. The kids called him a...",
+   "options": [
+    "star",
+    "scoundrel",
+    "sweetheart"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "In the puppet show, a sneaky man steals the baker's pie and blames the cat. The kids boo because he is...",
+   "options": [
+    "a scoundrel",
+    "a hero",
+    "a baker's helper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "A pirate in a movie cheats his crew and hides the gold. He is a...",
+   "options": [
+    "scoundrel",
+    "loyal friend",
+    "gentle gardener"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Which of these characters could be called a SCOUNDREL?",
+   "options": [
+    "a puppy who learns to sit",
+    "a wolf who tricks pigs and wrecks their houses",
+    "a wolf who guards the sheep"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a wolf who tricks pigs and wrecks their houses\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "A boy opened the class hamster's cage on purpose to be mean. What could you call him?",
+   "options": [
+    "a hero",
+    "a helper",
+    "a scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "A player cheated in the game and blamed his teammate. Which fits him best?",
+   "options": [
+    "hero",
+    "scoundrel",
+    "good sport"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "The ____ stole the baker's pie and ran off.",
+   "options": [
+    "rainbow",
+    "scoundrel",
+    "pillow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "In the story, the ____ tricked the villagers out of their gold.",
+   "options": [
+    "mitten",
+    "scoundrel",
+    "sandwich"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Everyone was glad when the police caught the ____.",
+   "options": [
+    "cookie",
+    "balloon",
+    "scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Only a ____ would cheat at a board game and then laugh about it.",
+   "options": [
+    "scoundrel",
+    "kind helper",
+    "good friend"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "The three ____ sneaked into the castle to steal the jewels.",
+   "options": [
+    "cupcakes",
+    "scoundrels",
+    "pillows"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrels\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "The sheriff chased the ____ all over town.",
+   "options": [
+    "apple",
+    "cloud",
+    "scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Mom said, \"Don't be a ____ and trick your little brother.\"",
+   "options": [
+    "scoundrel",
+    "sleepyhead",
+    "hero"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "That ____ lied to us and took our ball.",
+   "options": [
+    "rainbow",
+    "crowd",
+    "scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "The ____ in the fairy tale locked the kind princess in a tower.",
+   "options": [
+    "scoundrel",
+    "hero",
+    "fairy godmother"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "\"You lying, cheating ____!\" shouted the knight.",
+   "options": [
+    "scoundrel",
+    "pumpkin",
+    "notebook"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "The ____ pretended to be a friend, but he really wanted to steal our map.",
+   "options": [
+    "hero",
+    "scoundrel",
+    "pillow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Nobody trusted the ____ because he always lied.",
+   "options": [
+    "helper",
+    "sunshine",
+    "scoundrel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "That ____ told a fib and let his friend take the blame.",
+   "options": [
+    "good pal",
+    "scoundrel",
+    "brave knight"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "The wicked ____ in the comic book wanted to freeze the whole city.",
+   "options": [
+    "bunny",
+    "scoundrel",
+    "hero"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "The ____ hid the stolen cookies in his hat.",
+   "options": [
+    "crossing guard",
+    "scoundrel",
+    "librarian"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"scoundrel\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Which sentence uses SCOUNDREL correctly?",
+   "options": [
+    "The scoundrel tricked the old lady and took her money.",
+    "We swam in the scoundrel at the lake.",
+    "The scoundrel was a yummy red apple."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The scoundrel tricked the old lady and took her money.\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Which sentence uses SCOUNDREL correctly?",
+   "options": [
+    "The kids booed the scoundrel who stole the pie.",
+    "We had a scoundrel for dessert.",
+    "She put her scoundrel on and zipped it up."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The kids booed the scoundrel who stole the pie.\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  },
+  {
+   "q": "Which sentence is right?",
+   "options": [
+    "That scoundrel broke the rules and lied to everyone.",
+    "My sleepy kitten curled up in the scoundrel.",
+    "I drew a scoundrel with my blue crayon, so it is purple."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"That scoundrel broke the rules and lied to everyone.\". A scoundrel is a wicked person who does mean things."
+  },
+  {
+   "q": "Which sentence shows a scoundrel?",
+   "options": [
+    "The girl waved at her grandma.",
+    "The nurse smiled and helped the boy.",
+    "The cheating thief grinned as he swiped the pie."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The cheating thief grinned as he swiped the pie.\". A scoundrel is a mean or wicked person."
+  },
+  {
+   "q": "Which sentence uses SCOUNDRELS correctly?",
+   "options": [
+    "The scoundrels stole the farmer's sheep.",
+    "The scoundrels were three delicious sandwiches.",
+    "The scoundrels rained down all day long."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The scoundrels stole the farmer's sheep.\". Scoundrel means a mean or wicked person, like a villain who tricks others."
+  }
+ ],
+ "uneasy": [
+  {
+   "q": "What does UNEASY mean?",
+   "options": [
+    "very sleepy",
+    "worried or nervous",
+    "super hungry"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"worried or nervous\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "If you feel UNEASY, you feel...",
+   "options": [
+    "very proud",
+    "not comfortable",
+    "full of energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"not comfortable\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Which feeling is UNEASY?",
+   "options": [
+    "a silly, giggly feeling",
+    "a hungry, grumbly feeling",
+    "a nervous, worried feeling"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a nervous, worried feeling\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "UNEASY is a word that tells about...",
+   "options": [
+    "what someone eats",
+    "where someone lives",
+    "how someone feels"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"how someone feels\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Which kid looks UNEASY?",
+   "options": [
+    "a boy biting his nails before a big test",
+    "a boy snoring in bed",
+    "a girl laughing at a joke"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a boy biting his nails before a big test\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Someone who is UNEASY might...",
+   "options": [
+    "fidget and look around nervously",
+    "skip happily down the hall",
+    "sing loudly in the shower"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"fidget and look around nervously\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Which kind of word is UNEASY?",
+   "options": [
+    "a word that describes a feeling",
+    "a word for a place",
+    "a word for a sound"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a word that describes a feeling\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "When someone is UNEASY, their face may look...",
+   "options": [
+    "proud",
+    "worried",
+    "delighted"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"worried\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Which words go with UNEASY?",
+   "options": [
+    "nervous and worried",
+    "calm and happy",
+    "silly and wild"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"nervous and worried\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Which word means almost the same as UNEASY?",
+   "options": [
+    "joyful",
+    "nervous",
+    "sleepy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"nervous\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Another word for UNEASY is...",
+   "options": [
+    "calm",
+    "proud",
+    "worried"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"worried\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "UNEASY is closest in meaning to...",
+   "options": [
+    "cheerful and bouncy",
+    "bothered and nervous",
+    "tired and sleepy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"bothered and nervous\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Which pair of words means the same?",
+   "options": [
+    "uneasy, calm",
+    "uneasy, nervous",
+    "uneasy, cozy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasy, nervous\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Which word best matches UNEASY?",
+   "options": [
+    "comfy",
+    "peaceful",
+    "jittery"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"jittery\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Which is the OPPOSITE of UNEASY?",
+   "options": [
+    "nervous",
+    "calm",
+    "worried"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"calm\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "The opposite of UNEASY is...",
+   "options": [
+    "scared",
+    "relaxed",
+    "troubled"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"relaxed\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Which word is the opposite of UNEASY?",
+   "options": [
+    "comfortable",
+    "jumpy",
+    "fearful"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"comfortable\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Which kid is NOT uneasy?",
+   "options": [
+    "Ava, who is worried about the storm",
+    "Sam, who is shaking before his speech",
+    "Lily, who is calm and happy in her cozy bed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Lily, who is calm and happy in her cozy bed\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Which is the opposite of feeling UNEASY?",
+   "options": [
+    "feeling worried and shaky",
+    "feeling safe and at ease",
+    "feeling nervous and tense"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"feeling safe and at ease\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "UNEASY is the opposite of...",
+   "options": [
+    "shaky",
+    "afraid",
+    "comfortable"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"comfortable\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Ben's stomach felt funny before the big test. How did he feel?",
+   "options": [
+    "calm",
+    "uneasy",
+    "bored"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasy\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Mia heard strange noises in the dark hallway during the sleepover. She felt...",
+   "options": [
+    "bored",
+    "proud",
+    "uneasy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasy\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "On the first day at a new school, Jack didn't know anyone. He felt...",
+   "options": [
+    "uneasy",
+    "relaxed",
+    "stuffed"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Thunder boomed and the lights flickered. Lola hugged her bear and felt...",
+   "options": [
+    "cheerful",
+    "comfortable",
+    "uneasy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasy\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Our dog paced and whined when the fireworks started. He seemed...",
+   "options": [
+    "uneasy",
+    "relaxed",
+    "sleepy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Sam waited at the dentist and his hands got sweaty. He was...",
+   "options": [
+    "uneasy",
+    "peaceful",
+    "thrilled"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Kayla was lost in the store for a minute and her heart pounded. She felt...",
+   "options": [
+    "uneasy",
+    "silly",
+    "calm"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Why might a kid feel UNEASY?",
+   "options": [
+    "She has to sing alone in front of the school.",
+    "She is eating her favorite ice cream.",
+    "She is napping in a hammock."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"She has to sing alone in front of the school.\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "What might make you feel UNEASY at night?",
+   "options": [
+    "a soft, warm blanket",
+    "a creaky noise you can't explain",
+    "a bedtime story"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a creaky noise you can't explain\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Noah is about to try out for the baseball team and his knees feel wobbly. His feeling is...",
+   "options": [
+    "uneasy",
+    "sleepy",
+    "peaceful"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Grandpa's plane was late and Mom kept checking the clock. How did she feel?",
+   "options": [
+    "carefree",
+    "delighted",
+    "uneasy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasy\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Rosa felt ____ when the thunder got louder.",
+   "options": [
+    "proud",
+    "uneasy",
+    "drab"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasy\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "He glanced ____ at the dark closet.",
+   "options": [
+    "greedily",
+    "cheerfully",
+    "uneasily"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasily\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "The goalie shifted ____ as the other team ran toward the net.",
+   "options": [
+    "lazily",
+    "uneasily",
+    "gladly"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasily\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "A feeling of ____ crept over me when I heard footsteps behind me.",
+   "options": [
+    "pizza",
+    "uneasiness",
+    "laughter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasiness\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "I felt some ____ about riding the tall roller coaster.",
+   "options": [
+    "soup",
+    "uneasiness",
+    "applause"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasiness\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "The new puppy was ____ in the car and kept whining.",
+   "options": [
+    "drab",
+    "vain",
+    "uneasy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasy\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Max sat ____ on the edge of his chair, waiting for his name.",
+   "options": [
+    "sweetly",
+    "proudly",
+    "uneasily"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasily\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Everyone in the dark cave felt ____.",
+   "options": [
+    "uneasy",
+    "sunny",
+    "cozy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Her ____ grew as the storm got closer.",
+   "options": [
+    "sandwich",
+    "crayon",
+    "uneasiness"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasiness\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "I get ____ when I have to talk in front of the whole class.",
+   "options": [
+    "uneasy",
+    "delighted",
+    "sunny"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "The cat watched the big dog ____ and backed away slowly.",
+   "options": [
+    "sleepily",
+    "joyfully",
+    "uneasily"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasily\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Tia felt ____ when she couldn't find her mom in the crowd.",
+   "options": [
+    "uneasy",
+    "drab",
+    "content"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "He tapped his foot ____ while waiting for the test results.",
+   "options": [
+    "gladly",
+    "uneasily",
+    "sweetly"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"uneasily\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "My ____ went away when Dad turned on the light.",
+   "options": [
+    "backpack",
+    "umbrella",
+    "uneasiness"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"uneasiness\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "The class grew ____ as the teacher read the scary part of the story.",
+   "options": [
+    "uneasy",
+    "silly",
+    "hungry"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"uneasy\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Which sentence uses UNEASY correctly?",
+   "options": [
+    "We ate an uneasy pizza for lunch.",
+    "I felt uneasy when the lights went out.",
+    "The uneasy cookie was warm and sweet."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"I felt uneasy when the lights went out.\". If you feel uneasy, you are worried or nervous."
+  },
+  {
+   "q": "Which sentence uses UNEASILY correctly?",
+   "options": [
+    "He uneasily the ball across the field.",
+    "The uneasily cake was in the oven.",
+    "She looked uneasily at the barking dog."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"She looked uneasily at the barking dog.\". Uneasy is a worried, nervous feeling, the opposite of calm."
+  },
+  {
+   "q": "Which sentence uses UNEASINESS correctly?",
+   "options": [
+    "Kyle's uneasiness grew as he waited for the doctor.",
+    "Kyle uneasiness the door and went in.",
+    "Kyle ate his uneasiness with a spoon."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Kyle's uneasiness grew as he waited for the doctor.\". Uneasy means not comfortable, worried, or nervous."
+  },
+  {
+   "q": "Which sentence shows someone who is UNEASY?",
+   "options": [
+    "Pam chewed her lip and kept checking the door.",
+    "Pam grinned and danced with her friends.",
+    "Pam hummed and swung in the hammock."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Pam chewed her lip and kept checking the door.\". If you feel uneasy, you are worried or nervous."
+  }
+ ]
+}

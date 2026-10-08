@@ -1,0 +1,1006 @@
+{
+ "peer": [
+  {
+   "q": "What does PEER mean in \"She will PEER into the dark cave\"?",
+   "options": [
+    "look closely to see",
+    "shout very loudly",
+    "run away fast"
+   ],
+   "ans": 0,
+   "hint": "To PEER is to look closely, especially when it is hard to see."
+  },
+  {
+   "q": "To PEER at something means to ____.",
+   "options": [
+    "throw it away",
+    "look at it carefully",
+    "paint it red"
+   ],
+   "ans": 1,
+   "hint": "PEER means to look closely at something."
+  },
+  {
+   "q": "Which meaning matches the verb PEER?",
+   "options": [
+    "to talk in a silly voice",
+    "to jump over a puddle",
+    "to look hard at something that is hard to see"
+   ],
+   "ans": 2,
+   "hint": "PEER is about using your eyes carefully."
+  },
+  {
+   "q": "If you PEER at a tiny ant, what are you doing?",
+   "options": [
+    "looking at it closely",
+    "feeding it a crumb",
+    "singing to it"
+   ],
+   "ans": 0,
+   "hint": "PEER means to look closely."
+  },
+  {
+   "q": "Which phrase best explains PEER?",
+   "options": [
+    "walk slowly in the rain",
+    "look carefully when it is hard to see",
+    "clap for a winner"
+   ],
+   "ans": 1,
+   "hint": "Think of narrowing your eyes to see better."
+  },
+  {
+   "q": "When someone PEERS through foggy glass, they ____.",
+   "options": [
+    "wash the window",
+    "close their eyes",
+    "try to see by looking hard"
+   ],
+   "ans": 2,
+   "hint": "PEER means to look hard to see something."
+  },
+  {
+   "q": "The word PEER (a verb) is about which part of your body?",
+   "options": [
+    "your eyes",
+    "your feet",
+    "your ears"
+   ],
+   "ans": 0,
+   "hint": "PEER is a way of looking."
+  },
+  {
+   "q": "What does it mean when Ben PEERED at the map?",
+   "options": [
+    "He folded it up",
+    "He looked at it closely",
+    "He tore it"
+   ],
+   "ans": 1,
+   "hint": "PEERED means looked closely."
+  },
+  {
+   "q": "The boy ____ through the keyhole to see the surprise.",
+   "options": [
+    "jeered",
+    "applauded",
+    "peered"
+   ],
+   "ans": 2,
+   "hint": "He looked closely, so PEERED fits."
+  },
+  {
+   "q": "Grandpa had to ____ at the tiny writing on the box.",
+   "options": [
+    "peer",
+    "applaud",
+    "disclose"
+   ],
+   "ans": 0,
+   "hint": "You look closely at tiny writing."
+  },
+  {
+   "q": "We ____ into the pond to spot the fish.",
+   "options": [
+    "refined",
+    "peered",
+    "disclosed"
+   ],
+   "ans": 1,
+   "hint": "You look closely to spot fish."
+  },
+  {
+   "q": "Mia ____ at the stars through the telescope.",
+   "options": [
+    "applauded",
+    "intended",
+    "peered"
+   ],
+   "ans": 2,
+   "hint": "A telescope is for looking closely."
+  },
+  {
+   "q": "The cat ____ under the couch for its toy.",
+   "options": [
+    "peered",
+    "jeered",
+    "disclosed"
+   ],
+   "ans": 0,
+   "hint": "The cat looked carefully under the couch."
+  },
+  {
+   "q": "Please do not ____ at your neighbor's test paper.",
+   "options": [
+    "refine",
+    "peer",
+    "disclose"
+   ],
+   "ans": 1,
+   "hint": "PEER means to look closely."
+  },
+  {
+   "q": "In the thick fog, the driver had to ____ ahead to see the road.",
+   "options": [
+    "jeer",
+    "refine",
+    "peer"
+   ],
+   "ans": 2,
+   "hint": "Fog makes it hard to see, so you PEER."
+  },
+  {
+   "q": "The detective ____ at the footprint with a magnifying glass.",
+   "options": [
+    "peered",
+    "applauded",
+    "intended"
+   ],
+   "ans": 0,
+   "hint": "A magnifying glass helps you look closely."
+  },
+  {
+   "q": "Nina stood on tiptoe and ____ over the tall fence.",
+   "options": [
+    "refined",
+    "peered",
+    "intended"
+   ],
+   "ans": 1,
+   "hint": "She looked closely over the fence."
+  },
+  {
+   "q": "The owl ____ from the branch into the dark woods.",
+   "options": [
+    "applauded",
+    "disclosed",
+    "peered"
+   ],
+   "ans": 2,
+   "hint": "The owl looked hard into the dark."
+  },
+  {
+   "q": "Which sentence uses PEER correctly?",
+   "options": [
+    "The sailor PEERED across the foggy sea to find the island.",
+    "The sailor PEERED a sandwich for his lunch.",
+    "The sailor PEERED loudly to the happy song."
+   ],
+   "ans": 0,
+   "hint": "PEER means to look closely."
+  },
+  {
+   "q": "Which sentence uses PEERED correctly?",
+   "options": [
+    "Lucy PEERED the box up the stairs.",
+    "Lucy PEERED into the box to see what was inside.",
+    "Lucy PEERED happily over her cold soup."
+   ],
+   "ans": 1,
+   "hint": "Only one sentence is about looking closely."
+  },
+  {
+   "q": "Which sentence uses PEERING correctly?",
+   "options": [
+    "Jake was PEERING a big pizza for dinner.",
+    "Jake was PEERING the ball into the net.",
+    "Jake was PEERING at the tiny bug on the leaf."
+   ],
+   "ans": 2,
+   "hint": "PEERING means looking closely."
+  },
+  {
+   "q": "Which sentence uses PEER correctly?",
+   "options": [
+    "I had to PEER through the dusty window.",
+    "I had to PEER my shoes to school.",
+    "I had to PEER a joke at lunch."
+   ],
+   "ans": 0,
+   "hint": "PEER is something you do with your eyes."
+  },
+  {
+   "q": "Which sentence uses PEERED correctly?",
+   "options": [
+    "The kids PEERED a blanket for the picnic.",
+    "The kids PEERED into the cave to find the bats.",
+    "The kids PEERED the bell at noon."
+   ],
+   "ans": 1,
+   "hint": "Look for the sentence about looking closely."
+  },
+  {
+   "q": "Which sentence uses PEER correctly?",
+   "options": [
+    "Please do not PEER the dog a bone.",
+    "Please do not PEER on the swing set.",
+    "Please do not PEER at my secret note."
+   ],
+   "ans": 2,
+   "hint": "PEER means look closely."
+  },
+  {
+   "q": "Which sentence uses PEERS correctly?",
+   "options": [
+    "Dad PEERS at the small print on the map.",
+    "Dad PEERS a cake for my birthday.",
+    "Dad PEERS the lawn on Saturday."
+   ],
+   "ans": 0,
+   "hint": "PEERS is looking closely."
+  },
+  {
+   "q": "Which sentence uses PEERED correctly?",
+   "options": [
+    "Sofia PEERED a new game on her tablet.",
+    "Sofia PEERED over the wall to see the parade.",
+    "Sofia PEERED her pencil very sharp."
+   ],
+   "ans": 1,
+   "hint": "Only one sentence is about using your eyes closely."
+  },
+  {
+   "q": "Which word is closest in meaning to PEER?",
+   "options": [
+    "hide",
+    "march",
+    "gaze"
+   ],
+   "ans": 2,
+   "hint": "To gaze is to look closely."
+  },
+  {
+   "q": "Which word means almost the same as PEER?",
+   "options": [
+    "examine",
+    "wander",
+    "sneeze"
+   ],
+   "ans": 0,
+   "hint": "To examine is to look closely."
+  },
+  {
+   "q": "Which word is closest in meaning to PEERED?",
+   "options": [
+    "carried",
+    "inspected",
+    "tapped"
+   ],
+   "ans": 1,
+   "hint": "Inspected means looked at closely."
+  },
+  {
+   "q": "Which means about the same as PEER?",
+   "options": [
+    "tickle",
+    "borrow",
+    "study with your eyes"
+   ],
+   "ans": 2,
+   "hint": "PEER means to look closely."
+  },
+  {
+   "q": "Which is closest in meaning to PEER?",
+   "options": [
+    "watch closely",
+    "wave",
+    "lift"
+   ],
+   "ans": 0,
+   "hint": "PEER is to watch or look closely."
+  },
+  {
+   "q": "Which is the best synonym for PEER?",
+   "options": [
+    "speak up",
+    "look hard",
+    "hop along"
+   ],
+   "ans": 1,
+   "hint": "Look for a way of using your eyes."
+  },
+  {
+   "q": "Which is the opposite of PEER?",
+   "options": [
+    "examine",
+    "study",
+    "look away"
+   ],
+   "ans": 2,
+   "hint": "PEER means look closely, so the opposite is not looking."
+  },
+  {
+   "q": "Which is an opposite of PEER?",
+   "options": [
+    "ignore",
+    "inspect",
+    "watch"
+   ],
+   "ans": 0,
+   "hint": "To ignore is to pay no attention."
+  },
+  {
+   "q": "Which is the opposite of PEER?",
+   "options": [
+    "stare hard",
+    "close your eyes",
+    "look carefully"
+   ],
+   "ans": 1,
+   "hint": "PEER is looking, so closing your eyes is the opposite."
+  },
+  {
+   "q": "Which is the opposite of PEERED at?",
+   "options": [
+    "looked closely at",
+    "studied",
+    "paid no attention to"
+   ],
+   "ans": 2,
+   "hint": "PEERED at means looked closely."
+  },
+  {
+   "q": "Which is the opposite of PEER?",
+   "options": [
+    "turn your back",
+    "gaze",
+    "search"
+   ],
+   "ans": 0,
+   "hint": "If you turn your back, you do not look."
+  },
+  {
+   "q": "Which is the opposite of PEER?",
+   "options": [
+    "see clearly",
+    "skip looking",
+    "look hard"
+   ],
+   "ans": 1,
+   "hint": "PEER means looking hard."
+  },
+  {
+   "q": "Leo bent close to see a tiny bug on a leaf. He began to PEER at it. What did Leo do?",
+   "options": [
+    "tossed it away",
+    "sang to it",
+    "looked closely at it"
+   ],
+   "ans": 2,
+   "hint": "PEER means to look closely."
+  },
+  {
+   "q": "It was foggy at the bus stop, so Rosa had to PEER down the street. Why?",
+   "options": [
+    "The fog made it hard to see the bus.",
+    "She wanted to take a nap.",
+    "She heard a loud band."
+   ],
+   "ans": 0,
+   "hint": "You PEER when it is hard to see."
+  },
+  {
+   "q": "At the zoo, Kai PEERED into the dark cave to find the bear. What did Kai do?",
+   "options": [
+    "ran inside",
+    "looked hard into it",
+    "waved goodbye"
+   ],
+   "ans": 1,
+   "hint": "PEERED means looked closely."
+  },
+  {
+   "q": "Ms. Gray PEERED at the faded words on the old sign. What was she doing?",
+   "options": [
+    "erasing the words",
+    "reading them aloud to the class",
+    "looking closely at the words"
+   ],
+   "ans": 2,
+   "hint": "PEERED means looked closely."
+  },
+  {
+   "q": "Pip the puppy PEERED under the bed for his ball. What did Pip do?",
+   "options": [
+    "looked carefully under it",
+    "slept under it",
+    "chewed the bed"
+   ],
+   "ans": 0,
+   "hint": "PEERED means looked closely."
+  },
+  {
+   "q": "Zoe PEERED at the little print on the cereal box. Why did she PEER?",
+   "options": [
+    "She wanted to eat lunch.",
+    "The words were tiny and hard to see.",
+    "The box was very heavy."
+   ],
+   "ans": 1,
+   "hint": "Tiny print is hard to see."
+  },
+  {
+   "q": "At the science fair, kids PEER into a microscope. What are they doing?",
+   "options": [
+    "washing the glass",
+    "carrying it home",
+    "looking closely at tiny things"
+   ],
+   "ans": 2,
+   "hint": "A microscope is for looking closely."
+  },
+  {
+   "q": "On a camping night, Omar PEERED into the dark woods with his flashlight. What did he try to do?",
+   "options": [
+    "see what was out there",
+    "plant a tree",
+    "cook dinner"
+   ],
+   "ans": 0,
+   "hint": "PEERED means looked hard."
+  },
+  {
+   "q": "Which action matches PEER?",
+   "options": [
+    "Ana claps after the play.",
+    "Tom leans close to read tiny letters.",
+    "Eli shouts hooray at the game."
+   ],
+   "ans": 1,
+   "hint": "PEER is about looking closely."
+  },
+  {
+   "q": "Which of these would make you need to PEER?",
+   "options": [
+    "a big bright sign",
+    "a loud drum",
+    "a faint shape in thick fog"
+   ],
+   "ans": 2,
+   "hint": "You PEER when something is hard to see."
+  },
+  {
+   "q": "In \"Mei will PEER at the stamp,\" is PEER a thing or an action?",
+   "options": [
+    "an action",
+    "a thing",
+    "a color"
+   ],
+   "ans": 0,
+   "hint": "Here PEER tells what Mei does."
+  },
+  {
+   "q": "Which tool helps you PEER at tiny things?",
+   "options": [
+    "a jump rope",
+    "a magnifying glass",
+    "a drum"
+   ],
+   "ans": 1,
+   "hint": "A magnifying glass helps you look closely."
+  }
+ ],
+ "progress": [
+  {
+   "q": "What does PROGRESS mean as a noun?",
+   "options": [
+    "forward movement toward a goal",
+    "a loud shout",
+    "a hiding place"
+   ],
+   "ans": 0,
+   "hint": "PROGRESS is moving ahead or improving."
+  },
+  {
+   "q": "To PROGRESS means to ____.",
+   "options": [
+    "stay in one place",
+    "move forward or improve",
+    "give up"
+   ],
+   "ans": 1,
+   "hint": "PROGRESS means to advance."
+  },
+  {
+   "q": "What does PROGRESS mean in \"Tia is making PROGRESS in reading\"?",
+   "options": [
+    "She is losing her book.",
+    "She is falling asleep.",
+    "She is getting better."
+   ],
+   "ans": 2,
+   "hint": "PROGRESS means improvement."
+  },
+  {
+   "q": "If a project PROGRESSES, it ____.",
+   "options": [
+    "moves ahead",
+    "falls apart",
+    "disappears"
+   ],
+   "ans": 0,
+   "hint": "PROGRESSES means moves forward."
+  },
+  {
+   "q": "Which phrase best explains PROGRESS?",
+   "options": [
+    "a sudden surprise",
+    "improvement toward a goal",
+    "a quiet rest"
+   ],
+   "ans": 1,
+   "hint": "PROGRESS is getting closer to a goal."
+  },
+  {
+   "q": "When you make PROGRESS in a game, you ____.",
+   "options": [
+    "forget the rules",
+    "stop playing",
+    "do better than before"
+   ],
+   "ans": 2,
+   "hint": "PROGRESS means improving."
+  },
+  {
+   "q": "\"The work PROGRESSED well.\" This means the work ____.",
+   "options": [
+    "moved forward",
+    "was lost",
+    "was put away"
+   ],
+   "ans": 0,
+   "hint": "PROGRESSED means moved ahead."
+  },
+  {
+   "q": "PROGRESS is a sign of ____.",
+   "options": [
+    "staying exactly the same",
+    "getting better step by step",
+    "going backward"
+   ],
+   "ans": 1,
+   "hint": "PROGRESS means moving ahead."
+  },
+  {
+   "q": "Our class is making great ____ on the garden.",
+   "options": [
+    "applause",
+    "scoundrel",
+    "progress"
+   ],
+   "ans": 2,
+   "hint": "You make PROGRESS toward finishing."
+  },
+  {
+   "q": "The team will ____ to the next round if they win.",
+   "options": [
+    "progress",
+    "jeer",
+    "disclose"
+   ],
+   "ans": 0,
+   "hint": "PROGRESS means move forward."
+  },
+  {
+   "q": "Sam practiced piano every day and saw his ____.",
+   "options": [
+    "drab",
+    "progress",
+    "jeer"
+   ],
+   "ans": 1,
+   "hint": "He got better, so PROGRESS fits."
+  },
+  {
+   "q": "The story ____ from a quiet start to an exciting end.",
+   "options": [
+    "applauds",
+    "refines",
+    "progresses"
+   ],
+   "ans": 2,
+   "hint": "PROGRESSES means moves forward."
+  },
+  {
+   "q": "Dad checked our ____ on the model airplane.",
+   "options": [
+    "progress",
+    "exclamation",
+    "scoundrel"
+   ],
+   "ans": 0,
+   "hint": "Progress is how far you have come."
+  },
+  {
+   "q": "Her reading skills ____ quickly this year.",
+   "options": [
+    "jeered",
+    "progressed",
+    "disclosed"
+   ],
+   "ans": 1,
+   "hint": "PROGRESSED means improved."
+  },
+  {
+   "q": "There was little ____ on the puzzle because we lacked pieces.",
+   "options": [
+    "applause",
+    "exclamation",
+    "progress"
+   ],
+   "ans": 2,
+   "hint": "Little PROGRESS means we moved ahead very little."
+  },
+  {
+   "q": "Maya wants to ____ from white belt to yellow belt.",
+   "options": [
+    "progress",
+    "jeer",
+    "intend"
+   ],
+   "ans": 0,
+   "hint": "PROGRESS means to move up."
+  },
+  {
+   "q": "The chart shows how much ____ each student made.",
+   "options": [
+    "crafty",
+    "progress",
+    "uneasy"
+   ],
+   "ans": 1,
+   "hint": "PROGRESS is improvement."
+  },
+  {
+   "q": "Slow but steady, the snail made ____ up the wall.",
+   "options": [
+    "vain",
+    "drab",
+    "progress"
+   ],
+   "ans": 2,
+   "hint": "The snail moved forward."
+  },
+  {
+   "q": "Which sentence uses PROGRESS correctly?",
+   "options": [
+    "Ava is making PROGRESS in her swimming lessons.",
+    "Ava PROGRESS a cold glass of milk.",
+    "The PROGRESS barked at the mailman."
+   ],
+   "ans": 0,
+   "hint": "PROGRESS means improvement."
+  },
+  {
+   "q": "Which sentence uses PROGRESSED correctly?",
+   "options": [
+    "The building PROGRESSED a lunch box.",
+    "The building PROGRESSED a little each week.",
+    "The building PROGRESSED the bell loudly."
+   ],
+   "ans": 1,
+   "hint": "PROGRESSED means moved forward."
+  },
+  {
+   "q": "Which sentence uses PROGRESS correctly?",
+   "options": [
+    "We PROGRESS the table for dinner.",
+    "My PROGRESS is a green wool hat.",
+    "We watched our bean plant's PROGRESS each day."
+   ],
+   "ans": 2,
+   "hint": "PROGRESS means growth or improvement."
+  },
+  {
+   "q": "Which sentence uses PROGRESSING correctly?",
+   "options": [
+    "The storm is PROGRESSING toward our town.",
+    "The storm is PROGRESSING a sandwich.",
+    "The storm is PROGRESSING under my bed."
+   ],
+   "ans": 0,
+   "hint": "PROGRESSING means moving forward."
+  },
+  {
+   "q": "Which sentence uses PROGRESS correctly?",
+   "options": [
+    "Our teacher PROGRESS a red marker.",
+    "Our teacher was happy with the PROGRESS we made.",
+    "Our teacher sat on the PROGRESS."
+   ],
+   "ans": 1,
+   "hint": "PROGRESS is a thing you make."
+  },
+  {
+   "q": "Which sentence uses PROGRESS as a verb correctly?",
+   "options": [
+    "Students PROGRESS the milk on the table.",
+    "Students PROGRESS happy and green.",
+    "Students PROGRESS to harder books as they learn."
+   ],
+   "ans": 2,
+   "hint": "As a verb, PROGRESS means move forward."
+  },
+  {
+   "q": "Which sentence uses PROGRESS correctly?",
+   "options": [
+    "Leo's math PROGRESS was easy to see on his test.",
+    "Leo PROGRESS his lunch to the table.",
+    "Leo PROGRESS a funny song."
+   ],
+   "ans": 0,
+   "hint": "PROGRESS means improvement."
+  },
+  {
+   "q": "Which sentence uses PROGRESSED correctly?",
+   "options": [
+    "The race PROGRESSED a blue jacket.",
+    "The race PROGRESSED, and the runners moved closer to the finish.",
+    "The race PROGRESSED the cat softly."
+   ],
+   "ans": 1,
+   "hint": "PROGRESSED means moved ahead."
+  },
+  {
+   "q": "Which word is closest in meaning to PROGRESS (noun)?",
+   "options": [
+    "trouble",
+    "silence",
+    "improvement"
+   ],
+   "ans": 2,
+   "hint": "PROGRESS is getting better."
+  },
+  {
+   "q": "Which word means almost the same as PROGRESS (verb)?",
+   "options": [
+    "advance",
+    "freeze",
+    "spill"
+   ],
+   "ans": 0,
+   "hint": "To advance is to move forward."
+  },
+  {
+   "q": "Which is closest in meaning to PROGRESS?",
+   "options": [
+    "a hard problem",
+    "headway toward a goal",
+    "a lost key"
+   ],
+   "ans": 1,
+   "hint": "Headway is moving ahead."
+  },
+  {
+   "q": "Which means about the same as PROGRESSED?",
+   "options": [
+    "slid backward",
+    "stayed still",
+    "moved ahead"
+   ],
+   "ans": 2,
+   "hint": "PROGRESSED means moved ahead."
+  },
+  {
+   "q": "Which is the best synonym for PROGRESS?",
+   "options": [
+    "growth",
+    "fear",
+    "waste"
+   ],
+   "ans": 0,
+   "hint": "Growth is getting bigger or better."
+  },
+  {
+   "q": "Which is closest in meaning to PROGRESS?",
+   "options": [
+    "fall down",
+    "get better",
+    "give away"
+   ],
+   "ans": 1,
+   "hint": "PROGRESS means improve."
+  },
+  {
+   "q": "Which is the opposite of PROGRESS (verb)?",
+   "options": [
+    "advance",
+    "improve",
+    "go backward"
+   ],
+   "ans": 2,
+   "hint": "PROGRESS means move forward."
+  },
+  {
+   "q": "Which is the opposite of making PROGRESS?",
+   "options": [
+    "falling behind",
+    "moving ahead",
+    "getting better"
+   ],
+   "ans": 0,
+   "hint": "Making PROGRESS means getting ahead."
+  },
+  {
+   "q": "Which is the opposite of PROGRESS (noun)?",
+   "options": [
+    "improvement",
+    "a step backward",
+    "growth"
+   ],
+   "ans": 1,
+   "hint": "PROGRESS is moving ahead."
+  },
+  {
+   "q": "Which is the opposite of PROGRESSED?",
+   "options": [
+    "moved ahead",
+    "got better",
+    "stood still"
+   ],
+   "ans": 2,
+   "hint": "PROGRESSED means moved forward."
+  },
+  {
+   "q": "Which is an opposite of PROGRESS?",
+   "options": [
+    "get worse",
+    "advance",
+    "grow"
+   ],
+   "ans": 0,
+   "hint": "PROGRESS means get better."
+  },
+  {
+   "q": "Which is the opposite of PROGRESSING?",
+   "options": [
+    "improving",
+    "stopping",
+    "moving forward"
+   ],
+   "ans": 1,
+   "hint": "PROGRESSING means moving forward."
+  },
+  {
+   "q": "Nina's soccer kicks got better each week. What did she make?",
+   "options": [
+    "applause",
+    "scoundrel",
+    "progress"
+   ],
+   "ans": 2,
+   "hint": "Getting better is PROGRESS."
+  },
+  {
+   "q": "Eli's reading chart has more stars than last month. What does it show?",
+   "options": [
+    "progress",
+    "a trick",
+    "a joke"
+   ],
+   "ans": 0,
+   "hint": "More stars show he has improved."
+  },
+  {
+   "q": "The hikers moved up the trail toward the top. What did they do?",
+   "options": [
+    "stayed at camp",
+    "progressed up the trail",
+    "went back home"
+   ],
+   "ans": 1,
+   "hint": "They moved forward."
+  },
+  {
+   "q": "Grandma's quilt gets a few more squares each day. What can she say?",
+   "options": [
+    "\"I am going backward.\"",
+    "\"I have no plans.\"",
+    "\"I am making progress.\""
+   ],
+   "ans": 2,
+   "hint": "More squares mean moving toward finishing."
+  },
+  {
+   "q": "Raj learned two new spelling words each night. What happened to his spelling?",
+   "options": [
+    "It showed progress.",
+    "It showed no change.",
+    "It got lost."
+   ],
+   "ans": 0,
+   "hint": "Learning more is PROGRESS."
+  },
+  {
+   "q": "Our sandcastle looked taller after every bucket. What did we make?",
+   "options": [
+    "jeers",
+    "progress",
+    "a scoundrel"
+   ],
+   "ans": 1,
+   "hint": "The castle moved toward being done."
+  },
+  {
+   "q": "Jada wrote one more page of her story today. Her story is ____.",
+   "options": [
+    "vanishing",
+    "freezing",
+    "progressing"
+   ],
+   "ans": 2,
+   "hint": "She is moving it forward."
+  },
+  {
+   "q": "The chicks grew bigger every week on the farm. What does that show?",
+   "options": [
+    "progress in their growth",
+    "trouble at the farm",
+    "a lost egg"
+   ],
+   "ans": 0,
+   "hint": "Growing is a kind of PROGRESS."
+  },
+  {
+   "q": "Which action shows PROGRESS?",
+   "options": [
+    "Kim reads 10 pages, then 5 pages.",
+    "Kim goes from reading 5 pages to 10 pages a night.",
+    "Kim never opens her book."
+   ],
+   "ans": 1,
+   "hint": "PROGRESS means improving."
+  },
+  {
+   "q": "Which one is a PROGRESS report?",
+   "options": [
+    "a recipe for pancakes",
+    "a map of the zoo",
+    "a note that says how much you have improved"
+   ],
+   "ans": 2,
+   "hint": "It tells how you are moving ahead."
+  },
+  {
+   "q": "In \"We saw great PROGRESS,\" is PROGRESS a thing or an action?",
+   "options": [
+    "a thing (noun)",
+    "an action (verb)",
+    "a color"
+   ],
+   "ans": 0,
+   "hint": "Here PROGRESS names something you see."
+  },
+  {
+   "q": "In \"The class will PROGRESS to fractions,\" what does PROGRESS do?",
+   "options": [
+    "names a toy",
+    "tells what the class will do",
+    "describes a color"
+   ],
+   "ans": 1,
+   "hint": "Here PROGRESS is a verb meaning move forward."
+  }
+ ]
+}
