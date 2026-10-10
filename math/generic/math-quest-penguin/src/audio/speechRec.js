@@ -13,10 +13,37 @@
 //  * The game never speaks the question aloud, so there is no echo of its own
 //    audio to filter out; the child's voice is the only input.
 //
+//  * On-device recognition (`processLocally`) is used when the browser has
+//    the English model installed: no network round trip, so interim results
+//    arrive much sooner. Falls back to the cloud recognizer automatically.
+//    Force a mode with ?asr=cloud or ?asr=local.
+//  * The recognizer is biased toward number words (`phrases`, contextual
+//    biasing) where supported, so a short "eight" is less likely to come
+//    back as the letter "A". Ignored silently where unsupported.
+//  * ?asrdebug=1 logs every transcript with its latency to the console.
+//
 // No model downloads, no WASM, nothing on the main thread beyond event handlers.
 
 const MAX_FAST_RESTARTS = 5; // give up if the engine keeps dying immediately
 const FAST_RESTART_WINDOW_MS = 1500;
+const LANG = 'en-US';
+const PHRASE_BOOST = 3.0; // 0..10; high values make everything sound like a number
+
+const params = new URLSearchParams(typeof location !== 'undefined' ? location.search : '');
+const FORCED_MODE = params.get('asr'); // 'cloud' | 'local' | null
+const DEBUG = params.has('asrdebug');
+
+// Spoken forms of every possible answer (1-81) for contextual biasing.
+function numberPhrases() {
+    const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+        'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty'];
+    const out = [];
+    for (let n = 1; n <= 81; n++) {
+        out.push(n < 20 ? ones[n] : tens[Math.floor(n / 10)] + (n % 10 ? ' ' + ones[n % 10] : ''));
+    }
+    return out;
+}
 
 export class SpeechRecognizer {
     /**
@@ -39,6 +66,13 @@ export class SpeechRecognizer {
         this.lastStartTs = 0;
         this.fastRestarts = 0;
         this.restartTimer = null;
+        this.armTs = 0;
+        this.armIndex = null;     // first result index belonging to this answer
+
+        // Engine configuration, applied before every start().
+        this.local = FORCED_MODE === 'local';
+        this.phrases = null;      // SpeechRecognitionPhrase[] when supported
+        this.phrasesFailed = { local: false, cloud: false };
 
         this._init();
     }
@@ -59,12 +93,21 @@ export class SpeechRecognizer {
         rec.continuous = true;      // keep the session warm across questions
         rec.interimResults = true;  // act on early partial transcripts
         rec.maxAlternatives = 5;    // kids' speech: check every hypothesis
-        rec.lang = 'en-US';
+        rec.lang = LANG;
         this.recognition = rec;
+        this.SR = SR;
+
+        if ('phrases' in rec && typeof window.SpeechRecognitionPhrase === 'function') {
+            try {
+                this.phrases = numberPhrases().map(p => new window.SpeechRecognitionPhrase(p, PHRASE_BOOST));
+            } catch (e) { this.phrases = null; }
+        }
+        this._probeOnDevice();
 
         rec.onstart = () => {
             this.running = true;
             this.lastStartTs = performance.now();
+            this.armIndex = null; // new session: result indices restart at 0
             if (this.armed) this._status('Listening for answer...');
         };
 
@@ -76,8 +119,12 @@ export class SpeechRecognizer {
             const now = performance.now();
             if (!this.armed || now < this.ignoreUntil) return;
 
-            // Only the most recent result in this event matters; earlier ones in
-            // a continuous session belong to utterances we've already handled.
+            if (this.armIndex === null) this.armIndex = event.resultIndex;
+
+            // Hypotheses for the most recent result, plus the whole answer
+            // window joined together: Chrome often splits one answer across
+            // results ("A" ... "8"), and a repeated answer is only
+            // recognizable when the pieces are read together.
             const res = event.results[event.results.length - 1];
             if (!res) return;
 
@@ -86,7 +133,21 @@ export class SpeechRecognizer {
                 const t = res[i].transcript;
                 if (t && t.trim()) alternatives.push(t.trim());
             }
+            if (event.results.length - this.armIndex > 1) {
+                const parts = [];
+                for (let r = this.armIndex; r < event.results.length; r++) {
+                    const t = event.results[r][0] && event.results[r][0].transcript;
+                    if (t && t.trim()) parts.push(t.trim());
+                }
+                if (parts.length > 1) alternatives.push(parts.join(' '));
+            }
             if (alternatives.length === 0) return;
+
+            if (DEBUG) {
+                const since = (t) => (t ? Math.round(now - t) + 'ms' : '-');
+                console.log(`[asr ${this.local ? 'local' : 'cloud'}] ${res.isFinal ? 'FINAL ' : 'interim'}`,
+                    JSON.stringify(alternatives), `since arm ${since(this.armTs)}, since speech ${since(this.speechStartTs)}`);
+            }
 
             this.fastRestarts = 0; // engine is healthy
             if (this.onResult) {
@@ -100,8 +161,23 @@ export class SpeechRecognizer {
 
         rec.onerror = (event) => {
             const err = event.error;
+            if (DEBUG) console.log('[asr] error', err, this.local ? '(local)' : '(cloud)');
             // Benign: nothing heard / we aborted on purpose. onend restarts us.
             if (err === 'no-speech' || err === 'aborted') return;
+
+            // Optional features the engine turned down: drop them and let
+            // onend restart the session without them.
+            if (err === 'phrases-not-supported') {
+                this.phrasesFailed[this.local ? 'local' : 'cloud'] = true;
+                this.fastRestarts = 0;
+                return;
+            }
+            if (this.local && FORCED_MODE !== 'local' &&
+                (err === 'service-not-allowed' || err === 'language-not-supported')) {
+                this.local = false; // on-device model unusable: use the cloud
+                this.fastRestarts = 0;
+                return;
+            }
 
             if (err === 'not-allowed' || err === 'service-not-allowed') {
                 this.wantRunning = false;
@@ -143,8 +219,44 @@ export class SpeechRecognizer {
         this.restartTimer = setTimeout(() => this._startEngine(), delayMs);
     }
 
+    // Prefer the on-device model: it skips the network round trip, which is
+    // most of the delay between the child speaking and the first transcript.
+    async _probeOnDevice() {
+        const SR = this.SR;
+        if (FORCED_MODE === 'cloud' || !('processLocally' in this.recognition) ||
+            typeof SR.available !== 'function') return;
+        try {
+            const status = await SR.available({ langs: [LANG], processLocally: true });
+            if (DEBUG) console.log('[asr] on-device model:', status);
+            if (status === 'available') {
+                this.local = true; // takes effect at the next (re)start
+            } else if (status === 'downloadable' && typeof SR.install === 'function') {
+                // install() needs a user gesture; the first tap or key will do.
+                const install = () => {
+                    SR.install({ langs: [LANG], processLocally: true })
+                        .then((ok) => { if (ok) this.local = true; })
+                        .catch(() => { /* stay on cloud */ });
+                };
+                window.addEventListener('pointerdown', install, { once: true });
+                window.addEventListener('keydown', install, { once: true });
+            }
+        } catch (e) { /* not supported: stay on cloud */ }
+    }
+
+    _applyConfig() {
+        const rec = this.recognition;
+        if ('processLocally' in rec) {
+            try { rec.processLocally = this.local; } catch (e) { /* ignore */ }
+        }
+        if (this.phrases) {
+            const off = this.phrasesFailed[this.local ? 'local' : 'cloud'];
+            try { rec.phrases = off ? [] : this.phrases; } catch (e) { this.phrases = null; }
+        }
+    }
+
     _startEngine() {
         if (!this.recognition || this.running || !this.wantRunning) return;
+        this._applyConfig();
         try {
             this.recognition.start();
         } catch (e) {
@@ -171,7 +283,9 @@ export class SpeechRecognizer {
         if (!this.supported) return;
         this.ensureRunning();
         this.speechStartTs = null;
-        this.ignoreUntil = performance.now() + afterMs;
+        this.armTs = performance.now();
+        this.armIndex = null;
+        this.ignoreUntil = this.armTs + afterMs;
         this.armed = true;
         this._status('Listening for answer...');
     }

@@ -1,6 +1,6 @@
 import { AdaptiveEngine } from './utils/adaptiveEngine.js';
 import { DifficultyController, GRID_SIZES } from './utils/difficultyController.js';
-import { pickBestAlternative, stripPrompt } from './utils/numberParser.js';
+import { matchAnswer, stripPrompt } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { sound } from './audio/soundEffects.js';
 import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
@@ -100,16 +100,20 @@ function handleSpeechResult(alternatives, meta) {
     const heard = stripPrompt(alternatives[0], currentQuestion.a, currentQuestion.b);
     if (!heard) return;
 
-    const best = pickBestAlternative(alternatives, target, currentQuestion);
+    // Exact match, or a sound-alike of the expected answer ("A" for "eight",
+    // "88" for "eight eight") - see matchAnswer() in numberParser.js.
+    const { value: best, match } = matchAnswer(alternatives, target, currentQuestion);
 
     if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${heard}"`;
 
-    if (best === target) {
+    if (match) {
         // Answer time = when the first matching transcript arrived, not when
         // the (slower) final result or the stability window completed.
         const matchTs = pendingCommit ? pendingCommit.ts : meta.ts;
 
-        if (meta.isFinal || !answerNeedsStabilityWindow(target)) {
+        // Sound-alike interims are less certain ("A" could still grow into
+        // "apple"), so they always wait out the short stability window.
+        if (meta.isFinal || (match === 'exact' && !answerNeedsStabilityWindow(target))) {
             cancelPendingCommit();
             handleCorrectAnswer((matchTs - listenStartTime) / 1000);
         } else if (!pendingCommit) {

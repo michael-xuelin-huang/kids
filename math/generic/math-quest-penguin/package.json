@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "simulate": "node tools/simulate-difficulty.mjs"
+    "simulate": "node tools/simulate-difficulty.mjs",
+    "test:asr": "node tools/test-number-parser.mjs"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.18",
