@@ -52,7 +52,7 @@ const SOUND_ALIKE = {
     one: ['wan', 'juan', 'won', '1st', 'first', 'ones'],
     two: ['do', 'due', 'true', 'tooth', 'q', 'tea', 'tee', 't', 'who', '2nd', 'second', 'twos'],
     three: ['tree', 'free', 'fee', 'wee', 'we', 'see', 'c', 'sri', 'thee', 'third', '3rd', 'threes'],
-    four: ['for', 'fore', 'far', 'fall', 'floor', 'or', 'pour', 'door', 'foe', 'fo', 'ford', 'fort', 'fourth', '4th', 'fours'],
+    four: ['for', 'fore', 'point', 'boar', 'bore', 'far', 'fall', 'floor', 'or', 'pour', 'door', 'foe', 'fo', 'ford', 'fort', 'fourth', '4th', 'fours'],
     five: ['fife', 'fight', 'fine', 'hive', 'vibe', 'ive', 'fly', 'fi', 'fire', 'bye', 'by', 'fifth', '5th', 'fives'],
     six: ['sicks', 'sick', 'sex', 'sics', 'seeks', 'sax', 'sucks', 'sits', 'x', 'ex', 'fix', 'mix', 'sticks', 'sixth', '6th'],
     seven: ['kevin', 'heaven', 'evan', 'sven', 'severn', 'seventh', '7th', 'sevens'],

@@ -13,10 +13,11 @@
 //  * The game never speaks the question aloud, so there is no echo of its own
 //    audio to filter out; the child's voice is the only input.
 //
-//  * On-device recognition (`processLocally`) is used when the browser has
-//    the English model installed: no network round trip, so interim results
-//    arrive much sooner. Falls back to the cloud recognizer automatically.
-//    Force a mode with ?asr=cloud or ?asr=local.
+//  * Cloud recognition is the default. Chrome's on-device model
+//    (`processLocally`) skips the network round trip, but in testing it
+//    returned almost no transcripts for short single words like "four" and
+//    kept aborting itself, so it is opt-in only: ?asr=local. If it aborts
+//    on its own repeatedly, we switch back to the cloud automatically.
 //  * The recognizer is biased toward number words (`phrases`, contextual
 //    biasing) where supported, so a short "eight" is less likely to come
 //    back as the letter "A". Ignored silently where unsupported.
@@ -73,6 +74,8 @@ export class SpeechRecognizer {
         this.local = FORCED_MODE === 'local';
         this.phrases = null;      // SpeechRecognitionPhrase[] when supported
         this.phrasesFailed = { local: false, cloud: false };
+        this.selfAbort = false;      // the next 'aborted' error is ours
+        this.unexpectedAborts = 0;
 
         this._init();
     }
@@ -113,6 +116,7 @@ export class SpeechRecognizer {
 
         rec.onspeechstart = () => {
             if (this.armed) this.speechStartTs = performance.now();
+            if (DEBUG) console.log('[asr] speech start');
         };
 
         rec.onresult = (event) => {
@@ -150,6 +154,7 @@ export class SpeechRecognizer {
             }
 
             this.fastRestarts = 0; // engine is healthy
+            this.unexpectedAborts = 0;
             if (this.onResult) {
                 this.onResult(alternatives, {
                     isFinal: res.isFinal,
@@ -163,7 +168,18 @@ export class SpeechRecognizer {
             const err = event.error;
             if (DEBUG) console.log('[asr] error', err, this.local ? '(local)' : '(cloud)');
             // Benign: nothing heard / we aborted on purpose. onend restarts us.
-            if (err === 'no-speech' || err === 'aborted') return;
+            if (err === 'no-speech') return;
+            if (err === 'aborted') {
+                if (this.selfAbort) { this.selfAbort = false; return; }
+                // The engine aborted on its own. The on-device model does this
+                // a lot; after two in a row, fall back to the cloud.
+                if (this.local && FORCED_MODE !== 'local' && ++this.unexpectedAborts >= 2) {
+                    if (DEBUG) console.log('[asr] on-device engine unstable - switching to cloud');
+                    this.local = false;
+                    this.fastRestarts = 0;
+                }
+                return;
+            }
 
             // Optional features the engine turned down: drop them and let
             // onend restart the session without them.
@@ -192,6 +208,7 @@ export class SpeechRecognizer {
         };
 
         rec.onend = () => {
+            if (DEBUG) console.log('[asr] session end', this.wantRunning ? '(restarting)' : '');
             this.running = false;
             this.speechStartTs = null;
             if (!this.wantRunning) return;
@@ -223,7 +240,7 @@ export class SpeechRecognizer {
     // most of the delay between the child speaking and the first transcript.
     async _probeOnDevice() {
         const SR = this.SR;
-        if (FORCED_MODE === 'cloud' || !('processLocally' in this.recognition) ||
+        if (FORCED_MODE !== 'local' || !('processLocally' in this.recognition) ||
             typeof SR.available !== 'function') return;
         try {
             const status = await SR.available({ langs: [LANG], processLocally: true });
@@ -305,6 +322,7 @@ export class SpeechRecognizer {
     reset() {
         this.disarm();
         if (this.recognition && this.running) {
+            this.selfAbort = true;
             try { this.recognition.abort(); } catch (e) { /* engine already stopping */ }
             // onend fires -> auto-restart since wantRunning is true
         }
@@ -316,6 +334,7 @@ export class SpeechRecognizer {
         this.disarm();
         clearTimeout(this.restartTimer);
         if (this.recognition && this.running) {
+            this.selfAbort = true;
             try { this.recognition.abort(); } catch (e) { /* ignore */ }
         }
     }
