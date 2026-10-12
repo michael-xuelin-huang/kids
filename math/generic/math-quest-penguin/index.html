@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Math Quest: Adaptive Voice Penguin Hero</title>
+    <link rel="icon" href="data:,">
     <!-- Tailwind is compiled by Vite in dev; the CDN build makes the raw files
          work as-is on GitHub Pages (no build step there). -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -99,6 +100,18 @@
             </div>
         </section>
     </main>
+
+    <!-- Overlay: Start (browsers only allow the microphone/audio after a tap) -->
+    <div id="start-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
+        <div class="bg-slate-900 border border-cyan-400/40 rounded-3xl p-8 max-w-md w-full flex flex-col items-center shadow-2xl text-center">
+            <div class="text-5xl mb-3">🐧🎤</div>
+            <h2 class="text-2xl font-extrabold text-cyan-300 mb-2">Ready to play?</h2>
+            <p id="start-status" class="text-indigo-200 text-sm mb-6">Loading Pingo's ears… (first time only, about 40 MB)</p>
+            <button id="btn-start" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold rounded-2xl shadow-xl text-lg">
+                START 🚀
+            </button>
+        </div>
+    </div>
 
     <!-- Overlay: Review / Visual Matrix Imprinting Modal -->
     <div id="review-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">

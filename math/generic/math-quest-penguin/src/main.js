@@ -2,6 +2,7 @@ import { AdaptiveEngine } from './utils/adaptiveEngine.js';
 import { DifficultyController, GRID_SIZES } from './utils/difficultyController.js';
 import { matchAnswer, stripPrompt } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
+import { VoskRecognizer } from './audio/voskRec.js';
 import { sound } from './audio/soundEffects.js';
 import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
 import { renderMiniHeatmap, renderReviewMatrix, renderGemArray } from './components/matrixGrid.js';
@@ -24,12 +25,14 @@ let questionToken = 0; // invalidates callbacks from a previous question
 let pendingCommit = null; // debounced interim match: { timer, ts }
 let isProcessingAnswer = false;
 
-// An interim transcript of "four" may still become "forty"; for answers that
-// are a possible prefix of a longer number, wait briefly for the transcript to
-// stay stable before accepting it.
-const INTERIM_STABLE_MS = 180;
-function answerNeedsStabilityWindow(target) {
-    return target < 21 || target % 10 === 0;
+// An interim transcript of "seventy" may still become "seventy two", "four"
+// may become "fourteen". For answers that are a possible prefix of a longer
+// number, wait for the transcript to stay stable before accepting it. Round
+// tens wait longer: in testing, the second word arrived up to ~500 ms later.
+function stabilityWindowMs(target) {
+    if (target >= 20 && target % 10 === 0) return 600;
+    if (target < 21) return 180;
+    return 0;
 }
 
 const adaptiveEngine = new AdaptiveEngine();
@@ -113,7 +116,8 @@ function handleSpeechResult(alternatives, meta) {
 
         // Sound-alike interims are less certain ("A" could still grow into
         // "apple"), so they always wait out the short stability window.
-        if (meta.isFinal || (match === 'exact' && !answerNeedsStabilityWindow(target))) {
+        const waitMs = Math.max(stabilityWindowMs(target), match === 'exact' ? 0 : 180);
+        if (meta.isFinal || waitMs === 0) {
             cancelPendingCommit();
             handleCorrectAnswer((matchTs - listenStartTime) / 1000);
         } else if (!pendingCommit) {
@@ -124,7 +128,7 @@ function handleSpeechResult(alternatives, meta) {
                     pendingCommit = null;
                     if (token !== questionToken) return;
                     handleCorrectAnswer((matchTs - listenStartTime) / 1000);
-                }, INTERIM_STABLE_MS),
+                }, waitMs),
             };
         }
         return;
@@ -141,18 +145,29 @@ function handleSpeechResult(alternatives, meta) {
     }
 }
 
-const recognizer = new SpeechRecognizer(
-    handleSpeechResult,
-    (err) => {
+// Speech engine. Default: Vosk - offline, restricted to number words, streams
+// partial results with no network round trip (see audio/voskRec.js). The
+// browser's Web Speech API is the fallback (?asr=web forces it).
+const ASR_PARAM = new URLSearchParams(location.search).get('asr');
+const onAsrError = (err) => {
         console.error('Speech Recognition Error:', err);
         if (elVoiceStatus && err !== 'network' && err !== 'not-allowed' && err !== 'service-not-allowed' && err !== 'audio-capture') {
             elVoiceStatus.textContent = `⚠️ Speech recognition error`;
         }
-    },
-    (statusText) => {
-        if (elVoiceStatus) elVoiceStatus.textContent = `🎤 ${statusText}`;
+};
+const onAsrStatus = (statusText) => {
+    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 ${statusText}`;
+};
+const webSpeech = () => new SpeechRecognizer(handleSpeechResult, onAsrError, onAsrStatus);
+let recognizer = null;
+if (ASR_PARAM !== 'web' && ASR_PARAM !== 'cloud' && ASR_PARAM !== 'local') {
+    const vosk = new VoskRecognizer(handleSpeechResult, onAsrError, onAsrStatus);
+    if (vosk.supported) {
+        recognizer = vosk;
+        vosk.loadModel().catch(() => { /* reported when START is tapped */ });
     }
-);
+}
+if (!recognizer) recognizer = webSpeech();
 
 // Keyboard fallback for browsers without the Web Speech API (e.g. Firefox).
 function installTypedFallback() {
@@ -391,4 +406,35 @@ if (elBtnContinueQuest) {
 updateGridSizeForLevel();
 updateMasteryDisplay();
 renderPenguin(elPenguinContainer, level, 'normal');
-nextQuestion();
+
+// Browsers only allow audio after a tap, so the game starts from a button.
+const elStartOverlay = document.getElementById('start-overlay');
+const elStartStatus = document.getElementById('start-status');
+const elBtnStart = document.getElementById('btn-start');
+
+function beginGame() {
+    elStartOverlay.classList.add('hidden');
+    nextQuestion();
+}
+
+if (recognizer instanceof VoskRecognizer) {
+    recognizer.loadModel().then(
+        () => { elStartStatus.textContent = "Pingo's ears are ready! Say each answer out loud."; },
+        () => { elStartStatus.textContent = 'Using the browser voice service instead.'; },
+    );
+    elBtnStart.addEventListener('click', async () => {
+        elBtnStart.disabled = true;
+        elBtnStart.textContent = 'Getting ready…';
+        try {
+            await recognizer.start(); // mic + model (waits for the download)
+        } catch (e) {
+            console.error('Offline recognizer failed, falling back to Web Speech:', e);
+            recognizer = webSpeech();
+            installTypedFallback();
+        }
+        beginGame();
+    }, { once: true });
+} else {
+    elStartStatus.textContent = 'Say each answer out loud.';
+    elBtnStart.addEventListener('click', beginGame, { once: true });
+}

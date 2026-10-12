@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASR Test Bench</title>
+<style>
+  :root { --bg:#14102a; --fg:#eee; --mut:#9a9ac0; --ok:#4ade80; --bad:#f87171; }
+  body { background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; margin:0; padding:16px; }
+  button { font-size:18px; padding:10px 18px; border-radius:10px; border:0; background:#6366f1; color:#fff; }
+  #partial { font-size:40px; min-height:60px; color:var(--mut); }
+  #final { font-size:20px; }
+  pre { white-space:pre-wrap; color:var(--mut); }
+</style>
+</head>
+<body>
+<h1>Number recognizer test bench</h1>
+<p>Tap Start and say numbers. Shows what the offline recognizer hears and how fast.
+   (Automated mode: <code>?clips=a.wav,b.wav</code> plays audio files instead of the mic.)</p>
+<button id="go">Start 🎤</button>
+<div id="partial"></div>
+<div id="final"></div>
+<pre id="log"></pre>
+<script type="module">
+import { VoskRecognizer } from '../src/audio/voskRec.js';
+
+const $ = (id) => document.getElementById(id);
+const params = new URLSearchParams(location.search);
+const clips = (params.get('clips') || '').split(',').filter(Boolean);
+const GAP_S = 1.6;
+window.events = [];
+window.clipTimes = [];
+window.done = false;
+
+const log = (s) => { $('log').textContent = s + '\n' + $('log').textContent; };
+const rec = new VoskRecognizer(
+  (alts, meta) => {
+    window.events.push({ t: meta.ts, text: alts[0], alts, final: meta.isFinal });
+    (meta.isFinal ? $('final') : $('partial')).textContent = alts[0];
+    if (meta.isFinal) log(`${alts[0]}  (${Math.round(meta.ts - (window.lastSpeechEnd || meta.ts))} ms after clip end)`);
+  },
+  (e) => log('error ' + e),
+  (s) => log(s),
+);
+rec.loadModel().then(() => log('model loaded'));
+
+async function startClips() {
+  const t0 = performance.now();
+  await rec.start((ctx) => {
+    const out = ctx.createGain();
+    (async () => {
+      const bufs = [];
+      for (const c of clips) bufs.push(await ctx.decodeAudioData(await (await fetch(c)).arrayBuffer()));
+      let at = ctx.currentTime + 1.0;
+      const perfAt = (t) => performance.now() + (t - ctx.currentTime) * 1000;
+      bufs.forEach((b, i) => {
+        const s = ctx.createBufferSource(); s.buffer = b; s.connect(out); s.start(at);
+        window.clipTimes.push({ clip: clips[i], start: perfAt(at), end: perfAt(at + b.duration) });
+        at += b.duration + GAP_S;
+      });
+      setTimeout(() => { window.done = true; }, (at - ctx.currentTime + 0.5) * 1000);
+    })();
+    return out;
+  });
+  rec.arm();
+  log(`started in ${Math.round(performance.now() - t0)} ms`);
+}
+
+$('go').onclick = async () => {
+  $('go').disabled = true;
+  if (clips.length) return startClips();
+  await rec.start();
+  rec.arm();
+};
+if (clips.length && params.has('auto')) startClips();
+</script>
+</body>
+</html>
