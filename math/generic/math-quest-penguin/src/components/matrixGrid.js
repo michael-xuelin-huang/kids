@@ -1,21 +1,19 @@
-export function renderMiniHeatmap(container, adaptiveEngine, maxGridSize) {
-    container.innerHTML = '';
-    container.style.gridTemplateColumns = `repeat(${maxGridSize}, minmax(0, 1fr))`;
+// statusOf(a, b) -> 'known' | 'learning' | 'weak' | 'untested'
+const STATUS_CLASS = {
+    known: 'bg-emerald-500/70',
+    learning: 'bg-amber-400/70',
+    weak: 'bg-rose-500/70',
+    untested: 'bg-slate-700/50',
+};
 
-    for (let a = 1; a <= maxGridSize; a++) {
-        for (let b = 1; b <= maxGridSize; b++) {
-            const entry = adaptiveEngine.stats[`${a}x${b}`];
-            let bgClass = 'bg-slate-700/50';
-            if (entry && entry.attempts > 0) {
-                // Color by familiarity (accuracy + speed), not just "ever wrong".
-                const f = entry.familiarity;
-                if (f >= adaptiveEngine.masteryThreshold) bgClass = 'bg-emerald-500/70';
-                else if (f >= 0.5) bgClass = 'bg-amber-400/70';
-                else bgClass = 'bg-rose-500/70';
-            }
-            
+export function renderMiniHeatmap(container, statusOf, gridSize) {
+    container.innerHTML = '';
+    container.style.gridTemplateColumns = `repeat(${gridSize}, minmax(0, 1fr))`;
+
+    for (let a = 1; a <= gridSize; a++) {
+        for (let b = 1; b <= gridSize; b++) {
             const cell = document.createElement('div');
-            cell.className = `aspect-square rounded-md ${bgClass} transition border border-white/5 flex items-center justify-center text-[10px] font-bold text-white/80`;
+            cell.className = `aspect-square rounded-md ${STATUS_CLASS[statusOf(a, b)] || STATUS_CLASS.untested} transition border border-white/5 flex items-center justify-center text-[10px] font-bold text-white/80`;
             cell.textContent = `${a}×${b}`;
             container.appendChild(cell);
         }

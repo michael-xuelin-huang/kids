@@ -71,5 +71,14 @@ check('echo strip', parseAnswer('four times three twelve', 4, 3), 12);
 check('echo only', parseAnswer('four times three', 4, 3), null);
 check('"6 x 7" is echo', parseSpokenNumber('6 x 7'), null);
 
+// --- Mixed operations: read-aloud echo of + - / questions ------------------------
+check('"21 divided by 7" echo only', parseAnswer('twenty one divided by seven', 21, 7), null);
+check('"49 divided by 7" echo is not 7', accepts('forty nine divided by seven', 7, { a: 49, b: 7 }), false);
+check('"49 divided by 7 seven" accepts 7', accepts('forty nine divided by seven seven', 7, { a: 49, b: 7 }), true);
+check('"8 plus 7 fifteen"', accepts('eight plus seven fifteen', 15, { a: 8, b: 7 }), true);
+check('"8 plus 7" echo only', accepts('eight plus seven', 15, { a: 8, b: 7 }), false);
+check('"43 minus 5 38"', accepts('43 minus 5 38', 38, { a: 43, b: 5 }), true);
+check('"43 − 5" symbol echo', parseAnswer('43 − 5', 43, 5), null);
+
 console.log(failed ? `\n${failed} failing` : '\nall passing');
 process.exit(failed ? 1 : 0);

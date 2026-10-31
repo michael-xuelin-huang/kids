@@ -1,5 +1,6 @@
 import { AdaptiveEngine } from './utils/adaptiveEngine.js';
-import { DifficultyController, GRID_SIZES } from './utils/difficultyController.js';
+import { Tutor } from './utils/skillModel.js';
+import { OP_SYMBOL, strategyHint } from './utils/curriculum.js';
 import { matchAnswer, stripPrompt } from './utils/numberParser.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { VoskRecognizer } from './audio/voskRec.js';
@@ -8,12 +9,15 @@ import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
 import { renderMiniHeatmap, renderReviewMatrix, renderGemArray } from './components/matrixGrid.js';
 
 // Game State
-let level = 1; // Level 1 = 4x4, Level 2 = 6x6, Level 3 = 7x7, Level 4 = 8x8, Level 5 = 9x9
+let level = 1; // 1-5, from how much of the times-table ladder is known (penguin gear)
 let score = 0;
 let streak = 0;
-let currentQuestion = { a: 1, b: 1 };
+// { op, a, b, answer, key, rung, fastSec } - see utils/curriculum.js
+let currentQuestion = { op: 'mul', a: 1, b: 1, answer: 1, key: 'mul:1x1', rung: 0, fastSec: 4 };
+let currentWhy = '';
 let recentQuestions = [];
-let maxGridSize = 4;
+const HEATMAP_GRID = 9;
+const CORRECT_PAUSE_MS = 800; // feedback time before the next question
 let timerDuration = 12.0; // Seconds
 let timeLeft = 12.0;
 let timerInterval = null;
@@ -35,19 +39,21 @@ function stabilityWindowMs(target) {
     return 0;
 }
 
-const adaptiveEngine = new AdaptiveEngine();
-
-// Level is no longer "10 correct answers per level". A PID-style controller
-// watches first-attempt results on facts the child has never practised and
-// moves the level up (possibly several levels at once) or back down, so the
-// child reaches their right level in a handful of questions.
-const difficulty = new DifficultyController({ targetTimeSec: adaptiveEngine.targetTimeSec });
-if (!difficulty.hasSavedState) {
-    // Existing practice data from before the controller existed: start above
-    // the levels that are already mastered instead of from level 1.
-    difficulty.bootstrapFromMastery((g) => adaptiveEngine.getMasteryPercentage(g));
+// The tutor (utils/skillModel.js) finds the edge of what the child knows with
+// a doubling staircase, skips everything below it, repeats missed facts on a
+// spaced schedule, and mixes in + - / once multiplication is comfortable.
+// ?ops=mul,add  forces a set of operations; ?reset clears saved progress.
+const PARAMS = new URLSearchParams(location.search);
+const forcedOps = PARAMS.get('ops') ? PARAMS.get('ops').split(',').map((o) => o.trim()) : null;
+const tutor = new Tutor({ ops: forcedOps });
+if (PARAMS.has('asrdebug')) window.__tutor = tutor;
+if (PARAMS.has('reset')) tutor.reset();
+else if (!tutor.hasSavedState) {
+    // Returning player from the old engine: reuse what they already practised.
+    tutor.bootstrapFromFamiliarity(new AdaptiveEngine().stats);
 }
-level = difficulty.level;
+level = tutor.level;
+const OP_NAMES = { add: 'plus', sub: 'minus', div: 'division' };
 
 // Level-up celebrations: during rapid placement a child can climb several
 // levels in a few questions; don't bury them under back-to-back overlays.
@@ -95,7 +101,7 @@ function overlaysOpen() {
 function handleSpeechResult(alternatives, meta) {
     if (isProcessingAnswer || overlaysOpen() || !timerStarted) return;
 
-    const target = currentQuestion.a * currentQuestion.b;
+    const target = currentQuestion.answer;
 
     // Children often read the question aloud before answering ("four times
     // three... twelve"). Strip the question part; if nothing but the question
@@ -183,7 +189,7 @@ function installTypedFallback() {
         if (e.key !== 'Enter' || isProcessingAnswer || !timerStarted || overlaysOpen()) return;
         const typed = parseInt(input.value, 10);
         input.value = '';
-        if (typed === currentQuestion.a * currentQuestion.b) {
+        if (typed === currentQuestion.answer) {
             handleCorrectAnswer((performance.now() - listenStartTime) / 1000);
         } else if (elVoiceStatus) {
             elVoiceStatus.textContent = `❌ ${Number.isNaN(typed) ? 'Type a number' : typed + ' is not it'}. Try again!`;
@@ -193,26 +199,33 @@ function installTypedFallback() {
 }
 installTypedFallback();
 
-function updateGridSizeForLevel() {
-    maxGridSize = GRID_SIZES[Math.min(level, GRID_SIZES.length) - 1];
+function updateLevelDisplay() {
+    if (elRangeLabel) elRangeLabel.textContent = tutor.ops.map((o) => OP_SYMBOL[o]).join('  ');
+    if (elLevel) elLevel.textContent = `${level}`;
+}
 
-    timerDuration = Math.max(5.0, 12.0 - (level - 1) * 1.5);
-    if (elRangeLabel) elRangeLabel.textContent = `${maxGridSize} × ${maxGridSize} Grid`;
-    if (elLevel) elLevel.textContent = `${level} (${maxGridSize}x${maxGridSize})`;
+// Time limit: shorter as the child levels up; 2-digit + and - get extra time.
+function timeLimitFor(q) {
+    const base = Math.max(6.0, 12.0 - (level - 1) * 1.5);
+    return base + (q.fastSec > 4 ? 4 : 0);
 }
 
 function nextQuestion() {
     isProcessingAnswer = false;
-    currentQuestion = adaptiveEngine.getNextQuestion(maxGridSize, recentQuestions);
-    
-    recentQuestions.push(`${currentQuestion.a}x${currentQuestion.b}`);
-    if (recentQuestions.length > 4) recentQuestions.shift();
+    const picked = tutor.next(recentQuestions);
+    currentQuestion = picked.q;
+    currentWhy = picked.why;
+    timerDuration = timeLimitFor(currentQuestion);
 
-    if (elFormula) elFormula.textContent = `${currentQuestion.a} × ${currentQuestion.b} = ?`;
+    recentQuestions.push(currentQuestion.key);
+    if (recentQuestions.length > 2) recentQuestions.shift();
+
+    if (elFormula) elFormula.textContent = `${currentQuestion.a} ${OP_SYMBOL[currentQuestion.op]} ${currentQuestion.b} = ?`;
     if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Say the answer!`;
+    if (PARAMS.has('asrdebug')) console.log(`[tutor] ${currentQuestion.key} (${currentWhy}), mul edge rung ${tutor.skills.mul.lo}`);
 
     renderPenguin(elPenguinContainer, level, 'normal');
-    renderMiniHeatmap(elMiniHeatmap, adaptiveEngine, maxGridSize);
+    renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID);
 
     // New question: invalidate old callbacks, close the answer gate, and reset
     // the timer display. The question is only shown (never spoken), so the
@@ -262,30 +275,24 @@ function startTimer() {
 
 function updateMasteryDisplay() {
     const el = document.getElementById('mastery-pct');
-    if (el) el.textContent = `${adaptiveEngine.getMasteryPercentage(maxGridSize)}% Mastered`;
+    if (el) el.textContent = `${tutor.masteredPct()}% of × facts`;
 }
 
-// Record the finished question with the adaptive engine and the difficulty
-// controller, and apply any level change. `wasCold` = the child had never
-// attempted this fact before (the controller's placement signal).
+// Record the finished question with the tutor and apply any level change.
 function recordAndAdapt(isCorrect, timeSpent) {
-    const { a, b } = currentQuestion;
-    const wasCold = adaptiveEngine.isUnseen(a, b);
-    adaptiveEngine.recordAttempt(a, b, isCorrect, timeSpent);
-
-    const res = difficulty.update(isCorrect, timeSpent, {
-        cold: wasCold,
-        masteryPct: adaptiveEngine.getMasteryPercentage(maxGridSize),
-        coldLeft: adaptiveEngine.countUnseen(maxGridSize),
-    });
+    const res = tutor.record(currentQuestion, isCorrect, timeSpent, currentWhy);
     questionsAnswered++;
-
-    if (res.changed) {
-        level = difficulty.level;
-        updateGridSizeForLevel();
-    }
+    if (res.levelChanged) level = res.level;
+    updateLevelDisplay();
     updateMasteryDisplay();
-    return res;
+    return { ...res, changed: res.levelChanged };
+}
+
+function announceUnlocks(res) {
+    if (!res.unlockedOps || !res.unlockedOps.length || !elPingoSpeech) return false;
+    const names = res.unlockedOps.map((o) => OP_NAMES[o] || o).join(' and ');
+    elPingoSpeech.textContent = `"You're a times-table star! Now some ${names} questions join the quest!"`;
+    return true;
 }
 
 // timeSpentSec: seconds from mic-open to the first transcript matching the
@@ -310,24 +317,23 @@ function handleCorrectAnswer(timeSpentSec) {
     sound.playCorrect();
     renderPenguin(elPenguinContainer, level, 'happy');
     if (elPingoSpeech) elPingoSpeech.textContent = `"Awesome job! Keep soaring!"`;
+    const unlocked = announceUnlocks(res);
 
-    if (res.changed === 'up') {
+    if (res.changed === 'up' && !unlocked) {
         triggerLevelUp(res);
     } else {
-        setTimeout(nextQuestion, 1200);
+        setTimeout(nextQuestion, unlocked ? 2200 : CORRECT_PAUSE_MS);
     }
 }
 
 function handleWrongAnswer(reason) {
+    if (PARAMS.has('asrdebug')) console.log(`[game] wrong (${reason}) processing=${isProcessingAnswer}`);
     if (isProcessingAnswer) return;
     isProcessingAnswer = true;
     cancelPendingCommit();
     if (timerInterval) clearInterval(timerInterval);
     recognizer.reset();
 
-    // The review matrix must use the grid this question came from: a demotion
-    // below can shrink the grid so that the missed fact is no longer on it.
-    const gridAtQuestion = maxGridSize;
     const res = recordAndAdapt(false, (performance.now() - listenStartTime) / 1000);
 
     streak = 0;
@@ -338,12 +344,10 @@ function handleWrongAnswer(reason) {
     if (elPingoSpeech) {
         elPingoSpeech.textContent = res.changed === 'down'
             ? `"That one's tricky! Let's practice closer to home - back to Level ${level}."`
-            : `"Blue shell hit! Let's review this fact."`;
+            : `"Blue shell hit! We'll see this one again soon."`;
     }
 
-    // Show Review Matrix Overlay
-    renderReviewMatrix(elReviewMatrix, currentQuestion.a, currentQuestion.b, gridAtQuestion);
-    renderGemArray(elGemArrayVisual, elGemArrayTitle, currentQuestion.a, currentQuestion.b);
+    showReview(currentQuestion);
 
     if (elReviewOverlay) {
         elReviewOverlay.classList.remove('hidden');
@@ -351,8 +355,34 @@ function handleWrongAnswer(reason) {
     }
 }
 
+// Wrong-answer review: the times-table map + array for x and /, a worked
+// "make ten" hint for + and -.
+function showReview(q) {
+    const elTitle = document.getElementById('review-subtitle');
+    const answerLine = `${q.a} ${OP_SYMBOL[q.op]} ${q.b} = ${q.answer}`;
+    if (q.op === 'mul' || q.op === 'div') {
+        // a x b for the map: for division 56 / 7 = 8 is the fact 7 x 8.
+        const [x, y] = q.op === 'mul' ? [q.a, q.b] : [q.b, q.answer];
+        elReviewMatrix.classList.remove('hidden');
+        renderReviewMatrix(elReviewMatrix, x, y, HEATMAP_GRID);
+        renderGemArray(elGemArrayVisual, elGemArrayTitle, x, y);
+        if (q.op === 'div') elGemArrayTitle.textContent = `${q.a} fish shared into ${q.b} groups = ${q.answer} in each group`;
+        if (elTitle) elTitle.textContent = q.op === 'div' ? `${answerLine}   (${strategyHint(q)})` : answerLine;
+    } else {
+        elReviewMatrix.classList.add('hidden');
+        elGemArrayVisual.innerHTML = '';
+        const hint = document.createElement('div');
+        hint.className = 'text-xl font-bold text-amber-200 text-center';
+        hint.textContent = strategyHint(q);
+        elGemArrayVisual.appendChild(hint);
+        elGemArrayTitle.textContent = hint.textContent.includes('→') ? 'Make a ten, then finish:' : 'Remember:';
+        if (elTitle) elTitle.textContent = answerLine;
+    }
+}
+
 // `level` has already been advanced by recordAndAdapt(); this only celebrates.
 function triggerLevelUp(res) {
+    if (PARAMS.has('asrdebug')) console.log('[game] level up', JSON.stringify(res));
     sound.playLevelUp();
 
     // Rapid placement can climb several levels within a few questions. Only the
@@ -370,7 +400,7 @@ function triggerLevelUp(res) {
 
     const gear = GEAR_CONFIGS[level];
     const verb = res.levelsGained > 1 ? 'zoomed ahead to' : 'reached';
-    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo ${verb} Level ${level} (${maxGridSize}x${maxGridSize} Galaxy)!`;
+    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo ${verb} Level ${level}!`;
     if (elUnlockedGearName) {
         elUnlockedGearName.innerHTML = `<span>${gear.badge === 'Bowtie' ? '🎀' : gear.badge === 'Cool Gear' ? '🕶️🎧' : gear.badge === 'Crown' ? '👑' : gear.badge === 'Wizard' ? '🧙‍♂️✨' : '🚀🛡️'}</span> ${gear.name}`;
     }
@@ -403,7 +433,7 @@ if (elBtnContinueQuest) {
 }
 
 // Initialize Game
-updateGridSizeForLevel();
+updateLevelDisplay();
 updateMasteryDisplay();
 renderPenguin(elPenguinContainer, level, 'normal');
 

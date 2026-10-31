@@ -81,7 +81,8 @@ for (const [word, alikes] of Object.entries(SOUND_ALIKE)) {
 // Tokens that only appear when the child reads the question aloud.
 // "x" and "by" are ambiguous ("x" is also a mishearing of "six", "by" of
 // "five"), so they only count as operators right after a number.
-const PROMPT_WORDS = new Set(['times', 'time', 'multiplied', 'multiply', 'equals', 'equal']);
+const PROMPT_WORDS = new Set(['times', 'time', 'multiplied', 'multiply', 'equals', 'equal',
+    'plus', 'minus', 'divided', 'divide']);
 const OPERATOR_AFTER_NUMBER = new Set(['x', 'by']);
 
 const MIN = 1;
@@ -107,6 +108,9 @@ function normalize(transcript) {
         // Chrome often writes "4 times 3" as "4 × 3" / "4 * 3". Keep that as a
         // word BEFORE punctuation is stripped, or the echo becomes "4 3".
         .replace(/[×✕✖*·]/g, ' times ')
+        .replace(/[÷]/g, ' divided by ')
+        .replace(/\+/g, ' plus ')
+        .replace(/[−–]/g, ' minus ')
         .replace(/(\d),(\d)/g, '$1$2')  // "8,888" -> "8888"
         .replace(/-/g, ' ')             // "twenty-four" -> "twenty four"
         .replace(/'/g, '')              // "i've" -> "ive"
@@ -266,6 +270,8 @@ export function stripPrompt(transcript, a, b) {
     if (last === -1) return clean; // no echo detected
 
     let rest = tokens.slice(last + 1);
+    // "divided by seven", "multiplied by seven"
+    if (rest[0] === 'by') rest = rest.slice(1);
 
     // Drop the second operand if it directly follows the operator.
     const expanded = expandTokens(rest);

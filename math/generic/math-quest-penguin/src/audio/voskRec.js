@@ -41,7 +41,9 @@ export function numberGrammar(max = 99) {
     for (let n = 1; n <= max; n++) {
         g.push(n < 20 ? ONES[n] : TENS[Math.floor(n / 10)] + (n % 10 ? ' ' + ONES[n % 10] : ''));
     }
-    g.push('times', 'zero', '[unk]');
+    // Operator words, so a child reading the question aloud ("eight plus
+    // seven...") isn't forced into number words.
+    g.push('times', 'plus', 'minus', 'divided by', 'zero', '[unk]');
     return g;
 }
 
