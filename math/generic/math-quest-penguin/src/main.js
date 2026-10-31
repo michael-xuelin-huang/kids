@@ -485,7 +485,7 @@ function renderVoiceLog() {
 }
 
 $('btn-voice-log').addEventListener('click', () => {
-    pauseGame(false); // the question waits while the panel is open
+    pauseGame(); // the question waits while the panel is open
     renderVoiceLog();
     showOverlay(elLog);
 });
@@ -514,10 +514,10 @@ $('voicelog-download').addEventListener('click', async () => {
 // Pause: freezes the clock and the microphone; Resume continues the SAME
 // question with the time it had left. Also pauses when the tab is hidden.
 // ---------------------------------------------------------------------------
-const elPauseOverlay = $('pause-overlay');
 const elBtnPause = $('btn-pause');
+const elDeskCard = document.querySelector('.desk-card');
 
-function pauseGame(showSheet = true) {
+function pauseGame() {
     if (!gameStarted || paused) return;
     paused = true;
     pausedAt = performance.now();
@@ -525,11 +525,9 @@ function pauseGame(showSheet = true) {
     cancelPendingCommit();
     recognizer.disarm();
     elBtnPause.setAttribute('aria-pressed', 'true');
-    if (showSheet) {
-        $('pause-pingo').innerHTML = pingoSVG('thinking');
-        showOverlay(elPauseOverlay);
-        $('btn-resume').focus();
-    }
+    $('pause-label').textContent = 'Resume';
+    elDeskCard.classList.add('is-paused');
+    setStatus('Paused — tap Resume to keep going');
 }
 
 function resumeGame() {
@@ -539,7 +537,8 @@ function resumeGame() {
     listenStartTime += away;              // paused time doesn't count
     if (voiceLog.current) voiceLog.current.t0 += away;
     elBtnPause.setAttribute('aria-pressed', 'false');
-    if (!elPauseOverlay.classList.contains('hidden')) hideOverlay(elPauseOverlay);
+    $('pause-label').textContent = 'Pause';
+    elDeskCard.classList.remove('is-paused');
     if (deferredNext) { deferredNext = false; nextQuestion(); return; }
     if (timerStarted && !isProcessingAnswer) {
         runTimer();
@@ -548,12 +547,12 @@ function resumeGame() {
     }
 }
 
+// One button toggles the timer: Pause <-> Resume.
 elBtnPause.addEventListener('click', () => (paused ? resumeGame() : pauseGame()));
-$('btn-resume').addEventListener('click', resumeGame);
 document.addEventListener('keydown', (e) => {
     if (e.target && e.target.tagName === 'INPUT') return;
-    if (e.key === 'p' || e.key === 'P' || (e.key === 'Escape' && !paused)) { e.preventDefault(); pauseGame(); }
-    else if (e.key === 'Escape' && paused && !elPauseOverlay.classList.contains('hidden')) resumeGame();
+    if (e.key === 'p' || e.key === 'P') { e.preventDefault(); paused ? resumeGame() : pauseGame(); }
+    else if (e.key === 'Escape' && !overlaysOpen()) pauseGame();
 });
 document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame(); });
 
@@ -574,7 +573,6 @@ const elBtnStart = $('btn-start');
 function beginGame() {
     elStartOverlay.classList.add('hidden');
     gameStarted = true;
-    elBtnPause.disabled = false;
     requestAnimationFrame(drawMeter);
     nextQuestion();
 }

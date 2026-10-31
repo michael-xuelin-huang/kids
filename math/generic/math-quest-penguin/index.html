@@ -26,9 +26,10 @@
             <div class="desk-card">
                 <div class="desk-top">
                     <div class="timer" aria-hidden="true"><div id="timer-bar" class="timer-bar"></div></div>
-                    <button id="btn-pause" class="pause-btn" type="button" aria-pressed="false" disabled title="Pause (P)">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>
-                        Pause
+                    <button id="btn-pause" class="pause-btn" type="button" aria-pressed="false" title="Pause / resume (P)">
+                        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>
+                        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                        <span id="pause-label">Pause</span>
                     </button>
                 </div>
 
@@ -94,16 +95,6 @@
             <h2>Ready to grow your zoo?</h2>
             <p id="start-status">Loading Pingo's ears… (first time only, about 40 MB)</p>
             <button id="btn-start" class="btn btn--primary" type="button">Start</button>
-        </div>
-    </div>
-
-    <!-- Paused -->
-    <div id="pause-overlay" class="overlay hidden opacity-0">
-        <div class="sheet sheet--pause" role="dialog" aria-labelledby="pause-title">
-            <div id="pause-pingo" class="start-pingo"></div>
-            <h2 id="pause-title">Paused</h2>
-            <p>Take a break. Your question and its time will wait for you.</p>
-            <button id="btn-resume" class="btn btn--primary" type="button">Resume</button>
         </div>
     </div>
 

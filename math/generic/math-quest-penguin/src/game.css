@@ -97,8 +97,13 @@ button { font: inherit; }
     box-shadow: 0 3px 0 var(--ice-deep);
 }
 .pause-btn svg { width: 18px; height: 18px; fill: currentColor; }
-.pause-btn:disabled { opacity: 0.45; cursor: default; }
-.pause-btn:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 1px 0 var(--ice-deep); }
+.pause-btn .icon-play { display: none; }
+.pause-btn[aria-pressed="true"] { background: var(--beak); box-shadow: 0 3px 0 var(--beak-deep); }
+.pause-btn[aria-pressed="true"] .icon-play { display: block; }
+.pause-btn[aria-pressed="true"] .icon-pause { display: none; }
+.desk-card.is-paused .formula { filter: blur(14px); opacity: 0.5; }
+.desk-card.is-paused .timer-bar { background: var(--ink-soft); }
+.pause-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--ice-deep); }
 .pause-btn:focus-visible { outline: 3px solid var(--pool); outline-offset: 3px; }
 .timer { height: 12px; border-radius: 999px; background: var(--ice); overflow: hidden; }
 .timer-bar {
