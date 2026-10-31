@@ -85,6 +85,21 @@ button { font: inherit; }
     padding: 22px 26px 22px;
     box-shadow: 0 12px 0 var(--ice-deep);   /* an ice floe, seen from the side */
 }
+.desk-top { display: flex; align-items: center; gap: 12px; }
+.desk-top .timer { flex: 1; }
+.pause-btn {
+    flex: none;
+    display: flex; align-items: center; gap: 6px;
+    border: 0; cursor: pointer;
+    background: var(--ice); color: var(--ink);
+    border-radius: 999px; padding: 6px 14px 4px 10px;
+    font-weight: 700; font-size: 1rem;
+    box-shadow: 0 3px 0 var(--ice-deep);
+}
+.pause-btn svg { width: 18px; height: 18px; fill: currentColor; }
+.pause-btn:disabled { opacity: 0.45; cursor: default; }
+.pause-btn:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 1px 0 var(--ice-deep); }
+.pause-btn:focus-visible { outline: 3px solid var(--pool); outline-offset: 3px; }
 .timer { height: 12px; border-radius: 999px; background: var(--ice); overflow: hidden; }
 .timer-bar {
     height: 100%; width: 100%;

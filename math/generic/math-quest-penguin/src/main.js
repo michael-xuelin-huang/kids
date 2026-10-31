@@ -33,6 +33,10 @@ let pendingCommit = null; // debounced interim match: { timer, ts }
 let isProcessingAnswer = false;
 let heardSomething = false;   // any transcript for this question
 let nudged = false;           // "couldn't catch that" hint shown
+let gameStarted = false;
+let paused = false;
+let pausedAt = 0;
+let deferredNext = false;     // a new question was due while paused
 
 // An interim transcript of "seventy" may still become "seventy two", "four"
 // may become "fourteen". For answers that are a possible prefix of a longer
@@ -106,7 +110,7 @@ function hideOverlay(el) {
     setTimeout(() => el.classList.add('hidden'), 250);
 }
 function overlaysOpen() {
-    return [elReviewOverlay, elArrivalOverlay, $('voicelog-overlay')].some((el) => !el.classList.contains('hidden'));
+    return paused || [elReviewOverlay, elArrivalOverlay, $('voicelog-overlay')].some((el) => !el.classList.contains('hidden'));
 }
 
 function cancelPendingCommit() {
@@ -271,6 +275,7 @@ function timeLimitFor(q) {
 // Question flow
 // ---------------------------------------------------------------------------
 function nextQuestion() {
+    if (paused) { deferredNext = true; return; }
     isProcessingAnswer = false;
     const picked = tutor.next(recentQuestions);
     currentQuestion = picked.q;
@@ -318,10 +323,13 @@ function beginListening(token) {
 }
 
 function startTimer() {
-    if (timerInterval) clearInterval(timerInterval);
     listenStartTime = performance.now();
     timeLeft = timerDuration;
+    runTimer();
+}
 
+function runTimer() {
+    if (timerInterval) clearInterval(timerInterval);
     timerInterval = setInterval(() => {
         const elapsed = (performance.now() - listenStartTime) / 1000;
         timeLeft = Math.max(0, timerDuration - elapsed);
@@ -450,7 +458,6 @@ elBtnContinue.addEventListener('click', () => { hideOverlay(elArrivalOverlay); n
 // Voice check panel
 // ---------------------------------------------------------------------------
 const elLog = $('voicelog-overlay');
-let pausedForLog = false;
 
 function renderVoiceLog() {
     const s = voiceLog.summary();
@@ -478,18 +485,13 @@ function renderVoiceLog() {
 }
 
 $('btn-voice-log').addEventListener('click', () => {
-    // Pause the question while the panel is open.
-    if (timerStarted && !isProcessingAnswer) {
-        pausedForLog = true;
-        if (timerInterval) clearInterval(timerInterval);
-        recognizer.disarm();
-    }
+    pauseGame(false); // the question waits while the panel is open
     renderVoiceLog();
     showOverlay(elLog);
 });
 $('voicelog-close').addEventListener('click', () => {
     hideOverlay(elLog);
-    if (pausedForLog) { pausedForLog = false; nextQuestion(); }
+    resumeGame();
 });
 $('voicelog-clips').addEventListener('change', (e) => {
     voiceLog.setClipsEnabled(e.target.checked);
@@ -509,6 +511,53 @@ $('voicelog-download').addEventListener('click', async () => {
 });
 
 // ---------------------------------------------------------------------------
+// Pause: freezes the clock and the microphone; Resume continues the SAME
+// question with the time it had left. Also pauses when the tab is hidden.
+// ---------------------------------------------------------------------------
+const elPauseOverlay = $('pause-overlay');
+const elBtnPause = $('btn-pause');
+
+function pauseGame(showSheet = true) {
+    if (!gameStarted || paused) return;
+    paused = true;
+    pausedAt = performance.now();
+    if (timerInterval) clearInterval(timerInterval);
+    cancelPendingCommit();
+    recognizer.disarm();
+    elBtnPause.setAttribute('aria-pressed', 'true');
+    if (showSheet) {
+        $('pause-pingo').innerHTML = pingoSVG('thinking');
+        showOverlay(elPauseOverlay);
+        $('btn-resume').focus();
+    }
+}
+
+function resumeGame() {
+    if (!paused) return;
+    paused = false;
+    const away = performance.now() - pausedAt;
+    listenStartTime += away;              // paused time doesn't count
+    if (voiceLog.current) voiceLog.current.t0 += away;
+    elBtnPause.setAttribute('aria-pressed', 'false');
+    if (!elPauseOverlay.classList.contains('hidden')) hideOverlay(elPauseOverlay);
+    if (deferredNext) { deferredNext = false; nextQuestion(); return; }
+    if (timerStarted && !isProcessingAnswer) {
+        runTimer();
+        recognizer.arm(0);
+        setStatus('Say the answer out loud');
+    }
+}
+
+elBtnPause.addEventListener('click', () => (paused ? resumeGame() : pauseGame()));
+$('btn-resume').addEventListener('click', resumeGame);
+document.addEventListener('keydown', (e) => {
+    if (e.target && e.target.tagName === 'INPUT') return;
+    if (e.key === 'p' || e.key === 'P' || (e.key === 'Escape' && !paused)) { e.preventDefault(); pauseGame(); }
+    else if (e.key === 'Escape' && paused && !elPauseOverlay.classList.contains('hidden')) resumeGame();
+});
+document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame(); });
+
+// ---------------------------------------------------------------------------
 // Start
 // ---------------------------------------------------------------------------
 $('brand-mark').innerHTML = pingoSVG('normal');
@@ -524,6 +573,8 @@ const elBtnStart = $('btn-start');
 
 function beginGame() {
     elStartOverlay.classList.add('hidden');
+    gameStarted = true;
+    elBtnPause.disabled = false;
     requestAnimationFrame(drawMeter);
     nextQuestion();
 }

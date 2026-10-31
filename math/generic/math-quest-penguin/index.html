@@ -24,7 +24,13 @@
         <!-- Left: the question desk -->
         <section class="desk" aria-label="Question">
             <div class="desk-card">
-                <div class="timer" aria-hidden="true"><div id="timer-bar" class="timer-bar"></div></div>
+                <div class="desk-top">
+                    <div class="timer" aria-hidden="true"><div id="timer-bar" class="timer-bar"></div></div>
+                    <button id="btn-pause" class="pause-btn" type="button" aria-pressed="false" disabled title="Pause (P)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>
+                        Pause
+                    </button>
+                </div>
 
                 <div id="question-box" class="question">
                     <p class="question-ops" id="current-range-label">×</p>
@@ -88,6 +94,16 @@
             <h2>Ready to grow your zoo?</h2>
             <p id="start-status">Loading Pingo's ears… (first time only, about 40 MB)</p>
             <button id="btn-start" class="btn btn--primary" type="button">Start</button>
+        </div>
+    </div>
+
+    <!-- Paused -->
+    <div id="pause-overlay" class="overlay hidden opacity-0">
+        <div class="sheet sheet--pause" role="dialog" aria-labelledby="pause-title">
+            <div id="pause-pingo" class="start-pingo"></div>
+            <h2 id="pause-title">Paused</h2>
+            <p>Take a break. Your question and its time will wait for you.</p>
+            <button id="btn-resume" class="btn btn--primary" type="button">Resume</button>
         </div>
     </div>
 
