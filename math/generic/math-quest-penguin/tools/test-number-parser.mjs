@@ -54,7 +54,7 @@ check('"A" is not 18', accepts('A', 18), false);
 check('"A" is not 9', accepts('A', 9), false);
 check('"night" is not 8', accepts('night', 8), false);
 check('"80" is not 8', accepts('80', 8), false);
-check('"thirty" is not 13', accepts('thirty', 13), false);
+check('"thirty" for 13 is only a teen/ty match', matchAnswer(['thirty'], 13).match, 'teenty');
 check('pure echo "4 times 2" is not 8', accepts('4 times 2', 8, { a: 4, b: 2 }), false);
 check('"12 no wait 16" is not 12', accepts('12 no wait 16', 12), false);
 check('long sentence with "a"', accepts('I want a cookie and some milk please now', 8), false);
@@ -79,6 +79,14 @@ check('"8 plus 7 fifteen"', accepts('eight plus seven fifteen', 15, { a: 8, b: 7
 check('"8 plus 7" echo only', accepts('eight plus seven', 15, { a: 8, b: 7 }), false);
 check('"43 minus 5 38"', accepts('43 minus 5 38', 38, { a: 43, b: 5 }), true);
 check('"43 − 5" symbol echo', parseAnswer('43 − 5', 43, 5), null);
+
+// --- Teen / -ty confusion ------------------------------------------------------
+check('"fourteen" accepted for 40', accepts('fourteen', 40), true);
+check('"forty" accepted for 14', accepts('forty', 14), true);
+check('"fifty" accepted for 15', accepts('fifty', 15), true);
+check('"forty" not accepted for 4', accepts('forty', 4), false);
+check('"forty" not accepted for 41', accepts('forty', 41), false);
+check('"twenty" then "four" joined', accepts(['four', 'twenty four'], 24), true);
 
 console.log(failed ? `\n${failed} failing` : '\nall passing');
 process.exit(failed ? 1 : 0);

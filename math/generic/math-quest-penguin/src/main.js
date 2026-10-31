@@ -2,15 +2,18 @@ import { AdaptiveEngine } from './utils/adaptiveEngine.js';
 import { Tutor } from './utils/skillModel.js';
 import { OP_SYMBOL, strategyHint } from './utils/curriculum.js';
 import { matchAnswer, stripPrompt } from './utils/numberParser.js';
+import { VoiceLog } from './utils/voiceLog.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { VoskRecognizer } from './audio/voskRec.js';
 import { sound } from './audio/soundEffects.js';
-import { renderPenguin, GEAR_CONFIGS } from './components/penguin.js';
+import { pingoSVG } from './components/art.js';
+import { ZooProgress, renderZoo, animalName, animalPortrait } from './components/zoo.js';
 import { renderMiniHeatmap, renderReviewMatrix, renderGemArray } from './components/matrixGrid.js';
 
-// Game State
-let level = 1; // 1-5, from how much of the times-table ladder is known (penguin gear)
-let score = 0;
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let tier = 1; // 1-5 from how much of the times tables is known (sets the time limit)
 let streak = 0;
 // { op, a, b, answer, key, rung, fastSec } - see utils/curriculum.js
 let currentQuestion = { op: 'mul', a: 1, b: 1, answer: 1, key: 'mul:1x1', rung: 0, fastSec: 4 };
@@ -18,16 +21,18 @@ let currentWhy = '';
 let recentQuestions = [];
 const HEATMAP_GRID = 9;
 const CORRECT_PAUSE_MS = 800; // feedback time before the next question
-let timerDuration = 12.0; // Seconds
+let timerDuration = 12.0;
 let timeLeft = 12.0;
 let timerInterval = null;
 // The question is shown on screen (never spoken). The clock starts, and the
 // microphone is armed, just after the question has been painted.
 let listenStartTime = performance.now();
 let timerStarted = false;
-let questionToken = 0; // invalidates callbacks from a previous question
+let questionToken = 0;    // invalidates callbacks from a previous question
 let pendingCommit = null; // debounced interim match: { timer, ts }
 let isProcessingAnswer = false;
+let heardSomething = false;   // any transcript for this question
+let nudged = false;           // "couldn't catch that" hint shown
 
 // An interim transcript of "seventy" may still become "seventy two", "four"
 // may become "fourteen". For answers that are a possible prefix of a longer
@@ -44,48 +49,66 @@ function stabilityWindowMs(target) {
 // spaced schedule, and mixes in + - / once multiplication is comfortable.
 // ?ops=mul,add  forces a set of operations; ?reset clears saved progress.
 const PARAMS = new URLSearchParams(location.search);
+const DEBUG = PARAMS.has('asrdebug');
 const forcedOps = PARAMS.get('ops') ? PARAMS.get('ops').split(',').map((o) => o.trim()) : null;
 const tutor = new Tutor({ ops: forcedOps });
-if (PARAMS.has('asrdebug')) window.__tutor = tutor;
-if (PARAMS.has('reset')) tutor.reset();
-else if (!tutor.hasSavedState) {
+if (PARAMS.has('reset')) {
+    tutor.reset();
+    try { localStorage.removeItem('math-quest-penguin.zoo.v1'); } catch (e) { /* ignore */ }
+} else if (!tutor.hasSavedState) {
     // Returning player from the old engine: reuse what they already practised.
     tutor.bootstrapFromFamiliarity(new AdaptiveEngine().stats);
 }
-level = tutor.level;
+tier = tutor.level;
+const zoo = new ZooProgress();
+const voiceLog = new VoiceLog();
+if (DEBUG) Object.assign(window, { __tutor: tutor, __zoo: zoo, __voiceLog: voiceLog });
 const OP_NAMES = { add: 'plus', sub: 'minus', div: 'division' };
 
-// Level-up celebrations: during rapid placement a child can climb several
-// levels in a few questions; don't bury them under back-to-back overlays.
-let questionsAnswered = 0;
-let lastOverlayAtQuestion = -99;
-const MIN_QUESTIONS_BETWEEN_OVERLAYS = 4;
+// ---------------------------------------------------------------------------
+// DOM
+// ---------------------------------------------------------------------------
+const $ = (id) => document.getElementById(id);
+const elLevel = $('stat-level');
+const elScore = $('stat-score');
+const elStreak = $('stat-streak');
+const elFormula = $('formula-display');
+const elVoiceStatus = $('voice-status');
+const elTimerBar = $('timer-bar');
+const elOps = $('current-range-label');
+const elPingoSpeech = $('pingo-speech');
+const elPingo = $('penguin-container');
+const elMiniHeatmap = $('mini-heatmap');
+const elMeterBars = [...document.querySelectorAll('.mic-meter span')];
 
-// DOM Elements
-const elLevel = document.getElementById('stat-level');
-const elScore = document.getElementById('stat-score');
-const elStreak = document.getElementById('stat-streak');
-const elFormula = document.getElementById('formula-display');
-const elVoiceStatus = document.getElementById('voice-status');
-const elTimerBar = document.getElementById('timer-bar');
-const elRangeLabel = document.getElementById('current-range-label');
-const elPingoSpeech = document.getElementById('pingo-speech');
-const elPenguinContainer = document.getElementById('penguin-container');
-const elMiniHeatmap = document.getElementById('mini-heatmap');
+const elReviewOverlay = $('review-overlay');
+const elReviewMatrix = $('review-matrix-container');
+const elGemArrayVisual = $('gem-array-visual');
+const elGemArrayTitle = $('gem-array-title');
+const elBtnNextQuestion = $('btn-next-question');
 
-// Modals
-const elReviewOverlay = document.getElementById('review-overlay');
-const elReviewMatrix = document.getElementById('review-matrix-container');
-const elGemArrayVisual = document.getElementById('gem-array-visual');
-const elGemArrayTitle = document.getElementById('gem-array-title');
-const elBtnNextQuestion = document.getElementById('btn-next-question');
+const elArrivalOverlay = $('levelup-overlay');
+const elBtnContinue = $('btn-continue-quest');
 
-const elLevelupOverlay = document.getElementById('levelup-overlay');
-const elLevelupMessage = document.getElementById('levelup-message');
-const elUnlockedGearName = document.getElementById('unlocked-gear-name');
-const elBtnContinueQuest = document.getElementById('btn-continue-quest');
+function setStatus(text, wrong = false) {
+    elVoiceStatus.textContent = text;
+    elVoiceStatus.classList.toggle('is-wrong', wrong);
+}
+function say(text) { elPingoSpeech.textContent = text; }
+function setPingo(mood) { elPingo.innerHTML = pingoSVG(mood); }
 
-// Speech Recognition Init with Status Callback
+function showOverlay(el) {
+    el.classList.remove('hidden');
+    requestAnimationFrame(() => el.classList.remove('opacity-0'));
+}
+function hideOverlay(el) {
+    el.classList.add('opacity-0');
+    setTimeout(() => el.classList.add('hidden'), 250);
+}
+function overlaysOpen() {
+    return [elReviewOverlay, elArrivalOverlay, $('voicelog-overlay')].some((el) => !el.classList.contains('hidden'));
+}
+
 function cancelPendingCommit() {
     if (pendingCommit) {
         clearTimeout(pendingCommit.timer);
@@ -93,10 +116,9 @@ function cancelPendingCommit() {
     }
 }
 
-function overlaysOpen() {
-    return !elReviewOverlay.classList.contains('hidden') || !elLevelupOverlay.classList.contains('hidden');
-}
-
+// ---------------------------------------------------------------------------
+// Speech
+// ---------------------------------------------------------------------------
 // Handles every interim AND final transcript (all ASR alternatives at once).
 function handleSpeechResult(alternatives, meta) {
     if (isProcessingAnswer || overlaysOpen() || !timerStarted) return;
@@ -107,13 +129,15 @@ function handleSpeechResult(alternatives, meta) {
     // three... twelve"). Strip the question part; if nothing but the question
     // is left, ignore the result entirely (and don't show it).
     const heard = stripPrompt(alternatives[0], currentQuestion.a, currentQuestion.b);
+    const { value: best, match } = heard ? matchAnswer(alternatives, target, currentQuestion) : { value: null, match: null };
+    voiceLog.heard(alternatives, meta.isFinal, match);
     if (!heard) return;
+    heardSomething = true;
 
-    // Exact match, or a sound-alike of the expected answer ("A" for "eight",
-    // "88" for "eight eight") - see matchAnswer() in numberParser.js.
-    const { value: best, match } = matchAnswer(alternatives, target, currentQuestion);
+    setStatus(`Heard “${heard}”`);
 
-    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Heard: "${heard}"`;
+    // A teen/-ty swap ("fourteen" for 40) only counts once the result is final.
+    if (match === 'teenty' && !meta.isFinal) return;
 
     if (match) {
         // Answer time = when the first matching transcript arrived, not when
@@ -146,23 +170,22 @@ function handleSpeechResult(alternatives, meta) {
     // Only a final result is a real "wrong answer"; interims are partial
     // ("twenty" on the way to "twenty four"). Wrong finals don't end the
     // question - the child can try again until the timer runs out.
-    if (meta.isFinal && best !== null && elVoiceStatus) {
-        elVoiceStatus.textContent = `❌ Heard ${best}. Try again!`;
-    }
+    if (meta.isFinal && best !== null) setStatus(`Heard ${best} — try again!`, true);
 }
 
 // Speech engine. Default: Vosk - offline, restricted to number words, streams
 // partial results with no network round trip (see audio/voskRec.js). The
 // browser's Web Speech API is the fallback (?asr=web forces it).
-const ASR_PARAM = new URLSearchParams(location.search).get('asr');
+const ASR_PARAM = PARAMS.get('asr');
 const onAsrError = (err) => {
-        console.error('Speech Recognition Error:', err);
-        if (elVoiceStatus && err !== 'network' && err !== 'not-allowed' && err !== 'service-not-allowed' && err !== 'audio-capture') {
-            elVoiceStatus.textContent = `⚠️ Speech recognition error`;
-        }
+    console.error('Speech Recognition Error:', err);
+    if (err !== 'network' && err !== 'not-allowed' && err !== 'service-not-allowed' && err !== 'audio-capture') {
+        setStatus('The microphone stopped — tap Start again if this keeps happening', true);
+    }
 };
 const onAsrStatus = (statusText) => {
-    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 ${statusText}`;
+    if (statusText.startsWith('Listening')) setStatus('Say the answer out loud');
+    else setStatus(statusText);
 };
 const webSpeech = () => new SpeechRecognizer(handleSpeechResult, onAsrError, onAsrStatus);
 let recognizer = null;
@@ -170,89 +193,128 @@ if (ASR_PARAM !== 'web' && ASR_PARAM !== 'cloud' && ASR_PARAM !== 'local') {
     const vosk = new VoskRecognizer(handleSpeechResult, onAsrError, onAsrStatus);
     if (vosk.supported) {
         recognizer = vosk;
-        vosk.loadModel().catch(() => { /* reported when START is tapped */ });
+        vosk.captureAudio = voiceLog.clipsEnabled;
+        vosk.loadModel().catch(() => { /* reported when Start is tapped */ });
     }
 }
 if (!recognizer) recognizer = webSpeech();
+const engineName = () => (recognizer instanceof VoskRecognizer ? 'vosk' : 'web-speech');
 
-// Keyboard fallback for browsers without the Web Speech API (e.g. Firefox).
+// Mic meter: five bars that follow the microphone loudness.
+let meterLevel = 0;
+function drawMeter() {
+    const lvl = recognizer.level !== undefined ? recognizer.level : meterLevel;
+    elMeterBars.forEach((bar, i) => {
+        const shape = [0.55, 0.85, 1, 0.8, 0.5][i];
+        bar.style.transform = `scaleY(${Math.max(0.15, Math.min(1, lvl * 1.6 * shape))})`;
+    });
+    requestAnimationFrame(drawMeter);
+}
+
+// Keyboard fallback for browsers without speech recognition (e.g. Firefox).
 function installTypedFallback() {
-    if (recognizer.supported) return;
-    const box = document.getElementById('question-box');
-    if (!box) return;
+    if (recognizer.supported || $('typed-answer')) return;
     const input = document.createElement('input');
+    input.id = 'typed-answer';
     input.type = 'number';
     input.inputMode = 'numeric';
-    input.placeholder = 'Type your answer';
-    input.className = 'mt-3 w-40 text-center text-2xl font-bold rounded-xl bg-black/40 border border-white/20 text-white py-2';
+    input.placeholder = 'Type it';
+    input.className = 'typed-answer';
     input.addEventListener('keydown', (e) => {
         if (e.key !== 'Enter' || isProcessingAnswer || !timerStarted || overlaysOpen()) return;
         const typed = parseInt(input.value, 10);
         input.value = '';
-        if (typed === currentQuestion.answer) {
-            handleCorrectAnswer((performance.now() - listenStartTime) / 1000);
-        } else if (elVoiceStatus) {
-            elVoiceStatus.textContent = `❌ ${Number.isNaN(typed) ? 'Type a number' : typed + ' is not it'}. Try again!`;
-        }
+        if (typed === currentQuestion.answer) handleCorrectAnswer((performance.now() - listenStartTime) / 1000);
+        else setStatus(`${Number.isNaN(typed) ? 'Type a number' : typed + ' is not it'} — try again!`, true);
     });
-    box.appendChild(input);
+    $('question-box').appendChild(input);
 }
 installTypedFallback();
 
-function updateLevelDisplay() {
-    if (elRangeLabel) elRangeLabel.textContent = tutor.ops.map((o) => OP_SYMBOL[o]).join('  ');
-    if (elLevel) elLevel.textContent = `${level}`;
+// ---------------------------------------------------------------------------
+// Displays
+// ---------------------------------------------------------------------------
+function updateHeader() {
+    elLevel.textContent = zoo.level;
+    elScore.textContent = zoo.stars;
+    elStreak.textContent = streak;
+    elOps.textContent = tutor.ops.length > 1 ? tutor.ops.map((o) => OP_SYMBOL[o]).join('  ') : '';
+    $('mastery-pct').textContent = `${tutor.masteredPct()}% of × facts`;
+}
+
+function updateZoo(fresh = []) {
+    renderZoo($('zoo-scene'), zoo, fresh);
+    const n = zoo.animals().length;
+    $('zoo-count').textContent = `${n} ${n === 1 ? 'animal' : 'animals'}`;
+    const next = zoo.next();
+    if (next) {
+        const left = zoo.starsToNext();
+        const name = animalName(next.key).toLowerCase();
+        $('next-label').textContent = `${left} more ${left === 1 ? 'star' : 'stars'} to meet ${/^[aeiou]/.test(name) ? 'an' : 'a'} ${name}`;
+        $('next-portrait').innerHTML = animalPortrait(next.key);
+        const need = left + zoo.into;
+        $('next-bar-fill').style.width = `${Math.round((zoo.into / need) * 100)}%`;
+    } else {
+        $('next-label').textContent = 'Your zoo is full — every animal is here!';
+        $('next-portrait').innerHTML = '';
+        $('next-bar-fill').style.width = '100%';
+    }
 }
 
 // Time limit: shorter as the child levels up; 2-digit + and - get extra time.
 function timeLimitFor(q) {
-    const base = Math.max(6.0, 12.0 - (level - 1) * 1.5);
+    const base = Math.max(6.0, 12.0 - (tier - 1) * 1.5);
     return base + (q.fastSec > 4 ? 4 : 0);
 }
 
+// ---------------------------------------------------------------------------
+// Question flow
+// ---------------------------------------------------------------------------
 function nextQuestion() {
     isProcessingAnswer = false;
     const picked = tutor.next(recentQuestions);
     currentQuestion = picked.q;
     currentWhy = picked.why;
     timerDuration = timeLimitFor(currentQuestion);
+    heardSomething = false;
+    nudged = false;
 
     recentQuestions.push(currentQuestion.key);
     if (recentQuestions.length > 2) recentQuestions.shift();
 
-    if (elFormula) elFormula.textContent = `${currentQuestion.a} ${OP_SYMBOL[currentQuestion.op]} ${currentQuestion.b} = ?`;
-    if (elVoiceStatus) elVoiceStatus.textContent = `🎤 Say the answer!`;
-    if (PARAMS.has('asrdebug')) console.log(`[tutor] ${currentQuestion.key} (${currentWhy}), mul edge rung ${tutor.skills.mul.lo}`);
+    elFormula.classList.remove('is-right', 'is-wrong');
+    elFormula.textContent = `${currentQuestion.a} ${OP_SYMBOL[currentQuestion.op]} ${currentQuestion.b} = ?`;
+    setStatus('Say the answer out loud');
+    if (DEBUG) console.log(`[tutor] ${currentQuestion.key} (${currentWhy}), mul edge rung ${tutor.skills.mul.lo}`);
+    voiceLog.startQuestion(currentQuestion, currentWhy, engineName());
 
-    renderPenguin(elPenguinContainer, level, 'normal');
+    setPingo('normal');
     renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID);
+    updateHeader();
 
-    // New question: invalidate old callbacks, close the answer gate, and reset
-    // the timer display. The question is only shown (never spoken), so the
-    // clock and the microphone start right after it appears.
     questionToken++;
     const token = questionToken;
     cancelPendingCommit();
     timerStarted = false;
     if (timerInterval) clearInterval(timerInterval);
-    if (elTimerBar) elTimerBar.style.width = '100%';
+    elTimerBar.style.width = '100%';
+    elTimerBar.classList.remove('is-low');
     recognizer.disarm();
-    recognizer.ensureRunning(); // normally already warm from the previous question
+    recognizer.ensureRunning();
 
     // Give the browser a moment to paint the new question before the clock
     // starts, so the child isn't charged for time they couldn't see it.
     setTimeout(() => beginListening(token), 50);
 }
 
-// Open the answer gate and start the clock. Idempotent per question.
 function beginListening(token) {
     if (token !== questionToken || isProcessingAnswer) return;
     if (!timerStarted) {
         timerStarted = true;
         startTimer();
     }
-    recognizer.arm(0); // nothing is played aloud, so there is no echo to wait out
-    if (elVoiceStatus && !recognizer.supported) elVoiceStatus.textContent = '⌨️ Type your answer and press Enter';
+    recognizer.arm(0);
+    if (!recognizer.supported) setStatus('Type your answer and press Enter');
 }
 
 function startTimer() {
@@ -264,7 +326,15 @@ function startTimer() {
         const elapsed = (performance.now() - listenStartTime) / 1000;
         timeLeft = Math.max(0, timerDuration - elapsed);
         const pct = (timeLeft / timerDuration) * 100;
-        if (elTimerBar) elTimerBar.style.width = `${pct}%`;
+        elTimerBar.style.width = `${pct}%`;
+        elTimerBar.classList.toggle('is-low', pct < 30);
+
+        // The mic picked up talking but no number came out of it: say so,
+        // instead of leaving the child wondering whether Pingo is listening.
+        if (!nudged && !heardSomething && elapsed > 2.5 && (recognizer.voiceMs || 0) > 700) {
+            nudged = true;
+            setStatus("I hear you, but couldn't catch a number — say it again, nice and clear", true);
+        }
 
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
@@ -273,183 +343,194 @@ function startTimer() {
     }, 50);
 }
 
-function updateMasteryDisplay() {
-    const el = document.getElementById('mastery-pct');
-    if (el) el.textContent = `${tutor.masteredPct()}% of × facts`;
+function finishLog(outcome) {
+    voiceLog.finish(outcome, {
+        ms: performance.now() - listenStartTime,
+        voiceMs: recognizer.voiceMs ?? null,
+        peakLevel: recognizer.peakLevel ?? null,
+        getAudio: recognizer.recentAudio ? (sec) => recognizer.recentAudio(sec) : null,
+    });
 }
 
-// Record the finished question with the tutor and apply any level change.
-function recordAndAdapt(isCorrect, timeSpent) {
-    const res = tutor.record(currentQuestion, isCorrect, timeSpent, currentWhy);
-    questionsAnswered++;
-    if (res.levelChanged) level = res.level;
-    updateLevelDisplay();
-    updateMasteryDisplay();
-    return { ...res, changed: res.levelChanged };
-}
-
-function announceUnlocks(res) {
-    if (!res.unlockedOps || !res.unlockedOps.length || !elPingoSpeech) return false;
-    const names = res.unlockedOps.map((o) => OP_NAMES[o] || o).join(' and ');
-    elPingoSpeech.textContent = `"You're a times-table star! Now some ${names} questions join the quest!"`;
-    return true;
-}
-
-// timeSpentSec: seconds from mic-open to the first transcript matching the
-// answer (so recognizer lag after the child spoke isn't charged to them).
+// timeSpentSec: seconds from question shown to the first transcript matching
+// the answer (so recognizer lag after the child spoke isn't charged to them).
 function handleCorrectAnswer(timeSpentSec) {
     if (isProcessingAnswer) return;
     isProcessingAnswer = true;
     cancelPendingCommit();
     if (timerInterval) clearInterval(timerInterval);
-    // Drop any in-flight audio and restart the engine in the background,
-    // hidden behind the feedback delay and the next spoken prompt.
+    finishLog('correct');
     recognizer.reset();
 
-    score += 10 * level; // points for the level the question was asked at
     streak++;
+    const res = tutor.record(currentQuestion, true, Math.max(0, timeSpentSec), currentWhy);
+    tier = res.level;
+    // Learning questions (new facts, repeats of missed ones) earn 2 stars.
+    const stars = ['new', 'repeat', 'practice', 'probe'].includes(currentWhy) ? 2 : 1;
+    const arrived = zoo.add(stars + (streak > 0 && streak % 5 === 0 ? 1 : 0));
 
-    const res = recordAndAdapt(true, Math.max(0, timeSpentSec));
-
-    if (elScore) elScore.textContent = score;
-    if (elStreak) elStreak.textContent = streak;
-
+    elFormula.textContent = `${currentQuestion.a} ${OP_SYMBOL[currentQuestion.op]} ${currentQuestion.b} = ${currentQuestion.answer}`;
+    elFormula.classList.add('is-right');
+    setStatus(`+${stars} ${stars === 1 ? 'star' : 'stars'}`);
     sound.playCorrect();
-    renderPenguin(elPenguinContainer, level, 'happy');
-    if (elPingoSpeech) elPingoSpeech.textContent = `"Awesome job! Keep soaring!"`;
-    const unlocked = announceUnlocks(res);
+    setPingo('happy');
+    say(streak >= 3 ? `"${streak} in a row! Keep going!"` : '"Yes! That\'s it!"');
+    updateHeader();
+    updateZoo(arrived);
 
-    if (res.changed === 'up' && !unlocked) {
-        triggerLevelUp(res);
+    const unlocked = res.unlockedOps && res.unlockedOps.length;
+    if (unlocked) say(`"You're a times-table star! Now some ${res.unlockedOps.map((o) => OP_NAMES[o] || o).join(' and ')} questions join in!"`);
+
+    if (arrived.length) {
+        setTimeout(() => showArrival(arrived[arrived.length - 1]), 650);
     } else {
         setTimeout(nextQuestion, unlocked ? 2200 : CORRECT_PAUSE_MS);
     }
 }
 
 function handleWrongAnswer(reason) {
-    if (PARAMS.has('asrdebug')) console.log(`[game] wrong (${reason}) processing=${isProcessingAnswer}`);
+    if (DEBUG) console.log(`[game] wrong (${reason}) processing=${isProcessingAnswer}`);
     if (isProcessingAnswer) return;
     isProcessingAnswer = true;
     cancelPendingCommit();
     if (timerInterval) clearInterval(timerInterval);
+    finishLog(reason === "Time's up!" ? 'timeout' : 'wrong');
     recognizer.reset();
 
-    const res = recordAndAdapt(false, (performance.now() - listenStartTime) / 1000);
-
+    const res = tutor.record(currentQuestion, false, (performance.now() - listenStartTime) / 1000, currentWhy);
+    tier = res.level;
     streak = 0;
-    if (elStreak) elStreak.textContent = streak;
+    updateHeader();
 
+    elFormula.classList.add('is-wrong');
     sound.playWrong();
-    renderPenguin(elPenguinContainer, level, 'frozen');
-    if (elPingoSpeech) {
-        elPingoSpeech.textContent = res.changed === 'down'
-            ? `"That one's tricky! Let's practice closer to home - back to Level ${level}."`
-            : `"Blue shell hit! We'll see this one again soon."`;
-    }
-
+    setPingo('sad');
+    say('"Brrr, a tricky one! We\'ll see it again soon."');
     showReview(currentQuestion);
-
-    if (elReviewOverlay) {
-        elReviewOverlay.classList.remove('hidden');
-        setTimeout(() => elReviewOverlay.classList.remove('opacity-0'), 10);
-    }
 }
 
-// Wrong-answer review: the times-table map + array for x and /, a worked
-// "make ten" hint for + and -.
+// Wrong-answer review: the times-table map + fish groups for x and /, a
+// worked "make ten" hint for + and -.
 function showReview(q) {
-    const elTitle = document.getElementById('review-subtitle');
     const answerLine = `${q.a} ${OP_SYMBOL[q.op]} ${q.b} = ${q.answer}`;
+    $('review-subtitle').textContent = answerLine;
     if (q.op === 'mul' || q.op === 'div') {
-        // a x b for the map: for division 56 / 7 = 8 is the fact 7 x 8.
+        // For division, 56 ÷ 7 = 8 is the fact 7 × 8.
         const [x, y] = q.op === 'mul' ? [q.a, q.b] : [q.b, q.answer];
         elReviewMatrix.classList.remove('hidden');
         renderReviewMatrix(elReviewMatrix, x, y, HEATMAP_GRID);
         renderGemArray(elGemArrayVisual, elGemArrayTitle, x, y);
-        if (q.op === 'div') elGemArrayTitle.textContent = `${q.a} fish shared into ${q.b} groups = ${q.answer} in each group`;
-        if (elTitle) elTitle.textContent = q.op === 'div' ? `${answerLine}   (${strategyHint(q)})` : answerLine;
+        if (q.op === 'div') elGemArrayTitle.textContent = `${q.a} fish shared into ${q.b} groups = ${q.answer} in each`;
     } else {
         elReviewMatrix.classList.add('hidden');
+        const hint = strategyHint(q);
+        elGemArrayTitle.textContent = hint.includes('→') ? 'Make a ten, then finish:' : 'Remember:';
         elGemArrayVisual.innerHTML = '';
-        const hint = document.createElement('div');
-        hint.className = 'text-xl font-bold text-amber-200 text-center';
-        hint.textContent = strategyHint(q);
-        elGemArrayVisual.appendChild(hint);
-        elGemArrayTitle.textContent = hint.textContent.includes('→') ? 'Make a ten, then finish:' : 'Remember:';
-        if (elTitle) elTitle.textContent = answerLine;
+        const p = document.createElement('p');
+        p.className = 'hint';
+        p.textContent = hint;
+        elGemArrayVisual.appendChild(p);
     }
+    showOverlay(elReviewOverlay);
 }
 
-// `level` has already been advanced by recordAndAdapt(); this only celebrates.
-function triggerLevelUp(res) {
-    if (PARAMS.has('asrdebug')) console.log('[game] level up', JSON.stringify(res));
+function showArrival(animal) {
     sound.playLevelUp();
-
-    // Rapid placement can climb several levels within a few questions. Only the
-    // first gets the full-screen celebration; the rest stay in Pingo's bubble.
-    if (questionsAnswered - lastOverlayAtQuestion < MIN_QUESTIONS_BETWEEN_OVERLAYS) {
-        if (elPingoSpeech) {
-            elPingoSpeech.textContent = res.levelsGained > 1
-                ? `"Whoa, you're flying! Skipping ahead to Level ${level}!"`
-                : `"Level ${level}! Keep going!"`;
-        }
-        setTimeout(nextQuestion, 1200);
-        return;
-    }
-    lastOverlayAtQuestion = questionsAnswered;
-
-    const gear = GEAR_CONFIGS[level];
-    const verb = res.levelsGained > 1 ? 'zoomed ahead to' : 'reached';
-    if (elLevelupMessage) elLevelupMessage.textContent = `Pingo ${verb} Level ${level}!`;
-    if (elUnlockedGearName) {
-        elUnlockedGearName.innerHTML = `<span>${gear.badge === 'Bowtie' ? '🎀' : gear.badge === 'Cool Gear' ? '🕶️🎧' : gear.badge === 'Crown' ? '👑' : gear.badge === 'Wizard' ? '🧙‍♂️✨' : '🚀🛡️'}</span> ${gear.name}`;
-    }
-
-    if (elLevelupOverlay) {
-        elLevelupOverlay.classList.remove('hidden');
-        setTimeout(() => elLevelupOverlay.classList.remove('opacity-0'), 10);
-    }
+    $('arrival-portrait').innerHTML = animalPortrait(animal.key);
+    const name = animalName(animal.key);
+    $('unlocked-gear-name').textContent = `${/^[aeiou]/i.test(name) ? 'An' : 'A'} ${name.toLowerCase()} joined your zoo!`;
+    $('levelup-message').textContent = `You reached level ${zoo.level}.`;
+    showOverlay(elArrivalOverlay);
 }
 
-// Event Listeners
-if (elBtnNextQuestion) {
-    elBtnNextQuestion.addEventListener('click', () => {
-        if (elReviewOverlay) {
-            elReviewOverlay.classList.add('opacity-0');
-            setTimeout(() => elReviewOverlay.classList.add('hidden'), 300);
-        }
-        nextQuestion();
-    });
+elBtnNextQuestion.addEventListener('click', () => { hideOverlay(elReviewOverlay); nextQuestion(); });
+elBtnContinue.addEventListener('click', () => { hideOverlay(elArrivalOverlay); nextQuestion(); });
+
+// ---------------------------------------------------------------------------
+// Voice check panel
+// ---------------------------------------------------------------------------
+const elLog = $('voicelog-overlay');
+let pausedForLog = false;
+
+function renderVoiceLog() {
+    const s = voiceLog.summary();
+    const pct = (x) => (s.n ? `${Math.round((x / s.n) * 100)}%` : '–');
+    $('voicelog-summary').innerHTML = `
+        <div><b>${s.n}</b><span>answers logged</span></div>
+        <div><b>${pct(s.correct)}</b><span>recognized</span></div>
+        <div><b>${s.misheard}</b><span>heard, but not the answer</span></div>
+        <div><b>${s.silent}</b><span>no words picked up${s.quietSilent ? ` (${s.quietSilent} while talking)` : ''}</span></div>
+        <div><b>${s.medianMs === null ? '–' : (s.medianMs / 1000).toFixed(1) + ' s'}</b><span>typical answer time</span></div>`;
+    const list = $('voicelog-list');
+    list.innerHTML = s.lastMisses.length ? '' : '<li class="heard">No misses yet.</li>';
+    for (const e of s.lastMisses) {
+        const li = document.createElement('li');
+        const words = e.heard.filter((h) => h.final).map((h) => h.text);
+        const all = words.length ? words : e.heard.map((h) => h.text).slice(-3);
+        li.innerHTML = `<span class="q"></span> <span class="heard"></span>`;
+        li.querySelector('.q').textContent = `${e.question} = ${e.answer}`;
+        li.querySelector('.heard').textContent = all.length
+            ? `heard: ${all.map((w) => `“${w}”`).join(', ')}`
+            : (e.voiceMs > 300 ? 'talking picked up, but no words' : 'nothing heard');
+        list.appendChild(li);
+    }
+    $('voicelog-clips').checked = voiceLog.clipsEnabled;
 }
 
-if (elBtnContinueQuest) {
-    elBtnContinueQuest.addEventListener('click', () => {
-        if (elLevelupOverlay) {
-            elLevelupOverlay.classList.add('opacity-0');
-            setTimeout(() => elLevelupOverlay.classList.add('hidden'), 300);
-        }
-        nextQuestion();
-    });
-}
+$('btn-voice-log').addEventListener('click', () => {
+    // Pause the question while the panel is open.
+    if (timerStarted && !isProcessingAnswer) {
+        pausedForLog = true;
+        if (timerInterval) clearInterval(timerInterval);
+        recognizer.disarm();
+    }
+    renderVoiceLog();
+    showOverlay(elLog);
+});
+$('voicelog-close').addEventListener('click', () => {
+    hideOverlay(elLog);
+    if (pausedForLog) { pausedForLog = false; nextQuestion(); }
+});
+$('voicelog-clips').addEventListener('change', (e) => {
+    voiceLog.setClipsEnabled(e.target.checked);
+    if (recognizer instanceof VoskRecognizer) recognizer.captureAudio = e.target.checked;
+});
+$('voicelog-clear').addEventListener('click', async () => { await voiceLog.clear(); renderVoiceLog(); });
+$('voicelog-download').addEventListener('click', async () => {
+    const btn = $('voicelog-download');
+    btn.disabled = true;
+    const json = await voiceLog.exportJson();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+    a.download = `pingo-voice-log-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    btn.disabled = false;
+});
 
-// Initialize Game
-updateLevelDisplay();
-updateMasteryDisplay();
-renderPenguin(elPenguinContainer, level, 'normal');
+// ---------------------------------------------------------------------------
+// Start
+// ---------------------------------------------------------------------------
+$('brand-mark').innerHTML = pingoSVG('normal');
+$('start-pingo').innerHTML = pingoSVG('happy');
+setPingo('normal');
+updateHeader();
+updateZoo();
+renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID);
 
-// Browsers only allow audio after a tap, so the game starts from a button.
-const elStartOverlay = document.getElementById('start-overlay');
-const elStartStatus = document.getElementById('start-status');
-const elBtnStart = document.getElementById('btn-start');
+const elStartOverlay = $('start-overlay');
+const elStartStatus = $('start-status');
+const elBtnStart = $('btn-start');
 
 function beginGame() {
     elStartOverlay.classList.add('hidden');
+    requestAnimationFrame(drawMeter);
     nextQuestion();
 }
 
 if (recognizer instanceof VoskRecognizer) {
     recognizer.loadModel().then(
-        () => { elStartStatus.textContent = "Pingo's ears are ready! Say each answer out loud."; },
+        () => { elStartStatus.textContent = 'Pingo is ready to listen. Say each answer out loud.'; },
         () => { elStartStatus.textContent = 'Using the browser voice service instead.'; },
     );
     elBtnStart.addEventListener('click', async () => {

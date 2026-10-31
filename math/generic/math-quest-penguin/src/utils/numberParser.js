@@ -85,6 +85,8 @@ const PROMPT_WORDS = new Set(['times', 'time', 'multiplied', 'multiply', 'equals
     'plus', 'minus', 'divided', 'divide']);
 const OPERATOR_AFTER_NUMBER = new Set(['x', 'by']);
 
+const TEEN_TY = { 13: 30, 30: 13, 14: 40, 40: 14, 15: 50, 50: 15, 16: 60, 60: 16, 17: 70, 70: 17, 18: 80, 80: 18, 19: 90, 90: 19 };
+
 const MIN = 1;
 const MAX = 81;
 
@@ -319,7 +321,7 @@ function fuzzyParse(cleanTranscript, target) {
  * @param {string[]} alternatives  ASR hypotheses, best first
  * @param {number} expected        the correct answer
  * @param {{a:number,b:number}|null} prompt  strip "a times b" if read aloud
- * @returns {{ value: number|null, match: 'exact'|'fuzzy'|null }}
+ * @returns {{ value: number|null, match: 'exact'|'fuzzy'|'teenty'|null }}
  *   match !== null  -> value === expected, accept it
  *   match === null  -> value is the best (wrong) number heard, or null
  */
@@ -341,6 +343,13 @@ export function matchAnswer(alternatives, expected, prompt = null) {
     for (const s of stripped) {
         if (fuzzyParse(s, expected) === expected) return { value: expected, match: 'fuzzy' };
     }
+
+    // 3) Teen / -ty confusion, the classic recognizer mix-up: "fourteen" and
+    //    "forty" differ only in the last syllable's stress. If the expected
+    //    answer is 40 and all we heard is 14 (or the other way round), it was
+    //    almost certainly said right.
+    // Only trust this on a FINISHED result: "forty" may still become "forty two".
+    if (firstParsed !== null && TEEN_TY[firstParsed] === expected) return { value: expected, match: 'teenty' };
 
     return { value: firstParsed, match: null };
 }

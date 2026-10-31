@@ -2,157 +2,133 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Math Quest: Adaptive Voice Penguin Hero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingo's Math Zoo</title>
     <link rel="icon" href="data:,">
-    <!-- Tailwind is compiled by Vite in dev; the CDN build makes the raw files
-         work as-is on GitHub Pages (no build step there). -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/game.css">
 </head>
-<body class="bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white font-['Fredoka'] min-h-screen flex flex-col items-center justify-center p-4 overflow-x-hidden select-none">
-    
-    <!-- Top Header -->
-    <header class="w-full max-w-5xl flex justify-between items-center bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 mb-4 shadow-xl">
-        <div class="flex items-center gap-3">
-            <span class="text-3xl animate-bounce">🐧</span>
-            <div>
-                <h1 class="text-xl font-bold tracking-wide bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent">Math Quest</h1>
-                <p class="text-xs text-indigo-200">Adaptive Voice Penguin Hero</p>
-            </div>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-mark" id="brand-mark" aria-hidden="true"></span>
+            <h1>Pingo's Math Zoo</h1>
         </div>
-        <div class="flex items-center gap-6">
-            <div class="text-right">
-                <div class="text-xs text-indigo-300 uppercase tracking-wider">Level</div>
-                <div id="stat-level" class="text-lg font-bold text-amber-300">1 (4x4 Grid)</div>
-            </div>
-            <div class="text-right">
-                <div class="text-xs text-indigo-300 uppercase tracking-wider">Score</div>
-                <div id="stat-score" class="text-lg font-bold text-emerald-400">0</div>
-            </div>
-            <div class="text-right">
-                <div class="text-xs text-indigo-300 uppercase tracking-wider">Streak</div>
-                <div id="stat-streak" class="text-lg font-bold text-cyan-400">0</div>
-            </div>
-        </div>
+        <dl class="stats">
+            <div class="stat"><dt>Level</dt><dd id="stat-level">1</dd></div>
+            <div class="stat stat--stars"><dt>Stars</dt><dd><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.8.8-5 4.7 1.3 6.7L12 17l-6 3.4 1.3-6.7-5-4.7 6.8-.8z"/></svg><span id="stat-score">0</span></dd></div>
+            <div class="stat stat--streak"><dt>In a row</dt><dd id="stat-streak">0</dd></div>
+        </dl>
     </header>
 
-    <!-- Main Game Container -->
-    <main class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        
-        <!-- Left Panel: Pingo the Penguin Mascot & Heatmap -->
-        <section class="md:col-span-4 bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 flex flex-col items-center shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-12 -left-12 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none"></div>
-            
-            <div class="w-full flex justify-between items-center mb-2">
-                <span id="pingo-title" class="text-sm font-bold text-amber-300 uppercase tracking-wider">Novice Pingo</span>
-                <span id="pingo-gear-badge" class="text-xs bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-400/30">Bowtie</span>
-            </div>
+    <main class="layout">
+        <!-- Left: the question desk -->
+        <section class="desk" aria-label="Question">
+            <div class="desk-card">
+                <div class="timer" aria-hidden="true"><div id="timer-bar" class="timer-bar"></div></div>
 
-            <!-- SVG Penguin Mascot Container -->
-            <div id="penguin-container" class="w-48 h-48 my-2 relative flex items-center justify-center transition-transform duration-300">
-                <!-- Injected via penguin.js -->
-            </div>
-
-            <div id="pingo-speech" class="bg-indigo-900/80 text-indigo-100 text-sm px-4 py-2 rounded-2xl border border-indigo-500/30 text-center my-3 w-full shadow-inner">
-                "Let's practice our math equations!"
-            </div>
-
-            <!-- Mini 9x9 Heatmap Analytics -->
-            <div class="w-full mt-2">
-                <div class="flex justify-between text-xs text-indigo-300 mb-1">
-                    <span>Galaxy Master Grid</span>
-                    <span id="mastery-pct">0% Mastered</span>
+                <div id="question-box" class="question">
+                    <p class="question-ops" id="current-range-label">×</p>
+                    <div id="formula-display" class="formula" aria-live="polite">3 × 4 = ?</div>
                 </div>
-                <div id="mini-heatmap" class="grid grid-cols-9 gap-1 bg-black/40 p-2 rounded-xl border border-white/10">
-                    <!-- Injected via matrixGrid.js -->
+
+                <div class="listen">
+                    <div class="mic-meter" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <p id="voice-status" class="voice-status" aria-live="polite">Say the answer out loud</p>
                 </div>
             </div>
+
+            <div class="pingo-row">
+                <div id="penguin-container" class="pingo-box"></div>
+                <p id="pingo-speech" class="bubble">"Hi! I'm Pingo. Answer questions to bring animals to our zoo!"</p>
+            </div>
+
+            <details class="map">
+                <summary>
+                    <span>Times-table map</span>
+                    <span id="mastery-pct" class="map-pct">0% of × facts</span>
+                </summary>
+                <div id="mini-heatmap" class="heatmap"></div>
+                <ul class="legend">
+                    <li><i class="cell--known"></i>Knows it</li>
+                    <li><i class="cell--learning"></i>Learning</li>
+                    <li><i class="cell--weak"></i>Needs practice</li>
+                    <li><i class="cell--untested"></i>Not yet</li>
+                </ul>
+            </details>
         </section>
 
-        <!-- Right Panel: Active Question & Interactive Arena -->
-        <section class="md:col-span-8 bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 flex flex-col items-center justify-between shadow-2xl min-h-[460px] relative">
-            
-            <!-- Timer Bar -->
-            <div class="w-full bg-black/40 h-3 rounded-full overflow-hidden border border-white/10 mb-6">
-                <div id="timer-bar" class="bg-gradient-to-r from-emerald-400 to-cyan-400 h-full w-full transition-all duration-100"></div>
+        <!-- Right: the zoo -->
+        <section class="zoo" aria-label="Your zoo">
+            <div class="zoo-head">
+                <h2>Your zoo</h2>
+                <p id="zoo-count">1 animal</p>
             </div>
-
-            <!-- Question Display Area -->
-            <div id="question-box" class="flex flex-col items-center justify-center my-auto py-8">
-                <div class="text-xs uppercase tracking-widest text-indigo-300 mb-2 font-semibold">Speak Your Answer Aloud</div>
-                <div id="formula-display" class="text-6xl md:text-7xl font-extrabold tracking-wider text-amber-300 drop-shadow-[0_5px_15px_rgba(252,211,77,0.3)] my-4">
-                    4 × 5 = ?
-                </div>
-                <div id="voice-status" class="text-sm text-cyan-300 mt-2 flex items-center gap-2 animate-pulse bg-cyan-950/40 px-4 py-1.5 rounded-full border border-cyan-500/30">
-                    🎤 Listening for voice...
-                </div>
-            </div>
-
-            <!-- Control Footer -->
-            <div class="w-full flex justify-between items-center pt-4 border-t border-white/10">
-                <div class="text-xs text-indigo-300 flex items-center gap-1.5">
-                    🎤 Say the answer out loud
-                </div>
-                <div class="text-xs text-indigo-300">
-                    Range: <span id="current-range-label" class="font-bold text-white">4 × 4 Grid</span>
+            <div id="zoo-scene" class="zoo-scene"></div>
+            <div class="next-friend">
+                <div id="next-portrait" class="next-portrait" aria-hidden="true"></div>
+                <div class="next-text">
+                    <p id="next-label">6 more stars to meet a seal</p>
+                    <div class="next-bar"><div id="next-bar-fill"></div></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Overlay: Start (browsers only allow the microphone/audio after a tap) -->
-    <div id="start-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
-        <div class="bg-slate-900 border border-cyan-400/40 rounded-3xl p-8 max-w-md w-full flex flex-col items-center shadow-2xl text-center">
-            <div class="text-5xl mb-3">🐧🎤</div>
-            <h2 class="text-2xl font-extrabold text-cyan-300 mb-2">Ready to play?</h2>
-            <p id="start-status" class="text-indigo-200 text-sm mb-6">Loading Pingo's ears… (first time only, about 40 MB)</p>
-            <button id="btn-start" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold rounded-2xl shadow-xl text-lg">
-                START 🚀
-            </button>
+    <button id="btn-voice-log" class="voice-check" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-2.1A7 7 0 0 0 19 12z"/></svg>
+        Voice check
+    </button>
+
+    <!-- Start: browsers only allow the microphone after a tap -->
+    <div id="start-overlay" class="overlay">
+        <div class="sheet sheet--start">
+            <div class="start-pingo" id="start-pingo"></div>
+            <h2>Ready to grow your zoo?</h2>
+            <p id="start-status">Loading Pingo's ears… (first time only, about 40 MB)</p>
+            <button id="btn-start" class="btn btn--primary" type="button">Start</button>
         </div>
     </div>
 
-    <!-- Overlay: Review / Visual Matrix Imprinting Modal -->
-    <div id="review-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-slate-900 border border-white/20 rounded-3xl p-6 max-w-2xl w-full flex flex-col items-center shadow-2xl relative">
-            <h2 id="review-title" class="text-2xl font-bold text-rose-400 mb-1">Oops! Blue Shell Hit! 🐢</h2>
-            <p id="review-subtitle" class="text-sm text-indigo-200 mb-4 text-center">Let's look at the correct visual map to remember this fact.</p>
-
-            <!-- Visual 9x9 Highlight Matrix -->
-            <div id="review-matrix-container" class="w-full max-w-md bg-black/50 p-3 rounded-2xl border border-white/10 mb-4 grid grid-cols-9 gap-1">
-                <!-- Injected via matrixGrid.js -->
+    <!-- Missed answer -->
+    <div id="review-overlay" class="overlay hidden opacity-0">
+        <div class="sheet sheet--review">
+            <h2 id="review-title">Let's look at that one</h2>
+            <p id="review-subtitle" class="review-answer"></p>
+            <div id="review-matrix-container" class="review-grid"></div>
+            <div class="gems">
+                <p id="gem-array-title"></p>
+                <div id="gem-array-visual" class="gem-rows"></div>
             </div>
-
-            <!-- Gem Array Visualization (e.g. 4 rows of 5 crystals) -->
-            <div id="gem-array-box" class="w-full bg-indigo-950/60 p-4 rounded-2xl border border-indigo-500/30 mb-6 flex flex-col items-center">
-                <div class="text-xs text-indigo-300 mb-2 font-semibold" id="gem-array-title">Array Model: 4 groups of 5</div>
-                <div id="gem-array-visual" class="flex flex-wrap gap-2 justify-center max-w-md"></div>
-            </div>
-
-            <button id="btn-next-question" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold rounded-2xl shadow-lg transition transform hover:scale-[1.02]">
-                Got It! Next Question 🚀
-            </button>
+            <button id="btn-next-question" class="btn btn--primary" type="button">Got it — next question</button>
         </div>
     </div>
 
-    <!-- Overlay: Level Up Modal -->
-    <div id="levelup-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-slate-900 border border-amber-400/40 rounded-3xl p-8 max-w-md w-full flex flex-col items-center shadow-[0_0_50px_rgba(251,191,36,0.3)] relative text-center">
-            <div class="text-5xl mb-2 animate-bounce">🏆</div>
-            <h2 class="text-3xl font-extrabold text-amber-300 mb-1">PINGO LEVEL UP!</h2>
-            <p id="levelup-message" class="text-indigo-200 text-sm mb-6">Pingo reached Level 2!</p>
-            
-            <div class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 mb-6">
-                <div class="text-xs text-indigo-300 uppercase tracking-wider mb-1">New Gear Unlocked</div>
-                <div id="unlocked-gear-name" class="text-lg font-bold text-white flex items-center justify-center gap-2">
-                    <span>🕶️🎧</span> Sunglasses & Headphones
-                </div>
-            </div>
+    <!-- New animal -->
+    <div id="levelup-overlay" class="overlay hidden opacity-0">
+        <div class="sheet sheet--arrival">
+            <div id="arrival-portrait" class="arrival-portrait"></div>
+            <h2 id="unlocked-gear-name">A new friend!</h2>
+            <p id="levelup-message">Level 2</p>
+            <button id="btn-continue-quest" class="btn btn--primary" type="button">Keep going</button>
+        </div>
+    </div>
 
-            <button id="btn-continue-quest" class="w-full py-4 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-bold rounded-2xl shadow-xl transition transform hover:scale-[1.02] text-lg">
-                CONTINUE QUEST 🚀
-            </button>
+    <!-- Voice check -->
+    <div id="voicelog-overlay" class="overlay hidden opacity-0">
+        <div class="sheet sheet--log" role="dialog" aria-labelledby="voicelog-title">
+            <h2 id="voicelog-title">Voice check</h2>
+            <p class="log-intro">What Pingo heard for recent answers. Everything stays on this device unless you download it.</p>
+            <div id="voicelog-summary" class="log-summary"></div>
+            <h3>Recent misses</h3>
+            <ol id="voicelog-list" class="log-list"></ol>
+            <label class="log-toggle"><input type="checkbox" id="voicelog-clips"> Keep a short recording of each missed answer, to find out why it was missed</label>
+            <div class="log-actions">
+                <button id="voicelog-download" class="btn btn--primary" type="button">Download voice log</button>
+                <button id="voicelog-clear" class="btn btn--quiet" type="button">Clear log</button>
+                <button id="voicelog-close" class="btn btn--quiet" type="button">Close</button>
+            </div>
         </div>
     </div>
 

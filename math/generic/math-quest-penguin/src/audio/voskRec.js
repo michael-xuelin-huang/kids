@@ -29,6 +29,9 @@ const WORKLET_URL = new URL('./voskProcessor.js', import.meta.url).href;
 const params = typeof location !== 'undefined' ? new URLSearchParams(location.search) : new URLSearchParams();
 export const DEFAULT_WARPS = (params.get('warps') || '1').split(',').map(Number).filter((w) => w > 0.5 && w < 2);
 
+// Loudness (RMS) above which the microphone counts as "someone is talking".
+const VOICE_RMS = 0.02;
+
 const DEBUG = typeof location !== 'undefined' && new URLSearchParams(location.search).has('asrdebug');
 
 const ONES = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
@@ -88,6 +91,16 @@ export class VoskRecognizer {
         this.flushTimer = null;
         this.speechStartTs = null;
         this.modelPromise = null;
+        this.finals = [];          // final results since the question opened
+        this.level = 0;
+        this.peakLevel = 0;
+        this.voiceMs = 0;
+        this.onLevel = null;
+        this.captureAudio = false; // keep a rolling buffer for the voice log
+        this.ring = new Int16Array(16000 * 8);
+        this.ringPos = 0;
+        this.ringFilled = 0;
+        this._resamplePos = 0;
     }
 
     _status(t) { if (this.onStatus) this.onStatus(t); }
@@ -154,6 +167,7 @@ export class VoskRecognizer {
         });
         const sr = this.ctx.sampleRate;
         node.port.onmessage = (e) => {
+            this._meter(e.data, sr);
             for (const d of this.decoders) d.rec.acceptWaveformFloat(e.data, sr * d.warp);
         };
         input.connect(node);
@@ -169,8 +183,48 @@ export class VoskRecognizer {
         this._status('Voice ready');
     }
 
+    /**
+     * Loudness meter + voice-activity time + rolling 16 kHz audio buffer.
+     * `level` (0..1) drives the on-screen mic meter; `voiceMs` counts how long
+     * the child has been audibly talking since the question opened, so the game
+     * can tell "heard you but couldn't make out a number" from "heard nothing".
+     */
+    _meter(chunk, sr) {
+        let sum = 0;
+        for (let i = 0; i < chunk.length; i++) sum += chunk[i] * chunk[i];
+        const rms = Math.sqrt(sum / chunk.length);
+        this.level = Math.min(1, rms * 8);
+        if (this.armed && rms > VOICE_RMS) this.voiceMs += (chunk.length / sr) * 1000;
+        if (this.armed) this.peakLevel = Math.max(this.peakLevel, this.level);
+        if (this.onLevel) this.onLevel(this.level);
+        if (!this.captureAudio) return;
+        // Downsample to 16 kHz (box filter) into a ring buffer.
+        const step = sr / 16000;
+        for (let pos = this._resamplePos; pos < chunk.length; pos += step) {
+            const i0 = Math.floor(pos), i1 = Math.min(chunk.length, Math.floor(pos + step));
+            let acc = 0; for (let i = i0; i < i1; i++) acc += chunk[i];
+            const v = acc / Math.max(1, i1 - i0);
+            this.ring[this.ringPos] = Math.max(-32768, Math.min(32767, v * 32767));
+            this.ringPos = (this.ringPos + 1) % this.ring.length;
+            this.ringFilled = Math.min(this.ring.length, this.ringFilled + 1);
+            this._resamplePos = pos + step - chunk.length;
+        }
+    }
+
+    /** The last `seconds` of microphone audio as 16 kHz Int16 samples. */
+    recentAudio(seconds) {
+        const n = Math.min(this.ringFilled, Math.round(seconds * 16000));
+        const out = new Int16Array(n);
+        let p = (this.ringPos - n + this.ring.length) % this.ring.length;
+        for (let i = 0; i < n; i++) { out[i] = this.ring[p]; p = (p + 1) % this.ring.length; }
+        return out;
+    }
+
     // Alternatives = each decoder's current hypothesis, the one that just
-    // changed first. matchAnswer() accepts if any of them is the answer.
+    // changed first, plus the previous final result joined with this one:
+    // a child who pauses mid-number ("twenty ... four") produces two results,
+    // "twenty" and "four", that only make the answer together.
+    // matchAnswer() accepts if any alternative is the answer.
     _emit(d, text, isFinal) {
         const now = performance.now();
         if (DEBUG) {
@@ -181,6 +235,9 @@ export class VoskRecognizer {
         for (const o of this.decoders) {
             if (o !== d && !o.flushing && o.partial && !alts.includes(o.partial)) alts.push(o.partial);
         }
+        const prev = this.finals[this.finals.length - 1];
+        if (prev) alts.push(`${prev} ${text}`);
+        if (isFinal && d === this.decoders[0]) this.finals.push(text);
         if (this.speechStartTs === null) this.speechStartTs = now;
         if (this.onResult) this.onResult(alts, { isFinal, ts: now, speechStartTs: this.speechStartTs });
     }
@@ -210,6 +267,9 @@ export class VoskRecognizer {
     arm(afterMs = 0) {
         this.armTs = performance.now() + afterMs;
         this.speechStartTs = null;
+        this.finals = [];
+        this.voiceMs = 0;
+        this.peakLevel = 0;
         this.armed = true;
         this._status('Listening for answer...');
     }
