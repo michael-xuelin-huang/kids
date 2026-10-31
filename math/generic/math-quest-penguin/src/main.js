@@ -125,6 +125,12 @@ function cancelPendingCommit() {
 // ---------------------------------------------------------------------------
 // Handles every interim AND final transcript (all ASR alternatives at once).
 function handleSpeechResult(alternatives, meta) {
+    // Voice commands: "pause" / "stop" pauses, "resume" / "continue" resumes.
+    const cmd = voiceCommand(alternatives[0]);
+    if (cmd === 'pause') { pauseGame(); return; }
+    if (cmd === 'resume') { resumeGame(); return; }
+    if (paused) return;
+
     if (isProcessingAnswer || overlaysOpen() || !timerStarted) return;
 
     const target = currentQuestion.answer;
@@ -177,6 +183,19 @@ function handleSpeechResult(alternatives, meta) {
     if (meta.isFinal && best !== null) setStatus(`Heard ${best} — try again!`, true);
 }
 
+// "pause" counts as soon as it is heard; "resume"/"continue" too. Only a
+// transcript that is just the command word, so an answer never triggers it.
+function voiceCommand(text) {
+    const t = String(text || '').toLowerCase().replace(/[^a-z ]/g, ' ').trim().split(/\s+/).filter((w) => w && w !== 'please');
+    if (t.length !== 1) return null;
+    if (t[0] === 'pause' || t[0] === 'stop') return 'pause';
+    // "pause" and "plus" sound alike; a lone "plus" outside an addition
+    // question is almost certainly "pause".
+    if (t[0] === 'plus' && currentQuestion.op !== 'add') return 'pause';
+    if (t[0] === 'resume' || t[0] === 'continue') return 'resume';
+    return null;
+}
+
 // Speech engine. Default: Vosk - offline, restricted to number words, streams
 // partial results with no network round trip (see audio/voskRec.js). The
 // browser's Web Speech API is the fallback (?asr=web forces it).
@@ -188,7 +207,8 @@ const onAsrError = (err) => {
     }
 };
 const onAsrStatus = (statusText) => {
-    if (statusText.startsWith('Listening')) setStatus('Say the answer out loud');
+    if (paused) setStatus('Paused — tap Resume or say “resume”');
+    else if (statusText.startsWith('Listening')) setStatus('Say the answer out loud');
     else setStatus(statusText);
 };
 const webSpeech = () => new SpeechRecognizer(handleSpeechResult, onAsrError, onAsrStatus);
@@ -523,11 +543,12 @@ function pauseGame() {
     pausedAt = performance.now();
     if (timerInterval) clearInterval(timerInterval);
     cancelPendingCommit();
-    recognizer.disarm();
+    recognizer.reset();   // drop the rest of whatever was being said
+    setTimeout(() => { if (paused) recognizer.arm(0); }, 150); // keep listening for "resume"
     elBtnPause.setAttribute('aria-pressed', 'true');
     $('pause-label').textContent = 'Resume';
     elDeskCard.classList.add('is-paused');
-    setStatus('Paused — tap Resume to keep going');
+    setStatus('Paused — tap Resume or say “resume”');
 }
 
 function resumeGame() {
@@ -540,9 +561,10 @@ function resumeGame() {
     $('pause-label').textContent = 'Pause';
     elDeskCard.classList.remove('is-paused');
     if (deferredNext) { deferredNext = false; nextQuestion(); return; }
+    recognizer.reset();   // don't let "resume" count as an answer
     if (timerStarted && !isProcessingAnswer) {
         runTimer();
-        recognizer.arm(0);
+        setTimeout(() => { if (!paused && !isProcessingAnswer) recognizer.arm(0); }, 150);
         setStatus('Say the answer out loud');
     }
 }

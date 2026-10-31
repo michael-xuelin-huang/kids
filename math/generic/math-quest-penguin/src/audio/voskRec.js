@@ -46,7 +46,7 @@ export function numberGrammar(max = 99) {
     }
     // Operator words, so a child reading the question aloud ("eight plus
     // seven...") isn't forced into number words.
-    g.push('times', 'plus', 'minus', 'divided by', 'zero', '[unk]');
+    g.push('times', 'plus', 'minus', 'divided by', 'zero', 'pause', 'stop', 'resume', 'continue', '[unk]');
     return g;
 }
 

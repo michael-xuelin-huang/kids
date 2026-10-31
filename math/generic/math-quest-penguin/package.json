@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "simulate": "node tools/simulate-difficulty.mjs",
+    "stamp": "node tools/stamp-version.mjs",
     "test:asr": "node tools/test-number-parser.mjs",
     "test:tutor": "node tools/test-tutor.mjs",
     "simulate:learning": "node tools/simulate-learning.mjs"

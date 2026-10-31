@@ -271,6 +271,7 @@ button { font: inherit; }
     font-weight: 700; font-size: 0.95rem; cursor: pointer;
     box-shadow: 0 3px 0 var(--ice-deep);
 }
+.app-version { position: fixed; right: 14px; bottom: 10px; margin: 0; font-size: 0.8rem; color: var(--ink-soft); opacity: 0.7; }
 .voice-check svg { width: 18px; height: 18px; fill: currentColor; }
 
 /* ---------- Overlays ---------- */
@@ -333,7 +334,8 @@ button { font: inherit; }
 /* ---------- Small screens ---------- */
 @media (max-width: 900px) {
     .layout { grid-template-columns: 1fr; padding: 6px 16px 20px; gap: 18px; }
-    .voice-check { position: static; margin: 0 auto 28px; }
+    .voice-check { position: static; margin: 0 auto 8px; }
+    .app-version { position: static; text-align: center; margin-bottom: 20px; }
     .zoo { position: static; }
     .topbar { padding: 10px 16px 4px; flex-wrap: wrap; }
     .brand h1 { font-size: 1.3rem; }
