@@ -3,10 +3,13 @@ import { Tutor } from './utils/skillModel.js';
 import { OP_SYMBOL, strategyHint } from './utils/curriculum.js';
 import { matchAnswer, stripPrompt } from './utils/numberParser.js';
 import { VoiceLog } from './utils/voiceLog.js';
+import * as Players from './utils/players.js';
+import { CloudSync } from './utils/cloudSync.js';
+import { buildReport, reportMarkdown, markdownToHtml } from './utils/report.js';
 import { SpeechRecognizer } from './audio/speechRec.js';
 import { VoskRecognizer } from './audio/voskRec.js';
 import { sound } from './audio/soundEffects.js';
-import { pingoSVG } from './components/art.js';
+import { pingoSVG, animalSVG } from './components/art.js';
 import { ZooProgress, renderZoo, animalName, animalPortrait } from './components/zoo.js';
 import { renderMiniHeatmap, renderReviewMatrix, renderGemArray } from './components/matrixGrid.js';
 
@@ -33,6 +36,7 @@ let pendingCommit = null; // debounced interim match: { timer, ts }
 let isProcessingAnswer = false;
 let heardSomething = false;   // any transcript for this question
 let nudged = false;           // "couldn't catch that" hint shown
+let lastWrongHeard = null;    // the last wrong number said for this question (for the report)
 let gameStarted = false;
 let paused = false;
 let pausedAt = 0;
@@ -51,22 +55,37 @@ function stabilityWindowMs(target) {
 // The tutor (utils/skillModel.js) finds the edge of what the child knows with
 // a doubling staircase, skips everything below it, repeats missed facts on a
 // spaced schedule, and mixes in + - / once multiplication is comfortable.
-// ?ops=mul,add  forces a set of operations; ?reset clears saved progress.
+// Each child ("player") has their own tutor + zoo, saved on this device and,
+// when signed in with Google, synced to the cloud (utils/players.js, cloudSync.js).
+// ?ops=mul,add  forces a set of operations; ?reset erases the chosen player's
+// progress (after asking).
 const PARAMS = new URLSearchParams(location.search);
 const DEBUG = PARAMS.has('asrdebug');
 const forcedOps = PARAMS.get('ops') ? PARAMS.get('ops').split(',').map((o) => o.trim()) : null;
-const tutor = new Tutor({ ops: forcedOps });
-if (PARAMS.has('reset')) {
-    tutor.reset();
-    try { localStorage.removeItem('math-quest-penguin.zoo.v1'); } catch (e) { /* ignore */ }
-} else if (!tutor.hasSavedState) {
-    // Returning player from the old engine: reuse what they already practised.
-    tutor.bootstrapFromFamiliarity(new AdaptiveEngine().stats);
-}
-tier = tutor.level;
-const zoo = new ZooProgress();
+let player = null;   // { id, name, avatar }
+let tutor = new Tutor({ ops: forcedOps, persist: false });
+let zoo = new ZooProgress({ persist: false });
 const voiceLog = new VoiceLog();
-if (DEBUG) Object.assign(window, { __tutor: tutor, __zoo: zoo, __voiceLog: voiceLog });
+
+/** Switch the game to this child's saved progress. */
+function loadPlayer(id) {
+    player = Players.getPlayer(id);
+    if (!player) return;
+    Players.setCurrentPlayer(id);
+    const keys = Players.keysFor(id);
+    tutor = new Tutor({ ops: forcedOps, storageKey: keys.tutor });
+    if (!tutor.hasSavedState && Players.listPlayers().length === 1) {
+        // Practice saved by the very first version of the game.
+        tutor.bootstrapFromFamiliarity(new AdaptiveEngine().stats);
+    }
+    zoo = new ZooProgress({ storageKey: keys.zoo });
+    tier = tutor.level;
+    if (DEBUG) Object.assign(window, { __tutor: tutor, __zoo: zoo, __voiceLog: voiceLog });
+    renderPlayerChip();
+    updateHeader();
+    updateZoo();
+    renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID);
+}
 const OP_NAMES = { add: 'plus', sub: 'minus', div: 'division' };
 
 // ---------------------------------------------------------------------------
@@ -110,7 +129,7 @@ function hideOverlay(el) {
     setTimeout(() => el.classList.add('hidden'), 250);
 }
 function overlaysOpen() {
-    return paused || [elReviewOverlay, elArrivalOverlay, $('voicelog-overlay')].some((el) => !el.classList.contains('hidden'));
+    return paused || [elReviewOverlay, elArrivalOverlay, $('voicelog-overlay'), $('report-overlay')].some((el) => !el.classList.contains('hidden'));
 }
 
 function cancelPendingCommit() {
@@ -180,7 +199,10 @@ function handleSpeechResult(alternatives, meta) {
     // Only a final result is a real "wrong answer"; interims are partial
     // ("twenty" on the way to "twenty four"). Wrong finals don't end the
     // question - the child can try again until the timer runs out.
-    if (meta.isFinal && best !== null) setStatus(`Heard ${best} — try again!`, true);
+    if (meta.isFinal && best !== null) {
+        lastWrongHeard = best;
+        setStatus(`Heard ${best} — try again!`, true);
+    }
 }
 
 // "pause" counts as soon as it is heard; "resume"/"continue" too. Only a
@@ -303,6 +325,7 @@ function nextQuestion() {
     timerDuration = timeLimitFor(currentQuestion);
     heardSomething = false;
     nudged = false;
+    lastWrongHeard = null;
 
     recentQuestions.push(currentQuestion.key);
     if (recentQuestions.length > 2) recentQuestions.shift();
@@ -312,6 +335,7 @@ function nextQuestion() {
     setStatus('Say the answer out loud');
     if (DEBUG) console.log(`[tutor] ${currentQuestion.key} (${currentWhy}), mul edge rung ${tutor.skills.mul.lo}`);
     voiceLog.startQuestion(currentQuestion, currentWhy, engineName());
+    if (player && voiceLog.current) voiceLog.current.player = player.name;
 
     setPingo('normal');
     renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID);
@@ -371,6 +395,12 @@ function runTimer() {
     }, 50);
 }
 
+function saveAttempt(correct, ms) {
+    if (!player) return;
+    const q = currentQuestion;
+    Players.appendAttempt(player.id, { op: q.op, a: q.a, b: q.b, answer: q.answer, correct, ms, why: currentWhy, heard: correct ? null : lastWrongHeard });
+}
+
 function finishLog(outcome) {
     voiceLog.finish(outcome, {
         ms: performance.now() - listenStartTime,
@@ -392,6 +422,7 @@ function handleCorrectAnswer(timeSpentSec) {
 
     streak++;
     const res = tutor.record(currentQuestion, true, Math.max(0, timeSpentSec), currentWhy);
+    saveAttempt(true, timeSpentSec * 1000);
     tier = res.level;
     // Learning questions (new facts, repeats of missed ones) earn 2 stars.
     const stars = ['new', 'repeat', 'practice', 'probe'].includes(currentWhy) ? 2 : 1;
@@ -426,6 +457,7 @@ function handleWrongAnswer(reason) {
     recognizer.reset();
 
     const res = tutor.record(currentQuestion, false, (performance.now() - listenStartTime) / 1000, currentWhy);
+    saveAttempt(false, performance.now() - listenStartTime);
     tier = res.level;
     streak = 0;
     updateHeader();
@@ -579,44 +611,193 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame(); });
 
 // ---------------------------------------------------------------------------
-// Start
+// Progress report (for parents, and to hand to an AI designing the next game)
+// ---------------------------------------------------------------------------
+let reportMd = '';
+$('btn-report').addEventListener('click', () => {
+    pauseGame();
+    const data = buildReport({ player, tutor, zoo, history: player ? Players.readHistory(player.id) : [] });
+    reportMd = reportMarkdown(data);
+    $('report-heading').textContent = `Progress report: ${data.player}`;
+    $('report-body').innerHTML = markdownToHtml(reportMd);
+    showOverlay($('report-overlay'));
+});
+$('report-close').addEventListener('click', () => { hideOverlay($('report-overlay')); resumeGame(); });
+$('report-download').addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([reportMd], { type: 'text/markdown' }));
+    a.download = `math-report-${(player ? player.name : 'player').toLowerCase().replace(/\W+/g, '-')}-${new Date().toISOString().slice(0, 10)}.md`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+});
+$('report-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(reportMd); $('report-copy').textContent = 'Copied'; }
+    catch (e) { $('report-copy').textContent = 'Copy failed'; }
+    setTimeout(() => { $('report-copy').textContent = 'Copy'; }, 1800);
+});
+
+// ---------------------------------------------------------------------------
+// Start: "Who's playing?" - tapping a name starts the game as that child.
 // ---------------------------------------------------------------------------
 $('brand-mark').innerHTML = pingoSVG('normal');
 $('start-pingo').innerHTML = pingoSVG('happy');
 setPingo('normal');
-updateHeader();
-updateZoo();
-renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID);
 
 const elStartOverlay = $('start-overlay');
 const elStartStatus = $('start-status');
-const elBtnStart = $('btn-start');
+const elPlayerList = $('player-list');
+const elAddForm = $('add-player-form');
+const elNewName = $('new-player-name');
 
-function beginGame() {
+function renderPlayerChip() {
+    const chip = $('btn-player');
+    if (!player) { chip.classList.add('hidden'); return; }
+    chip.classList.remove('hidden');
+    $('player-avatar').innerHTML = animalSVG(player.avatar);
+    $('player-name').textContent = player.name;
+}
+
+function renderPlayers() {
+    const list = Players.listPlayers();
+    elPlayerList.innerHTML = '';
+    for (const p of list) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'player-card';
+        b.innerHTML = `<span class="player-art">${animalSVG(p.avatar)}</span><span class="player-card-name"></span>`;
+        b.querySelector('.player-card-name').textContent = p.name;
+        b.addEventListener('click', () => choosePlayer(p.id));
+        elPlayerList.appendChild(b);
+    }
+    const add = document.createElement('button');
+    add.type = 'button';
+    add.className = 'player-card player-card--add';
+    add.innerHTML = '<span class="player-plus">+</span><span class="player-card-name">Add a player</span>';
+    add.addEventListener('click', () => { elAddForm.classList.remove('hidden'); elNewName.focus(); });
+    elPlayerList.appendChild(add);
+    $('start-title').textContent = list.length ? "Who's playing?" : "What's your name?";
+    if (!list.length) {
+        elAddForm.classList.remove('hidden');
+        add.classList.add('hidden');
+        $('keep-note').classList.toggle('hidden', !Players.hasUnclaimedProgress());
+    } else {
+        $('keep-note').classList.add('hidden');
+    }
+}
+
+elAddForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = elNewName.value.trim();
+    if (!name) { elNewName.focus(); return; }
+    const p = Players.addPlayer(name);
+    elNewName.value = '';
+    elAddForm.classList.add('hidden');
+    choosePlayer(p.id); // a tap on "Add" counts as the start tap
+});
+
+let starting = false;
+async function choosePlayer(id) {
+    if (starting) return;
+    starting = true;
+    const p = Players.getPlayer(id);
+    if (PARAMS.has('reset') && p && confirm(`Erase all progress for ${p.name} and start over?`)) {
+        const k = Players.keysFor(id);
+        try { localStorage.removeItem(k.tutor); localStorage.removeItem(k.zoo); } catch (e) { /* ignore */ }
+    }
+    if (PARAMS.has('reset')) history.replaceState(null, '', location.pathname + location.search.replace(/[?&]reset\b/, '').replace(/^&/, '?'));
+    loadPlayer(id);
+    // Ask the browser to keep the saved progress (not clear it to free space).
+    if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+    await startVoice();
     elStartOverlay.classList.add('hidden');
     gameStarted = true;
     requestAnimationFrame(drawMeter);
+    say(`"Hi ${player.name}! Let's grow your zoo!"`);
     nextQuestion();
+}
+
+async function startVoice() {
+    if (!(recognizer instanceof VoskRecognizer)) return;
+    elStartStatus.textContent = 'Getting ready…';
+    try {
+        await recognizer.start(); // mic + model (waits for the download)
+    } catch (e) {
+        console.error('Offline recognizer failed, falling back to Web Speech:', e);
+        recognizer = webSpeech();
+        installTypedFallback();
+    }
 }
 
 if (recognizer instanceof VoskRecognizer) {
     recognizer.loadModel().then(
-        () => { elStartStatus.textContent = 'Pingo is ready to listen. Say each answer out loud.'; },
-        () => { elStartStatus.textContent = 'Using the browser voice service instead.'; },
+        () => { elStartStatus.textContent = 'Tap your name to start.'; },
+        () => { elStartStatus.textContent = 'Tap your name to start (using the browser voice service).'; },
     );
-    elBtnStart.addEventListener('click', async () => {
-        elBtnStart.disabled = true;
-        elBtnStart.textContent = 'Getting ready…';
-        try {
-            await recognizer.start(); // mic + model (waits for the download)
-        } catch (e) {
-            console.error('Offline recognizer failed, falling back to Web Speech:', e);
-            recognizer = webSpeech();
-            installTypedFallback();
-        }
-        beginGame();
-    }, { once: true });
 } else {
-    elStartStatus.textContent = 'Say each answer out loud.';
-    elBtnStart.addEventListener('click', beginGame, { once: true });
+    elStartStatus.textContent = 'Tap your name to start.';
 }
+
+// Switching players: progress is already saved; reload to the picker.
+$('btn-player').addEventListener('click', () => {
+    pauseGame();
+    location.reload();
+});
+
+// Backup / restore (moves progress between devices without signing in).
+$('btn-backup').addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([Players.exportBackup()], { type: 'application/json' }));
+    a.download = `pingo-progress-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+});
+$('restore-file').addEventListener('change', async (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    try {
+        const { changed } = Players.importBackup(await f.text());
+        elStartStatus.textContent = changed.length ? `Restored progress for ${changed.length} ${changed.length === 1 ? 'player' : 'players'}.` : 'Everything in that backup was already here.';
+        renderPlayers();
+    } catch (err) {
+        elStartStatus.textContent = err.message || "That file couldn't be read.";
+    }
+    e.target.value = '';
+});
+
+// Google sign-in + cloud sync (stays hidden until firebaseConfig.js is filled in).
+const cloud = new CloudSync({
+    onState: renderAccount,
+    onPulled: (ids) => {
+        renderPlayers();
+        // This child's progress arrived from another computer: show it.
+        if (player && ids.includes(player.id)) loadPlayer(player.id);
+    },
+});
+function renderAccount({ status, user, message }) {
+    const row = $('account-row');
+    row.classList.toggle('hidden', status === 'off');
+    const text = $('account-text'), btn = $('btn-account');
+    btn.classList.remove('hidden');
+    if (status === 'signed-out' || (status === 'error' && !user)) {
+        text.textContent = message || 'Sign in to keep everyone\'s progress on every computer.';
+        btn.textContent = 'Sign in with Google';
+        btn.onclick = () => cloud.signIn();
+    } else if (user) {
+        text.textContent = status === 'syncing' ? 'Syncing…'
+            : status === 'error' ? message
+                : `Signed in as ${user.name || user.email}. Progress syncs to every computer.`;
+        btn.textContent = 'Sign out';
+        btn.onclick = () => cloud.signOut();
+    } else {
+        text.textContent = 'Connecting…';
+        btn.classList.add('hidden');
+    }
+    const sync = $('player-sync');
+    sync.textContent = user ? (status === 'error' ? 'not synced' : 'synced') : '';
+}
+cloud.init();
+
+const lastId = Players.currentPlayerId();
+if (lastId) loadPlayer(lastId);
+else { updateHeader(); updateZoo(); renderMiniHeatmap(elMiniHeatmap, (a, b) => tutor.factStatus(a, b), HEATMAP_GRID); }
+renderPlayers();

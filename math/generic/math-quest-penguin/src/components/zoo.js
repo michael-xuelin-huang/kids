@@ -38,17 +38,18 @@ const PENGUINS = new Set(['emperor', 'king', 'gentoo', 'rockhopper', 'adelie', '
 /** Stars needed to go from `level` to level + 1. */
 export const starsForLevel = (level) => 5 + level;
 
-const KEY = 'math-quest-penguin.zoo.v1';
+export const ZOO_KEY = 'math-quest-penguin.zoo.v1';
 
 export class ZooProgress {
-    constructor({ persist = true } = {}) {
+    constructor({ persist = true, storageKey = ZOO_KEY } = {}) {
         this.persist = persist;
+        this.storageKey = storageKey;
         this.stars = 0;   // total
         this.level = 1;
         this.into = 0;    // stars into the current level
         if (persist) {
             try {
-                const s = JSON.parse(localStorage.getItem(KEY) || 'null');
+                const s = JSON.parse(localStorage.getItem(this.storageKey) || 'null');
                 if (s && typeof s.stars === 'number') Object.assign(this, { stars: s.stars, level: s.level, into: s.into });
             } catch (e) { /* fresh zoo */ }
         }
@@ -87,7 +88,10 @@ export class ZooProgress {
 
     _save() {
         if (!this.persist) return;
-        try { localStorage.setItem(KEY, JSON.stringify({ stars: this.stars, level: this.level, into: this.into })); } catch (e) { /* ignore */ }
+        try {
+            localStorage.setItem(this.storageKey, JSON.stringify({ stars: this.stars, level: this.level, into: this.into }));
+            if (typeof dispatchEvent === 'function') dispatchEvent(new CustomEvent('mqp:saved', { detail: { key: this.storageKey } }));
+        } catch (e) { /* ignore */ }
     }
 }
 

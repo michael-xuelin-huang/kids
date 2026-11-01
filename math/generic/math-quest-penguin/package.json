@@ -11,6 +11,8 @@
     "stamp": "node tools/stamp-version.mjs",
     "test:asr": "node tools/test-number-parser.mjs",
     "test:tutor": "node tools/test-tutor.mjs",
+    "test:sync": "node tools/test-sync.mjs",
+    "sample:report": "node tools/sample-report.mjs",
     "simulate:learning": "node tools/simulate-learning.mjs"
   },
   "devDependencies": {

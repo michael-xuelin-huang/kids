@@ -330,7 +330,7 @@ export class Skill {
     }
 }
 
-const STORAGE_KEY = 'math-quest-penguin.tutor.v1';
+export const TUTOR_KEY = 'math-quest-penguin.tutor.v1';
 export const ALL_OPS = ['mul', 'add', 'sub', 'div'];
 
 // Mixing rules ("once the child is used to multiplication").
@@ -346,9 +346,11 @@ export class Tutor {
      * @param {object} [opts]
      * @param {boolean} [opts.persist]
      * @param {string[]|null} [opts.ops] force this set of operations (no auto-unlock)
+     * @param {string} [opts.storageKey] where to save (one key per player)
      */
-    constructor({ persist = true, ops = null } = {}) {
+    constructor({ persist = true, ops = null, storageKey = TUTOR_KEY } = {}) {
         this.persist = persist;
+        this.storageKey = storageKey;
         this.forcedOps = ops && ops.length ? ops.filter((o) => ALL_OPS.includes(o)) : null;
         this.t = 0;
         this.times = [];
@@ -483,16 +485,19 @@ export class Tutor {
     _save() {
         if (!this.persist) return;
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            localStorage.setItem(this.storageKey, JSON.stringify({
                 t: this.t, unlocked: this.unlocked, times: this.times,
                 skills: Object.fromEntries(Object.entries(this.skills).map(([k, s]) => [k, s.toJSON()])),
             }));
+            if (typeof dispatchEvent === 'function' && typeof CustomEvent === 'function') {
+                dispatchEvent(new CustomEvent('mqp:saved', { detail: { key: this.storageKey } }));
+            }
         } catch (e) { /* storage unavailable */ }
     }
 
     _load() {
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
+            const raw = localStorage.getItem(this.storageKey);
             if (!raw) return false;
             const s = JSON.parse(raw);
             this.t = s.t | 0;
