@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://michael-xuelin-huang.github.io/kids/math/generic/math-path/schema/learning-plan.schema.json",
+  "title": "Math Path learning plan",
+  "description": "The only thing the AI writes after each report. The games are fixed; this file tells them what to practise, how hard, how much help to give, what counts as done, and which story beat comes next. Every field except the required ones has a default in the game, so a short plan is a valid plan.",
+  "type": "object",
+  "required": ["version", "player", "createdAt", "basis", "focus"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "player": { "type": "string", "minLength": 1, "description": "Player name as shown in the game." },
+    "createdAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}" },
+    "basedOnReport": { "type": "string", "description": "File name of the report this plan answers, e.g. reports/2026-11-02-mia.md" },
+    "validFor": {
+      "type": "object", "additionalProperties": false,
+      "description": "How long the plan runs before the game asks for a new report. Whichever comes first.",
+      "properties": {
+        "sessions": { "type": "integer", "minimum": 1, "maximum": 30, "default": 5 },
+        "days": { "type": "integer", "minimum": 1, "maximum": 30, "default": 7 }
+      }
+    },
+
+    "basis": {
+      "type": "object", "additionalProperties": false, "required": ["mastered"],
+      "description": "What the AI read in the report, in map ids. The validator checks new skills against it.",
+      "properties": {
+        "mastered": { "type": "array", "items": { "$ref": "#/$defs/nodeId" } },
+        "shaky": { "type": "array", "items": { "$ref": "#/$defs/nodeId" } },
+        "misconceptionsSeen": { "type": "array", "items": { "type": "string" }, "description": "Short names, matching the map's misconception text where possible." },
+        "summary": { "type": "string", "maxLength": 600, "description": "Two or three sentences in plain words for the parent." }
+      }
+    },
+
+    "focus": {
+      "type": "array", "minItems": 1, "maxItems": 8,
+      "description": "The skills this plan works on. Weights are the share of questions (normalised by the game).",
+      "items": { "$ref": "#/$defs/focusItem" }
+    },
+
+    "session": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "minutes": { "type": "integer", "minimum": 5, "maximum": 40, "default": 15 },
+        "maxNewSkills": { "type": "integer", "minimum": 0, "maximum": 3, "default": 1, "description": "New skills a single session may open." },
+        "warmup": { "type": "integer", "minimum": 0, "maximum": 10, "default": 3, "description": "Easy review questions before anything new." },
+        "mix": {
+          "type": "object", "additionalProperties": false,
+          "description": "Share of questions by role. Defaults to 70/20/10.",
+          "properties": {
+            "new": { "type": "number", "minimum": 0, "maximum": 1 },
+            "repair": { "type": "number", "minimum": 0, "maximum": 1 },
+            "review": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "factDrillMinutes": { "type": "integer", "minimum": 0, "maximum": 20, "default": 4, "description": "Minutes of Pingo fast-fact practice inside each session." },
+        "explainEvery": { "type": "integer", "minimum": 0, "maximum": 30, "default": 8, "description": "Ask one explain/why question every N questions (0 = never)." },
+        "breakEvery": { "type": "integer", "minimum": 0, "maximum": 30, "default": 12, "description": "Minutes between short movement breaks (0 = none)." }
+      }
+    },
+
+    "pacing": {
+      "type": "object", "additionalProperties": false,
+      "description": "How fast to move. 'Skip' lets a child test out of a skill with a short probe.",
+      "properties": {
+        "style": { "enum": ["careful", "normal", "fast"], "default": "normal" },
+        "allowTestOut": { "type": "boolean", "default": true },
+        "testOutQuestions": { "type": "integer", "minimum": 3, "maximum": 10, "default": 5 },
+        "stepUpAfter": { "type": "integer", "minimum": 2, "maximum": 10, "default": 3, "description": "Correct in a row before the difficulty level goes up." },
+        "stepDownAfter": { "type": "integer", "minimum": 1, "maximum": 5, "default": 2, "description": "Misses in a row before it goes down and a hint or lesson is offered." }
+      }
+    },
+
+    "factDrill": {
+      "type": "object", "additionalProperties": false,
+      "description": "Settings handed to Pingo's fact drill (math-quest-penguin).",
+      "properties": {
+        "ops": { "type": "array", "items": { "enum": ["mul", "div", "add", "sub"] }, "uniqueItems": true },
+        "maxFactor": { "type": "integer", "minimum": 2, "maximum": 12, "default": 9 },
+        "targetFacts": { "type": "array", "items": { "type": "string", "pattern": "^\\d{1,2}[x×÷+\\-]\\d{1,2}$" }, "maxItems": 20, "description": "Facts to drill more, e.g. 7x8, 56÷7." },
+        "speedSeconds": { "type": "number", "minimum": 1, "maximum": 15, "description": "Answer time that counts as fluent. Default: calibrated to the child." }
+      }
+    },
+
+    "teaching": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "lessonBeforeNew": { "type": "boolean", "default": true, "description": "Show the short lesson (picture, worked example, try-it) when a skill opens." },
+        "workedExamples": { "type": "integer", "minimum": 0, "maximum": 4, "default": 2 },
+        "representation": { "enum": ["concrete", "pictures", "symbols", "auto"], "default": "auto", "description": "Concrete → pictorial → abstract stage to start new skills at." }
+      }
+    },
+
+    "story": {
+      "type": "object", "additionalProperties": false,
+      "description": "Zoo island story for grades 3 to 5. The beat library is fixed; the plan only picks.",
+      "properties": {
+        "world": { "$ref": "#/$defs/world" },
+        "chapter": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "Chapter id from story/zoo-island.json." },
+        "npc": { "type": "string", "description": "Which keeper or animal asks the questions." },
+        "goal": { "type": "string", "maxLength": 120, "description": "One-line reason in the story, e.g. 'Fix the fence for the new seals'." }
+      }
+    },
+
+    "rewards": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "starsPerCorrect": { "type": "integer", "minimum": 1, "maximum": 3, "default": 1 },
+        "bonusFor": { "type": "array", "items": { "enum": ["streak", "speed", "explain", "repair", "first-try", "comeback"] }, "uniqueItems": true, "description": "What earns extra stars this week. Reward the behaviour the plan wants." },
+        "unlockAnimal": { "type": "string", "description": "Animal or habitat to promise at the checkpoint." }
+      }
+    },
+
+    "checkpoint": {
+      "type": "object", "additionalProperties": false,
+      "description": "The short quiz at the end of the plan that the next report is built from.",
+      "properties": {
+        "questions": { "type": "integer", "minimum": 4, "maximum": 30, "default": 12 },
+        "include": { "type": "array", "items": { "$ref": "#/$defs/nodeId" }, "description": "Defaults to every focus skill plus two due reviews." },
+        "openQuestions": { "type": "integer", "minimum": 0, "maximum": 5, "default": 2, "description": "Questions answered in the child's own words." }
+      }
+    },
+
+    "parentNote": { "type": "string", "maxLength": 600 },
+    "needsNewTemplate": {
+      "type": "array", "items": { "type": "string" },
+      "description": "Only when no existing template can practise a focus skill. Each entry is a short spec; this is the one case where code changes."
+    }
+  },
+
+  "$defs": {
+    "nodeId": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)+$" },
+    "world": { "enum": ["pattern", "number", "fraction", "shape", "data"] },
+    "template": { "enum": ["fact-drill", "choice", "keypad", "story-problem", "explain", "fraction-bars", "number-line", "area-model", "base-ten", "long-algorithm", "long-division", "clock", "protractor", "coordinate-grid", "graph-builder"] },
+
+    "focusItem": {
+      "type": "object", "additionalProperties": false, "required": ["node", "role"],
+      "properties": {
+        "node": { "$ref": "#/$defs/nodeId" },
+        "role": { "enum": ["new", "repair", "review", "stretch"], "description": "new: open it; repair: fix a shaky or misconception skill; review: keep it fresh; stretch: a peek one step ahead, no mastery expected." },
+        "weight": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.25 },
+        "why": { "type": "string", "maxLength": 200, "description": "Evidence from the report, kept for the next report." },
+        "difficulty": { "$ref": "#/$defs/difficulty" },
+        "templates": {
+          "type": "object", "description": "Template → share. Must be templates the map lists for this skill.",
+          "propertyNames": { "$ref": "#/$defs/template" },
+          "additionalProperties": { "type": "number", "minimum": 0, "maximum": 1 }
+        },
+        "input": { "$ref": "#/$defs/input" },
+        "hints": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "level": { "type": "integer", "minimum": 0, "maximum": 3, "default": 1, "description": "0 none, 1 nudge after a miss, 2 picture hint on request, 3 worked step each time." },
+            "fadeAfter": { "type": "integer", "minimum": 0, "maximum": 20, "default": 5, "description": "Correct answers before the hint level drops by one." }
+          }
+        },
+        "targetMisconceptions": { "type": "array", "items": { "type": "string" }, "maxItems": 4, "description": "Build wrong options and 'find the mistake' items from these." },
+        "bar": { "$ref": "#/$defs/bar" }
+      }
+    },
+
+    "difficulty": {
+      "type": "object", "additionalProperties": false,
+      "description": "Knobs that the templates understand. Each template reads the ones that apply and ignores the rest.",
+      "properties": {
+        "start": { "type": "integer", "minimum": 1, "maximum": 5, "default": 2, "description": "Starting level on the skill's 1–5 ladder." },
+        "max": { "type": "integer", "minimum": 1, "maximum": 5, "default": 5 },
+        "numberMax": { "type": "integer", "minimum": 10, "maximum": 1000000 },
+        "digits": { "type": "array", "items": { "type": "integer", "minimum": 1, "maximum": 6 }, "minItems": 1, "maxItems": 2, "description": "Digits per operand, e.g. [2,1] for 2-digit by 1-digit." },
+        "denominators": { "type": "array", "items": { "type": "integer", "minimum": 2, "maximum": 100 }, "uniqueItems": true },
+        "decimals": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "regrouping": { "enum": ["none", "some", "always"] },
+        "remainders": { "type": "boolean" },
+        "steps": { "type": "integer", "minimum": 1, "maximum": 4, "description": "Steps in a story problem." },
+        "context": { "enum": ["bare", "picture", "story"], "description": "Bare numbers, a picture, or a story problem." },
+        "choices": { "type": "integer", "minimum": 2, "maximum": 5, "default": 4 },
+        "timeLimitSeconds": { "type": "integer", "minimum": 0, "maximum": 300, "default": 0, "description": "0 = untimed (default outside fact drills)." }
+      }
+    },
+
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "choice": { "type": "number", "minimum": 0, "maximum": 1 },
+        "typed": { "type": "number", "minimum": 0, "maximum": 1, "description": "Keypad or text box (Wispr dictation lands here too)." },
+        "voice": { "type": "number", "minimum": 0, "maximum": 1, "description": "Spoken number answers (fact drills)." },
+        "explainAfterChoice": { "type": "number", "minimum": 0, "maximum": 1, "description": "Share of choice questions followed by 'why?'." }
+      }
+    },
+
+    "bar": {
+      "type": "object", "additionalProperties": false,
+      "description": "When this skill counts as done for this plan.",
+      "properties": {
+        "accuracy": { "type": "number", "minimum": 0.5, "maximum": 1, "default": 0.85, "description": "Over the last `window` answers." },
+        "window": { "type": "integer", "minimum": 4, "maximum": 30, "default": 10 },
+        "minAttempts": { "type": "integer", "minimum": 3, "maximum": 50, "default": 8 },
+        "atLevel": { "type": "integer", "minimum": 1, "maximum": 5, "default": 4, "description": "Answers count toward the bar only at this difficulty level or above." },
+        "medianSeconds": { "type": "number", "minimum": 1, "maximum": 120, "description": "Optional fluency bar." },
+        "noHints": { "type": "boolean", "default": true, "description": "Answers given with a hint do not count." },
+        "delayedCheckDays": { "type": "integer", "minimum": 0, "maximum": 14, "default": 2, "description": "Must still be right this many days later to count as mastered." }
+      }
+    }
+  }
+}

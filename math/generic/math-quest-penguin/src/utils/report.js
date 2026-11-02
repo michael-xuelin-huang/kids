@@ -270,6 +270,25 @@ function standards(sk) {
     return s;
 }
 
+/** Status of the Math Path knowledge-map skills this game measures (math-path/knowledge-map). */
+function mapStatus(sk) {
+    const st = (x) => (!x.attempts ? 'not-started' : x.status === 'mastered' ? 'mastered' : x.status === 'secure' ? 'shaky' : 'learning');
+    const both = (a, b) => (a === b ? a : [a, b].includes('not-started') && [a, b].includes('mastered') ? 'shaky' : [a, b].includes('learning') ? 'learning' : 'shaky');
+    const add = st(sk.add), sub = st(sk.sub), mul = st(sk.mul), div = st(sk.div);
+    const small = (x) => x.attempts && x.ladder.rungsKnown >= 6;
+    const m = {
+        'oa2-addsub-20': small(sk.add) && small(sk.sub) ? 'mastered' : both(add, sub),
+        'nbt2-addsub-100': both(add, sub),
+        'oa3-facts-mult': mul,
+        'oa3-facts-div': div,
+    };
+    // Fluent facts imply the meaning of × and ÷ (equal groups, sharing) at least as far.
+    if (mul === 'mastered') { m['oa3-mult-meaning'] = 'mastered (inferred from fluent facts)'; m['oa3-properties'] = 'probably (check with an explain question)'; }
+    if (div === 'mastered' || div === 'shaky') m['oa3-div-meaning'] = 'mastered (inferred from division facts)';
+    if (mul === 'mastered' && div !== 'not-started') m['oa3-unknown-factor'] = div === 'mastered' ? 'probably (division facts fluent)' : 'not measured';
+    return m;
+}
+
 function recommendations(sk, weak, patterns, tr, r_grid = {}) {
     const rec = [];
     const mul = sk.mul, div = sk.div, add = sk.add, sub = sk.sub;
@@ -354,6 +373,7 @@ export function buildReport({ player, tutor, zoo, history }) {
         sessions: sessions.slice(-10),
         trend: tr,
         standards: standards(skills),
+        mapStatus: mapStatus(skills),
         recommendations: recommendations(skills, weak, patterns, tr, grid),
     };
 }
@@ -423,6 +443,10 @@ export function reportMarkdown(r) {
     for (const s of r.standards) L.push(`- ${s.code} — ${s.text}: **${s.met}**`);
     L.push('');
 
+    L.push('## Knowledge-map skills (Math Path ids)', '', 'For the next learning plan (math-path/schema/learning-plan.schema.json). Skills not listed are not measured by this game.', '');
+    for (const [id, v] of Object.entries(r.mapStatus)) L.push(`- \`${id}\`: ${v}`);
+    L.push('');
+
     L.push('## What to work on next', '');
     for (const x of r.recommendations) {
         L.push(`- **${x.focus}.** ${x.why}`);
@@ -444,7 +468,7 @@ export function reportMarkdown(r) {
     L.push('## Data (JSON)', '', '```json', JSON.stringify({
         player: r.player, generatedAt: r.generatedAt, totals: r.totals, skills: r.skills,
         timesTablesKnownPerTable: r.multiplicationGrid.byTable, additionTypes: r.additionTypes, subtractionTypes: r.subtractionTypes,
-        weakSpots: r.weakSpots, errorPatterns: r.errorPatterns, trend: r.trend, standards: r.standards,
+        weakSpots: r.weakSpots, errorPatterns: r.errorPatterns, trend: r.trend, standards: r.standards, mapStatus: r.mapStatus,
         recommendedFocus: r.recommendations.map((x) => x.focus),
     }, null, 1), '```', '');
     return L.join('\n');

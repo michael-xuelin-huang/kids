@@ -1,0 +1,10 @@
+{
+  "name": "math-path",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:map": "node tools/build-map.mjs",
+    "check": "node tools/check-plan.mjs",
+    "test": "node tools/build-map.mjs && node tools/test-check-plan.mjs && node tools/check-plan.mjs plans/*.plan.json"
+  }
+}

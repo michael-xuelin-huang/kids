@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "player": "Mia",
+  "createdAt": "2026-11-02",
+  "basedOnReport": "reports/2026-11-02-mia.md (illustrative)",
+  "validFor": { "sessions": 5, "days": 7 },
+
+  "basis": {
+    "mastered": ["oa2-addsub-20", "nbt2-addsub-100", "oa3-mult-meaning", "oa3-div-meaning", "oa3-properties", "oa3-facts-mult"],
+    "shaky": ["oa3-facts-div", "oa3-unknown-factor"],
+    "misconceptionsSeen": ["swaps divisor and quotient", "6x and 8x facts confused (7x8 answered 54, 48)"],
+    "summary": "Mia knows almost all × facts by heart (fast, 92% over the last 2 weeks). Division facts are slower and 7×8 / 56÷7 are still missed. She has not started fractions, and all fraction prerequisites are in place."
+  },
+
+  "focus": [
+    {
+      "node": "nf3-unit-fraction", "role": "new", "weight": 0.45,
+      "why": "Next step on the map; prerequisite oa3-div-meaning is mastered.",
+      "difficulty": { "start": 1, "max": 4, "denominators": [2, 3, 4, 6, 8], "context": "picture", "choices": 3 },
+      "templates": { "fraction-bars": 0.6, "choice": 0.4 },
+      "input": { "choice": 0.7, "typed": 0.3, "explainAfterChoice": 0.2 },
+      "hints": { "level": 2, "fadeAfter": 5 },
+      "targetMisconceptions": ["parts need not be equal", "bigger denominator means bigger piece"],
+      "bar": { "accuracy": 0.85, "window": 10, "minAttempts": 10, "atLevel": 3, "delayedCheckDays": 2 }
+    },
+    {
+      "node": "oa3-facts-div", "role": "repair", "weight": 0.25,
+      "why": "Division facts median 4.8 s vs 2.1 s for ×; 56÷7 missed 3 of the last 5.",
+      "templates": { "fact-drill": 1 },
+      "input": { "voice": 0.8, "typed": 0.2 },
+      "hints": { "level": 1 },
+      "targetMisconceptions": ["swaps divisor and quotient"],
+      "bar": { "accuracy": 0.9, "window": 12, "minAttempts": 12, "medianSeconds": 3.5 }
+    },
+    {
+      "node": "oa3-unknown-factor", "role": "repair", "weight": 0.15,
+      "why": "Links division to multiplication; missed 2 of 4 '? × 7 = 56' items.",
+      "difficulty": { "start": 2, "max": 4, "context": "bare" },
+      "templates": { "keypad": 1 },
+      "input": { "typed": 1 },
+      "bar": { "accuracy": 0.85, "minAttempts": 8 }
+    },
+    {
+      "node": "oa3-facts-mult", "role": "review", "weight": 0.15,
+      "why": "Mastered; keep 6×, 7×, 8× fresh.",
+      "templates": { "fact-drill": 1 },
+      "input": { "voice": 1 }
+    }
+  ],
+
+  "session": { "minutes": 15, "maxNewSkills": 1, "warmup": 3, "mix": { "new": 0.45, "repair": 0.4, "review": 0.15 }, "factDrillMinutes": 4, "explainEvery": 8, "breakEvery": 0 },
+  "pacing": { "style": "fast", "allowTestOut": true, "testOutQuestions": 5, "stepUpAfter": 3, "stepDownAfter": 2 },
+  "factDrill": { "ops": ["mul", "div"], "maxFactor": 9, "targetFacts": ["7x8", "56÷7", "6x8", "48÷6", "54÷9"] },
+  "teaching": { "lessonBeforeNew": true, "workedExamples": 2, "representation": "pictures" },
+  "story": { "world": "fraction", "chapter": "reef-1-fair-shares", "npc": "Otto the otter", "goal": "Share the fish fairly so every seal pup gets the same" },
+  "rewards": { "starsPerCorrect": 1, "bonusFor": ["repair", "explain"], "unlockAnimal": "sea turtle" },
+  "checkpoint": { "questions": 12, "include": ["nf3-unit-fraction", "oa3-facts-div", "oa3-unknown-factor"], "openQuestions": 2 },
+  "parentNote": "This week: first fractions (one part of a whole, with pictures) and faster division facts. Ask Mia to show you 'one quarter' of a sandwich or pizza."
+}

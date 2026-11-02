@@ -1,0 +1,1830 @@
+{
+ "name": "Math Path knowledge map, grades 3 to 5",
+ "version": 1,
+ "generatedFrom": "knowledge-map/source-grades-3-5.txt",
+ "standards": "US Common Core State Standards for Mathematics (https://thecorestandards.org/Math/Content/)",
+ "worlds": {
+  "pattern": "Pattern Jungle (operations and algebraic thinking)",
+  "number": "Number Ice Fields (place value and multi-digit operations)",
+  "fraction": "Fraction Reef (fractions and decimals)",
+  "shape": "Shape Savanna (measurement and geometry)",
+  "data": "Data Observatory (data)"
+ },
+ "templates": {
+  "fact-drill": "Fast recall with spaced repeats (voice, keypad or choice) — Pingo today",
+  "choice": "Tap one of 3 to 4 options; wrong options come from misconceptions",
+  "keypad": "Type a number, fraction or decimal; equivalent forms accepted",
+  "story-problem": "Short story problem from an NPC; keypad or choice answer, optional \"why\"",
+  "explain": "Explain why / find Pingo's mistake; free text, typed or dictated, AI-scored later",
+  "fraction-bars": "Cut, shade and compare fraction bars",
+  "number-line": "Place or read a number or fraction on a number line",
+  "area-model": "Arrays and area rectangles: build, split, count",
+  "base-ten": "Base-ten blocks: bundle and unbundle tens, hundreds, tenths",
+  "long-algorithm": "Column addition, subtraction and multiplication, one checked step at a time",
+  "long-division": "Long division, one checked step at a time",
+  "clock": "Set and read an analog clock; elapsed time on a time line",
+  "protractor": "Measure and build angles",
+  "coordinate-grid": "Plot and read points in the first quadrant",
+  "graph-builder": "Build and read picture graphs, bar graphs and line plots"
+ },
+ "nodes": [
+  {
+   "id": "nbt2-addsub-100",
+   "world": "number",
+   "grade": 2,
+   "standards": [
+    "2.NBT.B.5"
+   ],
+   "title": "Add and subtract within 100",
+   "prerequisites": [],
+   "templates": [
+    "fact-drill",
+    "keypad"
+   ],
+   "misconceptions": [
+    "regrouping errors (38 + 5 = 33)",
+    "subtracting the smaller digit from the larger (43 - 5 = 42)"
+   ],
+   "floor": true,
+   "coveredBy": "math-quest-penguin",
+   "depth": 0,
+   "unlocks": [
+    "nbt3-round",
+    "nbt3-addsub-1000",
+    "md3-time",
+    "md3-graphs"
+   ]
+  },
+  {
+   "id": "oa2-addsub-20",
+   "world": "pattern",
+   "grade": 2,
+   "standards": [
+    "2.OA.B.2"
+   ],
+   "title": "Add and subtract within 20 from memory",
+   "prerequisites": [],
+   "templates": [
+    "fact-drill"
+   ],
+   "misconceptions": [
+    "counting on by ones instead of recalling"
+   ],
+   "floor": true,
+   "coveredBy": "math-quest-penguin",
+   "depth": 0,
+   "unlocks": [
+    "oa3-mult-meaning"
+   ]
+  },
+  {
+   "id": "g3-shapes",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.G.A.1"
+   ],
+   "title": "Categories of shapes; quadrilaterals",
+   "prerequisites": [],
+   "templates": [
+    "choice"
+   ],
+   "misconceptions": [
+    "a square is not a rectangle"
+   ],
+   "depth": 0,
+   "unlocks": [
+    "g4-lines-angles",
+    "g4-symmetry",
+    "g5-classify"
+   ]
+  },
+  {
+   "id": "nbt3-round",
+   "world": "number",
+   "grade": 3,
+   "standards": [
+    "3.NBT.A.1"
+   ],
+   "title": "Round to the nearest 10 or 100",
+   "prerequisites": [
+    "nbt2-addsub-100"
+   ],
+   "templates": [
+    "number-line",
+    "choice"
+   ],
+   "misconceptions": [
+    "rounds 45 down",
+    "rounds 349 to 400 by rounding twice"
+   ],
+   "depth": 1,
+   "unlocks": [
+    "nbt4-round"
+   ]
+  },
+  {
+   "id": "nbt3-addsub-1000",
+   "world": "number",
+   "grade": 3,
+   "standards": [
+    "3.NBT.A.2"
+   ],
+   "title": "Add and subtract within 1000",
+   "prerequisites": [
+    "nbt2-addsub-100"
+   ],
+   "templates": [
+    "base-ten",
+    "keypad"
+   ],
+   "misconceptions": [
+    "regrouping across zero (402 - 135)"
+   ],
+   "depth": 1,
+   "unlocks": [
+    "oa3-two-step",
+    "nbt4-place-value",
+    "nbt4-addsub-algorithm",
+    "md3-mass-volume",
+    "md3-perimeter",
+    "md4-angles",
+    "g5-coordinate"
+   ]
+  },
+  {
+   "id": "md3-time",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.MD.A.1"
+   ],
+   "title": "Tell time to the minute; elapsed time",
+   "prerequisites": [
+    "nbt2-addsub-100"
+   ],
+   "templates": [
+    "clock",
+    "number-line"
+   ],
+   "misconceptions": [
+    "counts elapsed minutes in hundreds (2:50 to 3:10 is 60 minutes)"
+   ],
+   "depth": 1,
+   "unlocks": []
+  },
+  {
+   "id": "oa3-mult-meaning",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.A.1"
+   ],
+   "title": "Multiplication as equal groups and arrays",
+   "prerequisites": [
+    "oa2-addsub-20"
+   ],
+   "templates": [
+    "choice",
+    "area-model"
+   ],
+   "misconceptions": [
+    "adds the two numbers instead of making groups"
+   ],
+   "depth": 1,
+   "unlocks": [
+    "oa3-div-meaning",
+    "oa3-word-problems",
+    "oa3-properties",
+    "oa3-facts-mult",
+    "md3-area-concept",
+    "md3-graphs"
+   ]
+  },
+  {
+   "id": "g4-lines-angles",
+   "world": "shape",
+   "grade": 4,
+   "standards": [
+    "4.G.A.1",
+    "4.G.A.2"
+   ],
+   "title": "Points, lines, rays, angle types; parallel and perpendicular",
+   "prerequisites": [
+    "g3-shapes"
+   ],
+   "templates": [
+    "choice"
+   ],
+   "misconceptions": [
+    "judges angle size by the length of its sides"
+   ],
+   "depth": 1,
+   "unlocks": [
+    "md4-angles",
+    "g5-classify"
+   ]
+  },
+  {
+   "id": "g4-symmetry",
+   "world": "shape",
+   "grade": 4,
+   "standards": [
+    "4.G.A.3"
+   ],
+   "title": "Lines of symmetry",
+   "prerequisites": [
+    "g3-shapes"
+   ],
+   "templates": [
+    "choice"
+   ],
+   "misconceptions": [],
+   "depth": 1,
+   "unlocks": []
+  },
+  {
+   "id": "md3-mass-volume",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.MD.A.2"
+   ],
+   "title": "Liquid volume and mass in grams, kilograms and liters",
+   "prerequisites": [
+    "nbt3-addsub-1000"
+   ],
+   "templates": [
+    "choice",
+    "story-problem"
+   ],
+   "misconceptions": [],
+   "depth": 2,
+   "unlocks": []
+  },
+  {
+   "id": "oa3-div-meaning",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.A.2"
+   ],
+   "title": "Division as sharing and as grouping",
+   "prerequisites": [
+    "oa3-mult-meaning"
+   ],
+   "templates": [
+    "choice",
+    "area-model"
+   ],
+   "misconceptions": [
+    "confuses the number of groups with the size of each group"
+   ],
+   "depth": 2,
+   "unlocks": [
+    "oa3-word-problems",
+    "oa3-unknown-factor",
+    "nf3-unit-fraction",
+    "nf5-fraction-as-division"
+   ]
+  },
+  {
+   "id": "oa3-properties",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.B.5"
+   ],
+   "title": "Use commutative, associative and distributive properties to multiply",
+   "prerequisites": [
+    "oa3-mult-meaning"
+   ],
+   "templates": [
+    "area-model",
+    "explain"
+   ],
+   "misconceptions": [
+    "thinks 7 x 8 and 8 x 7 are different facts to learn"
+   ],
+   "depth": 2,
+   "unlocks": [
+    "oa3-facts-mult",
+    "nbt4-mult-4x1",
+    "md3-area-multiply"
+   ]
+  },
+  {
+   "id": "md3-area-concept",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.MD.C.5",
+    "3.MD.C.6"
+   ],
+   "title": "Area as the number of unit squares",
+   "prerequisites": [
+    "oa3-mult-meaning"
+   ],
+   "templates": [
+    "area-model"
+   ],
+   "misconceptions": [
+    "counts around the edge instead of covering"
+   ],
+   "depth": 2,
+   "unlocks": [
+    "md3-area-multiply",
+    "md3-perimeter",
+    "g3-partition"
+   ]
+  },
+  {
+   "id": "md3-graphs",
+   "world": "data",
+   "grade": 3,
+   "standards": [
+    "3.MD.B.3"
+   ],
+   "title": "Scaled picture graphs and bar graphs",
+   "prerequisites": [
+    "nbt2-addsub-100",
+    "oa3-mult-meaning"
+   ],
+   "templates": [
+    "graph-builder"
+   ],
+   "misconceptions": [
+    "reads each picture as 1 when the key says 5"
+   ],
+   "depth": 2,
+   "unlocks": [
+    "md3-line-plot"
+   ]
+  },
+  {
+   "id": "nbt4-place-value",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.A.1"
+   ],
+   "title": "Place value to 1,000,000: each place is ten times the place to its right",
+   "prerequisites": [
+    "nbt3-addsub-1000"
+   ],
+   "templates": [
+    "base-ten",
+    "choice"
+   ],
+   "misconceptions": [
+    "thinks the 7 in 700 and 70 have the same value"
+   ],
+   "depth": 2,
+   "unlocks": [
+    "nbt4-read-compare",
+    "nbt4-round",
+    "nbt4-addsub-algorithm",
+    "nbt4-div-1digit",
+    "nbt5-place-value-decimals"
+   ]
+  },
+  {
+   "id": "md4-angles",
+   "world": "shape",
+   "grade": 4,
+   "standards": [
+    "4.MD.C.5",
+    "4.MD.C.6",
+    "4.MD.C.7"
+   ],
+   "title": "Measure angles in degrees; add angles",
+   "prerequisites": [
+    "g4-lines-angles",
+    "nbt3-addsub-1000"
+   ],
+   "templates": [
+    "protractor",
+    "keypad"
+   ],
+   "misconceptions": [
+    "reads the wrong scale on the protractor"
+   ],
+   "depth": 2,
+   "unlocks": []
+  },
+  {
+   "id": "g5-coordinate",
+   "world": "shape",
+   "grade": 5,
+   "standards": [
+    "5.G.A.1",
+    "5.G.A.2"
+   ],
+   "title": "The coordinate plane (first quadrant)",
+   "prerequisites": [
+    "nbt3-addsub-1000"
+   ],
+   "templates": [
+    "coordinate-grid"
+   ],
+   "misconceptions": [
+    "swaps x and y"
+   ],
+   "depth": 2,
+   "unlocks": [
+    "oa5-two-patterns"
+   ]
+  },
+  {
+   "id": "g5-classify",
+   "world": "shape",
+   "grade": 5,
+   "standards": [
+    "5.G.B.3",
+    "5.G.B.4"
+   ],
+   "title": "Classify 2D figures in a hierarchy",
+   "prerequisites": [
+    "g3-shapes",
+    "g4-lines-angles"
+   ],
+   "templates": [
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [],
+   "depth": 2,
+   "unlocks": []
+  },
+  {
+   "id": "oa3-word-problems",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.A.3"
+   ],
+   "title": "One-step multiplication and division word problems within 100",
+   "prerequisites": [
+    "oa3-mult-meaning",
+    "oa3-div-meaning"
+   ],
+   "templates": [
+    "story-problem"
+   ],
+   "misconceptions": [
+    "picks the operation from keywords (\"each\" means multiply) instead of the situation"
+   ],
+   "depth": 3,
+   "unlocks": [
+    "oa3-two-step",
+    "oa4-mult-compare"
+   ]
+  },
+  {
+   "id": "oa3-unknown-factor",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.A.4",
+    "3.OA.B.6"
+   ],
+   "title": "Find the unknown number in a multiplication or division equation",
+   "prerequisites": [
+    "oa3-div-meaning"
+   ],
+   "templates": [
+    "keypad"
+   ],
+   "misconceptions": [
+    "treats \"? x 6 = 42\" as 42 x 6"
+   ],
+   "depth": 3,
+   "unlocks": [
+    "oa3-facts-div"
+   ]
+  },
+  {
+   "id": "nf3-unit-fraction",
+   "world": "fraction",
+   "grade": 3,
+   "standards": [
+    "3.NF.A.1"
+   ],
+   "title": "Unit fraction 1/b: one of b equal parts",
+   "prerequisites": [
+    "oa3-div-meaning"
+   ],
+   "templates": [
+    "fraction-bars",
+    "choice"
+   ],
+   "misconceptions": [
+    "parts need not be equal",
+    "bigger denominator means bigger piece"
+   ],
+   "depth": 3,
+   "unlocks": [
+    "nf3-fraction-a-b",
+    "g3-partition"
+   ]
+  },
+  {
+   "id": "oa3-facts-mult",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.C.7"
+   ],
+   "title": "Times tables from memory (1 x 1 to 9 x 9)",
+   "prerequisites": [
+    "oa3-mult-meaning",
+    "oa3-properties"
+   ],
+   "templates": [
+    "fact-drill"
+   ],
+   "misconceptions": [
+    "neighbouring-fact errors (7 x 8 = 48)",
+    "adding instead of multiplying"
+   ],
+   "coveredBy": "math-quest-penguin",
+   "depth": 3,
+   "unlocks": [
+    "oa3-facts-div",
+    "oa3-patterns",
+    "nbt3-mult-10s",
+    "nbt4-mult-4x1",
+    "nf4-equivalent",
+    "nf4-frac-times-whole",
+    "md3-area-multiply",
+    "md4-units-convert"
+   ]
+  },
+  {
+   "id": "md3-perimeter",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.MD.D.8"
+   ],
+   "title": "Perimeter; same area with different perimeters",
+   "prerequisites": [
+    "md3-area-concept",
+    "nbt3-addsub-1000"
+   ],
+   "templates": [
+    "area-model",
+    "keypad"
+   ],
+   "misconceptions": [
+    "mixes up area and perimeter"
+   ],
+   "depth": 3,
+   "unlocks": [
+    "md4-area-perimeter-formulas"
+   ]
+  },
+  {
+   "id": "nbt4-read-compare",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.A.2"
+   ],
+   "title": "Read, write and compare multi-digit numbers",
+   "prerequisites": [
+    "nbt4-place-value"
+   ],
+   "templates": [
+    "choice",
+    "keypad"
+   ],
+   "misconceptions": [
+    "compares by the first digits without checking length"
+   ],
+   "depth": 3,
+   "unlocks": []
+  },
+  {
+   "id": "nbt4-round",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.A.3"
+   ],
+   "title": "Round multi-digit numbers to any place",
+   "prerequisites": [
+    "nbt3-round",
+    "nbt4-place-value"
+   ],
+   "templates": [
+    "number-line",
+    "keypad"
+   ],
+   "misconceptions": [],
+   "depth": 3,
+   "unlocks": [
+    "nbt5-decimal-round"
+   ]
+  },
+  {
+   "id": "nbt4-addsub-algorithm",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.B.4"
+   ],
+   "title": "Add and subtract multi-digit numbers with the standard algorithm",
+   "prerequisites": [
+    "nbt3-addsub-1000",
+    "nbt4-place-value"
+   ],
+   "templates": [
+    "long-algorithm",
+    "keypad"
+   ],
+   "misconceptions": [
+    "misaligned columns",
+    "borrowing across zeros"
+   ],
+   "depth": 3,
+   "unlocks": [
+    "nbt5-decimal-addsub"
+   ]
+  },
+  {
+   "id": "oa3-two-step",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.D.8"
+   ],
+   "title": "Two-step word problems with the four operations; check if an answer is reasonable",
+   "prerequisites": [
+    "oa3-word-problems",
+    "nbt3-addsub-1000"
+   ],
+   "templates": [
+    "story-problem",
+    "explain"
+   ],
+   "misconceptions": [
+    "does only the first step"
+   ],
+   "depth": 4,
+   "unlocks": [
+    "oa4-multistep"
+   ]
+  },
+  {
+   "id": "nf3-fraction-a-b",
+   "world": "fraction",
+   "grade": 3,
+   "standards": [
+    "3.NF.A.1"
+   ],
+   "title": "Fraction a/b: a parts of size 1/b",
+   "prerequisites": [
+    "nf3-unit-fraction"
+   ],
+   "templates": [
+    "fraction-bars",
+    "choice"
+   ],
+   "misconceptions": [
+    "reads 3/4 as \"3 and 4\""
+   ],
+   "depth": 4,
+   "unlocks": [
+    "nf3-number-line",
+    "nf4-decompose"
+   ]
+  },
+  {
+   "id": "g3-partition",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.G.A.2"
+   ],
+   "title": "Partition shapes into equal areas, as unit fractions",
+   "prerequisites": [
+    "nf3-unit-fraction",
+    "md3-area-concept"
+   ],
+   "templates": [
+    "area-model"
+   ],
+   "misconceptions": [],
+   "depth": 4,
+   "unlocks": []
+  },
+  {
+   "id": "oa3-facts-div",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.C.7"
+   ],
+   "title": "Division facts from memory",
+   "prerequisites": [
+    "oa3-facts-mult",
+    "oa3-unknown-factor"
+   ],
+   "templates": [
+    "fact-drill"
+   ],
+   "misconceptions": [
+    "answers with the divisor",
+    "off by one group"
+   ],
+   "coveredBy": "math-quest-penguin",
+   "depth": 4,
+   "unlocks": [
+    "oa4-factors-multiples",
+    "nbt4-div-1digit"
+   ]
+  },
+  {
+   "id": "oa3-patterns",
+   "world": "pattern",
+   "grade": 3,
+   "standards": [
+    "3.OA.D.9"
+   ],
+   "title": "Find and explain patterns in addition and multiplication tables",
+   "prerequisites": [
+    "oa3-facts-mult"
+   ],
+   "templates": [
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [],
+   "depth": 4,
+   "unlocks": [
+    "oa4-patterns"
+   ]
+  },
+  {
+   "id": "nbt3-mult-10s",
+   "world": "number",
+   "grade": 3,
+   "standards": [
+    "3.NBT.A.3"
+   ],
+   "title": "Multiply one-digit numbers by multiples of 10 (9 x 80)",
+   "prerequisites": [
+    "oa3-facts-mult"
+   ],
+   "templates": [
+    "keypad"
+   ],
+   "misconceptions": [
+    "\"add a zero\" without knowing why",
+    "drops the zero"
+   ],
+   "depth": 4,
+   "unlocks": [
+    "nbt4-mult-4x1"
+   ]
+  },
+  {
+   "id": "md3-area-multiply",
+   "world": "shape",
+   "grade": 3,
+   "standards": [
+    "3.MD.C.7"
+   ],
+   "title": "Area by multiplying side lengths; splitting rectangles (distributive)",
+   "prerequisites": [
+    "md3-area-concept",
+    "oa3-facts-mult",
+    "oa3-properties"
+   ],
+   "templates": [
+    "area-model",
+    "keypad"
+   ],
+   "misconceptions": [
+    "adds the sides"
+   ],
+   "depth": 4,
+   "unlocks": [
+    "nf5-multiply",
+    "md4-area-perimeter-formulas",
+    "md5-volume-concept"
+   ]
+  },
+  {
+   "id": "oa4-mult-compare",
+   "world": "pattern",
+   "grade": 4,
+   "standards": [
+    "4.OA.A.1",
+    "4.OA.A.2"
+   ],
+   "title": "Multiplicative comparison (\"three times as many as\")",
+   "prerequisites": [
+    "oa3-word-problems"
+   ],
+   "templates": [
+    "story-problem"
+   ],
+   "misconceptions": [
+    "treats \"3 times as many\" as \"3 more than\""
+   ],
+   "depth": 4,
+   "unlocks": []
+  },
+  {
+   "id": "nf3-number-line",
+   "world": "fraction",
+   "grade": 3,
+   "standards": [
+    "3.NF.A.2"
+   ],
+   "title": "Fractions on a number line",
+   "prerequisites": [
+    "nf3-fraction-a-b"
+   ],
+   "templates": [
+    "number-line"
+   ],
+   "misconceptions": [
+    "counts tick marks instead of intervals",
+    "places 1/4 at 4"
+   ],
+   "depth": 5,
+   "unlocks": [
+    "nf3-equivalent-simple",
+    "nf3-whole-as-fraction",
+    "md3-line-plot"
+   ]
+  },
+  {
+   "id": "nf4-decompose",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.B.3a",
+    "4.NF.B.3b"
+   ],
+   "title": "Decompose a fraction into a sum of fractions",
+   "prerequisites": [
+    "nf3-fraction-a-b"
+   ],
+   "templates": [
+    "fraction-bars"
+   ],
+   "misconceptions": [],
+   "depth": 5,
+   "unlocks": [
+    "nf4-addsub-like"
+   ]
+  },
+  {
+   "id": "oa4-factors-multiples",
+   "world": "pattern",
+   "grade": 4,
+   "standards": [
+    "4.OA.B.4"
+   ],
+   "title": "Factor pairs, multiples, prime and composite numbers to 100",
+   "prerequisites": [
+    "oa3-facts-div"
+   ],
+   "templates": [
+    "choice",
+    "keypad"
+   ],
+   "misconceptions": [
+    "thinks 1 is prime",
+    "misses factor pairs"
+   ],
+   "depth": 5,
+   "unlocks": [
+    "nf5-addsub-unlike"
+   ]
+  },
+  {
+   "id": "nbt4-div-1digit",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.B.6"
+   ],
+   "title": "Divide up to 4-digit by 1-digit, with remainders",
+   "prerequisites": [
+    "oa3-facts-div",
+    "nbt4-place-value"
+   ],
+   "templates": [
+    "long-division",
+    "area-model"
+   ],
+   "misconceptions": [
+    "remainder larger than the divisor",
+    "drops a zero in the quotient (612 / 6 = 12)"
+   ],
+   "depth": 5,
+   "unlocks": [
+    "oa4-multistep",
+    "nbt5-div-2digit"
+   ]
+  },
+  {
+   "id": "oa4-patterns",
+   "world": "pattern",
+   "grade": 4,
+   "standards": [
+    "4.OA.C.5"
+   ],
+   "title": "Generate a number or shape pattern from a rule and describe it",
+   "prerequisites": [
+    "oa3-patterns"
+   ],
+   "templates": [
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [],
+   "depth": 5,
+   "unlocks": [
+    "oa5-two-patterns"
+   ]
+  },
+  {
+   "id": "nbt4-mult-4x1",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.B.5"
+   ],
+   "title": "Multiply up to 4-digit by 1-digit",
+   "prerequisites": [
+    "oa3-facts-mult",
+    "nbt3-mult-10s",
+    "oa3-properties"
+   ],
+   "templates": [
+    "area-model",
+    "keypad"
+   ],
+   "misconceptions": [
+    "forgets to add the carried digit"
+   ],
+   "depth": 5,
+   "unlocks": [
+    "nbt4-mult-2x2"
+   ]
+  },
+  {
+   "id": "md4-area-perimeter-formulas",
+   "world": "shape",
+   "grade": 4,
+   "standards": [
+    "4.MD.A.3"
+   ],
+   "title": "Area and perimeter formulas for rectangles",
+   "prerequisites": [
+    "md3-area-multiply",
+    "md3-perimeter"
+   ],
+   "templates": [
+    "keypad",
+    "story-problem"
+   ],
+   "misconceptions": [],
+   "depth": 5,
+   "unlocks": []
+  },
+  {
+   "id": "md5-volume-concept",
+   "world": "shape",
+   "grade": 5,
+   "standards": [
+    "5.MD.C.3",
+    "5.MD.C.4"
+   ],
+   "title": "Volume as unit cubes",
+   "prerequisites": [
+    "md3-area-multiply"
+   ],
+   "templates": [
+    "area-model"
+   ],
+   "misconceptions": [
+    "counts only the visible cubes"
+   ],
+   "depth": 5,
+   "unlocks": [
+    "md5-volume-formula"
+   ]
+  },
+  {
+   "id": "nf3-equivalent-simple",
+   "world": "fraction",
+   "grade": 3,
+   "standards": [
+    "3.NF.A.3a",
+    "3.NF.A.3b"
+   ],
+   "title": "Simple equivalent fractions, shown with models",
+   "prerequisites": [
+    "nf3-number-line"
+   ],
+   "templates": [
+    "fraction-bars",
+    "number-line"
+   ],
+   "misconceptions": [
+    "thinks 2/4 is bigger than 1/2 because the numbers are bigger"
+   ],
+   "depth": 6,
+   "unlocks": [
+    "nf3-compare",
+    "nf4-equivalent"
+   ]
+  },
+  {
+   "id": "nf3-whole-as-fraction",
+   "world": "fraction",
+   "grade": 3,
+   "standards": [
+    "3.NF.A.3c"
+   ],
+   "title": "Whole numbers as fractions (3 = 3/1, 1 = 4/4)",
+   "prerequisites": [
+    "nf3-number-line"
+   ],
+   "templates": [
+    "number-line",
+    "choice"
+   ],
+   "misconceptions": [],
+   "depth": 6,
+   "unlocks": [
+    "nf4-mixed"
+   ]
+  },
+  {
+   "id": "md3-line-plot",
+   "world": "data",
+   "grade": 3,
+   "standards": [
+    "3.MD.B.4"
+   ],
+   "title": "Line plots of measurements in halves and quarters",
+   "prerequisites": [
+    "nf3-number-line",
+    "md3-graphs"
+   ],
+   "templates": [
+    "graph-builder"
+   ],
+   "misconceptions": [],
+   "depth": 6,
+   "unlocks": [
+    "md4-line-plot-fractions"
+   ]
+  },
+  {
+   "id": "nf4-addsub-like",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.B.3a",
+    "4.NF.B.3d"
+   ],
+   "title": "Add and subtract fractions with like denominators",
+   "prerequisites": [
+    "nf4-decompose"
+   ],
+   "templates": [
+    "fraction-bars",
+    "keypad"
+   ],
+   "misconceptions": [
+    "adds the denominators too (1/5 + 2/5 = 3/10)"
+   ],
+   "depth": 6,
+   "unlocks": [
+    "nf4-mixed",
+    "nf4-frac-times-whole",
+    "nf5-addsub-unlike",
+    "md4-line-plot-fractions"
+   ]
+  },
+  {
+   "id": "oa4-multistep",
+   "world": "pattern",
+   "grade": 4,
+   "standards": [
+    "4.OA.A.3"
+   ],
+   "title": "Multistep word problems, including interpreting remainders",
+   "prerequisites": [
+    "oa3-two-step",
+    "nbt4-div-1digit"
+   ],
+   "templates": [
+    "story-problem",
+    "explain"
+   ],
+   "misconceptions": [
+    "ignores the remainder or rounds the wrong way (buses needed for 30 kids, 8 per bus)"
+   ],
+   "depth": 6,
+   "unlocks": [
+    "oa5-expressions"
+   ]
+  },
+  {
+   "id": "nbt4-mult-2x2",
+   "world": "number",
+   "grade": 4,
+   "standards": [
+    "4.NBT.B.5"
+   ],
+   "title": "Multiply two 2-digit numbers",
+   "prerequisites": [
+    "nbt4-mult-4x1"
+   ],
+   "templates": [
+    "area-model",
+    "keypad"
+   ],
+   "misconceptions": [
+    "multiplies tens by tens and ones by ones only (23 x 14 = 2 x 1 tens + 3 x 4)"
+   ],
+   "depth": 6,
+   "unlocks": [
+    "nbt5-mult-algorithm",
+    "nbt5-div-2digit",
+    "md5-volume-formula"
+   ]
+  },
+  {
+   "id": "oa5-two-patterns",
+   "world": "pattern",
+   "grade": 5,
+   "standards": [
+    "5.OA.B.3"
+   ],
+   "title": "Two numerical patterns, ordered pairs, graph them",
+   "prerequisites": [
+    "oa4-patterns",
+    "g5-coordinate"
+   ],
+   "templates": [
+    "coordinate-grid"
+   ],
+   "misconceptions": [],
+   "depth": 6,
+   "unlocks": []
+  },
+  {
+   "id": "nf3-compare",
+   "world": "fraction",
+   "grade": 3,
+   "standards": [
+    "3.NF.A.3d"
+   ],
+   "title": "Compare fractions with the same numerator or the same denominator",
+   "prerequisites": [
+    "nf3-equivalent-simple"
+   ],
+   "templates": [
+    "fraction-bars",
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [
+    "1/3 > 1/2 because 3 > 2"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "nf4-compare"
+   ]
+  },
+  {
+   "id": "nf4-equivalent",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.A.1"
+   ],
+   "title": "Equivalent fractions by multiplying by n/n",
+   "prerequisites": [
+    "nf3-equivalent-simple",
+    "oa3-facts-mult"
+   ],
+   "templates": [
+    "fraction-bars",
+    "keypad"
+   ],
+   "misconceptions": [
+    "adds the same number to top and bottom"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "nf4-compare",
+    "nf4-tenths-hundredths",
+    "nf5-addsub-unlike"
+   ]
+  },
+  {
+   "id": "nf4-mixed",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.B.3c"
+   ],
+   "title": "Mixed numbers: convert, add and subtract",
+   "prerequisites": [
+    "nf4-addsub-like",
+    "nf3-whole-as-fraction"
+   ],
+   "templates": [
+    "fraction-bars",
+    "keypad"
+   ],
+   "misconceptions": [
+    "2 1/3 = 2/3 + 1"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "nf5-mult-word"
+   ]
+  },
+  {
+   "id": "nf4-frac-times-whole",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.B.4"
+   ],
+   "title": "Multiply a fraction by a whole number",
+   "prerequisites": [
+    "nf4-addsub-like",
+    "oa3-facts-mult"
+   ],
+   "templates": [
+    "fraction-bars",
+    "keypad"
+   ],
+   "misconceptions": [
+    "multiplies both numerator and denominator by the whole number"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "nf5-fraction-as-division",
+    "nf5-multiply"
+   ]
+  },
+  {
+   "id": "md4-line-plot-fractions",
+   "world": "data",
+   "grade": 4,
+   "standards": [
+    "4.MD.B.4"
+   ],
+   "title": "Line plots of fractional measurements; add and subtract to solve",
+   "prerequisites": [
+    "md3-line-plot",
+    "nf4-addsub-like"
+   ],
+   "templates": [
+    "graph-builder"
+   ],
+   "misconceptions": [],
+   "depth": 7,
+   "unlocks": [
+    "md5-line-plot"
+   ]
+  },
+  {
+   "id": "oa5-expressions",
+   "world": "pattern",
+   "grade": 5,
+   "standards": [
+    "5.OA.A.1"
+   ],
+   "title": "Evaluate expressions with parentheses, brackets and braces",
+   "prerequisites": [
+    "oa4-multistep"
+   ],
+   "templates": [
+    "keypad"
+   ],
+   "misconceptions": [
+    "works strictly left to right, ignoring parentheses"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "oa5-write-expressions"
+   ]
+  },
+  {
+   "id": "nbt5-mult-algorithm",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.B.5"
+   ],
+   "title": "Multi-digit multiplication with the standard algorithm",
+   "prerequisites": [
+    "nbt4-mult-2x2"
+   ],
+   "templates": [
+    "long-algorithm",
+    "keypad"
+   ],
+   "misconceptions": [
+    "forgets the placeholder zero in the second row"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "nbt5-decimal-multdiv"
+   ]
+  },
+  {
+   "id": "nbt5-div-2digit",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.B.6"
+   ],
+   "title": "Divide up to 4-digit by 2-digit divisors",
+   "prerequisites": [
+    "nbt4-div-1digit",
+    "nbt4-mult-2x2"
+   ],
+   "templates": [
+    "long-division",
+    "area-model"
+   ],
+   "misconceptions": [
+    "estimates the quotient digit poorly and does not adjust"
+   ],
+   "depth": 7,
+   "unlocks": [
+    "nbt5-decimal-multdiv"
+   ]
+  },
+  {
+   "id": "md5-volume-formula",
+   "world": "shape",
+   "grade": 5,
+   "standards": [
+    "5.MD.C.5"
+   ],
+   "title": "Volume of rectangular prisms: l x w x h; adding volumes",
+   "prerequisites": [
+    "md5-volume-concept",
+    "nbt4-mult-2x2"
+   ],
+   "templates": [
+    "keypad",
+    "story-problem"
+   ],
+   "misconceptions": [],
+   "depth": 7,
+   "unlocks": []
+  },
+  {
+   "id": "nf4-compare",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.A.2"
+   ],
+   "title": "Compare fractions with different numerators and denominators",
+   "prerequisites": [
+    "nf4-equivalent",
+    "nf3-compare"
+   ],
+   "templates": [
+    "number-line",
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [
+    "compares numerators only"
+   ],
+   "depth": 8,
+   "unlocks": []
+  },
+  {
+   "id": "nf4-tenths-hundredths",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.C.5"
+   ],
+   "title": "Tenths and hundredths: 3/10 = 30/100",
+   "prerequisites": [
+    "nf4-equivalent"
+   ],
+   "templates": [
+    "base-ten",
+    "fraction-bars"
+   ],
+   "misconceptions": [
+    "3/10 + 4/100 = 7/110"
+   ],
+   "depth": 8,
+   "unlocks": [
+    "nf4-decimal-notation"
+   ]
+  },
+  {
+   "id": "nf5-addsub-unlike",
+   "world": "fraction",
+   "grade": 5,
+   "standards": [
+    "5.NF.A.1",
+    "5.NF.A.2"
+   ],
+   "title": "Add and subtract fractions with unlike denominators",
+   "prerequisites": [
+    "nf4-addsub-like",
+    "nf4-equivalent",
+    "oa4-factors-multiples"
+   ],
+   "templates": [
+    "fraction-bars",
+    "keypad"
+   ],
+   "misconceptions": [
+    "adds tops and bottoms (1/2 + 1/3 = 2/5)"
+   ],
+   "depth": 8,
+   "unlocks": []
+  },
+  {
+   "id": "nf5-fraction-as-division",
+   "world": "fraction",
+   "grade": 5,
+   "standards": [
+    "5.NF.B.3"
+   ],
+   "title": "A fraction as division: 3/4 = 3 / 4",
+   "prerequisites": [
+    "nf4-frac-times-whole",
+    "oa3-div-meaning"
+   ],
+   "templates": [
+    "fraction-bars",
+    "story-problem"
+   ],
+   "misconceptions": [],
+   "depth": 8,
+   "unlocks": [
+    "nf5-divide-unit"
+   ]
+  },
+  {
+   "id": "nf5-multiply",
+   "world": "fraction",
+   "grade": 5,
+   "standards": [
+    "5.NF.B.4"
+   ],
+   "title": "Multiply fractions, including area of rectangles with fraction sides",
+   "prerequisites": [
+    "nf4-frac-times-whole",
+    "md3-area-multiply"
+   ],
+   "templates": [
+    "area-model",
+    "keypad"
+   ],
+   "misconceptions": [
+    "cross-multiplies",
+    "thinks the product must be larger"
+   ],
+   "depth": 8,
+   "unlocks": [
+    "nf5-scaling",
+    "nf5-divide-unit",
+    "md5-line-plot"
+   ]
+  },
+  {
+   "id": "oa5-write-expressions",
+   "world": "pattern",
+   "grade": 5,
+   "standards": [
+    "5.OA.A.2"
+   ],
+   "title": "Write and interpret expressions without evaluating them",
+   "prerequisites": [
+    "oa5-expressions"
+   ],
+   "templates": [
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [
+    "writes \"3 x 18932 + 921\" as larger than \"18932 + 921\" without seeing it is 3 times as large"
+   ],
+   "depth": 8,
+   "unlocks": []
+  },
+  {
+   "id": "nf4-decimal-notation",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.C.6"
+   ],
+   "title": "Decimal notation for tenths and hundredths",
+   "prerequisites": [
+    "nf4-tenths-hundredths"
+   ],
+   "templates": [
+    "number-line",
+    "choice"
+   ],
+   "misconceptions": [
+    "0.5 means 1/5"
+   ],
+   "depth": 9,
+   "unlocks": [
+    "nbt5-place-value-decimals",
+    "nf4-decimal-compare",
+    "md4-units-convert"
+   ]
+  },
+  {
+   "id": "nf5-scaling",
+   "world": "fraction",
+   "grade": 5,
+   "standards": [
+    "5.NF.B.5"
+   ],
+   "title": "Multiplication as scaling: when is the product bigger or smaller",
+   "prerequisites": [
+    "nf5-multiply"
+   ],
+   "templates": [
+    "choice",
+    "explain"
+   ],
+   "misconceptions": [
+    "\"multiplying always makes bigger\""
+   ],
+   "depth": 9,
+   "unlocks": [
+    "nf5-mult-word"
+   ]
+  },
+  {
+   "id": "nf5-divide-unit",
+   "world": "fraction",
+   "grade": 5,
+   "standards": [
+    "5.NF.B.7"
+   ],
+   "title": "Divide unit fractions by whole numbers and whole numbers by unit fractions",
+   "prerequisites": [
+    "nf5-fraction-as-division",
+    "nf5-multiply"
+   ],
+   "templates": [
+    "fraction-bars",
+    "story-problem"
+   ],
+   "misconceptions": [
+    "thinks dividing always makes smaller"
+   ],
+   "depth": 9,
+   "unlocks": []
+  },
+  {
+   "id": "md5-line-plot",
+   "world": "data",
+   "grade": 5,
+   "standards": [
+    "5.MD.B.2"
+   ],
+   "title": "Line plots and sharing totals equally",
+   "prerequisites": [
+    "md4-line-plot-fractions",
+    "nf5-multiply"
+   ],
+   "templates": [
+    "graph-builder",
+    "explain"
+   ],
+   "misconceptions": [],
+   "depth": 9,
+   "unlocks": []
+  },
+  {
+   "id": "nf4-decimal-compare",
+   "world": "fraction",
+   "grade": 4,
+   "standards": [
+    "4.NF.C.7"
+   ],
+   "title": "Compare decimals to hundredths",
+   "prerequisites": [
+    "nf4-decimal-notation"
+   ],
+   "templates": [
+    "number-line",
+    "choice"
+   ],
+   "misconceptions": [
+    "\"longer is larger\" (0.25 > 0.5)"
+   ],
+   "depth": 10,
+   "unlocks": []
+  },
+  {
+   "id": "md4-units-convert",
+   "world": "shape",
+   "grade": 4,
+   "standards": [
+    "4.MD.A.1",
+    "4.MD.A.2"
+   ],
+   "title": "Convert measurement units; measurement word problems",
+   "prerequisites": [
+    "oa3-facts-mult",
+    "nf4-decimal-notation"
+   ],
+   "templates": [
+    "story-problem",
+    "keypad"
+   ],
+   "misconceptions": [
+    "divides when converting to a smaller unit"
+   ],
+   "depth": 10,
+   "unlocks": [
+    "md5-convert"
+   ]
+  },
+  {
+   "id": "nbt5-place-value-decimals",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.A.1",
+    "5.NBT.A.2"
+   ],
+   "title": "Place value to thousandths; multiplying and dividing by powers of 10",
+   "prerequisites": [
+    "nbt4-place-value",
+    "nf4-decimal-notation"
+   ],
+   "templates": [
+    "base-ten",
+    "choice"
+   ],
+   "misconceptions": [
+    "\"longer is larger\" (0.25 > 0.5)"
+   ],
+   "depth": 10,
+   "unlocks": [
+    "nbt5-decimal-compare",
+    "nbt5-decimal-addsub",
+    "md5-convert"
+   ]
+  },
+  {
+   "id": "nf5-mult-word",
+   "world": "fraction",
+   "grade": 5,
+   "standards": [
+    "5.NF.B.6"
+   ],
+   "title": "Real-world problems multiplying fractions and mixed numbers",
+   "prerequisites": [
+    "nf5-scaling",
+    "nf4-mixed"
+   ],
+   "templates": [
+    "story-problem"
+   ],
+   "misconceptions": [],
+   "depth": 10,
+   "unlocks": []
+  },
+  {
+   "id": "nbt5-decimal-compare",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.A.3"
+   ],
+   "title": "Read, write and compare decimals to thousandths",
+   "prerequisites": [
+    "nbt5-place-value-decimals"
+   ],
+   "templates": [
+    "number-line",
+    "choice"
+   ],
+   "misconceptions": [
+    "\"longer is larger\"",
+    "\"shorter is larger\""
+   ],
+   "depth": 11,
+   "unlocks": [
+    "nbt5-decimal-round"
+   ]
+  },
+  {
+   "id": "nbt5-decimal-addsub",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.B.7"
+   ],
+   "title": "Add and subtract decimals to hundredths",
+   "prerequisites": [
+    "nbt5-place-value-decimals",
+    "nbt4-addsub-algorithm"
+   ],
+   "templates": [
+    "base-ten",
+    "keypad"
+   ],
+   "misconceptions": [
+    "lines up the right ends instead of the decimal points"
+   ],
+   "depth": 11,
+   "unlocks": [
+    "nbt5-decimal-multdiv"
+   ]
+  },
+  {
+   "id": "md5-convert",
+   "world": "shape",
+   "grade": 5,
+   "standards": [
+    "5.MD.A.1"
+   ],
+   "title": "Convert units within one system (cm to m, decimals)",
+   "prerequisites": [
+    "md4-units-convert",
+    "nbt5-place-value-decimals"
+   ],
+   "templates": [
+    "keypad"
+   ],
+   "misconceptions": [],
+   "depth": 11,
+   "unlocks": []
+  },
+  {
+   "id": "nbt5-decimal-round",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.A.4"
+   ],
+   "title": "Round decimals to any place",
+   "prerequisites": [
+    "nbt5-decimal-compare",
+    "nbt4-round"
+   ],
+   "templates": [
+    "number-line",
+    "keypad"
+   ],
+   "misconceptions": [],
+   "depth": 12,
+   "unlocks": []
+  },
+  {
+   "id": "nbt5-decimal-multdiv",
+   "world": "number",
+   "grade": 5,
+   "standards": [
+    "5.NBT.B.7"
+   ],
+   "title": "Multiply and divide decimals to hundredths",
+   "prerequisites": [
+    "nbt5-decimal-addsub",
+    "nbt5-mult-algorithm",
+    "nbt5-div-2digit"
+   ],
+   "templates": [
+    "area-model",
+    "keypad"
+   ],
+   "misconceptions": [
+    "\"multiplying always makes bigger\"",
+    "misplaces the decimal point"
+   ],
+   "depth": 12,
+   "unlocks": []
+  }
+ ]
+}

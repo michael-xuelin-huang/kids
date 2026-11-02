@@ -1,0 +1,40 @@
+{
+  "name": "Zoo Island (grades 3 to 5)",
+  "premise": "Pingo and the child are rebuilding a storm-damaged island zoo. Each world is a part of the island; each chapter is one job the keepers need done. Finishing a chapter's checkpoint brings a new animal home. The plan picks the chapter; the chapter supplies the NPC, the scene art and the words wrapped around the questions.",
+  "npcs": {
+    "Pingo": "The penguin guide. Gives hints and makes the 'find my mistake' errors.",
+    "Keeper Rosa": "Head keeper. Sets each chapter's job and gives the checkpoint.",
+    "Otto the otter": "Fraction Reef. Loves sharing food fairly.",
+    "Juno the giraffe": "Shape Savanna. Measures fences, shadows and angles.",
+    "Bolt the beaver": "Number Ice Fields. Builds with big numbers and bundles logs in tens.",
+    "Kiki the parrot": "Pattern Jungle. Talks in patterns and riddles.",
+    "Professor Owl": "Data Observatory. Counts the animals at night and draws the charts."
+  },
+  "chapters": [
+    { "id": "jungle-1-equal-groups", "world": "pattern", "npc": "Kiki the parrot", "title": "Equal groups of bananas", "nodes": ["oa3-mult-meaning", "oa3-div-meaning", "oa3-properties"], "reward": "toucan" },
+    { "id": "jungle-2-fast-facts", "world": "pattern", "npc": "Pingo", "title": "Feeding time rush", "nodes": ["oa2-addsub-20", "oa3-facts-mult", "oa3-facts-div", "oa3-unknown-factor"], "reward": "monkey" },
+    { "id": "jungle-3-two-step", "world": "pattern", "npc": "Keeper Rosa", "title": "The supply boat", "nodes": ["oa3-word-problems", "oa3-two-step", "oa4-mult-compare", "oa4-multistep"], "reward": "sloth" },
+    { "id": "jungle-4-factors", "world": "pattern", "npc": "Kiki the parrot", "title": "Riddles of the rows", "nodes": ["oa3-patterns", "oa4-factors-multiples", "oa4-patterns", "oa5-two-patterns"], "reward": "chameleon" },
+    { "id": "jungle-5-expressions", "world": "pattern", "npc": "Professor Owl", "title": "The secret recipe", "nodes": ["oa5-expressions", "oa5-write-expressions"], "reward": "red panda" },
+
+    { "id": "ice-1-bundles", "world": "number", "npc": "Bolt the beaver", "title": "Bundling logs", "nodes": ["nbt2-addsub-100", "nbt3-addsub-1000", "nbt3-round", "nbt3-mult-10s"], "reward": "arctic fox" },
+    { "id": "ice-2-big-numbers", "world": "number", "npc": "Bolt the beaver", "title": "The great dam", "nodes": ["nbt4-place-value", "nbt4-read-compare", "nbt4-round", "nbt4-addsub-algorithm"], "reward": "polar bear" },
+    { "id": "ice-3-multiply", "world": "number", "npc": "Keeper Rosa", "title": "Fish for the whole colony", "nodes": ["nbt4-mult-4x1", "nbt4-mult-2x2", "nbt5-mult-algorithm"], "reward": "walrus" },
+    { "id": "ice-4-divide", "world": "number", "npc": "Pingo", "title": "Sharing the catch", "nodes": ["nbt4-div-1digit", "nbt5-div-2digit"], "reward": "snowy owl" },
+    { "id": "ice-5-decimals", "world": "number", "npc": "Bolt the beaver", "title": "Measuring the ice", "nodes": ["nbt5-place-value-decimals", "nbt5-decimal-compare", "nbt5-decimal-round", "nbt5-decimal-addsub", "nbt5-decimal-multdiv"], "reward": "emperor penguin" },
+
+    { "id": "reef-1-fair-shares", "world": "fraction", "npc": "Otto the otter", "title": "Fair shares", "nodes": ["nf3-unit-fraction", "nf3-fraction-a-b", "g3-partition"], "reward": "sea turtle" },
+    { "id": "reef-2-number-line", "world": "fraction", "npc": "Otto the otter", "title": "The tide line", "nodes": ["nf3-number-line", "nf3-whole-as-fraction", "nf3-equivalent-simple", "nf3-compare"], "reward": "seahorse" },
+    { "id": "reef-3-same-amount", "world": "fraction", "npc": "Pingo", "title": "Same amount, new name", "nodes": ["nf4-equivalent", "nf4-compare", "nf4-decompose", "nf4-addsub-like", "nf4-mixed"], "reward": "octopus" },
+    { "id": "reef-4-tenths", "world": "fraction", "npc": "Professor Owl", "title": "Tenths and hundredths", "nodes": ["nf4-frac-times-whole", "nf4-tenths-hundredths", "nf4-decimal-notation", "nf4-decimal-compare"], "reward": "clownfish" },
+    { "id": "reef-5-deep-water", "world": "fraction", "npc": "Otto the otter", "title": "The deep reef", "nodes": ["nf5-addsub-unlike", "nf5-fraction-as-division", "nf5-multiply", "nf5-scaling", "nf5-divide-unit", "nf5-mult-word"], "reward": "manta ray" },
+
+    { "id": "savanna-1-time-and-shapes", "world": "shape", "npc": "Juno the giraffe", "title": "Opening hours", "nodes": ["g3-shapes", "md3-time", "md3-mass-volume"], "reward": "zebra" },
+    { "id": "savanna-2-fences", "world": "shape", "npc": "Juno the giraffe", "title": "New fences", "nodes": ["md3-area-concept", "md3-area-multiply", "md3-perimeter", "md4-area-perimeter-formulas"], "reward": "elephant" },
+    { "id": "savanna-3-angles", "world": "shape", "npc": "Juno the giraffe", "title": "Shadows and angles", "nodes": ["g4-lines-angles", "md4-angles", "g4-symmetry", "g5-classify"], "reward": "lion" },
+    { "id": "savanna-4-boxes", "world": "shape", "npc": "Keeper Rosa", "title": "Packing crates", "nodes": ["md5-volume-concept", "md5-volume-formula", "md4-units-convert", "md5-convert"], "reward": "rhino" },
+    { "id": "savanna-5-map", "world": "shape", "npc": "Professor Owl", "title": "The island map", "nodes": ["g5-coordinate"], "reward": "cheetah" },
+
+    { "id": "observatory-1-counts", "world": "data", "npc": "Professor Owl", "title": "The night count", "nodes": ["md3-graphs", "md3-line-plot", "md4-line-plot-fractions", "md5-line-plot"], "reward": "bat" }
+  ]
+}
