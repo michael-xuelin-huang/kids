@@ -1,0 +1,2222 @@
+{
+ "buttons": [
+  {
+   "type": "pos",
+   "q": "Is BUTTONS a singular noun or a plural noun?",
+   "options": [
+    "adjective",
+    "plural noun",
+    "singular noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"plural noun\". Buttons means more than one button, so it is a plural noun."
+  },
+  {
+   "type": "pos",
+   "q": "What part of speech is BUTTONS in: 'My coat has four shiny buttons.'?",
+   "options": [
+    "adjective",
+    "verb",
+    "plural noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"plural noun\". Here buttons names more than one thing on the coat."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses BUTTONS as a plural noun?",
+   "options": [
+    "Dad buttons his coat before he goes out.",
+    "Grandma sewed two red buttons on my shirt.",
+    "Sam quickly buttons up his sweater."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Grandma sewed two red buttons on my shirt.\". In that sentence, buttons names the things Grandma sewed, not an action."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a plural noun: buttons, puffy, invite?",
+   "options": [
+    "puffy",
+    "invite",
+    "buttons"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"buttons\". Buttons names more than one thing; puffy describes and invite is an action."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Lily lost three buttons at recess,' what does the word BUTTONS do?",
+   "options": [
+    "describes a noun",
+    "names more than one thing",
+    "shows an action"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"names more than one thing\". A plural noun names more than one person, place, or thing."
+  },
+  {
+   "type": "meaning",
+   "q": "What does BUTTONS mean?",
+   "options": [
+    "soft pillows for a couch",
+    "small round things you push through holes to close clothes",
+    "small bugs that hop in the grass"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"small round things you push through holes to close clothes\". Buttons go through little holes to keep your shirt or coat closed."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Ben's shirt kept flapping open because two buttons were missing.' What are buttons here?",
+   "options": [
+    "stripes of color on a shirt",
+    "pockets for keeping snacks",
+    "things that hold the shirt closed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"things that hold the shirt closed\". Without the buttons, the shirt could not stay closed."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely find buttons?",
+   "options": [
+    "on a tree branch",
+    "in a fish tank",
+    "on a coat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"on a coat\". Coats often have buttons to keep them closed."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these things usually has buttons?",
+   "options": [
+    "a winter coat",
+    "a banana",
+    "a soccer ball"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a winter coat\". A winter coat is clothing, and buttons close clothes."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these does the same job as buttons on a jacket?",
+   "options": [
+    "a zipper",
+    "a hood",
+    "a pocket"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a zipper\". A zipper also closes a jacket, just like buttons."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you do with buttons?",
+   "options": [
+    "pour them into a glass to drink",
+    "push them through holes to close your shirt",
+    "plant them to grow flowers"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"push them through holes to close your shirt\". Buttons are pushed through holes to close clothes."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'I can't close my sweater because the ____ are too big for the holes.'",
+   "options": [
+    "buttons",
+    "wetlands",
+    "butterflies"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"buttons\". Buttons go through holes to close a sweater."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BUTTONS correctly?",
+   "options": [
+    "We swam in the buttons at the beach.",
+    "Mom sewed the loose buttons back onto my coat.",
+    "The buttons sang a song in the tree."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Mom sewed the loose buttons back onto my coat.\". Buttons are sewn onto clothes like coats."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Jada's doll has a tiny coat with little round ____ on the front.",
+   "options": [
+    "buttons",
+    "basements",
+    "tractors"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"buttons\". Little round things on the front of a coat are buttons."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Grandpa keeps extra ____ in a tin so he can fix shirts.'",
+   "options": [
+    "buttons",
+    "basements",
+    "wetlands"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"buttons\". You fix a shirt by sewing on new buttons."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: A clown's big jacket had giant polka-dot ____ to keep it closed.",
+   "options": [
+    "burlap",
+    "buttons",
+    "lullaby"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"buttons\". Buttons keep a jacket closed."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "buttons",
+    "buttens",
+    "butens"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"buttons\". Buttons has double t and ends with -ons."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'My shirt has six ____.'",
+   "options": [
+    "buttons",
+    "buttans",
+    "butons"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"buttons\". Buttons is spelled b-u-t-t-o-n-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: b_tt_ns",
+   "options": [
+    "a, e",
+    "o, a",
+    "u, o"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"u, o\". Put in u and o to spell b-u-t-t-o-n-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "buttonz",
+    "buttins",
+    "buttons"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"buttons\". The plural ending here is -s, and the middle vowel is o."
+  }
+ ],
+ "cuddle": [
+  {
+   "type": "pos",
+   "q": "What part of speech is CUDDLE in: 'I like to cuddle my puppy at bedtime.'?",
+   "options": [
+    "adjective",
+    "verb",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Cuddle is the action I do with my puppy."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses CUDDLE as a verb?",
+   "options": [
+    "The kids cuddle the baby goats at the farm.",
+    "The baby gave me a big cuddle.",
+    "We had a long cuddle on the couch."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The kids cuddle the baby goats at the farm.\". In that sentence, cuddle is the action the kids do."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is CUDDLE in: 'Kittens cuddle together to stay warm.'?",
+   "options": [
+    "preposition",
+    "adverb",
+    "verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"verb\". Cuddle tells what the kittens do."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a verb: cuddle, kelp, puffy?",
+   "options": [
+    "cuddle",
+    "kelp",
+    "puffy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"cuddle\". Cuddle is an action; kelp is a thing and puffy describes."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Please cuddle your little brother when he is sad,' what does CUDDLE do?",
+   "options": [
+    "names a place",
+    "shows an action",
+    "describes a noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"shows an action\". A verb shows an action, like cuddling someone."
+  },
+  {
+   "type": "meaning",
+   "q": "What does CUDDLE mean?",
+   "options": [
+    "to hold someone close and hug them",
+    "to shout very loudly",
+    "to run away very fast"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to hold someone close and hug them\". When you cuddle, you hold someone close in a hug."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'When the storm was loud, Mia cuddled her teddy bear.' What did Mia do?",
+   "options": [
+    "held it close",
+    "threw it away",
+    "washed it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"held it close\". Mia hugged her bear close to feel safe."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as CUDDLE?",
+   "options": [
+    "scold",
+    "snuggle",
+    "kick"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"snuggle\". To snuggle is to hold someone close, just like cuddle."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of CUDDLE?",
+   "options": [
+    "snuggle",
+    "hug",
+    "push away"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"push away\". Pushing someone away is the opposite of holding them close."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these shows someone cuddling?",
+   "options": [
+    "A dad holds his sleepy baby close.",
+    "A boy kicks a ball across the field.",
+    "A girl writes her name on a test."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A dad holds his sleepy baby close.\". Holding a baby close is cuddling."
+  },
+  {
+   "type": "meaning",
+   "q": "Which would be the best thing to cuddle?",
+   "options": [
+    "a prickly cactus",
+    "a sleepy kitten",
+    "a hot stove"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a sleepy kitten\". A soft, sleepy kitten is safe to hold close."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'My little sister likes to ____ her stuffed bunny at night.'",
+   "options": [
+    "disappear",
+    "proclaim",
+    "cuddle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cuddle\". She hugs her bunny close, so cuddle fits."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses CUDDLE correctly?",
+   "options": [
+    "We will cuddle the soccer ball into the goal.",
+    "The puppies cuddle together in their warm bed.",
+    "Dad will cuddle the eggs into the hot pan."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The puppies cuddle together in their warm bed.\". Puppies hold close together to stay warm."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The baby panda wanted to ____ with its mom to stay warm.",
+   "options": [
+    "reinstate",
+    "proclaim",
+    "cuddle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cuddle\". Staying warm by snuggling close is cuddling."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'After the scary movie, Leo wanted to ____ up next to his mom.'",
+   "options": [
+    "examine",
+    "tiptoed",
+    "cuddle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cuddle\". Leo wanted to snuggle close to his mom."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Grandma opened her arms and said, 'Come here so I can ____ you!'",
+   "options": [
+    "cuddle",
+    "proclaim",
+    "disappear"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"cuddle\". Open arms mean Grandma wants to hug you close."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "cudle",
+    "cuddle",
+    "cuddel"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"cuddle\". Cuddle has double d and ends with -le."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'I love to ____ my cat.'",
+   "options": [
+    "kuddle",
+    "cuddle",
+    "cuddul"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"cuddle\". Cuddle starts with c and ends with -le."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: c_dd_e",
+   "options": [
+    "u, l",
+    "u, e",
+    "a, l"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"u, l\". Put in u and l to spell c-u-d-d-l-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "cuddell",
+    "cuddal",
+    "cuddle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cuddle\". Cuddle ends with -le, like puddle."
+  }
+ ],
+ "puffy": [
+  {
+   "type": "pos",
+   "q": "What part of speech is PUFFY in: 'The sky was full of puffy white clouds.'?",
+   "options": [
+    "adverb",
+    "adjective",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Puffy describes the clouds."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a noun. Which kind of word is PUFFY?",
+   "options": [
+    "pronoun",
+    "preposition",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Puffy tells what something looks like, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective: puffy, tractor, cuddle?",
+   "options": [
+    "puffy",
+    "cuddle",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"puffy\". Puffy describes; tractor is a thing and cuddle is an action."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Jen wore a puffy jacket in the snow,' which noun does PUFFY describe?",
+   "options": [
+    "Jen",
+    "snow",
+    "jacket"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"jacket\". Puffy tells what kind of jacket Jen wore."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is an adjective: 'My eyes were puffy after I cried.'?",
+   "options": [
+    "puffy",
+    "cried",
+    "eyes"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"puffy\". Puffy describes how the eyes looked."
+  },
+  {
+   "type": "meaning",
+   "q": "What does PUFFY mean?",
+   "options": [
+    "flat and thin",
+    "swollen or puffed up",
+    "wet and muddy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"swollen or puffed up\". Something puffy is swollen or puffed up."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'After the bee sting, Tom's hand was red and puffy.' What happened to Tom's hand?",
+   "options": [
+    "It turned blue and cold.",
+    "It got smaller.",
+    "It swelled up."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It swelled up.\". Puffy means swollen, so the hand swelled up."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as PUFFY?",
+   "options": [
+    "sharp",
+    "swollen",
+    "skinny"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"swollen\". Swollen means puffed up, just like puffy."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is the opposite of PUFFY?",
+   "options": [
+    "fluffy",
+    "flat",
+    "swollen"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"flat\". Something flat is not puffed up at all."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is most likely puffy?",
+   "options": [
+    "a sheet of paper",
+    "a pencil",
+    "a marshmallow"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a marshmallow\". A marshmallow is soft and puffed up."
+  },
+  {
+   "type": "meaning",
+   "q": "What might make your eyes puffy?",
+   "options": [
+    "tying your shoes",
+    "eating a carrot",
+    "crying a lot"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"crying a lot\". Crying can make your eyes swell up."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The pillows on the couch were soft and ____.'",
+   "options": [
+    "puffy",
+    "beneath",
+    "carefully"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"puffy\". Soft pillows are full and puffed up."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses PUFFY correctly?",
+   "options": [
+    "My winter coat is warm and puffy.",
+    "She will puffy the ball to me.",
+    "The puffy ran across the yard."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"My winter coat is warm and puffy.\". A puffed-up winter coat is puffy."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: After the long nap, Grandpa's eyes looked a little ____.",
+   "options": [
+    "molten",
+    "puffy",
+    "lunar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"puffy\". Eyes can look swollen after sleeping."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The baker pulled ____ golden rolls out of the oven.'",
+   "options": [
+    "puffy",
+    "fierce",
+    "fickle"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"puffy\". Fresh rolls puff up in the oven."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The bird fluffed its feathers until it looked round and ____.",
+   "options": [
+    "puffy",
+    "lunar",
+    "versus"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"puffy\". Fluffed-up feathers make a bird look puffed up."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "puffey",
+    "puffy",
+    "pufy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"puffy\". Puffy has double f and ends with y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'My jacket is ____.'",
+   "options": [
+    "puffee",
+    "puffy",
+    "puffie"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"puffy\". Puffy ends with the letter y."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: p_ff_",
+   "options": [
+    "u, i",
+    "o, y",
+    "u, y"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"u, y\". Put in u and y to spell p-u-f-f-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "puffy",
+    "puffi",
+    "poffy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"puffy\". Puffy is puff with a y at the end."
+  }
+ ],
+ "tiptoed": [
+  {
+   "type": "pos",
+   "q": "What part of speech is TIPTOED in: 'She tiptoed past the sleeping baby.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "noun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Tiptoed is what she did, so it is an action word."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a verb: 'Max tiptoed down the dark hall.'?",
+   "options": [
+    "dark",
+    "tiptoed",
+    "hall"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tiptoed\". Tiptoed tells what Max did."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a verb: tiptoed, basement, clever?",
+   "options": [
+    "basement",
+    "clever",
+    "tiptoed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tiptoed\". Tiptoed is an action; basement is a place and clever describes."
+  },
+  {
+   "type": "pos",
+   "q": "A verb tells an action. Which kind of word is TIPTOED in: 'The cat tiptoed across the table.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "preposition"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Tiptoed tells what the cat did."
+  },
+  {
+   "type": "pos",
+   "q": "In 'We tiptoed into the kitchen for a snack,' what does TIPTOED tell you?",
+   "options": [
+    "what the snack looked like",
+    "where the kitchen is",
+    "what we did"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"what we did\". A verb tells what someone did, like tiptoed."
+  },
+  {
+   "type": "meaning",
+   "q": "What does TIPTOED mean?",
+   "options": [
+    "crawled on hands and knees",
+    "jumped loudly up and down",
+    "walked quietly on the tips of your toes"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"walked quietly on the tips of your toes\". Tiptoed means walked softly on your toes."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Dad tiptoed into my room so he wouldn't wake me.' How did Dad walk?",
+   "options": [
+    "very quietly on his toes",
+    "with loud stomping steps",
+    "backward on his heels"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"very quietly on his toes\". Dad walked softly on his toes to keep things quiet."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of TIPTOED?",
+   "options": [
+    "sneaked",
+    "crept",
+    "stomped"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"stomped\". Stomping is loud and heavy, the opposite of tiptoeing."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as TIPTOED?",
+   "options": [
+    "stomped",
+    "crept",
+    "shouted"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"crept\". Crept means moved slowly and quietly, like tiptoed."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of someone who tiptoed?",
+   "options": [
+    "Ana sang at the top of her voice.",
+    "Ana walked softly so the baby would keep sleeping.",
+    "Ana raced loudly down the stairs."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Ana walked softly so the baby would keep sleeping.\". Walking softly to stay quiet is tiptoeing."
+  },
+  {
+   "type": "meaning",
+   "q": "When would someone most likely have tiptoed?",
+   "options": [
+    "sneaking past a sleeping dog",
+    "marching in a loud parade",
+    "swimming in a pool"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"sneaking past a sleeping dog\". You tiptoe when you do not want to wake someone."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Lily ____ down the stairs so no one would hear her.'",
+   "options": [
+    "cuddle",
+    "tiptoed",
+    "invite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tiptoed\". Lily walked quietly, so tiptoed fits."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses TIPTOED correctly?",
+   "options": [
+    "Sam tiptoed his lunch in one big bite.",
+    "The tiptoed was wet from the rain.",
+    "Sam tiptoed out of the room while his sister napped."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sam tiptoed out of the room while his sister napped.\". Sam walked quietly so his sister could nap."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The kids ____ to the door to surprise Mom with a cake.",
+   "options": [
+    "proclaim",
+    "disappear",
+    "tiptoed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tiptoed\". To surprise Mom, the kids walked quietly."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The mouse ____ past the sleeping cat.'",
+   "options": [
+    "tiptoed",
+    "clever",
+    "puffy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tiptoed\". The mouse moved quietly so the cat would not wake."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The ballet dancer ____ gracefully across the stage.",
+   "options": [
+    "tiptoed",
+    "beneath",
+    "burlap"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tiptoed\". Ballet dancers move on the tips of their toes."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "tiptowed",
+    "tiptoed",
+    "tiptoad"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tiptoed\". Tiptoed is tiptoe plus -d."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Jon ____ into the room.'",
+   "options": [
+    "tiptoed",
+    "tipptoed",
+    "tiptode"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tiptoed\". Tiptoed has one p in the middle and ends with -oed."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: t_pto_d",
+   "options": [
+    "e, e",
+    "i, e",
+    "i, a"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"i, e\". Put in i and e to spell t-i-p-t-o-e-d."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "teptoed",
+    "tiptoed",
+    "tiptoid"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tiptoed\". Tiptoed is made of tip and toe, plus -d."
+  }
+ ],
+ "clever": [
+  {
+   "type": "pos",
+   "q": "What part of speech is CLEVER in: 'The clever fox found a way over the fence.'?",
+   "options": [
+    "adjective",
+    "verb",
+    "noun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Clever describes the fox."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a person, place, or thing. Which kind of word is CLEVER?",
+   "options": [
+    "adjective",
+    "preposition",
+    "adverb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Clever describes someone, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective: clever, basement, tiptoed?",
+   "options": [
+    "tiptoed",
+    "basement",
+    "clever"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"clever\". Clever describes; basement is a place and tiptoed is an action."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Rosa had a clever idea for the science fair,' which noun does CLEVER describe?",
+   "options": [
+    "fair",
+    "Rosa",
+    "idea"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"idea\". Clever tells what kind of idea Rosa had."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is an adjective: 'Our clever dog opened the gate.'?",
+   "options": [
+    "clever",
+    "opened",
+    "dog"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clever\". Clever describes the dog."
+  },
+  {
+   "type": "meaning",
+   "q": "What does CLEVER mean?",
+   "options": [
+    "very sleepy and slow",
+    "loud and messy",
+    "quick to learn and understand; smart"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"quick to learn and understand; smart\". A clever person learns fast and is smart."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The clever girl solved the puzzle in one minute.' What does clever mean here?",
+   "options": [
+    "afraid of the dark",
+    "good at figuring things out",
+    "very tall"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"good at figuring things out\". She figured out the puzzle fast because she is clever."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as CLEVER?",
+   "options": [
+    "sleepy",
+    "noisy",
+    "smart"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"smart\". Smart and clever both mean quick to learn."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is the opposite of CLEVER?",
+   "options": [
+    "wise",
+    "foolish",
+    "smart"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"foolish\". Foolish means not smart, the opposite of clever."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of something clever?",
+   "options": [
+    "dropping your lunch on the floor",
+    "using a hanger to reach a ball stuck in a tree",
+    "forgetting your shoes at home"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"using a hanger to reach a ball stuck in a tree\". Thinking of a smart way to solve a problem is clever."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these would most likely be called clever?",
+   "options": [
+    "a chair in the kitchen",
+    "a rock sitting in the yard",
+    "a crow that uses a stick to get food"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a crow that uses a stick to get food\". Using a tool to get food takes smart thinking."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The ____ student found a faster way to solve the math problem.'",
+   "options": [
+    "burlap",
+    "clever",
+    "lunar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"clever\". Finding a faster way shows the student is smart."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses CLEVER correctly?",
+   "options": [
+    "I clever my bike to school every day.",
+    "The clever fell off my shirt.",
+    "Mia had a clever plan to keep squirrels away from the bird feeder."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Mia had a clever plan to keep squirrels away from the bird feeder.\". A smart plan is a clever plan."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The parrot was so ____ that it learned ten new words in a week.",
+   "options": [
+    "clever",
+    "burlap",
+    "molten"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clever\". Learning fast means the parrot is clever."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'That was a ____ trick! How did you do it?'",
+   "options": [
+    "basement",
+    "clever",
+    "tissues"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"clever\". A smart, surprising trick is clever."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Kai built a ____ robot out of boxes that could pick up toys.",
+   "options": [
+    "clever",
+    "beneath",
+    "carefully"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clever\". A smart robot idea is clever."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "klever",
+    "clever",
+    "clevar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"clever\". Clever starts with c and ends with -er."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'My cat is very ____.'",
+   "options": [
+    "clever",
+    "clevur",
+    "clevver"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"clever\". Clever has one v and ends with -er."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: cl_v_r",
+   "options": [
+    "e, e",
+    "a, e",
+    "e, a"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"e, e\". Put in e and e to spell c-l-e-v-e-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "cleverr",
+    "clever",
+    "cluver"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"clever\". Clever has an e after the l and one r at the end."
+  }
+ ],
+ "basement": [
+  {
+   "type": "pos",
+   "q": "What part of speech is BASEMENT in: 'We keep our old bikes in the basement.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adverb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Basement names a place in the house."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a person, place, or thing. Which kind of word is BASEMENT?",
+   "options": [
+    "adjective",
+    "noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Basement names a place."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun: basement, clever, carefully?",
+   "options": [
+    "carefully",
+    "clever",
+    "basement"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"basement\". Basement names a place; clever describes and carefully tells how."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a noun: 'The dark basement felt cold.'?",
+   "options": [
+    "cold",
+    "basement",
+    "dark"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"basement\". Basement names the place; dark and cold describe it."
+  },
+  {
+   "type": "pos",
+   "q": "Is BASEMENT a singular noun or a plural noun?",
+   "options": [
+    "adverb",
+    "singular noun",
+    "plural noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"singular noun\". Basement names just one place, so it is singular."
+  },
+  {
+   "type": "meaning",
+   "q": "What does BASEMENT mean?",
+   "options": [
+    "the part of a building that is below the ground",
+    "the very top room of a house",
+    "a small garden behind a school"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"the part of a building that is below the ground\". A basement is the part of a building under the ground."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'When the storm came, we went down to the basement to stay safe.' Where did they go?",
+   "options": [
+    "up to the roof",
+    "to a room under the house",
+    "out to the backyard"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to a room under the house\". They went down to the part of the house below the ground."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as BASEMENT?",
+   "options": [
+    "cellar",
+    "porch",
+    "attic"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"cellar\". A cellar is a room under the ground, like a basement."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these would you most likely find in a basement?",
+   "options": [
+    "ocean waves",
+    "clouds and stars",
+    "a washing machine and old boxes"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a washing machine and old boxes\". People often keep a washer and old boxes down in the basement."
+  },
+  {
+   "type": "meaning",
+   "q": "How would you get to the basement?",
+   "options": [
+    "walk down the stairs",
+    "swim across a lake",
+    "climb a ladder to the roof"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"walk down the stairs\". The basement is below the ground, so you go down."
+  },
+  {
+   "type": "meaning",
+   "q": "Which room is the opposite of the basement because it is at the very top of the house?",
+   "options": [
+    "the attic",
+    "the cellar",
+    "the room below the ground"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"the attic\". The attic is at the top, and the basement is at the bottom."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Dad carried the boxes down the stairs to the ____.'",
+   "options": [
+    "butterflies",
+    "lullaby",
+    "basement"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"basement\". You go down the stairs to reach the basement."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BASEMENT correctly?",
+   "options": [
+    "I ate a basement for breakfast.",
+    "The bird flew up to the basement of the tree.",
+    "Our basement is under the kitchen."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Our basement is under the kitchen.\". A basement is under the rest of the house."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Our cat hides in the ____ when thunder booms.",
+   "options": [
+    "clever",
+    "basement",
+    "tiptoed"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"basement\". The cat hides in a room under the house."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Water leaked into the ____ after the heavy rain.'",
+   "options": [
+    "puffy",
+    "basement",
+    "carefully"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"basement\". Rain water can leak down into a basement."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Mom keeps the holiday decorations down in the ____ under our house.",
+   "options": [
+    "clever",
+    "invite",
+    "basement"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"basement\". The room under the house is the basement."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "basemint",
+    "basment",
+    "basement"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"basement\". Basement is base plus -ment."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Our toys are in the ____.'",
+   "options": [
+    "basement",
+    "bacement",
+    "basemant"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"basement\". Basement starts with base and ends with -ment."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: bas_m_nt",
+   "options": [
+    "a, e",
+    "e, e",
+    "e, i"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"e, e\". Put in e and e to spell b-a-s-e-m-e-n-t."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "basement",
+    "baisment",
+    "basemeant"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"basement\". Basement is just base plus -ment."
+  }
+ ],
+ "burlap": [
+  {
+   "type": "pos",
+   "q": "What part of speech is BURLAP in: 'The potatoes came in a sack made of burlap.'?",
+   "options": [
+    "adverb",
+    "noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Burlap names a thing: a kind of cloth."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a thing. Which kind of word is BURLAP in: 'Burlap feels scratchy on my arms.'?",
+   "options": [
+    "noun",
+    "adjective",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Burlap names the cloth that feels scratchy."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun: burlap, puffy, tiptoed?",
+   "options": [
+    "puffy",
+    "burlap",
+    "tiptoed"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"burlap\". Burlap names a thing; puffy describes and tiptoed is an action."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a noun: 'Farmer Joe cut the rough burlap.'?",
+   "options": [
+    "cut",
+    "rough",
+    "burlap"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"burlap\". Burlap names the thing Farmer Joe cut."
+  },
+  {
+   "type": "pos",
+   "q": "What kind of word is BURLAP in: 'We stuffed burlap into the scarecrow's shirt.'?",
+   "options": [
+    "an action word (verb)",
+    "a thing word (noun)",
+    "a describing word (adjective)"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a thing word (noun)\". Burlap names the cloth we stuffed in."
+  },
+  {
+   "type": "meaning",
+   "q": "What does BURLAP mean?",
+   "options": [
+    "a small hill of sand",
+    "a sweet, sticky candy",
+    "a rough, heavy cloth used to make sacks"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a rough, heavy cloth used to make sacks\". Burlap is rough cloth used for sacks."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The rice was shipped in big burlap bags.' What were the bags made of?",
+   "options": [
+    "a rough, heavy cloth",
+    "thin glass",
+    "smooth, shiny plastic"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a rough, heavy cloth\". Burlap bags are made of rough, heavy cloth."
+  },
+  {
+   "type": "meaning",
+   "q": "How does burlap feel?",
+   "options": [
+    "wet and slimy",
+    "soft and silky",
+    "rough and scratchy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"rough and scratchy\". Burlap is a rough, heavy cloth."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is most likely made of burlap?",
+   "options": [
+    "a spoon",
+    "a potato sack",
+    "a window"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a potato sack\". Burlap is used to make sacks."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you do with burlap?",
+   "options": [
+    "write on it with chalk like a board",
+    "drink it with breakfast",
+    "make a sack to carry potatoes"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"make a sack to carry potatoes\". Burlap is cloth for making sacks."
+  },
+  {
+   "type": "meaning",
+   "q": "Which cloth is the most different from burlap?",
+   "options": [
+    "smooth, soft silk",
+    "rough sack cloth",
+    "heavy, scratchy cloth"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"smooth, soft silk\". Burlap is rough, so smooth silk is the most different."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'In the sack race, each kid jumped inside a ____ bag.'",
+   "options": [
+    "lullaby",
+    "laughter",
+    "burlap"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"burlap\". Sack race bags are often made of burlap."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BURLAP correctly?",
+   "options": [
+    "The burlap sang us a song.",
+    "I drank a cold glass of burlap.",
+    "The farmer filled a burlap sack with corn."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The farmer filled a burlap sack with corn.\". Burlap is used to make sacks."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The scratchy cloth on bags of coffee beans is called ____.",
+   "options": [
+    "burlap",
+    "granola",
+    "kelp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"burlap\". That rough sack cloth is burlap."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'We wrapped the young tree's roots in ____ before we planted it.'",
+   "options": [
+    "burlap",
+    "clever",
+    "laughter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"burlap\". Gardeners wrap roots in rough burlap cloth."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Our class made rough, brown scarecrow clothes out of ____.",
+   "options": [
+    "lullaby",
+    "burlap",
+    "butterflies"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"burlap\". Rough, brown cloth is burlap."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "burlap",
+    "burlapp",
+    "berlap"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"burlap\". Burlap starts with bur and ends with one p."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The sack is made of ____.'",
+   "options": [
+    "burrlap",
+    "burlap",
+    "burlop"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"burlap\". Burlap has one r and ends with -lap."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: b_rl_p",
+   "options": [
+    "e, a",
+    "u, a",
+    "u, o"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"u, a\". Put in u and a to spell b-u-r-l-a-p."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "burlap",
+    "brulap",
+    "burlab"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"burlap\". Burlap is spelled b-u-r-l-a-p."
+  }
+ ],
+ "wetlands": [
+  {
+   "type": "pos",
+   "q": "Is WETLANDS a singular noun or a plural noun?",
+   "options": [
+    "singular noun",
+    "plural noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"plural noun\". Wetlands ends in -s and names more than one wet place."
+  },
+  {
+   "type": "pos",
+   "q": "What part of speech is WETLANDS in: 'Frogs and ducks live in the wetlands.'?",
+   "options": [
+    "adjective",
+    "plural noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"plural noun\". Wetlands names the places where frogs and ducks live."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a plural noun: wetlands, basement, clever?",
+   "options": [
+    "wetlands",
+    "clever",
+    "basement"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wetlands\". Wetlands names more than one place; basement names one place and clever describes."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a plural noun: 'Tall grass grows in the muddy wetlands.'?",
+   "options": [
+    "grows",
+    "muddy",
+    "wetlands"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wetlands\". Wetlands names more than one wet place."
+  },
+  {
+   "type": "pos",
+   "q": "In 'We hiked through the wetlands to see birds,' what does WETLANDS name?",
+   "options": [
+    "more than one place",
+    "a feeling",
+    "an action"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"more than one place\". A plural noun names more than one person, place, or thing."
+  },
+  {
+   "type": "meaning",
+   "q": "What does WETLANDS mean?",
+   "options": [
+    "tall, rocky mountains",
+    "land with very wet soil, like a swamp or marsh",
+    "land covered with dry sand"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"land with very wet soil, like a swamp or marsh\". Wetlands are places with very wet ground."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Our class visited the wetlands, and our boots sank into the mud.' What are wetlands?",
+   "options": [
+    "a tall, rocky mountain",
+    "land with very wet, muddy soil",
+    "a dry, sandy desert"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"land with very wet, muddy soil\". Boots sinking in mud shows the ground is very wet."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of wetlands?",
+   "options": [
+    "a swamp",
+    "a parking lot",
+    "a desert"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a swamp\". A swamp has very wet soil, so it is a wetland."
+  },
+  {
+   "type": "meaning",
+   "q": "Which animal would you most likely find in the wetlands?",
+   "options": [
+    "a frog",
+    "a polar bear",
+    "a camel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a frog\". Frogs love wet, muddy places."
+  },
+  {
+   "type": "meaning",
+   "q": "Which place is the most opposite of wetlands?",
+   "options": [
+    "a swamp",
+    "a dry desert",
+    "a marsh"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a dry desert\". Deserts are very dry, and wetlands are very wet."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you most likely wear to explore the wetlands?",
+   "options": [
+    "ice skates",
+    "tall rubber boots",
+    "a heavy space suit"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tall rubber boots\". Rubber boots keep your feet dry in wet, muddy ground."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Herons wade through the shallow water of the ____.'",
+   "options": [
+    "wetlands",
+    "buttons",
+    "basement"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wetlands\". Herons are birds that wade in wet, marshy places."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses WETLANDS correctly?",
+   "options": [
+    "Dad put the wetlands in the toaster.",
+    "I wore my wetlands to keep my feet warm.",
+    "Many birds build nests in the wetlands near the river."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Many birds build nests in the wetlands near the river.\". Wetlands are wet places where many birds live."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Alligators and turtles live in the swampy ____.",
+   "options": [
+    "buttons",
+    "butterflies",
+    "wetlands"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wetlands\". Swampy places are wetlands."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The muddy ____ help soak up water during big storms.'",
+   "options": [
+    "wetlands",
+    "butterflies",
+    "buttons"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wetlands\". Wetlands are muddy land that soaks up water."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Our class counted ducks at the marshy ____ by the lake.",
+   "options": [
+    "lullaby",
+    "tractor",
+    "wetlands"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wetlands\". Marshy land by a lake is wetlands."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "wettlands",
+    "wetlands",
+    "wetlans"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"wetlands\". Wetlands is wet plus lands, with one t."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Ducks swim in the ____.'",
+   "options": [
+    "whetlands",
+    "wetlunds",
+    "wetlands"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wetlands\". Wetlands is made of wet and lands."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: w_tl_nds",
+   "options": [
+    "a, a",
+    "e, e",
+    "e, a"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"e, a\". Put in e and a to spell w-e-t-l-a-n-d-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "wetlands",
+    "wetlends",
+    "wetlandz"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wetlands\". Wetlands ends with -lands and an s."
+  }
+ ],
+ "invite": [
+  {
+   "type": "pos",
+   "q": "What part of speech is INVITE in: 'I will invite my whole class to my party.'?",
+   "options": [
+    "adjective",
+    "noun",
+    "verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"verb\". Invite is the action I will do."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses INVITE as a verb?",
+   "options": [
+    "Let's invite Grandma to dinner.",
+    "Her invite had a picture of a cake on it.",
+    "I got an invite to the party."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Let's invite Grandma to dinner.\". In that sentence, invite is something we do."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a verb: invite, butterflies, clever?",
+   "options": [
+    "invite",
+    "butterflies",
+    "clever"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"invite\". Invite is an action; butterflies are things and clever describes."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is INVITE in: 'Can we invite the new girl to play tag?'",
+   "options": [
+    "preposition",
+    "verb",
+    "adverb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Invite is the action of asking someone to come."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a verb: 'Please invite your cousins to the picnic.'?",
+   "options": [
+    "picnic",
+    "invite",
+    "cousins"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"invite\". Invite tells what to do."
+  },
+  {
+   "type": "meaning",
+   "q": "What does INVITE mean?",
+   "options": [
+    "to hide from someone",
+    "to tell someone to go away",
+    "to ask someone to come or to join in"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"to ask someone to come or to join in\". When you invite someone, you ask them to come."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Sam wanted to invite Jake to his sleepover.' What did Sam want to do?",
+   "options": [
+    "ask Jake to come",
+    "tell Jake to stay home",
+    "give Jake a haircut"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"ask Jake to come\". To invite means to ask someone to come."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as INVITE?",
+   "options": [
+    "push",
+    "ask",
+    "hide"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"ask\". When you invite someone, you ask them to come."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of inviting someone to play?",
+   "options": [
+    "welcoming them in",
+    "leaving them out",
+    "asking them to join"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"leaving them out\". Leaving someone out is the opposite of inviting them."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of inviting someone?",
+   "options": [
+    "'Go away, this table is full.'",
+    "'I'm going home now.'",
+    "'Do you want to sit with us at lunch?'"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"'Do you want to sit with us at lunch?'\". Asking someone to sit with you invites them to join."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you use to invite friends to a birthday party?",
+   "options": [
+    "a card that tells the time and place",
+    "a fishing pole",
+    "a broom"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a card that tells the time and place\". A party card asks friends to come."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Mom said I could ____ two friends to the zoo.'",
+   "options": [
+    "proclaim",
+    "invite",
+    "disappear"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"invite\". You invite friends to come with you."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses INVITE correctly?",
+   "options": [
+    "The invite swam in the pond.",
+    "Please invite your teeth before bed.",
+    "We should invite the new boy to play soccer with us."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"We should invite the new boy to play soccer with us.\". Asking the new boy to play is inviting him."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Ella was lonely at recess, so Ty decided to ____ her to join the game.",
+   "options": [
+    "invite",
+    "disappear",
+    "examine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"invite\". Ty asked Ella to join, so he invited her."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Did you ____ your neighbors to the bake sale?'",
+   "options": [
+    "tiptoed",
+    "puffy",
+    "invite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"invite\". You ask neighbors to come, so invite fits."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The team wanted to ____ the coach to their pizza party.",
+   "options": [
+    "cuddle",
+    "invite",
+    "disappear"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"invite\". The team wanted to ask the coach to come."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "envite",
+    "invight",
+    "invite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"invite\". Invite starts with in- and ends with -ite."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'I will ____ you to my party.'",
+   "options": [
+    "invyte",
+    "invite",
+    "invit"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"invite\". Invite ends with a silent e."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: inv_t_",
+   "options": [
+    "i, e",
+    "y, e",
+    "e, e"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"i, e\". Put in i and e to spell i-n-v-i-t-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "invite",
+    "invitte",
+    "innvite"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"invite\". Invite has one n and one t."
+  }
+ ],
+ "butterflies": [
+  {
+   "type": "pos",
+   "q": "Is BUTTERFLIES a singular noun or a plural noun?",
+   "options": [
+    "adjective",
+    "singular noun",
+    "plural noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"plural noun\". Butterflies means more than one butterfly."
+  },
+  {
+   "type": "pos",
+   "q": "What part of speech is BUTTERFLIES in: 'Orange butterflies landed on the flowers.'?",
+   "options": [
+    "plural noun",
+    "verb",
+    "adverb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"plural noun\". Butterflies names more than one insect."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a plural noun: butterflies, cuddle, puffy?",
+   "options": [
+    "puffy",
+    "butterflies",
+    "cuddle"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"butterflies\". Butterflies names more than one thing; cuddle is an action and puffy describes."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a plural noun: 'Bright butterflies fluttered in the garden.'?",
+   "options": [
+    "fluttered",
+    "bright",
+    "butterflies"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"butterflies\". Butterflies names more than one insect."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The butterflies drank from the flowers,' what does BUTTERFLIES name?",
+   "options": [
+    "an action",
+    "more than one insect",
+    "just one insect"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"more than one insect\". A plural noun names more than one thing."
+  },
+  {
+   "type": "meaning",
+   "q": "What does BUTTERFLIES mean?",
+   "options": [
+    "thin insects with large, colorful wings",
+    "small fish with shiny scales",
+    "birds that sing at night"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"thin insects with large, colorful wings\". Butterflies are insects with big, colorful wings."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'We watched butterflies flutter over the garden.' What did they watch?",
+   "options": [
+    "dogs chasing a ball",
+    "insects with colorful wings",
+    "fish swimming in a pond"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"insects with colorful wings\". Butterflies are insects with colorful wings."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is a kind of butterfly?",
+   "options": [
+    "a robin",
+    "a monarch",
+    "a goldfish"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a monarch\". A monarch is an orange and black butterfly."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely find butterflies?",
+   "options": [
+    "inside a freezer",
+    "at the bottom of the ocean",
+    "in a flower garden"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"in a flower garden\". Butterflies visit flowers to drink nectar."
+  },
+  {
+   "type": "meaning",
+   "q": "What do butterflies use their large wings for?",
+   "options": [
+    "to swim in the sea",
+    "to fly from flower to flower",
+    "to dig holes in the dirt"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to fly from flower to flower\". Butterflies flap their wings to fly."
+  },
+  {
+   "type": "meaning",
+   "q": "What do butterflies start out as?",
+   "options": [
+    "tadpoles",
+    "chicks",
+    "caterpillars"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"caterpillars\". A caterpillar changes into a butterfly."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The garden was full of colorful ____ drinking from the flowers.'",
+   "options": [
+    "butterflies",
+    "tissues",
+    "buttons"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"butterflies\". Butterflies drink from flowers."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BUTTERFLIES correctly?",
+   "options": [
+    "Two yellow butterflies landed on my sleeve.",
+    "I zipped up my butterflies before going out in the snow.",
+    "We poured butterflies on our cereal."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Two yellow butterflies landed on my sleeve.\". Butterflies are insects that can land on you."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The caterpillars turned into beautiful ____.",
+   "options": [
+    "basements",
+    "butterflies",
+    "wetlands"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"butterflies\". Caterpillars grow up to be butterflies."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'In science class, we watched the ____ flap their colorful wings.'",
+   "options": [
+    "buttons",
+    "tractors",
+    "butterflies"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"butterflies\". Butterflies have colorful wings."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: At the zoo, a room full of ____ had wings of every color.",
+   "options": [
+    "butterflies",
+    "tissues",
+    "wetlands"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"butterflies\". Butterflies have wings of many colors."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "buterflies",
+    "butterflys",
+    "butterflies"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"butterflies\". Change the y in butterfly to i and add -es."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'I saw three ____.'",
+   "options": [
+    "butterflees",
+    "butterflies",
+    "butterflyes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"butterflies\". Butterflies ends with -ies."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: butt_rfl_es",
+   "options": [
+    "e, i",
+    "e, y",
+    "a, i"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"e, i\". Put in e and i to spell b-u-t-t-e-r-f-l-i-e-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which of these words is spelled correctly?",
+   "options": [
+    "butterflies",
+    "butterfiles",
+    "buttarflies"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"butterflies\". Butterflies is butter plus flies."
+  }
+ ]
+}

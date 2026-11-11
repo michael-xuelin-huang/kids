@@ -1,0 +1,2222 @@
+{
+ "lunar": [
+  {
+   "type": "pos",
+   "q": "What part of speech is LUNAR in: 'We looked at a lunar rock at the museum.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Lunar describes the rock, and describing words are adjectives."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is an adjective?",
+   "options": [
+    "beneath",
+    "kelp",
+    "lunar"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lunar\". Lunar describes moon things; kelp is a noun and beneath is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a noun. A verb shows action. Which kind of word is LUNAR in: 'The lunar light made the yard glow.'?",
+   "options": [
+    "adjective",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Lunar tells what kind of light it is."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Sam drew a lunar map,' which word is an adjective?",
+   "options": [
+    "drew",
+    "lunar",
+    "Sam"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lunar\". Lunar describes the map, so it is the adjective."
+  },
+  {
+   "type": "pos",
+   "q": "LUNAR is an adjective. What job does it do in 'lunar dust'?",
+   "options": [
+    "it shows an action",
+    "it tells where something is",
+    "it describes the dust"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"it describes the dust\". Adjectives describe nouns, like dust."
+  },
+  {
+   "type": "meaning",
+   "q": "What does LUNAR mean?",
+   "options": [
+    "having to do with the ocean",
+    "having to do with the sun",
+    "having to do with the moon"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"having to do with the moon\". Lunar things are all about the moon."
+  },
+  {
+   "type": "meaning",
+   "q": "Mia read a book about lunar travel. What kind of travel is it?",
+   "options": [
+    "travel to the moon",
+    "travel by boat",
+    "travel to Grandma's house"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"travel to the moon\". Lunar means having to do with the moon."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is a lunar thing?",
+   "options": [
+    "a crater on the moon",
+    "a wave in the ocean",
+    "a nest in a tree"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a crater on the moon\". A crater on the moon has to do with the moon."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would a lunar rover drive?",
+   "options": [
+    "under the sea",
+    "on the moon",
+    "in a barn"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"on the moon\". A lunar rover is made to drive on the moon."
+  },
+  {
+   "type": "meaning",
+   "q": "A lunar calendar keeps track of time using the ____.",
+   "options": [
+    "moon",
+    "trees",
+    "wind"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"moon\". Lunar means moon, so a lunar calendar follows the moon."
+  },
+  {
+   "type": "meaning",
+   "q": "Dad says the night has a lunar glow. Where is the light coming from?",
+   "options": [
+    "a campfire",
+    "a flashlight",
+    "the moon"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the moon\". Lunar light comes from the moon."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The astronauts studied ____ rocks brought back from the moon.'",
+   "options": [
+    "fickle",
+    "lunar",
+    "jovial"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lunar\". Rocks from the moon are lunar rocks."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses LUNAR correctly?",
+   "options": [
+    "I ate a lunar sandwich for breakfast.",
+    "The lunar surface is gray and dusty.",
+    "The dog barked in a lunar voice at the mailman."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The lunar surface is gray and dusty.\". The moon's surface really is gray and dusty."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Our class watched the moon change shape for a ____ project.'",
+   "options": [
+    "molten",
+    "lunar",
+    "rigid"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lunar\". A project about the moon is a lunar project."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'At night, the ____ light made the snow sparkle.'",
+   "options": [
+    "lunar",
+    "beneath",
+    "carefully"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lunar\". Moonlight is lunar light."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Space fans stayed up late to watch the ____ eclipse.'",
+   "options": [
+    "versus",
+    "salary",
+    "lunar"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lunar\". An eclipse of the moon is a lunar eclipse."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "lunar",
+    "loonar",
+    "luner"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lunar\". Lunar is spelled l-u-n-a-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: l_n_r",
+   "options": [
+    "u, e",
+    "o, a",
+    "u, a"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"u, a\". Putting in u and a makes lunar."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ rocks were gray.'",
+   "options": [
+    "lunnar",
+    "lunar",
+    "lunir"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lunar\". Lunar has one n and ends in -ar."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means 'having to do with the moon'?",
+   "options": [
+    "lewnar",
+    "lunur",
+    "lunar"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lunar\". Lunar is spelled l-u-n-a-r."
+  }
+ ],
+ "boycotting": [
+  {
+   "type": "pos",
+   "q": "What part of speech is BOYCOTTING in: 'Our class is boycotting the snack shop until it sells fruit.'?",
+   "options": [
+    "adverb",
+    "preposition",
+    "verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"verb\". Boycotting is the action the class is doing, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a verb?",
+   "options": [
+    "boycotting",
+    "lunar",
+    "beneath"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"boycotting\". Boycotting is an action; lunar is an adjective and beneath is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is BOYCOTTING in: 'The neighbors are boycotting the store that sold rotten apples.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "pronoun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". The neighbors are doing the action of boycotting."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Jen is boycotting the juice stand,' which word is the main action verb?",
+   "options": [
+    "juice",
+    "Jen",
+    "boycotting"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"boycotting\". Boycotting tells what Jen is doing."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these is a verb, like BOYCOTTING?",
+   "options": [
+    "thimble",
+    "molten",
+    "proclaim"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"proclaim\". Proclaim is an action word, just like boycotting."
+  },
+  {
+   "type": "meaning",
+   "q": "What does BOYCOTTING mean?",
+   "options": [
+    "sleeping on a small bed at camp",
+    "buying lots of things at a store",
+    "refusing to buy from or deal with someone to show you disagree"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"refusing to buy from or deal with someone to show you disagree\". Boycotting means saying no to buying from someone to show you disagree."
+  },
+  {
+   "type": "meaning",
+   "q": "The town is boycotting the bakery because it was rude to customers. What are the people doing?",
+   "options": [
+    "not buying from the bakery",
+    "working at the bakery",
+    "buying extra cookies"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"not buying from the bakery\". When you boycott a place, you stop buying from it."
+  },
+  {
+   "type": "meaning",
+   "q": "Which phrase is closest in meaning to BOYCOTTING?",
+   "options": [
+    "cleaning up",
+    "refusing to shop at",
+    "shopping a lot at"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"refusing to shop at\". Boycotting a store means refusing to shop there."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of boycotting a store?",
+   "options": [
+    "happily shopping at it",
+    "refusing to go there",
+    "staying away from it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"happily shopping at it\". Boycotting means staying away, so the opposite is shopping there."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of boycotting?",
+   "options": [
+    "Buying a birthday gift at the toy store",
+    "Not buying from a toy store because it treats animals badly",
+    "Visiting the toy store with Grandpa"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Not buying from a toy store because it treats animals badly\". Refusing to buy there to show you disagree is boycotting."
+  },
+  {
+   "type": "meaning",
+   "q": "Why might people start boycotting a company?",
+   "options": [
+    "to show they disagree with what it does",
+    "because they love its products",
+    "to celebrate its birthday"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to show they disagree with what it does\". People boycott to show they do not agree with something."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The students are ____ the snack machine until it sells healthy food.'",
+   "options": [
+    "boycotting",
+    "molten",
+    "granola"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"boycotting\". The students are refusing to buy from the machine."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BOYCOTTING correctly?",
+   "options": [
+    "Our family is boycotting the store that sold broken toys.",
+    "Dad is boycotting the grass with the lawn mower.",
+    "The baby was boycotting peacefully in her crib."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Our family is boycotting the store that sold broken toys.\". The family is refusing to shop at a store they disagree with."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Fans stopped buying tickets to show they were upset. They were ____ the team.'",
+   "options": [
+    "carefully",
+    "boycotting",
+    "puffy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"boycotting\". Not buying to show you are upset is boycotting."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Mom said, \"We are ____ that cereal brand until it stops wasting plastic.\"'",
+   "options": [
+    "lunar",
+    "boycotting",
+    "versus"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"boycotting\". Mom will not buy the cereal to show she disagrees."
+  },
+  {
+   "type": "usage",
+   "q": "Ben won't buy from the lemonade stand that cheated his friend. Which word describes what Ben is doing?",
+   "options": [
+    "examining",
+    "boycotting",
+    "proclaiming"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"boycotting\". Ben refuses to buy there to show he disagrees."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "boicotting",
+    "boycoting",
+    "boycotting"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"boycotting\". Boycotting has oy and a double t."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: boyc_tt_ng",
+   "options": [
+    "a, i",
+    "o, e",
+    "o, i"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"o, i\". Putting in o and i makes boycotting."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The club is ____ the store.'",
+   "options": [
+    "boycotteing",
+    "boycottin",
+    "boycotting"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"boycotting\". Boycotting ends with -ing and has no extra e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means refusing to buy from someone to show you disagree?",
+   "options": [
+    "boycuting",
+    "boycotting",
+    "boykotting"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"boycotting\". Boycotting is spelled b-o-y-c-o-t-t-i-n-g."
+  }
+ ],
+ "molten": [
+  {
+   "type": "pos",
+   "q": "What part of speech is MOLTEN in: 'Molten lava flowed down the volcano.'?",
+   "options": [
+    "adjective",
+    "adverb",
+    "noun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Molten describes the lava, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is an adjective?",
+   "options": [
+    "carefully",
+    "molten",
+    "tractor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"molten\". Molten describes things; tractor is a noun and carefully is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a noun. Which kind of word is MOLTEN in: 'The molten chocolate dripped off the spoon.'?",
+   "options": [
+    "preposition",
+    "adjective",
+    "pronoun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Molten tells what kind of chocolate it is."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The worker poured molten glass,' which word is the adjective?",
+   "options": [
+    "molten",
+    "worker",
+    "poured"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"molten\". Molten describes the glass."
+  },
+  {
+   "type": "pos",
+   "q": "Which noun does MOLTEN describe in: 'The volcano spilled molten rock.'?",
+   "options": [
+    "volcano",
+    "rock",
+    "spilled"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"rock\". Molten tells what kind of rock spilled out."
+  },
+  {
+   "type": "meaning",
+   "q": "What does MOLTEN mean?",
+   "options": [
+    "melted by great heat",
+    "frozen solid",
+    "soaked with water"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"melted by great heat\". Molten things have been melted by great heat."
+  },
+  {
+   "type": "meaning",
+   "q": "Molten metal was poured into the mold. What was the metal like?",
+   "options": [
+    "hot and melted",
+    "cold and hard",
+    "tiny and dusty"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"hot and melted\". Molten metal is so hot it has melted."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to MOLTEN?",
+   "options": [
+    "frozen",
+    "melted",
+    "broken"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"melted\". Molten means melted by great heat."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of MOLTEN?",
+   "options": [
+    "melted",
+    "hard and cold",
+    "runny"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hard and cold\". Molten things are melted and hot, so the opposite is hard and cold."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of something molten?",
+   "options": [
+    "a snowball",
+    "a wooden fence",
+    "glowing lava from a volcano"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"glowing lava from a volcano\". Lava is rock melted by great heat."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you find molten rock?",
+   "options": [
+    "in a lunchbox",
+    "deep inside a volcano",
+    "in a fish tank"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"deep inside a volcano\". It is hot enough inside a volcano to melt rock."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The volcano spilled red, ____ lava.'",
+   "options": [
+    "molten",
+    "woven",
+    "jovial"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"molten\". Lava is rock melted by heat, so it is molten."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses MOLTEN correctly?",
+   "options": [
+    "The glassmaker shaped the molten glass into a vase.",
+    "The molten puppy took a nap.",
+    "I wore my molten sweater in the snow."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The glassmaker shaped the molten glass into a vase.\". Glass is melted by great heat before it is shaped."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'The candle wax got so hot it turned into a runny liquid. The wax was ____.'",
+   "options": [
+    "rigid",
+    "fierce",
+    "molten"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"molten\". Wax melted by heat is molten."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Workers poured ____ steel to make a bridge beam.'",
+   "options": [
+    "molten",
+    "clever",
+    "lunar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"molten\". Steel must be melted by heat before it is poured."
+  },
+  {
+   "type": "usage",
+   "q": "Which word best finishes: 'Deep under the ground, the rock is so hot that it is ____.'",
+   "options": [
+    "puffy",
+    "inferior",
+    "molten"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"molten\". Rock that hot melts and becomes molten."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "moltin",
+    "molten",
+    "moltan"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"molten\". Molten ends with -en."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: m_lt_n",
+   "options": [
+    "a, e",
+    "o, i",
+    "o, e"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"o, e\". Putting in o and e makes molten."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ lava glowed.'",
+   "options": [
+    "moltten",
+    "mowlten",
+    "molten"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"molten\". Molten has just one l and one t."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means 'melted by great heat'?",
+   "options": [
+    "moltun",
+    "mollten",
+    "molten"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"molten\". Molten is spelled m-o-l-t-e-n."
+  }
+ ],
+ "elite": [
+  {
+   "type": "pos",
+   "q": "What part of speech is ELITE in: 'Ava joined an elite swim team.'?",
+   "options": [
+    "adjective",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Elite describes the team, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a noun. Which kind of word is ELITE in: 'Only elite runners win this race.'?",
+   "options": [
+    "verb",
+    "preposition",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Elite tells what kind of runners."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The elite players practiced hard,' which word does ELITE describe?",
+   "options": [
+    "practiced",
+    "players",
+    "hard"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"players\". Elite is an adjective that describes the players."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective in this sentence: 'The elite chef cooked dinner.'?",
+   "options": [
+    "elite",
+    "cooked",
+    "chef"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"elite\". Elite describes the chef."
+  },
+  {
+   "type": "pos",
+   "q": "ELITE is an adjective in 'an elite dog trainer.' What job does it do there?",
+   "options": [
+    "it describes the trainer",
+    "it names a place",
+    "it shows an action"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"it describes the trainer\". Adjectives describe nouns, like trainer."
+  },
+  {
+   "type": "meaning",
+   "q": "What does ELITE mean?",
+   "options": [
+    "the slowest and weakest",
+    "the very best; top-level",
+    "brand new"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the very best; top-level\". Elite means the very best."
+  },
+  {
+   "type": "meaning",
+   "q": "The coach picked Leo for the elite soccer team. What does that tell you?",
+   "options": [
+    "Leo only watches from the stands",
+    "Leo has never played soccer",
+    "Leo is one of the very best players"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Leo is one of the very best players\". Elite teams are for the very best players."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to ELITE?",
+   "options": [
+    "best",
+    "lazy",
+    "average"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"best\". Elite means the very best."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is the opposite of ELITE?",
+   "options": [
+    "best",
+    "top",
+    "ordinary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"ordinary\". Elite means top-level, so the opposite is ordinary."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of an elite group?",
+   "options": [
+    "everyone waiting for the school bus",
+    "kids who forgot their homework",
+    "the top ten runners picked for a big race"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the top ten runners picked for a big race\". Only the very best runners get picked."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you find elite athletes?",
+   "options": [
+    "in a library book drop",
+    "at the Olympic Games",
+    "in a kindergarten nap room"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"at the Olympic Games\". The Olympics are for the very best athletes."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Only the fastest hurdlers make it onto the ____ track team.'",
+   "options": [
+    "lunar",
+    "molten",
+    "elite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"elite\". A team of only the fastest is an elite team."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses ELITE correctly?",
+   "options": [
+    "The puppy was too elite to see in the dark.",
+    "I elite my bike to school every day.",
+    "The elite gymnasts won gold medals."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The elite gymnasts won gold medals.\". Elite gymnasts are the very best, so they win medals."
+  },
+  {
+   "type": "usage",
+   "q": "Mara's chess club picks only the very best players in the state. Which word describes the club?",
+   "options": [
+    "inferior",
+    "fickle",
+    "elite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"elite\". A club for the very best is elite."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The firefighters on the ____ rescue team trained for years.'",
+   "options": [
+    "lunar",
+    "elite",
+    "woven"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"elite\". A top-level team is an elite team."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'The ____ pilots fly in the air show because they are the best.'",
+   "options": [
+    "molten",
+    "elite",
+    "sniffling"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"elite\". The best pilots are elite pilots."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "elite",
+    "eleet",
+    "elight"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"elite\". Elite ends with -ite, like kite."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: el_t_",
+   "options": [
+    "i, i",
+    "i, e",
+    "e, e"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"i, e\". Putting in i and e makes elite."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ team won.'",
+   "options": [
+    "eliet",
+    "elite",
+    "ellite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"elite\". Elite has one l and ends in -ite."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means 'the very best; top-level'?",
+   "options": [
+    "elite",
+    "aleet",
+    "eleit"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"elite\". Elite is spelled e-l-i-t-e."
+  }
+ ],
+ "woven": [
+  {
+   "type": "pos",
+   "q": "What part of speech is WOVEN in: 'Grandma has woven a warm blanket.'?",
+   "options": [
+    "adverb",
+    "verb",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Has woven tells what Grandma did, so woven is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses WOVEN as a verb?",
+   "options": [
+    "I like woven baskets.",
+    "The spider had woven a web by morning.",
+    "My woven hat is blue."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The spider had woven a web by morning.\". In 'had woven,' woven shows the action the spider did."
+  },
+  {
+   "type": "pos",
+   "q": "A verb shows action. Which kind of word is WOVEN in: 'The bird has woven twigs into a nest.'?",
+   "options": [
+    "verb",
+    "preposition",
+    "pronoun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". The bird did the action of weaving."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the helping verb that goes with WOVEN in: 'Dad has woven a new seat for the chair.'?",
+   "options": [
+    "Dad",
+    "seat",
+    "has"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"has\". Has helps the verb woven tell what Dad did."
+  },
+  {
+   "type": "pos",
+   "q": "WOVEN is a verb form. Which action word does it come from?",
+   "options": [
+    "weave",
+    "wave",
+    "win"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"weave\". Weave changes to woven, as in 'has woven.'"
+  },
+  {
+   "type": "meaning",
+   "q": "What does WOVEN mean?",
+   "options": [
+    "made by crossing threads or strips over and under each other",
+    "made by gluing paper flat",
+    "made by pouring melted metal"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"made by crossing threads or strips over and under each other\". Woven things are made by crossing strands over and under."
+  },
+  {
+   "type": "meaning",
+   "q": "The basket was woven from long strips of grass. How was it made?",
+   "options": [
+    "by baking it in an oven",
+    "by crossing the strips over and under",
+    "by carving a block of wood"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"by crossing the strips over and under\". Weaving means crossing strips over and under."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of something woven?",
+   "options": [
+    "a glass marble",
+    "a metal spoon",
+    "a burlap sack"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a burlap sack\". Burlap is made by crossing threads over and under."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you need to make something woven?",
+   "options": [
+    "a hammer and nails",
+    "threads or strips to cross over and under",
+    "paint and a brush"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"threads or strips to cross over and under\". Weaving uses threads or strips."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to WOVEN?",
+   "options": [
+    "painted",
+    "melted",
+    "braided"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"braided\". Braiding also crosses strands over and under."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely see a woven basket?",
+   "options": [
+    "swimming in a pond",
+    "flying in the sky",
+    "at a picnic holding snacks"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"at a picnic holding snacks\". Woven baskets are often used to carry picnic food."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The spider has ____ a big web across the doorway.'",
+   "options": [
+    "cuddle",
+    "woven",
+    "molten"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"woven\". Spiders weave webs, so the spider has woven one."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses WOVEN correctly?",
+   "options": [
+    "The dog has woven its dinner in two bites.",
+    "Mom has woven a mat from strips of cloth.",
+    "I have woven a cold glass of milk."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Mom has woven a mat from strips of cloth.\". Mom crossed cloth strips over and under to make a mat."
+  },
+  {
+   "type": "usage",
+   "q": "Lin crossed yarn over and under, over and under, until she made a small rug. Which word fits: 'She has ____ a rug.'",
+   "options": [
+    "woven",
+    "tiptoed",
+    "proclaimed"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"woven\". Crossing yarn over and under is weaving."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The farmers had ____ the burlap from strong plant threads.'",
+   "options": [
+    "woven",
+    "lunar",
+    "sniffling"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"woven\". Burlap is made by weaving threads."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'The artist had ____ ribbons over and under to make a wreath.'",
+   "options": [
+    "elite",
+    "beneath",
+    "woven"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"woven\". Putting ribbons over and under is weaving."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "wovan",
+    "woaven",
+    "woven"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"woven\". Woven is spelled w-o-v-e-n."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: w_v_n",
+   "options": [
+    "a, e",
+    "o, i",
+    "o, e"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"o, e\". Putting in o and e makes woven."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Grandpa has ____ a basket.'",
+   "options": [
+    "woven",
+    "wovenn",
+    "whoven"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"woven\". Woven has no h and just one n."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means made by crossing threads over and under?",
+   "options": [
+    "woven",
+    "wovven",
+    "woeven"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"woven\". Woven has just one v and no extra e."
+  }
+ ],
+ "proclaim": [
+  {
+   "type": "pos",
+   "q": "What part of speech is PROCLAIM in: 'The mayor will proclaim Friday a snow day.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Proclaim is the action the mayor will do."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a verb?",
+   "options": [
+    "lunar",
+    "proclaim",
+    "thimble"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"proclaim\". Proclaim is an action; thimble is a noun and lunar is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is PROCLAIM in: 'The kids proclaim that recess is the best.'?",
+   "options": [
+    "adverb",
+    "verb",
+    "preposition"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Proclaim tells what the kids do."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The king will proclaim a holiday,' which word is the main verb?",
+   "options": [
+    "proclaim",
+    "holiday",
+    "king"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"proclaim\". Proclaim is the action the king will do."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these is a verb, like PROCLAIM?",
+   "options": [
+    "examine",
+    "kelp",
+    "puffy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"examine\". Examine is an action word, just like proclaim."
+  },
+  {
+   "type": "meaning",
+   "q": "What does PROCLAIM mean?",
+   "options": [
+    "to announce something loudly and publicly",
+    "to hide something away",
+    "to whisper a secret"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to announce something loudly and publicly\". Proclaim means to announce for everyone to hear."
+  },
+  {
+   "type": "meaning",
+   "q": "The principal stood on stage to proclaim the winner of the spelling bee. What did she do?",
+   "options": [
+    "kept the name a secret",
+    "whispered to one student",
+    "announced the winner to everyone"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"announced the winner to everyone\". To proclaim is to announce out loud to everyone."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to PROCLAIM?",
+   "options": [
+    "announce",
+    "forget",
+    "whisper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"announce\". Proclaim and announce both mean telling everyone."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of PROCLAIM?",
+   "options": [
+    "shout out",
+    "keep secret",
+    "announce"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"keep secret\". Proclaiming tells everyone, so keeping it secret is the opposite."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of proclaiming something?",
+   "options": [
+    "a girl writing in her secret diary",
+    "the queen announcing a new holiday to the whole town",
+    "a boy humming quietly"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the queen announcing a new holiday to the whole town\". The queen tells everyone loudly and publicly."
+  },
+  {
+   "type": "meaning",
+   "q": "If you proclaim something, who hears it?",
+   "options": [
+    "lots of people",
+    "nobody",
+    "only your goldfish"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lots of people\". Proclaiming is announcing it publicly."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The judge will ____ the winner of the pie contest.'",
+   "options": [
+    "puffy",
+    "beneath",
+    "proclaim"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"proclaim\". The judge will announce the winner."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses PROCLAIM correctly?",
+   "options": [
+    "The cat likes to proclaim under the bed all day.",
+    "I will proclaim my sandwich into two halves.",
+    "The coach will proclaim the team captain at the party."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The coach will proclaim the team captain at the party.\". The coach will announce the captain to everyone."
+  },
+  {
+   "q": "Rosa stood on a chair and shouted, 'Everyone listen! Today is Pet Day!' Which word tells what she did?",
+   "options": [
+    "disappeared",
+    "cuddled",
+    "proclaimed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"proclaimed\". To proclaim is to announce something loudly to everyone.",
+   "type": "usage"
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The mayor stood on the steps to ____ the opening of the new park.'",
+   "options": [
+    "lounge",
+    "proclaim",
+    "granola"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"proclaim\". The mayor announced the opening to the town."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Town criers would ring a bell and ____ the news in the square.'",
+   "options": [
+    "sniffling",
+    "cuddle",
+    "proclaim"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"proclaim\". Town criers announced news loudly to everyone."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "praclaim",
+    "proclaim",
+    "proclame"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"proclaim\". Proclaim ends with -claim, like the word claim."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: pro_l_im",
+   "options": [
+    "c, e",
+    "c, a",
+    "k, a"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"c, a\". Putting in c and a makes proclaim."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The king will ____ a holiday.'",
+   "options": [
+    "proclaym",
+    "proclaime",
+    "proclaim"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"proclaim\". Proclaim has ai and no e at the end."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means 'to announce something loudly and publicly'?",
+   "options": [
+    "proclaim",
+    "preclaim",
+    "proclaem"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"proclaim\". Proclaim is pro + claim."
+  }
+ ],
+ "thimble": [
+  {
+   "type": "pos",
+   "q": "What part of speech is THIMBLE in: 'Grandma put a thimble on her finger.'?",
+   "options": [
+    "noun",
+    "adjective",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". A thimble is a thing, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a person, place, or thing. Which kind of word is THIMBLE?",
+   "options": [
+    "noun",
+    "adverb",
+    "preposition"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". A thimble is a thing you can hold."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "thimble",
+    "molten",
+    "proclaim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"thimble\". Thimble names a thing; proclaim is a verb and molten is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Mom keeps a thimble in her sewing box,' which word is a noun?",
+   "options": [
+    "thimble",
+    "keeps",
+    "in"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"thimble\". Thimble names a thing; keeps is a verb and in is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these is a noun, like THIMBLE?",
+   "options": [
+    "puffy",
+    "granola",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"granola\". Granola names a thing, just like thimble."
+  },
+  {
+   "type": "meaning",
+   "q": "What does THIMBLE mean?",
+   "options": [
+    "a little cap that protects your finger when you sew",
+    "a tiny bell for a bike",
+    "a tool for digging in the garden"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a little cap that protects your finger when you sew\". A thimble covers your finger while you sew."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you do with a thimble?",
+   "options": [
+    "eat it for lunch",
+    "ride it to school",
+    "wear it on your finger while sewing"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wear it on your finger while sewing\". A thimble goes on your finger when you sew."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely find a thimble?",
+   "options": [
+    "in a fish tank",
+    "in a sewing box",
+    "in a soccer goal"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"in a sewing box\". Thimbles are kept with sewing things."
+  },
+  {
+   "type": "meaning",
+   "q": "Why do people use a thimble?",
+   "options": [
+    "to keep the needle from poking their finger",
+    "to keep their feet warm",
+    "to measure rain"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to keep the needle from poking their finger\". A thimble protects your finger from the needle."
+  },
+  {
+   "type": "meaning",
+   "q": "Grandpa pushed the needle with the thimble on his thumb. What is the thimble doing?",
+   "options": [
+    "tying the thread",
+    "cutting the cloth",
+    "protecting his thumb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"protecting his thumb\". A thimble keeps the needle from hurting you."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is about the same size as a thimble?",
+   "options": [
+    "a bathtub",
+    "the tip of your finger",
+    "a bicycle"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the tip of your finger\". A thimble is small enough to fit on a fingertip."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'Before sewing the button, Nana slid a ____ onto her finger.'",
+   "options": [
+    "tractor",
+    "marlin",
+    "thimble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"thimble\". A thimble goes on your finger for sewing."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses THIMBLE correctly?",
+   "options": [
+    "We drove the thimble to the farm.",
+    "I wear a thimble so the needle won't poke me.",
+    "The thimble swam across the lake."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"I wear a thimble so the needle won't poke me.\". A thimble protects your finger from the needle."
+  },
+  {
+   "type": "usage",
+   "q": "Jada keeps poking her finger with the needle while she sews. Which item would help her?",
+   "options": [
+    "lullaby",
+    "thimble",
+    "granola"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"thimble\". A thimble protects her finger."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The tiny metal ____ fit perfectly on Ella's fingertip.'",
+   "options": [
+    "awning",
+    "salary",
+    "thimble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"thimble\". A thimble is a tiny cap for your fingertip."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Put on your ____ and then push the needle through the cloth.'",
+   "options": [
+    "dictionary",
+    "warrior",
+    "thimble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"thimble\". You wear a thimble to push a needle safely."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "thimbel",
+    "thimble",
+    "thimbal"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"thimble\". Thimble ends with -ble, like bubble."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: th_mb_e",
+   "options": [
+    "i, u",
+    "i, l",
+    "e, l"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"i, l\". Putting in i and l makes thimble."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Grandma lost her ____.'",
+   "options": [
+    "thimbul",
+    "thimbble",
+    "thimble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"thimble\". Thimble has one b and ends in -ble."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the little cap you wear on your finger when you sew?",
+   "options": [
+    "thimbol",
+    "thimpel",
+    "thimble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"thimble\". Thimble is spelled t-h-i-m-b-l-e."
+  }
+ ],
+ "custody": [
+  {
+   "type": "pos",
+   "q": "What part of speech is CUSTODY in: 'The zoo has custody of the baby panda.'?",
+   "options": [
+    "adjective",
+    "verb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". Custody names a thing the zoo has, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a person, place, thing, or idea. Which kind of word is CUSTODY?",
+   "options": [
+    "adverb",
+    "noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Custody names an idea: care and protection."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "fierce",
+    "custody",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"custody\". Custody is a noun; proclaim is a verb and fierce is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The library has custody of the old maps,' which word is a noun?",
+   "options": [
+    "custody",
+    "old",
+    "has"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"custody\". Custody names what the library has."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these is a noun, like CUSTODY?",
+   "options": [
+    "rigid",
+    "examine",
+    "duration"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"duration\". Duration is a noun, just like custody."
+  },
+  {
+   "type": "meaning",
+   "q": "What does CUSTODY mean?",
+   "options": [
+    "a big party with cake",
+    "the care and protection of someone or something",
+    "a loud noise in the night"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the care and protection of someone or something\". Custody means taking care of and protecting."
+  },
+  {
+   "type": "meaning",
+   "q": "Ms. Lee had custody of the class hamster over the summer. What did she do?",
+   "options": [
+    "she forgot about the hamster",
+    "she took care of the hamster",
+    "she sold the hamster"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"she took care of the hamster\". Having custody means caring for and protecting."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to CUSTODY?",
+   "options": [
+    "care",
+    "speed",
+    "noise"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"care\". Custody means care and protection."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of custody?",
+   "options": [
+    "a shelter caring for a lost puppy until its owner comes",
+    "a puppy barking at the mail truck",
+    "a puppy chasing a ball"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a shelter caring for a lost puppy until its owner comes\". The shelter is caring for and protecting the puppy."
+  },
+  {
+   "type": "meaning",
+   "q": "You are given custody of your neighbor's goldfish. What should you do?",
+   "options": [
+    "feed it and keep it safe",
+    "forget about it",
+    "give it away"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"feed it and keep it safe\". Custody means you take care of it."
+  },
+  {
+   "type": "meaning",
+   "q": "The museum has custody of a dinosaur egg. Where is the egg?",
+   "options": [
+    "lost in the woods",
+    "for sale at the mall",
+    "safe in the museum's care"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"safe in the museum's care\". Custody means the museum protects the egg."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The aquarium took ____ of the hurt sea turtle until it healed.'",
+   "options": [
+    "laughter",
+    "custody",
+    "granola"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"custody\". The aquarium took care of the turtle."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses CUSTODY correctly?",
+   "options": [
+    "The farmer had custody of the baby goats while their mom was sick.",
+    "The custody tasted sweet and crunchy.",
+    "I custody my shoes every morning."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The farmer had custody of the baby goats while their mom was sick.\". The farmer cared for and protected the goats."
+  },
+  {
+   "type": "usage",
+   "q": "While Aunt May is away, Dad keeps her parrot safe and fed. Which word tells what Dad has of the parrot?",
+   "options": [
+    "custody",
+    "duration",
+    "salary"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"custody\". Dad has the care of the parrot, which is custody."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The class pet stays in the teacher's ____ on weekends.'",
+   "options": [
+    "custody",
+    "lullaby",
+    "awning"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"custody\". The teacher takes care of the pet."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Grandma has ____ of the family photo albums and keeps them safe.'",
+   "options": [
+    "marlin",
+    "versus",
+    "custody"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"custody\". Grandma takes care of and protects the albums."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "custoddy",
+    "custady",
+    "custody"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"custody\". Custody has o in the middle and one d."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: cust_d_",
+   "options": [
+    "a, y",
+    "o, ie",
+    "o, y"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"o, y\". Putting in o and y makes custody."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The zoo has ____ of the panda.'",
+   "options": [
+    "kustody",
+    "custody",
+    "custidy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"custody\". Custody starts with c and has o before the d."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means 'the care and protection of someone or something'?",
+   "options": [
+    "custodey",
+    "custudy",
+    "custody"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"custody\". Custody is spelled c-u-s-t-o-d-y."
+  }
+ ],
+ "granola": [
+  {
+   "type": "pos",
+   "q": "What part of speech is GRANOLA in: 'I ate granola with milk.'?",
+   "options": [
+    "adverb",
+    "noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Granola is a thing you eat, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a thing. Which kind of word is GRANOLA in: 'Dad packed granola for the hike.'?",
+   "options": [
+    "adjective",
+    "noun",
+    "preposition"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Granola names the food Dad packed."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "granola",
+    "rigid",
+    "carefully"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"granola\". Granola names a food; carefully is an adverb and rigid is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Sara crunched her granola loudly,' which word is a noun?",
+   "options": [
+    "granola",
+    "crunched",
+    "loudly"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"granola\". Granola names the thing Sara ate."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these is a noun, like GRANOLA?",
+   "options": [
+    "jovial",
+    "disappear",
+    "laughter"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"laughter\". Laughter is a noun, just like granola."
+  },
+  {
+   "type": "meaning",
+   "q": "What does GRANOLA mean?",
+   "options": [
+    "a crunchy food of baked oats, nuts, and dried fruit",
+    "a soft drink with bubbles",
+    "a kind of hat"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a crunchy food of baked oats, nuts, and dried fruit\". Granola is a crunchy oat snack."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you do with granola?",
+   "options": [
+    "wear it on your head",
+    "build a fence with it",
+    "eat it for breakfast or a snack"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"eat it for breakfast or a snack\". Granola is a food."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely find granola?",
+   "options": [
+    "in a toolbox",
+    "in the cereal aisle at the store",
+    "in a sock drawer"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"in the cereal aisle at the store\". Granola is sold with cereal."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is something you would find in granola?",
+   "options": [
+    "rocks",
+    "oats",
+    "crayons"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"oats\". Granola is made of baked oats, nuts, and dried fruit."
+  },
+  {
+   "type": "meaning",
+   "q": "How does granola usually feel when you bite it?",
+   "options": [
+    "fizzy",
+    "slimy",
+    "crunchy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"crunchy\". Baked oats and nuts are crunchy."
+  },
+  {
+   "type": "meaning",
+   "q": "Mom sprinkled granola on my yogurt. What did she add?",
+   "options": [
+    "crunchy oats, nuts, and fruit",
+    "ketchup",
+    "melted cheese"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"crunchy oats, nuts, and fruit\". Granola is made of oats, nuts, and dried fruit."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'For a healthy snack, Leo ate a bowl of ____.'",
+   "options": [
+    "granola",
+    "burlap",
+    "custody"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"granola\". Granola is a snack you can eat."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses GRANOLA correctly?",
+   "options": [
+    "The granola barked at the cat.",
+    "I wore my granola to the beach.",
+    "We packed granola and water for our hike."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"We packed granola and water for our hike.\". Granola is a food you can pack."
+  },
+  {
+   "type": "usage",
+   "q": "Kim wants a crunchy breakfast with oats and raisins. Which food should she pick?",
+   "options": [
+    "kelp",
+    "granola",
+    "thimble"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"granola\". Granola has oats and dried fruit."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The birds pecked at the ____ crumbs we dropped at the picnic.'",
+   "options": [
+    "versus",
+    "lunar",
+    "granola"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"granola\". Granola crumbs are bits of food birds can eat."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'The ____ was full of nuts, oats, and bits of dried apple.'",
+   "options": [
+    "warrior",
+    "tractor",
+    "granola"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"granola\". Granola is made of nuts, oats, and dried fruit."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "granoula",
+    "granola",
+    "granolla"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"granola\". Granola has one l and ends in -ola."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: gr_n_la",
+   "options": [
+    "e, o",
+    "a, o",
+    "a, u"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a, o\". Putting in a and o makes granola."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'I like ____ with yogurt.'",
+   "options": [
+    "granola",
+    "granolah",
+    "grannola"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"granola\". Granola has one n and no h at the end."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the crunchy food made of oats, nuts, and fruit?",
+   "options": [
+    "granola",
+    "granolo",
+    "ganola"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"granola\". Granola is spelled g-r-a-n-o-l-a."
+  }
+ ],
+ "warrior": [
+  {
+   "type": "pos",
+   "q": "What part of speech is WARRIOR in: 'The warrior in the story protected the village.'?",
+   "options": [
+    "adverb",
+    "verb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". A warrior is a person, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a person, place, or thing. Which kind of word is WARRIOR?",
+   "options": [
+    "verb",
+    "noun",
+    "preposition"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Warrior names a person."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "warrior",
+    "examine",
+    "fierce"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"warrior\". Warrior names a person; fierce is an adjective and examine is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The warrior marched slowly,' which word is a noun?",
+   "options": [
+    "warrior",
+    "marched",
+    "slowly"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"warrior\". Warrior names the person who marched."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these is a noun, like WARRIOR?",
+   "options": [
+    "clever",
+    "hurdler",
+    "disappear"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hurdler\". Hurdler names a person, just like warrior."
+  },
+  {
+   "type": "meaning",
+   "q": "What does WARRIOR mean?",
+   "options": [
+    "a baby who cries",
+    "a person who bakes bread",
+    "a fighter or soldier, especially in old times"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a fighter or soldier, especially in old times\". A warrior is a fighter from long ago."
+  },
+  {
+   "type": "meaning",
+   "q": "In the legend, the warrior wore a helmet and carried a shield. What was he?",
+   "options": [
+    "a school bus driver",
+    "a fighter from long ago",
+    "a chef"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a fighter from long ago\". A helmet and shield belong to a warrior."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to WARRIOR?",
+   "options": [
+    "dancer",
+    "farmer",
+    "fighter"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"fighter\". A warrior is a fighter."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is an example of a warrior?",
+   "options": [
+    "a mail carrier",
+    "a librarian",
+    "a knight from long ago"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a knight from long ago\". Knights were fighters in old times."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely read about a warrior?",
+   "options": [
+    "on a cereal box recipe",
+    "on a weather map",
+    "in a book of old legends"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"in a book of old legends\". Old legends often tell about warriors."
+  },
+  {
+   "type": "meaning",
+   "q": "What would a warrior from long ago most likely carry?",
+   "options": [
+    "a cell phone",
+    "a shield",
+    "a lunch tray"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a shield\". Warriors used shields to protect themselves."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The museum showed the helmet of a ____ from long ago.'",
+   "options": [
+    "granola",
+    "warrior",
+    "lullaby"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"warrior\". A warrior wore a helmet long ago."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses WARRIOR correctly?",
+   "options": [
+    "I poured warrior on my pancakes.",
+    "The warrior melted in the sun like ice cream.",
+    "The warrior in the play held up a wooden shield."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The warrior in the play held up a wooden shield.\". A warrior is a fighter who carries a shield."
+  },
+  {
+   "type": "usage",
+   "q": "In an old story, a girl put on armor and joined the army to protect her family. Which word describes her?",
+   "options": [
+    "warrior",
+    "thimble",
+    "hurdler"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"warrior\". She became a fighter, so she was a warrior."
+  },
+  {
+   "type": "usage",
+   "q": "Fill in the blank: 'The ____ trained every day with a sword and shield.'",
+   "options": [
+    "salary",
+    "awning",
+    "warrior"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"warrior\". A warrior trains to be a fighter."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: 'Long ago, a ____ guarded the castle gate.'",
+   "options": [
+    "kelp",
+    "warrior",
+    "December"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"warrior\". A fighter guarding a castle is a warrior."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "warrior",
+    "worrior",
+    "warior"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"warrior\". Warrior starts with war and has a double r."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: w_rr_or",
+   "options": [
+    "a, i",
+    "o, i",
+    "a, e"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a, i\". Putting in a and i makes warrior."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ held a shield.'",
+   "options": [
+    "warrier",
+    "warrior",
+    "wareior"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"warrior\". Warrior has a double r and ends in -ior."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for a fighter from long ago?",
+   "options": [
+    "warrior",
+    "warrire",
+    "warryor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"warrior\". Warrior is spelled w-a-r-r-i-o-r."
+  }
+ ]
+}

@@ -1,0 +1,2222 @@
+{
+ "kelp": [
+  {
+   "type": "pos",
+   "q": "What part of speech is KELP in: 'The sea otter wrapped itself in kelp.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Kelp names a thing, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a thing is a noun. Which kind of word is KELP?",
+   "options": [
+    "preposition",
+    "noun",
+    "adverb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Kelp is a thing that grows in the sea, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "beneath",
+    "carefully",
+    "kelp"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"kelp\". Kelp names a thing; carefully is an adverb and beneath is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a noun: 'Long green kelp floated by.'?",
+   "options": [
+    "green",
+    "kelp",
+    "floated"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"kelp\". Kelp names a thing; green is an adjective and floated is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which word fits the blank as a NOUN: 'The otter slept in the ____.'?",
+   "options": [
+    "kelp",
+    "fickle",
+    "carefully"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"kelp\". Kelp is a noun that names a thing the otter can sleep in."
+  },
+  {
+   "type": "meaning",
+   "q": "What does KELP mean?",
+   "options": [
+    "a small fish with silver scales",
+    "a sandy hill near the beach",
+    "a large brown seaweed that grows in the ocean"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a large brown seaweed that grows in the ocean\". Kelp is a big seaweed that grows in the sea."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The diver swam through tall kelp near the rocks.' What is kelp?",
+   "options": [
+    "a seaweed that grows in the sea",
+    "a kind of rock",
+    "a diving mask"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a seaweed that grows in the sea\". The diver swam through it, and kelp is tall seaweed."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to KELP?",
+   "options": [
+    "seashell",
+    "sand",
+    "seaweed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"seaweed\". Kelp is a kind of seaweed."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you find kelp growing?",
+   "options": [
+    "on a tractor seat",
+    "in the ocean",
+    "in a desert"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"in the ocean\". Kelp grows in cool ocean water."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is TRUE about kelp?",
+   "options": [
+    "It grows on trees in the forest.",
+    "It is an animal with eight legs.",
+    "It grows underwater in the sea."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It grows underwater in the sea.\". Kelp is a seaweed that grows under the sea."
+  },
+  {
+   "type": "meaning",
+   "q": "Which animal might hide in kelp?",
+   "options": [
+    "a squirrel",
+    "a sea otter",
+    "a camel"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a sea otter\". Sea otters live in the ocean where kelp grows."
+  },
+  {
+   "type": "usage",
+   "q": "The sea otter wrapped itself in ____ so it would not float away.",
+   "options": [
+    "tractor",
+    "kelp",
+    "awning"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"kelp\". Otters wrap up in kelp, the seaweed that grows in the sea."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses KELP correctly?",
+   "options": [
+    "Tall kelp swayed under the ocean waves.",
+    "I zipped up my kelp because it was cold.",
+    "The kelp barked at the mail carrier."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Tall kelp swayed under the ocean waves.\". Kelp is seaweed, so it sways under the waves."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Mia looked into the ocean tank and saw tall brown seaweed waving. What did she see?",
+   "options": [
+    "burlap",
+    "granola",
+    "kelp"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"kelp\". Tall brown seaweed in the ocean is kelp."
+  },
+  {
+   "type": "usage",
+   "q": "At the aquarium, the fish hid in the swaying ____.",
+   "options": [
+    "kelp",
+    "basement",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"kelp\". Fish hide in kelp, which sways in the water."
+  },
+  {
+   "type": "usage",
+   "q": "Grandpa's fishing line got tangled in the ____ under the water.",
+   "options": [
+    "thimble",
+    "awning",
+    "kelp"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"kelp\". Kelp grows under the water and can tangle a fishing line."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "kelpe",
+    "kelp",
+    "klep"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"kelp\". Kelp is spelled k-e-l-p."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'The otter floated in the ____.'",
+   "options": [
+    "kelp",
+    "kellp",
+    "kalp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"kelp\". Kelp has just one l and an e."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letter: k_lp",
+   "options": [
+    "e",
+    "i",
+    "a"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"e\". Kelp is spelled k-e-l-p."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the seaweed word is correct?",
+   "options": [
+    "celp",
+    "kelp",
+    "kelb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"kelp\". Kelp starts with k and ends with p."
+  }
+ ],
+ "property": [
+  {
+   "type": "pos",
+   "q": "What part of speech is PROPERTY in: 'The barn is on Mr. Lee's property.'?",
+   "options": [
+    "adverb",
+    "noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Property names a thing someone owns, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which kind of word is PROPERTY in: 'This backpack is my property.'?",
+   "options": [
+    "noun",
+    "preposition",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Property names a thing, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "carefully",
+    "property",
+    "fickle"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"property\". Property names a thing; fickle is an adjective and carefully is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a noun: 'Please return my property carefully.'?",
+   "options": [
+    "return",
+    "property",
+    "carefully"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"property\". Property names a thing; return is a verb and carefully is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "Which word fits the blank as a NOUN: 'Do not climb the fence onto that ____.'?",
+   "options": [
+    "property",
+    "carefully",
+    "fickle"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"property\". Property is a noun that names land someone owns."
+  },
+  {
+   "type": "meaning",
+   "q": "What does PROPERTY mean?",
+   "options": [
+    "something that someone owns",
+    "a loud noise",
+    "a kind of weather"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"something that someone owns\". Property is something that belongs to someone, like land or a house."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The farm and the land around it are Dad's property.' What does property mean here?",
+   "options": [
+    "things that Dad owns",
+    "a game Dad plays",
+    "a feeling Dad has"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"things that Dad owns\". Property means things a person owns, like land."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of property?",
+   "options": [
+    "a sneeze",
+    "a cloud in the sky",
+    "a house a family owns"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a house a family owns\". A house that a family owns is their property."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to PROPERTY?",
+   "options": [
+    "belongings",
+    "laughter",
+    "weather"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"belongings\". Belongings are things you own, just like property."
+  },
+  {
+   "type": "meaning",
+   "q": "If a sign says 'Private Property,' what does it mean?",
+   "options": [
+    "The land is a playground for everyone.",
+    "The land belongs to someone, so stay off without asking.",
+    "The land is under the ocean."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The land belongs to someone, so stay off without asking.\". Private property is owned by someone, so you need permission to go there."
+  },
+  {
+   "type": "meaning",
+   "q": "Sam found a lunchbox with Ava's name on it. Whose property is it?",
+   "options": [
+    "Sam's",
+    "Ava's",
+    "the bus driver's"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Ava's\". The lunchbox belongs to Ava, so it is her property."
+  },
+  {
+   "type": "usage",
+   "q": "The sign said, 'Keep off! Private ____.'",
+   "options": [
+    "property",
+    "kelp",
+    "laughter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"property\". Private property means land that belongs to someone."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses PROPERTY correctly?",
+   "options": [
+    "The property sang a song.",
+    "I ate a bowl of property for breakfast.",
+    "The fence shows where our property ends."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The fence shows where our property ends.\". Property is land or things you own, and a fence can mark land."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The teacher said, 'Please don't touch other kids' ____ without asking.'",
+   "options": [
+    "awning",
+    "property",
+    "relief"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"property\". Other kids' things are their property."
+  },
+  {
+   "type": "usage",
+   "q": "Our cows got out and wandered onto the neighbor's ____.",
+   "options": [
+    "lullaby",
+    "relief",
+    "property"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"property\". The neighbor's land is the neighbor's property."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Grandma owns the house, the barn, and the field. All of it is her ____.",
+   "options": [
+    "duration",
+    "laughter",
+    "property"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"property\". Things Grandma owns are her property."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "propertee",
+    "proprety",
+    "property"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"property\". Property is spelled p-r-o-p-e-r-t-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: pr_p_rty",
+   "options": [
+    "o and e",
+    "a and e",
+    "o and i"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"o and e\". Property is spelled p-r-o-p-e-r-t-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Stay off my ____!'",
+   "options": [
+    "proparty",
+    "propertie",
+    "property"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"property\". Property ends with -erty."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for something a person owns?",
+   "options": [
+    "propurty",
+    "property",
+    "porperty"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"property\". Property starts with p-r-o and ends with e-r-t-y."
+  }
+ ],
+ "carefully": [
+  {
+   "type": "pos",
+   "q": "What part of speech is CAREFULLY in: 'Ben carried the eggs carefully.'?",
+   "options": [
+    "adjective",
+    "adverb",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adverb\". Carefully tells how Ben carried the eggs, so it is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "An adverb tells how something is done. Which kind of word is CAREFULLY?",
+   "options": [
+    "preposition",
+    "noun",
+    "adverb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adverb\". Carefully tells how you do something, so it is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is an adverb?",
+   "options": [
+    "carefully",
+    "clever",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"carefully\". Carefully tells how; clever is an adjective and tractor is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the adverb in: 'The puppy carefully sniffed the cat.'?",
+   "options": [
+    "carefully",
+    "sniffed",
+    "puppy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"carefully\". Carefully tells how the puppy sniffed, so it is the adverb."
+  },
+  {
+   "type": "pos",
+   "q": "CAREFUL is an adjective. What part of speech is CAREFULLY?",
+   "options": [
+    "verb",
+    "noun",
+    "adverb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adverb\". Adding -ly to careful makes an adverb that tells how."
+  },
+  {
+   "type": "meaning",
+   "q": "What does CAREFULLY mean?",
+   "options": [
+    "very fast without looking",
+    "in a careful way, paying close attention",
+    "in a loud, silly way"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"in a careful way, paying close attention\". Carefully means paying close attention so nothing goes wrong."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Lily carefully poured the milk so none spilled.' How did Lily pour the milk?",
+   "options": [
+    "paying close attention",
+    "in a big hurry",
+    "with her eyes closed"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"paying close attention\". She poured carefully, so she paid close attention and spilled none."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to CAREFULLY?",
+   "options": [
+    "loudly",
+    "quickly",
+    "cautiously"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cautiously\". Cautiously means with care, just like carefully."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of CAREFULLY?",
+   "options": [
+    "slowly",
+    "carelessly",
+    "gently"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"carelessly\". Carelessly means without care, the opposite of carefully."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of doing something carefully?",
+   "options": [
+    "holding a baby bird gently with both hands",
+    "running down the stairs with your eyes closed",
+    "throwing a glass ball across the room"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"holding a baby bird gently with both hands\". Holding a baby bird gently shows close attention and care."
+  },
+  {
+   "type": "meaning",
+   "q": "Why do you walk carefully on ice?",
+   "options": [
+    "so the ice will melt",
+    "so you don't slip and fall",
+    "so you can go faster"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"so you don't slip and fall\". Walking carefully means paying attention so you stay safe."
+  },
+  {
+   "type": "usage",
+   "q": "Dad ____ cut the birthday cake into equal pieces.",
+   "options": [
+    "beneath",
+    "fickle",
+    "carefully"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"carefully\". Carefully tells how Dad cut the cake."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses CAREFULLY correctly?",
+   "options": [
+    "I ate a carefully for lunch.",
+    "She carefully glued the tiny pieces together.",
+    "The carefully barked at the mailman."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"She carefully glued the tiny pieces together.\". Carefully tells how she glued the pieces."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Noah crossed the creek on wobbly stones, watching every step. How did he cross?",
+   "options": [
+    "carefully",
+    "molten",
+    "lunar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"carefully\". Watching every step means he crossed carefully."
+  },
+  {
+   "type": "usage",
+   "q": "Read the label ____ before you take any medicine.",
+   "options": [
+    "carefully",
+    "puffy",
+    "beneath"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"carefully\". You should read a medicine label carefully."
+  },
+  {
+   "type": "usage",
+   "q": "The vet ____ checked the hurt puppy's paw.",
+   "options": [
+    "fickle",
+    "carefully",
+    "lunar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"carefully\". A vet checks a hurt paw carefully so it does not hurt more."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "carefuly",
+    "carfully",
+    "carefully"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"carefully\". Carefully is careful plus -ly, so it has two l's."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: careful__",
+   "options": [
+    "ly",
+    "ley",
+    "y"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"ly\". Careful plus ly makes carefully."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Hold the kitten ____.'",
+   "options": [
+    "carefilly",
+    "carefullie",
+    "carefully"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"carefully\". Carefully is spelled c-a-r-e-f-u-l-l-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is correct for the word that means 'in a careful way'?",
+   "options": [
+    "kerfully",
+    "carefully",
+    "carefuley"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"carefully\". Carefully starts with care and ends with -fully."
+  }
+ ],
+ "sniffling": [
+  {
+   "type": "pos",
+   "q": "What part of speech is SNIFFLING in: 'Maya was sniffling all day.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Was sniffling shows what Maya was doing, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses SNIFFLING as a verb?",
+   "options": [
+    "The sniffling boy needed a tissue.",
+    "Tom is sniffling because he has a cold.",
+    "The sniffling kept me awake."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Tom is sniffling because he has a cold.\". In 'is sniffling,' the word shows what Tom is doing, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is SNIFFLING in: 'The puppy is sniffling in its bed.'?",
+   "options": [
+    "adverb",
+    "preposition",
+    "verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"verb\". Is sniffling tells what the puppy is doing, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The kids were sniffling during the sad movie,' what part of speech is SNIFFLING?",
+   "options": [
+    "adverb",
+    "verb",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Were sniffling shows what the kids were doing, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the verb in: 'Ella is sniffling beneath her blanket.'?",
+   "options": [
+    "beneath",
+    "sniffling",
+    "blanket"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"sniffling\". Sniffling is the action; beneath is a preposition and blanket is a noun."
+  },
+  {
+   "type": "meaning",
+   "q": "What does SNIFFLING mean?",
+   "options": [
+    "walking very quietly",
+    "laughing very loudly",
+    "breathing in noisily through the nose"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"breathing in noisily through the nose\". Sniffling is breathing in noisily through your nose, like with a cold."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Jake was sniffling and needed a tissue.' Why did Jake need a tissue?",
+   "options": [
+    "He was sleepy.",
+    "He was hungry.",
+    "His nose was runny."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"His nose was runny.\". Sniffling happens when your nose is runny, so a tissue helps."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of sniffling?",
+   "options": [
+    "breathing in through a runny nose again and again",
+    "whistling a happy song",
+    "clapping after a show"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"breathing in through a runny nose again and again\". Sniffling means breathing in noisily through your nose."
+  },
+  {
+   "type": "meaning",
+   "q": "What usually makes a person start sniffling?",
+   "options": [
+    "a sunny day",
+    "a new pair of shoes",
+    "a cold or a runny nose"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a cold or a runny nose\". People sniffle when they have a cold or a runny nose."
+  },
+  {
+   "type": "meaning",
+   "q": "What would help someone who is sniffling?",
+   "options": [
+    "a pair of skates",
+    "a bag of buttons",
+    "a box of tissues"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a box of tissues\". Tissues help wipe a runny nose."
+  },
+  {
+   "type": "meaning",
+   "q": "Which sound goes with sniffling?",
+   "options": [
+    "a loud ha-ha-ha",
+    "a wet sniff-sniff through the nose",
+    "a sharp clap-clap"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a wet sniff-sniff through the nose\". Sniffling is a noisy sniff through the nose."
+  },
+  {
+   "type": "usage",
+   "q": "Kai had a cold and was ____ all through the spelling test.",
+   "options": [
+    "beneath",
+    "sniffling",
+    "tractor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"sniffling\". Kids with colds keep sniffling."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses SNIFFLING correctly?",
+   "options": [
+    "Mom heard me sniffling and brought me tissues.",
+    "The sniffling flew over the barn.",
+    "I ate sniffling with a spoon."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Mom heard me sniffling and brought me tissues.\". Sniffling is breathing in through a runny nose, so tissues help."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Your nose is runny, and you keep breathing in noisily. What are you doing?",
+   "options": [
+    "sniffling",
+    "tiptoeing",
+    "proclaiming"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"sniffling\". Breathing in noisily through a runny nose is sniffling."
+  },
+  {
+   "type": "usage",
+   "q": "After crying over her lost kite, Rosa sat on the steps, ____ quietly.",
+   "options": [
+    "proclaim",
+    "sniffling",
+    "tractor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"sniffling\". After crying, people often sit sniffling."
+  },
+  {
+   "type": "usage",
+   "q": "The nurse handed Leo a tissue because he kept ____.",
+   "options": [
+    "beneath",
+    "kelp",
+    "sniffling"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"sniffling\". Leo kept sniffling, so he needed a tissue."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "sniffling",
+    "sniffeling",
+    "snifling"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"sniffling\". Sniffling has two f's and no e before the l."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: sni__ling",
+   "options": [
+    "ff",
+    "f",
+    "ph"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"ff\". Sniffling has a double f."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Max was ____ in bed.'",
+   "options": [
+    "sniffling",
+    "sniffleing",
+    "snifflin"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"sniffling\". Sniffling ends with -ing and drops the e from sniffle."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the word that means 'breathing in noisily through the nose' is correct?",
+   "options": [
+    "sniffiling",
+    "sniffling",
+    "snifflinng"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"sniffling\". Sniffling is spelled s-n-i-f-f-l-i-n-g."
+  }
+ ],
+ "beneath": [
+  {
+   "type": "pos",
+   "q": "What part of speech is BENEATH in: 'The cat slept beneath the porch.'?",
+   "options": [
+    "verb",
+    "noun",
+    "preposition"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"preposition\". Beneath tells where the cat slept. A preposition tells where something is, like under or beside."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a preposition?",
+   "options": [
+    "kelp",
+    "beneath",
+    "puffy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"beneath\". Beneath tells where something is; kelp is a noun and puffy is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "A preposition tells where something is. Which kind of word is BENEATH in: 'Shells hid beneath the sand.'?",
+   "options": [
+    "adjective",
+    "preposition",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"preposition\". Beneath tells where the shells hid, so it is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a preposition: 'My puffy coat is beneath the bed.'?",
+   "options": [
+    "puffy",
+    "coat",
+    "beneath"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"beneath\". Beneath tells where the coat is; puffy is an adjective and coat is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which word could replace BENEATH and still be a preposition: 'The dog hid beneath the table.'?",
+   "options": [
+    "happy",
+    "ran",
+    "under"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"under\". Under is a preposition that tells where, just like beneath."
+  },
+  {
+   "type": "meaning",
+   "q": "What does BENEATH mean?",
+   "options": [
+    "high above",
+    "right under; below",
+    "far away"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"right under; below\". Beneath means right under something."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Kelp grows beneath the ocean waves.' Where does kelp grow?",
+   "options": [
+    "under the waves",
+    "inside a house",
+    "on top of the clouds"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"under the waves\". Beneath the waves means under the waves."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to BENEATH?",
+   "options": [
+    "beside",
+    "above",
+    "under"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"under\". Beneath and under both mean below something."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of BENEATH?",
+   "options": [
+    "under",
+    "above",
+    "below"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"above\". Above is the opposite of beneath; below and under mean the same as beneath."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these shows something beneath a table?",
+   "options": [
+    "a lamp on top of the table",
+    "a dog lying under the table",
+    "a chair next to the table"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a dog lying under the table\". Beneath means under, so the dog is beneath the table."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you look for a toy that rolled beneath your bed?",
+   "options": [
+    "under the bed",
+    "on top of the pillow",
+    "on the ceiling"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"under the bed\". Beneath the bed means under it."
+  },
+  {
+   "type": "usage",
+   "q": "The puppy hid ____ the blanket.",
+   "options": [
+    "beneath",
+    "fickle",
+    "kelp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"beneath\". Beneath tells where the puppy hid: under the blanket."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BENEATH correctly?",
+   "options": [
+    "The beneath was red and shiny.",
+    "I beneath my lunch every day.",
+    "Worms live beneath the soil."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Worms live beneath the soil.\". Beneath tells where the worms live: under the soil."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The treasure is buried right under the big rock. Where is it? It is ____ the rock.",
+   "options": [
+    "carefully",
+    "beneath",
+    "versus"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"beneath\". Right under the rock means beneath the rock."
+  },
+  {
+   "type": "usage",
+   "q": "We sat in the shade ____ the big awning.",
+   "options": [
+    "beneath",
+    "sniffling",
+    "versus"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"beneath\". The shade is under the awning, so we sat beneath it."
+  },
+  {
+   "type": "usage",
+   "q": "Fish swam ____ the boat, deep in the water.",
+   "options": [
+    "beneath",
+    "lunar",
+    "property"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"beneath\". Deep in the water means under the boat, or beneath it."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "beneeth",
+    "benath",
+    "beneath"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"beneath\". Beneath has ea in the middle, like in eat."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: ben__th",
+   "options": [
+    "ea",
+    "ee",
+    "ae"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"ea\". Beneath is spelled b-e-n-e-a-t-h."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'The ball is ____ the bed.'",
+   "options": [
+    "beneath",
+    "bineath",
+    "beneathe"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"beneath\". Beneath starts with be- and ends with -th, no e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the word that means 'right under' is correct?",
+   "options": [
+    "beneith",
+    "beneath",
+    "beeneath"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"beneath\". Beneath is spelled b-e-n-e-a-t-h."
+  }
+ ],
+ "tractor": [
+  {
+   "type": "pos",
+   "q": "What part of speech is TRACTOR in: 'Grandpa drove the red tractor.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Tractor names a thing, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a thing is a noun. Which kind of word is TRACTOR?",
+   "options": [
+    "verb",
+    "adverb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". A tractor is a thing, so the word is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "fickle",
+    "tractor",
+    "carefully"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tractor\". Tractor names a thing; carefully is an adverb and fickle is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a noun: 'The huge tractor rumbled slowly.'?",
+   "options": [
+    "tractor",
+    "slowly",
+    "huge"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tractor\". Tractor names a thing; huge is an adjective and slowly is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "Is TRACTOR a singular noun or a plural noun?",
+   "options": [
+    "verb",
+    "plural noun",
+    "singular noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"singular noun\". Tractor names just one thing; more than one would be tractors."
+  },
+  {
+   "type": "meaning",
+   "q": "What does TRACTOR mean?",
+   "options": [
+    "a strong farm vehicle used to pull heavy machines",
+    "a tool for sewing",
+    "a small boat for fishing"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a strong farm vehicle used to pull heavy machines\". A tractor is a strong farm vehicle that pulls heavy things."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The farmer used a tractor to pull the plow across the field.' What is a tractor?",
+   "options": [
+    "a big red barn",
+    "a farm vehicle that pulls things",
+    "a kind of farm animal"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a farm vehicle that pulls things\". The tractor pulled the plow, so it is a farm vehicle."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely see a tractor?",
+   "options": [
+    "inside a pencil box",
+    "in the ocean",
+    "on a farm"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"on a farm\". Tractors work on farms."
+  },
+  {
+   "type": "meaning",
+   "q": "Which job is a tractor good for?",
+   "options": [
+    "swimming with fish",
+    "pulling a heavy wagon of hay",
+    "flying over the clouds"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"pulling a heavy wagon of hay\". Tractors are strong and pull heavy things."
+  },
+  {
+   "type": "meaning",
+   "q": "Who would most likely drive a tractor?",
+   "options": [
+    "a farmer",
+    "a lifeguard",
+    "a librarian"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a farmer\". Farmers use tractors to work their fields."
+  },
+  {
+   "type": "meaning",
+   "q": "What does a tractor have that helps it drive through mud?",
+   "options": [
+    "wings",
+    "big, bumpy tires",
+    "sails"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"big, bumpy tires\". Tractors have huge bumpy tires to grip the dirt and mud."
+  },
+  {
+   "type": "usage",
+   "q": "The farmer hooked the wagon to the ____.",
+   "options": [
+    "awning",
+    "tractor",
+    "kelp"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tractor\". A tractor pulls wagons on a farm."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses TRACTOR correctly?",
+   "options": [
+    "I wore my tractor on my head.",
+    "The tractor swam in the fish tank.",
+    "The tractor pulled the plow through the field."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The tractor pulled the plow through the field.\". A tractor is a farm vehicle that pulls a plow."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: It is big and green, has huge wheels, and pulls a plow on the farm.",
+   "options": [
+    "tractor",
+    "granola",
+    "thimble"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tractor\". A big farm vehicle that pulls a plow is a tractor."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ got stuck in the muddy field after the rain.",
+   "options": [
+    "tractor",
+    "relief",
+    "lullaby"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tractor\". A tractor drives in fields and can get stuck in mud."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: At the county fair, kids got a hayride pulled by a ____.",
+   "options": [
+    "lullaby",
+    "tractor",
+    "thimble"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tractor\". Hayride wagons are often pulled by a tractor."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "traktor",
+    "tracter",
+    "tractor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tractor\". Tractor ends in -or, not -er."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: tr_ct_r",
+   "options": [
+    "e and o",
+    "a and e",
+    "a and o"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a and o\". Tractor is spelled t-r-a-c-t-o-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'The ____ pulled the hay wagon.'",
+   "options": [
+    "tractr",
+    "tractor",
+    "tracktor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tractor\". Tractor has just c, not ck, and ends in -or."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the farm vehicle is correct?",
+   "options": [
+    "tractor",
+    "tractur",
+    "trackter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tractor\". Tractor is spelled t-r-a-c-t-o-r."
+  }
+ ],
+ "permit": [
+  {
+   "type": "pos",
+   "q": "What part of speech is PERMIT in: 'Mom will permit us to stay up late.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "noun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Here permit is the action Mom will do, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses PERMIT as a verb?",
+   "options": [
+    "Our teacher will permit us to go outside.",
+    "The parking permit is on the car window.",
+    "Dad showed his fishing permit."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Our teacher will permit us to go outside.\". In 'will permit us,' permit is an action, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is PERMIT in: 'Please permit me to help.'?",
+   "options": [
+    "adverb",
+    "verb",
+    "preposition"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Permit is the action of allowing, so it is a verb here."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The library does not permit dogs,' which word is the main verb?",
+   "options": [
+    "library",
+    "dogs",
+    "permit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"permit\". Permit is the action; library and dogs are nouns."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The coach will permit a short break,' how is PERMIT used?",
+   "options": [
+    "as an adjective",
+    "as a noun",
+    "as a verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"as a verb\". Will permit tells what the coach will do, so it is a verb."
+  },
+  {
+   "type": "meaning",
+   "q": "What does PERMIT mean?",
+   "options": [
+    "to say no loudly",
+    "to allow or give permission",
+    "to hide something"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to allow or give permission\". Permit means to let someone do something."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The pool does not permit running.' What does the rule mean?",
+   "options": [
+    "You are not allowed to run.",
+    "Running makes the water cold.",
+    "You must run."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"You are not allowed to run.\". Not permit means not allow."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to PERMIT?",
+   "options": [
+    "allow",
+    "forbid",
+    "forget"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"allow\". Permit and allow both mean to let someone do something."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of PERMIT?",
+   "options": [
+    "allow",
+    "forbid",
+    "let"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"forbid\". Forbid means to not let someone do something; allow and let mean the same as permit."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of a parent permitting something?",
+   "options": [
+    "\"No, you must stay inside.\"",
+    "\"Yes, you may go to the park.\"",
+    "\"Where are my keys?\""
+   ],
+   "ans": 1,
+   "hint": "The answer is \"\"Yes, you may go to the park.\"\". Saying yes, you may, is permitting."
+  },
+  {
+   "type": "meaning",
+   "q": "If your teacher permits you to use markers, what can you do?",
+   "options": [
+    "throw the markers away",
+    "use the markers",
+    "never touch the markers"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"use the markers\". Permits means allows, so you may use them."
+  },
+  {
+   "type": "usage",
+   "q": "Will the zoo ____ us to feed the goats?",
+   "options": [
+    "examine",
+    "disappear",
+    "permit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"permit\". Permit means allow, so the zoo might let us feed the goats."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses PERMIT correctly?",
+   "options": [
+    "I put permit on my pancakes.",
+    "Dad will permit me to ride my bike to school.",
+    "The permit ran around the yard."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Dad will permit me to ride my bike to school.\". Permit means allow, and Dad is allowing a bike ride."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The sign at the pond says, 'We do not ____ swimming here.'",
+   "options": [
+    "cuddle",
+    "disappear",
+    "permit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"permit\". The sign means swimming is not allowed, or not permitted."
+  },
+  {
+   "type": "usage",
+   "q": "Mom will ____ the puppy to sleep on my bed tonight.",
+   "options": [
+    "disappear",
+    "proclaim",
+    "permit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"permit\". Mom will allow the puppy, so she will permit it."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: You ask for a cookie, and Grandma says yes. She decided to ____ you to have one.",
+   "options": [
+    "permit",
+    "examine",
+    "disappear"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"permit\". Saying yes means Grandma will permit, or allow, it."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "permit",
+    "purmit",
+    "permitt"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"permit\". Permit has one t at the end."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: p_rm_t",
+   "options": [
+    "e and i",
+    "e and e",
+    "u and i"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"e and i\". Permit is spelled p-e-r-m-i-t."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Will you ____ me to go?'",
+   "options": [
+    "permet",
+    "permit",
+    "pirmit"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"permit\". Permit is spelled p-e-r-m-i-t."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the word that means 'to allow' is correct?",
+   "options": [
+    "pormit",
+    "permmit",
+    "permit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"permit\". Permit has one m and starts with per-."
+  }
+ ],
+ "awning": [
+  {
+   "type": "pos",
+   "q": "What part of speech is AWNING in: 'We stood under the awning to stay dry.'?",
+   "options": [
+    "adverb",
+    "verb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". Awning names a thing, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a thing is a noun. Which kind of word is AWNING?",
+   "options": [
+    "preposition",
+    "adjective",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". An awning is a thing, so the word is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is a noun?",
+   "options": [
+    "awning",
+    "beneath",
+    "fickle"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"awning\". Awning names a thing; beneath is a preposition and fickle is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is a noun: 'The striped awning flapped loudly.'?",
+   "options": [
+    "awning",
+    "loudly",
+    "striped"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"awning\". Awning names a thing; striped is an adjective and loudly is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "Which word fits the blank as a NOUN: 'The shop has a green ____ over its door.'?",
+   "options": [
+    "fickle",
+    "awning",
+    "carefully"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"awning\". Awning is a noun that names a cover over a door."
+  },
+  {
+   "type": "meaning",
+   "q": "What does AWNING mean?",
+   "options": [
+    "a kind of pet bird",
+    "a long, sleepy yawn",
+    "a cloth cover over a window or door that keeps off sun and rain"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a cloth cover over a window or door that keeps off sun and rain\". An awning is a cloth cover that gives shade and keeps off rain."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The bakery's awning kept the rain off the people in line.' What is an awning?",
+   "options": [
+    "a loaf of bread",
+    "a line of people",
+    "a cover that keeps off sun and rain"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a cover that keeps off sun and rain\". The awning kept rain off, so it is a cover."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you find an awning?",
+   "options": [
+    "over a window or door",
+    "at the bottom of a pond",
+    "inside a pencil box"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"over a window or door\". Awnings hang over windows and doors."
+  },
+  {
+   "type": "meaning",
+   "q": "What is an awning used for?",
+   "options": [
+    "sewing on buttons",
+    "pulling heavy machines",
+    "giving shade and keeping rain off"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"giving shade and keeping rain off\". An awning shades people and keeps rain off."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is most like an awning?",
+   "options": [
+    "a spoon",
+    "an umbrella",
+    "a shoe"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"an umbrella\". An umbrella also keeps off sun and rain."
+  },
+  {
+   "type": "meaning",
+   "q": "On a hot, sunny day, why might you stand under a store's awning?",
+   "options": [
+    "to get wet",
+    "to be in the shade",
+    "to hear music"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to be in the shade\". An awning blocks the sun and makes shade."
+  },
+  {
+   "type": "usage",
+   "q": "The cafe put up a striped ____ so people could eat outside in the shade.",
+   "options": [
+    "awning",
+    "thimble",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"awning\". An awning gives shade outside a building."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses AWNING correctly?",
+   "options": [
+    "Rain dripped off the edge of the awning.",
+    "My awning barked at the cat.",
+    "I drank a glass of awning."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Rain dripped off the edge of the awning.\". An awning is a cover, so rain can drip off it."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: A cloth roof sticks out over the shop window to block the sun.",
+   "options": [
+    "kelp",
+    "awning",
+    "basement"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"awning\". A cloth cover over a window is an awning."
+  },
+  {
+   "type": "usage",
+   "q": "We waited under the ____ until the rain stopped.",
+   "options": [
+    "laughter",
+    "salary",
+    "awning"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"awning\". An awning keeps rain off people standing under it."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Dad rolled out the ____ on our camper so we had shade at the picnic table.",
+   "options": [
+    "awning",
+    "granola",
+    "dictionary"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"awning\". An awning on a camper gives shade."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "awning",
+    "awnin",
+    "auning"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"awning\". Awning is spelled a-w-n-i-n-g."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: _wn_ng",
+   "options": [
+    "o and i",
+    "a and i",
+    "a and e"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a and i\". Awning is spelled a-w-n-i-n-g."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'We stood under the ____.'",
+   "options": [
+    "awnig",
+    "awning",
+    "awnning"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"awning\". Awning has one n after the w and ends in -ing."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the cloth cover over a window is correct?",
+   "options": [
+    "ahwning",
+    "awning",
+    "awening"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"awning\". Awning is spelled a-w-n-i-n-g."
+  }
+ ],
+ "fickle": [
+  {
+   "type": "pos",
+   "q": "What part of speech is FICKLE in: 'My fickle cat wants in, then out, then in again.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Fickle describes the cat, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a person or thing. Which kind of word is FICKLE?",
+   "options": [
+    "adverb",
+    "preposition",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Fickle describes what someone is like, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words is an adjective?",
+   "options": [
+    "tractor",
+    "fickle",
+    "beneath"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fickle\". Fickle describes; tractor is a noun and beneath is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "Which word in this sentence is an adjective: 'The fickle weather changed quickly.'?",
+   "options": [
+    "weather",
+    "fickle",
+    "quickly"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fickle\". Fickle describes the weather; weather is a noun and quickly is an adverb."
+  },
+  {
+   "type": "pos",
+   "q": "Which word fits the blank as an ADJECTIVE: 'The ____ wind kept changing direction.'?",
+   "options": [
+    "fickle",
+    "carefully",
+    "kelp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"fickle\". Fickle is an adjective that describes the wind."
+  },
+  {
+   "type": "meaning",
+   "q": "What does FICKLE mean?",
+   "options": [
+    "changing your mind often; not steady",
+    "always calm and steady",
+    "very sleepy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"changing your mind often; not steady\". Fickle means you keep changing your mind."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'Leo is fickle about his favorite color. Today it's blue, tomorrow it's green.' What does fickle mean here?",
+   "options": [
+    "not able to see colors",
+    "changing his mind a lot",
+    "liking only one color forever"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"changing his mind a lot\". Leo keeps changing his favorite, so he is fickle."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to FICKLE?",
+   "options": [
+    "changeable",
+    "heavy",
+    "loyal"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"changeable\". Fickle and changeable both mean changing often."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of FICKLE?",
+   "options": [
+    "unsure",
+    "steady",
+    "moody"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"steady\". Steady means not changing, the opposite of fickle."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of being fickle?",
+   "options": [
+    "picking a new best toy every five minutes",
+    "reading the same book every night",
+    "always sitting in the same seat"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"picking a new best toy every five minutes\". Changing your favorite again and again is fickle."
+  },
+  {
+   "type": "meaning",
+   "q": "If the weather is fickle, what might happen?",
+   "options": [
+    "It is sunny, then rainy, then sunny again.",
+    "It is sunny all week long.",
+    "It stays exactly the same all year."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It is sunny, then rainy, then sunny again.\". Fickle weather keeps changing."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ kitten wanted to play, then nap, then play again.",
+   "options": [
+    "molten",
+    "fickle",
+    "lunar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fickle\". The kitten keeps changing its mind, so it is fickle."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses FICKLE correctly?",
+   "options": [
+    "The fickle is parked in the barn.",
+    "I drank a cold glass of fickle.",
+    "My fickle sister changed her lunch order three times."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"My fickle sister changed her lunch order three times.\". Fickle describes someone who keeps changing their mind."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Ana says she loves soccer, then says she hates it, then loves it again. She is ____.",
+   "options": [
+    "rigid",
+    "molten",
+    "fickle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"fickle\". Ana keeps changing her mind, so she is fickle."
+  },
+  {
+   "type": "usage",
+   "q": "Spring weather can be ____: warm one day and snowy the next.",
+   "options": [
+    "lunar",
+    "molten",
+    "fickle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"fickle\". Weather that keeps changing is fickle."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Our team mascot keeps switching which team he cheers for. He is ____.",
+   "options": [
+    "fickle",
+    "woven",
+    "lunar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"fickle\". Someone who keeps switching sides is fickle."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "fickle",
+    "fikle",
+    "fickel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"fickle\". Fickle has ck and ends in -le."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: fi__le",
+   "options": [
+    "k",
+    "c",
+    "ck"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"ck\". Fickle has ck in the middle."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'The ____ wind kept changing.'",
+   "options": [
+    "phickle",
+    "fickle",
+    "fickul"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fickle\". Fickle starts with f and ends in -ckle."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the word that means 'changing your mind often' is correct?",
+   "options": [
+    "ficckle",
+    "fickle",
+    "fickell"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fickle\". Fickle is spelled f-i-c-k-l-e."
+  }
+ ],
+ "relief": [
+  {
+   "type": "pos",
+   "q": "What part of speech is RELIEF in: 'It was a relief to find my lost dog.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Relief names a feeling, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun can name a feeling. Which kind of word is RELIEF in: 'I felt relief when the test was over.'?",
+   "options": [
+    "preposition",
+    "adverb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". Relief names the feeling, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "In 'She sighed with relief,' which word is a noun?",
+   "options": [
+    "sighed",
+    "with",
+    "relief"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"relief\". Relief names a feeling; sighed is a verb and with is a preposition."
+  },
+  {
+   "q": "A noun can name a person, place, thing, or feeling. In 'What a relief that the test was easy!', RELIEF names...",
+   "options": [
+    "a feeling",
+    "a person",
+    "a place"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a feeling\". Relief is the good feeling when worry goes away.",
+   "type": "pos"
+  },
+  {
+   "type": "pos",
+   "q": "In 'The relief I felt was huge,' which word is a noun?",
+   "options": [
+    "huge",
+    "relief",
+    "felt"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"relief\". Relief names a feeling; huge is an adjective and felt is a verb."
+  },
+  {
+   "type": "meaning",
+   "q": "What does RELIEF mean?",
+   "options": [
+    "a loud, scary noise",
+    "the good feeling when pain or worry goes away",
+    "a feeling of being very angry"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the good feeling when pain or worry goes away\". Relief is the good feeling when worry or pain ends."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'When Ella found her lost mitten, she felt relief.' How did Ella feel?",
+   "options": [
+    "glad her worry was over",
+    "angry at her mitten",
+    "scared and worried"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"glad her worry was over\". Relief is feeling glad that the worry is gone."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these would give you relief?",
+   "options": [
+    "finding your lost puppy safe at home",
+    "getting a bee sting",
+    "losing your homework"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"finding your lost puppy safe at home\". Finding your puppy safe makes the worry go away."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of RELIEF?",
+   "options": [
+    "worry",
+    "ease",
+    "comfort"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"worry\". Worry is the opposite of relief; comfort and ease are like relief."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to RELIEF?",
+   "options": [
+    "comfort",
+    "fear",
+    "anger"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"comfort\". Relief and comfort are both good feelings after something hard."
+  },
+  {
+   "type": "meaning",
+   "q": "What might you say when you feel relief?",
+   "options": [
+    "\"Oh no, this is terrible!\"",
+    "\"Phew! I'm so glad that's over.\"",
+    "\"Grr, I'm so mad!\""
+   ],
+   "ans": 1,
+   "hint": "The answer is \"\"Phew! I'm so glad that's over.\"\". Phew is what people say when worry goes away."
+  },
+  {
+   "type": "usage",
+   "q": "When the scary storm ended, we all felt ____.",
+   "options": [
+    "kelp",
+    "awning",
+    "relief"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"relief\". When something scary ends, you feel relief."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses RELIEF correctly?",
+   "options": [
+    "The relief tiptoed across the floor.",
+    "I planted relief in the garden.",
+    "What a relief that the bus waited for me!"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"What a relief that the bus waited for me!\". Relief is the glad feeling when a worry ends."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: You were sure you failed the test, but you got an A. That happy 'phew' feeling is ____.",
+   "options": [
+    "relief",
+    "duration",
+    "custody"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"relief\". The phew feeling when worry ends is relief."
+  },
+  {
+   "type": "usage",
+   "q": "The cool lotion gave ____ to my sunburn.",
+   "options": [
+    "thimble",
+    "salary",
+    "relief"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"relief\". Lotion makes sunburn pain go away, which is relief."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The firefighter carried the kitten down safely, and the girl cried tears of ____.",
+   "options": [
+    "granola",
+    "burlap",
+    "relief"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"relief\". She was glad her worry was over, so she cried tears of relief."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "relefe",
+    "relief",
+    "releif"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"relief\". Remember: i before e, so relief is r-e-l-i-e-f."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: rel__f",
+   "options": [
+    "ee",
+    "ie",
+    "ei"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"ie\". Relief has i before e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'What a ____!'",
+   "options": [
+    "releaf",
+    "relief",
+    "reelief"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"relief\". Relief is spelled r-e-l-i-e-f."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling of the word for the good feeling when worry goes away is correct?",
+   "options": [
+    "rilief",
+    "relief",
+    "relieff"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"relief\". Relief starts with re- and ends with one f."
+  }
+ ]
+}

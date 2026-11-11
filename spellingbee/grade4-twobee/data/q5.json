@@ -1,0 +1,2222 @@
+{
+ "duration": [
+  {
+   "type": "pos",
+   "q": "What part of speech is DURATION in: 'The duration of recess was 20 minutes.'?",
+   "options": [
+    "noun",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Duration names a thing, the length of time, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a person, place, thing, or idea is a noun. Which kind of word is DURATION?",
+   "options": [
+    "preposition",
+    "noun",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Duration names an idea: how long something lasts."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun?",
+   "options": [
+    "duration",
+    "beneath",
+    "carefully"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"duration\". Duration names a thing; carefully is an adverb and beneath is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "In 'We stayed inside for the duration of the storm,' which word is a noun?",
+   "options": [
+    "duration",
+    "stayed",
+    "for"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"duration\". Duration names a thing; stayed is a verb and for is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as DURATION?",
+   "options": [
+    "proclaim",
+    "lunar",
+    "tractor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tractor\". Duration and tractor are both nouns that name things."
+  },
+  {
+   "type": "meaning",
+   "q": "What does DURATION mean?",
+   "options": [
+    "how heavy something is",
+    "how loud something is",
+    "how long something lasts"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"how long something lasts\". Duration is all about time, like how long a show lasts."
+  },
+  {
+   "type": "meaning",
+   "q": "'The duration of the soccer game was 90 minutes.' What does duration mean here?",
+   "options": [
+    "how many goals were scored",
+    "where the game was played",
+    "how long the game lasted"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"how long the game lasted\". The 90 minutes tells how long the game went on."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is closest in meaning to DURATION?",
+   "options": [
+    "length of time",
+    "color",
+    "weight"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"length of time\". Duration means the length of time something lasts."
+  },
+  {
+   "type": "meaning",
+   "q": "Which question asks about the DURATION of something?",
+   "options": [
+    "How long did the movie last?",
+    "Who is in the movie?",
+    "Where is the movie theater?"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"How long did the movie last?\". Asking how long something lasts is asking about its duration."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of a DURATION?",
+   "options": [
+    "the kitchen",
+    "a red ball",
+    "two hours"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"two hours\". Two hours is an amount of time, so it can be a duration."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you use to measure the DURATION of a race?",
+   "options": [
+    "a ruler",
+    "a stopwatch",
+    "a scale"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a stopwatch\". A stopwatch measures time, and duration is about time."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ of the fire drill was only five minutes.",
+   "options": [
+    "duration",
+    "lullaby",
+    "dictionary"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"duration\". The sentence is about how long the fire drill lasted."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses DURATION correctly?",
+   "options": [
+    "The duration barked at the mailman.",
+    "We sat still for the duration of the play.",
+    "I ate a duration for lunch."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"We sat still for the duration of the play.\". You can sit still for the whole time a play lasts, but you cannot eat or hear a duration bark."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Mom asked how long the flight would last. She wanted to know its ____.",
+   "options": [
+    "salary",
+    "duration",
+    "business"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"duration\". How long a flight lasts is its duration."
+  },
+  {
+   "type": "usage",
+   "q": "Everyone had to stay quiet for the ____ of the spelling test.",
+   "options": [
+    "marlin",
+    "duration",
+    "tissues"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"duration\". You stay quiet for the whole time the test lasts."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Sam timed the race from start to finish to find out its ____.",
+   "options": [
+    "duration",
+    "custody",
+    "property"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"duration\". Timing something from start to finish tells its duration."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "durashun",
+    "deration",
+    "duration"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"duration\". Duration starts with dur and ends with tion."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'The ____ of the nap was one hour.'?",
+   "options": [
+    "duraition",
+    "duration",
+    "durration"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"duration\". Duration has one r and the ending -ation."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: d_r_tion",
+   "options": [
+    "u and e",
+    "u and a",
+    "o and a"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"u and a\". The word is d-u-r-a-t-i-o-n."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means how long something lasts?",
+   "options": [
+    "durasion",
+    "duratian",
+    "duration"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"duration\". The ending sounds like shun but is spelled tion."
+  }
+ ],
+ "dictionary": [
+  {
+   "type": "pos",
+   "q": "What part of speech is DICTIONARY in: 'I looked up the word in my dictionary.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Dictionary names a thing, a book of words, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a thing is a noun. Which kind of word is DICTIONARY?",
+   "options": [
+    "preposition",
+    "adverb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". A dictionary is a thing you can hold or use."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun?",
+   "options": [
+    "examine",
+    "dictionary",
+    "fierce"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"dictionary\". Dictionary names a thing; examine is a verb and fierce is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The thick dictionary sat on the shelf,' which word is a noun?",
+   "options": [
+    "thick",
+    "dictionary",
+    "sat"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"dictionary\". Dictionary names the thing; thick describes it and sat is the action."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as DICTIONARY?",
+   "options": [
+    "disappear",
+    "jovial",
+    "thimble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"thimble\". Dictionary and thimble are both nouns that name things."
+  },
+  {
+   "type": "meaning",
+   "q": "What is a DICTIONARY?",
+   "options": [
+    "a book of maps of the world",
+    "a book or app that lists words with their meanings",
+    "a list of phone numbers"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a book or app that lists words with their meanings\". A dictionary tells you what words mean."
+  },
+  {
+   "type": "meaning",
+   "q": "Why would you use a DICTIONARY?",
+   "options": [
+    "to find out what a word means",
+    "to tell what time it is",
+    "to keep your lunch cold"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to find out what a word means\". A dictionary gives the meanings of words."
+  },
+  {
+   "type": "meaning",
+   "q": "Leo did not know what 'jovial' meant. Where should he look?",
+   "options": [
+    "in a dictionary",
+    "in a fish tank",
+    "in a lunchbox"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"in a dictionary\". A dictionary lists words and tells their meanings."
+  },
+  {
+   "type": "meaning",
+   "q": "How are the words in a DICTIONARY put in order?",
+   "options": [
+    "by size",
+    "in ABC order",
+    "by color"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"in ABC order\". Dictionaries list words in ABC order so they are easy to find."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these would you find in a DICTIONARY?",
+   "options": [
+    "a recipe for cookies",
+    "a picture of your family",
+    "the meaning of the word kelp"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the meaning of the word kelp\". A dictionary has words and what they mean."
+  },
+  {
+   "type": "meaning",
+   "q": "What else could a DICTIONARY help you check?",
+   "options": [
+    "how to spell a word",
+    "how tall a tree is",
+    "how fast you can run"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"how to spell a word\". A dictionary shows the correct spelling of words."
+  },
+  {
+   "type": "usage",
+   "q": "I looked in the ____ to find out what 'lunar' means.",
+   "options": [
+    "dictionary",
+    "awning",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"dictionary\". You look up word meanings in a dictionary."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses DICTIONARY correctly?",
+   "options": [
+    "The dictionary swam to the bottom of the pond.",
+    "We planted a dictionary in the garden.",
+    "Ava used the dictionary to check how to spell 'business.'"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Ava used the dictionary to check how to spell 'business.'\". A dictionary helps you check words; it cannot swim or grow."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Our teacher keeps a big book of word meanings on her desk. It is a ____.",
+   "options": [
+    "dictionary",
+    "salary",
+    "lullaby"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"dictionary\". A book of word meanings is a dictionary."
+  },
+  {
+   "type": "usage",
+   "q": "When you find a new word in a story, you can look it up in the ____.",
+   "options": [
+    "basement",
+    "dictionary",
+    "granola"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"dictionary\". A dictionary is where you look up new words."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Dad typed 'molten' into an app to see what it means. He used a ____ app.",
+   "options": [
+    "dictionary",
+    "weather",
+    "music"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"dictionary\". An app that tells what words mean is a dictionary app."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "dictonary",
+    "dicshunary",
+    "dictionary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"dictionary\". Dictionary has the letters d-i-c-t-i-o-n-a-r-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Grab the ____ from the shelf.'?",
+   "options": [
+    "dictionery",
+    "dictionairy",
+    "dictionary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"dictionary\". The ending of dictionary is -ary."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: dict_on_ry",
+   "options": [
+    "i and a",
+    "e and a",
+    "i and e"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"i and a\". The word is d-i-c-t-i-o-n-a-r-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for a book of word meanings?",
+   "options": [
+    "diktionary",
+    "dictionary",
+    "dictionnary"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"dictionary\". Dictionary uses c-t and only one n."
+  }
+ ],
+ "business": [
+  {
+   "type": "pos",
+   "q": "What part of speech is BUSINESS in: 'Grandpa runs a small business that sells bikes.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adverb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Business names a thing, a store or company, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a place or thing is a noun. Which kind of word is BUSINESS?",
+   "options": [
+    "pronoun",
+    "noun",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". A business is a place where people work."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun?",
+   "options": [
+    "clever",
+    "business",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"business\". Business names a thing; clever is an adjective and proclaim is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Her pet business walks dogs every day,' which word is a noun?",
+   "options": [
+    "every",
+    "walks",
+    "business"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"business\". Business names the thing; walks is the action."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as BUSINESS?",
+   "options": [
+    "rigid",
+    "basement",
+    "examine"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"basement\". Business and basement are both nouns."
+  },
+  {
+   "type": "meaning",
+   "q": "What is a BUSINESS?",
+   "options": [
+    "a store or company where people work to sell things",
+    "a kind of sandwich",
+    "a loud noise"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a store or company where people work to sell things\". A business sells goods or services."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of a BUSINESS?",
+   "options": [
+    "a bakery that sells bread",
+    "a cloud in the sky",
+    "a puddle on the road"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a bakery that sells bread\". A bakery is a place where people work to sell things."
+  },
+  {
+   "type": "meaning",
+   "q": "'Mom opened a cake business.' What does business mean here?",
+   "options": [
+    "a cake recipe book",
+    "a big cake party",
+    "a company that sells cakes"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a company that sells cakes\". Mom started selling cakes, so she has a business."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you do at a pet store BUSINESS?",
+   "options": [
+    "go swimming",
+    "buy food for your dog",
+    "take a nap in bed"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"buy food for your dog\". A pet store sells things for pets."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is closest in meaning to BUSINESS?",
+   "options": [
+    "playground",
+    "holiday",
+    "company"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"company\". A company is a business where people work."
+  },
+  {
+   "type": "meaning",
+   "q": "Who works at a lemonade stand BUSINESS?",
+   "options": [
+    "the grass below",
+    "the kids selling lemonade",
+    "the clouds above"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the kids selling lemonade\". People who sell things run the business."
+  },
+  {
+   "type": "usage",
+   "q": "Uncle Joe started a ____ that fixes broken phones.",
+   "options": [
+    "lullaby",
+    "business",
+    "thimble"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"business\". A company that fixes phones is a business."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses BUSINESS correctly?",
+   "options": [
+    "I wore a business on my feet.",
+    "The business flew south for the winter.",
+    "The flower shop is a busy business in our town."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The flower shop is a busy business in our town.\". A flower shop is a business; you cannot wear one or watch it fly."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Maya sells bracelets she makes to her neighbors. She has her own small ____.",
+   "options": [
+    "business",
+    "dictionary",
+    "duration"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"business\". Selling things you make is running a business."
+  },
+  {
+   "type": "usage",
+   "q": "The car wash ____ was busy on Saturday.",
+   "options": [
+    "kelp",
+    "business",
+    "tissues"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"business\". A car wash is a business that sells a service."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The farmer sells eggs and milk at his farm stand. The stand is his ____.",
+   "options": [
+    "business",
+    "laughter",
+    "relief"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"business\". A farm stand that sells things is a business."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "business",
+    "busness",
+    "bizness"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"business\". Business has a silent i after the s: b-u-s-i-n-e-s-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'My aunt owns a ____.'?",
+   "options": [
+    "buisness",
+    "businiss",
+    "business"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"business\". It is b-u-s first, then i-n-e-s-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: bus_n_ss",
+   "options": [
+    "i and e",
+    "e and e",
+    "i and i"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"i and e\". The word is b-u-s-i-n-e-s-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for a store or company?",
+   "options": [
+    "bussiness",
+    "busines",
+    "business"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"business\". Business has one s in the middle and two s's at the end."
+  }
+ ],
+ "reinstate": [
+  {
+   "type": "pos",
+   "q": "What part of speech is REINSTATE in: 'The coach will reinstate Ben on the team.'?",
+   "options": [
+    "adjective",
+    "noun",
+    "verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"verb\". Reinstate is an action word, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is REINSTATE?",
+   "options": [
+    "preposition",
+    "verb",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Reinstate is something you do: put someone back."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a verb?",
+   "options": [
+    "lullaby",
+    "molten",
+    "reinstate"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"reinstate\". Reinstate is an action; lullaby is a noun and molten is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The school will reinstate the old recess time,' which word is a verb?",
+   "options": [
+    "old",
+    "school",
+    "reinstate"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"reinstate\". Reinstate is what the school will do."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as REINSTATE?",
+   "options": [
+    "fierce",
+    "proclaim",
+    "awning"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"proclaim\". Reinstate and proclaim are both verbs, or action words."
+  },
+  {
+   "type": "meaning",
+   "q": "What does REINSTATE mean?",
+   "options": [
+    "to throw something away",
+    "to put someone or something back in its old place",
+    "to paint something a new color"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to put someone or something back in its old place\". Reinstate means to bring back to how it was before."
+  },
+  {
+   "type": "meaning",
+   "q": "'The club will reinstate Mia as captain.' What does reinstate mean here?",
+   "options": [
+    "make Mia captain again",
+    "take Mia off the team",
+    "give Mia a prize"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"make Mia captain again\". Reinstate means putting someone back in their old job."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is closest in meaning to REINSTATE?",
+   "options": [
+    "fall asleep",
+    "break apart",
+    "bring back"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"bring back\". To reinstate is to bring something back."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of REINSTATE?",
+   "options": [
+    "remove",
+    "restore",
+    "return"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"remove\". Reinstate puts something back; remove takes it away."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of being REINSTATED?",
+   "options": [
+    "A dog learns a new trick.",
+    "A helper who left the class job gets the job back.",
+    "A kid eats a sandwich."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A helper who left the class job gets the job back.\". Getting your old job back is being reinstated."
+  },
+  {
+   "type": "meaning",
+   "q": "What would a principal do to REINSTATE a fun Friday game?",
+   "options": [
+    "bring the game back",
+    "cancel the game forever",
+    "hide the game"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"bring the game back\". Reinstating the game means bringing it back."
+  },
+  {
+   "type": "usage",
+   "q": "After the broken swing was fixed, the park decided to ____ swing time.",
+   "options": [
+    "reinstate",
+    "examine",
+    "disappear"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"reinstate\". Swing time is being put back, so reinstate fits."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses REINSTATE correctly?",
+   "options": [
+    "I drank a cold glass of reinstate.",
+    "The teacher will reinstate Tom as line leader next week.",
+    "The reinstate hopped across the lawn."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The teacher will reinstate Tom as line leader next week.\". You can reinstate someone to a job, but you cannot drink or see a reinstate hop."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The band stopped playing the school song, but kids asked for it back. The band agreed to ____ it.",
+   "options": [
+    "lounge",
+    "reinstate",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"reinstate\". Bringing the song back is reinstating it."
+  },
+  {
+   "type": "usage",
+   "q": "Ella was goalie before she hurt her arm. Now it is healed, so the coach will ____ her as goalie.",
+   "options": [
+    "reinstate",
+    "sniffling",
+    "woven"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"reinstate\". Ella gets her old spot back, so the coach will reinstate her."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Our library stopped story hour, then brought it back in June. They decided to ____ story hour.",
+   "options": [
+    "cuddle",
+    "invite",
+    "reinstate"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"reinstate\". Bringing back story hour is reinstating it."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "reenstate",
+    "reinstate",
+    "reinstait"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"reinstate\". Reinstate is re + in + state."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'They will ____ the old rule.'?",
+   "options": [
+    "reinstat",
+    "riinstate",
+    "reinstate"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"reinstate\". Reinstate ends with the word state."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: re_nst_te",
+   "options": [
+    "i and a",
+    "e and a",
+    "i and e"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"i and a\". The word is r-e-i-n-s-t-a-t-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means to put back in an old place?",
+   "options": [
+    "reinstate",
+    "rienstate",
+    "reinstaet"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"reinstate\". Reinstate starts with r-e-i and ends with s-t-a-t-e."
+  }
+ ],
+ "examine": [
+  {
+   "type": "pos",
+   "q": "What part of speech is EXAMINE in: 'The vet will examine my puppy.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "noun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Examine is something the vet does, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is EXAMINE in: 'Let's examine the bug.'?",
+   "options": [
+    "adverb",
+    "verb",
+    "preposition"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Examine is the action of looking closely."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a verb?",
+   "options": [
+    "examine",
+    "lunar",
+    "property"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"examine\". Examine is an action; lunar is an adjective and property is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Scientists examine rocks with a magnifying glass,' which word is a verb?",
+   "options": [
+    "rocks",
+    "examine",
+    "with"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"examine\". Examine is what the scientists do."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses EXAMINE as a verb?",
+   "options": [
+    "The examine is green.",
+    "She has a big examine.",
+    "We examine leaves in science class."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"We examine leaves in science class.\". In the first sentence, examine is the action the class does."
+  },
+  {
+   "type": "meaning",
+   "q": "What does EXAMINE mean?",
+   "options": [
+    "to run very fast",
+    "to sing loudly",
+    "to look at something closely"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"to look at something closely\". Examine means to look carefully at something."
+  },
+  {
+   "type": "meaning",
+   "q": "'The doctor will examine your ears.' What does examine mean here?",
+   "options": [
+    "clean out",
+    "cover up",
+    "look closely at"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"look closely at\". The doctor looks carefully inside your ears."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is closest in meaning to EXAMINE?",
+   "options": [
+    "inspect",
+    "ignore",
+    "forget"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"inspect\". To inspect is to look at something carefully, just like examine."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of EXAMINE?",
+   "options": [
+    "check",
+    "study",
+    "ignore"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"ignore\". To ignore is to not look at something at all."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of EXAMINING?",
+   "options": [
+    "looking at a seashell with a magnifying glass",
+    "eating a banana",
+    "kicking a ball"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"looking at a seashell with a magnifying glass\". Using a magnifying glass to look closely is examining."
+  },
+  {
+   "type": "meaning",
+   "q": "What tool would help you EXAMINE a tiny ant?",
+   "options": [
+    "a pillow",
+    "a magnifying glass",
+    "a spoon"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a magnifying glass\". A magnifying glass helps you look closely at small things."
+  },
+  {
+   "type": "usage",
+   "q": "Use the magnifying glass to ____ the butterfly's wings.",
+   "options": [
+    "reinstate",
+    "examine",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"examine\". You look closely at wings, so examine fits."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses EXAMINE correctly?",
+   "options": [
+    "The mechanic will examine the tractor to find the problem.",
+    "I put on my examine to stay warm.",
+    "The examine meowed for food."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The mechanic will examine the tractor to find the problem.\". A mechanic looks closely at the tractor; examine is not a coat or a cat."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Zoe found a strange rock and looked at it very closely. She wanted to ____ it.",
+   "options": [
+    "disappear",
+    "examine",
+    "cuddle"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"examine\". Looking at something closely is examining it."
+  },
+  {
+   "type": "usage",
+   "q": "Before the game, the ref will ____ the ball to make sure it is full of air.",
+   "options": [
+    "lounge",
+    "examine",
+    "invite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"examine\". The ref checks the ball closely, so examine fits."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The detective in the story studied the footprints carefully. She wanted to ____ every clue.",
+   "options": [
+    "tiptoed",
+    "woven",
+    "examine"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"examine\". Studying clues carefully is examining them."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "examine",
+    "egzamine",
+    "examin"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"examine\". Examine starts with ex and ends with a silent e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Let's ____ the map.'?",
+   "options": [
+    "examine",
+    "exammine",
+    "examene"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"examine\". Examine has one m and ends in -ine."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: ex_m_ne",
+   "options": [
+    "e and i",
+    "a and i",
+    "a and e"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a and i\". The word is e-x-a-m-i-n-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means to look at closely?",
+   "options": [
+    "examien",
+    "exsamine",
+    "examine"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"examine\". Examine is e-x-a-m-i-n-e, with no s."
+  }
+ ],
+ "versus": [
+  {
+   "type": "pos",
+   "q": "What part of speech is VERSUS in: 'Tonight it is the Tigers versus the Bears.'?",
+   "options": [
+    "preposition",
+    "noun",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"preposition\". Versus links two teams to show they are against each other, like a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "A preposition links words, like against or beside. Which kind of word is VERSUS?",
+   "options": [
+    "preposition",
+    "adjective",
+    "pronoun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"preposition\". Versus means against, and against is a preposition."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a preposition?",
+   "options": [
+    "versus",
+    "jovial",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"versus\". Versus is a preposition; tractor is a noun and jovial is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as VERSUS?",
+   "options": [
+    "fickle",
+    "beneath",
+    "examine"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"beneath\". Versus and beneath are both prepositions."
+  },
+  {
+   "type": "pos",
+   "q": "In 'It was cats versus dogs in the pet show,' which word is a preposition?",
+   "options": [
+    "versus",
+    "show",
+    "cats"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"versus\". Versus links cats and dogs; cats and show are nouns."
+  },
+  {
+   "type": "meaning",
+   "q": "What does VERSUS mean?",
+   "options": [
+    "together with",
+    "under",
+    "against"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"against\". Versus means one side against another."
+  },
+  {
+   "type": "meaning",
+   "q": "'The game is red team versus blue team.' What does versus mean here?",
+   "options": [
+    "cheering for",
+    "playing against",
+    "sitting next to"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"playing against\". The red team plays against the blue team."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word is closest in meaning to VERSUS?",
+   "options": [
+    "inside",
+    "against",
+    "beside"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"against\". Versus and against mean the same thing."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of VERSUS?",
+   "options": [
+    "a cake in the oven",
+    "a cat taking a nap",
+    "a tug-of-war, girls versus boys"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a tug-of-war, girls versus boys\". In a tug-of-war, two teams pull against each other."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely see the word VERSUS?",
+   "options": [
+    "on a sign for a soccer game",
+    "on a stop sign",
+    "on a cereal box ingredient list"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"on a sign for a soccer game\". Game signs show which team is against which."
+  },
+  {
+   "q": "In 'Our team played versus the Tigers,' which word could replace VERSUS?",
+   "options": [
+    "against",
+    "beneath",
+    "after"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"against\". Versus means against, like one team against another.",
+   "type": "meaning"
+  },
+  {
+   "type": "usage",
+   "q": "The big match today is the Sharks ____ the Jets.",
+   "options": [
+    "carefully",
+    "beneath",
+    "versus"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"versus\". Two teams playing against each other go with versus."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses VERSUS correctly?",
+   "options": [
+    "The chess match was Grandma versus me.",
+    "The versus barked loudly.",
+    "I put my versus in the backpack."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The chess match was Grandma versus me.\". Grandma played against me; versus is not a thing you carry or a dog."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: In our class game, it was team A ____ team B.",
+   "options": [
+    "proclaim",
+    "versus",
+    "opposite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"versus\". Team A played against team B, so versus fits."
+  },
+  {
+   "type": "usage",
+   "q": "The spelling bee final was Lily ____ Max.",
+   "options": [
+    "laughter",
+    "lunar",
+    "versus"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"versus\". Lily and Max competed against each other."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The poster said 'Rabbits ____ Turtles: The Big Race!'",
+   "options": [
+    "examine",
+    "beneath",
+    "versus"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"versus\". The rabbits race against the turtles, so versus fits."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "virsus",
+    "versis",
+    "versus"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"versus\". Versus is v-e-r-s-u-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'It's us ____ them!'?",
+   "options": [
+    "versus",
+    "versuss",
+    "vursus"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"versus\". Versus ends in -us, not -es."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: v_rs_s",
+   "options": [
+    "u and u",
+    "e and u",
+    "e and e"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"e and u\". The word is v-e-r-s-u-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means against?",
+   "options": [
+    "verssus",
+    "versus",
+    "versas"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"versus\". Versus has one s in the middle and ends with us."
+  }
+ ],
+ "lullaby": [
+  {
+   "type": "pos",
+   "q": "What part of speech is LULLABY in: 'Dad sang a lullaby to the baby.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adverb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Lullaby names a thing, a song, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names a thing is a noun. Which kind of word is LULLABY?",
+   "options": [
+    "preposition",
+    "adjective",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". A lullaby is a song, and a song is a thing."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun?",
+   "options": [
+    "versus",
+    "rigid",
+    "lullaby"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lullaby\". Lullaby names a thing; versus is a preposition and rigid is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The soft lullaby helped my sister sleep,' which word is a noun?",
+   "options": [
+    "helped",
+    "lullaby",
+    "soft"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lullaby\". Lullaby names the song; soft describes it and helped is the action."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as LULLABY?",
+   "options": [
+    "reinstate",
+    "granola",
+    "puffy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"granola\". Lullaby and granola are both nouns."
+  },
+  {
+   "type": "meaning",
+   "q": "What is a LULLABY?",
+   "options": [
+    "a soft song to help a baby sleep",
+    "a loud cheer at a game",
+    "a kind of fruit"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a soft song to help a baby sleep\". A lullaby is a quiet song for bedtime."
+  },
+  {
+   "type": "meaning",
+   "q": "When would you most likely hear a LULLABY?",
+   "options": [
+    "at bedtime",
+    "at a football game",
+    "at a fire drill"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"at bedtime\". Lullabies help babies fall asleep at bedtime."
+  },
+  {
+   "type": "meaning",
+   "q": "'Mom hummed a lullaby.' What did Mom hum?",
+   "options": [
+    "a gentle sleepy song",
+    "a fast dance song",
+    "a car horn sound"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a gentle sleepy song\". A lullaby is a gentle song for sleeping."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of a LULLABY?",
+   "options": [
+    "a school bell",
+    "a fire truck siren",
+    "'Rock-a-bye Baby'"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"'Rock-a-bye Baby'\". 'Rock-a-bye Baby' is a soft song sung to babies."
+  },
+  {
+   "type": "meaning",
+   "q": "How does a LULLABY usually sound?",
+   "options": [
+    "soft and calm",
+    "loud and scary",
+    "fast and noisy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"soft and calm\". Lullabies are soft so babies can relax."
+  },
+  {
+   "type": "meaning",
+   "q": "Why would someone sing a LULLABY?",
+   "options": [
+    "to wake everyone up",
+    "to help a baby fall asleep",
+    "to call a dog"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"to help a baby fall asleep\". The job of a lullaby is to help a baby sleep."
+  },
+  {
+   "type": "usage",
+   "q": "Grandma sang a quiet ____ until the baby fell asleep.",
+   "options": [
+    "tractor",
+    "salary",
+    "lullaby"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lullaby\". A quiet song for a baby is a lullaby."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses LULLABY correctly?",
+   "options": [
+    "We ate a lullaby for dinner.",
+    "The music box played a lullaby for the baby.",
+    "The lullaby drove down the road."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The music box played a lullaby for the baby.\". A music box can play a song, but you cannot eat or drive a lullaby."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The baby was crying, so Dad sang a soft, slow song. He sang a ____.",
+   "options": [
+    "dictionary",
+    "lullaby",
+    "warrior"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lullaby\". A soft song for a crying baby is a lullaby."
+  },
+  {
+   "type": "usage",
+   "q": "The gentle ____ made my little brother yawn.",
+   "options": [
+    "lullaby",
+    "marlin",
+    "hurdler"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lullaby\". A gentle song can make a child sleepy."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: At bedtime, the babysitter sings the same calm song every night. It is her favorite ____.",
+   "options": [
+    "business",
+    "lullaby",
+    "duration"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lullaby\". A calm bedtime song is a lullaby."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "lulaby",
+    "lullabey",
+    "lullaby"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lullaby\". Lullaby has two l's in the middle and ends with y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Sing me a ____.'?",
+   "options": [
+    "lulliby",
+    "lullaby",
+    "lullabie"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lullaby\". Lullaby is l-u-l-l-a-b-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: l_ll_by",
+   "options": [
+    "u and a",
+    "u and i",
+    "a and a"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"u and a\". The word is l-u-l-l-a-b-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for a soft bedtime song?",
+   "options": [
+    "lollaby",
+    "lullabee",
+    "lullaby"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lullaby\". Lullaby starts with lull and ends with aby."
+  }
+ ],
+ "opposite": [
+  {
+   "type": "pos",
+   "q": "What part of speech is OPPOSITE in: 'We sat on opposite sides of the table.'?",
+   "options": [
+    "verb",
+    "pronoun",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Opposite describes the sides, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "An adjective describes a noun. Which kind of word is OPPOSITE in: 'Hot and cold are opposite words.'?",
+   "options": [
+    "adjective",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Opposite describes the noun words."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective?",
+   "options": [
+    "lullaby",
+    "examine",
+    "opposite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"opposite\". Opposite describes things; lullaby is a noun and examine is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The dog ran in the opposite direction,' which word is an adjective?",
+   "options": [
+    "ran",
+    "dog",
+    "opposite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"opposite\". Opposite describes the direction."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The two teams had opposite colors,' what does OPPOSITE describe?",
+   "options": [
+    "teams",
+    "colors",
+    "had"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"colors\". Opposite is an adjective, and it tells about the colors."
+  },
+  {
+   "type": "meaning",
+   "q": "What does OPPOSITE mean?",
+   "options": [
+    "completely different",
+    "exactly the same",
+    "very tiny"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"completely different\". Opposite things are as different as can be."
+  },
+  {
+   "type": "meaning",
+   "q": "'Up and down are opposite directions.' What does opposite mean here?",
+   "options": [
+    "going the same way",
+    "staying close together",
+    "going totally different ways"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"going totally different ways\". Up and down point totally different ways."
+  },
+  {
+   "type": "meaning",
+   "q": "Which pair of words are OPPOSITE?",
+   "options": [
+    "happy and glad",
+    "big and large",
+    "hot and cold"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"hot and cold\". Hot and cold are completely different."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is closest in meaning to OPPOSITE?",
+   "options": [
+    "reverse",
+    "same",
+    "nearby"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"reverse\". Reverse means the other way, like opposite."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the opposite of OPPOSITE?",
+   "options": [
+    "different",
+    "same",
+    "reverse"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"same\". Opposite means completely different, so same is its opposite."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these shows OPPOSITE feelings?",
+   "options": [
+    "laughing and crying",
+    "giggling and laughing",
+    "smiling and grinning"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"laughing and crying\". Laughing and crying show completely different feelings."
+  },
+  {
+   "type": "usage",
+   "q": "Day and night are ____ times of day.",
+   "options": [
+    "opposite",
+    "molten",
+    "woven"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"opposite\". Day and night are completely different."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses OPPOSITE correctly?",
+   "options": [
+    "The opposite rang at noon.",
+    "Sleepy and wide-awake are opposite ways to feel.",
+    "I fed the opposite some carrots."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sleepy and wide-awake are opposite ways to feel.\". Sleepy and wide-awake are completely different; you cannot feed or ring an opposite."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Sam turned left, and Kim turned right. They walked in ____ directions.",
+   "options": [
+    "fickle",
+    "lunar",
+    "opposite"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"opposite\". Left and right are completely different directions."
+  },
+  {
+   "type": "usage",
+   "q": "The cat and the puppy have ____ moods: one is calm and one is wild.",
+   "options": [
+    "molten",
+    "opposite",
+    "elite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"opposite\". Calm and wild are completely different moods."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Whisper is quiet and shout is loud. They have ____ meanings.",
+   "options": [
+    "rigid",
+    "opposite",
+    "jovial"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"opposite\". Quiet and loud are completely different."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "opposite",
+    "oposite",
+    "oppisite"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"opposite\". Opposite has two p's and an o in the middle."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Go the ____ way.'?",
+   "options": [
+    "oppossite",
+    "opposite",
+    "opposit"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"opposite\". Opposite has one s and ends with a silent e."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: opp_s_te",
+   "options": [
+    "o and i",
+    "a and i",
+    "o and a"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"o and i\". The word is o-p-p-o-s-i-t-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the word that means completely different?",
+   "options": [
+    "opposete",
+    "opposite",
+    "oppasite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"opposite\". Opposite is o-p-p-o-s-i-t-e."
+  }
+ ],
+ "tissues": [
+  {
+   "type": "pos",
+   "q": "Is TISSUES a singular noun or a plural noun?",
+   "options": [
+    "adjective",
+    "plural noun",
+    "singular noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"plural noun\". Tissues means more than one tissue, so it is plural."
+  },
+  {
+   "type": "pos",
+   "q": "What part of speech is TISSUES in: 'Mom packed tissues in my backpack.'?",
+   "options": [
+    "plural noun",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"plural noun\". Tissues names more than one thing, so it is a plural noun."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a plural noun?",
+   "options": [
+    "examine",
+    "lullaby",
+    "tissues"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tissues\". Tissues names more than one tissue; lullaby is singular and examine is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "A plural noun names more than one thing. Which word in 'I grabbed two soft tissues' is a plural noun?",
+   "options": [
+    "soft",
+    "tissues",
+    "grabbed"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tissues\". Tissues names more than one thing."
+  },
+  {
+   "q": "Which word is a plural noun, just like TISSUES?",
+   "options": [
+    "buttons",
+    "marlin",
+    "fierce"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"buttons\". Buttons and tissues both name more than one thing.",
+   "type": "pos"
+  },
+  {
+   "type": "meaning",
+   "q": "What are TISSUES?",
+   "options": [
+    "hard metal boxes",
+    "thin, soft papers",
+    "big wooden sticks"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"thin, soft papers\". Tissues are thin and soft so you can wipe your nose."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you do with TISSUES?",
+   "options": [
+    "blow your nose",
+    "build a fort",
+    "feed a fish"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"blow your nose\". Tissues are soft papers for wiping your nose."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely find TISSUES?",
+   "options": [
+    "in a box near the sink",
+    "under a tractor",
+    "inside a fish tank"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"in a box near the sink\". People keep tissue boxes in bathrooms and classrooms."
+  },
+  {
+   "type": "meaning",
+   "q": "'Grab some tissues, I'm sneezing!' What are tissues used for here?",
+   "options": [
+    "cleaning a car",
+    "drying the dishes",
+    "wiping a runny nose"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wiping a runny nose\". When you sneeze, you wipe your nose with tissues."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word best describes how TISSUES feel?",
+   "options": [
+    "sharp",
+    "soft",
+    "rough"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"soft\". Tissues are thin and soft."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is most like TISSUES?",
+   "options": [
+    "rocks",
+    "spoons",
+    "paper napkins"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"paper napkins\". Paper napkins are also thin, soft papers."
+  },
+  {
+   "type": "usage",
+   "q": "Sara had a cold and used lots of ____.",
+   "options": [
+    "marlins",
+    "tractors",
+    "tissues"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tissues\". When you have a cold, you use tissues."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses TISSUES correctly?",
+   "options": [
+    "The tissues roared in the jungle.",
+    "We rode the tissues to the farm.",
+    "Our teacher keeps a box of tissues on her desk."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Our teacher keeps a box of tissues on her desk.\". Tissues come in a box; you cannot ride them or hear them roar."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The sad movie made Dad cry, so Mom handed him some ____.",
+   "options": [
+    "wetlands",
+    "tissues",
+    "butterflies"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tissues\". Tissues help wipe away tears."
+  },
+  {
+   "type": "usage",
+   "q": "Please throw your used ____ in the trash can.",
+   "options": [
+    "tissues",
+    "buttons",
+    "property"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tissues\". You throw away tissues after you use them."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Ben's nose was runny all day, so he kept a pack of ____ in his pocket.",
+   "options": [
+    "granola",
+    "tissues",
+    "custody"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"tissues\". A runny nose needs tissues."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "tisues",
+    "tishues",
+    "tissues"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"tissues\". Tissues has two s's after the i."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'Can I have some ____?'",
+   "options": [
+    "tissues",
+    "tisshues",
+    "tissuse"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tissues\". Tissues is t-i-s-s-u-e-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: ti_su_s",
+   "options": [
+    "h and e",
+    "s and e",
+    "s and a"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"s and e\". The word is t-i-s-s-u-e-s."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for soft papers for your nose?",
+   "options": [
+    "tissues",
+    "tissus",
+    "tisseus"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"tissues\". Tissues ends with u-e-s."
+  }
+ ],
+ "marlin": [
+  {
+   "type": "pos",
+   "q": "What part of speech is MARLIN in: 'The fisherman saw a marlin jump.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Marlin names an animal, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A word that names an animal or thing is a noun. Which kind of word is MARLIN?",
+   "options": [
+    "preposition",
+    "noun",
+    "adverb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". A marlin is a fish, and animals are nouns."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun?",
+   "options": [
+    "proclaim",
+    "marlin",
+    "beneath"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"marlin\". Marlin names a fish; beneath is a preposition and proclaim is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "In 'A huge marlin swam past our boat,' which word is a noun?",
+   "options": [
+    "marlin",
+    "huge",
+    "swam"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"marlin\". Marlin names the fish; huge describes it and swam is the action."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is the same part of speech as MARLIN?",
+   "options": [
+    "opposite",
+    "examine",
+    "kelp"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"kelp\". Marlin and kelp are both nouns."
+  },
+  {
+   "type": "meaning",
+   "q": "What is a MARLIN?",
+   "options": [
+    "a big ocean fish with a long pointed nose",
+    "a small farm bird",
+    "a type of tree"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a big ocean fish with a long pointed nose\". A marlin is a big fish with a spear-like nose."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you find a MARLIN?",
+   "options": [
+    "in a barn",
+    "in a desert",
+    "in the ocean"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"in the ocean\". Marlins are ocean fish."
+  },
+  {
+   "type": "meaning",
+   "q": "Which body part makes a MARLIN easy to spot?",
+   "options": [
+    "its fluffy tail",
+    "its four legs",
+    "its long, pointed nose"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"its long, pointed nose\". A marlin has a long, spear-like nose."
+  },
+  {
+   "type": "meaning",
+   "q": "Which animal is most like a MARLIN?",
+   "options": [
+    "a swordfish",
+    "a robin",
+    "a horse"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a swordfish\". A swordfish is also a big ocean fish with a long pointed nose."
+  },
+  {
+   "type": "meaning",
+   "q": "'We saw a marlin leap out of the water.' What did we see?",
+   "options": [
+    "a seagull",
+    "a big fish",
+    "a boat"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a big fish\". A marlin is a big fish that can jump out of the water."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these could be a MARLIN?",
+   "options": [
+    "a large blue fish with a spear-like nose",
+    "a green frog on a log",
+    "a tiny goldfish in a bowl"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a large blue fish with a spear-like nose\". Marlins are large fish with spear-like noses."
+  },
+  {
+   "type": "usage",
+   "q": "The fishing boat chased a giant ____ across the ocean.",
+   "options": [
+    "marlin",
+    "tractor",
+    "awning"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"marlin\". A giant ocean fish is a marlin."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses MARLIN correctly?",
+   "options": [
+    "I wrote a letter with my marlin.",
+    "The marlin swam fast through the deep blue sea.",
+    "The marlin climbed up the oak tree."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The marlin swam fast through the deep blue sea.\". A marlin is a fish that swims in the sea."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: At the aquarium, we saw a big fish with a nose like a spear. It was a ____.",
+   "options": [
+    "thimble",
+    "marlin",
+    "hurdler"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"marlin\". A big fish with a spear-like nose is a marlin."
+  },
+  {
+   "type": "usage",
+   "q": "Out on the ocean, a ____ jumped high out of the waves.",
+   "options": [
+    "marlin",
+    "dictionary",
+    "basement"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"marlin\". A marlin is an ocean fish that jumps out of the waves."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Grandpa's favorite ocean fish has a long, pointed nose. It is the ____.",
+   "options": [
+    "lullaby",
+    "business",
+    "marlin"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"marlin\". The ocean fish with a pointed nose is the marlin."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "marlen",
+    "marlin",
+    "marlinn"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"marlin\". Marlin is m-a-r-l-i-n."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence: 'We saw a ____ in the sea.'?",
+   "options": [
+    "marrlin",
+    "marlan",
+    "marlin"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"marlin\". Marlin has one r and ends in -lin."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: m_rl_n",
+   "options": [
+    "e and i",
+    "a and e",
+    "a and i"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a and i\". The word is m-a-r-l-i-n."
+  },
+  {
+   "type": "spelling",
+   "q": "Which spelling is right for the big ocean fish with a pointed nose?",
+   "options": [
+    "marlyn",
+    "marlin",
+    "murlin"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"marlin\". Marlin starts with mar and ends with lin."
+  }
+ ]
+}

@@ -1,0 +1,2222 @@
+{
+ "rigid": [
+  {
+   "type": "pos",
+   "q": "What part of speech is RIGID in: 'The rigid ruler would not bend.'?",
+   "options": [
+    "adjective",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". It describes the ruler, and describing words are adjectives."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is an adjective: 'The rigid fence stood by the barn.'?",
+   "options": [
+    "stood",
+    "rigid",
+    "fence"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"rigid\". Rigid tells what kind of fence it is."
+  },
+  {
+   "type": "pos",
+   "q": "A word that describes a noun is an adjective. Which kind of word is RIGID?",
+   "options": [
+    "verb",
+    "adjective",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Rigid describes how stiff something is."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective: rigid, tractor, examine?",
+   "options": [
+    "rigid",
+    "examine",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"rigid\". Tractor is a noun and examine is a verb, but rigid describes things."
+  },
+  {
+   "type": "pos",
+   "q": "In 'My new boots feel rigid,' RIGID describes the boots. What part of speech is it?",
+   "options": [
+    "preposition",
+    "noun",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Words that describe nouns are adjectives."
+  },
+  {
+   "type": "meaning",
+   "q": "What does RIGID mean?",
+   "options": [
+    "very loud and noisy",
+    "soft and squishy",
+    "stiff and hard to bend"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"stiff and hard to bend\". Something rigid will not bend easily."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The rigid cardboard would not fold into the box.' What does RIGID mean here?",
+   "options": [
+    "bright and colorful",
+    "wet and soggy",
+    "stiff, not bendy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"stiff, not bendy\". The cardboard was too stiff to fold."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as RIGID?",
+   "options": [
+    "bright",
+    "stiff",
+    "floppy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"stiff\". Stiff things are hard to bend, just like rigid things."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of RIGID?",
+   "options": [
+    "bendy",
+    "stiff",
+    "tall"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"bendy\". Bendy things bend easily, but rigid things do not."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of something rigid?",
+   "options": [
+    "a metal pole",
+    "a wet noodle",
+    "a silk scarf"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a metal pole\". A metal pole is stiff and does not bend."
+  },
+  {
+   "type": "meaning",
+   "q": "If a toy is rigid, what happens when you try to bend it?",
+   "options": [
+    "It folds flat like paper.",
+    "It stretches like a rubber band.",
+    "It stays stiff and won't bend."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It stays stiff and won't bend.\". Rigid means stiff and hard to bend."
+  },
+  {
+   "type": "usage",
+   "q": "The ice-cold metal bar was ____ and would not bend.",
+   "options": [
+    "jovial",
+    "rigid",
+    "lunar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"rigid\". A bar that won't bend is rigid."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses RIGID correctly?",
+   "options": [
+    "The rigid plank did not bend when I stood on it.",
+    "The pillow was so rigid that it felt soft and fluffy.",
+    "My rigid rubber band stretched across the room."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The rigid plank did not bend when I stood on it.\". A plank that does not bend is rigid."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: A frozen towel is so stiff that it cannot fold. The towel is ____.",
+   "options": [
+    "fickle",
+    "rigid",
+    "jovial"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"rigid\". Something too stiff to fold is rigid."
+  },
+  {
+   "type": "usage",
+   "q": "Sam's cast was ____ so his broken arm could not bend.",
+   "options": [
+    "jovial",
+    "rigid",
+    "fierce"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"rigid\". A hard cast is rigid so it holds the arm still."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses RIGID correctly?",
+   "options": [
+    "The rigid jelly wiggled and jiggled on the plate.",
+    "Grandpa's old leather belt was so rigid it would not curl up.",
+    "The rigid scarf flowed softly in the wind."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Grandpa's old leather belt was so rigid it would not curl up.\". A belt that will not curl is stiff, or rigid."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "rigid",
+    "riged",
+    "rijid"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"rigid\". Rigid is spelled r-i-g-i-d."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ board did not bend.'",
+   "options": [
+    "ridgid",
+    "rigit",
+    "rigid"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"rigid\". Rigid ends with a d, not a t, and has no extra d in the middle."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: r_g_d",
+   "options": [
+    "e and i",
+    "i and e",
+    "i and i"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"i and i\". Both missing letters are i: r-i-g-i-d."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "rigid",
+    "rigidd",
+    "rigud"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"rigid\". Rigid has just one d at the end and an i before it."
+  }
+ ],
+ "fierce": [
+  {
+   "type": "pos",
+   "q": "What part of speech is FIERCE in: 'The fierce wind shook the barn.'?",
+   "options": [
+    "verb",
+    "adjective",
+    "noun"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Fierce describes the wind, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is an adjective: 'The fierce dog barked at the gate.'?",
+   "options": [
+    "gate",
+    "barked",
+    "fierce"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"fierce\". Fierce tells what kind of dog it is."
+  },
+  {
+   "type": "pos",
+   "q": "A word that describes a noun is an adjective. Which kind of word is FIERCE?",
+   "options": [
+    "verb",
+    "adjective",
+    "adverb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Fierce describes animals, storms, and other nouns."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective: fierce, salary, disappear?",
+   "options": [
+    "fierce",
+    "salary",
+    "disappear"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"fierce\". Salary is a noun and disappear is a verb, but fierce is a describing word."
+  },
+  {
+   "type": "pos",
+   "q": "In 'The lion gave a fierce roar,' what part of speech is FIERCE?",
+   "options": [
+    "adjective",
+    "preposition",
+    "pronoun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Fierce tells what kind of roar it was."
+  },
+  {
+   "type": "meaning",
+   "q": "What does FIERCE mean?",
+   "options": [
+    "calm and sleepy",
+    "wild, angry, and ready to attack",
+    "tiny and soft"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"wild, angry, and ready to attack\". A fierce animal is wild and ready to attack."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The fierce tiger growled at the zookeeper from behind the fence.' What does FIERCE mean here?",
+   "options": [
+    "wild and angry",
+    "happy and silly",
+    "sleepy and tired"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wild and angry\". A growling tiger is wild and angry."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as FIERCE?",
+   "options": [
+    "wild",
+    "gentle",
+    "sleepy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wild\". Fierce animals are wild and angry."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of FIERCE?",
+   "options": [
+    "gentle",
+    "angry",
+    "wild"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"gentle\". Gentle animals are calm and kind, not fierce."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is most likely fierce?",
+   "options": [
+    "a growling wolf",
+    "a sleeping kitten",
+    "a fluffy pillow"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a growling wolf\". A growling wolf is wild and ready to attack."
+  },
+  {
+   "type": "meaning",
+   "q": "If you saw a fierce dog behind a fence, what should you do?",
+   "options": [
+    "Reach over to pet it.",
+    "Climb the fence to play.",
+    "Stay back and tell a grown-up."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Stay back and tell a grown-up.\". A fierce dog might bite, so it is safest to stay away."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ storm blew branches all over the yard.",
+   "options": [
+    "jovial",
+    "fierce",
+    "lunar"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fierce\". A wild storm is fierce."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses FIERCE correctly?",
+   "options": [
+    "Grandma baked a fierce pie for dessert.",
+    "The fierce bunny purred and fell asleep on my lap.",
+    "The fierce bear growled to guard her cubs."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The fierce bear growled to guard her cubs.\". A growling, guarding bear is fierce."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: A mother hen puffs up her feathers and pecks to keep a fox away from her chicks. She is ____.",
+   "options": [
+    "rigid",
+    "fierce",
+    "jovial"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fierce\". Pecking to scare off a fox is fierce."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ wolf showed its sharp teeth and growled.",
+   "options": [
+    "lunar",
+    "fierce",
+    "jovial"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fierce\". A growling wolf is fierce."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses FIERCE correctly?",
+   "options": [
+    "I wrapped my sandwich in fierce.",
+    "The fierce butterfly napped quietly on a flower.",
+    "The fierce shark swam fast after the fish."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The fierce shark swam fast after the fish.\". A shark chasing fish is fierce."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "fierce",
+    "feirce",
+    "fierse"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"fierce\". Fierce has i before e and ends with -ce."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ dog growled.'",
+   "options": [
+    "feirse",
+    "fierce",
+    "fearce"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"fierce\". Fierce is spelled f-i-e-r-c-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: f__rce",
+   "options": [
+    "ei",
+    "ee",
+    "ie"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"ie\". Fierce has i then e: f-i-e-r-c-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "fiearce",
+    "fierc",
+    "fierce"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"fierce\". Fierce ends with a silent e and has no extra a."
+  }
+ ],
+ "laughter": [
+  {
+   "type": "pos",
+   "q": "What part of speech is LAUGHTER in: 'Laughter filled the classroom.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Laughter names a thing, a sound, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a person, place, thing, or idea. Which kind of word is LAUGHTER?",
+   "options": [
+    "noun",
+    "adverb",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Laughter names a sound, which is a thing."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun: laughter, jovial, disappear?",
+   "options": [
+    "laughter",
+    "disappear",
+    "jovial"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"laughter\". Jovial is an adjective and disappear is a verb, but laughter names a thing."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is a noun: 'We heard loud laughter.'?",
+   "options": [
+    "laughter",
+    "loud",
+    "heard"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"laughter\". Laughter is the thing we heard."
+  },
+  {
+   "type": "pos",
+   "q": "LAUGHTER comes from the verb laugh. What part of speech is LAUGHTER?",
+   "options": [
+    "verb",
+    "noun",
+    "adverb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". Laugh is the action, and laughter is the name of the sound."
+  },
+  {
+   "type": "meaning",
+   "q": "What does LAUGHTER mean?",
+   "options": [
+    "a kind of dessert",
+    "the sound of laughing",
+    "the sound of crying"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the sound of laughing\". Laughter is the sound people make when they laugh."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The clown's silly tricks filled the tent with laughter.' What does LAUGHTER mean here?",
+   "options": [
+    "the sound of people laughing",
+    "the sound of rain",
+    "quiet sleeping"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"the sound of people laughing\". Silly tricks make people laugh."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as LAUGHTER?",
+   "options": [
+    "giggles",
+    "tears",
+    "whispers"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"giggles\". Giggles are a kind of laughing sound."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of LAUGHTER?",
+   "options": [
+    "giggling",
+    "chuckling",
+    "crying"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"crying\". Crying is the opposite of laughing."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of laughter?",
+   "options": [
+    "\"Zzzzz.\"",
+    "\"Achoo!\"",
+    "\"Ha ha ha!\""
+   ],
+   "ans": 2,
+   "hint": "The answer is \"\"Ha ha ha!\"\". Ha ha ha is the sound of laughing."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely hear laughter?",
+   "options": [
+    "in a quiet library during a test",
+    "at a funny puppet show",
+    "in an empty room"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"at a funny puppet show\". Funny shows make people laugh."
+  },
+  {
+   "type": "usage",
+   "q": "The funny joke made the whole class burst into ____.",
+   "options": [
+    "salary",
+    "duration",
+    "laughter"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"laughter\". People burst into laughter when something is funny."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses LAUGHTER correctly?",
+   "options": [
+    "Laughter rang out when the puppy chased its tail.",
+    "I poured laughter into my cereal bowl.",
+    "I tied my shoes with a long piece of laughter."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Laughter rang out when the puppy chased its tail.\". Laughter is a sound you can hear."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: At the party, everyone giggled at the silly magic trick. The room was full of ____.",
+   "options": [
+    "salary",
+    "kelp",
+    "laughter"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"laughter\". Giggling fills a room with laughter."
+  },
+  {
+   "type": "usage",
+   "q": "Grandpa's ____ was so loud that we all started laughing too.",
+   "options": [
+    "salary",
+    "dictionary",
+    "laughter"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"laughter\". Loud laughing is laughter."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses LAUGHTER correctly?",
+   "options": [
+    "The laughter fell off the tree in the fall.",
+    "Mom parked the laughter in the garage.",
+    "The baby's laughter made everyone smile."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The baby's laughter made everyone smile.\". A baby's laugh is a happy sound."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "laffter",
+    "laughter",
+    "lafter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"laughter\". Laughter is spelled with augh, like laugh."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Our ____ filled the room.'",
+   "options": [
+    "laughtor",
+    "laughter",
+    "laghter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"laughter\". Laughter has augh and ends with -er."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: la_ght_r",
+   "options": [
+    "w and e",
+    "u and e",
+    "u and o"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"u and e\". Laughter is l-a-u-g-h-t-e-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "laughter",
+    "loughter",
+    "laugter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"laughter\". Laughter starts with laugh, so it keeps the a-u-g-h."
+  }
+ ],
+ "salary": [
+  {
+   "type": "pos",
+   "q": "What part of speech is SALARY in: 'Mom's salary pays for our food.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Salary names a thing, money, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun names a person, place, thing, or idea. Which kind of word is SALARY?",
+   "options": [
+    "adverb",
+    "noun",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". A salary is a thing: money paid for a job."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun: salary, jovial, examine?",
+   "options": [
+    "salary",
+    "examine",
+    "jovial"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"salary\". Jovial is an adjective and examine is a verb, but salary names a thing."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is a noun: 'Her salary is paid each month.'?",
+   "options": [
+    "paid",
+    "is",
+    "salary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"salary\". Salary is the thing that gets paid."
+  },
+  {
+   "type": "pos",
+   "q": "Is SALARY a singular noun or a plural noun?",
+   "options": [
+    "plural noun",
+    "verb",
+    "singular noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"singular noun\". Salary names just one thing; the plural would be salaries."
+  },
+  {
+   "type": "meaning",
+   "q": "What is a SALARY?",
+   "options": [
+    "a crunchy green vegetable",
+    "money paid regularly to someone for their job",
+    "a big birthday party"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"money paid regularly to someone for their job\". A salary is the money a worker earns."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The teacher uses her salary to pay her bills.' What does SALARY mean here?",
+   "options": [
+    "money she earns from her job",
+    "the lunch she packs",
+    "the books she reads"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"money she earns from her job\". She pays bills with the money from her job."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as SALARY?",
+   "options": [
+    "holiday",
+    "snack",
+    "pay"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"pay\". Pay is money you get for working, just like a salary."
+  },
+  {
+   "type": "meaning",
+   "q": "Who is most likely to get a salary?",
+   "options": [
+    "a puppy playing in the yard",
+    "a nurse who works at a hospital",
+    "a baby taking a nap"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a nurse who works at a hospital\". A nurse has a job and gets paid for it."
+  },
+  {
+   "type": "meaning",
+   "q": "What would a person most likely do with a salary?",
+   "options": [
+    "wear it on their head",
+    "use it to pay for food and a home",
+    "plant it in the garden"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"use it to pay for food and a home\". A salary is money, so you spend or save it."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of a salary?",
+   "options": [
+    "A firefighter is paid money every two weeks for her job.",
+    "Grandma gives you five dollars for your birthday.",
+    "A boy finds a coin on the sidewalk."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A firefighter is paid money every two weeks for her job.\". A salary is regular pay for doing a job."
+  },
+  {
+   "type": "usage",
+   "q": "Dad works at the bank and gets his ____ every month.",
+   "options": [
+    "laughter",
+    "kelp",
+    "salary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"salary\". Money paid every month for a job is a salary."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses SALARY correctly?",
+   "options": [
+    "I ate a crunchy salary with peanut butter.",
+    "The coach earns a salary for training the team.",
+    "The salary hopped across the pond."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The coach earns a salary for training the team.\". A coach is paid a salary for his job."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Mr. Lee works at the zoo, and the zoo pays him money every two weeks. That money is his ____.",
+   "options": [
+    "duration",
+    "lullaby",
+    "salary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"salary\". Regular pay for a job is a salary."
+  },
+  {
+   "type": "usage",
+   "q": "A pilot earns a ____ for flying planes.",
+   "options": [
+    "salary",
+    "relief",
+    "thimble"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"salary\". Pilots are paid a salary for their work."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses SALARY correctly?",
+   "options": [
+    "My cat took a salary on the couch.",
+    "Aunt Rosa saved part of her salary to buy a new car.",
+    "The farmer planted salary in long rows."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Aunt Rosa saved part of her salary to buy a new car.\". You can save money from your salary."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "sallary",
+    "salery",
+    "salary"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"salary\". Salary has one l and an a in the middle: s-a-l-a-r-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Her ____ is paid on Fridays.'",
+   "options": [
+    "salarie",
+    "salary",
+    "salory"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"salary\". Salary ends with -ary."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: s_l_ry",
+   "options": [
+    "a and a",
+    "a and e",
+    "e and a"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a and a\". Salary is s-a-l-a-r-y."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "salary",
+    "salury",
+    "sallery"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"salary\". Salary has one l and two a's."
+  }
+ ],
+ "disappear": [
+  {
+   "type": "pos",
+   "q": "What part of speech is DISAPPEAR in: 'Watch the coin disappear!'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Disappear is something the coin does, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "A verb is an action word. Which kind of word is DISAPPEAR?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Disappear tells an action: going out of sight."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a verb: disappear, salary, jovial?",
+   "options": [
+    "jovial",
+    "salary",
+    "disappear"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"disappear\". Salary is a noun and jovial is an adjective, but disappear is an action."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is a verb: 'The bunnies disappear into the bushes.'?",
+   "options": [
+    "bushes",
+    "bunnies",
+    "disappear"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"disappear\". Disappear tells what the bunnies do."
+  },
+  {
+   "type": "pos",
+   "q": "DISAPPEAR is made of dis- + appear. What part of speech is it?",
+   "options": [
+    "verb",
+    "adverb",
+    "preposition"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Appear is a verb, and adding dis- keeps it a verb."
+  },
+  {
+   "type": "meaning",
+   "q": "What does DISAPPEAR mean?",
+   "options": [
+    "to go out of sight",
+    "to make a loud noise",
+    "to get very big"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to go out of sight\". When something disappears, you can't see it anymore."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The sun began to disappear behind the hills.' What does DISAPPEAR mean here?",
+   "options": [
+    "grow bigger",
+    "go out of sight",
+    "get hotter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"go out of sight\". The sun went behind the hills where we can't see it."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as DISAPPEAR?",
+   "options": [
+    "appear",
+    "shout",
+    "vanish"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"vanish\". Vanish also means to go out of sight."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of DISAPPEAR?",
+   "options": [
+    "fade",
+    "vanish",
+    "appear"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"appear\". Appear means to come into sight."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of something disappearing?",
+   "options": [
+    "A rainbow shows up in the sky.",
+    "A puppy runs into the room.",
+    "A magician waves a cloth and the bunny is gone."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A magician waves a cloth and the bunny is gone.\". The bunny went out of sight."
+  },
+  {
+   "type": "meaning",
+   "q": "What does a magician do to make a coin disappear?",
+   "options": [
+    "makes it bigger",
+    "hides it so you can't see it",
+    "drops it loudly on the floor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hides it so you can't see it\". Disappear means to go out of sight."
+  },
+  {
+   "type": "usage",
+   "q": "When the wind blows, the clouds will ____ and the sun will shine.",
+   "options": [
+    "disappear",
+    "examine",
+    "proclaim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"disappear\". Clouds that blow away go out of sight."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses DISAPPEAR correctly?",
+   "options": [
+    "We ate a big bowl of disappear.",
+    "My snowman began to disappear as the sun melted it.",
+    "I will disappear the ball to my friend."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"My snowman began to disappear as the sun melted it.\". The melting snowman was going away."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: The cookies were on the plate, but now the plate is empty. The cookies seemed to ____.",
+   "options": [
+    "disappear",
+    "reinstate",
+    "lounge"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"disappear\". The cookies are gone, so they seemed to disappear."
+  },
+  {
+   "type": "usage",
+   "q": "The turtle pulled its head in so it would ____ inside its shell.",
+   "options": [
+    "invite",
+    "disappear",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"disappear\". The turtle's head went out of sight."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses DISAPPEAR correctly?",
+   "options": [
+    "The disappear barked at the mail carrier.",
+    "The stars disappear when the sun comes up.",
+    "Please disappear your coat on the hook."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The stars disappear when the sun comes up.\". Stars go out of sight in daylight."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "disappear",
+    "disapear",
+    "dissappear"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"disappear\". Disappear is dis + appear: one s and two p's."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Watch the rabbit ____!'",
+   "options": [
+    "dissapear",
+    "disappeer",
+    "disappear"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"disappear\". Disappear ends with -ear, like appear."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: dis_ppe_r",
+   "options": [
+    "a and a",
+    "s and a",
+    "a and e"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a and a\". Disappear is d-i-s-a-p-p-e-a-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "disapeer",
+    "disappear",
+    "dissapeer"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"disappear\". Think dis + appear: one s, two p's, and -ear."
+  }
+ ],
+ "hurdler": [
+  {
+   "type": "pos",
+   "q": "What part of speech is HURDLER in: 'The hurdler won the race.'?",
+   "options": [
+    "adjective",
+    "verb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". Hurdler names a person, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun can name a person. Which kind of word is HURDLER?",
+   "options": [
+    "adverb",
+    "verb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". A hurdler is a person who runs and jumps."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun: hurdler, disappear, jovial?",
+   "options": [
+    "hurdler",
+    "disappear",
+    "jovial"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"hurdler\". Disappear is a verb and jovial is an adjective, but hurdler names a person."
+  },
+  {
+   "type": "pos",
+   "q": "HURDLER ends in -er, like runner and jumper. What part of speech is HURDLER?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"noun\". Adding -er here makes a word that names a person."
+  },
+  {
+   "type": "pos",
+   "q": "Is HURDLER a singular noun or a plural noun?",
+   "options": [
+    "singular noun",
+    "plural noun",
+    "verb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"singular noun\". Hurdler names just one person; two would be hurdlers."
+  },
+  {
+   "type": "meaning",
+   "q": "What is a HURDLER?",
+   "options": [
+    "a person who drives a tractor",
+    "a runner who jumps over barriers in a race",
+    "a big fish in the ocean"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a runner who jumps over barriers in a race\". A hurdler runs and jumps over bars in a race."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'At the track meet, the hurdler leaped over each bar.' What is a HURDLER?",
+   "options": [
+    "a runner who jumps over bars",
+    "a coach who blows a whistle",
+    "a person who sells snacks"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a runner who jumps over bars\". The hurdler leaped over bars while racing."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these shows a hurdler in action?",
+   "options": [
+    "Maya runs and jumps over a row of low fences in a race.",
+    "Maya swims laps in the pool.",
+    "Maya kicks a soccer ball into the goal."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Maya runs and jumps over a row of low fences in a race.\". Hurdlers jump over barriers while they run."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely see a hurdler?",
+   "options": [
+    "at the library",
+    "at a track meet",
+    "at the dentist"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"at a track meet\". Hurdlers race on a track."
+  },
+  {
+   "type": "meaning",
+   "q": "What does a hurdler need to be good at?",
+   "options": [
+    "singing and dancing",
+    "baking and cooking",
+    "running and jumping"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"running and jumping\". Hurdlers run fast and jump over barriers."
+  },
+  {
+   "type": "meaning",
+   "q": "Which phrase means almost the same as HURDLER?",
+   "options": [
+    "a jumping runner",
+    "a deep-sea swimmer",
+    "a picture painter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a jumping runner\". A hurdler runs and jumps."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ jumped over ten barriers to finish the race.",
+   "options": [
+    "hurdler",
+    "thimble",
+    "tractor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"hurdler\". A runner who jumps barriers is a hurdler."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses HURDLER correctly?",
+   "options": [
+    "I put the hurdler in the oven to bake.",
+    "The hurdler cleared the last barrier and crossed the finish line.",
+    "The hurdler swam to the bottom of the ocean to find kelp."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The hurdler cleared the last barrier and crossed the finish line.\". Hurdlers jump barriers and race to the finish."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Leo practices leaping over bars while sprinting on the track. Leo is a ____.",
+   "options": [
+    "lullaby",
+    "hurdler",
+    "marlin"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hurdler\". Leaping bars while running is what a hurdler does."
+  },
+  {
+   "type": "usage",
+   "q": "My big sister is a fast ____ on the school track team.",
+   "options": [
+    "granola",
+    "dictionary",
+    "hurdler"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"hurdler\". A hurdler is a runner on a track team."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses HURDLER correctly?",
+   "options": [
+    "We looked up words in the hurdler.",
+    "The coach timed the hurdler as she jumped each fence.",
+    "The hurdler is the month after November."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The coach timed the hurdler as she jumped each fence.\". A hurdler jumps fences in a race."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "herdler",
+    "hurdler",
+    "hurdeler"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hurdler\". Hurdler is hurdle plus r: h-u-r-d-l-e-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ jumped high.'",
+   "options": [
+    "hirdler",
+    "hurdlar",
+    "hurdler"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"hurdler\". Hurdler starts with hur- and ends with -er."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: h_rdl_r",
+   "options": [
+    "e and e",
+    "u and a",
+    "u and e"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"u and e\". Hurdler is h-u-r-d-l-e-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "hurddler",
+    "hurdler",
+    "hurdlir"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hurdler\". Hurdler has one d and ends with -er."
+  }
+ ],
+ "lounge": [
+  {
+   "type": "pos",
+   "q": "What part of speech is LOUNGE in: 'On Saturdays, I like to lounge on the couch.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"verb\". Here lounge is something I do, so it is a verb."
+  },
+  {
+   "type": "pos",
+   "q": "Which sentence uses LOUNGE as a verb?",
+   "options": [
+    "We waited in the hotel lounge.",
+    "The lounge has soft chairs.",
+    "The cats lounge in the warm sun."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The cats lounge in the warm sun.\". In the first sentence, lounge is what the cats do."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is a verb: 'The dogs lounge by the pool.'?",
+   "options": [
+    "dogs",
+    "pool",
+    "lounge"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lounge\". Lounge tells what the dogs do."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Seals lounge on the warm rocks,' LOUNGE tells what the seals do. What part of speech is it?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"verb\". Words that tell what someone does are verbs."
+  },
+  {
+   "type": "pos",
+   "q": "A verb tells what someone does. In 'My cat loves to lounge on my bed,' which kind of word is LOUNGE?",
+   "options": [
+    "noun",
+    "preposition",
+    "verb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"verb\". Lounge is the cat's action, so it is a verb."
+  },
+  {
+   "type": "meaning",
+   "q": "What does LOUNGE mean in 'We lounge on the beach'?",
+   "options": [
+    "to sit or lie in a lazy, relaxed way",
+    "to shout loudly",
+    "to run very fast"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"to sit or lie in a lazy, relaxed way\". To lounge is to relax lazily."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'On hot days, the dog likes to lounge in the shade.' What does LOUNGE mean here?",
+   "options": [
+    "dig a deep hole",
+    "bark at birds",
+    "lie around and relax"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lie around and relax\". The dog rests lazily in the shade."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as LOUNGE?",
+   "options": [
+    "work",
+    "relax",
+    "hurry"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"relax\". To lounge is to relax in a lazy way."
+  },
+  {
+   "type": "meaning",
+   "q": "Which means the opposite of LOUNGE?",
+   "options": [
+    "rest",
+    "relax",
+    "rush around"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"rush around\". Rushing around is busy, not lazy and relaxed."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these is an example of lounging?",
+   "options": [
+    "running laps in gym class",
+    "lying on a beach towel reading a comic",
+    "scrubbing the kitchen floor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lying on a beach towel reading a comic\". Lying around and reading is lazy and relaxed."
+  },
+  {
+   "type": "meaning",
+   "q": "Which is the best place to lounge?",
+   "options": [
+    "on a rocky climbing wall",
+    "in a comfy hammock",
+    "on a busy road"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"in a comfy hammock\". A comfy hammock is a great place to relax."
+  },
+  {
+   "type": "usage",
+   "q": "After swimming, the seals ____ on the warm rocks.",
+   "options": [
+    "lounge",
+    "examine",
+    "proclaim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lounge\". Seals lie lazily on rocks to relax."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses LOUNGE correctly?",
+   "options": [
+    "On Sunday we lounge in our pajamas and watch cartoons.",
+    "We lounge quickly to catch the bus before it leaves.",
+    "Please lounge your homework to the teacher."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"On Sunday we lounge in our pajamas and watch cartoons.\". Relaxing in pajamas is lounging."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Kim is lying in a hammock, just relaxing. Kim likes to ____.",
+   "options": [
+    "reinstate",
+    "lounge",
+    "proclaim"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lounge\". Lying around relaxing is lounging."
+  },
+  {
+   "type": "usage",
+   "q": "The lazy cat likes to ____ on the sunny windowsill all day.",
+   "options": [
+    "lounge",
+    "reinstate",
+    "proclaim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lounge\". A lazy cat lies around and lounges."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses LOUNGE correctly?",
+   "options": [
+    "The firefighters lounge into the house to help fast.",
+    "Grandma likes to lounge in her big chair after dinner.",
+    "I lounge my bike up the steep hill as hard as I can."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Grandma likes to lounge in her big chair after dinner.\". Relaxing in a chair is lounging."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "lounj",
+    "lounge",
+    "lownge"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"lounge\". Lounge has ou and ends with -ge."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'We ____ by the pool.'",
+   "options": [
+    "loung",
+    "lounje",
+    "lounge"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"lounge\". Lounge ends with a silent e after the g."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: l__nge",
+   "options": [
+    "ou",
+    "oo",
+    "ow"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"ou\". Lounge is l-o-u-n-g-e."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "lounge",
+    "lownj",
+    "laounge"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"lounge\". Lounge is spelled l-o-u-n-g-e."
+  }
+ ],
+ "jovial": [
+  {
+   "type": "pos",
+   "q": "What part of speech is JOVIAL in: 'The jovial clown made us laugh.'?",
+   "options": [
+    "noun",
+    "adjective",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Jovial describes the clown, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is an adjective: 'Our jovial coach smiled at the team.'?",
+   "options": [
+    "coach",
+    "jovial",
+    "smiled"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"jovial\". Jovial tells what kind of coach."
+  },
+  {
+   "type": "pos",
+   "q": "A word that describes a noun is an adjective. Which kind of word is JOVIAL?",
+   "options": [
+    "noun",
+    "adverb",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Jovial describes people and moods."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is an adjective: jovial, hurdler, disappear?",
+   "options": [
+    "disappear",
+    "hurdler",
+    "jovial"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"jovial\". Hurdler is a noun and disappear is a verb, but jovial is a describing word."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Santa is jovial and kind,' JOVIAL describes Santa. What part of speech is it?",
+   "options": [
+    "verb",
+    "pronoun",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Words that describe nouns are adjectives."
+  },
+  {
+   "type": "meaning",
+   "q": "What does JOVIAL mean?",
+   "options": [
+    "tired and sleepy",
+    "cheerful and full of good fun",
+    "grumpy and mean"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"cheerful and full of good fun\". A jovial person is cheerful and fun."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The jovial bus driver sang songs and told jokes on the way to school.' What does JOVIAL mean here?",
+   "options": [
+    "cheerful and fun",
+    "quiet and shy",
+    "angry and loud"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"cheerful and fun\". Singing and joking shows he is cheerful."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as JOVIAL?",
+   "options": [
+    "scared",
+    "grumpy",
+    "cheerful"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cheerful\". Jovial people are cheerful."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of JOVIAL?",
+   "options": [
+    "grumpy",
+    "happy",
+    "jolly"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"grumpy\". Grumpy is the opposite of cheerful and fun."
+  },
+  {
+   "type": "meaning",
+   "q": "Who is acting jovial?",
+   "options": [
+    "Uncle Joe frowns and won't talk.",
+    "Uncle Joe laughs, tells jokes, and makes everyone smile.",
+    "Uncle Joe is fast asleep on the couch."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Uncle Joe laughs, tells jokes, and makes everyone smile.\". Laughing and joking is jovial."
+  },
+  {
+   "type": "meaning",
+   "q": "Where would you most likely find jovial people?",
+   "options": [
+    "taking a hard math test",
+    "at a fun birthday party",
+    "in line for a shot at the doctor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"at a fun birthday party\". Parties are full of cheerful fun."
+  },
+  {
+   "type": "usage",
+   "q": "The ____ farmer whistled and waved at everyone who passed by.",
+   "options": [
+    "rigid",
+    "jovial",
+    "molten"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"jovial\". A cheerful, friendly farmer is jovial."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses JOVIAL correctly?",
+   "options": [
+    "The jovial puppy wagged its tail and played with everyone.",
+    "We ate jovial for dinner.",
+    "The jovial man yelled at the kids and slammed the door."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The jovial puppy wagged its tail and played with everyone.\". A happy, playful puppy is jovial."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Mr. Diaz always smiles, laughs, and tells funny jokes. He is ____.",
+   "options": [
+    "jovial",
+    "fierce",
+    "inferior"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"jovial\". Smiling and joking means he is jovial."
+  },
+  {
+   "type": "usage",
+   "q": "Everyone loved the ____ lunch lady who greeted kids with a big smile.",
+   "options": [
+    "jovial",
+    "rigid",
+    "lunar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"jovial\". A smiling, cheerful person is jovial."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses JOVIAL correctly?",
+   "options": [
+    "The jovial rock sank to the bottom of the river.",
+    "The jovial girl cried because she was so sad.",
+    "Grandpa was in a jovial mood and told silly stories all night."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Grandpa was in a jovial mood and told silly stories all night.\". Telling silly stories shows a jovial mood."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "jovial",
+    "jovel",
+    "joveal"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"jovial\". Jovial is spelled j-o-v-i-a-l."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'The ____ clown waved.'",
+   "options": [
+    "jovile",
+    "jovial",
+    "jovail"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"jovial\". Jovial ends with -ial."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: jov__l",
+   "options": [
+    "ia",
+    "ai",
+    "ee"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"ia\". Jovial is j-o-v-i-a-l."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "jovvial",
+    "jovual",
+    "jovial"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"jovial\". Jovial has one v and ends with -ial."
+  }
+ ],
+ "inferior": [
+  {
+   "type": "pos",
+   "q": "What part of speech is INFERIOR in: 'This cheap ball is inferior to my old one.'?",
+   "options": [
+    "adverb",
+    "adjective",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Inferior describes the ball, so it is an adjective."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is an adjective: 'The inferior glue did not hold.'?",
+   "options": [
+    "hold",
+    "glue",
+    "inferior"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"inferior\". Inferior tells what kind of glue."
+  },
+  {
+   "type": "pos",
+   "q": "In 'They sold inferior apples that were mushy,' INFERIOR describes the apples. What part of speech is it?",
+   "options": [
+    "noun",
+    "adjective",
+    "verb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"adjective\". Words that describe nouns are adjectives."
+  },
+  {
+   "type": "pos",
+   "q": "In 'Dad would not buy the inferior kite,' what part of speech is INFERIOR?",
+   "options": [
+    "adjective",
+    "verb",
+    "preposition"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"adjective\". Inferior tells what kind of kite."
+  },
+  {
+   "type": "pos",
+   "q": "What part of speech is INFERIOR in: 'Mom said the old tires were inferior.'?",
+   "options": [
+    "noun",
+    "verb",
+    "adjective"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"adjective\". Inferior describes the tires."
+  },
+  {
+   "type": "meaning",
+   "q": "What does INFERIOR mean?",
+   "options": [
+    "brand new and shiny",
+    "not as good; lower in quality",
+    "the very best"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"not as good; lower in quality\". Inferior things are not as good as others."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'The inferior umbrella broke in the first light wind.' What does INFERIOR mean here?",
+   "options": [
+    "not as good",
+    "more colorful",
+    "bigger"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"not as good\". It broke easily because it was not well made."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means almost the same as INFERIOR?",
+   "options": [
+    "worse",
+    "greater",
+    "better"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"worse\". Inferior means not as good, or worse."
+  },
+  {
+   "type": "meaning",
+   "q": "Which word means the opposite of INFERIOR?",
+   "options": [
+    "better",
+    "worse",
+    "lower"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"better\". Inferior means not as good, so better is the opposite."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these crayons is inferior?",
+   "options": [
+    "a crayon that breaks every time you color",
+    "a crayon that colors smoothly",
+    "a strong crayon that lasts all year"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a crayon that breaks every time you color\". A crayon that keeps breaking is not as good."
+  },
+  {
+   "type": "meaning",
+   "q": "What would you most likely do with inferior shoes that fell apart in a week?",
+   "options": [
+    "tell everyone they are the best shoes ever",
+    "return them for a better pair",
+    "give them a gold medal"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"return them for a better pair\". Inferior things are not good, so you would want better ones."
+  },
+  {
+   "type": "usage",
+   "q": "The paper plates were ____, so they bent and spilled our food.",
+   "options": [
+    "inferior",
+    "jovial",
+    "lunar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"inferior\". Plates that bend and spill are not as good."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses INFERIOR correctly?",
+   "options": [
+    "Our team won first prize because our project was inferior.",
+    "I inferior my bike to school every day.",
+    "The cheap kite was inferior and ripped on its first flight."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The cheap kite was inferior and ripped on its first flight.\". A kite that rips right away is not as good."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: Ben's toy car broke in one day, but Ava's lasted for years. Ben's car was ____.",
+   "options": [
+    "fierce",
+    "inferior",
+    "jovial"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"inferior\". Ben's car was not as good as Ava's."
+  },
+  {
+   "type": "usage",
+   "q": "The farmer said the moldy hay was ____ and not good for the horses.",
+   "options": [
+    "lunar",
+    "inferior",
+    "elite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"inferior\". Moldy hay is lower in quality."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses INFERIOR correctly?",
+   "options": [
+    "The inferior laughed and told a funny joke.",
+    "Mom would not buy the inferior bananas because they were brown and mushy.",
+    "The inferior cake won the blue ribbon for being the best."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Mom would not buy the inferior bananas because they were brown and mushy.\". Mushy bananas are lower in quality."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "inferier",
+    "infearior",
+    "inferior"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"inferior\". Inferior ends with -ior."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'This tape is ____.'",
+   "options": [
+    "inferrior",
+    "enferior",
+    "inferior"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"inferior\". Inferior starts with in- and has one r in the middle."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: inf_ri_r",
+   "options": [
+    "e and e",
+    "i and o",
+    "e and o"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"e and o\". Inferior is i-n-f-e-r-i-o-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled the right way?",
+   "options": [
+    "inferior",
+    "infirior",
+    "inferor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"inferior\". Inferior is spelled i-n-f-e-r-i-o-r."
+  }
+ ],
+ "December": [
+  {
+   "type": "pos",
+   "q": "What part of speech is DECEMBER in: 'December is a cold month here.'?",
+   "options": [
+    "verb",
+    "noun",
+    "adjective"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"noun\". December names a month, so it is a noun."
+  },
+  {
+   "type": "pos",
+   "q": "A noun can name a special thing, like a month. Which kind of word is DECEMBER?",
+   "options": [
+    "verb",
+    "adverb",
+    "noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"noun\". December is the name of a month, and names are nouns."
+  },
+  {
+   "type": "pos",
+   "q": "Which word is a noun: December, jovial, disappear?",
+   "options": [
+    "jovial",
+    "disappear",
+    "December"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"December\". Jovial is an adjective and disappear is a verb, but December names a month."
+  },
+  {
+   "type": "pos",
+   "q": "Which of these words from the sentence is a noun: 'We sing songs in December.'?",
+   "options": [
+    "sing",
+    "December",
+    "in"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"December\". December names a month."
+  },
+  {
+   "type": "pos",
+   "q": "Is DECEMBER a singular noun or a plural noun?",
+   "options": [
+    "plural noun",
+    "verb",
+    "singular noun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"singular noun\". December names just one month."
+  },
+  {
+   "type": "meaning",
+   "q": "What is DECEMBER?",
+   "options": [
+    "the first month of the year",
+    "a day of the week",
+    "the twelfth month of the year"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the twelfth month of the year\". December is month number twelve."
+  },
+  {
+   "type": "meaning",
+   "q": "Read: 'My birthday is in December, right before the new year starts.' What is DECEMBER?",
+   "options": [
+    "the last month of the year",
+    "a summer holiday",
+    "a kind of cake"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"the last month of the year\". December is the last month before a new year."
+  },
+  {
+   "type": "meaning",
+   "q": "Which month comes right before December?",
+   "options": [
+    "October",
+    "November",
+    "January"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"November\". November is the eleventh month, just before December."
+  },
+  {
+   "type": "meaning",
+   "q": "Which month comes right after December?",
+   "options": [
+    "January",
+    "November",
+    "March"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"January\". After December, a new year starts with January."
+  },
+  {
+   "type": "meaning",
+   "q": "Which of these days is in December?",
+   "options": [
+    "New Year's Eve, the last day of the year",
+    "the Fourth of July",
+    "Valentine's Day"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"New Year's Eve, the last day of the year\". New Year's Eve is December 31."
+  },
+  {
+   "type": "meaning",
+   "q": "How many months come after December in the same year?",
+   "options": [
+    "one",
+    "none",
+    "two"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"none\". December is the twelfth and last month."
+  },
+  {
+   "type": "usage",
+   "q": "The last month of the year is ____.",
+   "options": [
+    "December",
+    "duration",
+    "dictionary"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"December\". December is month twelve, the last one."
+  },
+  {
+   "type": "usage",
+   "q": "Which sentence uses DECEMBER correctly?",
+   "options": [
+    "In December, we hung lights and built a snowman.",
+    "December is the first month of the year.",
+    "I ate a bowl of December for lunch."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"In December, we hung lights and built a snowman.\". December is a winter month at the end of the year."
+  },
+  {
+   "type": "usage",
+   "q": "Which word fits: It comes after November and before January. It is ____.",
+   "options": [
+    "lullaby",
+    "December",
+    "salary"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"December\". December sits between November and January."
+  },
+  {
+   "type": "usage",
+   "q": "Our winter break starts in ____, right before New Year's Day.",
+   "options": [
+    "granola",
+    "custody",
+    "December"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"December\". Winter break often starts in December."
+  },
+  {
+   "type": "usage",
+   "q": "Which of these sentences uses DECEMBER correctly?",
+   "options": [
+    "December comes right after January.",
+    "There are 31 days in December.",
+    "We December the cookies on a plate."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"There are 31 days in December.\". December has 31 days."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is the correct spelling?",
+   "options": [
+    "Decembur",
+    "Desember",
+    "December"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"December\". December has a c, not an s, and ends with -ber."
+  },
+  {
+   "type": "spelling",
+   "q": "Which is written correctly?",
+   "options": [
+    "december",
+    "December",
+    "Decembir"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"December\". Months start with a capital letter, and December ends with -ber."
+  },
+  {
+   "type": "spelling",
+   "q": "Which word is spelled correctly in the sentence? 'Snow fell all ____.'",
+   "options": [
+    "December",
+    "Decmber",
+    "Dicember"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"December\". December is spelled D-e-c-e-m-b-e-r."
+  },
+  {
+   "type": "spelling",
+   "q": "Fill the missing letters: De_emb_r",
+   "options": [
+    "c and e",
+    "s and e",
+    "c and u"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"c and e\". December is D-e-c-e-m-b-e-r."
+  }
+ ]
+}
