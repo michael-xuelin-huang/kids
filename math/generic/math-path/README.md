@@ -10,6 +10,12 @@ The games and the story are built once. After each report, the AI writes a small
 
 Today the child plays [Pingo's Math Zoo](../math-quest-penguin/) (spoken times tables, + − ÷). Its progress report is the first input to this loop.
 
+## Play
+
+**Zoo Island (the Math Path app):** https://michael-xuelin-huang.github.io/kids/math/generic/math-path/app/
+
+The players are the same as in Pingo's game, and stars go to the same zoo. A child who has played Pingo starts past the skills Pingo has already shown they know. Grown-ups can load a plan and download the report from the link at the bottom of the home screen.
+
 ## What's here
 
 | Folder | Contents |
@@ -23,21 +29,22 @@ Today the child plays [Pingo's Math Zoo](../math-quest-penguin/) (spoken times t
 | `plans/` | Learning plans, one per child per cycle (`<date>-<child>.plan.json`), plus two examples. |
 | `reports/` | Progress reports downloaded from the game. See `reports/README.md`. |
 | `prompts/next-plan.md` | The prompt that turns a report into the next plan. |
-| `tools/` | `build-map.mjs` (build and check the map), `check-plan.mjs` (check a plan), `test-check-plan.mjs`. |
+| `app/` | The Zoo Island app: plan engine (`src/model/engine.js`), question generators (`src/content/skills.js`), lessons, drawings, report v2. |
+| `tools/` | `build-map.mjs` (build and check the map), `check-plan.mjs` (check a plan), `test-check-plan.mjs`, `test-generators.mjs`, `simulate-plan.mjs` (simulated children), `stamp-app.mjs` (cache-busting before each commit). |
 
 ## Commands
 
 ```sh
 node tools/build-map.mjs                      # rebuild knowledge-map/grades-3-5.json and .md, check prerequisites and story
 node tools/check-plan.mjs plans/<file>.json   # check a plan before using it
-node tools/test-check-plan.mjs                # checker tests
+npm test                                      # everything: map, plan checker, generators, simulated children
+npm run stamp                                 # before committing app changes
+python3 -m http.server -d ../../..            # then open http://localhost:8000/math/generic/math-path/app/
 ```
-
-(Or `npm run build:map`, `npm run check -- plans/<file>.json`, `npm test`.)
 
 ## The loop, by hand, today
 
-1. In Pingo, open **Progress report** and choose **Download for AI (.md)**. Save it to `reports/<YYYY-MM-DD>-<child>.md`.
+1. In Zoo Island, open **For grown-ups: plan and report**, then **Download report**. Save it to `reports/<YYYY-MM-DD>-<child>.md`. (Pingo's own report works too.)
 2. In Claude Code, from this folder: "Follow prompts/next-plan.md with reports/<that file>."
 3. Claude writes `plans/<date>-<child>.plan.json` and runs `check-plan`.
-4. Once the Math Path app exists (implementation milestone 1), load the plan on its parent screen. Until then the plan is the design input for the next build step.
+4. On the same grown-ups screen, paste or load the plan. The app checks it again and uses it from the next session.

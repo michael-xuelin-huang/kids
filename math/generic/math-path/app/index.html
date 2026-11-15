@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Path: Zoo Island</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./app.css?v=04c0a83d">
+</head>
+<body>
+    <header class="topbar">
+        <button class="brand" id="brand" type="button" title="Home">
+            <span class="brand-mark" id="brand-mark" aria-hidden="true"></span>
+            <span class="brand-text"><b>Zoo Island</b><small>Math Path</small></span>
+        </button>
+        <div class="top-right">
+            <span class="chip chip--stars hidden" id="star-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.8.8-5 4.7 1.3 6.7L12 17l-6 3.4 1.3-6.7-5-4.7 6.8-.8z"/></svg><span id="stars">0</span></span>
+            <button class="chip hidden" id="player-chip" type="button" title="Switch player"><span id="player-art" class="chip-art" aria-hidden="true"></span><span id="player-name"></span></button>
+        </div>
+    </header>
+
+    <main id="app">
+        <!-- Who's playing -->
+        <section id="screen-picker" class="screen">
+            <div class="card card--narrow center">
+                <div class="hero-pingo" id="picker-pingo" aria-hidden="true"></div>
+                <h1 id="picker-title">Who's playing?</h1>
+                <p class="muted" id="picker-note">The same players as Pingo's Math Zoo. Stars and animals are shared.</p>
+                <div id="player-list" class="player-list"></div>
+                <form id="add-form" class="add-form hidden" autocomplete="off">
+                    <input id="add-name" type="text" maxlength="24" placeholder="Type your name" aria-label="Player name">
+                    <button class="btn btn--primary" type="submit">Start</button>
+                </form>
+                <p class="muted small" id="load-status">Loading the island…</p>
+            </div>
+        </section>
+
+        <!-- Home: today's chapter -->
+        <section id="screen-home" class="screen hidden">
+            <div class="home-grid">
+                <div class="card chapter">
+                    <p class="eyebrow" id="chapter-world">Fraction Reef</p>
+                    <h1 id="chapter-title">Fair shares</h1>
+                    <div class="npc-row">
+                        <div class="npc-art" id="npc-art" aria-hidden="true"></div>
+                        <p class="bubble" id="npc-line">“Help me share the fish fairly!”</p>
+                    </div>
+                    <div class="home-actions">
+                        <button class="btn btn--primary btn--big" id="btn-start" type="button">Start today's practice</button>
+                        <button class="btn btn--quiet" id="btn-checkpoint" type="button">Checkpoint</button>
+                    </div>
+                    <p class="muted small" id="home-note"></p>
+                </div>
+                <div class="card">
+                    <h2>This week's skills</h2>
+                    <ul class="skill-list" id="skill-list"></ul>
+                    <div class="reward" id="reward"></div>
+                </div>
+            </div>
+            <nav class="home-links">
+                <a class="link" href="../../math-quest-penguin/" id="link-pingo">Fast facts with Pingo →</a>
+                <button class="link" id="btn-parent" type="button">For grown-ups: plan and report</button>
+            </nav>
+        </section>
+
+        <!-- Lesson -->
+        <section id="screen-lesson" class="screen hidden">
+            <div class="card card--wide">
+                <p class="eyebrow" id="lesson-skill">New skill</p>
+                <h1 id="lesson-idea"></h1>
+                <div id="lesson-body" class="lesson-body"></div>
+                <div class="lesson-nav">
+                    <button class="btn btn--quiet" id="lesson-back" type="button">Back</button>
+                    <span id="lesson-dots" class="dots" aria-hidden="true"></span>
+                    <button class="btn btn--primary" id="lesson-next" type="button">Next</button>
+                </div>
+                <button class="link center-block hidden" id="lesson-testme" type="button">I already know this. Test me!</button>
+            </div>
+        </section>
+
+        <!-- Question -->
+        <section id="screen-play" class="screen hidden">
+            <div class="card card--wide play">
+                <div class="play-top">
+                    <div class="progress" aria-hidden="true"><div id="progress-fill"></div></div>
+                    <span class="tag" id="play-tag"></span>
+                    <button class="btn btn--tiny" id="btn-stop" type="button">Stop</button>
+                </div>
+                <h1 class="prompt" id="prompt" aria-live="polite"></h1>
+                <div id="visual" class="visual"></div>
+                <div id="answer" class="answer"></div>
+                <div class="help-row">
+                    <button class="btn btn--tiny hidden" id="btn-hint" type="button">Hint</button>
+                    <p class="hint hidden" id="hint-text"></p>
+                </div>
+                <div id="feedback" class="feedback hidden" aria-live="polite">
+                    <p class="fb-title" id="fb-title"></p>
+                    <p class="fb-say" id="fb-say"></p>
+                    <p class="fb-note" id="fb-note"></p>
+                    <form id="why-form" class="why hidden">
+                        <label for="why-text" id="why-label">Why?</label>
+                        <textarea id="why-text" rows="2" placeholder="Type or dictate your answer"></textarea>
+                    </form>
+                    <button class="btn btn--primary" id="btn-next" type="button">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Session done -->
+        <section id="screen-done" class="screen hidden">
+            <div class="card card--narrow center">
+                <div class="hero-pingo" id="done-pingo" aria-hidden="true"></div>
+                <h1 id="done-title">Great work!</h1>
+                <div class="done-stats" id="done-stats"></div>
+                <div id="done-news" class="done-news"></div>
+                <button class="btn btn--primary" id="btn-done" type="button">Back to the island</button>
+            </div>
+        </section>
+
+        <!-- Grown-ups -->
+        <section id="screen-parent" class="screen hidden">
+            <div class="card card--wide parent">
+                <div class="parent-head">
+                    <h1>Plan and report</h1>
+                    <button class="btn btn--quiet" id="parent-back" type="button">Back</button>
+                </div>
+                <div id="plan-view"></div>
+                <h2>Change the plan</h2>
+                <p class="muted">Paste a learning plan written by Claude (see <code>prompts/next-plan.md</code>), or load the .json file. It is checked before it is used.</p>
+                <textarea id="plan-json" rows="6" spellcheck="false" placeholder='{"version": 1, "player": "…", …}'></textarea>
+                <div class="row">
+                    <button class="btn btn--primary" id="plan-use" type="button">Check and use this plan</button>
+                    <label class="btn btn--quiet">Load a file<input type="file" id="plan-file" accept=".json,application/json" hidden></label>
+                    <button class="btn btn--quiet" id="plan-auto" type="button">Use the automatic plan</button>
+                </div>
+                <div id="plan-errors" class="errors hidden"></div>
+                <h2>Report for the next plan</h2>
+                <p class="muted">Save it to <code>math-path/reports/</code> and ask Claude to follow <code>prompts/next-plan.md</code>.</p>
+                <div class="row">
+                    <button class="btn btn--primary" id="report-download" type="button">Download report (.md)</button>
+                    <button class="btn btn--quiet" id="report-copy" type="button">Copy report</button>
+                    <button class="btn btn--quiet" id="plan-download" type="button">Download current plan (.json)</button>
+                </div>
+                <p class="muted small" id="parent-status"></p>
+            </div>
+        </section>
+    </main>
+    <p class="app-version" id="app-version">Updated Nov 14, 8:47 PM (eeed14a)</p>
+    <script type="importmap" id="version-map">{
+ "imports": {
+  "./src/content/answers.js": "./src/content/answers.js?v=0e2bc90f",
+  "./src/content/lessons.js": "./src/content/lessons.js?v=c62821d8",
+  "./src/content/skills.js": "./src/content/skills.js?v=90df6453",
+  "./src/main.js": "./src/main.js?v=cf53a08a",
+  "./src/model/engine.js": "./src/model/engine.js?v=8ec0aad7",
+  "./src/plan/checkPlan.js": "./src/plan/checkPlan.js?v=d310eb72",
+  "./src/plan/defaultPlan.js": "./src/plan/defaultPlan.js?v=c0df96bd",
+  "./src/report.js": "./src/report.js?v=99f39041",
+  "./src/ui/visuals.js": "./src/ui/visuals.js?v=af380f89",
+  "../../math-quest-penguin/src/audio/soundEffects.js": "../../math-quest-penguin/src/audio/soundEffects.js?v=4c2fb456",
+  "../../math-quest-penguin/src/audio/speechRec.js": "../../math-quest-penguin/src/audio/speechRec.js?v=ea78c294",
+  "../../math-quest-penguin/src/audio/voskProcessor.js": "../../math-quest-penguin/src/audio/voskProcessor.js?v=80d0807f",
+  "../../math-quest-penguin/src/audio/voskRec.js": "../../math-quest-penguin/src/audio/voskRec.js?v=61d9e25f",
+  "../../math-quest-penguin/src/components/art.js": "../../math-quest-penguin/src/components/art.js?v=6c02717e",
+  "../../math-quest-penguin/src/components/matrixGrid.js": "../../math-quest-penguin/src/components/matrixGrid.js?v=dab2d432",
+  "../../math-quest-penguin/src/components/zoo.js": "../../math-quest-penguin/src/components/zoo.js?v=930f8dec",
+  "../../math-quest-penguin/src/firebaseConfig.js": "../../math-quest-penguin/src/firebaseConfig.js?v=d1670daf",
+  "../../math-quest-penguin/src/main.js": "../../math-quest-penguin/src/main.js?v=6ea2c248",
+  "../../math-quest-penguin/src/utils/adaptiveEngine.js": "../../math-quest-penguin/src/utils/adaptiveEngine.js?v=52c269b7",
+  "../../math-quest-penguin/src/utils/cloudSync.js": "../../math-quest-penguin/src/utils/cloudSync.js?v=388a202a",
+  "../../math-quest-penguin/src/utils/curriculum.js": "../../math-quest-penguin/src/utils/curriculum.js?v=8e8433ce",
+  "../../math-quest-penguin/src/utils/difficultyController.js": "../../math-quest-penguin/src/utils/difficultyController.js?v=65ca9d9a",
+  "../../math-quest-penguin/src/utils/numberParser.js": "../../math-quest-penguin/src/utils/numberParser.js?v=d540258e",
+  "../../math-quest-penguin/src/utils/players.js": "../../math-quest-penguin/src/utils/players.js?v=35991061",
+  "../../math-quest-penguin/src/utils/report.js": "../../math-quest-penguin/src/utils/report.js?v=44393450",
+  "../../math-quest-penguin/src/utils/skillModel.js": "../../math-quest-penguin/src/utils/skillModel.js?v=bafa017d",
+  "../../math-quest-penguin/src/utils/voiceLog.js": "../../math-quest-penguin/src/utils/voiceLog.js?v=15b9bf1a"
+ }
+}</script>
+    <script type="module" src="./src/main.js?v=cf53a08a"></script>
+</body>
+</html>

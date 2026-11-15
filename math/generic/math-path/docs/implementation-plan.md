@@ -9,6 +9,22 @@ Conventions for every milestone:
 - Every question's answer is computed by code. Every template ships with a generator test that checks 1000 generated items against their own `check`.
 - Versioned assets use Pingo's `stamp-version` script so phones and tablets don't serve stale files.
 
+## Status (Nov 14, 2026)
+
+**First playable version is live:** https://michael-xuelin-huang.github.io/kids/math/generic/math-path/app/
+
+It covers the core of milestones 1–5 in a first form:
+
+- Players are shared with Pingo, and stars feed the same zoo.
+- The plan is loaded, checked and given defaults; an automatic plan is used until an AI plan is loaded.
+- The learner model, mastery bar, test-out, reteach, delayed check and spaced review all work.
+- Answers can be tapped, typed (keypad or Wispr), given by shading bars or placing points on a number line, and followed by "why?" free text.
+- 19 skills have generators: grade 3 fractions, the meaning of × and ÷, properties, unknown factors, word problems, area, facts and the grade-2 floor.
+- Lessons, the checkpoint, report v2, and a grown-ups screen to load plans and download reports are included.
+- Tests: `npm test` runs the map build, the plan checker, generator self-checks, and simulated children.
+
+Still to come: cloud sync of Math Path progress (the progress lives on one device for now, Pingo's progress still syncs), island art and character portraits (milestone 6), the plan driving Pingo's voice drill (milestone 7), and milestones 8–10.
+
 ## Milestone 0: foundations (done)
 
 | What | Files |
