@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Learning Games</title>
+<meta name="description" content="Home page for all the learning games: vocabulary, spelling, math, science and geography.">
+<style>
+  :root {
+    --primary: #00bcd4; --primary-dark: #00838f; --text: #263238; --muted: #607d8b;
+    --bg: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%); --card: #fff;
+  }
+  * { box-sizing: border-box; font-family: 'Fredoka', 'Comic Sans MS', 'Chalkboard SE', sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--text); min-height: 100vh; padding: 16px; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  header { text-align: center; margin: 12px 0 18px; }
+  header .emoji { font-size: 3.6rem; line-height: 1; }
+  h1 { margin: 6px 0 4px; color: var(--primary-dark); font-size: 2rem; }
+  header p { margin: 0; color: var(--muted); }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .filters button { border: 3px solid #b2ebf2; background: #fff; color: var(--primary-dark); border-radius: 999px; padding: 7px 16px; font-weight: bold; font-size: .95rem; cursor: pointer; }
+  .filters button.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+  h2 { color: var(--primary-dark); margin: 26px 4px 10px; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  a.card { display: flex; flex-direction: column; gap: 6px; background: var(--card); border-radius: 20px; padding: 16px 18px; text-decoration: none; color: var(--text); box-shadow: 0 8px 20px rgba(0,0,0,.10); border: 3px solid transparent; transition: transform .15s, border-color .15s; }
+  a.card:hover, a.card:focus-visible { transform: translateY(-3px); border-color: var(--primary); outline: none; }
+  .top { display: flex; align-items: center; gap: 10px; }
+  .icon { font-size: 2rem; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; flex: none; }
+  .title { font-weight: bold; font-size: 1.1rem; line-height: 1.25; }
+  .grade { font-size: .8rem; color: var(--muted); font-weight: bold; }
+  .desc { font-size: .93rem; line-height: 1.4; color: #37474f; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px; }
+  .pill { font-size: .75rem; font-weight: bold; padding: 3px 10px; border-radius: 999px; background: #eceff1; color: #455a64; }
+  .pill.new { background: #ff9800; color: #fff; }
+  .old a.card { box-shadow: none; background: rgba(255,255,255,.7); }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; margin: 30px 0 10px; }
+  .c-words { background: #ede7f6; } .c-math { background: #e8f5e9; } .c-science { background: #fff3e0; } .c-geo { background: #e3f2fd; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="emoji">🐧📚</div>
+    <h1>Kids Learning Games</h1>
+    <p>Pick a game and start practicing!</p>
+    <div class="filters" id="filters"></div>
+  </header>
+  <main id="main"></main>
+  <footer>Progress is saved in this browser on each device. <span id="count"></span></footer>
+</div>
+
+<script>
+// To add a new project: add one entry below. `path` is relative to this page.
+const SUBJECTS = {
+  words:   { label: 'Words & Spelling', icon: '📖' },
+  math:    { label: 'Math',             icon: '🔢' },
+  science: { label: 'Science',          icon: '🔬' },
+  geo:     { label: 'Geography',        icon: '🌍' },
+};
+const PROJECTS = [
+  { subject: 'science', icon: '⚡', title: "Pippy's Energy Quest", grade: 'Grade 4 science', added: '2026-11-25',
+    path: 'science/grade4-energy/',
+    desc: 'Energy conversions: forms of energy, light, heat and sound, circuits, energy sources and science words. 930 questions, plus "must write" sentence practice.' },
+  { subject: 'words', icon: '🐝', title: "Pippy's Word Quest: Spelling Bee", grade: 'Grade 4 Two Bee list', added: '2026-11-10',
+    path: 'spellingbee/grade4-twobee/',
+    desc: '50 spelling bee words: part of speech, meaning, using it in a sentence, and spelling. Play by Monday, Tuesday or Wednesday words.' },
+  { subject: 'math', icon: '🏝️', title: 'Math Path: Zoo Island', grade: 'Grades 3 to 5', added: '2026-11-02',
+    path: 'math/generic/math-path/app/',
+    desc: 'Story-based math adventure with lessons and fraction games that adapt to a learning plan.' },
+  { subject: 'math', icon: '🐧', title: "Pingo's Math Zoo", grade: 'Times tables, + − ÷', added: '2026-10-01',
+    path: 'math/generic/math-quest-penguin/',
+    desc: 'Speak or type your answers to times tables and more. Adapts to what you know and keeps a progress report.' },
+  { subject: 'words', icon: '📝', title: "Pippy's Word Quest: Lesson 6", grade: 'Wordly Wise 3000, Lesson 6', added: '2026-10-07',
+    path: 'wordly3000/grade3unit6/',
+    desc: '20 vocabulary words with 50 questions each. Every round asks one question per word.' },
+  { subject: 'geo', icon: '🗺️', title: 'Latitude & Longitude Quest', grade: 'Hemispheres study guide', added: '2026-10-04',
+    path: 'geography/latitude-longitude/',
+    desc: 'Explore the world map, hunt for coordinates, name the mystery place, and take a mini test.' },
+  { subject: 'words', icon: '🎩', title: "Pippy's Word Quest: Lesson 5", grade: 'Wordly Wise 3000, Lesson 5', added: '2026-10-01',
+    path: 'wordly3000/grade3unit5/gemini-code-1790826957055.html',
+    desc: 'Dress up the penguin and solve the maze by answering Lesson 5 vocabulary questions.' },
+  // earlier versions
+  { subject: 'words', icon: '🎩', title: 'Word Quest Lesson 5 (Master Edition, first version)', added: '2026-10-01', old: true,
+    path: 'wordly3000/grade3unit5/gemini-code-1790815435497.html', desc: 'Earlier version of the Lesson 5 game.' },
+  { subject: 'math', icon: '🦸', title: 'Math Quest: Adaptive Voice Penguin Hero', added: '2026-10-01', old: true,
+    path: 'math/generic/math_quest_adaptive_voice_penguin_hero1.html', desc: "First version of the voice math game, before Pingo's Math Zoo." },
+];
+
+const $ = id => document.getElementById(id);
+let filter = 'all';
+try { filter = localStorage.getItem('kids.home.filter') || 'all'; } catch (e) {}
+const newest = PROJECTS.filter(p => !p.old).map(p => p.added).sort().pop();
+
+function card(p) {
+  const a = document.createElement('a'); a.className = 'card'; a.href = p.path;
+  const top = document.createElement('div'); top.className = 'top';
+  const ic = document.createElement('div'); ic.className = 'icon c-' + p.subject; ic.textContent = p.icon;
+  const tt = document.createElement('div');
+  const t = document.createElement('div'); t.className = 'title'; t.textContent = p.title; tt.appendChild(t);
+  if (p.grade) { const g = document.createElement('div'); g.className = 'grade'; g.textContent = p.grade; tt.appendChild(g); }
+  top.append(ic, tt);
+  const d = document.createElement('div'); d.className = 'desc'; d.textContent = p.desc;
+  const m = document.createElement('div'); m.className = 'meta';
+  if (p.added === newest && !p.old) { const n = document.createElement('span'); n.className = 'pill new'; n.textContent = 'NEW'; m.appendChild(n); }
+  const s = document.createElement('span'); s.className = 'pill'; s.textContent = SUBJECTS[p.subject].label; m.appendChild(s);
+  const dt = document.createElement('span'); dt.className = 'pill';
+  dt.textContent = new Date(p.added + 'T12:00:00').toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+  m.appendChild(dt);
+  a.append(top, d, m);
+  return a;
+}
+function section(title, list, cls) {
+  if (!list.length) return;
+  const h = document.createElement('h2'); h.textContent = title; $('main').appendChild(h);
+  const g = document.createElement('div'); g.className = 'grid ' + (cls || '');
+  list.forEach(p => g.appendChild(card(p))); $('main').appendChild(g);
+}
+function render() {
+  const f = $('filters'); f.innerHTML = '';
+  Object.entries(Object.assign({ all: { label: 'All', icon: '⭐' } }, SUBJECTS)).forEach(([k, s]) => {
+    const b = document.createElement('button'); b.textContent = s.icon + ' ' + s.label; b.className = filter === k ? 'on' : '';
+    b.onclick = () => { filter = k; try { localStorage.setItem('kids.home.filter', k); } catch (e) {} render(); };
+    f.appendChild(b);
+  });
+  $('main').innerHTML = '';
+  const shown = PROJECTS.filter(p => filter === 'all' || p.subject === filter);
+  const cur = shown.filter(p => !p.old).sort((a, b) => b.added.localeCompare(a.added));
+  if (filter === 'all') {
+    section('🆕 Newest', cur.slice(0, 1));
+    Object.entries(SUBJECTS).forEach(([k, s]) => section(s.icon + ' ' + s.label, cur.filter(p => p.subject === k)));
+  } else section(SUBJECTS[filter].icon + ' ' + SUBJECTS[filter].label, cur);
+  section('🗂️ Earlier versions', shown.filter(p => p.old), 'old');
+  $('count').textContent = PROJECTS.filter(p => !p.old).length + ' games.';
+}
+render();
+</script>
+</body>
+</html>
