@@ -6,7 +6,8 @@ import { ZooProgress, animalName } from '../../../math-quest-penguin/src/compone
 import { Tutor } from '../../../math-quest-penguin/src/utils/skillModel.js';
 import { buildReport as pingoReport } from '../../../math-quest-penguin/src/utils/report.js';
 import { Learner, Session, withDefaults } from './model/engine.js';
-import { defaultPlan } from './plan/defaultPlan.js';
+import { defaultPlan, nextFrontierSkill } from './plan/defaultPlan.js';
+import { Placement } from './model/placement.js';
 import { checkPlan } from './plan/checkPlan.js';
 import { LESSONS } from './content/lessons.js';
 import { makeItem, formatAnswer, hasGenerator } from './content/skills.js';
@@ -43,6 +44,7 @@ const FRIENDLY = {
 let DATA = null;           // { map, story, schema }
 let player = null, learner = null, zoo = null, planState = null, pingoStatus = {};
 let session = null;
+let placement = null;
 
 // ---------------------------------------------------------------- start-up
 
@@ -117,10 +119,11 @@ function choosePlayer(id) {
     $('player-art').innerHTML = animalSVG(player.avatar);
     $('player-chip').classList.remove('hidden'); $('star-chip').classList.remove('hidden');
     updateStars();
+    if (!(learner.placements || []).length && !learner.sessions.length) return showCheckIntro();
     showHome();
 }
-$('player-chip').addEventListener('click', () => { if (session) return; renderPlayers(); show('screen-picker'); });
-$('brand').addEventListener('click', () => { if (player && !session) showHome(); });
+$('player-chip').addEventListener('click', () => { if (session || placement) return; renderPlayers(); show('screen-picker'); });
+$('brand').addEventListener('click', () => { if (player && !session && !placement) showHome(); });
 function updateStars() { $('stars').textContent = zoo ? zoo.stars : 0; }
 
 // ---------------------------------------------------------------- home
@@ -140,8 +143,9 @@ function showHome() {
     if (planState.source === 'auto') {
         // Refresh the automatic plan once its work is done.
         const probe = new Session({ plan: planState.plan, learner });
-        if (probe.planComplete() && learner.checkpoints.some((c) => c.at > planState.loadedAt)) { planState = autoPlan(); savePlan(); }
+        if (probe.planComplete()) { planState = autoPlan(); savePlan(); }
     }
+    $('check-banner').classList.toggle('hidden', (learner.placements || []).length > 0);
     const plan = planState.plan; const ch = chapterOf(plan);
     $('chapter-world').textContent = WORLD_NAMES[ch.world] || ch.world;
     $('chapter-title').textContent = ch.title;
@@ -181,11 +185,14 @@ $('btn-checkpoint').addEventListener('click', () => startSession('checkpoint'));
 
 let arrivals = [], barNews = [], startStars = 0;
 function startSession(kind) {
-    session = new Session({ plan: planState.plan, learner, kind, mastered: Object.entries(pingoStatus).filter(([, v]) => /^mastered/.test(v)).map(([k]) => k) });
+    const rolling = planState.source === 'auto' && kind === 'practice';
+    session = new Session({ plan: planState.plan, learner, kind, mastered: Object.entries(pingoStatus).filter(([, v]) => /^mastered/.test(v)).map(([k]) => k),
+        nextSkill: rolling ? (inFocus) => nextFrontierSkill({ map: DATA.map, learner, pingo: pingoStatus }, inFocus) : null });
     arrivals = []; barNews = []; startStars = zoo.stars;
     step();
 }
 function step() {
+    if (placement) return placementStep();
     const ev = session.next();
     if (ev.type === 'done') return finishSession();
     if (ev.type === 'lesson') return showLesson(ev);
@@ -239,7 +246,7 @@ function showItem(item) {
     current = item; answered = false; hintsShown = 0; pendingGiven = null;
     show('screen-play');
     $('play-tag').textContent = TAGS[item.why] || '';
-    $('progress-fill').style.width = `${Math.min(100, (session.n / session.maxQuestions) * 100)}%`;
+    if (session) $('progress-fill').style.width = `${Math.min(100, (session.n / session.maxQuestions) * 100)}%`;
     $('prompt').textContent = item.prompt;
     $('feedback').classList.add('hidden'); $('why-form').classList.add('hidden');
     $('hint-text').classList.add('hidden'); $('hint-text').textContent = '';
@@ -283,6 +290,9 @@ function showItem(item) {
         const tip = document.createElement('p'); tip.className = 'muted small'; tip.textContent = item.mode === 'shade' ? 'Tap the parts to shade them.' : 'Tap the line to place the dot.'; ans.appendChild(tip);
     }
     $('btn-hint').classList.toggle('hidden', item.hintLevel < 2);
+    $('btn-dunno').classList.toggle('hidden', !item.placement);
+    $('btn-stop').textContent = item.placement ? 'Finish' : 'Stop';
+    if (item.placement) $('progress-fill').style.width = `${Math.min(100, Math.max(placement.n / placement.maxQuestions, placement.progress()) * 100)}%`;
     if (item.hintLevel >= 3) nextHint();
 }
 function flashHint(t) { const h = $('hint-text'); h.textContent = t; h.classList.remove('hidden'); }
@@ -297,6 +307,7 @@ function submit(given, button, raw) {
     if (answered) return;
     answered = true;
     const item = current;
+    if (item.placement) return placementAnswered(item, given, button);
     const fb = session.answer(item, given, { hint: hintsShown });
     // Mark the answer area.
     for (const b of document.querySelectorAll('.choice')) {
@@ -329,6 +340,13 @@ function submit(given, button, raw) {
     if (fb.levelDown) notes.push('Let\'s make the next one a bit easier.');
     if (fb.barMet) notes.push(fb.testedOut ? `You already know ${skillTitle(item.skill).toLowerCase()}. Skipping ahead!` : `You've got ${skillTitle(item.skill).toLowerCase()}! ✓`);
     if (fb.mastered) notes.push('Still remembered after a few days: mastered! ★');
+    if (fb.demoted) notes.push('Let\'s practise this one again for a bit.');
+    if (fb.added) {
+        notes.push(`Next up: ${skillTitle(fb.added).toLowerCase()}.`);
+        planState.plan.focus.push({ node: fb.added, role: 'new', weight: 0.35, why: 'Opened when the last skill was done.' });
+        planState.plan.session = { ...planState.plan.session, maxNewSkills: Math.min(3, (planState.plan.session?.maxNewSkills || 1) + 1) };
+        savePlan();
+    }
     $('fb-note').textContent = notes.join(' ');
     $('feedback').classList.remove('hidden');
     $('feedback').classList.toggle('feedback--ok', fb.correct);
@@ -356,7 +374,69 @@ $('why-text').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.s
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && answered && !$('screen-play').classList.contains('hidden') && document.activeElement?.id !== 'why-text' && document.activeElement?.id !== 'btn-next') { e.preventDefault(); $('btn-next').click(); }
 });
-$('btn-stop').addEventListener('click', () => finishSession());
+$('btn-stop').addEventListener('click', () => (placement ? finishPlacement() : finishSession()));
+$('btn-dunno').addEventListener('click', () => { if (!answered && current?.placement) { answered = true; placementAnswered(current, null, null); } });
+
+// ---------------------------------------------------------------- quick check (placement)
+
+function showCheckIntro() {
+    $('check-pingo').innerHTML = pingoSVG('happy');
+    show('screen-check');
+}
+$('btn-check-start').addEventListener('click', () => {
+    const known = Object.entries(pingoStatus).filter(([, v]) => /^mastered/.test(v)).map(([k]) => k);
+    placement = new Placement({ map: DATA.map, learner, known });
+    placementStep();
+});
+$('btn-check-skip').addEventListener('click', showHome);
+$('btn-banner-check').addEventListener('click', showCheckIntro);
+$('btn-recheck').addEventListener('click', showCheckIntro);
+
+function placementStep() {
+    const ev = placement.next();
+    if (ev.type === 'done') return finishPlacement();
+    showItem(ev.item);
+}
+function placementAnswered(item, given, button) {
+    const res = placement.answer(item, given);
+    document.querySelectorAll('#answer input, #answer button, .keypad .key, .choice').forEach((x) => { x.disabled = true; });
+    if (button) button.classList.add(res.correct ? 'choice--right' : 'choice--wrong');
+    $('btn-dunno').classList.add('hidden');
+    // No answers shown in the quick check: it's about finding the level, quickly.
+    $('fb-title').textContent = res.correct ? '✓ Got it' : given == null ? 'OK, we\'ll learn that one' : 'OK, noted';
+    $('fb-title').className = `fb-title ${res.correct ? 'ok' : 'mini'}`;
+    $('fb-say').textContent = ''; $('fb-note').textContent = '';
+    $('why-form').classList.add('hidden'); current.askWhy = false;
+    $('feedback').classList.remove('hidden'); $('feedback').classList.toggle('feedback--ok', !!res.correct);
+    $('btn-next').classList.add('hidden');
+    setTimeout(() => { $('btn-next').classList.remove('hidden'); if (placement) placementStep(); }, res.correct ? 550 : 800);
+}
+function finishPlacement() {
+    const P = placement; placement = null;
+    $('btn-next').classList.remove('hidden');
+    if (!P.n) return showHome();
+    if (!P.current?.finished && P.current) { /* stopped mid-probe: keep what was decided */ }
+    const result = P.apply();
+    if (planState.source === 'auto') { planState = autoPlan(); savePlan(); }
+    const sum = P.summary();
+    $('done-pingo').innerHTML = pingoSVG('happy');
+    $('done-title').textContent = `You already know ${result.known} skills!`;
+    $('done-stats').innerHTML = `<div><b>${result.questions}</b><span>questions</span></div><div><b>${result.correct}</b><span>right</span></div><div><b>${result.frontier.length}</b><span>ready to learn</span></div>`;
+    const news = $('done-news'); news.innerHTML = '';
+    const rows = document.createElement('div'); rows.className = 'world-rows';
+    for (const [w, o] of Object.entries(sum)) {
+        const r = document.createElement('div'); r.className = 'world-row';
+        r.innerHTML = `<b></b><span></span><span class="meter"><span style="width:${Math.round((o.known / o.total) * 100)}%"></span></span>`;
+        r.querySelector('b').textContent = WORLD_NAMES[w] || w;
+        r.querySelector('span').textContent = o.gradeDone ? `grade ${o.gradeDone} done` : `${o.known} of ${o.total}`;
+        rows.appendChild(r);
+    }
+    news.appendChild(rows);
+    const starts = planState.plan.focus.filter((f) => f.role === 'new').map((f) => skillTitle(f.node));
+    if (starts.length) { const p = document.createElement('p'); p.textContent = `Starting with: ${starts.join('; ')}.`; news.appendChild(p); }
+    $('btn-done').textContent = 'Start practising';
+    show('screen-done');
+}
 
 // ---------------------------------------------------------------- done
 
@@ -383,7 +463,7 @@ function finishSession() {
     }
     show('screen-done');
 }
-$('btn-done').addEventListener('click', showHome);
+$('btn-done').addEventListener('click', () => { $('btn-done').textContent = 'Back to the island'; showHome(); });
 
 // ---------------------------------------------------------------- grown-ups
 
@@ -449,6 +529,9 @@ $('report-copy').addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(currentReport()); $('parent-status').textContent = 'Report copied.'; } catch (e) { $('parent-status').textContent = 'Copy is blocked here; use Download.'; }
 });
 $('plan-download').addEventListener('click', () => download(`${fileDate()}-${slug()}.plan.json`, JSON.stringify(planState.plan, null, 2), 'application/json'));
+
+// For automated browser tests only: read the question on screen.
+window.__mathPath = { item: () => current };
 
 // ---------------------------------------------------------------- go
 

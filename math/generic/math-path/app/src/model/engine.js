@@ -44,14 +44,14 @@ export class Learner {
     constructor(store, id) {
         this.store = store; this.key = `math-path.learner.v1@${id}`;
         const s = store.read(this.key) || {};
-        this.skills = s.skills || {}; this.log = s.log || []; this.texts = s.texts || []; this.sessions = s.sessions || []; this.checkpoints = s.checkpoints || [];
+        this.skills = s.skills || {}; this.log = s.log || []; this.texts = s.texts || []; this.sessions = s.sessions || []; this.checkpoints = s.checkpoints || []; this.placements = s.placements || [];
     }
     get(id) { return this.skills[id] || (this.skills[id] = blank()); }
     has(id) { return !!this.skills[id] && this.skills[id].status !== 'new'; }
     save() {
         if (this.log.length > 4000) this.log.splice(0, this.log.length - 4000);
         if (this.texts.length > 400) this.texts.splice(0, this.texts.length - 400);
-        this.store.write(this.key, { v: 1, skills: this.skills, log: this.log, texts: this.texts, sessions: this.sessions.slice(-200), checkpoints: this.checkpoints.slice(-50) });
+        this.store.write(this.key, { v: 1, skills: this.skills, log: this.log, texts: this.texts, sessions: this.sessions.slice(-200), checkpoints: this.checkpoints.slice(-50), placements: (this.placements || []).slice(-10) });
     }
     status(id) { return this.skills[id] ? this.skills[id].status : 'new'; }
     mastered() { return Object.keys(this.skills).filter((k) => this.skills[k].status === 'mastered'); }
@@ -88,7 +88,8 @@ export class Session {
      * kind: 'practice' | 'checkpoint'. Returns events from next():
      *   { type: 'item', item }  { type: 'lesson', skill, reteach }  { type: 'done' }
      */
-    constructor({ plan, learner, kind = 'practice', mastered = [] }) {
+    constructor({ plan, learner, kind = 'practice', mastered = [], nextSkill = null }) {
+        this.nextSkill = nextSkill;     // rolling plans: () => next skill id to open when one is done
         this.plan = withDefaults(plan); this.learner = learner; this.kind = kind;
         this.start = now.t(); this.n = 0; this.right = 0; this.stars = 0;
         this.basisMastered = new Set([...(plan.basis?.mastered || []), ...mastered, ...learner.mastered()]);
@@ -252,6 +253,8 @@ export class Session {
         } else if (item.why !== 'warmup' && item.why !== 'due') {
             // Step the level up and down.
             if (ok) { s.streak++; s.missStreak = 0; s.correctRun++; } else { s.missStreak++; s.streak = 0; s.correctRun = 0; }
+            // Fast start: the first three right → straight to the level that counts for the bar.
+            if (s.asked === 3 && s.correctRun === 3 && rec.level < Math.min(f.bar.atLevel, f.difficulty.max)) { rec.level = Math.min(f.bar.atLevel, f.difficulty.max); s.streak = 0; fb.levelUp = true; }
             if (s.streak >= this.plan.pacing.stepUpAfter && rec.level < f.difficulty.max) { rec.level++; s.streak = 0; fb.levelUp = true; }
             if (s.missStreak >= this.plan.pacing.stepDownAfter) {
                 s.missStreak = 0;
@@ -262,6 +265,17 @@ export class Session {
             if ((rec.status === 'learning') && barMet(rec, f.bar)) {
                 rec.status = 'barMet'; rec.barMetAt = now.t(); rec.reviewDue = now.t() + f.bar.delayedCheckDays * DAY; fb.barMet = true;
                 if (!f.bar.delayedCheckDays) { rec.status = 'mastered'; rec.masteredAt = now.t(); fb.mastered = true; rec.reviewDue = now.t() + LEITNER[0] * DAY; }
+            }
+        }
+
+        // Rolling plan: a skill reached its bar, so open the next one now instead of
+        // making the child grind through the rest of the week on something done.
+        if (fb.barMet && this.nextSkill && (f.role === 'new' || f.role === 'repair')) {
+            const id = this.nextSkill(this.focus.map((x) => x.node));
+            if (id && SKILLS[id] && !this.focus.some((x) => x.node === id)) {
+                this.focus.push({ node: id, role: 'new', weight: 0.35, why: 'Opened when the last skill was done.', difficulty: { ...DIFF }, bar: { ...BAR }, hints: { level: 1, fadeAfter: 5 } });
+                this.plan.session.maxNewSkills++;
+                fb.added = id;
             }
         }
 

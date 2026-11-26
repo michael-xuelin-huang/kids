@@ -21,9 +21,13 @@ export function defaultPlan({ map, story, learner, player, pingo = {} }) {
         focus.push({ node: id, role: 'repair', weight: 0.2, why: 'Under 70% on recent tries.', difficulty: { start: 1 }, hints: { level: 2 } });
     }
     // Continue skills already started.
-    const going = Object.entries(learner.skills).filter(([id, r]) => (r.status === 'learning' || r.status === 'barMet') && !shaky.includes(id) && hasGenerator(id)).map(([id]) => id);
+    const unlocks = (id) => map.nodes.find((n) => n.id === id)?.unlocks.length || 0;
+    const going = Object.entries(learner.skills).filter(([id, r]) => r.status === 'learning' && !shaky.includes(id) && hasGenerator(id)).map(([id]) => id)
+        .filter((id) => (map.nodes.find((n) => n.id === id)?.prerequisites || []).every((p) => mastered.has(p)) || learner.skills[id].attempts > 0)
+        .sort((a, b) => unlocks(b) - unlocks(a));
     const node = (id) => map.nodes.find((n) => n.id === id);
-    for (const id of going.slice(0, 2)) {
+    const carried = going.slice(0, 2);       // at most 2 carried over, so there's room for one fresh skill
+    for (const id of carried) {
         const ready = (node(id)?.prerequisites || []).every((p) => mastered.has(p));
         focus.push({ node: id, role: ready ? 'new' : 'repair', weight: 0.3, why: 'Already started.' });
     }
@@ -31,9 +35,9 @@ export function defaultPlan({ map, story, learner, player, pingo = {} }) {
     const front = frontier(map, mastered).filter((n) => hasGenerator(n.id) && !focus.some((f) => f.node === n.id))
         .sort((a, b) => b.unlocks.length - a.unlocks.length || a.grade - b.grade || a.depth - b.depth);
     const worlds = new Set(focus.map((f) => map.nodes.find((n) => n.id === f.node)?.world));
-    const wanted = Math.max(0, 2 - going.length);
+    const wanted = Math.max(1, 3 - carried.length);
     for (const n of front) {
-        if (focus.filter((f) => f.role === 'new').length >= going.length + wanted) break;
+        if (focus.filter((f) => f.role === 'new').length >= Math.min(3, carried.length + wanted)) break;
         if (worlds.has(n.world) && front.some((m) => !worlds.has(m.world) && m !== n)) continue;
         worlds.add(n.world);
         focus.push({ node: n.id, role: 'new', weight: 0.35, why: `Ready: everything it needs is known. Unlocks ${n.unlocks.length} later skills.` });
@@ -46,7 +50,7 @@ export function defaultPlan({ map, story, learner, player, pingo = {} }) {
 
     const main = focus.find((f) => f.role === 'new') || focus[0];
     const ch = story.chapters.find((c) => c.nodes.includes(main.node)) || story.chapters[0];
-    const newCount = focus.filter((f) => f.role === 'new' && learner.status(f.node) === 'new').length;
+    const newCount = focus.filter((f) => f.role === 'new').length;
     return {
         version: 1,
         player: player || 'Player',
@@ -59,10 +63,21 @@ export function defaultPlan({ map, story, learner, player, pingo = {} }) {
             summary: 'Made automatically from the map and recent answers. Load an AI-written plan from the parent screen for a plan tuned to this child.',
         },
         focus,
-        session: { minutes: 15, maxNewSkills: Math.max(1, Math.min(2, newCount)) },
+        session: { minutes: 15, maxNewSkills: Math.max(1, Math.min(3, newCount)) },
         pacing: { style: 'fast', allowTestOut: true },
         story: { world: ch.world, chapter: ch.id, npc: ch.npc, goal: ch.title },
         rewards: { unlockAnimal: ch.reward },
         parentNote: 'This is an automatic plan. For a plan written for your child, download the report and follow prompts/next-plan.md.',
     };
+}
+
+/** Next skill to open in a rolling plan: the frontier skill with the most unlocks, not already in focus. */
+export function nextFrontierSkill({ map, learner, pingo = {} }, inFocus = []) {
+    const mastered = new Set(learner.mastered());
+    for (const [id, v] of Object.entries(pingo)) if (/^mastered/.test(v)) mastered.add(id);
+    for (const [id, r] of Object.entries(learner.skills)) if (r.status === 'barMet') mastered.add(id);
+    const worldsInFocus = new Set(inFocus.map((id) => map.nodes.find((n) => n.id === id)?.world));
+    const front = frontier(map, mastered).filter((n) => hasGenerator(n.id) && !inFocus.includes(n.id))
+        .sort((a, b) => (worldsInFocus.has(a.world) - worldsInFocus.has(b.world)) || b.unlocks.length - a.unlocks.length || a.grade - b.grade);
+    return front[0]?.id || null;
 }

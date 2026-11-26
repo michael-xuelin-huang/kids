@@ -9,38 +9,9 @@
 // Plan knobs (difficulty.*) narrow the range: denominators, numberMax, context, choices.
 import { frac, fmt, gcd, same } from './answers.js';
 
-export const rnd = { f: Math.random };
-const ri = (a, b) => a + Math.floor(rnd.f() * (b - a + 1));
-const pick = (xs) => xs[Math.floor(rnd.f() * xs.length)];
-const shuffle = (xs) => { const a = [...xs]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd.f() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-const NAMES = { 2: 'halves', 3: 'thirds', 4: 'fourths', 5: 'fifths', 6: 'sixths', 8: 'eighths', 10: 'tenths', 12: 'twelfths' };
-const ONE = { 2: 'one half', 3: 'one third', 4: 'one fourth', 5: 'one fifth', 6: 'one sixth', 8: 'one eighth', 10: 'one tenth', 12: 'one twelfth' };
-const ANIMALS = ['seal pups', 'penguin chicks', 'otters', 'turtles', 'puffins', 'foxes'];
-const FOODS = ['fish', 'shrimp', 'apples', 'carrots', 'berries'];
-
-/** Denominators for a level, narrowed by the plan's knob. */
-function dens(level, knobs) {
-    const base = level <= 1 ? [2, 4] : level === 2 ? [2, 3, 4] : level === 3 ? [2, 3, 4, 6, 8] : [2, 3, 4, 6, 8];
-    const k = knobs.denominators && knobs.denominators.filter((d) => d >= 2 && d <= 12);
-    const ok = k && k.length ? base.filter((d) => k.includes(d)) : base;
-    return ok.length ? ok : k && k.length ? k : base;
-}
-const pictures = (level, knobs) => (knobs.context ? knobs.context !== 'bare' : level <= 3);
-
-/** Build choice list: the correct value plus distractors (deduplicated), shuffled. */
-function choicesOf(correct, distractors, count = 4, label = fmt) {
-    const out = [{ label: label(correct), value: correct }];
-    for (const d of distractors) {
-        if (out.length >= count) break;
-        if (!d.value || d.value.d === 0 || out.some((o) => sameVal(o.value, d.value))) continue;
-        out.push({ label: label(d.value), value: d.value, misconception: d.misconception });
-    }
-    return shuffle(out);
-}
-function sameVal(a, b) {
-    if (a.symbol || b.symbol) return a.symbol === b.symbol;
-    return a.n === b.n && a.d === b.d;      // exact form for choice labels
-}
+import { rnd, ri, pick, shuffle, NAMES, ONE, ANIMALS, FOODS, dens, pictures, choicesOf } from './helpers.js';
+import { MORE_SKILLS } from './skills34.js';
+export { rnd };
 
 // ---------------------------------------------------------------- fractions (grade 3)
 
@@ -489,6 +460,7 @@ export const SKILLS = {
     'nbt2-addsub-100': addSub(100),
     'md3-area-concept': area(false),
     'md3-area-multiply': area(true),
+    ...MORE_SKILLS,
 };
 export const hasGenerator = (id) => !!SKILLS[id];
 
@@ -542,5 +514,5 @@ export function checkItem(item, given) {
     return { correct: false, misconception: m ? m.misconception : null };
 }
 
-export const formatAnswer = (item) => (item.answer.symbol != null ? (item.choices?.find((c) => c.value.symbol === item.answer.symbol)?.label ?? item.answer.symbol) : fmt(item.answer));
+export const formatAnswer = (item) => item.answerLabel || (item.answer.symbol != null ? (item.choices?.find((c) => c.value.symbol === item.answer.symbol)?.label ?? item.answer.symbol) : fmt(item.answer));
 export { gcd };

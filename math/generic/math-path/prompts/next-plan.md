@@ -16,7 +16,7 @@ and fix every error. Warnings are fine if you agree with them.
 
 ## Rules for the plan
 
-1. **Read the evidence first.** Fill `basis` from the report: `mastered` and `shaky` as map ids (the report's "Knowledge-map skills" section and the checkpoint results give them), the misconceptions seen, and a 2–3 sentence summary a parent can read.
+1. **Read the evidence first.** If the report has a "Quick check" section, trust its probed results (and treat inferred skills as likely but unconfirmed). Then fill `basis` from the report: `mastered` and `shaky` as map ids (the report's "Knowledge-map skills" section and the checkpoint results give them), the misconceptions seen, and a 2–3 sentence summary a parent can read.
 2. **Choose 2–6 focus skills** with roles:
    - `repair`: a shaky skill, or one with a misconception seen. It comes first: never open a new skill on top of a broken prerequisite.
    - `new`: 1 or 2 skills from the frontier, meaning all prerequisites are in `basis.mastered`. Prefer the skill that unlocks the most later skills (`unlocks` in the map), and alternate worlds so the child doesn't get stuck in one topic.

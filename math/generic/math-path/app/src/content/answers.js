@@ -40,6 +40,7 @@ export function parseAnswer(raw) {
     let s = String(raw).toLowerCase().trim()
         .replace(/[“”"'!?。]/g, '').replace(/\.$/, '').replace(/\s+/g, ' ')
         .replace(/^(it is|it's|its|the answer is|answer|i think|um|uh)\s+/, '').trim();
+    s = s.replace(/(\d),(?=\d{3}\b)/g, '$1').replace(/^\$/, '');
     if (!s) return null;
     for (const [ch, [n, d]] of Object.entries(VULGAR)) {
         if (s === ch) return frac(n, d);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Path: Zoo Island</title>
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="./app.css?v=04c0a83d">
+    <link rel="stylesheet" href="./app.css?v=21702f02">
 </head>
 <body>
     <header class="topbar">
@@ -35,8 +35,26 @@
             </div>
         </section>
 
+        <!-- Quick check (placement) -->
+        <section id="screen-check" class="screen hidden">
+            <div class="card card--narrow center">
+                <div class="hero-pingo" id="check-pingo" aria-hidden="true"></div>
+                <p class="eyebrow">Quick check</p>
+                <h1>Let's find your level</h1>
+                <p class="lead">About 30 questions, so you can skip everything you already know. Some are hard on purpose. If you don't know one, tap <b>I don't know yet</b>. No timer, nothing to lose.</p>
+                <div class="home-actions center-actions">
+                    <button class="btn btn--primary btn--big" id="btn-check-start" type="button">Start the quick check</button>
+                    <button class="btn btn--quiet" id="btn-check-skip" type="button">Not now</button>
+                </div>
+            </div>
+        </section>
+
         <!-- Home: today's chapter -->
         <section id="screen-home" class="screen hidden">
+            <div class="card banner hidden" id="check-banner">
+                <div><b>New: quick check.</b> Skip what you already know: about 30 questions finds your level across the whole island.</div>
+                <button class="btn btn--primary" id="btn-banner-check" type="button">Find my level</button>
+            </div>
             <div class="home-grid">
                 <div class="card chapter">
                     <p class="eyebrow" id="chapter-world">Fraction Reef</p>
@@ -59,6 +77,7 @@
             </div>
             <nav class="home-links">
                 <a class="link" href="../../math-quest-penguin/" id="link-pingo">Fast facts with Pingo →</a>
+                <button class="link" id="btn-recheck" type="button">Find my level again</button>
                 <button class="link" id="btn-parent" type="button">For grown-ups: plan and report</button>
             </nav>
         </section>
@@ -90,6 +109,7 @@
                 <div id="visual" class="visual"></div>
                 <div id="answer" class="answer"></div>
                 <div class="help-row">
+                    <button class="btn btn--quiet hidden" id="btn-dunno" type="button">I don't know yet</button>
                     <button class="btn btn--tiny hidden" id="btn-hint" type="button">Hint</button>
                     <p class="hint hidden" id="hint-text"></p>
                 </div>
@@ -145,17 +165,20 @@
             </div>
         </section>
     </main>
-    <p class="app-version" id="app-version">Updated Nov 14, 8:47 PM (eeed14a)</p>
+    <p class="app-version" id="app-version">Updated Nov 25, 9:54 PM (f4d58c6)</p>
     <script type="importmap" id="version-map">{
  "imports": {
-  "./src/content/answers.js": "./src/content/answers.js?v=0e2bc90f",
+  "./src/content/answers.js": "./src/content/answers.js?v=172daa92",
+  "./src/content/helpers.js": "./src/content/helpers.js?v=b944b1cf",
   "./src/content/lessons.js": "./src/content/lessons.js?v=c62821d8",
-  "./src/content/skills.js": "./src/content/skills.js?v=90df6453",
-  "./src/main.js": "./src/main.js?v=cf53a08a",
-  "./src/model/engine.js": "./src/model/engine.js?v=8ec0aad7",
+  "./src/content/skills.js": "./src/content/skills.js?v=c6abe596",
+  "./src/content/skills34.js": "./src/content/skills34.js?v=797e08a4",
+  "./src/main.js": "./src/main.js?v=9f37154e",
+  "./src/model/engine.js": "./src/model/engine.js?v=8d1451ea",
+  "./src/model/placement.js": "./src/model/placement.js?v=a24e39f6",
   "./src/plan/checkPlan.js": "./src/plan/checkPlan.js?v=d310eb72",
-  "./src/plan/defaultPlan.js": "./src/plan/defaultPlan.js?v=c0df96bd",
-  "./src/report.js": "./src/report.js?v=99f39041",
+  "./src/plan/defaultPlan.js": "./src/plan/defaultPlan.js?v=b4d18531",
+  "./src/report.js": "./src/report.js?v=0904f923",
   "./src/ui/visuals.js": "./src/ui/visuals.js?v=af380f89",
   "../../math-quest-penguin/src/audio/soundEffects.js": "../../math-quest-penguin/src/audio/soundEffects.js?v=4c2fb456",
   "../../math-quest-penguin/src/audio/speechRec.js": "../../math-quest-penguin/src/audio/speechRec.js?v=ea78c294",
@@ -177,7 +200,7 @@
   "../../math-quest-penguin/src/utils/voiceLog.js": "../../math-quest-penguin/src/utils/voiceLog.js?v=15b9bf1a"
  }
 }</script>
-    <script type="module" src="./src/main.js?v=cf53a08a"></script>
+    <script type="module" src="./src/main.js?v=9f37154e"></script>
 <script src="../../../../home-link.js" defer></script>
 </body>
 </html>

@@ -23,6 +23,13 @@ It covers the core of milestones 1–5 in a first form:
 - Lessons, the checkpoint, report v2, and a grown-ups screen to load plans and download reports are included.
 - Tests: `npm test` runs the map build, the plan checker, generator self-checks, and simulated children.
 
+**Update (Nov 25): quick check and faster pacing.** The first real report showed a grade-4 player being started at grade-2 add and subtract, which would have taken hundreds of questions on things she already knows.
+
+- **Quick check:** a binary search on the skill map. Each probe settles one skill plus everything below it (pass) or above it (fail), and unasked skills are inferred from the pass rate at their grade. It runs on a player's first visit, and again from "Find my level again". In simulations it takes about 30 questions and places 95–100% of skills correctly.
+- **Fast start:** the first three answers right on a skill jump straight to the level that counts for the bar.
+- **Rolling plans:** when a skill reaches its bar, the automatic plan opens the next one right away instead of waiting for the checkpoint.
+- **More skills:** 31 more generators for the rest of grade 3 and for grade 4, 50 in all.
+
 Still to come: cloud sync of Math Path progress (the progress lives on one device for now, Pingo's progress still syncs), island art and character portraits (milestone 6), the plan driving Pingo's voice drill (milestone 7), and milestones 8–10.
 
 ## Milestone 0: foundations (done)

@@ -53,6 +53,7 @@ export function buildReport({ player, plan, learner, map, pingo = {} }) {
             questions: sessions.reduce((a, s) => a + s.questions, 0), accuracy: sessions.length ? +(sessions.reduce((a, s) => a + s.correct, 0) / Math.max(1, sessions.reduce((a, s) => a + s.questions, 0))).toFixed(2) : null,
         },
         againstPlan: against, skills, worlds, frontier: front.map((n) => n.id), blockers, misconceptions: misc,
+        placement: (learner.placements || []).slice(-1)[0] || null,
         checkpoint: cp, ownWords: learner.texts.slice(-30), sessions: sessions.slice(-15), mapStatus,
     };
 }
@@ -66,6 +67,12 @@ export function reportMarkdown(r) {
     L.push(`- Bars met: ${met.length ? met.map((m) => `\`${m}\``).join(', ') : 'none yet'} (of ${r.againstPlan.length} focus skills).`);
     if (r.checkpoint) L.push(`- Last checkpoint (${day(r.checkpoint.at)}): ${r.checkpoint.correct}/${r.checkpoint.questions} correct.`);
     L.push('');
+    if (r.placement) {
+        const pl = r.placement;
+        L.push('## Quick check (placement)', '', `${day(pl.at)}: ${pl.questions} questions (${pl.correct} right) in ${pl.minutes} min. ${pl.known} skills counted as known (probed or inferred); ready to learn next: ${pl.frontier.map((x) => `\`${x}\``).join(', ') || '–'}.`, '',
+            '| Skill probed | Right / asked | Result |', '|---|---|---|', ...Object.entries(pl.probed).map(([k, v]) => `| \`${k}\` | ${v.right}/${v.asked} | ${v.verdict === 'known' ? 'known' : 'not yet'} |`), '',
+            'Known skills that were inferred rather than asked come back soon as spot-checks and drop to "learning" if missed.', '');
+    }
     L.push('## Against the plan', '', '| Skill | Role | Status | Level | Recent accuracy | Attempts | Bar | Met | Sessions to bar |', '|---|---|---|---|---|---|---|---|---|');
     for (const a of r.againstPlan) L.push(`| \`${a.node}\` | ${a.role} | ${a.status} | ${a.level ?? '–'} | ${pct(a.recentAccuracy)} | ${a.attempts} | ${pct(a.bar.accuracy)} of last ${a.bar.window} at level ≥ ${a.bar.atLevel}, ≥ ${a.bar.minAttempts} tries${a.bar.medianSeconds ? `, ≤ ${a.bar.medianSeconds} s` : ''} | ${a.barMet ? 'yes' : 'no'} | ${a.sessionsToBar ?? '–'} |`);
     L.push('', '"Level" is 1–5 on the skill\'s ladder (1 = pictures and small numbers, 5 = full grade-level demand in symbols).', '');
