@@ -1,0 +1,1338 @@
+{
+ "powerplant": [
+  {
+   "type": "know",
+   "q": "What is a power plant?",
+   "options": [
+    "A store that sells batteries",
+    "A garden where plants grow",
+    "A big building where electricity is made"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A big building where electricity is made\". A power plant is a facility where electricity is generated."
+  },
+  {
+   "type": "know",
+   "q": "What does a power plant make?",
+   "options": [
+    "Food",
+    "Rain water",
+    "Electricity"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electricity\". Power plants are built to generate electricity."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Power plants are tiny devices you hold",
+    "Power plants generate electricity",
+    "Power plants store sunlight in jars"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Power plants generate electricity\". A power plant is a big facility that makes electricity."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A power plant is a facility where electricity is ____.",
+   "options": [
+    "generated",
+    "thrown away",
+    "frozen"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"generated\". Generated means made, and power plants make electricity."
+  },
+  {
+   "type": "know",
+   "q": "Which term means \"a big building where electricity is made\"?",
+   "options": [
+    "Light bulb",
+    "Rubber band",
+    "Power plant"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Power plant\". That is the meaning of power plant."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is a power plant?",
+   "options": [
+    "A lamp in your bedroom",
+    "A building where turbines make electricity for a city",
+    "A flower pot on a window"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A building where turbines make electricity for a city\". Only that building makes electricity for many people."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT a power plant?",
+   "options": [
+    "A flashlight",
+    "A coal-burning electricity station",
+    "A dam that makes electricity"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A flashlight\". A flashlight is a small device, not a big facility that makes electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which item would you find inside a power plant?",
+   "options": [
+    "A huge generator",
+    "A swing set",
+    "A sandbox"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A huge generator\". Power plants use giant generators to make electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which group lists only places that make electricity?",
+   "options": [
+    "Library, bakery, school",
+    "Wind farm, solar plant, dam",
+    "Park, zoo, beach"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wind farm, solar plant, dam\". Each of those places generates electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which is a power plant that uses moving water?",
+   "options": [
+    "A water slide",
+    "A hydroelectric dam",
+    "A swimming pool"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A hydroelectric dam\". A hydroelectric dam uses moving water to make electricity."
+  },
+  {
+   "type": "apply",
+   "q": "The lights in your classroom are on. Where was that electricity most likely made?",
+   "options": [
+    "Inside the light switch",
+    "In the classroom clock",
+    "At a power plant"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"At a power plant\". Electricity is made at a power plant and sent to buildings."
+  },
+  {
+   "type": "apply",
+   "q": "A town is growing and needs more electricity. What could it build?",
+   "options": [
+    "A new playground",
+    "A new library",
+    "A new power plant"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A new power plant\". A power plant is the place that makes electricity."
+  },
+  {
+   "type": "apply",
+   "q": "A storm shuts down the town's only power plant. What might happen?",
+   "options": [
+    "The grass turns blue",
+    "Homes may lose electricity",
+    "Rain stops falling"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Homes may lose electricity\". If the power plant stops, electricity stops being made for homes."
+  },
+  {
+   "type": "apply",
+   "q": "On a field trip, Maya sees a big building with spinning turbines and many power lines leaving it. What is she visiting?",
+   "options": [
+    "A power plant",
+    "A bakery",
+    "A bike shop"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A power plant\". Turbines and power lines are signs of a place that makes electricity."
+  },
+  {
+   "type": "apply",
+   "q": "How does electricity get from a power plant to your house?",
+   "options": [
+    "Through power lines",
+    "In a delivery truck",
+    "Through the water pipes"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Through power lines\". The grid of power lines transfers electricity to homes."
+  }
+ ],
+ "efficiency": [
+  {
+   "type": "know",
+   "q": "What does efficiency mean?",
+   "options": [
+    "How well something uses energy to do a task",
+    "How heavy something is",
+    "How colorful something is"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"How well something uses energy to do a task\". Efficiency tells how well energy is used to do a job."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An efficient device wastes ____ energy.",
+   "options": [
+    "more",
+    "less",
+    "all of its"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"less\". Efficient devices waste less energy, like less wasted heat."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "An efficient device wastes the most heat",
+    "Efficiency means how loud a device is",
+    "An efficient device wastes less energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"An efficient device wastes less energy\". Being efficient means less energy is wasted."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Efficiency is how ____ something uses energy to do a task.",
+   "options": [
+    "well",
+    "loudly",
+    "heavily"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"well\". Efficiency is about how well energy is used."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"how well something uses energy to do a task\"?",
+   "options": [
+    "Evidence",
+    "Efficiency",
+    "Insulator"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Efficiency\". That is the meaning of efficiency."
+  },
+  {
+   "type": "example",
+   "q": "Which light bulb is an example of an efficient bulb?",
+   "options": [
+    "An old bulb too hot to touch",
+    "A bulb that turns most energy into heat",
+    "An LED bulb that stays cool"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"An LED bulb that stays cool\". An LED wastes less energy as heat, so it is efficient."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of wasting energy?",
+   "options": [
+    "Closing the fridge door quickly",
+    "Using an LED bulb",
+    "Leaving the fridge door open"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Leaving the fridge door open\". An open fridge door lets cold out, so it wastes energy."
+  },
+  {
+   "type": "example",
+   "q": "Which group lists only efficient choices?",
+   "options": [
+    "Old hot bulbs and drafty windows",
+    "LED bulbs and a well-sealed fridge",
+    "An open fridge and a hot old bulb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"LED bulbs and a well-sealed fridge\". Both of those waste less energy."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs in the \"wastes lots of heat\" group?",
+   "options": [
+    "A charger that gets very hot",
+    "A cool LED night-light",
+    "A solar calculator that stays cool"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A charger that gets very hot\". A very hot charger is losing lots of energy as wasted heat."
+  },
+  {
+   "type": "example",
+   "q": "Which pot uses the stove's heat more efficiently?",
+   "options": [
+    "A pot with no lid",
+    "A pot with a lid",
+    "A pot with holes in it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A pot with a lid\". A lid keeps heat in, so less energy is wasted."
+  },
+  {
+   "type": "apply",
+   "q": "Two bulbs give the same light. Bulb A gets very hot. Bulb B stays cool. Which is more efficient?",
+   "options": [
+    "Bulb A",
+    "They are exactly the same",
+    "Bulb B"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Bulb B\". Bulb B wastes less energy as heat."
+  },
+  {
+   "type": "apply",
+   "q": "Why can efficient devices help a family pay less for electricity?",
+   "options": [
+    "They waste less energy",
+    "They make more heat",
+    "They are painted brighter colors"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"They waste less energy\". Less wasted energy means less electricity is needed."
+  },
+  {
+   "type": "apply",
+   "q": "Leo's phone charger feels warm while charging. Where did that warmth come from?",
+   "options": [
+    "The charger made brand-new energy",
+    "Some energy was wasted as heat",
+    "The phone sent cold into it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Some energy was wasted as heat\". Energy is never made from nothing; some of it always becomes heat."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Sam puts the same new batteries in two flashlights with the same brightness. X shines 5 hours and Y shines 2 hours. Which is more efficient?",
+   "options": [
+    "Flashlight X",
+    "Flashlight Y",
+    "They are equally efficient"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Flashlight X\". X did the same job longer with the same energy, so it wastes less."
+  },
+  {
+   "type": "apply",
+   "q": "Your family wants to waste less energy lighting the house. What would you use?",
+   "options": [
+    "Bulbs that get very hot",
+    "More lamps left on all night",
+    "LED bulbs"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"LED bulbs\". LED bulbs waste less energy as heat."
+  }
+ ],
+ "transfer": [
+  {
+   "type": "know",
+   "q": "What does transfer mean?",
+   "options": [
+    "To make something disappear",
+    "To move something from one place to another",
+    "To make something heavier"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To move something from one place to another\". Transfer means moving something from one place to another."
+  },
+  {
+   "type": "know",
+   "q": "Which way does heat transfer?",
+   "options": [
+    "From cooler things to warmer things",
+    "It never moves at all",
+    "From warmer things to cooler things"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"From warmer things to cooler things\". Heat always flows from warm to cool."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Heat moves from cold things to hot things",
+    "The grid transfers electricity to homes",
+    "Transfer means energy is destroyed"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The grid transfers electricity to homes\". Power lines in the grid move electricity to homes."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: To transfer is to ____ something from one place to another.",
+   "options": [
+    "destroy",
+    "move",
+    "hide"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"move\". Transfer means to move."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"to move something from one place to another\"?",
+   "options": [
+    "Claim",
+    "Transfer",
+    "Efficiency"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Transfer\". That is the meaning of transfer."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of heat transfer?",
+   "options": [
+    "A ball sits still on the floor",
+    "A book rests on a shelf",
+    "A mug of hot cocoa warms your cold hands"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A mug of hot cocoa warms your cold hands\". Heat moves from the warm mug to your cooler hands."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of electricity being transferred?",
+   "options": [
+    "A pillow sits on a bed",
+    "Power lines carry electricity to a school",
+    "A crayon lies in a box"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Power lines carry electricity to a school\". Power lines move electricity from place to place."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of transfer?",
+   "options": [
+    "A toy sits still in a box all day",
+    "An ice cube melts in your warm hand",
+    "A metal spoon warms up in hot soup"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A toy sits still in a box all day\". Nothing is moving from one place to another with the still toy."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs in the \"transfers electricity\" group?",
+   "options": [
+    "A copper wire",
+    "A rubber eraser",
+    "A wooden spoon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A copper wire\". Metal wires carry electricity; rubber and wood are insulators."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a moving object transferring energy?",
+   "options": [
+    "A bowling ball knocks over pins",
+    "A pin standing still",
+    "A ball resting on a shelf"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A bowling ball knocks over pins\". The rolling ball moves its energy to the pins."
+  },
+  {
+   "type": "apply",
+   "q": "You put a cold metal spoon in hot soup. What happens?",
+   "options": [
+    "Heat moves from the soup to the spoon",
+    "Cold moves from the spoon to the soup",
+    "Nothing changes at all"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Heat moves from the soup to the spoon\". Heat flows from the warmer soup to the cooler spoon."
+  },
+  {
+   "type": "apply",
+   "q": "Why do power lines connect a power plant to homes?",
+   "options": [
+    "To transfer electricity to the homes",
+    "To store water for the town",
+    "To make the sky brighter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To transfer electricity to the homes\". The grid moves electricity from the power plant to homes."
+  },
+  {
+   "type": "apply",
+   "q": "A warm can of juice goes into a cooler full of ice. Predict what happens.",
+   "options": [
+    "The juice gets warmer",
+    "The ice gets colder from the juice",
+    "The juice cools as heat moves to the ice"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The juice cools as heat moves to the ice\". Heat flows from the warmer juice to the cooler ice."
+  },
+  {
+   "type": "apply",
+   "q": "Mia wants to send electricity from a battery to a small bulb. What should she use?",
+   "options": [
+    "A piece of string",
+    "A plastic straw",
+    "A metal wire"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A metal wire\". Metal wires transfer electricity; plastic and string do not."
+  },
+  {
+   "type": "apply",
+   "q": "On the playground, Ben pushes a swing with his friend on it. What does Ben transfer to the swing?",
+   "options": [
+    "Light from his hands",
+    "Electricity from his shoes",
+    "Energy that makes it move"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Energy that makes it move\". Ben's push moves energy into the swing so it moves."
+  }
+ ],
+ "input": [
+  {
+   "type": "know",
+   "q": "What is an input?",
+   "options": [
+    "What comes out of a device",
+    "What goes into a system or device",
+    "The color of a device"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"What goes into a system or device\". Input is what goes into a system or device."
+  },
+  {
+   "type": "know",
+   "q": "What is a lamp's input?",
+   "options": [
+    "Light energy",
+    "Sound energy",
+    "Electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical energy\". A lamp takes in electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A device needs an input to work",
+    "A device makes energy from nothing",
+    "Input means the device is broken"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A device needs an input to work\". Devices need energy going in before they can do a job."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An input is what goes ____ a system or device.",
+   "options": [
+    "out of",
+    "into",
+    "under"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"into\". Input is what goes into a device."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"what goes into a system or device\"?",
+   "options": [
+    "Output",
+    "Evidence",
+    "Input"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Input\". That is the meaning of input."
+  },
+  {
+   "type": "example",
+   "q": "For a toaster, which is the energy input?",
+   "options": [
+    "Heat that browns the bread",
+    "Sound of the toast popping",
+    "Electrical energy from the outlet"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical energy from the outlet\". The toaster takes in electricity; heat and sound come out."
+  },
+  {
+   "type": "example",
+   "q": "When you plug in a radio, what is its energy input?",
+   "options": [
+    "Sound energy",
+    "Light energy",
+    "Electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical energy\". The radio takes in electricity and gives off sound."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of an input?",
+   "options": [
+    "Gas going into a car's tank",
+    "Smoke coming out of a car's tailpipe",
+    "Noise from a car's horn"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Gas going into a car's tank\". Gas goes into the car, so it is an input."
+  },
+  {
+   "type": "example",
+   "q": "For a solar calculator, which is the energy input?",
+   "options": [
+    "Sound energy",
+    "Light energy",
+    "Electrical energy from a wall outlet"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light energy\". A solar calculator takes in light."
+  },
+  {
+   "type": "example",
+   "q": "Which belongs on the \"inputs\" list for a kid riding a bike?",
+   "options": [
+    "Chemical energy from food the rider ate",
+    "The bike moving forward",
+    "The sound of the bell"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy from food the rider ate\". Food energy goes into the rider to pedal the bike."
+  },
+  {
+   "type": "apply",
+   "q": "Zoe's lamp will not turn on. She sees it is unplugged. What input is missing?",
+   "options": [
+    "Light energy",
+    "Sound energy",
+    "Electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical energy\". A lamp's input is electrical energy from the outlet."
+  },
+  {
+   "type": "apply",
+   "q": "Tom turns the key on a wind-up toy car. What is the input?",
+   "options": [
+    "The car rolling across the floor",
+    "The twisting from his hand",
+    "The clicking sound it makes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The twisting from his hand\". Tom's twisting goes into the toy; rolling and clicking come out."
+  },
+  {
+   "type": "apply",
+   "q": "Lily's science fair project uses a solar panel to light a small bulb. What is the solar panel's input?",
+   "options": [
+    "Sunlight",
+    "Light from the small bulb",
+    "Sound from the bulb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Sunlight\". The solar panel takes in sunlight."
+  },
+  {
+   "type": "apply",
+   "q": "A blender needs an input to spin. What would you do to give it its input?",
+   "options": [
+    "Shine a flashlight on it",
+    "Plug it into an outlet",
+    "Sing to it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Plug it into an outlet\". A blender's input is electrical energy from the outlet."
+  },
+  {
+   "type": "apply",
+   "q": "Predict: What happens if you take away a device's input?",
+   "options": [
+    "It stops working",
+    "It works faster",
+    "It makes more output"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It stops working\". Without energy going in, the device cannot do its job."
+  }
+ ],
+ "output": [
+  {
+   "type": "know",
+   "q": "What is an output?",
+   "options": [
+    "What goes into a device",
+    "What comes out of a system or device",
+    "The price of a device"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"What comes out of a system or device\". Output is what comes out of a system or device."
+  },
+  {
+   "type": "know",
+   "q": "What are a lamp's outputs?",
+   "options": [
+    "Sound and motion",
+    "Water and air",
+    "Light and heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light and heat\". A lamp gives off light and heat."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Output comes out after a device gets input",
+    "Output always goes in before input",
+    "A device has outputs but never inputs"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Output comes out after a device gets input\". Energy goes in as input and comes out as output."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An output is what comes ____ a system or device.",
+   "options": [
+    "into",
+    "under",
+    "out of"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"out of\". Output is what comes out of a device."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"what comes out of a system or device\"?",
+   "options": [
+    "Output",
+    "Input",
+    "Claim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Output\". That is the meaning of output."
+  },
+  {
+   "type": "example",
+   "q": "For a speaker, which is the main useful output?",
+   "options": [
+    "Sound energy",
+    "Electrical energy from the wall",
+    "Chemical energy from food"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Sound energy\". A speaker gives off sound."
+  },
+  {
+   "type": "example",
+   "q": "Which is an output of a toaster?",
+   "options": [
+    "Heat that browns the bread",
+    "Electrical energy from the outlet",
+    "Chemical energy from a battery"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Heat that browns the bread\". Heat comes out of the toaster; electricity goes in."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an output of a TV?",
+   "options": [
+    "Light from the screen",
+    "Electrical energy from the outlet",
+    "Sound from the speakers"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Electrical energy from the outlet\". Electricity goes into the TV, so it is an input."
+  },
+  {
+   "type": "example",
+   "q": "Which belongs on the \"outputs\" list for a car?",
+   "options": [
+    "Gas put into the tank",
+    "Exhaust from the tailpipe",
+    "Air pumped into the tires"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Exhaust from the tailpipe\". Exhaust comes out of the car."
+  },
+  {
+   "type": "example",
+   "q": "For an electric fan, which is an output?",
+   "options": [
+    "Moving air",
+    "Electricity from the outlet",
+    "Cold water"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Moving air\". The fan's blades move air; electricity is the input."
+  },
+  {
+   "type": "apply",
+   "q": "You touch a lamp that has been on for an hour and it feels warm. Why?",
+   "options": [
+    "Heat is its input",
+    "Cold air goes into it",
+    "Heat is one of its outputs"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Heat is one of its outputs\". A lamp's outputs are light and heat."
+  },
+  {
+   "type": "apply",
+   "q": "Ana plucks a string on her guitar. What is the output?",
+   "options": [
+    "Electricity",
+    "Light",
+    "Sound"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sound\". A plucked guitar string vibrates and makes sound."
+  },
+  {
+   "type": "apply",
+   "q": "Dad cooks soup on an electric stove. What output cooks the food?",
+   "options": [
+    "Sound",
+    "Heat",
+    "Electricity going into the plug"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Heat\". The stove takes in electricity and gives off heat."
+  },
+  {
+   "type": "apply",
+   "q": "You turn on a blender with fruit inside. What output chops the fruit?",
+   "options": [
+    "Light from the blades",
+    "Motion of the spinning blades",
+    "Cold air"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Motion of the spinning blades\". The blender turns electricity into motion that chops."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Kai builds a circuit with a battery and a buzzer. What output tells him it works?",
+   "options": [
+    "A smell of popcorn",
+    "The battery getting bigger",
+    "A buzzing sound"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A buzzing sound\". A buzzer's output is sound."
+  }
+ ],
+ "argument": [
+  {
+   "type": "know",
+   "q": "What is an argument in science?",
+   "options": [
+    "Yelling until people agree",
+    "Using evidence to explain why a claim is best",
+    "Guessing without any facts"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Using evidence to explain why a claim is best\". A science argument uses evidence to show a claim is best."
+  },
+  {
+   "type": "know",
+   "q": "In a science argument, what do you use to show your claim is best?",
+   "options": [
+    "Your favorite color",
+    "Evidence",
+    "A coin flip"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Evidence\". Arguments use evidence to explain why a claim is best."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A science argument connects a claim with evidence",
+    "A science argument is an angry fight",
+    "A science argument never has a claim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A science argument connects a claim with evidence\". An argument explains a claim using evidence."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An argument uses evidence to explain ____ an idea (claim) is best.",
+   "options": [
+    "why",
+    "when",
+    "where"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"why\". An argument explains why a claim is best."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"using evidence to explain why a claim is best\"?",
+   "options": [
+    "Output",
+    "Transfer",
+    "Argument"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Argument\". That is the meaning of argument."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a science argument?",
+   "options": [
+    "Metal is best because I like it",
+    "Metal conducts heat well because our metal spoon got hot fastest",
+    "Metal is best, and that is all"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Metal conducts heat well because our metal spoon got hot fastest\". It gives evidence from a test to explain the claim."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a science argument?",
+   "options": [
+    "It is true because I said so",
+    "The LED is more efficient because it stayed cooler in our test",
+    "Rubber is an insulator because the bulb stayed off with it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It is true because I said so\". Saying so is not evidence."
+  },
+  {
+   "type": "example",
+   "q": "Which pair shows the parts of a science argument?",
+   "options": [
+    "A song and a dance",
+    "A snack and a nap",
+    "A claim and evidence"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A claim and evidence\". An argument uses evidence to support a claim."
+  },
+  {
+   "type": "example",
+   "q": "Which sentence belongs in an argument about which ball bounces highest?",
+   "options": [
+    "The red ball is my favorite",
+    "The red ball bounced 50 cm and the blue ball 30 cm",
+    "Blue is a pretty color"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The red ball bounced 50 cm and the blue ball 30 cm\". Measurements are evidence that support the claim."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of making an argument in class?",
+   "options": [
+    "Copying a friend's answer",
+    "Showing your test data to explain your answer",
+    "Picking an answer at random"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Showing your test data to explain your answer\". Using data to explain your answer is an argument."
+  },
+  {
+   "type": "apply",
+   "q": "Jada claims a covered pot of water heats faster. What should she do to make an argument?",
+   "options": [
+    "Say it louder",
+    "Ask everyone to vote without testing",
+    "Show test results that support her claim"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Show test results that support her claim\". Arguments use evidence, like test results."
+  },
+  {
+   "type": "apply",
+   "q": "Two kids disagree about which bulb is more efficient. What is the best way to settle it?",
+   "options": [
+    "Pick the shinier bulb",
+    "Whoever talks first wins",
+    "Use evidence from a fair test"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Use evidence from a fair test\". Evidence shows which claim is best."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Omar argues that sound travels fastest through solids. What would make his argument strongest?",
+   "options": [
+    "Data showing sound arrived fastest through the solid",
+    "Saying solids are his favorite",
+    "A drawing of a guitar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Data showing sound arrived fastest through the solid\". Data is evidence that supports his claim."
+  },
+  {
+   "type": "apply",
+   "q": "Ella says black shirts get hotter in the sun. Her teacher asks, \"Why do you think so?\" What should Ella give?",
+   "options": [
+    "Evidence, like thermometer readings",
+    "Just her opinion",
+    "A totally different claim"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Evidence, like thermometer readings\". An argument explains a claim with evidence."
+  },
+  {
+   "type": "apply",
+   "q": "Why do scientists make arguments?",
+   "options": [
+    "To win prizes by shouting",
+    "To avoid doing tests",
+    "To show with evidence which idea is best"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"To show with evidence which idea is best\". Arguments use evidence to explain why a claim is best."
+  }
+ ],
+ "claim": [
+  {
+   "type": "know",
+   "q": "What is a claim?",
+   "options": [
+    "An answer or statement you believe is correct",
+    "A tool for measuring heat",
+    "A wire that carries electricity"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"An answer or statement you believe is correct\". A claim is a statement you believe is correct."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A claim should be supported by evidence",
+    "A claim must always be a question",
+    "A claim is a kind of energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A claim should be supported by evidence\". Evidence is used to support a claim."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A claim is an answer or statement that you ____ is correct.",
+   "options": [
+    "doubt",
+    "believe",
+    "forget"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"believe\". A claim is what you believe is correct."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"an answer or statement you believe is correct\"?",
+   "options": [
+    "Claim",
+    "Evidence",
+    "Input"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Claim\". That is the meaning of claim."
+  },
+  {
+   "type": "know",
+   "q": "Which question does a claim answer?",
+   "options": [
+    "What tools did you use?",
+    "What do you think is correct?",
+    "How long did the test take?"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"What do you think is correct?\". A claim is your answer that you believe is correct."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is a claim?",
+   "options": [
+    "Is rubber an insulator?",
+    "Go get the rubber band.",
+    "Rubber is an electrical insulator."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Rubber is an electrical insulator.\". A claim is a statement, not a question or a command."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT a claim?",
+   "options": [
+    "What color is the sky?",
+    "Light travels in straight lines.",
+    "Wood is a bad heat conductor."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"What color is the sky?\". A question is not a statement you believe is correct."
+  },
+  {
+   "type": "example",
+   "q": "Which part of a science fair poster is the claim?",
+   "options": [
+    "Materials: string and cups",
+    "Sound travels fastest through solids",
+    "Date: May 5"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sound travels fastest through solids\". That is the statement the student believes is correct."
+  },
+  {
+   "type": "example",
+   "q": "Which group lists only claims?",
+   "options": [
+    "How tall is it? Where is it?",
+    "Close the door. Sit down.",
+    "Plants need light. Ice melts in the sun."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Plants need light. Ice melts in the sun.\". Those are statements someone believes are correct."
+  },
+  {
+   "type": "example",
+   "q": "Mia says, \"I think the LED bulb is more efficient.\" What is this?",
+   "options": [
+    "Evidence",
+    "An output",
+    "A claim"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A claim\". Mia states what she believes, with no data yet."
+  },
+  {
+   "type": "apply",
+   "q": "Leo's teacher asks for his claim about which ball bounces highest. What should he say?",
+   "options": [
+    "I used a meter stick",
+    "I think the rubber ball bounces highest",
+    "We dropped each ball 3 times"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"I think the rubber ball bounces highest\". A claim is the answer he believes is correct."
+  },
+  {
+   "type": "apply",
+   "q": "Ava claims dark shirts get warmer in the sun. What should she do next to support it?",
+   "options": [
+    "Turn her claim into a question",
+    "Keep her claim a secret",
+    "Collect evidence by testing"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Collect evidence by testing\". Evidence supports a claim."
+  },
+  {
+   "type": "apply",
+   "q": "Two students make different claims about which cup keeps cocoa warm longer. How can they find out which is best?",
+   "options": [
+    "Choose the prettier cup",
+    "Flip a coin",
+    "Test both cups and compare evidence"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Test both cups and compare evidence\". Evidence shows which claim is best."
+  },
+  {
+   "type": "apply",
+   "q": "Sam's test results show his claim was wrong. What should he do?",
+   "options": [
+    "Change his claim to match the evidence",
+    "Ignore the evidence",
+    "Hide his results"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Change his claim to match the evidence\". A good claim must agree with the evidence."
+  },
+  {
+   "type": "apply",
+   "q": "Nora's question is \"Does water conduct electricity?\" Which claim agrees with the study guide?",
+   "options": [
+    "Water blocks all electricity",
+    "Water is an electrical conductor",
+    "Water is an insulator like rubber"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Water is an electrical conductor\". The study guide says water is a strong conductor of electricity."
+  }
+ ],
+ "evidence": [
+  {
+   "type": "know",
+   "q": "What is evidence?",
+   "options": [
+    "Information or facts that support a claim",
+    "A guess with no facts",
+    "A wish you make"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Information or facts that support a claim\". Evidence is information or facts that support a claim."
+  },
+  {
+   "type": "know",
+   "q": "What does evidence do for a claim?",
+   "options": [
+    "Supports it",
+    "Hides it",
+    "Turns it into a question"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Supports it\". Evidence supports an answer or claim."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Evidence is the same as a guess",
+    "Feelings are the best evidence",
+    "Test results can be evidence"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Test results can be evidence\". Facts from tests are information that support a claim."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Evidence is information or facts that ____ an answer or claim.",
+   "options": [
+    "support",
+    "erase",
+    "ignore"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"support\". Evidence supports a claim."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"information or facts that support a claim\"?",
+   "options": [
+    "Claim",
+    "Output",
+    "Evidence"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Evidence\". That is the meaning of evidence."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is evidence?",
+   "options": [
+    "I hope it is hot today",
+    "The thermometer read 30 degrees",
+    "Hot is my favorite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The thermometer read 30 degrees\". A measurement is a fact that can support a claim."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT evidence?",
+   "options": [
+    "I just feel like it is true",
+    "Our chart shows the LED stayed cooler",
+    "We measured 3 cm of growth"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"I just feel like it is true\". A feeling is not a fact."
+  },
+  {
+   "type": "example",
+   "q": "Which group lists only kinds of evidence?",
+   "options": [
+    "Wishes, guesses, favorites",
+    "Questions, jokes, songs",
+    "Measurements, observations, test results"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Measurements, observations, test results\". These are all facts and information."
+  },
+  {
+   "type": "example",
+   "q": "Claim: \"Metal is a good heat conductor.\" Which is evidence for it?",
+   "options": [
+    "The metal spoon is shiny",
+    "A metal spoon in hot cocoa got hot quickly",
+    "Metal spoons cost more"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A metal spoon in hot cocoa got hot quickly\". That fact shows metal moves heat well."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs in a science evidence notebook?",
+   "options": [
+    "A drawing of a dragon",
+    "A grocery list",
+    "A table of measured temperatures"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A table of measured temperatures\". Measurements are evidence."
+  },
+  {
+   "type": "apply",
+   "q": "Kim claims rubber is an electrical insulator. Which evidence supports her claim?",
+   "options": [
+    "Rubber feels soft",
+    "The bulb did not light with rubber in the circuit",
+    "Rubber is often black"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The bulb did not light with rubber in the circuit\". The bulb staying off shows rubber blocks electricity."
+  },
+  {
+   "type": "apply",
+   "q": "Jake claims black paper heats up more in sunlight than white paper. What should he collect?",
+   "options": [
+    "Pictures of his favorite colors",
+    "Temperature readings under each paper",
+    "A list of paper sizes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Temperature readings under each paper\". Temperature readings are evidence for his claim."
+  },
+  {
+   "type": "apply",
+   "q": "Your friend says, \"Trust me, glass conducts electricity.\" What should you ask for?",
+   "options": [
+    "A snack",
+    "A louder voice",
+    "Evidence"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Evidence\". Claims need evidence; and glass is really an insulator."
+  },
+  {
+   "type": "apply",
+   "q": "A team's evidence shows a wooden spoon stayed cool in hot water. What claim does it support?",
+   "options": [
+    "Wood is a great heat conductor",
+    "Wood is a bad heat conductor",
+    "Wood makes its own heat"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wood is a bad heat conductor\". Wood is a bad heat conductor, so the spoon stayed cool."
+  },
+  {
+   "type": "apply",
+   "q": "Ali's bulb lit up when pencil graphite was in the circuit. What claim does this evidence support?",
+   "options": [
+    "Graphite is a good conductor",
+    "Graphite is an insulator",
+    "Graphite makes light by itself"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Graphite is a good conductor\". Graphite is a good conductor, so electricity flowed."
+  }
+ ]
+}

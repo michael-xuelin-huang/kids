@@ -1,0 +1,1338 @@
+{
+ "converter": [
+  {
+   "type": "know",
+   "q": "What is a converter?",
+   "options": [
+    "Something that blocks all energy",
+    "Something that stores water",
+    "Something that changes one form of energy into another"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Something that changes one form of energy into another\". A converter changes energy from one form into another form."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about converters is true?",
+   "options": [
+    "A converter destroys energy",
+    "A toaster is a converter",
+    "A converter only works in the dark"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A toaster is a converter\". A toaster changes electrical energy into heat, so it is a converter."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A converter changes one ___ of energy into another.",
+   "options": [
+    "color",
+    "form",
+    "size"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"form\". Converters change energy from one form into a different form."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'something that changes one form of energy into another'?",
+   "options": [
+    "converter",
+    "insulator",
+    "medium"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"converter\". That is the meaning of the word converter."
+  },
+  {
+   "type": "know",
+   "q": "The study guide gives three examples of converters. Which group is it?",
+   "options": [
+    "solar panel, motor, toaster",
+    "sand, rope, paper",
+    "rock, pillow, spoon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"solar panel, motor, toaster\". A solar panel, a motor and a toaster each change one energy form into another."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is a converter?",
+   "options": [
+    "a rock",
+    "a pillow",
+    "a lamp"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a lamp\". A lamp changes electrical energy into light."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT a converter?",
+   "options": [
+    "a wooden block",
+    "a solar panel",
+    "a motor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a wooden block\". A wooden block does not change energy from one form into another."
+  },
+  {
+   "type": "example",
+   "q": "A blender, a hair dryer and a flashlight all belong in which group?",
+   "options": [
+    "insulators",
+    "converters",
+    "fuels"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"converters\". Each one changes energy from one form into another."
+  },
+  {
+   "type": "example",
+   "q": "Pick the item that belongs with a solar panel, a motor and a toaster.",
+   "options": [
+    "an electric fan",
+    "a paper towel",
+    "a pebble"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"an electric fan\". A fan is a converter: it changes electrical energy into motion."
+  },
+  {
+   "type": "example",
+   "q": "Which kitchen item is a converter?",
+   "options": [
+    "a wooden spoon",
+    "a plate",
+    "a microwave oven"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a microwave oven\". A microwave oven changes electrical energy into heat for food."
+  },
+  {
+   "type": "apply",
+   "q": "Mia plugs in a toaster and makes toast. What energy goes in and what comes out?",
+   "options": [
+    "Sound in, electrical out",
+    "Electrical in, heat out",
+    "Heat in, sound out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Electrical in, heat out\". A toaster changes electrical energy into heat."
+  },
+  {
+   "type": "apply",
+   "q": "Leo's toy car runs on a motor. Why is the motor a converter?",
+   "options": [
+    "It makes energy from nothing",
+    "It changes motion into sunlight",
+    "It changes electrical energy into motion"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It changes electrical energy into motion\". A motor changes electrical energy into motion energy."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Ava shows a sun-powered calculator. Which part changes sunlight into electricity?",
+   "options": [
+    "the screen cover",
+    "the solar panel",
+    "the plastic buttons"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the solar panel\". The solar panel is the converter that changes light into electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Sam wants to change electrical energy into heat to warm his bread. Which converter should he use?",
+   "options": [
+    "a toaster",
+    "a solar panel",
+    "a fan"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a toaster\". A toaster changes electrical energy into heat."
+  },
+  {
+   "type": "apply",
+   "q": "When any converter changes energy into another form, what can you predict happens to some of the energy?",
+   "options": [
+    "It all vanishes",
+    "It turns into water",
+    "Some becomes heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Some becomes heat\". Energy never goes away, and some always becomes heat."
+  }
+ ],
+ "renewable": [
+  {
+   "type": "know",
+   "q": "What is renewable energy?",
+   "options": [
+    "Energy that comes only from coal",
+    "Energy that can only be used once",
+    "Energy from sources that are naturally refilled"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Energy from sources that are naturally refilled\". Renewable energy comes from sources that nature refills."
+  },
+  {
+   "type": "know",
+   "q": "In the study guide, what does the word 'replenished' mean?",
+   "options": [
+    "broken",
+    "frozen",
+    "refilled"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"refilled\". Replenished means refilled."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Sun, wind and flowing water are ___ energy sources.",
+   "options": [
+    "limited",
+    "nonrenewable",
+    "renewable"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"renewable\". Sun, wind and flowing water are naturally refilled, so they are renewable."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Renewable sources run out quickly",
+    "Wind is a renewable energy source",
+    "Coal is a renewable energy source"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wind is a renewable energy source\". Wind is naturally replenished, so it is renewable."
+  },
+  {
+   "type": "know",
+   "q": "Which term means energy from sources that refill naturally?",
+   "options": [
+    "renewable energy",
+    "nonrenewable energy",
+    "stored fuel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"renewable energy\". Renewable energy comes from sources that are naturally replenished."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is a renewable energy source?",
+   "options": [
+    "sunlight",
+    "coal",
+    "oil"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"sunlight\". Sunlight is naturally replenished every day."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT a renewable energy source?",
+   "options": [
+    "flowing water",
+    "natural gas",
+    "wind"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"natural gas\". Natural gas is limited and cannot be replaced quickly."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with sun and wind.",
+   "options": [
+    "flowing water",
+    "gasoline",
+    "coal"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"flowing water\". Flowing water is renewable, just like sun and wind."
+  },
+  {
+   "type": "example",
+   "q": "Which group has ONLY renewable sources?",
+   "options": [
+    "sun, wind, flowing water",
+    "coal, oil, wind",
+    "gasoline, sun, natural gas"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"sun, wind, flowing water\". Sun, wind and flowing water are all naturally replenished."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is powered by a renewable source?",
+   "options": [
+    "a coal furnace",
+    "a gas-powered lawn mower",
+    "a windmill"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a windmill\". A windmill uses wind, which is renewable."
+  },
+  {
+   "type": "apply",
+   "q": "Nora's town builds wind turbines on a hill. Why will the wind not run out?",
+   "options": [
+    "Wind is naturally replenished",
+    "Wind is made from coal",
+    "Wind can be used only once"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Wind is naturally replenished\". Wind keeps coming back, so it is renewable."
+  },
+  {
+   "type": "apply",
+   "q": "A family puts solar panels on their roof. What kind of energy source are they using?",
+   "options": [
+    "gasoline",
+    "renewable",
+    "nonrenewable"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"renewable\". Sunlight is naturally replenished, so it is renewable."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Jay sorts energy cards. Where does the card 'a river spinning a water wheel' go?",
+   "options": [
+    "the nonrenewable pile",
+    "the not-energy pile",
+    "the renewable pile"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the renewable pile\". Flowing water is a renewable energy source."
+  },
+  {
+   "type": "apply",
+   "q": "Kim says, 'If we use sunlight today, there will be none tomorrow.' What should you tell her?",
+   "options": [
+    "Sunlight is limited like coal",
+    "The Sun keeps shining, so it is renewable",
+    "She is right, sunlight runs out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The Sun keeps shining, so it is renewable\". Sunlight is naturally replenished, so it does not run out."
+  },
+  {
+   "type": "apply",
+   "q": "A camp wants power from a source that keeps refilling by itself. What should they choose?",
+   "options": [
+    "a gasoline generator",
+    "a water wheel in a flowing stream",
+    "a coal stove"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a water wheel in a flowing stream\". Flowing water is renewable; gasoline and coal are not."
+  }
+ ],
+ "nonrenewable": [
+  {
+   "type": "know",
+   "q": "What is nonrenewable energy?",
+   "options": [
+    "Energy from limited sources that cannot be replaced quickly",
+    "Energy that comes only from wind",
+    "Energy that refills itself every day"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Energy from limited sources that cannot be replaced quickly\". Nonrenewable sources are limited and cannot be replaced quickly."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Coal refills every night",
+    "Oil cannot be replaced quickly",
+    "Natural gas is the same as sunlight"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Oil cannot be replaced quickly\". Oil is a nonrenewable source, so it cannot be replaced quickly."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Nonrenewable sources are ___ and cannot be replaced quickly.",
+   "options": [
+    "limited",
+    "endless",
+    "invisible"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"limited\". Nonrenewable sources are limited, so they can run out."
+  },
+  {
+   "type": "know",
+   "q": "Which term matches 'limited sources like coal and oil'?",
+   "options": [
+    "nonrenewable energy",
+    "solar energy",
+    "renewable energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"nonrenewable energy\". Coal and oil are limited, so they are nonrenewable."
+  },
+  {
+   "type": "know",
+   "q": "Which list shows only nonrenewable sources?",
+   "options": [
+    "coal, oil, gasoline, natural gas",
+    "sun, coal, wind",
+    "sun, wind, flowing water"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"coal, oil, gasoline, natural gas\". Coal, oil, gasoline and natural gas are limited and cannot be replaced quickly."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is a nonrenewable source?",
+   "options": [
+    "wind",
+    "sunlight",
+    "coal"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"coal\". Coal is limited and cannot be replaced quickly."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT a nonrenewable source?",
+   "options": [
+    "natural gas",
+    "flowing water",
+    "oil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"flowing water\". Flowing water is naturally replenished, so it is renewable."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with coal and oil.",
+   "options": [
+    "sunlight",
+    "wind",
+    "natural gas"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"natural gas\". Natural gas is nonrenewable, like coal and oil."
+  },
+  {
+   "type": "example",
+   "q": "Which of these uses a nonrenewable source?",
+   "options": [
+    "a sailboat pushed by wind",
+    "a calculator run by sunlight",
+    "a car that runs on gasoline"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a car that runs on gasoline\". Gasoline is a nonrenewable source."
+  },
+  {
+   "type": "example",
+   "q": "Which fuel is pumped into cars at a gas station?",
+   "options": [
+    "gasoline",
+    "wind",
+    "sunlight"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"gasoline\". Gasoline is a nonrenewable source of energy."
+  },
+  {
+   "type": "apply",
+   "q": "A town's coal mine is almost empty. Why can't they just wait for more coal?",
+   "options": [
+    "Coal grows back every week",
+    "Coal cannot be replaced quickly",
+    "Coal falls from the sky in rain"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Coal cannot be replaced quickly\". Coal is nonrenewable, so it cannot be replaced quickly."
+  },
+  {
+   "type": "apply",
+   "q": "Ella's class asks, 'Why should we save oil?' What is the best answer?",
+   "options": [
+    "Oil is made by the Sun each day",
+    "Oil is limited and can run out",
+    "Oil refills every morning"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Oil is limited and can run out\". Oil is a limited, nonrenewable source."
+  },
+  {
+   "type": "apply",
+   "q": "Ben's house is heated by burning natural gas. What kind of source is that?",
+   "options": [
+    "solar",
+    "nonrenewable",
+    "renewable"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"nonrenewable\". Natural gas is limited and cannot be replaced quickly."
+  },
+  {
+   "type": "apply",
+   "q": "A school wants to stop using a source that will run out. Which one should it stop using?",
+   "options": [
+    "sunlight",
+    "wind",
+    "coal"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"coal\". Coal is nonrenewable and can run out."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Omar shows a jar of oil and a pinwheel spun by wind. Which is the nonrenewable source?",
+   "options": [
+    "the wind",
+    "both of them",
+    "the oil"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the oil\". Oil is nonrenewable; wind is renewable."
+  }
+ ],
+ "solar": [
+  {
+   "type": "know",
+   "q": "Is solar energy renewable or nonrenewable?",
+   "options": [
+    "renewable, because the Sun keeps shining",
+    "nonrenewable, because it runs out",
+    "neither one"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"renewable, because the Sun keeps shining\". The Sun is a source that is naturally replenished."
+  },
+  {
+   "type": "know",
+   "q": "The word 'solar' has to do with what?",
+   "options": [
+    "the ocean",
+    "the Sun",
+    "the soil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the Sun\". Solar means having to do with the Sun."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Solar energy is energy that comes from the ___.",
+   "options": [
+    "Sun",
+    "ground",
+    "wind"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Sun\". Solar energy is energy that comes from the Sun."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "The Sun gives us only sound",
+    "The Sun gives us light and heat",
+    "Solar energy comes from oil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The Sun gives us light and heat\". The Sun is a source of both light and heat."
+  },
+  {
+   "type": "know",
+   "q": "Which term means energy that comes from the Sun?",
+   "options": [
+    "sound energy",
+    "chemical energy",
+    "solar energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"solar energy\". Energy from the Sun is called solar energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of using solar energy?",
+   "options": [
+    "winding up a toy",
+    "burning coal in a stove",
+    "drying wet clothes in sunshine"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"drying wet clothes in sunshine\". Sunshine dries the clothes using energy from the Sun."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT using solar energy?",
+   "options": [
+    "a gasoline lawn mower",
+    "a solar panel on a roof",
+    "a plant growing in sunlight"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a gasoline lawn mower\". A gasoline mower uses gasoline, not energy from the Sun."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that gets its energy from the Sun.",
+   "options": [
+    "a solar garden light",
+    "a wind-up music box",
+    "a gas grill"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a solar garden light\". A solar garden light gets its energy from sunlight."
+  },
+  {
+   "type": "example",
+   "q": "Which of these comes from solar energy?",
+   "options": [
+    "the heat from a gas stove",
+    "the sound of a drum",
+    "the warmth of sand on a sunny beach"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the warmth of sand on a sunny beach\". The Sun warms the beach sand."
+  },
+  {
+   "type": "example",
+   "q": "Which group uses ONLY solar energy?",
+   "options": [
+    "solar calculator, lizard warming in the sun, sun-dried raisins",
+    "wind-up toy, gas grill, candle",
+    "gas car, solar calculator, coal stove"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"solar calculator, lizard warming in the sun, sun-dried raisins\". All three in that group use energy from the Sun."
+  },
+  {
+   "type": "apply",
+   "q": "Zoe leaves a chocolate bar on a sunny windowsill and it melts. Why?",
+   "options": [
+    "A cold wind blew on it",
+    "The window made a loud sound",
+    "Solar energy heated it"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Solar energy heated it\". The Sun gives heat, and that heat melted the chocolate."
+  },
+  {
+   "type": "apply",
+   "q": "A dark sidewalk feels hot on a summer afternoon. Where did the heat come from?",
+   "options": [
+    "a battery in the sidewalk",
+    "the Moon",
+    "the Sun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the Sun\". The Sun is a source of heat."
+  },
+  {
+   "type": "apply",
+   "q": "Max wants to cook a hot dog at camp with no fuel and no electricity. What can he use?",
+   "options": [
+    "a gas stove",
+    "a solar oven box lined with foil",
+    "a coal grill"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a solar oven box lined with foil\". A solar oven uses energy from the Sun."
+  },
+  {
+   "type": "apply",
+   "q": "In class, one plant sits in sunlight and one sits in a dark closet. Which plant gets solar energy?",
+   "options": [
+    "neither plant",
+    "the plant in the sunlight",
+    "the plant in the closet"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the plant in the sunlight\". Solar energy comes from the Sun, so only the plant in sunlight gets it."
+  },
+  {
+   "type": "apply",
+   "q": "On a very cloudy day, what would you predict about the sunlight reaching a solar garden light?",
+   "options": [
+    "The sunlight turns into wind",
+    "Less sunlight reaches it",
+    "More sunlight reaches it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Less sunlight reaches it\". Clouds block some of the Sun's light."
+  }
+ ],
+ "solarpanel": [
+  {
+   "type": "know",
+   "q": "What does a solar panel do?",
+   "options": [
+    "Converts electrical energy into sunlight",
+    "Stores coal for later",
+    "Converts sunlight into electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Converts sunlight into electrical energy\". A solar panel changes light energy into electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A solar panel is a converter",
+    "A solar panel turns electricity into wind",
+    "A solar panel needs gasoline"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A solar panel is a converter\". A solar panel changes one form of energy into another."
+  },
+  {
+   "type": "know",
+   "q": "What energy comes out of a solar panel?",
+   "options": [
+    "sound energy",
+    "electrical energy",
+    "chemical energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"electrical energy\". A solar panel makes electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A solar panel converts ___ into electrical energy.",
+   "options": [
+    "wind",
+    "sunlight",
+    "sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"sunlight\". A solar panel changes sunlight (light energy) into electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which device converts sunlight into electrical energy?",
+   "options": [
+    "a motor",
+    "a solar panel",
+    "a toaster"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a solar panel\". That is exactly the job of a solar panel."
+  },
+  {
+   "type": "example",
+   "q": "Which of these uses a solar panel?",
+   "options": [
+    "a calculator that works in sunlight",
+    "a wind-up clock",
+    "a candle"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a calculator that works in sunlight\". A sun-powered calculator has a small solar panel."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of a solar panel at work?",
+   "options": [
+    "solar roof tiles powering a house",
+    "a sun-charged garden light",
+    "a gas-powered car"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a gas-powered car\". A gas-powered car runs on gasoline, not sunlight."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with solar calculators and solar garden lights.",
+   "options": [
+    "a solar-powered road sign",
+    "a wind-up flashlight",
+    "a gas lantern"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a solar-powered road sign\". A solar road sign also changes sunlight into electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which group of devices ALL make electrical energy from sunlight?",
+   "options": [
+    "motor, toaster, solar calculator",
+    "solar roof, solar calculator, solar garden light",
+    "candle, gas stove, solar roof"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"solar roof, solar calculator, solar garden light\". Each of those uses a solar panel to change light into electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which item could charge a phone using sunlight?",
+   "options": [
+    "a solar charger",
+    "a glass of water",
+    "a wooden box"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a solar charger\". A solar charger has a solar panel that makes electricity from sunlight."
+  },
+  {
+   "type": "apply",
+   "q": "Lily keeps a solar garden light in a dark shed for a week. What happens?",
+   "options": [
+    "It turns the dark into light",
+    "It makes extra electricity",
+    "It cannot make electricity"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It cannot make electricity\". With no sunlight, the solar panel cannot make electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Owen's solar calculator stops when he covers the panel with his thumb. Why?",
+   "options": [
+    "The calculator ran out of gasoline",
+    "His thumb added too much electricity",
+    "No light reaches the panel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"No light reaches the panel\". A solar panel needs light to make electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "A family wants to add solar panels to their home. Where should they put them?",
+   "options": [
+    "on a sunny roof",
+    "under the porch",
+    "in the basement"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"on a sunny roof\". Solar panels need sunlight to work."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Ruby holds a solar panel connected to a small fan in the sunlight. What goes into the panel and what comes out?",
+   "options": [
+    "Electrical in, light out",
+    "Light in, electrical out",
+    "Sound in, chemical out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light in, electrical out\". A solar panel changes light energy into electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Why is a solar panel a good choice for a renewable energy project?",
+   "options": [
+    "It uses up oil",
+    "It burns coal",
+    "It uses sunlight, which is replenished"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It uses sunlight, which is replenished\". Sunlight is naturally replenished, so it is renewable."
+  }
+ ],
+ "turbine": [
+  {
+   "type": "know",
+   "q": "What is a wind turbine?",
+   "options": [
+    "A machine that makes wind from coal",
+    "A machine that stores rain",
+    "A machine that uses wind to make electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A machine that uses wind to make electrical energy\". A wind turbine uses wind to produce electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "What does a wind turbine need in order to work?",
+   "options": [
+    "coal",
+    "wind",
+    "gasoline"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"wind\". A wind turbine uses wind to make electricity."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A wind turbine uses wind to produce ___ energy.",
+   "options": [
+    "chemical",
+    "sound",
+    "electrical"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"electrical\". A wind turbine makes electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A wind turbine uses a renewable source",
+    "A wind turbine burns oil",
+    "A wind turbine works best with no wind"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A wind turbine uses a renewable source\". Wind is naturally replenished, so it is renewable."
+  },
+  {
+   "type": "know",
+   "q": "Which machine uses wind to produce electrical energy?",
+   "options": [
+    "a wind turbine",
+    "a motor",
+    "a toaster"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a wind turbine\". That is the job of a wind turbine."
+  },
+  {
+   "type": "example",
+   "q": "Which of these belongs in the group 'things that make electrical energy'?",
+   "options": [
+    "a rubber band",
+    "a candle",
+    "a wind turbine"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a wind turbine\". A wind turbine makes electrical energy from wind."
+  },
+  {
+   "type": "example",
+   "q": "Which part of a wind turbine does the wind push?",
+   "options": [
+    "the solar cells",
+    "the coal tank",
+    "the blades"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"the blades\". The wind pushes the blades and makes them spin."
+  },
+  {
+   "type": "example",
+   "q": "Which machine also uses a renewable source, like a wind turbine?",
+   "options": [
+    "a coal furnace",
+    "a gasoline car engine",
+    "a solar panel"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a solar panel\". A solar panel uses sunlight, which is renewable."
+  },
+  {
+   "type": "example",
+   "q": "A wind farm is a big group of many ___.",
+   "options": [
+    "wind turbines",
+    "solar ovens",
+    "coal mines"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wind turbines\". A wind farm has many wind turbines making electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which kind of weather gives a wind turbine the most to work with?",
+   "options": [
+    "a strong, steady breeze",
+    "thick fog with no wind",
+    "a calm, still day"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a strong, steady breeze\". A wind turbine uses wind, so a strong breeze helps most."
+  },
+  {
+   "type": "apply",
+   "q": "On a calm day with no wind at all, what happens to a wind turbine?",
+   "options": [
+    "It makes the most electricity",
+    "It makes little or no electricity",
+    "It makes coal"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It makes little or no electricity\". With no wind, the turbine cannot produce electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Grace's town has windy days most of the year. Why might the town build wind turbines?",
+   "options": [
+    "Wind is a nonrenewable fuel",
+    "Wind can make electricity and will not run out",
+    "Wind turbines burn the wind as fuel"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wind can make electricity and will not run out\". Wind turbines use wind, a renewable source, to make electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Jack blows on a tiny model turbine and a small light turns on. What did his breath act as?",
+   "options": [
+    "the wind",
+    "the battery",
+    "the fuel tank"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"the wind\". His breath was moving air, just like wind."
+  },
+  {
+   "type": "apply",
+   "q": "Tara watches a wind turbine spinning near a farm. What goes into it and what comes out?",
+   "options": [
+    "Sunlight in, sound out",
+    "Moving wind in, electrical out",
+    "Electrical in, wind out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Moving wind in, electrical out\". A wind turbine uses wind to produce electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Which spot should a town pick for a new wind turbine?",
+   "options": [
+    "deep inside a cave",
+    "an open, windy hilltop",
+    "inside a closed barn"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"an open, windy hilltop\". A wind turbine needs lots of wind to work."
+  }
+ ],
+ "generator": [
+  {
+   "type": "know",
+   "q": "What is a generator?",
+   "options": [
+    "A device that converts motion energy into electrical energy",
+    "A device that stores water",
+    "A device that converts electrical energy into motion energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A device that converts motion energy into electrical energy\". A generator changes motion energy into electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "What energy goes into a generator?",
+   "options": [
+    "light energy",
+    "sound energy",
+    "motion energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"motion energy\". A generator needs motion to make electricity."
+  },
+  {
+   "type": "know",
+   "q": "What energy comes out of a generator?",
+   "options": [
+    "chemical energy",
+    "light energy",
+    "electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"electrical energy\". A generator makes electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A generator works without anything moving",
+    "A generator turns electricity into motion",
+    "A generator does the opposite of a motor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A generator does the opposite of a motor\". A generator turns motion into electricity; a motor turns electricity into motion."
+  },
+  {
+   "type": "know",
+   "q": "Which device converts motion energy into electrical energy?",
+   "options": [
+    "a generator",
+    "a toaster",
+    "a motor"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a generator\". That is the job of a generator."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a generator at work?",
+   "options": [
+    "a bike light powered by the turning wheel",
+    "a candle flame",
+    "a rock on the ground"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a bike light powered by the turning wheel\". The turning wheel's motion is changed into electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT a generator?",
+   "options": [
+    "an electric fan",
+    "a hand-crank flashlight",
+    "a hand-crank radio charger"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"an electric fan\". A fan uses electricity to make motion, so it is a motor, not a generator."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with a hand-crank flashlight and a wheel-powered bike light.",
+   "options": [
+    "a toaster",
+    "a candle",
+    "a hand-crank radio"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a hand-crank radio\". All three use motion to make electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "A wind turbine has a generator inside. What makes that generator spin?",
+   "options": [
+    "a pile of coal",
+    "blades turned by the wind",
+    "a light bulb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"blades turned by the wind\". The wind turns the blades, and that motion spins the generator."
+  },
+  {
+   "type": "example",
+   "q": "Which group shows motion being turned into electricity?",
+   "options": [
+    "plugging in a fan, toasting bread",
+    "lighting a candle, ringing a bell",
+    "cranking a radio, pedaling a bike light"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"cranking a radio, pedaling a bike light\". Cranking and pedaling are motion that a generator changes into electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "During a power outage, Eli cranks a hand-crank flashlight. What goes in and what comes out of the generator inside?",
+   "options": [
+    "Electrical in, motion out",
+    "Motion in, electrical out",
+    "Light in, sound out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Motion in, electrical out\". A generator changes motion energy into electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Hana's bike light is powered by her turning wheel. Why does it go dark when she stops?",
+   "options": [
+    "Pedaling uses up all the light",
+    "No motion means no electrical energy",
+    "The wheels store sunlight"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"No motion means no electrical energy\". A generator needs motion to make electricity."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Noah spins a magnet inside a coil of wire and a tiny bulb glows. What did he build?",
+   "options": [
+    "a solar panel",
+    "a generator",
+    "a motor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a generator\". He used motion to make electrical energy, which is what a generator does."
+  },
+  {
+   "type": "apply",
+   "q": "Rushing water at a dam spins a machine that makes electricity for a city. What is that machine?",
+   "options": [
+    "a motor",
+    "a generator",
+    "a toaster"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"a generator\". The motion of the water is changed into electrical energy by a generator."
+  },
+  {
+   "type": "apply",
+   "q": "Predict: what happens if you crank a hand-crank radio faster?",
+   "options": [
+    "It makes more electrical energy",
+    "It makes less electrical energy",
+    "It stops making electrical energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It makes more electrical energy\". More motion going in means more electrical energy coming out."
+  }
+ ],
+ "motor": [
+  {
+   "type": "know",
+   "q": "What is a motor?",
+   "options": [
+    "A device that converts motion energy into electrical energy",
+    "A device that stores sunlight",
+    "A device that converts electrical energy into motion energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A device that converts electrical energy into motion energy\". A motor changes electrical energy into motion energy."
+  },
+  {
+   "type": "know",
+   "q": "What energy goes into a motor?",
+   "options": [
+    "electrical energy",
+    "sound energy",
+    "light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"electrical energy\". A motor needs electrical energy to work."
+  },
+  {
+   "type": "know",
+   "q": "What useful energy comes out of a motor?",
+   "options": [
+    "chemical energy",
+    "motion energy",
+    "light energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"motion energy\". A motor makes things move."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A motor makes energy from nothing",
+    "A motor is a converter",
+    "A motor turns motion into electricity"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A motor is a converter\". A motor changes electrical energy into another form, motion."
+  },
+  {
+   "type": "know",
+   "q": "Which device converts electrical energy into motion energy?",
+   "options": [
+    "a motor",
+    "a generator",
+    "a solar panel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a motor\". That is the job of a motor."
+  },
+  {
+   "type": "example",
+   "q": "Which of these has a motor inside?",
+   "options": [
+    "a paper book",
+    "an electric fan",
+    "a wooden chair"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"an electric fan\". A fan's motor changes electrical energy into spinning motion."
+  },
+  {
+   "type": "example",
+   "q": "Which of these does NOT use a motor?",
+   "options": [
+    "a candle",
+    "a blender",
+    "a washing machine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a candle\". A candle does not change electrical energy into motion."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with a blender and an electric fan.",
+   "options": [
+    "a remote-control car",
+    "a glass jar",
+    "a pencil"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"a remote-control car\". A remote-control car uses a motor, like a blender and a fan."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a motor changing electrical energy into motion?",
+   "options": [
+    "a candle glowing",
+    "a drum being hit",
+    "a battery toy train rolling on its track"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a battery toy train rolling on its track\". The toy train's motor uses electricity to make the wheels move."
+  },
+  {
+   "type": "example",
+   "q": "Which group ALL use motors?",
+   "options": [
+    "hair dryer, blender, electric fan",
+    "candle, crayon, rock",
+    "pillow, spoon, mirror"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"hair dryer, blender, electric fan\". Each of those uses a motor to make something spin."
+  },
+  {
+   "type": "apply",
+   "q": "Ivy turns on an electric fan. What goes into its motor and what comes out?",
+   "options": [
+    "Motion in, electrical out",
+    "Light in, chemical out",
+    "Electrical in, motion out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical in, motion out\". A motor changes electrical energy into motion energy."
+  },
+  {
+   "type": "apply",
+   "q": "Carlos's remote-control car stops when its batteries die. Why?",
+   "options": [
+    "The wheels ran out of sunlight",
+    "The motor gets no electrical energy",
+    "The motor got too much motion"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The motor gets no electrical energy\". A motor needs electrical energy to make motion."
+  },
+  {
+   "type": "apply",
+   "q": "For the science fair, Mila wants a paper propeller to spin using a battery. What should she use?",
+   "options": [
+    "a solar oven",
+    "a candle",
+    "a small motor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"a small motor\". A motor turns electrical energy into motion."
+  },
+  {
+   "type": "apply",
+   "q": "A blender's blades spin to make a smoothie. What part makes them spin?",
+   "options": [
+    "the cup",
+    "the motor",
+    "the lid"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"the motor\". The motor changes electrical energy into the blades' motion."
+  },
+  {
+   "type": "apply",
+   "q": "Predict: a toy car's motor gets weak, old batteries. Then you add fresh batteries. What happens?",
+   "options": [
+    "The wheels stop forever",
+    "The car makes gasoline",
+    "The wheels spin faster"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The wheels spin faster\". More electrical energy into the motor gives more motion."
+  }
+ ]
+}

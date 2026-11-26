@@ -1,0 +1,1338 @@
+{
+ "insulator": [
+  {
+   "type": "know",
+   "q": "What is an electrical insulator?",
+   "options": [
+    "A material that lets charge flow easily",
+    "A device that stores chemical energy",
+    "A material that blocks electric charge"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A material that blocks electric charge\". Insulators do not let electric charge move through them."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about insulators is true?",
+   "options": [
+    "They are always made of metal.",
+    "They do not let electric charge move through them.",
+    "They make electric charge move faster."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"They do not let electric charge move through them.\". Insulators stop electric charge from moving through them."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An insulator does not let electric ___ move through it.",
+   "options": [
+    "sound",
+    "light",
+    "charge"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"charge\". Insulators block the flow of electric charge."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'a material that does not let electric charge move through it'?",
+   "options": [
+    "Insulator",
+    "Conductor",
+    "Battery"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Insulator\". That is the meaning of insulator."
+  },
+  {
+   "type": "know",
+   "q": "Which word is the opposite of an electrical insulator?",
+   "options": [
+    "Rubber",
+    "Conductor",
+    "Plastic"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Conductor\". Conductors let charge flow; insulators do not."
+  },
+  {
+   "type": "example",
+   "q": "Which material is an electrical insulator?",
+   "options": [
+    "Rubber",
+    "Copper",
+    "Aluminum foil"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Rubber\". Rubber does not let electric charge move through it."
+  },
+  {
+   "type": "example",
+   "q": "Which spoon is NOT an electrical insulator?",
+   "options": [
+    "A metal spoon",
+    "A wooden spoon",
+    "A plastic spoon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A metal spoon\". Metal lets charge flow, so it is not an insulator."
+  },
+  {
+   "type": "example",
+   "q": "Which group has only insulators?",
+   "options": [
+    "Rubber, wood, glass",
+    "Copper, plastic, wood",
+    "Iron, glass, rubber"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Rubber, wood, glass\". Rubber, wood, and glass all block electric charge."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs in the insulator pile?",
+   "options": [
+    "A steel nail",
+    "A copper penny",
+    "A glass marble"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A glass marble\". Glass is an insulator; metals are conductors."
+  },
+  {
+   "type": "example",
+   "q": "Which one does NOT belong with plastic, wood, and glass?",
+   "options": [
+    "A rubber band",
+    "A steel paper clip",
+    "A plastic ruler"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A steel paper clip\". Steel is a metal that lets charge flow."
+  },
+  {
+   "type": "apply",
+   "q": "Electricians wear gloves to stay safe from electricity. What should the gloves be made of?",
+   "options": [
+    "Metal mesh",
+    "Rubber",
+    "Aluminum foil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Rubber\". Rubber is an insulator, so charge cannot reach the hand."
+  },
+  {
+   "type": "apply",
+   "q": "Why do lamp cords have a plastic coating on the outside?",
+   "options": [
+    "To make charge move faster",
+    "To store the electricity",
+    "To block charge so it is safe to touch"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"To block charge so it is safe to touch\". Plastic is an insulator that keeps the charge inside."
+  },
+  {
+   "type": "apply",
+   "q": "Maya puts a wooden stick into a gap in her circuit. What happens to the bulb?",
+   "options": [
+    "It glows brightly",
+    "It changes color",
+    "It stays off"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It stays off\". Wood is an insulator, so energy cannot flow across the gap."
+  },
+  {
+   "type": "apply",
+   "q": "Sam tests a glass rod, a rubber eraser, and a plastic straw in a circuit. None of them light the bulb. What are they?",
+   "options": [
+    "Conductors",
+    "Insulators",
+    "Batteries"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Insulators\". They all block electric charge, so they are insulators."
+  },
+  {
+   "type": "apply",
+   "q": "Which tool should a worker use to fix a power line?",
+   "options": [
+    "A tool with rubber handles",
+    "A tool with bare metal handles",
+    "A tool wrapped in a wet cloth"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A tool with rubber handles\". Rubber is an insulator; metal and water let charge flow."
+  }
+ ],
+ "circuit": [
+  {
+   "type": "know",
+   "q": "What is an electrical circuit?",
+   "options": [
+    "A type of battery",
+    "A kind of insulator",
+    "A complete path for electrical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A complete path for electrical energy\". A circuit is a complete path through which electrical energy can flow."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about circuits is true?",
+   "options": [
+    "A circuit works best with a gap in it.",
+    "A circuit needs no energy source.",
+    "Electrical energy flows through a complete path."
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical energy flows through a complete path.\". Energy can only flow when the path is complete."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A circuit is a complete ___ through which electrical energy can flow.",
+   "options": [
+    "battery",
+    "path",
+    "sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"path\". A circuit is a complete path."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'a complete path through which electrical energy can flow'?",
+   "options": [
+    "Insulator",
+    "Switch",
+    "Circuit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Circuit\". That is the meaning of circuit."
+  },
+  {
+   "type": "know",
+   "q": "What kind of energy flows through the wires of a circuit?",
+   "options": [
+    "Electrical energy",
+    "Sound energy",
+    "Wind energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical energy\". Circuits carry electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a complete circuit?",
+   "options": [
+    "Battery, wires, and bulb connected in a loop",
+    "A bulb sitting alone on a desk",
+    "A battery lying in a drawer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Battery, wires, and bulb connected in a loop\". The parts are joined in a full loop, so energy can flow."
+  },
+  {
+   "type": "example",
+   "q": "Which set of parts could make a simple circuit that lights a bulb?",
+   "options": [
+    "Battery, wires, bulb",
+    "Rubber band, bulb, paper",
+    "Wood stick, glass, string"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Battery, wires, bulb\". A battery, wires, and a bulb can make a complete path."
+  },
+  {
+   "type": "example",
+   "q": "Which object has a circuit inside it?",
+   "options": [
+    "A wooden spoon",
+    "A rubber ball",
+    "A flashlight"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A flashlight\". A flashlight has a battery, wires, a switch, and a bulb."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a part of a simple circuit?",
+   "options": [
+    "A pencil eraser",
+    "A wire",
+    "A battery"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A pencil eraser\". Wires and batteries are circuit parts; an eraser is not."
+  },
+  {
+   "type": "example",
+   "q": "Leo wants to connect a battery to a bulb to make a circuit. What should he use for the path?",
+   "options": [
+    "Cotton yarn",
+    "Copper wire",
+    "A plastic straw"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Copper wire\". Copper is metal, so it can complete the path."
+  },
+  {
+   "type": "apply",
+   "q": "Liam connects a battery to a bulb with only one wire. The bulb stays dark. Why?",
+   "options": [
+    "The battery has too much energy",
+    "The path is not complete",
+    "The bulb is too bright"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The path is not complete\". Energy needs a complete loop to flow."
+  },
+  {
+   "type": "apply",
+   "q": "Mia builds a circuit with a battery, wires, and a bulb. When it works, what does the bulb give off?",
+   "options": [
+    "Sound",
+    "Light",
+    "Wind"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light\". A bulb changes electrical energy into light."
+  },
+  {
+   "type": "apply",
+   "q": "Why must the parts inside a flashlight be connected in a loop?",
+   "options": [
+    "So energy has a complete path",
+    "So it stays cold",
+    "So it makes no light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"So energy has a complete path\". Electrical energy flows only through a complete path."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Ava's circuit lights a bulb. She removes one wire. What will happen?",
+   "options": [
+    "The bulb gets brighter",
+    "The bulb changes color",
+    "The bulb goes out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The bulb goes out\". Removing a wire breaks the path, so energy stops."
+  },
+  {
+   "type": "apply",
+   "q": "Ben is building a circuit. What should he use to connect the parts?",
+   "options": [
+    "Cotton string",
+    "Metal wire",
+    "A rubber band"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Metal wire\". Metal wire carries electrical energy."
+  }
+ ],
+ "closed": [
+  {
+   "type": "know",
+   "q": "What is a closed circuit?",
+   "options": [
+    "A complete path that lets energy flow",
+    "A broken path that stops energy",
+    "A battery with no wires"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A complete path that lets energy flow\". A closed circuit is a complete path."
+  },
+  {
+   "type": "know",
+   "q": "In a closed circuit with a bulb, what happens to the light?",
+   "options": [
+    "It turns off",
+    "It melts",
+    "It turns on"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It turns on\". Energy flows in a closed circuit, so the light turns on."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A closed circuit is a ___ path that allows electrical energy to flow.",
+   "options": [
+    "broken",
+    "complete",
+    "plastic"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"complete\". Closed means the path is complete."
+  },
+  {
+   "type": "know",
+   "q": "Which term means 'a complete path that allows electrical energy to flow'?",
+   "options": [
+    "Closed circuit",
+    "Open circuit",
+    "Insulator"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Closed circuit\". A closed circuit has no gaps."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about a closed circuit is true?",
+   "options": [
+    "Energy can flow all the way around.",
+    "There is a gap in the path.",
+    "Energy cannot flow at all."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Energy can flow all the way around.\". With no gaps, energy flows all the way around."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a closed circuit?",
+   "options": [
+    "A flashlight that is shining",
+    "A flashlight with no battery",
+    "A lamp that is unplugged"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A flashlight that is shining\". The flashlight is shining, so its path is complete."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a closed circuit?",
+   "options": [
+    "A ringing doorbell",
+    "A glowing night-light",
+    "A lamp with a cut wire"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A lamp with a cut wire\". A cut wire breaks the path."
+  },
+  {
+   "type": "example",
+   "q": "Which shows a closed circuit?",
+   "options": [
+    "A toaster unplugged on the counter",
+    "A TV that is on and playing",
+    "A radio with no batteries"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A TV that is on and playing\". The TV is working, so energy is flowing."
+  },
+  {
+   "type": "example",
+   "q": "Which group are all closed circuits?",
+   "options": [
+    "Lit lamp, unplugged fan, playing radio",
+    "Flashlight with no battery, lit lamp, spinning fan",
+    "Lit lamp, spinning fan, playing radio"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Lit lamp, spinning fan, playing radio\". Each one is working, so each path is complete."
+  },
+  {
+   "type": "example",
+   "q": "Which one belongs with 'closed circuit'?",
+   "options": [
+    "The path has a gap",
+    "The light turns on",
+    "The battery is taken out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The light turns on\". In a closed circuit, the light turns on."
+  },
+  {
+   "type": "apply",
+   "q": "Zoe flips her bedroom light switch and the light comes on. What kind of circuit is it now?",
+   "options": [
+    "Open circuit",
+    "Broken circuit",
+    "Closed circuit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Closed circuit\". The light is on, so the path is complete."
+  },
+  {
+   "type": "apply",
+   "q": "Jake hooks up a battery, wires, and a bulb, and the bulb glows. Why?",
+   "options": [
+    "The wire is made of rubber",
+    "The path is complete",
+    "The battery is empty"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The path is complete\". A complete path lets electrical energy flow."
+  },
+  {
+   "type": "apply",
+   "q": "A fan is spinning in the classroom. What is true about its circuit?",
+   "options": [
+    "The path is broken",
+    "Electrical energy is flowing",
+    "There is a gap in the wire"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Electrical energy is flowing\". The fan works because the circuit is closed."
+  },
+  {
+   "type": "apply",
+   "q": "Ella's circuit has a gap. She fills the gap with a metal paper clip. What will happen?",
+   "options": [
+    "The bulb stays dark",
+    "The battery breaks",
+    "The bulb lights up"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The bulb lights up\". The metal clip completes the path."
+  },
+  {
+   "type": "apply",
+   "q": "Kai wants his toy car's motor to run. What kind of circuit does he need?",
+   "options": [
+    "A closed circuit",
+    "An open circuit",
+    "A circuit with a gap"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A closed circuit\". Energy flows only in a closed circuit."
+  }
+ ],
+ "open": [
+  {
+   "type": "know",
+   "q": "What is an open circuit?",
+   "options": [
+    "A complete path that lets energy flow",
+    "A broken path that stops energy flow",
+    "A battery full of energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A broken path that stops energy flow\". An open circuit has a break in the path."
+  },
+  {
+   "type": "know",
+   "q": "What does an open circuit do to electrical energy?",
+   "options": [
+    "Makes it flow faster",
+    "Stops it from flowing",
+    "Turns it into water"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Stops it from flowing\". A broken path stops electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An open circuit is a broken or ___ path.",
+   "options": [
+    "incomplete",
+    "complete",
+    "shiny"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"incomplete\". Open circuits are broken or incomplete."
+  },
+  {
+   "type": "know",
+   "q": "Which term means 'a broken path that stops electrical energy from flowing'?",
+   "options": [
+    "Closed circuit",
+    "Conductor",
+    "Open circuit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Open circuit\". That is the meaning of open circuit."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about an open circuit is true?",
+   "options": [
+    "A bulb in it will not light.",
+    "It has no gaps.",
+    "It makes a bulb glow brightly."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A bulb in it will not light.\". No energy flows, so the bulb stays off."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of an open circuit?",
+   "options": [
+    "A lamp with a broken wire",
+    "A shining flashlight",
+    "A spinning fan"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A lamp with a broken wire\". The broken wire makes the path incomplete."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an open circuit?",
+   "options": [
+    "A lamp that is unplugged",
+    "A flashlight with no battery",
+    "A glowing light bulb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A glowing light bulb\". A glowing bulb means energy is flowing."
+  },
+  {
+   "type": "example",
+   "q": "Which situation makes an open circuit?",
+   "options": [
+    "All wires are tightly connected",
+    "A wire falls off the battery",
+    "A paper clip fills the gap"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A wire falls off the battery\". A loose wire leaves a gap in the path."
+  },
+  {
+   "type": "example",
+   "q": "Which one belongs with 'open circuit'?",
+   "options": [
+    "The fan is spinning",
+    "The light is off",
+    "The radio is playing"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The light is off\". In an open circuit, energy cannot reach the light."
+  },
+  {
+   "type": "example",
+   "q": "Which group shows only open circuits?",
+   "options": [
+    "Cut wire, loose battery, switch off",
+    "Cut wire, lit lamp, switch off",
+    "Lit lamp, running fan, switch on"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Cut wire, loose battery, switch off\". Each one has a break in the path."
+  },
+  {
+   "type": "apply",
+   "q": "Noah's flashlight won't turn on. He finds a wire came loose. What kind of circuit is it?",
+   "options": [
+    "Open circuit",
+    "Closed circuit",
+    "Complete circuit"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Open circuit\". The loose wire breaks the path."
+  },
+  {
+   "type": "apply",
+   "q": "Lily puts a rubber eraser in the gap of her circuit. What will happen?",
+   "options": [
+    "The bulb lights up",
+    "The eraser glows",
+    "The bulb stays off"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The bulb stays off\". Rubber is an insulator, so the circuit stays open."
+  },
+  {
+   "type": "apply",
+   "q": "A string of lights goes dark when one wire breaks. Why?",
+   "options": [
+    "The lights got too cold",
+    "The wires turned into rubber",
+    "The path is no longer complete"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The path is no longer complete\". A broken wire makes an open circuit."
+  },
+  {
+   "type": "apply",
+   "q": "Dad unplugs the toaster. What happens to the flow of electrical energy to it?",
+   "options": [
+    "It speeds up",
+    "It stops",
+    "It turns into sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It stops\". Unplugging breaks the path."
+  },
+  {
+   "type": "apply",
+   "q": "Mr. Lee wants a buzzer in a class circuit to stop without breaking anything. What should he do?",
+   "options": [
+    "Add another battery",
+    "Tighten every wire",
+    "Disconnect one wire"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Disconnect one wire\". Disconnecting a wire opens the circuit."
+  }
+ ],
+ "switch": [
+  {
+   "type": "know",
+   "q": "What is a switch?",
+   "options": [
+    "A device that stores chemical energy",
+    "A material that blocks charge",
+    "A device that opens or closes a circuit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A device that opens or closes a circuit\". A switch opens or closes an electrical circuit."
+  },
+  {
+   "type": "know",
+   "q": "What two things can a switch do to a circuit?",
+   "options": [
+    "Open it or close it",
+    "Heat it or cool it",
+    "Paint it or clean it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Open it or close it\". A switch opens or closes the path."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A switch is a device that opens or ___ an electrical circuit.",
+   "options": [
+    "closes",
+    "charges",
+    "melts"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"closes\". A switch opens or closes a circuit."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'a device that opens or closes an electrical circuit'?",
+   "options": [
+    "Wire",
+    "Switch",
+    "Battery"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Switch\". That is the meaning of switch."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about switches is true?",
+   "options": [
+    "A switch stores chemical energy.",
+    "Turning a switch off opens the circuit.",
+    "A switch is a kind of battery."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Turning a switch off opens the circuit.\". Off makes a gap, so the circuit is open."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a switch?",
+   "options": [
+    "A light switch on the wall",
+    "A light bulb",
+    "A battery"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A light switch on the wall\". A wall light switch opens and closes the circuit."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a switch?",
+   "options": [
+    "A doorbell button",
+    "A copper wire",
+    "A flashlight on/off slider"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A copper wire\". A wire carries energy; it does not open or close the circuit."
+  },
+  {
+   "type": "example",
+   "q": "Which part of a flashlight is the switch?",
+   "options": [
+    "The bulb",
+    "The battery",
+    "The on/off button"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The on/off button\". The button opens and closes the flashlight's circuit."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a switch closing a circuit?",
+   "options": [
+    "Unplugging a lamp",
+    "Flipping a lamp switch to on",
+    "Cutting a lamp wire"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Flipping a lamp switch to on\". Turning the switch on completes the path."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a switch opening a circuit?",
+   "options": [
+    "Turning a fan switch on",
+    "Turning a fan switch off",
+    "Plugging in a fan"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Turning a fan switch off\". Turning the switch off breaks the path."
+  },
+  {
+   "type": "apply",
+   "q": "Emma flips her light switch and the light turns on. What did the switch do?",
+   "options": [
+    "Opened the circuit",
+    "Stored energy",
+    "Closed the circuit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Closed the circuit\". The switch completed the path so energy could flow."
+  },
+  {
+   "type": "apply",
+   "q": "When you press the off button on a fan, why does it stop?",
+   "options": [
+    "The fan runs out of air",
+    "The switch adds more energy",
+    "The switch opens the circuit"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The switch opens the circuit\". Opening the circuit stops the energy flow."
+  },
+  {
+   "type": "apply",
+   "q": "Leo wants to turn his bulb on and off without unhooking wires. What should he add?",
+   "options": [
+    "A switch",
+    "A rubber band",
+    "A second bulb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A switch\". A switch opens and closes the circuit."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Ana's circuit switch is in the off position. What will the bulb do?",
+   "options": [
+    "Glow brightly",
+    "Flash on and off",
+    "Stay off"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Stay off\". Off means the circuit is open, so no energy flows."
+  },
+  {
+   "type": "apply",
+   "q": "A doorbell rings only while its button is pushed. What happens when you let go?",
+   "options": [
+    "The circuit opens and it stops",
+    "The circuit closes and it rings louder",
+    "The battery recharges"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The circuit opens and it stops\". Letting go of the button opens the circuit."
+  }
+ ],
+ "wire": [
+  {
+   "type": "know",
+   "q": "What does a wire do in a circuit?",
+   "options": [
+    "Carries electrical energy",
+    "Stores chemical energy",
+    "Blocks all energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Carries electrical energy\". A wire carries electrical energy in a circuit."
+  },
+  {
+   "type": "know",
+   "q": "What is a wire usually made of?",
+   "options": [
+    "Wood covered in glass",
+    "Metal covered in plastic",
+    "Rubber covered in paper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Metal covered in plastic\". Wires are usually metal covered in plastic."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A wire is a material that ___ electrical energy in a circuit.",
+   "options": [
+    "stores",
+    "stops",
+    "carries"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"carries\". Wires carry electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'a material that carries electrical energy in a circuit'?",
+   "options": [
+    "Switch",
+    "Wire",
+    "Insulator"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wire\". That is the meaning of wire."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about wires is true?",
+   "options": [
+    "The plastic outside carries the energy.",
+    "The metal inside carries the energy.",
+    "Wires make light by themselves."
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The metal inside carries the energy.\". Metal lets energy flow; the plastic is an insulator."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a wire?",
+   "options": [
+    "A rubber band",
+    "A wooden stick",
+    "A phone charger cord"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A phone charger cord\". A charger cord is metal wire covered in plastic."
+  },
+  {
+   "type": "example",
+   "q": "Which could work as a wire in a simple circuit?",
+   "options": [
+    "A strip of aluminum foil",
+    "A piece of yarn",
+    "A plastic straw"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A strip of aluminum foil\". Foil is metal, so it can carry electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a good material for the inside of a wire?",
+   "options": [
+    "Copper",
+    "Aluminum",
+    "Plastic"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Plastic\". Plastic is an insulator, so it is used on the outside."
+  },
+  {
+   "type": "example",
+   "q": "Which household thing has wires inside it?",
+   "options": [
+    "A toaster",
+    "A wooden chair",
+    "A glass vase"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A toaster\". A toaster uses wires to carry electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a wire?",
+   "options": [
+    "A rubber eraser",
+    "An extension cord",
+    "A copper strand"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A rubber eraser\". Rubber cannot carry electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Why is the copper inside a lamp cord covered in plastic?",
+   "options": [
+    "So it is safe to touch",
+    "So it makes light",
+    "So it stores energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"So it is safe to touch\". The plastic is an insulator that keeps people safe."
+  },
+  {
+   "type": "apply",
+   "q": "Sam sees a cord with torn plastic and metal showing. What should he do?",
+   "options": [
+    "Touch it to test it",
+    "Pour water on it",
+    "Tell an adult and not touch it"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Tell an adult and not touch it\". Bare metal wire is unsafe; water conducts electricity too."
+  },
+  {
+   "type": "apply",
+   "q": "In a flashlight, what carries energy from the battery to the bulb?",
+   "options": [
+    "The plastic case",
+    "Metal wires or strips",
+    "The glass lens"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Metal wires or strips\". Metal carries electrical energy; plastic and glass do not."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Ravi cuts the only wire in his circuit in half. What will happen?",
+   "options": [
+    "The bulb gets brighter",
+    "The bulb goes out",
+    "The wire turns to plastic"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The bulb goes out\". A cut wire cannot carry energy to the bulb."
+  },
+  {
+   "type": "apply",
+   "q": "Grace connects a bulb to a battery using long wires instead of short ones. Will energy still reach the bulb?",
+   "options": [
+    "No, wires only work when short",
+    "No, long wires block energy",
+    "Yes, the wires carry it"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Yes, the wires carry it\". Wires carry electrical energy along their length."
+  }
+ ],
+ "battery": [
+  {
+   "type": "know",
+   "q": "What is a battery?",
+   "options": [
+    "Stores sound, gives light",
+    "Stores chemical energy, gives electrical energy",
+    "A material that blocks charge"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Stores chemical energy, gives electrical energy\". A battery stores chemical energy and provides electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about batteries is true?",
+   "options": [
+    "A battery is an energy source for a circuit.",
+    "A battery is an insulator.",
+    "A battery blocks energy flow."
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A battery is an energy source for a circuit.\". A battery provides electrical energy to a circuit."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A battery stores chemical energy and provides ___ energy.",
+   "options": [
+    "sound",
+    "electrical",
+    "wind"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"electrical\". Batteries give electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'a device that stores chemical energy and provides electrical energy'?",
+   "options": [
+    "Battery",
+    "Switch",
+    "Wire"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Battery\". That is the meaning of battery."
+  },
+  {
+   "type": "know",
+   "q": "What kind of energy is stored inside a battery?",
+   "options": [
+    "Chemical energy",
+    "Sound energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy\". A battery stores chemical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which device runs on batteries?",
+   "options": [
+    "A wooden spoon",
+    "A paper book",
+    "A TV remote"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A TV remote\". A TV remote uses batteries for energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a battery?",
+   "options": [
+    "An AA cell",
+    "A light bulb",
+    "A watch battery"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A light bulb\". A light bulb uses energy; it does not store it."
+  },
+  {
+   "type": "example",
+   "q": "Which group is all powered by batteries?",
+   "options": [
+    "Flashlight, TV remote, remote-control car",
+    "Flashlight, wooden block, remote-control car",
+    "Rock, TV remote, remote-control car"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Flashlight, TV remote, remote-control car\". All three use batteries."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a battery giving energy?",
+   "options": [
+    "A lamp plugged into the wall",
+    "A candle burning",
+    "A phone working while unplugged"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A phone working while unplugged\". The phone's battery provides electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which part of a watch is the battery?",
+   "options": [
+    "The strap",
+    "The glass cover",
+    "The small round cell inside"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The small round cell inside\". The small cell stores chemical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Kim's flashlight gets dim after many hours of use. Why?",
+   "options": [
+    "Its bulb got colder",
+    "Its switch turned into rubber",
+    "Its battery is running low"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Its battery is running low\". The battery's stored chemical energy is getting used."
+  },
+  {
+   "type": "apply",
+   "q": "Owen's remote-control car stops working. What should he try first?",
+   "options": [
+    "Wrap it in rubber",
+    "Put in new batteries",
+    "Paint the wheels"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Put in new batteries\". New batteries provide energy again."
+  },
+  {
+   "type": "apply",
+   "q": "A battery powers a flashlight. Which energy chain is correct?",
+   "options": [
+    "Chemical -> electrical -> light",
+    "Light -> chemical -> sound",
+    "Sound -> electrical -> chemical"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical -> electrical -> light\". The battery's chemical energy becomes electrical, then light."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Jade builds a circuit with wires and a bulb but no battery. What will happen?",
+   "options": [
+    "The bulb glows",
+    "The bulb stays dark",
+    "The bulb flashes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The bulb stays dark\". Without a battery, there is no energy source."
+  },
+  {
+   "type": "apply",
+   "q": "Why can a radio with batteries play music at the beach with no outlet?",
+   "options": [
+    "The sand gives it energy",
+    "The waves send it electricity",
+    "The batteries store energy it carries along"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The batteries store energy it carries along\". Batteries store chemical energy to provide electrical energy."
+  }
+ ],
+ "device": [
+  {
+   "type": "know",
+   "q": "What is an electrical device?",
+   "options": [
+    "A material that blocks charge",
+    "A machine that changes electrical energy into another form",
+    "A path for energy to flow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A machine that changes electrical energy into another form\". Devices change electrical energy into other forms."
+  },
+  {
+   "type": "know",
+   "q": "What kind of energy goes into a plugged-in electrical device?",
+   "options": [
+    "Electrical energy",
+    "Sound energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical energy\". Devices take in electrical energy."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An electrical device changes electrical energy into another ___ of energy.",
+   "options": [
+    "color",
+    "battery",
+    "form"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"form\". Devices change energy into another form."
+  },
+  {
+   "type": "know",
+   "q": "Which term means 'a machine that changes electrical energy into another form of energy'?",
+   "options": [
+    "Electrical device",
+    "Insulator",
+    "Open circuit"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical device\". That is the meaning of electrical device."
+  },
+  {
+   "type": "know",
+   "q": "Which device-and-energy match is correct?",
+   "options": [
+    "Fan -> light",
+    "Speaker -> sound",
+    "Lamp -> sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Speaker -> sound\". A speaker changes electrical energy into sound."
+  },
+  {
+   "type": "example",
+   "q": "Which is an electrical device?",
+   "options": [
+    "A rubber band",
+    "A wooden chair",
+    "A toaster"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A toaster\". A toaster changes electrical energy into heat."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an electrical device?",
+   "options": [
+    "A pencil",
+    "A fan",
+    "A lamp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A pencil\". A pencil does not use electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which device is used to make heat?",
+   "options": [
+    "A toaster",
+    "A speaker",
+    "A fan"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A toaster\". A toaster changes electrical energy into heat."
+  },
+  {
+   "type": "example",
+   "q": "Which device is used to make motion?",
+   "options": [
+    "A lamp",
+    "A fan",
+    "A toaster"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A fan\". A fan changes electrical energy into motion."
+  },
+  {
+   "type": "example",
+   "q": "Which group has only devices made to give light?",
+   "options": [
+    "Lamp, fan, speaker",
+    "Lamp, flashlight, night-light",
+    "Toaster, speaker, fan"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Lamp, flashlight, night-light\". Lamps, flashlights, and night-lights all make light."
+  },
+  {
+   "type": "apply",
+   "q": "Ruby plugs in a speaker to play music. What energy goes in and what comes out?",
+   "options": [
+    "Sound in, electrical out",
+    "Light in, chemical out",
+    "Electrical in, sound out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical in, sound out\". A speaker changes electrical energy into sound."
+  },
+  {
+   "type": "apply",
+   "q": "On a hot day, Max turns on a fan. What energy does the fan mainly give?",
+   "options": [
+    "Light energy",
+    "Chemical energy",
+    "Motion energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Motion energy\". A fan changes electrical energy into motion."
+  },
+  {
+   "type": "apply",
+   "q": "Mom makes toast. What energy goes into the toaster and what comes out?",
+   "options": [
+    "Heat in, electrical out",
+    "Sound in, chemical out",
+    "Electrical in, heat out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical in, heat out\". A toaster changes electrical energy into heat."
+  },
+  {
+   "type": "apply",
+   "q": "Ivy touches a lamp that has been on for an hour. It feels warm. Why?",
+   "options": [
+    "The lamp stores chemical energy",
+    "Some electrical energy always becomes heat",
+    "The light turned into sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Some electrical energy always becomes heat\". Energy never changes completely into one form; some becomes heat."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Ms. Kay turns on a hair dryer and it blows warm air. Which energy forms come out?",
+   "options": [
+    "Heat and motion",
+    "Light and chemical",
+    "Only chemical"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Heat and motion\". The dryer makes heat and moving air."
+  }
+ ]
+}

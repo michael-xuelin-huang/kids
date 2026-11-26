@@ -1,0 +1,1338 @@
+{
+ "grid": [
+  {
+   "type": "know",
+   "q": "What is an electrical grid?",
+   "options": [
+    "A network of wires that moves electricity to many places",
+    "A single battery that stores energy",
+    "A machine that makes music"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A network of wires that moves electricity to many places\". A grid is a network of wires that carries electricity to many places."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about the electrical grid is true?",
+   "options": [
+    "It carries electricity from power plants to many places",
+    "It only works inside one flashlight",
+    "It carries water from lakes to homes"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It carries electricity from power plants to many places\". The grid moves electricity from power plants to homes, schools, and stores."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An electrical grid is a network of ___ that moves electricity.",
+   "options": [
+    "pipes",
+    "roads",
+    "wires"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"wires\". Wires carry the electricity in a grid."
+  },
+  {
+   "type": "know",
+   "q": "Which term means a network of wires that transfers electricity from power plants to many places?",
+   "options": [
+    "Insulator",
+    "Blackout",
+    "Electrical grid"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical grid\". That is the meaning of electrical grid."
+  },
+  {
+   "type": "know",
+   "q": "In an electrical grid, where does the electricity start out?",
+   "options": [
+    "At the TV screen",
+    "At the light switch in your room",
+    "At energy sources like power plants"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"At energy sources like power plants\". The grid carries electricity from energy sources and power plants out to many places."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is part of the electrical grid?",
+   "options": [
+    "Power lines along the street",
+    "A bike chain",
+    "A garden hose"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Power lines along the street\". Power lines are the wires that carry electricity in the grid."
+  },
+  {
+   "type": "example",
+   "q": "Which of these is NOT part of the electrical grid?",
+   "options": [
+    "Power lines",
+    "A rubber band",
+    "A power plant"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A rubber band\". A rubber band does not carry or make electricity for the grid."
+  },
+  {
+   "type": "example",
+   "q": "Which place gets electricity from the grid?",
+   "options": [
+    "A rock on a beach",
+    "A school building",
+    "A tree in a forest"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A school building\". The grid sends electricity to buildings like schools."
+  },
+  {
+   "type": "example",
+   "q": "Which group lists things that work together in a grid?",
+   "options": [
+    "Power plant, wires, homes",
+    "Sun, clouds, rain",
+    "Ball, bat, glove"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Power plant, wires, homes\". A grid uses wires to carry electricity from power plants to homes."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of the grid at work?",
+   "options": [
+    "A battery running a toy car",
+    "Wires carrying electricity from a power plant to a town",
+    "A kid pedaling a bike"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wires carrying electricity from a power plant to a town\". The grid moves electricity through wires from power plants to towns."
+  },
+  {
+   "type": "apply",
+   "q": "Maya turns on a lamp plugged into the wall. How did the electricity get to her house?",
+   "options": [
+    "Through the water pipes",
+    "From the lamp's light bulb itself",
+    "Through the wires of the electrical grid"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Through the wires of the electrical grid\". Electricity travels from the power plant to her house through grid wires."
+  },
+  {
+   "type": "apply",
+   "q": "A storm knocks down the power lines on your street. What most likely happens?",
+   "options": [
+    "Nothing changes in the homes",
+    "Homes on the street lose electricity",
+    "Homes get extra electricity"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Homes on the street lose electricity\". If grid wires break, electricity cannot reach those homes."
+  },
+  {
+   "type": "apply",
+   "q": "New houses are built far from town. What must workers add so the houses get electricity from the power plant?",
+   "options": [
+    "Bigger windows",
+    "More trees in the yards",
+    "Wires that connect to the grid"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Wires that connect to the grid\". Houses need grid wires to receive electricity from the power plant."
+  },
+  {
+   "type": "apply",
+   "q": "In a class model, Sam uses yarn to connect a toy power plant to many toy houses. What does the yarn stand for?",
+   "options": [
+    "The wires of the grid",
+    "The fuel for the power plant",
+    "The roads for cars"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The wires of the grid\". In a grid, wires connect power plants to many places."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a city need a big grid of wires?",
+   "options": [
+    "To make electricity disappear",
+    "To move electricity to many different places",
+    "To turn electricity into water"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To move electricity to many different places\". A grid transfers electricity from power plants to many places."
+  }
+ ],
+ "elsystem": [
+  {
+   "type": "know",
+   "q": "What is an electrical system?",
+   "options": [
+    "One part that works all alone",
+    "Connected parts that work together to give electricity to devices",
+    "A storm that stops electricity"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Connected parts that work together to give electricity to devices\". An electrical system is a group of connected parts working together to provide electricity."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about an electrical system is true?",
+   "options": [
+    "It has only one part",
+    "Its parts are connected and work together",
+    "It makes water flow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Its parts are connected and work together\". An electrical system is a group of connected parts that work together."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An electrical system is a group of connected parts that work ___ to provide electricity to devices.",
+   "options": [
+    "backward",
+    "apart",
+    "together"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"together\". The parts of an electrical system work together."
+  },
+  {
+   "type": "know",
+   "q": "Which term means a group of connected parts that work together to provide electricity to devices?",
+   "options": [
+    "Electrical system",
+    "Blackout",
+    "Source"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical system\". That is the meaning of electrical system."
+  },
+  {
+   "type": "know",
+   "q": "What is the job of an electrical system?",
+   "options": [
+    "To provide electricity to devices",
+    "To store food",
+    "To make sound travel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To provide electricity to devices\". An electrical system provides electricity to devices."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of an electrical system?",
+   "options": [
+    "A glass of water",
+    "A flashlight with batteries, wires, and a bulb",
+    "A single pencil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A flashlight with batteries, wires, and a bulb\". A flashlight's connected parts work together to give the bulb electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which is a part of a house's electrical system?",
+   "options": [
+    "A soft rug",
+    "Wires inside the walls",
+    "A wooden chair"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wires inside the walls\". Wires in the walls connect parts that bring electricity to devices."
+  },
+  {
+   "type": "example",
+   "q": "Which group of parts could make a simple electrical system?",
+   "options": [
+    "Cup, spoon, and plate",
+    "Battery, wires, and a bulb",
+    "Ball, net, and shoes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Battery, wires, and a bulb\". A battery, wires, and a bulb can connect and work together."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT part of a car's electrical system?",
+   "options": [
+    "The wires",
+    "The battery",
+    "The rubber tires"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The rubber tires\". Tires help the car roll but do not provide electricity."
+  },
+  {
+   "type": "example",
+   "q": "Battery, switch, wire... which item belongs in this group?",
+   "options": [
+    "Sandwich",
+    "Feather",
+    "Light bulb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light bulb\". A light bulb is a part that connects into an electrical system."
+  },
+  {
+   "type": "apply",
+   "q": "Leo builds a circuit for the science fair, but one wire is not connected. What happens?",
+   "options": [
+    "The bulb does not light",
+    "The bulb gets brighter",
+    "The battery turns into water"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The bulb does not light\". All the parts must be connected for the system to work."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a doorbell need its button, wires, and bell all connected?",
+   "options": [
+    "So it stays cold",
+    "So it looks nice",
+    "The parts work together to get electricity to the bell"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The parts work together to get electricity to the bell\". In an electrical system, connected parts work together."
+  },
+  {
+   "type": "apply",
+   "q": "Mia's toy car has a battery, wires, and a motor all connected. What is this group of parts called?",
+   "options": [
+    "An electrical system",
+    "A blackout",
+    "An energy source"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"An electrical system\". Connected parts that provide electricity to a device make an electrical system."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Ms. Lee takes the battery out of a working circuit. What happens to the bulb?",
+   "options": [
+    "It plays music",
+    "It shines brighter",
+    "It goes out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It goes out\". Without one of its parts, the system cannot give the bulb electricity."
+  },
+  {
+   "type": "apply",
+   "q": "A video game console's power cord gets cut. Why does it stop working?",
+   "options": [
+    "A part of its electrical system is broken",
+    "It has too much electricity",
+    "Its screen got too clean"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A part of its electrical system is broken\". The cord is a part of the system, so the system cannot do its job."
+  }
+ ],
+ "blackout": [
+  {
+   "type": "know",
+   "q": "What is a blackout?",
+   "options": [
+    "A time when electricity stops working in an area",
+    "A time when the sun goes down",
+    "A time when there is extra electricity"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A time when electricity stops working in an area\". A blackout is when electricity stops working in an area."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about blackouts is true?",
+   "options": [
+    "Blackouts can happen only in the daytime",
+    "During a blackout, an area loses electricity",
+    "During a blackout, lights get brighter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"During a blackout, an area loses electricity\". In a blackout, electricity stops working in an area."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A blackout is a time when ___ stops working in an area.",
+   "options": [
+    "water",
+    "sound",
+    "electricity"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"electricity\". A blackout is about electricity stopping."
+  },
+  {
+   "type": "know",
+   "q": "Which term means a time when electricity stops working in an area?",
+   "options": [
+    "Electrical grid",
+    "Blackout",
+    "Convert"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Blackout\". That is the meaning of blackout."
+  },
+  {
+   "type": "know",
+   "q": "A blackout affects how much space?",
+   "options": [
+    "A whole area, like a street or town",
+    "Only one toy with a dead battery",
+    "Only the sun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A whole area, like a street or town\". A blackout is electricity stopping in an area."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a blackout?",
+   "options": [
+    "All the lights on your street go out after a storm",
+    "Your flashlight battery runs out",
+    "You turn off your bedroom lamp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"All the lights on your street go out after a storm\". A blackout is when electricity stops working in a whole area."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a blackout?",
+   "options": [
+    "A whole town loses power",
+    "Every house on your block loses power",
+    "You switch off the TV to go to bed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"You switch off the TV to go to bed\". Turning off one TV is your choice; a blackout is electricity stopping in an area."
+  },
+  {
+   "type": "example",
+   "q": "Which would still work during a blackout?",
+   "options": [
+    "An electric oven",
+    "A flashlight with batteries",
+    "A plug-in lamp"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A flashlight with batteries\". Batteries store their own energy, so they do not need the wall power."
+  },
+  {
+   "type": "example",
+   "q": "Which would stop working during a blackout?",
+   "options": [
+    "A wind-up toy",
+    "A battery flashlight",
+    "A refrigerator plugged into the wall"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A refrigerator plugged into the wall\". Things plugged into the wall need electricity from the grid."
+  },
+  {
+   "type": "example",
+   "q": "Which list has only things that still work in a blackout?",
+   "options": [
+    "Battery flashlight, candle, battery radio",
+    "Plug-in lamp, computer, plug-in fan",
+    "TV, microwave, toaster"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Battery flashlight, candle, battery radio\". These do not need wall electricity to work."
+  },
+  {
+   "type": "apply",
+   "q": "During a storm, every light in your neighborhood goes dark at once. What is happening?",
+   "options": [
+    "A sound wave",
+    "An energy conversion",
+    "A blackout"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A blackout\". Electricity stopped working in the whole area."
+  },
+  {
+   "type": "apply",
+   "q": "During a long blackout, why does the ice cream in the freezer start to melt?",
+   "options": [
+    "The ice cream turns into wind",
+    "The freezer has no electricity",
+    "The freezer gets too much electricity"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The freezer has no electricity\". Without electricity, the freezer cannot keep food cold."
+  },
+  {
+   "type": "apply",
+   "q": "During a blackout at school, why can't the class watch a video on the smartboard?",
+   "options": [
+    "The smartboard needs electricity",
+    "The smartboard is made of wood",
+    "Videos only play at night"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The smartboard needs electricity\". In a blackout there is no electricity for the smartboard."
+  },
+  {
+   "type": "apply",
+   "q": "Grandpa keeps a battery radio for blackouts. Why?",
+   "options": [
+    "It makes electricity for the whole town",
+    "It stops storms",
+    "Its batteries give energy when the wall power is out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Its batteries give energy when the wall power is out\". Batteries are an energy source that works without the grid."
+  },
+  {
+   "type": "apply",
+   "q": "A tree falls on the power lines that bring electricity to your town. What do you predict?",
+   "options": [
+    "The town gets brighter lights",
+    "The town may have a blackout",
+    "The town's water turns hot"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The town may have a blackout\". If electricity cannot reach the town, it stops working there."
+  }
+ ],
+ "failure": [
+  {
+   "type": "know",
+   "q": "What is a system failure?",
+   "options": [
+    "When a system gets new parts",
+    "When a system works perfectly",
+    "When a system cannot do its job properly"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"When a system cannot do its job properly\". A system failure is when a system cannot perform its function properly."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about a system failure is true?",
+   "options": [
+    "The system cannot do its job well",
+    "The system works faster",
+    "It only happens to the sun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The system cannot do its job well\". In a system failure, the system cannot perform its job properly."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A system failure is when a system cannot perform its ___ properly.",
+   "options": [
+    "color",
+    "size",
+    "function"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"function\". Function means the system's job."
+  },
+  {
+   "type": "know",
+   "q": "Which term means when a system cannot perform its job properly?",
+   "options": [
+    "Electrical grid",
+    "Energy source",
+    "System failure"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"System failure\". That is the meaning of system failure."
+  },
+  {
+   "type": "know",
+   "q": "In the meaning of system failure, the word function means what?",
+   "options": [
+    "Color",
+    "Job",
+    "Sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Job\". A system's function is its job."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a system failure?",
+   "options": [
+    "A fridge stops keeping food cold",
+    "A fridge keeps the milk cold",
+    "A lamp lights up when switched on"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A fridge stops keeping food cold\". The fridge cannot do its job, so it is a system failure."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a system failure?",
+   "options": [
+    "A doorbell rings when pressed",
+    "A traffic light stays dark",
+    "A computer will not turn on"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A doorbell rings when pressed\". The doorbell is doing its job properly."
+  },
+  {
+   "type": "example",
+   "q": "Which is a system failure?",
+   "options": [
+    "A toaster that toasts bread",
+    "A fan that spins when switched on",
+    "A heater that blows only cold air"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A heater that blows only cold air\". A heater's job is to warm the air, so it is failing."
+  },
+  {
+   "type": "example",
+   "q": "Which list shows only system failures?",
+   "options": [
+    "Loud radio, cold fridge, spinning fan",
+    "Dead phone screen, broken fan, dark streetlight",
+    "Bright lamp, warm oven, ringing bell"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Dead phone screen, broken fan, dark streetlight\". Each of these cannot do its job properly."
+  },
+  {
+   "type": "example",
+   "q": "Which is a system failure in the electrical grid?",
+   "options": [
+    "Homes use lights at night",
+    "Power lines break and homes lose electricity",
+    "A power plant sends electricity to homes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Power lines break and homes lose electricity\". The grid cannot do its job of moving electricity."
+  },
+  {
+   "type": "apply",
+   "q": "The class fish tank pump stops moving water, but everything else in the room still works. What is this?",
+   "options": [
+    "A system failure",
+    "An energy source",
+    "A blackout"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A system failure\". Only the pump cannot do its job, so it is a system failure, not an area blackout."
+  },
+  {
+   "type": "apply",
+   "q": "Zoe's science fair robot is supposed to roll forward, but it just sits still. What happened?",
+   "options": [
+    "It worked perfectly",
+    "Its system had a failure",
+    "It became an energy source"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Its system had a failure\". The robot cannot do its job properly."
+  },
+  {
+   "type": "apply",
+   "q": "Why is a blackout a kind of system failure?",
+   "options": [
+    "The grid cannot do its job of moving electricity",
+    "The grid turns into water",
+    "The grid makes too much light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The grid cannot do its job of moving electricity\". A system failure is when a system cannot perform its function."
+  },
+  {
+   "type": "apply",
+   "q": "The school heater fails on a freezing day. What do you predict?",
+   "options": [
+    "The classrooms get brighter",
+    "The classrooms get colder",
+    "The classrooms get hotter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The classrooms get colder\". The heater cannot do its job of warming the rooms."
+  },
+  {
+   "type": "apply",
+   "q": "Your bike chain breaks, and pedaling no longer turns the wheels. Is this a system failure?",
+   "options": [
+    "No, because bikes have no parts",
+    "No, the bike works better now",
+    "Yes, the bike cannot do its job"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Yes, the bike cannot do its job\". The bike system cannot perform its function properly."
+  }
+ ],
+ "source": [
+  {
+   "type": "know",
+   "q": "What is a source?",
+   "options": [
+    "The place where something ends forever",
+    "The place where something comes from",
+    "A kind of wire"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The place where something comes from\". A source is the place where something comes from."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A river's source is where its water comes from",
+    "A source is the end of something",
+    "A source is always a battery"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A river's source is where its water comes from\". A source is where something comes from."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A source is the ___ where something comes from.",
+   "options": [
+    "sound",
+    "color",
+    "place"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"place\". A source is a place."
+  },
+  {
+   "type": "know",
+   "q": "Which term means the place where something comes from?",
+   "options": [
+    "Source",
+    "Convert",
+    "Blackout"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Source\". That is the meaning of source."
+  },
+  {
+   "type": "know",
+   "q": "Asking for the source of something answers which question?",
+   "options": [
+    "How heavy is it?",
+    "What color is it?",
+    "Where does it come from?"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Where does it come from?\". A source is the place where something comes from."
+  },
+  {
+   "type": "example",
+   "q": "What is the source of milk?",
+   "options": [
+    "A glass",
+    "A lunch tray",
+    "A cow"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A cow\". Milk comes from cows."
+  },
+  {
+   "type": "example",
+   "q": "What is the source of apples?",
+   "options": [
+    "A fruit bowl",
+    "A lunch box",
+    "An apple tree"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"An apple tree\". Apples come from apple trees."
+  },
+  {
+   "type": "example",
+   "q": "What is the source of honey?",
+   "options": [
+    "Bees",
+    "A spoon",
+    "A jar"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Bees\". Honey comes from bees."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a source of wood?",
+   "options": [
+    "A tree",
+    "A rock",
+    "A forest"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A rock\". Wood comes from trees, not rocks."
+  },
+  {
+   "type": "example",
+   "q": "Which pair matches a thing with its source?",
+   "options": [
+    "Eggs - carton",
+    "Eggs - frying pan",
+    "Eggs - chicken"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Eggs - chicken\". Eggs come from chickens."
+  },
+  {
+   "type": "apply",
+   "q": "Ava follows a stream uphill to find where its water begins. What is she looking for?",
+   "options": [
+    "The stream's source",
+    "The stream's insulator",
+    "The stream's blackout"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The stream's source\". The source is the place where the water comes from."
+  },
+  {
+   "type": "apply",
+   "q": "Your teacher asks where the paper in your notebook first came from. What is the best answer?",
+   "options": [
+    "Trees",
+    "Erasers",
+    "Pencils"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Trees\". Paper is made from wood, which comes from trees."
+  },
+  {
+   "type": "apply",
+   "q": "For a class report, Jay lists the book where he found his facts. What is that book?",
+   "options": [
+    "A system failure",
+    "A source of information",
+    "An electrical grid"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A source of information\". The book is the place his facts came from."
+  },
+  {
+   "type": "apply",
+   "q": "You hear a crash in the kitchen and see a pot falling to the floor. What is the pot?",
+   "options": [
+    "A listener of the sound",
+    "The source of the sound",
+    "The grid for the sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The source of the sound\". The pot is where the sound came from."
+  },
+  {
+   "type": "apply",
+   "q": "Your wool sweater keeps you warm. What is the source of the wool?",
+   "options": [
+    "A washing machine",
+    "Sheep",
+    "A closet"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sheep\". Wool comes from sheep."
+  }
+ ],
+ "esource": [
+  {
+   "type": "know",
+   "q": "What is an energy source?",
+   "options": [
+    "Something that provides energy",
+    "Something that destroys energy",
+    "Something that only makes noise"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Something that provides energy\". An energy source is something that provides energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "The sun gives off no energy",
+    "Batteries cannot provide energy",
+    "Food is an energy source for your body"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Food is an energy source for your body\". Food, the sun, and batteries all provide energy."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An energy source is something that ___ energy.",
+   "options": [
+    "provides",
+    "destroys",
+    "hides"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"provides\". Energy sources provide energy."
+  },
+  {
+   "type": "know",
+   "q": "Which term means something that provides energy?",
+   "options": [
+    "Energy source",
+    "System failure",
+    "Blackout"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Energy source\". That is the meaning of energy source."
+  },
+  {
+   "type": "know",
+   "q": "Which list names only energy sources?",
+   "options": [
+    "Sun, wind, water, food",
+    "Wind, shadow, cup, pillow",
+    "Sun, sock, chair, spoon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Sun, wind, water, food\". Sun, wind, water, and food all provide energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is an energy source?",
+   "options": [
+    "A plastic cup",
+    "The sun",
+    "A shadow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The sun\". The sun provides light and heat energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an energy source?",
+   "options": [
+    "Wind",
+    "Batteries",
+    "An empty glass jar"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"An empty glass jar\". An empty jar does not provide energy."
+  },
+  {
+   "type": "example",
+   "q": "What pushes a sailboat across the lake?",
+   "options": [
+    "A shadow",
+    "Sand",
+    "Wind"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Wind\". Wind is an energy source that pushes the sail."
+  },
+  {
+   "type": "example",
+   "q": "Which energy source gives your body energy to run at recess?",
+   "options": [
+    "Wind",
+    "Food",
+    "Batteries"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Food\". Food provides energy for your body."
+  },
+  {
+   "type": "example",
+   "q": "Which energy source is inside a TV remote?",
+   "options": [
+    "Wind",
+    "Food",
+    "Batteries"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Batteries\". Batteries provide the energy for a remote."
+  },
+  {
+   "type": "apply",
+   "q": "A family puts solar panels on their roof. Which energy source will the panels use?",
+   "options": [
+    "Food",
+    "Batteries",
+    "The sun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The sun\". Solar panels use energy from the sun."
+  },
+  {
+   "type": "apply",
+   "q": "Before a soccer game, Kai eats a banana. Why does that help him play?",
+   "options": [
+    "Bananas are tiny batteries",
+    "Food is an energy source for his body",
+    "Bananas stop energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Food is an energy source for his body\". Food provides energy for the body."
+  },
+  {
+   "type": "apply",
+   "q": "Mom's car stops because it ran out of gas. What does the car need?",
+   "options": [
+    "More fuel",
+    "More shadows",
+    "More sand"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"More fuel\". Fuel like gas is an energy source for cars."
+  },
+  {
+   "type": "apply",
+   "q": "A town builds a dam with big wheels that spin in a river. Which energy source is it using?",
+   "options": [
+    "Food",
+    "Moving water",
+    "Batteries"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Moving water\". Moving water is an energy source."
+  },
+  {
+   "type": "apply",
+   "q": "A science fair pinwheel spins only when a fan blows on it. What gives the pinwheel its energy?",
+   "options": [
+    "The table it sits on",
+    "Moving air from the fan",
+    "The poster behind it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Moving air from the fan\". Moving air, like wind, provides the energy that spins it."
+  }
+ ],
+ "conversion": [
+  {
+   "type": "know",
+   "q": "What is energy conversion?",
+   "options": [
+    "Making energy disappear",
+    "Keeping energy in one form forever",
+    "Changing energy from one form into another"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Changing energy from one form into another\". Energy conversion is changing energy from one form into another."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Energy can change from one form into another",
+    "Energy can be destroyed",
+    "Energy can never change form"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Energy can change from one form into another\". Energy is never destroyed; it can be converted into other forms."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Energy conversion is changing energy from one ___ into another.",
+   "options": [
+    "color",
+    "form",
+    "size"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"form\". Conversion changes energy's form."
+  },
+  {
+   "type": "know",
+   "q": "Which term means the process of changing energy from one form into another?",
+   "options": [
+    "Blackout",
+    "Energy conversion",
+    "Electrical grid"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Energy conversion\". That is the meaning of energy conversion."
+  },
+  {
+   "type": "know",
+   "q": "A lamp converts electrical energy into which forms?",
+   "options": [
+    "Food and water",
+    "Light and heat",
+    "Wind and chemical"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light and heat\". A lamp changes electrical energy into light and heat."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of energy conversion?",
+   "options": [
+    "A rock sitting still on the ground",
+    "A book resting on a shelf",
+    "A toaster changing electrical energy into heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A toaster changing electrical energy into heat\". The toaster changes energy from one form into another."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of energy conversion?",
+   "options": [
+    "A pencil lying still on a desk",
+    "A fan spinning when plugged in",
+    "A flashlight shining"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A pencil lying still on a desk\". Nothing is changing energy in a pencil lying still."
+  },
+  {
+   "type": "example",
+   "q": "Which device converts electrical energy mainly into sound?",
+   "options": [
+    "A doorbell",
+    "A toaster",
+    "A lamp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A doorbell\". A doorbell's main job is to make sound."
+  },
+  {
+   "type": "example",
+   "q": "Which device converts electrical energy mainly into motion energy?",
+   "options": [
+    "An electric fan",
+    "A lamp",
+    "A toaster"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"An electric fan\". A fan's blades move, so it makes motion energy."
+  },
+  {
+   "type": "example",
+   "q": "Which list shows only energy conversions?",
+   "options": [
+    "Rock resting, book sitting, cup standing",
+    "Fan spinning, bulb shining, radio playing",
+    "Shoe on floor, pen in cup, hat on hook"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Fan spinning, bulb shining, radio playing\". Each device changes electrical energy into another form."
+  },
+  {
+   "type": "apply",
+   "q": "You rub your hands together fast on a cold day. What energy conversion happens?",
+   "options": [
+    "Light into chemical energy",
+    "Sound into electrical energy",
+    "Motion energy into heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Motion energy into heat\". Rubbing changes motion energy into heat, so your hands warm up."
+  },
+  {
+   "type": "apply",
+   "q": "Liam plugs in a radio. Electrical energy goes in. What is the main energy that comes out?",
+   "options": [
+    "Chemical energy",
+    "Food energy",
+    "Sound"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sound\". A radio converts electrical energy mainly into sound."
+  },
+  {
+   "type": "apply",
+   "q": "What form of energy is stored in a flashlight's batteries before you switch it on?",
+   "options": [
+    "Chemical energy",
+    "Motion energy",
+    "Sound energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy\". Batteries store chemical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a light bulb feel warm after it has been on for a while?",
+   "options": [
+    "Cold flows out of the bulb",
+    "Some electrical energy changes into heat",
+    "The bulb makes energy disappear"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Some electrical energy changes into heat\". Some energy always becomes heat when energy is converted."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Nora's solar toy car moves in the sunlight. What conversion happens?",
+   "options": [
+    "Motion into food energy",
+    "Sound into light energy",
+    "Light energy into motion energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light energy into motion energy\". The car uses the sun's light energy to move."
+  }
+ ],
+ "convert": [
+  {
+   "type": "know",
+   "q": "What does convert mean?",
+   "options": [
+    "To keep energy exactly the same",
+    "To make energy go away",
+    "To change energy from one form into another"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"To change energy from one form into another\". To convert is to change energy from one form into another."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Devices can convert energy into different forms",
+    "Nothing can convert energy",
+    "Converting energy destroys it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Devices can convert energy into different forms\". Devices change energy from one form into another."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: To ___ is to change energy from one form into another.",
+   "options": [
+    "convert",
+    "insulate",
+    "reflect"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"convert\". Convert means to change energy's form."
+  },
+  {
+   "type": "know",
+   "q": "Which word means almost the same as convert?",
+   "options": [
+    "Hide",
+    "Stop",
+    "Change"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Change\". To convert energy is to change it into another form."
+  },
+  {
+   "type": "know",
+   "q": "When energy is converted, does any of it vanish forever?",
+   "options": [
+    "Yes, half of it vanishes",
+    "Yes, all of it vanishes",
+    "No, it just changes form"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"No, it just changes form\". Energy never goes away; it only changes form."
+  },
+  {
+   "type": "example",
+   "q": "Which device converts electrical energy into heat to cook food?",
+   "options": [
+    "A doorbell",
+    "A flashlight",
+    "An electric stove"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"An electric stove\". A stove changes electrical energy into heat for cooking."
+  },
+  {
+   "type": "example",
+   "q": "Which converts chemical energy from food into motion?",
+   "options": [
+    "A wall outlet",
+    "Your body when you run",
+    "A light bulb"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Your body when you run\". Your body changes food energy into motion."
+  },
+  {
+   "type": "example",
+   "q": "Which does NOT convert energy?",
+   "options": [
+    "A car engine",
+    "A brick sitting in the yard",
+    "A guitar being played"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A brick sitting in the yard\". A brick sitting still is not changing energy."
+  },
+  {
+   "type": "example",
+   "q": "Which converts motion energy into sound?",
+   "options": [
+    "Plucking a guitar string",
+    "A closed book on a shelf",
+    "A rock resting on the ground"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Plucking a guitar string\". The moving string makes sound."
+  },
+  {
+   "type": "example",
+   "q": "Which converts light energy into electrical energy?",
+   "options": [
+    "A doorbell",
+    "A solar panel",
+    "A toaster"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A solar panel\". Solar panels change light into electricity."
+  },
+  {
+   "type": "apply",
+   "q": "A wind turbine spins in the wind. What form does it convert the motion energy into?",
+   "options": [
+    "Electrical energy",
+    "Sound energy only",
+    "Chemical energy in food"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical energy\". Wind turbines change motion energy into electrical energy."
+  },
+  {
+   "type": "apply",
+   "q": "Ella stretches a rubber band and lets go, and it flies across the room. What did its stored energy convert into?",
+   "options": [
+    "Motion energy",
+    "Chemical energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Motion energy\". The stretched band's stored energy changed into motion."
+  },
+  {
+   "type": "apply",
+   "q": "You slide down a metal slide fast, and your legs feel warm. Why?",
+   "options": [
+    "Light converts into sound",
+    "Motion energy converts into heat",
+    "Heat flows from cold to hot"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Motion energy converts into heat\". Rubbing against the slide changes some motion energy into heat."
+  },
+  {
+   "type": "apply",
+   "q": "A battery-powered toy fan is switched on. What energy goes in and what main energy comes out?",
+   "options": [
+    "Light energy in, chemical energy out",
+    "Chemical energy in, motion energy out",
+    "Sound energy in, light energy out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Chemical energy in, motion energy out\". The battery's chemical energy is converted into the spinning motion."
+  },
+  {
+   "type": "apply",
+   "q": "Josh claps his hands loudly. The motion of his hands converts into which energy you can hear?",
+   "options": [
+    "Electrical energy",
+    "Light energy",
+    "Sound energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sound energy\". Clapping changes motion energy into sound."
+  }
+ ]
+}

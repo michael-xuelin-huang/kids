@@ -1,0 +1,384 @@
+{
+ "sections": {
+  "forms": "What energy is & its forms",
+  "light": "Light",
+  "heatsound": "Heat & sound",
+  "electric": "Electricity & circuits",
+  "sources": "Energy sources & devices",
+  "science": "Science & engineering words"
+ },
+ "units": [
+  {
+   "section": "forms",
+   "id": "energy",
+   "title": "Energy",
+   "fact": "Energy is the ability to do work or to cause a change (make things move or change). MUST WRITE: \"Energy is the ability to do work or to cause a change.\""
+  },
+  {
+   "section": "forms",
+   "id": "sun",
+   "title": "The Sun, main energy source",
+   "fact": "The sun is the main source of energy at Earth's surface. Sun energy makes Earth livable, makes plants grow (light), makes wind blow and moves water through the water cycle."
+  },
+  {
+   "section": "forms",
+   "id": "change",
+   "title": "Energy changes form",
+   "fact": "Energy can change from one form to another. It does not change completely from one form to another, and it does not go away. Some energy always turns into heat. MUST WRITE: \"Energy can change from one form to another. Energy does not change completely from one form to another.\""
+  },
+  {
+   "section": "forms",
+   "id": "form",
+   "title": "Form of energy",
+   "fact": "A form of energy is a type or kind of energy (electrical, light, heat/thermal, sound, mechanical, potential, chemical, kinetic/motion)."
+  },
+  {
+   "section": "forms",
+   "id": "electrical",
+   "title": "Electrical energy",
+   "fact": "The movement of electric charges; energy that travels through wires and powers devices, like a lamp."
+  },
+  {
+   "section": "forms",
+   "id": "lightform",
+   "title": "Light energy (form)",
+   "fact": "The energy we can see; it lets us see. Light comes through windows and brightens a room."
+  },
+  {
+   "section": "forms",
+   "id": "heatform",
+   "title": "Heat / thermal energy",
+   "fact": "Thermal energy is energy related to heat. Heat is the transfer of energy from a warmer object to a colder one. Heat energy cooks food in the kitchen."
+  },
+  {
+   "section": "forms",
+   "id": "soundform",
+   "title": "Sound energy (form)",
+   "fact": "The form of energy we can hear; made by vibrations. Musical instruments produce sound energy."
+  },
+  {
+   "section": "forms",
+   "id": "mechanical",
+   "title": "Mechanical energy",
+   "fact": "The energy of an object's motion (kinetic) or position (potential)."
+  },
+  {
+   "section": "forms",
+   "id": "potential",
+   "title": "Potential energy",
+   "fact": "Stored energy. A raised object has stored energy because of gravity. Stretching or squeezing (compressing) an object, like a rubber band or spring, also stores potential energy. Potential energy can change into kinetic energy."
+  },
+  {
+   "section": "forms",
+   "id": "chemical",
+   "title": "Chemical energy",
+   "fact": "Stored energy in food, fuels (like gasoline) and batteries. It can change into a form that does work."
+  },
+  {
+   "section": "forms",
+   "id": "kinetic",
+   "title": "Kinetic / motion energy",
+   "fact": "The energy of motion: energy an object has because it is moving. A car moves when the stored (chemical) energy in gasoline changes to kinetic energy."
+  },
+  {
+   "section": "light",
+   "id": "lighttravel",
+   "title": "How light travels",
+   "fact": "Light travels outward from its source in all directions, in a straight line until it hits an object or moves from one medium (material) to another. Light can pass through some objects. Light can be reflected, refracted, or absorbed."
+  },
+  {
+   "section": "light",
+   "id": "reflect",
+   "title": "Reflect",
+   "fact": "To bounce off. We see objects because light reflects off them. Flat, smooth surfaces like a mirror reflect light evenly; rough water does not reflect evenly."
+  },
+  {
+   "section": "light",
+   "id": "refract",
+   "title": "Refract",
+   "fact": "Light refracts (bends) when it passes between different materials, because it travels at different speeds in them. Light slows down when it goes from air into water, and bends (like a straw looking bent in a glass of water)."
+  },
+  {
+   "section": "light",
+   "id": "absorb",
+   "title": "Absorb",
+   "fact": "To take in. Light is made of different colors. Objects absorb some colors and reflect others; the color we see is the color reflected. A red flower reflects red and absorbs the other colors."
+  },
+  {
+   "section": "light",
+   "id": "transparent",
+   "title": "Transparent",
+   "fact": "Lets light pass through; you can see clearly through it. Examples: clear glass, air, plastic wrap."
+  },
+  {
+   "section": "light",
+   "id": "translucent",
+   "title": "Translucent",
+   "fact": "Lets some light pass through; things on the other side look blurry. Examples: wax paper, frosted paper."
+  },
+  {
+   "section": "light",
+   "id": "opaque",
+   "title": "Opaque",
+   "fact": "Blocks light completely; no light passes through and you cannot see what is on the other side. Examples: wood, metal, brick."
+  },
+  {
+   "section": "heatsound",
+   "id": "heatconduct",
+   "title": "Heat conductors",
+   "fact": "Heat (thermal energy) travels from warmer objects to cooler objects. Good conductors of heat let heat pass through easily (metals). Bad conductors of heat do not (wood, plastic)."
+  },
+  {
+   "section": "heatsound",
+   "id": "vibration",
+   "title": "Sound and vibration",
+   "fact": "Sound happens when matter vibrates (moves quickly back and forth). Sound travels in waves. The air particles vibrate in place and bump into each other, passing the energy along particle to particle until it reaches your ear; the particles themselves do not travel with the wave."
+  },
+  {
+   "section": "heatsound",
+   "id": "volume",
+   "title": "Volume",
+   "fact": "How loud or soft a sound is. Volume is a property of sound and is related to how much energy the sound has (more energy = louder)."
+  },
+  {
+   "section": "heatsound",
+   "id": "medium",
+   "title": "How sound travels through matter",
+   "fact": "A medium is a material sound waves travel through. With no medium (like empty space) there is no sound. Sound travels slowest through gases, faster through liquids, and fastest through solids, because the particles are packed more closely."
+  },
+  {
+   "section": "electric",
+   "id": "conductor",
+   "title": "Electrical conductors",
+   "fact": "Materials that let electrical energy pass through easily. Metals are good conductors; graphite (pencil \"lead\") is a good conductor; water is also a strong conductor."
+  },
+  {
+   "section": "electric",
+   "id": "insulator",
+   "title": "Insulators",
+   "fact": "Materials that do not let electric charge move through them. Examples: rubber, plastic, wood, glass."
+  },
+  {
+   "section": "electric",
+   "id": "circuit",
+   "title": "Electrical circuit",
+   "fact": "A complete path through which electrical energy can flow."
+  },
+  {
+   "section": "electric",
+   "id": "closed",
+   "title": "Closed circuit",
+   "fact": "A complete path that allows electrical energy to flow (the light turns on)."
+  },
+  {
+   "section": "electric",
+   "id": "open",
+   "title": "Open circuit",
+   "fact": "A broken or incomplete path that stops electrical energy from flowing."
+  },
+  {
+   "section": "electric",
+   "id": "switch",
+   "title": "Switch",
+   "fact": "A device that opens or closes an electrical circuit."
+  },
+  {
+   "section": "electric",
+   "id": "wire",
+   "title": "Wire",
+   "fact": "A material that carries electrical energy in a circuit (usually metal covered in plastic)."
+  },
+  {
+   "section": "electric",
+   "id": "battery",
+   "title": "Battery",
+   "fact": "A device that stores chemical energy and provides electrical energy."
+  },
+  {
+   "section": "electric",
+   "id": "device",
+   "title": "Electrical device",
+   "fact": "A machine that changes electrical energy into another form of energy (lamp -> light, speaker -> sound, fan -> motion, toaster -> heat)."
+  },
+  {
+   "section": "electric",
+   "id": "grid",
+   "title": "Electrical grid",
+   "fact": "A network of wires that moves (transfers) electricity from energy sources/power plants to many different places."
+  },
+  {
+   "section": "electric",
+   "id": "elsystem",
+   "title": "Electrical system",
+   "fact": "A group of connected parts that work together to provide electricity to devices."
+  },
+  {
+   "section": "electric",
+   "id": "blackout",
+   "title": "Blackout",
+   "fact": "A time when electricity stops working in an area."
+  },
+  {
+   "section": "electric",
+   "id": "failure",
+   "title": "System failure",
+   "fact": "When a system cannot perform its function (job) properly."
+  },
+  {
+   "section": "sources",
+   "id": "source",
+   "title": "Source",
+   "fact": "The place where something comes from."
+  },
+  {
+   "section": "sources",
+   "id": "esource",
+   "title": "Energy source",
+   "fact": "Something that provides energy (sun, wind, water, food, fuel, batteries)."
+  },
+  {
+   "section": "sources",
+   "id": "conversion",
+   "title": "Energy conversion",
+   "fact": "The process of changing energy from one form into another (e.g. a lamp: electrical -> light and heat)."
+  },
+  {
+   "section": "sources",
+   "id": "convert",
+   "title": "Convert",
+   "fact": "To change energy from one form into another."
+  },
+  {
+   "section": "sources",
+   "id": "converter",
+   "title": "Converter",
+   "fact": "Something that changes one form of energy into another (e.g. a solar panel, a motor, a toaster)."
+  },
+  {
+   "section": "sources",
+   "id": "renewable",
+   "title": "Renewable energy",
+   "fact": "Energy from sources that are naturally replenished (refilled), like sun, wind and flowing water."
+  },
+  {
+   "section": "sources",
+   "id": "nonrenewable",
+   "title": "Nonrenewable energy",
+   "fact": "Energy from sources that are limited and cannot be replaced quickly, like coal, oil, gasoline and natural gas."
+  },
+  {
+   "section": "sources",
+   "id": "solar",
+   "title": "Solar energy",
+   "fact": "Energy that comes from the Sun."
+  },
+  {
+   "section": "sources",
+   "id": "solarpanel",
+   "title": "Solar panel",
+   "fact": "A device that converts sunlight (light energy) into electrical energy."
+  },
+  {
+   "section": "sources",
+   "id": "turbine",
+   "title": "Wind turbine",
+   "fact": "A machine that uses wind to produce electrical energy."
+  },
+  {
+   "section": "sources",
+   "id": "generator",
+   "title": "Generator",
+   "fact": "A device that converts motion energy into electrical energy."
+  },
+  {
+   "section": "sources",
+   "id": "motor",
+   "title": "Motor",
+   "fact": "A device that converts electrical energy into motion energy."
+  },
+  {
+   "section": "sources",
+   "id": "powerplant",
+   "title": "Power plant",
+   "fact": "A facility (big building) where electricity is generated (made)."
+  },
+  {
+   "section": "sources",
+   "id": "efficiency",
+   "title": "Efficiency",
+   "fact": "How well something uses energy to do a task; an efficient device wastes less energy (for example less wasted heat)."
+  },
+  {
+   "section": "sources",
+   "id": "transfer",
+   "title": "Transfer",
+   "fact": "To move something from one place to another (heat transfers from warm to cool; the grid transfers electricity)."
+  },
+  {
+   "section": "sources",
+   "id": "input",
+   "title": "Input",
+   "fact": "What goes into a system or device (a lamp's input is electrical energy)."
+  },
+  {
+   "section": "sources",
+   "id": "output",
+   "title": "Output",
+   "fact": "What comes out of a system or device (a lamp's output is light and heat)."
+  },
+  {
+   "section": "science",
+   "id": "argument",
+   "title": "Argument",
+   "fact": "Using evidence to explain why an idea (claim) is best."
+  },
+  {
+   "section": "science",
+   "id": "claim",
+   "title": "Claim",
+   "fact": "An answer or statement that you believe is correct."
+  },
+  {
+   "section": "science",
+   "id": "evidence",
+   "title": "Evidence",
+   "fact": "Information or facts that support an answer or claim."
+  },
+  {
+   "section": "science",
+   "id": "engineer",
+   "title": "Engineer",
+   "fact": "A person who uses science and designs to solve problems."
+  },
+  {
+   "section": "science",
+   "id": "function",
+   "title": "Function",
+   "fact": "What something does; its purpose or job."
+  },
+  {
+   "section": "science",
+   "id": "synthesize",
+   "title": "Synthesize",
+   "fact": "To put information together to understand something."
+  },
+  {
+   "section": "science",
+   "id": "system",
+   "title": "System",
+   "fact": "A group of parts that work together."
+  },
+  {
+   "section": "science",
+   "id": "criteria",
+   "title": "Criteria",
+   "fact": "Requirements used to judge how well a design solves a problem."
+  },
+  {
+   "section": "science",
+   "id": "design",
+   "title": "Design",
+   "fact": "To plan or create something to solve a problem."
+  }
+ ]
+}

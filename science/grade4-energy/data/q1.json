@@ -1,0 +1,1338 @@
+{
+ "energy": [
+  {
+   "type": "know",
+   "q": "What is energy?",
+   "options": [
+    "A kind of rock found underground",
+    "A type of matter you can hold",
+    "The ability to do work or to cause a change"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The ability to do work or to cause a change\". Energy is the ability to do work or to cause a change."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: \"Energy is the ability to do work or to cause a ____.\"",
+   "options": [
+    "color",
+    "change",
+    "shadow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"change\". Energy is the ability to do work or to cause a change."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Energy is something you weigh on a scale",
+    "Only living things have energy",
+    "Energy can make things move or change"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Energy can make things move or change\". Energy makes things move or change, in living and nonliving things."
+  },
+  {
+   "type": "know",
+   "q": "Which word means \"the ability to do work or to cause a change\"?",
+   "options": [
+    "Energy",
+    "Mass",
+    "Volume"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Energy\". That is the meaning of the word energy."
+  },
+  {
+   "type": "know",
+   "q": "When something moves or changes, what was needed to make it happen?",
+   "options": [
+    "A shadow",
+    "Energy",
+    "Silence"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Energy\". Energy is what makes things move or change."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of energy causing a change?",
+   "options": [
+    "Ice melting in the sun",
+    "A book lying closed on a shelf",
+    "A pencil resting on a desk"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Ice melting in the sun\". The sun's energy changes the ice into water."
+  },
+  {
+   "type": "example",
+   "q": "Which shows energy doing work?",
+   "options": [
+    "A kid pushing a wagon",
+    "A painting hanging on a wall",
+    "A spoon lying in a drawer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A kid pushing a wagon\". Pushing makes the wagon move, and that takes energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of energy causing a change?",
+   "options": [
+    "A stone lying still on the ground",
+    "Popcorn popping in a pan",
+    "Wind spinning a pinwheel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A stone lying still on the ground\". Nothing is moving or changing with the still stone."
+  },
+  {
+   "type": "example",
+   "q": "A running dog and a ringing bell both use energy. Which one belongs with them?",
+   "options": [
+    "A chair standing in a corner",
+    "A brick in a wall",
+    "A bouncing ball"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A bouncing ball\". A bouncing ball is moving, so it is using energy."
+  },
+  {
+   "type": "example",
+   "q": "Which needs energy to happen?",
+   "options": [
+    "A toy car parked on a shelf",
+    "A toy car racing across the floor",
+    "A toy car sitting in its box"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A toy car racing across the floor\". Making the car move takes energy."
+  },
+  {
+   "type": "apply",
+   "q": "Mia kicks a soccer ball and it rolls across the field. What made the ball move?",
+   "options": [
+    "The color of the ball",
+    "Energy from Mia's kick",
+    "The smell of the grass"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Energy from Mia's kick\". Mia's kick gave the ball energy to move."
+  },
+  {
+   "type": "apply",
+   "q": "Why do you eat breakfast before running at recess?",
+   "options": [
+    "Food makes your shoes faster",
+    "Food turns off your muscles",
+    "Food gives your body energy to move"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Food gives your body energy to move\". Your body gets energy from food so it can move."
+  },
+  {
+   "type": "apply",
+   "q": "A toy robot's battery is dead. What happens?",
+   "options": [
+    "It moves faster than before",
+    "It changes color",
+    "It stops moving"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It stops moving\". Without energy the robot cannot do work, so it stops."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Leo uses a candle to melt a piece of chocolate. What does his project show?",
+   "options": [
+    "Energy is a solid you can hold",
+    "Energy can cause a change",
+    "Chocolate has no matter"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Energy can cause a change\". The candle's energy changed the chocolate from solid to liquid."
+  },
+  {
+   "type": "apply",
+   "q": "A playground swing is hanging still. What will make it start swinging?",
+   "options": [
+    "Someone gives it a push",
+    "Everyone stays very quiet",
+    "Someone paints it a new color"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Someone gives it a push\". A push gives the swing energy, and energy makes things move."
+  }
+ ],
+ "sun": [
+  {
+   "type": "know",
+   "q": "What is the main source of energy at Earth's surface?",
+   "options": [
+    "The moon",
+    "Batteries",
+    "The sun"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The sun\". The sun is the main source of energy at Earth's surface."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "The sun gives no energy to Earth",
+    "Plants grow best with no light",
+    "Sun energy makes Earth livable"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sun energy makes Earth livable\". Sun energy makes Earth a place where we can live."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: \"The sun is the ____ source of energy at Earth's surface.\"",
+   "options": [
+    "smallest",
+    "main",
+    "newest"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"main\". The sun is the main source of energy at Earth's surface."
+  },
+  {
+   "type": "know",
+   "q": "Which energy from the sun do plants use to grow?",
+   "options": [
+    "Sound",
+    "Electrical",
+    "Light"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light\". Plants grow using the sun's light."
+  },
+  {
+   "type": "know",
+   "q": "Which is a job of the sun's energy?",
+   "options": [
+    "Moving water through the water cycle",
+    "Freezing all the oceans",
+    "Stopping the wind"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Moving water through the water cycle\". Sun energy moves water through the water cycle."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of the sun's energy at work?",
+   "options": [
+    "A puddle drying up on a sunny day",
+    "A flashlight shining in a closet",
+    "A guitar string vibrating"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A puddle drying up on a sunny day\". The sun's energy makes the puddle water evaporate."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT caused by the sun's energy?",
+   "options": [
+    "A magnet sticking to a fridge",
+    "Plants growing in a garden",
+    "Wind blowing a kite"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A magnet sticking to a fridge\". Magnets stick because of magnetism, not sun energy."
+  },
+  {
+   "type": "example",
+   "q": "Sun energy makes plants grow and wind blow. Which belongs in this list too?",
+   "options": [
+    "A magnet picking up pins",
+    "An echo in a cave",
+    "Warming the sand at the beach"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Warming the sand at the beach\". The sun's energy warms the sand."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of the sun moving water in the water cycle?",
+   "options": [
+    "Water evaporating from a lake",
+    "A faucet dripping in the sink",
+    "Ice cubes staying in a freezer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Water evaporating from a lake\". The sun's energy turns lake water into water vapor."
+  },
+  {
+   "type": "example",
+   "q": "Which shows the sun making wind blow?",
+   "options": [
+    "A fan spinning in a room",
+    "The sun warms air, and the air moves",
+    "A kid blowing out candles"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The sun warms air, and the air moves\". Sun energy warms the air and makes the wind blow."
+  },
+  {
+   "type": "apply",
+   "q": "Ana puts one plant in a sunny window and one in a dark closet. What will happen?",
+   "options": [
+    "The closet plant grows better",
+    "The sunny plant grows better",
+    "Both grow the same"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The sunny plant grows better\". Plants need the sun's light to grow."
+  },
+  {
+   "type": "apply",
+   "q": "You leave a chocolate bar on a car seat on a sunny day. What happens?",
+   "options": [
+    "It freezes",
+    "It melts",
+    "It turns into a battery"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It melts\". The sun's energy heats the chocolate and melts it."
+  },
+  {
+   "type": "apply",
+   "q": "If the sun stopped shining, what would happen to Earth?",
+   "options": [
+    "It would become too cold to live on",
+    "It would get warmer",
+    "Plants would grow faster"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It would become too cold to live on\". Sun energy is what makes Earth livable."
+  },
+  {
+   "type": "apply",
+   "q": "Why do wet clothes on a clothesline dry on a sunny day?",
+   "options": [
+    "The moon pulls the water out",
+    "The clothes soak up shadows",
+    "Sun energy evaporates the water"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sun energy evaporates the water\". The sun's energy turns the water into vapor."
+  },
+  {
+   "type": "apply",
+   "q": "Sam's class watches wind push a sailboat. Where did the wind's energy first come from?",
+   "options": [
+    "The ocean floor",
+    "The sun",
+    "The boat's sail"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The sun\". Sun energy makes the wind blow."
+  }
+ ],
+ "change": [
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Energy can change from one form to another",
+    "Energy can never change form",
+    "Energy disappears when it is used"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Energy can change from one form to another\". Energy can change from one form to another."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: \"Energy does not change ____ from one form to another.\"",
+   "options": [
+    "at all",
+    "ever",
+    "completely"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"completely\". Energy does not change completely from one form to another."
+  },
+  {
+   "type": "know",
+   "q": "When energy is used, what happens to it?",
+   "options": [
+    "It goes away forever",
+    "It changes into other forms",
+    "It turns into nothing"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It changes into other forms\". Energy does not go away; it changes form."
+  },
+  {
+   "type": "know",
+   "q": "When energy changes form, which form does some of it always turn into?",
+   "options": [
+    "Heat",
+    "Sound",
+    "Light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Heat\". Some energy always turns into heat."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: \"Energy can ____ from one form to another.\"",
+   "options": [
+    "change",
+    "never move",
+    "be destroyed"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"change\". Energy can change from one form to another."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of energy changing form?",
+   "options": [
+    "A toaster turning electricity into heat",
+    "A rock sitting in a field",
+    "A closed book on a shelf"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A toaster turning electricity into heat\". The toaster changes electrical energy into heat."
+  },
+  {
+   "type": "example",
+   "q": "Which shows chemical energy changing into motion?",
+   "options": [
+    "A lamp plugged into the wall",
+    "A drum being hit",
+    "A kid eats lunch, then runs"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A kid eats lunch, then runs\". Food's chemical energy becomes motion when you run."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of energy changing form?",
+   "options": [
+    "A fan turning electricity into motion",
+    "A pencil lying on a desk",
+    "Wood burning in a campfire"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A pencil lying on a desk\". Nothing is happening to the pencil, so no energy is changing."
+  },
+  {
+   "type": "example",
+   "q": "Which example shows some energy turning into heat?",
+   "options": [
+    "Ice staying frozen in a freezer",
+    "A shadow on the wall",
+    "A light bulb gets warm while it shines"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A light bulb gets warm while it shines\". The bulb gives light, but some energy becomes heat."
+  },
+  {
+   "type": "example",
+   "q": "A toaster, a blender, and a radio all change electrical energy into other forms. Which belongs with them?",
+   "options": [
+    "A wooden spoon",
+    "A hair dryer",
+    "A rock"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A hair dryer\". A hair dryer changes electrical energy into heat and motion."
+  },
+  {
+   "type": "apply",
+   "q": "After a fast ride, Jo squeezes her bike brakes. Then the brakes feel warm. Why?",
+   "options": [
+    "The brakes made energy from nothing",
+    "The energy went away",
+    "Some motion energy turned into heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Some motion energy turned into heat\". Some energy always turns into heat."
+  },
+  {
+   "type": "apply",
+   "q": "A friend says a lamp turns ALL of its electrical energy into light. What is wrong with that?",
+   "options": [
+    "Lamps use no energy",
+    "Some energy always turns into heat",
+    "Light is not energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Some energy always turns into heat\". Energy does not change completely into one form; some becomes heat."
+  },
+  {
+   "type": "apply",
+   "q": "You rub your hands together fast on a cold day. What happens?",
+   "options": [
+    "Your hands get colder",
+    "Your hands get warm",
+    "Your hands start to glow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Your hands get warm\". Motion energy changes into heat."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Kai's toy car runs until its battery is used up. Where did the energy go?",
+   "options": [
+    "It disappeared completely",
+    "It turned into new batteries",
+    "It changed into other forms, like motion and heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It changed into other forms, like motion and heat\". Energy does not go away; it changes form."
+  },
+  {
+   "type": "apply",
+   "q": "A ball bounces lower and lower until it stops. What happened to its energy?",
+   "options": [
+    "It changed into heat and sound",
+    "It was destroyed",
+    "It turned into light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It changed into heat and sound\". Energy never goes away; it changes into other forms."
+  }
+ ],
+ "form": [
+  {
+   "type": "know",
+   "q": "What is a form of energy?",
+   "options": [
+    "A paper you fill out",
+    "A type or kind of energy",
+    "A shape like a circle"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A type or kind of energy\". A form of energy is a type or kind of energy."
+  },
+  {
+   "type": "know",
+   "q": "Which is a form of energy?",
+   "options": [
+    "Wood",
+    "Sound",
+    "Water"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sound\". Sound is a kind of energy; wood and water are matter."
+  },
+  {
+   "type": "know",
+   "q": "Which list names only forms of energy?",
+   "options": [
+    "Light, heat, sound",
+    "Rock, light, cloud",
+    "Water, sand, heat"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Light, heat, sound\". Light, heat, and sound are all forms of energy."
+  },
+  {
+   "type": "know",
+   "q": "Another name for motion energy is ____.",
+   "options": [
+    "thermal",
+    "sound",
+    "kinetic"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"kinetic\". Kinetic energy is motion energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "There are many forms of energy",
+    "There is only one form of energy",
+    "Energy has no forms"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"There are many forms of energy\". Energy comes in many forms, like light, sound, and heat."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a form of energy?",
+   "options": [
+    "Plastic",
+    "Light",
+    "Electrical"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Plastic\". Plastic is a material, not a kind of energy."
+  },
+  {
+   "type": "example",
+   "q": "Which belongs in this list: electrical, light, sound, ____?",
+   "options": [
+    "metal",
+    "glass",
+    "chemical"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"chemical\". Chemical energy is a form of energy."
+  },
+  {
+   "type": "example",
+   "q": "Food stores which form of energy?",
+   "options": [
+    "Sound",
+    "Chemical",
+    "Light"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Chemical\". Food has chemical energy stored in it."
+  },
+  {
+   "type": "example",
+   "q": "A stretched rubber band has which form of energy?",
+   "options": [
+    "Sound",
+    "Potential",
+    "Light"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Potential\". A stretched rubber band has stored, or potential, energy."
+  },
+  {
+   "type": "example",
+   "q": "Which pair shows two different forms of energy?",
+   "options": [
+    "Sound and light",
+    "Rock and sand",
+    "Wood and plastic"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Sound and light\". Sound and light are both kinds of energy."
+  },
+  {
+   "type": "apply",
+   "q": "At a campfire you see flames, feel warmth, and hear crackling. Which forms of energy are there?",
+   "options": [
+    "Light, heat, and sound",
+    "Electrical only",
+    "No energy at all"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Light, heat, and sound\". You see light, feel heat, and hear sound."
+  },
+  {
+   "type": "apply",
+   "q": "Ms. Lee writes \"light, sound, heat\" on the board and asks for one more form of energy. What can you add?",
+   "options": [
+    "Cardboard",
+    "Pencil",
+    "Kinetic"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Kinetic\". Kinetic (motion) energy is a form of energy."
+  },
+  {
+   "type": "apply",
+   "q": "A roller coaster car sits at the top of a hill, ready to drop. What form of energy does it have stored?",
+   "options": [
+    "Sound",
+    "Light",
+    "Potential"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Potential\". Its height gives it stored, or potential, energy."
+  },
+  {
+   "type": "apply",
+   "q": "You wind up a toy and let go, and it zips across the floor. What form of energy does the moving toy have?",
+   "options": [
+    "Light",
+    "Kinetic",
+    "Chemical"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Kinetic\". Moving things have kinetic (motion) energy."
+  },
+  {
+   "type": "apply",
+   "q": "You plug in a phone to charge it. What form of energy flows through the cord?",
+   "options": [
+    "Sound",
+    "Light",
+    "Electrical"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical\". Electrical energy travels through wires and cords."
+  }
+ ],
+ "electrical": [
+  {
+   "type": "know",
+   "q": "Fill in the blank: \"Electrical energy is the movement of electric ____.\"",
+   "options": [
+    "sounds",
+    "smells",
+    "charges"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"charges\". Electrical energy is the movement of electric charges."
+  },
+  {
+   "type": "know",
+   "q": "Electrical energy travels through ____.",
+   "options": [
+    "wires",
+    "shadows",
+    "echoes"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"wires\". Electrical energy travels through wires to power devices."
+  },
+  {
+   "type": "know",
+   "q": "Which form of energy powers a lamp through its cord?",
+   "options": [
+    "Electrical",
+    "Sound",
+    "Chemical"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical\". Electrical energy travels through the cord to the lamp."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Electrical energy can never change form",
+    "Electrical energy can change into light and heat",
+    "Electrical energy is a kind of rock"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Electrical energy can change into light and heat\". A lamp changes electrical energy into light and heat."
+  },
+  {
+   "type": "know",
+   "q": "The inside of an electric wire is usually made of ____.",
+   "options": [
+    "glass",
+    "metal",
+    "wood"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"metal\". Metal lets electric charges move through it; glass and wood do not."
+  },
+  {
+   "type": "example",
+   "q": "Which uses electrical energy?",
+   "options": [
+    "A lamp plugged into the wall",
+    "A wooden spoon",
+    "A paper kite"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A lamp plugged into the wall\". The lamp gets electrical energy through its cord."
+  },
+  {
+   "type": "example",
+   "q": "Which does NOT need electrical energy to work?",
+   "options": [
+    "A TV",
+    "A pair of scissors",
+    "A computer"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A pair of scissors\". Scissors work with your hand muscles, not electricity."
+  },
+  {
+   "type": "example",
+   "q": "A TV, a fridge, and a microwave all use electrical energy. Which belongs with them?",
+   "options": [
+    "A pencil",
+    "A rubber band",
+    "A vacuum cleaner"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A vacuum cleaner\". A vacuum cleaner is powered by electrical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of electric charges moving?",
+   "options": [
+    "A ball rolling",
+    "Lightning in a storm",
+    "A dog barking"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Lightning in a storm\". Lightning is electric charges moving through the air."
+  },
+  {
+   "type": "example",
+   "q": "Which pair are both powered by electrical energy?",
+   "options": [
+    "A bike and a slide",
+    "A lamp and a fan",
+    "A drum and a kite"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A lamp and a fan\". Lamps and fans get electrical energy from the outlet."
+  },
+  {
+   "type": "apply",
+   "q": "The power goes out at home. Which toy still works?",
+   "options": [
+    "A plug-in video game",
+    "A plug-in train set",
+    "A wind-up toy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A wind-up toy\". A wind-up toy does not need electrical energy from the outlet."
+  },
+  {
+   "type": "apply",
+   "q": "You plug in a lamp and switch it on. What energy goes in and what comes out?",
+   "options": [
+    "Sound in; electrical out",
+    "Light in; sound out",
+    "Electrical in; light and heat out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical in; light and heat out\". A lamp changes electrical energy into light and heat."
+  },
+  {
+   "type": "apply",
+   "q": "Dad makes a smoothie in a blender. What energy goes in and what comes out?",
+   "options": [
+    "Electrical in; motion and sound out",
+    "Light in; chemical out",
+    "Sound in; light out"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical in; motion and sound out\". The blender changes electrical energy into spinning motion and sound."
+  },
+  {
+   "type": "apply",
+   "q": "You make toast in a toaster. What energy goes in and what comes out?",
+   "options": [
+    "Sound in; chemical out",
+    "Chemical in; sound out",
+    "Electrical in; heat out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Electrical in; heat out\". A toaster changes electrical energy into heat."
+  },
+  {
+   "type": "apply",
+   "q": "Mr. Diaz's class lamp is unplugged, so it will not turn on. Why?",
+   "options": [
+    "Electrical energy cannot reach it",
+    "The lamp is too heavy",
+    "The room is too quiet"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Electrical energy cannot reach it\". Electrical energy must travel through the cord to power the lamp."
+  }
+ ],
+ "lightform": [
+  {
+   "type": "know",
+   "q": "Light energy is the energy we can ____.",
+   "options": [
+    "see",
+    "hear",
+    "smell"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"see\". Light is the energy we can see, and it lets us see."
+  },
+  {
+   "type": "know",
+   "q": "How does light travel?",
+   "options": [
+    "Only in circles",
+    "In straight lines in all directions",
+    "Only straight down"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"In straight lines in all directions\". Light travels in straight lines in all directions."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Light cannot pass through clear glass",
+    "Light is a sound we hear",
+    "Light comes through windows and brightens a room"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light comes through windows and brightens a room\". Light comes through windows and brightens a room."
+  },
+  {
+   "type": "know",
+   "q": "What happens when light goes from air into water?",
+   "options": [
+    "It stops completely",
+    "It slows down and bends",
+    "It turns into sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It slows down and bends\". Light slows down entering water and bends (refracts)."
+  },
+  {
+   "type": "know",
+   "q": "Which form of energy matches \"the energy that lets us see\"?",
+   "options": [
+    "Sound energy",
+    "Light energy",
+    "Chemical energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light energy\". Light energy is what lets us see."
+  },
+  {
+   "type": "example",
+   "q": "Which gives off light energy?",
+   "options": [
+    "A wooden block",
+    "A rubber ball",
+    "A flashlight that is on"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A flashlight that is on\". A flashlight that is on gives off light."
+  },
+  {
+   "type": "example",
+   "q": "Which does NOT give off its own light?",
+   "options": [
+    "A book",
+    "A candle flame",
+    "A lamp that is on"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A book\". A book makes no light of its own."
+  },
+  {
+   "type": "example",
+   "q": "The sun, a candle, and lightning all give off light. Which belongs with them?",
+   "options": [
+    "A pillow",
+    "A spoon",
+    "A glowing light bulb"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A glowing light bulb\". A glowing bulb gives off light energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of light energy brightening a room?",
+   "options": [
+    "Sunshine coming through a window",
+    "A radio playing music",
+    "A fan blowing air"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Sunshine coming through a window\". Light comes through windows and brightens a room."
+  },
+  {
+   "type": "example",
+   "q": "Which pair are both sources of light?",
+   "options": [
+    "The sun and a lit flashlight",
+    "A rock and a shoe",
+    "A spoon and a cup"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The sun and a lit flashlight\". The sun and a lit flashlight both give off light."
+  },
+  {
+   "type": "apply",
+   "q": "You are in a room with no lights on at night. Why can't you see your toys?",
+   "options": [
+    "No light reaches your eyes from them",
+    "The toys turned invisible",
+    "Your ears are covered"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"No light reaches your eyes from them\". We need light to see things."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a red apple look red?",
+   "options": [
+    "It makes its own red light",
+    "It absorbs red light and reflects the others",
+    "It reflects red light and absorbs the other colors"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It reflects red light and absorbs the other colors\". We see a color because the object reflects that color."
+  },
+  {
+   "type": "apply",
+   "q": "Lily puts a pencil in a glass of water. The pencil looks bent. Why?",
+   "options": [
+    "The pencil really broke",
+    "Light slows down and bends in the water",
+    "The water turned into a mirror"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light slows down and bends in the water\". Light slows down entering water and bends."
+  },
+  {
+   "type": "apply",
+   "q": "Your flashlight beam cannot light up the hallway around the corner. Why?",
+   "options": [
+    "Light is too heavy",
+    "Light travels in straight lines",
+    "Light only travels upward"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light travels in straight lines\". Light travels in straight lines, so it cannot turn a corner."
+  },
+  {
+   "type": "apply",
+   "q": "You turn on a flashlight. What energy goes in and what comes out?",
+   "options": [
+    "Sound in; chemical out",
+    "Light in; sound out",
+    "Chemical from the battery in; light out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Chemical from the battery in; light out\". The battery's chemical energy becomes light (and some heat)."
+  }
+ ],
+ "heatform": [
+  {
+   "type": "know",
+   "q": "Thermal energy is energy related to ____.",
+   "options": [
+    "sound",
+    "heat",
+    "light"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"heat\". Thermal energy is energy related to heat."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: \"Heat is the transfer of energy from a ____ object to a colder one.\"",
+   "options": [
+    "warmer",
+    "colder",
+    "quieter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"warmer\". Heat moves from a warmer object to a colder one."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Heat moves from cold things to warm things",
+    "Heat energy can cook food",
+    "Thermal energy is a kind of sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Heat energy can cook food\". Heat energy cooks food in the kitchen."
+  },
+  {
+   "type": "know",
+   "q": "What is another name for heat energy?",
+   "options": [
+    "Thermal energy",
+    "Electrical energy",
+    "Sound energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Thermal energy\". Thermal energy is energy related to heat."
+  },
+  {
+   "type": "know",
+   "q": "Which material is a good heat conductor?",
+   "options": [
+    "Metal",
+    "Wood",
+    "Plastic"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Metal\". Metals are good heat conductors; wood and plastic are not."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of heat energy cooking food?",
+   "options": [
+    "A fan blowing air",
+    "A radio playing a song",
+    "A stove frying an egg"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A stove frying an egg\". The stove's heat energy cooks the egg."
+  },
+  {
+   "type": "example",
+   "q": "Which pair are both good heat conductors?",
+   "options": [
+    "A wooden spoon and a plastic cup",
+    "An iron pan and a copper pot",
+    "A plastic plate and a wooden board"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"An iron pan and a copper pot\". Iron and copper are metals, and metals conduct heat well."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a source of heat?",
+   "options": [
+    "An ice cube",
+    "A campfire",
+    "The sun"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"An ice cube\". An ice cube is cold and does not give off heat."
+  },
+  {
+   "type": "example",
+   "q": "An oven, a toaster, and a campfire all give off heat. Which belongs with them?",
+   "options": [
+    "An ice pack",
+    "A glass of cold milk",
+    "A space heater"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A space heater\". A space heater gives off heat."
+  },
+  {
+   "type": "example",
+   "q": "Which shows heat moving from warmer to cooler?",
+   "options": [
+    "A cold spoon making soup hotter",
+    "An ice cube making a drink warmer",
+    "Hot cocoa warming your cold hands"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Hot cocoa warming your cold hands\". Heat flows from the warm cocoa to your cooler hands."
+  },
+  {
+   "type": "apply",
+   "q": "You leave a metal spoon in hot soup. Soon the handle is hot too. Why?",
+   "options": [
+    "Metal is a bad heat conductor",
+    "The spoon makes its own heat",
+    "Metal is a good heat conductor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Metal is a good heat conductor\". Metals are good heat conductors."
+  },
+  {
+   "type": "apply",
+   "q": "You hold an ice cube in your hand and it melts. Which way is heat moving?",
+   "options": [
+    "From the ice to your hand",
+    "From your hand to the ice",
+    "Heat is not moving"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"From your hand to the ice\". Heat flows from warmer to cooler."
+  },
+  {
+   "type": "apply",
+   "q": "Which frying pan handle keeps your hand from getting burned?",
+   "options": [
+    "A wooden handle",
+    "An iron handle",
+    "A copper handle"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A wooden handle\". Wood is a bad heat conductor, so it stays cooler."
+  },
+  {
+   "type": "apply",
+   "q": "A glass of cold lemonade sits outside on a hot day and gets warmer. Why?",
+   "options": [
+    "Cold moves from the drink into the air",
+    "Heat moves from the warm air into the drink",
+    "The drink makes its own heat"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Heat moves from the warm air into the drink\". Heat flows from the warmer air to the cooler drink."
+  },
+  {
+   "type": "apply",
+   "q": "You turn on a hair dryer. Electrical energy goes in. What comes out to dry your hair?",
+   "options": [
+    "Chemical energy",
+    "Light only",
+    "Heat and moving air"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Heat and moving air\". A hair dryer changes electrical energy into heat and motion."
+  }
+ ],
+ "soundform": [
+  {
+   "type": "know",
+   "q": "Sound energy is the form of energy we can ____.",
+   "options": [
+    "see",
+    "hear",
+    "taste"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"hear\". Sound is the form of energy we can hear."
+  },
+  {
+   "type": "know",
+   "q": "Sound is made by ____.",
+   "options": [
+    "vibrations",
+    "shadows",
+    "colors"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"vibrations\". Sound is made by vibrations."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Sound travels fastest through gases",
+    "Sound can travel through empty space",
+    "Sound travels fastest through solids"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sound travels fastest through solids\". Sound is fastest in solids, slower in liquids, slowest in gases."
+  },
+  {
+   "type": "know",
+   "q": "Where can sound NOT travel?",
+   "options": [
+    "In outer space, where there is no air",
+    "Through water",
+    "Through a wooden door"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"In outer space, where there is no air\". Sound needs matter to travel through."
+  },
+  {
+   "type": "know",
+   "q": "Which form of energy matches \"made by vibrations and heard with our ears\"?",
+   "options": [
+    "Light energy",
+    "Sound energy",
+    "Electrical energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sound energy\". Sound energy is made by vibrations and we hear it."
+  },
+  {
+   "type": "example",
+   "q": "Which makes sound energy?",
+   "options": [
+    "A rock sitting quietly",
+    "A turned-off TV",
+    "A guitar string being plucked"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A guitar string being plucked\". A plucked string vibrates and makes sound."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a source of sound?",
+   "options": [
+    "A closed book on a shelf",
+    "A barking dog",
+    "A ringing bell"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A closed book on a shelf\". A closed book is not vibrating, so it makes no sound."
+  },
+  {
+   "type": "example",
+   "q": "A drum, a trumpet, and a piano all make sound energy. Which belongs with them?",
+   "options": [
+    "A violin",
+    "A pillow",
+    "A sponge"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A violin\". A violin is a musical instrument, and instruments make sound."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of vibrations making sound?",
+   "options": [
+    "A shadow on the wall",
+    "A twanged rubber band humming",
+    "Sunlight on the floor"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A twanged rubber band humming\". The rubber band vibrates and makes sound."
+  },
+  {
+   "type": "example",
+   "q": "Sound travels fastest through which of these?",
+   "options": [
+    "Air",
+    "A metal rail",
+    "Water"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A metal rail\". Sound travels fastest through solids like metal."
+  },
+  {
+   "type": "apply",
+   "q": "You press your ear to your desk while a friend taps the other end. The taps sound clear. Why?",
+   "options": [
+    "Sound cannot travel through solids",
+    "The desk makes light",
+    "Sound travels well through solids"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sound travels well through solids\". Sound travels fastest through solids."
+  },
+  {
+   "type": "apply",
+   "q": "Astronauts in space use radios to talk. Why can't they just shout?",
+   "options": [
+    "Space is too bright",
+    "Their helmets make light",
+    "There is no air for sound to travel through"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"There is no air for sound to travel through\". Sound cannot travel without matter to move through."
+  },
+  {
+   "type": "apply",
+   "q": "You strum an acoustic guitar. What energy goes in and what comes out?",
+   "options": [
+    "Electrical in; light out",
+    "Light in; chemical out",
+    "Motion energy in; sound energy out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Motion energy in; sound energy out\". Your moving fingers make the strings vibrate and make sound."
+  },
+  {
+   "type": "apply",
+   "q": "At the swimming pool, a friend clicks two rocks together underwater. You can hear it. Why?",
+   "options": [
+    "Sound only travels through air",
+    "Sound can travel through water",
+    "Water makes sound vanish"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sound can travel through water\". Sound travels through liquids like water."
+  },
+  {
+   "type": "apply",
+   "q": "In class, you touch your throat while you hum and feel a buzz. What is the buzz?",
+   "options": [
+    "Vibrations that make sound",
+    "Light energy",
+    "Electrical energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Vibrations that make sound\". Sound is made by vibrations."
+  }
+ ]
+}

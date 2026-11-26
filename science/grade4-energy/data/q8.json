@@ -1,0 +1,1004 @@
+{
+ "engineer": [
+  {
+   "type": "know",
+   "q": "What is an engineer?",
+   "options": [
+    "A person who uses science and designs to solve problems",
+    "A person who only paints for fun",
+    "A machine that makes electricity"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A person who uses science and designs to solve problems\". Engineers use science and designs to solve problems."
+  },
+  {
+   "type": "know",
+   "q": "Which word names a person who uses science and designs to solve problems?",
+   "options": [
+    "Function",
+    "Engineer",
+    "Criteria"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Engineer\". That is the meaning of engineer."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about engineers is true?",
+   "options": [
+    "Engineers use science to solve problems",
+    "Engineers never make plans",
+    "Engineers only work with animals"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Engineers use science to solve problems\". Engineers use science and designs to solve problems."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An engineer is a person who uses science and ____ to solve problems.",
+   "options": [
+    "designs",
+    "guesses",
+    "magic"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"designs\". Engineers plan designs and use science to solve problems."
+  },
+  {
+   "type": "know",
+   "q": "What is the main goal of an engineer's work?",
+   "options": [
+    "To solve problems",
+    "To make problems harder",
+    "To avoid using science"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To solve problems\". Engineers work to solve problems."
+  },
+  {
+   "type": "example",
+   "q": "Which kid is acting like an engineer?",
+   "options": [
+    "Sam takes a nap after lunch",
+    "Leo eats an apple at recess",
+    "Maya plans and builds a stronger toy bridge"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Maya plans and builds a stronger toy bridge\". Maya is designing something to solve a problem."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of engineering work?",
+   "options": [
+    "Designing a better bottle lid",
+    "Testing a new bike brake",
+    "Watching cartoons on the couch"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Watching cartoons on the couch\". Watching cartoons does not solve a problem with a design."
+  },
+  {
+   "type": "example",
+   "q": "Which job is an example of an engineer?",
+   "options": [
+    "A person who reads bedtime stories",
+    "A person who designs safer car seats",
+    "A person who sings in a choir"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A person who designs safer car seats\". Designing safer car seats uses science to solve a problem."
+  },
+  {
+   "type": "example",
+   "q": "Which group shows only engineer actions?",
+   "options": [
+    "Sleep, eat, play, rest",
+    "Plan, build, test, improve",
+    "Guess, give up, forget, quit"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Plan, build, test, improve\". Engineers plan, build, test, and improve designs."
+  },
+  {
+   "type": "example",
+   "q": "Which thing could an engineer design?",
+   "options": [
+    "A rainbow in the sky",
+    "A sunset",
+    "A brighter flashlight"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A brighter flashlight\". A flashlight is made by people; rainbows and sunsets happen in nature."
+  },
+  {
+   "type": "apply",
+   "q": "The class fish tank keeps getting too cold. Jada uses what she knows about heat to design a cover that keeps warmth in. Jada is acting like a(n)...",
+   "options": [
+    "Audience member",
+    "Referee",
+    "Engineer"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Engineer\". She used science and a design to solve a problem."
+  },
+  {
+   "type": "apply",
+   "q": "The school playground floods after every rain. What would an engineer most likely do?",
+   "options": [
+    "Design a way to drain the water",
+    "Wish the rain away",
+    "Ignore the puddles"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Design a way to drain the water\". Engineers use science and designs to fix problems."
+  },
+  {
+   "type": "apply",
+   "q": "Ben's paper airplane keeps nose-diving. What would an engineer tell him to do?",
+   "options": [
+    "Give up and never try again",
+    "Change the design and test it again",
+    "Only paint it a new color"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Change the design and test it again\". Engineers improve their designs and test again."
+  },
+  {
+   "type": "apply",
+   "q": "A town needs a bridge across a river. Why would the town hire an engineer?",
+   "options": [
+    "Engineers control the weather",
+    "Engineers use science to design solutions",
+    "Engineers make rivers disappear"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Engineers use science to design solutions\". Engineers use science and designs to solve problems like crossing a river."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Priya built a pizza-box oven that uses sunlight to melt s'mores. What did Priya do?",
+   "options": [
+    "She made a random mess",
+    "She did nothing with science",
+    "She solved a problem like an engineer"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"She solved a problem like an engineer\". She used science and a design to solve a problem."
+  }
+ ],
+ "function": [
+  {
+   "type": "know",
+   "q": "What does the word function mean?",
+   "options": [
+    "What color something is",
+    "How old something is",
+    "What something does; its job"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"What something does; its job\". Function is what something does, its purpose or job."
+  },
+  {
+   "type": "know",
+   "q": "Which word means what something does, or its job?",
+   "options": [
+    "Function",
+    "System",
+    "Engineer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Function\". That is the meaning of function."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Function means the size of a thing",
+    "Function means the name of a thing",
+    "The function of a thing is its job"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The function of a thing is its job\". Function is the purpose or job of something."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Function is what something does; its purpose or ____.",
+   "options": [
+    "color",
+    "job",
+    "name"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"job\". Function is what something does, its purpose or job."
+  },
+  {
+   "type": "know",
+   "q": "When you describe an object's function, you are telling...",
+   "options": [
+    "What it is used for",
+    "How much it weighs",
+    "Where it was bought"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"What it is used for\". Function is the purpose or job of a thing."
+  },
+  {
+   "type": "example",
+   "q": "Which sentence tells the function of a flashlight?",
+   "options": [
+    "It makes light so you can see in the dark",
+    "It is shiny and silver",
+    "It was a birthday gift"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It makes light so you can see in the dark\". Making light is the flashlight's job."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a function of a pencil?",
+   "options": [
+    "Writing words",
+    "Being yellow",
+    "Drawing pictures"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Being yellow\". Color is not a job; writing and drawing are what a pencil does."
+  },
+  {
+   "type": "example",
+   "q": "What is the function of a refrigerator?",
+   "options": [
+    "To make food hot",
+    "To keep food cold",
+    "To play music"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To keep food cold\". A refrigerator's job is keeping food cold."
+  },
+  {
+   "type": "example",
+   "q": "What is the function of the brakes on a bike?",
+   "options": [
+    "To make the bike go faster",
+    "To hold a water bottle",
+    "To slow down and stop the bike"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"To slow down and stop the bike\". Brakes have the job of slowing and stopping the bike."
+  },
+  {
+   "type": "example",
+   "q": "Which item has the function of joining papers together?",
+   "options": [
+    "A ruler",
+    "An eraser",
+    "A stapler"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A stapler\". A stapler's job is to hold papers together."
+  },
+  {
+   "type": "apply",
+   "q": "Mia's umbrella has a big hole, and she still gets wet in the rain. Which is true?",
+   "options": [
+    "Its function is to get you wet",
+    "It is not doing its function well",
+    "Umbrellas have no function"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It is not doing its function well\". An umbrella's job is to keep you dry, and a hole stops it from doing that."
+  },
+  {
+   "type": "apply",
+   "q": "You need to cut paper for a craft. Which tool has the function you need?",
+   "options": [
+    "Glue stick",
+    "Crayon",
+    "Scissors"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Scissors\". Cutting is the job of scissors."
+  },
+  {
+   "type": "apply",
+   "q": "Mr. Lee asks the class, \"What is the function of the speaker on a radio?\" What is the best answer?",
+   "options": [
+    "It holds the batteries",
+    "It makes the sound you hear",
+    "It makes the radio heavier"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It makes the sound you hear\". A speaker's job is to make sound."
+  },
+  {
+   "type": "apply",
+   "q": "Tom is designing a lunchbox. What should its main function be?",
+   "options": [
+    "To hold and carry food",
+    "To be as heavy as possible",
+    "To keep food from fitting inside"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To hold and carry food\". A lunchbox's job is to hold and carry food."
+  },
+  {
+   "type": "apply",
+   "q": "For the science fair, Ava labels her model car: \"Wheels - roll\" and \"Lights - shine.\" What is she telling about each part?",
+   "options": [
+    "Its function",
+    "Its color",
+    "Its price"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Its function\". She is telling what each part does, which is its function."
+  }
+ ],
+ "synthesize": [
+  {
+   "type": "know",
+   "q": "What does synthesize mean?",
+   "options": [
+    "To throw information away",
+    "To put information together to understand something",
+    "To color a picture"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To put information together to understand something\". Synthesize means to put information together to understand."
+  },
+  {
+   "type": "know",
+   "q": "Which word means to put information together to understand something?",
+   "options": [
+    "Synthesize",
+    "Function",
+    "Engineer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Synthesize\". That is the meaning of synthesize."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Synthesizing means using only one fact",
+    "Synthesizing means forgetting what you read",
+    "Synthesizing combines facts to help you understand"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Synthesizing combines facts to help you understand\". When you synthesize, you put information together to understand."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: To synthesize is to put ____ together to understand something.",
+   "options": [
+    "information",
+    "toys",
+    "furniture"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"information\". Synthesize means putting information together to understand."
+  },
+  {
+   "type": "know",
+   "q": "Why do scientists synthesize information?",
+   "options": [
+    "To make it more confusing",
+    "To understand something better",
+    "To avoid learning"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To understand something better\". Putting information together helps people understand."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of synthesizing?",
+   "options": [
+    "Using a book and a video to explain how plants grow",
+    "Reading one word and stopping",
+    "Closing your notebook without reading"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Using a book and a video to explain how plants grow\". Putting information from two sources together is synthesizing."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT synthesizing?",
+   "options": [
+    "Combining notes from two articles",
+    "Ignoring all the facts you found",
+    "Joining what you saw and read to explain it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Ignoring all the facts you found\". Ignoring facts does not put information together."
+  },
+  {
+   "type": "example",
+   "q": "Which student is synthesizing?",
+   "options": [
+    "Zoe copies one sentence without reading it",
+    "Max skips the reading",
+    "Kai uses his test results and a chart to explain why ice melts"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Kai uses his test results and a chart to explain why ice melts\". Kai put information together to understand."
+  },
+  {
+   "type": "example",
+   "q": "Which action belongs on a list of synthesizing actions?",
+   "options": [
+    "Erasing all your notes",
+    "Guessing without looking",
+    "Combining clues to solve a mystery"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Combining clues to solve a mystery\". Combining clues puts information together to understand."
+  },
+  {
+   "type": "example",
+   "q": "Gather facts, compare them, combine them... which step belongs next when you synthesize?",
+   "options": [
+    "Explain what it all means",
+    "Forget the facts",
+    "Hide the facts"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Explain what it all means\". Synthesizing ends with understanding what the information shows."
+  },
+  {
+   "type": "apply",
+   "q": "For a report on sound, Liam reads a book, watches a video, and tests a guitar. Then he writes what he learned from all three. What did Liam do?",
+   "options": [
+    "He forgot information",
+    "He ignored information",
+    "He synthesized information"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"He synthesized information\". He put information from three places together to understand."
+  },
+  {
+   "type": "apply",
+   "q": "Your teacher gives you a map and a rain chart and asks why a town flooded. What should you do?",
+   "options": [
+    "Look only at the map's colors",
+    "Put facts from both together to explain it",
+    "Pick an answer without looking"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Put facts from both together to explain it\". Combining information from both helps you understand."
+  },
+  {
+   "type": "apply",
+   "q": "Ella knows metal is a good heat conductor and heat flows from warmer to cooler. She uses both facts to explain why a metal spoon in hot soup gets hot. What is Ella doing?",
+   "options": [
+    "Ignoring",
+    "Guessing",
+    "Synthesizing"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Synthesizing\". She put two facts together to understand something."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, a judge asks Noah to explain his results using his notes and his chart together. What does the judge want Noah to do?",
+   "options": [
+    "Synthesize the information",
+    "Throw out the chart",
+    "Read only the title"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Synthesize the information\". Using both together to explain is synthesizing."
+  },
+  {
+   "type": "apply",
+   "q": "Sofia read that light travels in straight lines. She also saw her shadow appear behind her on a sunny day. Putting these together, what can she understand?",
+   "options": [
+    "Shadows are made of dark paint",
+    "Her body blocks the light, making a shadow",
+    "Shadows make their own light"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Her body blocks the light, making a shadow\". Light travels in straight lines, so her body blocks it and leaves a shadow."
+  }
+ ],
+ "system": [
+  {
+   "type": "know",
+   "q": "What is a system?",
+   "options": [
+    "One part that works alone",
+    "A pile of things that do nothing",
+    "A group of parts that work together"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A group of parts that work together\". A system is a group of parts that work together."
+  },
+  {
+   "type": "know",
+   "q": "Which word means a group of parts that work together?",
+   "options": [
+    "System",
+    "Criteria",
+    "Synthesize"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"System\". That is the meaning of system."
+  },
+  {
+   "type": "know",
+   "q": "Which statement about systems is true?",
+   "options": [
+    "A system has only one part",
+    "Parts of a system never affect each other",
+    "If one part breaks, the system may not work"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"If one part breaks, the system may not work\". System parts work together, so they depend on each other."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A system is a group of ____ that work together.",
+   "options": [
+    "colors",
+    "parts",
+    "wishes"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"parts\". A system is a group of parts that work together."
+  },
+  {
+   "type": "know",
+   "q": "What do the parts of a system do?",
+   "options": [
+    "Work together",
+    "Work against each other",
+    "Never connect"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Work together\". In a system, the parts work together."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a system?",
+   "options": [
+    "A single pebble",
+    "One loose button",
+    "A bicycle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A bicycle\". A bike has pedals, chain, and wheels that work together."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a system?",
+   "options": [
+    "A battery, wires, and a bulb lighting up",
+    "A single grain of sand",
+    "A car"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A single grain of sand\". One grain of sand is not a group of parts working together."
+  },
+  {
+   "type": "example",
+   "q": "Which part belongs in a flashlight system?",
+   "options": [
+    "A banana",
+    "A sock",
+    "Batteries"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Batteries\". Batteries work with the bulb and switch in a flashlight."
+  },
+  {
+   "type": "example",
+   "q": "Which list shows parts from the same system?",
+   "options": [
+    "Battery, wire, switch, bulb",
+    "Pencil, cloud, shoe, cat",
+    "Tree, spoon, sock, moon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Battery, wire, switch, bulb\". These parts work together in a circuit."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a system in your body?",
+   "options": [
+    "A single hair on the floor",
+    "One drop of rain",
+    "Heart and blood vessels moving blood"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Heart and blood vessels moving blood\". The heart and blood vessels work together."
+  },
+  {
+   "type": "apply",
+   "q": "Lily's flashlight won't turn on. The bulb is fine, but the battery is dead. What does this show?",
+   "options": [
+    "Batteries are not part of a flashlight",
+    "Parts of a system depend on each other",
+    "The bulb works alone"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Parts of a system depend on each other\". In a system, if one part fails the whole thing may stop working."
+  },
+  {
+   "type": "apply",
+   "q": "Your bike chain falls off. What happens when you pedal?",
+   "options": [
+    "The bike goes faster",
+    "The back wheel won't turn, so the bike won't go",
+    "The bike floats into the air"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The back wheel won't turn, so the bike won't go\". The chain is a part that works with the pedals and wheel."
+  },
+  {
+   "type": "apply",
+   "q": "In class, students connect a battery, wires, and a bulb, and the bulb lights up. What did they build?",
+   "options": [
+    "A shadow",
+    "A system",
+    "A rainbow"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A system\". The parts work together, so it is a system."
+  },
+  {
+   "type": "apply",
+   "q": "Omar wants to show a system at the science fair. What should he bring?",
+   "options": [
+    "A model windmill with blades, a shaft, and a generator",
+    "One marble",
+    "A blank sheet of paper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A model windmill with blades, a shaft, and a generator\". The windmill's parts work together, so it is a system."
+  },
+  {
+   "type": "apply",
+   "q": "A school's heating system has a furnace, pipes, and vents. One pipe gets blocked. What will most likely happen?",
+   "options": [
+    "Some rooms may not get warm",
+    "Every room will get hotter",
+    "The furnace will turn into ice"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Some rooms may not get warm\". When one part of a system stops working, the system may not work well."
+  }
+ ],
+ "criteria": [
+  {
+   "type": "know",
+   "q": "What are criteria?",
+   "options": [
+    "The colors used in a design",
+    "Random guesses about a design",
+    "Requirements used to judge how well a design solves a problem"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Requirements used to judge how well a design solves a problem\". Criteria are requirements used to judge a design."
+  },
+  {
+   "type": "know",
+   "q": "Which word means requirements used to judge how well a design solves a problem?",
+   "options": [
+    "Function",
+    "System",
+    "Criteria"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Criteria\". That is the meaning of criteria."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Criteria help you judge if a design works well",
+    "Criteria are never used in engineering",
+    "Criteria are the parts of a machine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Criteria help you judge if a design works well\". Criteria are requirements used to judge a design."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Criteria are requirements used to ____ how well a design solves a problem.",
+   "options": [
+    "hide",
+    "judge",
+    "forget"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"judge\". Criteria are used to judge how well a design solves a problem."
+  },
+  {
+   "type": "know",
+   "q": "Which word is closest in meaning to criteria?",
+   "options": [
+    "Requirements",
+    "Mistakes",
+    "Decorations"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Requirements\". Criteria are requirements used to judge a design."
+  },
+  {
+   "type": "example",
+   "q": "Which is a good criterion for an umbrella?",
+   "options": [
+    "It must leak water",
+    "It must keep you dry",
+    "It must never open"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It must keep you dry\". Keeping you dry is a requirement for a good umbrella."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a good criterion for a paper bridge?",
+   "options": [
+    "It must hold 10 pennies",
+    "It must fall down right away",
+    "It must reach across two desks"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It must fall down right away\". A requirement should help judge if the bridge works, not make it fail."
+  },
+  {
+   "type": "example",
+   "q": "A class designs foil boats. Which is an example of a criterion?",
+   "options": [
+    "It must float while holding 20 paper clips",
+    "It must sink right away",
+    "It must be eaten for lunch"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It must float while holding 20 paper clips\". Floating with a load is a requirement to judge the boat."
+  },
+  {
+   "type": "example",
+   "q": "Which list has only good criteria for a lunchbox?",
+   "options": [
+    "Melts in the sun, too heavy to lift",
+    "Has holes, falls apart",
+    "Keeps food cold, easy to carry"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Keeps food cold, easy to carry\". These requirements help judge if the lunchbox does its job."
+  },
+  {
+   "type": "example",
+   "q": "Which criterion belongs with an egg-drop project?",
+   "options": [
+    "The egg must not crack",
+    "The egg must break",
+    "The egg must be thrown away first"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The egg must not crack\". Keeping the egg safe is the requirement for the design."
+  },
+  {
+   "type": "apply",
+   "q": "Your team's tower must stand at least 30 cm tall and hold a tennis ball. What are these rules called?",
+   "options": [
+    "Energy sources",
+    "Criteria",
+    "Shadows"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Criteria\". They are requirements used to judge the tower design."
+  },
+  {
+   "type": "apply",
+   "q": "Ana's solar oven had to get warm enough to melt chocolate in 30 minutes. The chocolate did not melt. What can she conclude?",
+   "options": [
+    "Her design did not meet the criteria",
+    "Her design met every criterion",
+    "Criteria do not matter"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Her design did not meet the criteria\". The oven did not meet the requirement she set."
+  },
+  {
+   "type": "apply",
+   "q": "Before building a birdhouse, why should Jake write down criteria?",
+   "options": [
+    "So he can skip testing",
+    "So it turns out random",
+    "So he can judge if it works"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"So he can judge if it works\". Criteria are used to judge how well a design solves a problem."
+  },
+  {
+   "type": "apply",
+   "q": "The criterion is to fly the farthest. Plane A flew 5 meters and Plane B flew 8 meters. Which plane met the criterion best?",
+   "options": [
+    "Plane A",
+    "Neither plane flew",
+    "Plane B"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Plane B\". Plane B flew farther, so it did best on the requirement."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, judges use a checklist: \"Is it safe? Does it solve the problem?\" What is this checklist?",
+   "options": [
+    "A list of animals",
+    "A list of criteria",
+    "A list of songs"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A list of criteria\". The checklist has requirements used to judge the designs."
+  }
+ ],
+ "design": [
+  {
+   "type": "know",
+   "q": "What does design mean?",
+   "options": [
+    "To break something on purpose",
+    "To plan or create something to solve a problem",
+    "To ignore a problem"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To plan or create something to solve a problem\". To design is to plan or create something to solve a problem."
+  },
+  {
+   "type": "know",
+   "q": "Which word means to plan or create something to solve a problem?",
+   "options": [
+    "Synthesize",
+    "Function",
+    "Design"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Design\". That is the meaning of design."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Designs never need planning",
+    "Designing means giving up",
+    "A design is made to solve a problem"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A design is made to solve a problem\". We design to solve a problem."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: To design is to plan or ____ something to solve a problem.",
+   "options": [
+    "create",
+    "destroy",
+    "forget"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"create\". To design is to plan or create something to solve a problem."
+  },
+  {
+   "type": "know",
+   "q": "Which two actions are part of designing?",
+   "options": [
+    "Sleeping and snoring",
+    "Losing and forgetting",
+    "Planning and creating"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Planning and creating\". Designing means planning or creating to solve a problem."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of designing?",
+   "options": [
+    "Throwing a ball at a wall",
+    "Drawing a plan for a better bird feeder",
+    "Watching rain fall"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Drawing a plan for a better bird feeder\". Planning a better bird feeder solves a problem."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT designing?",
+   "options": [
+    "Sketching a new backpack",
+    "Taking a nap",
+    "Planning a ramp for a toy car"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Taking a nap\". A nap does not plan or create anything to solve a problem."
+  },
+  {
+   "type": "example",
+   "q": "Which student is designing?",
+   "options": [
+    "Eli drops his pencils on the floor",
+    "Rosa builds a holder to stop pencils rolling off her desk",
+    "Nia counts the clouds"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Rosa builds a holder to stop pencils rolling off her desk\". Rosa planned and created something to solve a problem."
+  },
+  {
+   "type": "example",
+   "q": "Which thing was made from a design?",
+   "options": [
+    "A mountain",
+    "A cloud",
+    "A playground slide"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A playground slide\". People planned and built the slide; mountains and clouds form in nature."
+  },
+  {
+   "type": "example",
+   "q": "Plan, sketch, build... which step also belongs in designing?",
+   "options": [
+    "Test",
+    "Quit",
+    "Forget"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Test\". Testing shows if the design solves the problem."
+  },
+  {
+   "type": "apply",
+   "q": "Your pet's water bowl keeps tipping over. What would you do to design a solution?",
+   "options": [
+    "Plan and build a wider, heavier bowl",
+    "Let the water spill forever",
+    "Hide the bowl"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Plan and build a wider, heavier bowl\". Designing means planning and creating something to solve the problem."
+  },
+  {
+   "type": "apply",
+   "q": "Zara's first rubber band car only rolls a little way. What should she do next?",
+   "options": [
+    "Decide cars can't roll",
+    "Throw away all her notes",
+    "Improve her design and try again"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Improve her design and try again\". Designers change their plans to solve the problem better."
+  },
+  {
+   "type": "apply",
+   "q": "The class plants dry out over the weekend. Which idea is a design to solve this?",
+   "options": [
+    "A bottle that slowly drips water into the soil",
+    "Hoping someone remembers",
+    "Moving the plants into a dark closet"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A bottle that slowly drips water into the soil\". The bottle is a planned creation that solves the problem."
+  },
+  {
+   "type": "apply",
+   "q": "Why would an engineer draw a plan before building?",
+   "options": [
+    "To plan the design first",
+    "To make building harder",
+    "To avoid solving the problem"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To plan the design first\". Designing starts with planning how to solve the problem."
+  },
+  {
+   "type": "apply",
+   "q": "At the science fair, Jamal shows a cup holder he made for his bike. What did Jamal do?",
+   "options": [
+    "He found it growing on a tree",
+    "He designed something to solve a problem",
+    "He ignored a problem"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"He designed something to solve a problem\". He planned and created something to solve a problem."
+  }
+ ]
+}

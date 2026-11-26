@@ -1,0 +1,1338 @@
+{
+ "mechanical": [
+  {
+   "type": "know",
+   "q": "What is mechanical energy?",
+   "options": [
+    "Energy that flows through wires",
+    "Energy of an object's motion or position",
+    "Energy stored inside food"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Energy of an object's motion or position\". Mechanical energy is the energy of an object's motion or position."
+  },
+  {
+   "type": "know",
+   "q": "Mechanical energy is the energy of an object's motion or its ____.",
+   "options": [
+    "smell",
+    "color",
+    "position"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"position\". Mechanical energy comes from motion or position."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Mechanical energy is the same as light energy",
+    "Mechanical energy can be kinetic or potential",
+    "Mechanical energy is only found in machines"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Mechanical energy can be kinetic or potential\". Motion energy (kinetic) and position energy (potential) are both mechanical."
+  },
+  {
+   "type": "know",
+   "q": "Which term means 'the energy of an object's motion or position'?",
+   "options": [
+    "Electrical energy",
+    "Mechanical energy",
+    "Chemical energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Mechanical energy\". That is the meaning of mechanical energy."
+  },
+  {
+   "type": "know",
+   "q": "Mechanical energy is made of which two kinds of energy?",
+   "options": [
+    "Chemical and electrical",
+    "Light and sound",
+    "Kinetic and potential"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Kinetic and potential\". Kinetic is motion and potential is position."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of mechanical energy?",
+   "options": [
+    "The warmth of a cup of cocoa",
+    "The glow of a lamp",
+    "A swinging playground swing"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A swinging playground swing\". A moving swing has energy of motion."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of mechanical energy?",
+   "options": [
+    "A ball flying through the air",
+    "Sunlight shining through a window",
+    "A kid pedaling a bike"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sunlight shining through a window\". Sunlight is light energy, not motion or position of an object."
+  },
+  {
+   "type": "example",
+   "q": "Which shows mechanical energy because of where it is (its position)?",
+   "options": [
+    "A rock sitting at the top of a hill",
+    "The heat from a campfire",
+    "The light from a flashlight"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A rock sitting at the top of a hill\". A raised rock has stored energy from its position."
+  },
+  {
+   "type": "example",
+   "q": "Which group shows only examples of mechanical energy?",
+   "options": [
+    "Battery, gasoline, banana",
+    "Spinning top, falling leaf, rolling cart",
+    "Lamp light, toaster heat, sunlight"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Spinning top, falling leaf, rolling cart\". All of those things are moving."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with 'mechanical energy'.",
+   "options": [
+    "A kite flying in the wind",
+    "A glowing light bulb",
+    "A charged battery in a drawer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A kite flying in the wind\". A flying kite is moving, so it has energy of motion."
+  },
+  {
+   "type": "apply",
+   "q": "Mia puts her backpack on a high shelf, where it stays. What energy does it have because it is up high?",
+   "options": [
+    "Potential energy",
+    "Sound energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Potential energy\". A raised object has stored (potential) energy because of gravity."
+  },
+  {
+   "type": "apply",
+   "q": "Leo kicks a soccer ball and it rolls across the field. Which part of mechanical energy does the rolling ball show?",
+   "options": [
+    "Chemical, because it is stored in food",
+    "Potential, because it is stretched",
+    "Kinetic, because it is moving"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Kinetic, because it is moving\". Moving objects have kinetic energy."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Ava lets a toy car roll down a ramp. Which energy is she showing?",
+   "options": [
+    "Mechanical energy",
+    "Electrical energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Mechanical energy\". The car's height and motion are mechanical energy."
+  },
+  {
+   "type": "apply",
+   "q": "A roller coaster car sits at the top of a big hill, then zooms down. What happens to its energy?",
+   "options": [
+    "Position energy changes to motion energy",
+    "Motion energy changes to light energy",
+    "All of its energy disappears"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Position energy changes to motion energy\". Potential energy from height changes into kinetic energy."
+  },
+  {
+   "type": "apply",
+   "q": "Your class wants a quick demo of mechanical energy. What would you use?",
+   "options": [
+    "A flashlight shining on a wall",
+    "A cup of hot cocoa",
+    "A ball bouncing on the floor"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A ball bouncing on the floor\". A bouncing ball has motion and position energy."
+  }
+ ],
+ "potential": [
+  {
+   "type": "know",
+   "q": "What is potential energy?",
+   "options": [
+    "Energy of light",
+    "Energy of sound",
+    "Stored energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Stored energy\". Potential energy is stored energy."
+  },
+  {
+   "type": "know",
+   "q": "A raised object has stored energy because of ____.",
+   "options": [
+    "color",
+    "gravity",
+    "sound"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"gravity\". Gravity gives a raised object stored energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Potential energy can change into kinetic energy",
+    "Potential energy only comes from sunlight",
+    "Potential energy can never change form"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Potential energy can change into kinetic energy\". Stored energy can change into motion energy."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'stored energy' like a raised ball or a stretched spring has?",
+   "options": [
+    "Kinetic",
+    "Sound",
+    "Potential"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Potential\". Potential energy is stored energy."
+  },
+  {
+   "type": "know",
+   "q": "What can you do to a spring to store potential energy in it?",
+   "options": [
+    "Paint it",
+    "Shine a light on it",
+    "Squeeze it"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Squeeze it\". Squeezing (compressing) a spring stores potential energy."
+  },
+  {
+   "type": "example",
+   "q": "Which has potential energy because it is raised up?",
+   "options": [
+    "A shadow on the floor",
+    "A book on a high shelf",
+    "A song playing on the radio"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A book on a high shelf\". A raised object stores energy because of gravity."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of potential energy from stretching?",
+   "options": [
+    "A glowing lamp",
+    "A ringing bell",
+    "A stretched rubber band"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A stretched rubber band\". Stretching a rubber band stores potential energy."
+  },
+  {
+   "type": "example",
+   "q": "Which one is NOT storing potential energy?",
+   "options": [
+    "A kid sitting at the top of a slide",
+    "Sunlight shining on the grass",
+    "A squeezed spring"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Sunlight shining on the grass\". Sunlight is light energy, not stored energy from height or stretching."
+  },
+  {
+   "type": "example",
+   "q": "Which group shows only stored potential energy?",
+   "options": [
+    "Rolling ball, spinning top, running dog",
+    "Pulled-back bow, raised hammer, squished spring",
+    "Pulled-back bow, ringing bell, lamp light"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Pulled-back bow, raised hammer, squished spring\". Raised, stretched or squeezed things store potential energy."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with 'potential energy'.",
+   "options": [
+    "A drum making a loud boom",
+    "A light shining in the dark",
+    "A diver standing on a high board"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A diver standing on a high board\". The diver is up high, so the diver has stored energy."
+  },
+  {
+   "type": "apply",
+   "q": "Sam pulls back the rubber band on a slingshot and holds it still. What does the stretched band have?",
+   "options": [
+    "Stored potential energy",
+    "Sound energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Stored potential energy\". Stretching a rubber band stores potential energy."
+  },
+  {
+   "type": "apply",
+   "q": "Sam lets go and the rubber band snaps forward. What energy change happens?",
+   "options": [
+    "Sound energy changes to potential energy",
+    "Potential energy changes to kinetic energy",
+    "Kinetic energy changes to light energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Potential energy changes to kinetic energy\". The stored energy changes into motion energy."
+  },
+  {
+   "type": "apply",
+   "q": "Two balls that are the same sit on two shelves. Which has more stored energy from gravity?",
+   "options": [
+    "The ball on the higher shelf",
+    "Neither ball has any",
+    "The ball on the lower shelf"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The ball on the higher shelf\". The higher an object is raised, the more energy it stores."
+  },
+  {
+   "type": "apply",
+   "q": "Ben has a toy that jumps when its spring is pushed down and let go. What should he do first to store energy in it?",
+   "options": [
+    "Push the spring down",
+    "Shine a flashlight on it",
+    "Leave the spring loose"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Push the spring down\". Squeezing (compressing) a spring stores potential energy."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a ball you hold up high start to fall when you let go?",
+   "options": [
+    "Gravity pulls it and stored energy becomes motion",
+    "The ball runs out of energy",
+    "Light pushes the ball down"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Gravity pulls it and stored energy becomes motion\". Stored energy from height changes into kinetic energy as it falls."
+  }
+ ],
+ "chemical": [
+  {
+   "type": "know",
+   "q": "What is chemical energy?",
+   "options": [
+    "Energy carried by a sound",
+    "Energy stored in food, fuels and batteries",
+    "Energy of a moving object"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Energy stored in food, fuels and batteries\". Chemical energy is stored in food, fuels and batteries."
+  },
+  {
+   "type": "know",
+   "q": "Chemical energy is stored in food, fuels like ____, and batteries.",
+   "options": [
+    "sunlight",
+    "echoes",
+    "gasoline"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"gasoline\". Gasoline is a fuel that stores chemical energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Chemical energy can never change form",
+    "Chemical energy is only found in the sun",
+    "Chemical energy can change into a form that does work"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Chemical energy can change into a form that does work\". Stored chemical energy can change into a form that does work."
+  },
+  {
+   "type": "know",
+   "q": "Which term means 'energy stored in food, fuels and batteries'?",
+   "options": [
+    "Chemical energy",
+    "Sound energy",
+    "Light energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy\". That is the meaning of chemical energy."
+  },
+  {
+   "type": "know",
+   "q": "What kind of energy does a battery store?",
+   "options": [
+    "Chemical energy",
+    "Kinetic energy",
+    "Sound energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy\". A battery stores chemical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which one has stored chemical energy?",
+   "options": [
+    "A shadow",
+    "A banana",
+    "An echo"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A banana\". Food like a banana stores chemical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of chemical energy?",
+   "options": [
+    "A tank of gasoline",
+    "A rainbow",
+    "A sandwich"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A rainbow\". A rainbow is light, not stored energy in food, fuel or a battery."
+  },
+  {
+   "type": "example",
+   "q": "Which group all store chemical energy?",
+   "options": [
+    "Apple, gasoline, battery",
+    "Shadow, rainbow, sound",
+    "Apple, sunlight, echo"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Apple, gasoline, battery\". Food, fuel and batteries all store chemical energy."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with 'chemical energy'.",
+   "options": [
+    "Firewood",
+    "A shadow",
+    "A mirror"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Firewood\". Wood is a fuel, so it stores chemical energy."
+  },
+  {
+   "type": "example",
+   "q": "Which thing in your kitchen stores chemical energy?",
+   "options": [
+    "The light from the ceiling lamp",
+    "The beep of the oven timer",
+    "A box of cereal"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A box of cereal\". Cereal is food, and food stores chemical energy."
+  },
+  {
+   "type": "apply",
+   "q": "You eat breakfast, then run at recess. What energy from the food helps your body move?",
+   "options": [
+    "Light energy",
+    "Sound energy",
+    "Chemical energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Chemical energy\". Food stores chemical energy that your body changes into motion."
+  },
+  {
+   "type": "apply",
+   "q": "A flashlight runs on batteries. What kind of energy is stored in the batteries?",
+   "options": [
+    "Chemical energy",
+    "Sound energy",
+    "Kinetic energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy\". Batteries store chemical energy."
+  },
+  {
+   "type": "apply",
+   "q": "A car burns gasoline to drive. What does the gasoline's stored energy change into to make the car move?",
+   "options": [
+    "Nothing; it just disappears",
+    "Kinetic (motion) energy",
+    "More gasoline"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Kinetic (motion) energy\". Chemical energy in gasoline changes to kinetic energy."
+  },
+  {
+   "type": "apply",
+   "q": "Campers burn wood in a campfire. What does the wood's stored energy change into?",
+   "options": [
+    "Nothing at all",
+    "Electrical energy only",
+    "Heat and light"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Heat and light\". Burning wood changes chemical energy into heat and light."
+  },
+  {
+   "type": "apply",
+   "q": "Your toy robot won't move anymore. What could you replace to give it a new supply of stored energy?",
+   "options": [
+    "Its buttons",
+    "Its batteries",
+    "Its plastic case"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Its batteries\". Batteries store chemical energy the robot can use."
+  }
+ ],
+ "kinetic": [
+  {
+   "type": "know",
+   "q": "What is kinetic energy?",
+   "options": [
+    "The energy of motion",
+    "Energy stored in food",
+    "Energy that comes from light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The energy of motion\". Kinetic energy is the energy of motion."
+  },
+  {
+   "type": "know",
+   "q": "Kinetic energy is the energy an object has because it is ____.",
+   "options": [
+    "colorful",
+    "moving",
+    "quiet"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"moving\". Kinetic energy is the energy of a moving object."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "A still rock has kinetic energy",
+    "Only cars can have kinetic energy",
+    "Anything that is moving has kinetic energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Anything that is moving has kinetic energy\". Every moving object has kinetic energy."
+  },
+  {
+   "type": "know",
+   "q": "What is another name for kinetic energy?",
+   "options": [
+    "Light energy",
+    "Motion energy",
+    "Stored energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Motion energy\". Kinetic energy is also called motion energy."
+  },
+  {
+   "type": "know",
+   "q": "A ball stops rolling and sits still. How much kinetic energy does it have now?",
+   "options": [
+    "More than before",
+    "None",
+    "The same as when it was rolling"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"None\". Kinetic energy is the energy of motion, so a still object has none."
+  },
+  {
+   "type": "example",
+   "q": "Which one has kinetic energy?",
+   "options": [
+    "A parked bike",
+    "A rock sitting on the ground",
+    "A running dog"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A running dog\". The dog is moving, so it has kinetic energy."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of kinetic energy?",
+   "options": [
+    "A book resting on a desk",
+    "A falling raindrop",
+    "A spinning fan"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A book resting on a desk\". The book is not moving, so it has no kinetic energy."
+  },
+  {
+   "type": "example",
+   "q": "Which group shows only things with kinetic energy?",
+   "options": [
+    "Flying bird, rolling ball, moving swing",
+    "Parked car, still rock, closed book",
+    "Flying bird, parked car, still rock"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Flying bird, rolling ball, moving swing\". All of those things are moving."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with 'kinetic energy'.",
+   "options": [
+    "A kid racing down the slide",
+    "A pencil lying on the floor",
+    "A battery in a drawer"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A kid racing down the slide\". A kid sliding down is moving, so the kid has kinetic energy."
+  },
+  {
+   "type": "example",
+   "q": "Which playground thing shows motion energy?",
+   "options": [
+    "A still sandbox",
+    "An empty bench",
+    "A spinning merry-go-round"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A spinning merry-go-round\". The spinning merry-go-round is moving."
+  },
+  {
+   "type": "apply",
+   "q": "Zoe pedals her bike faster and faster. What happens to her kinetic energy?",
+   "options": [
+    "It goes down",
+    "It stays at zero",
+    "It goes up"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It goes up\". The faster something moves, the more kinetic energy it has."
+  },
+  {
+   "type": "apply",
+   "q": "A bowling ball rolls into the pins and they fall over. Why do the pins move?",
+   "options": [
+    "The pins were pulled by sound",
+    "The ball's motion energy was passed to them",
+    "The pins made their own light energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The ball's motion energy was passed to them\". The moving ball's kinetic energy is passed to the pins."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Omar shows a pinwheel spinning in the wind. What energy does the spinning pinwheel have?",
+   "options": [
+    "Chemical energy",
+    "Kinetic energy",
+    "Electrical energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Kinetic energy\". A spinning pinwheel is moving, so it has kinetic energy."
+  },
+  {
+   "type": "apply",
+   "q": "Ella's toy car uses a battery to zoom across the floor. What energy goes in, and what comes out to make it move?",
+   "options": [
+    "Kinetic in, chemical out",
+    "Sound in, light out",
+    "Chemical in, kinetic out"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Chemical in, kinetic out\". The battery's chemical energy changes into motion energy."
+  },
+  {
+   "type": "apply",
+   "q": "Dad fills the car with gasoline and drives you to school. What energy change makes the car move?",
+   "options": [
+    "Chemical energy to kinetic energy",
+    "Light energy to chemical energy",
+    "Sound energy to chemical energy"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Chemical energy to kinetic energy\". Gasoline's stored chemical energy changes to kinetic energy."
+  }
+ ],
+ "lighttravel": [
+  {
+   "type": "know",
+   "q": "How does light travel from its source?",
+   "options": [
+    "Outward in all directions",
+    "Only toward the ground",
+    "Only straight up"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Outward in all directions\". Light travels outward from its source in all directions."
+  },
+  {
+   "type": "know",
+   "q": "Light travels in a ____ line until it hits an object or moves into a new material.",
+   "options": [
+    "curvy",
+    "straight",
+    "zigzag"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"straight\". Light travels in a straight line."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Light always travels in curved paths",
+    "Light can pass through some objects",
+    "Light can never pass through anything"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light can pass through some objects\". Some objects, like clear glass, let light pass through."
+  },
+  {
+   "type": "know",
+   "q": "What three things can happen to light when it hits something?",
+   "options": [
+    "It can be melted, frozen, or boiled",
+    "It can be stretched, squeezed, or rolled",
+    "It can be reflected, refracted, or absorbed"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It can be reflected, refracted, or absorbed\". Light can be reflected, refracted, or absorbed."
+  },
+  {
+   "type": "know",
+   "q": "In science, what is a medium?",
+   "options": [
+    "A material that light travels through",
+    "A color of light",
+    "A kind of light bulb"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A material that light travels through\". A medium is a material, like air, water or glass."
+  },
+  {
+   "type": "example",
+   "q": "Which one can light pass through?",
+   "options": [
+    "A wooden door",
+    "A clear glass window",
+    "A brick wall"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A clear glass window\". Clear glass lets light pass through."
+  },
+  {
+   "type": "example",
+   "q": "Which shows that light travels in straight lines?",
+   "options": [
+    "Light curving around a corner wall",
+    "A flashlight beam going straight across a dark room",
+    "Light wiggling like a snake"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A flashlight beam going straight across a dark room\". Light travels in straight lines, so the beam is straight."
+  },
+  {
+   "type": "example",
+   "q": "Which is a light source that sends light out in all directions?",
+   "options": [
+    "A rock",
+    "A mirror",
+    "A lit candle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A lit candle\". A lit candle makes light that spreads out in all directions."
+  },
+  {
+   "type": "example",
+   "q": "Which object will NOT let light pass through?",
+   "options": [
+    "A clear glass of water",
+    "Clear plastic wrap",
+    "A cardboard box"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A cardboard box\". Light cannot pass through thick cardboard."
+  },
+  {
+   "type": "example",
+   "q": "Which group of things all let light pass through?",
+   "options": [
+    "Window glass, clear water, plastic wrap",
+    "Brick, metal pan, book",
+    "Window glass, brick, book"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Window glass, clear water, plastic wrap\". Clear materials let light pass through."
+  },
+  {
+   "type": "apply",
+   "q": "You hide behind a big tree while your friend shines a flashlight at it. Why can't the light reach you?",
+   "options": [
+    "Light can only travel upward",
+    "Light always bends around trees",
+    "Light goes straight and the tree blocks it"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light goes straight and the tree blocks it\". Light travels in a straight line until it hits an object."
+  },
+  {
+   "type": "apply",
+   "q": "A lamp sits in the middle of the room. Who can its light reach?",
+   "options": [
+    "People on every side of it",
+    "Only people above it",
+    "Only the person in front of it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"People on every side of it\". Light travels outward in all directions."
+  },
+  {
+   "type": "apply",
+   "q": "Ms. Lee shines a flashlight through three cards with holes. The light reaches the wall only when the holes line up. What does this show?",
+   "options": [
+    "Light travels in curves",
+    "Light needs holes to exist",
+    "Light travels in straight lines"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Light travels in straight lines\". Light only gets through when the holes make a straight path."
+  },
+  {
+   "type": "apply",
+   "q": "Sunlight shines on a pond. Which of these could NOT happen to the light?",
+   "options": [
+    "It turns into water",
+    "It reflects off the surface",
+    "It refracts into the water"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It turns into water\". Light can be reflected, refracted, or absorbed, but it does not become water."
+  },
+  {
+   "type": "apply",
+   "q": "You want sunlight to reach a plant inside a box. What should you cover the opening with?",
+   "options": [
+    "Thick cardboard",
+    "Clear plastic",
+    "Aluminum foil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Clear plastic\". Light can pass through clear plastic."
+  }
+ ],
+ "reflect": [
+  {
+   "type": "know",
+   "q": "What does reflect mean?",
+   "options": [
+    "To bend",
+    "To bounce off",
+    "To take in"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"To bounce off\". Reflect means to bounce off."
+  },
+  {
+   "type": "know",
+   "q": "We see objects because light ____ off them.",
+   "options": [
+    "melts",
+    "freezes",
+    "reflects"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"reflects\". Light reflects off objects and into our eyes."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Flat, smooth surfaces reflect light evenly",
+    "Nothing can reflect light",
+    "Rough water reflects light evenly"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Flat, smooth surfaces reflect light evenly\". Smooth, flat surfaces like mirrors reflect light evenly."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'to bounce off'?",
+   "options": [
+    "Absorb",
+    "Reflect",
+    "Refract"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Reflect\". Reflect means to bounce off."
+  },
+  {
+   "type": "know",
+   "q": "Why can you see a book in a lit room?",
+   "options": [
+    "The book makes its own light",
+    "Light bounces off the book into your eyes",
+    "Your eyes shine light onto it"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light bounces off the book into your eyes\". We see objects because light reflects off them."
+  },
+  {
+   "type": "example",
+   "q": "Which reflects light evenly so you see a clear picture of yourself?",
+   "options": [
+    "A crumpled paper bag",
+    "A wavy, rough pond",
+    "A flat mirror"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A flat mirror\". A flat, smooth mirror reflects light evenly."
+  },
+  {
+   "type": "example",
+   "q": "Which surface would NOT give a clear reflection?",
+   "options": [
+    "A smooth, calm lake",
+    "Rough, choppy water",
+    "A bathroom mirror"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Rough, choppy water\". Rough water does not reflect light evenly."
+  },
+  {
+   "type": "example",
+   "q": "Which group all give clear, even reflections?",
+   "options": [
+    "Mirror, rough water, crumpled foil",
+    "Sandpaper, rough rock, wavy water",
+    "Mirror, still pond, smooth shiny metal"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Mirror, still pond, smooth shiny metal\". Flat, smooth surfaces reflect light evenly."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of reflection?",
+   "options": [
+    "A straw looking bent in water",
+    "A strawberry taking in blue light",
+    "Seeing your face in a mirror"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Seeing your face in a mirror\". Light bounces off the mirror back to your eyes."
+  },
+  {
+   "type": "example",
+   "q": "Which object do we see only because light bounces off it, not because it makes its own light?",
+   "options": [
+    "A chair",
+    "The sun",
+    "A lit lamp"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A chair\". A chair makes no light; we see it because light reflects off it."
+  },
+  {
+   "type": "apply",
+   "q": "Jake looks into a lake on a windy day and can't see a clear picture of himself. Why?",
+   "options": [
+    "Rough water does not reflect evenly",
+    "Water takes in all light",
+    "Light cannot reach water"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Rough water does not reflect evenly\". Rough water does not reflect light evenly."
+  },
+  {
+   "type": "apply",
+   "q": "At night, car headlights hit a bike reflector and it shines back. What is happening?",
+   "options": [
+    "Light bounces off the reflector",
+    "The reflector makes its own light",
+    "The reflector bends light down into the road"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Light bounces off the reflector\". The reflector bounces the car's light back."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Mia wants to bounce a flashlight beam onto a poster across the room. What should she use?",
+   "options": [
+    "A piece of black felt",
+    "A dark sponge",
+    "A flat mirror"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A flat mirror\". A flat, smooth mirror reflects light evenly."
+  },
+  {
+   "type": "apply",
+   "q": "The lights go off in a room with no windows, and you can't see your toys. Why?",
+   "options": [
+    "The toys shrink in the dark",
+    "No light is reflecting off them to your eyes",
+    "The toys disappear in the dark"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"No light is reflecting off them to your eyes\". We see objects only when light reflects off them."
+  },
+  {
+   "type": "apply",
+   "q": "You shine a flashlight at a mirror. Where does most of the light go?",
+   "options": [
+    "It bounces back off the mirror",
+    "It turns into sound",
+    "It goes into the mirror and stops"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It bounces back off the mirror\". A mirror reflects light, which means it bounces off."
+  }
+ ],
+ "refract": [
+  {
+   "type": "know",
+   "q": "What does refract mean?",
+   "options": [
+    "To bounce off",
+    "To take in",
+    "To bend"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"To bend\". Refract means light bends."
+  },
+  {
+   "type": "know",
+   "q": "Light ____ when it goes from air into water.",
+   "options": [
+    "slows down",
+    "stops",
+    "speeds up"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"slows down\". Light slows down when it goes from air into water."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Light travels at different speeds in different materials",
+    "Light cannot travel through water",
+    "Light travels at the same speed in every material"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Light travels at different speeds in different materials\". Changing speed between materials is why light bends."
+  },
+  {
+   "type": "know",
+   "q": "Which word means light bending as it passes between materials?",
+   "options": [
+    "Reflect",
+    "Absorb",
+    "Refract"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Refract\". Refract means to bend."
+  },
+  {
+   "type": "know",
+   "q": "When does light refract?",
+   "options": [
+    "Only when it hits a flat mirror",
+    "When it passes from one material into another",
+    "Only when it is dark"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"When it passes from one material into another\". Light refracts when it passes between different materials."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of refraction?",
+   "options": [
+    "A red apple looks red",
+    "Seeing yourself in a mirror",
+    "A straw looks bent in a glass of water"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A straw looks bent in a glass of water\". Light bends between water and air, so the straw looks bent."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of refraction?",
+   "options": [
+    "A magnifying glass making print look bigger",
+    "Light bouncing off a mirror",
+    "A pencil looking broken in water"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light bouncing off a mirror\". Bouncing off is reflection, not bending."
+  },
+  {
+   "type": "example",
+   "q": "Which object is made to bend light?",
+   "options": [
+    "A flat mirror",
+    "A sheet of black cardboard",
+    "A magnifying glass lens"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A magnifying glass lens\". A lens bends (refracts) light."
+  },
+  {
+   "type": "example",
+   "q": "Which group all show light bending?",
+   "options": [
+    "Black shirt, dark rug, red flower",
+    "Mirror, bike reflector, shiny spoon",
+    "Bent-looking straw, magnifying lens, pencil in water"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Bent-looking straw, magnifying lens, pencil in water\". Each of these bends light as it passes between materials."
+  },
+  {
+   "type": "example",
+   "q": "Pick the one that belongs with 'refract'.",
+   "options": [
+    "A swimming pool looking less deep than it really is",
+    "A shadow on the sidewalk",
+    "A glow-in-the-dark sticker"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A swimming pool looking less deep than it really is\". Light bends as it leaves the water, so the pool looks shallower."
+  },
+  {
+   "type": "apply",
+   "q": "Ava puts a pencil in a glass of water. It looks broken at the water line. Why?",
+   "options": [
+    "The water really broke the pencil",
+    "Light bends as it passes between water and air",
+    "The pencil melted in the water"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light bends as it passes between water and air\". Light refracts between water and air."
+  },
+  {
+   "type": "apply",
+   "q": "Max shines a flashlight at a slant into a tank of water. What will the beam do as it enters the water?",
+   "options": [
+    "Turn into sound",
+    "Bend",
+    "Stop"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Bend\". Light slows down in water and bends."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Kim shows a magnifying glass making words look bigger. What is the lens doing to the light?",
+   "options": [
+    "Bending it",
+    "Turning it into sound",
+    "Taking in all of it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Bending it\". A lens refracts (bends) light."
+  },
+  {
+   "type": "apply",
+   "q": "Your friend reaches for a toy on the bottom of a pool but misses. Why?",
+   "options": [
+    "Light travels in curves through air",
+    "Light bends, so the toy is not exactly where it looks",
+    "The toy moves away by itself"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light bends, so the toy is not exactly where it looks\". Light bends as it leaves the water, which fools your eyes."
+  },
+  {
+   "type": "apply",
+   "q": "Which would you use to show refraction to your class?",
+   "options": [
+    "A clear glass of water and a straw",
+    "A flat mirror and a flashlight",
+    "A black cloth"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A clear glass of water and a straw\". A straw looks bent in water because light bends."
+  }
+ ],
+ "absorb": [
+  {
+   "type": "know",
+   "q": "What does absorb mean?",
+   "options": [
+    "To take in",
+    "To bounce off",
+    "To bend"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"To take in\". Absorb means to take in."
+  },
+  {
+   "type": "know",
+   "q": "The color we see is the color that is ____.",
+   "options": [
+    "melted",
+    "absorbed",
+    "reflected"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"reflected\". We see the color an object reflects."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Light is made of different colors",
+    "Light is only one color",
+    "Light has no colors in it"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Light is made of different colors\". Light is made of different colors."
+  },
+  {
+   "type": "know",
+   "q": "Which word means 'to take in'?",
+   "options": [
+    "Refract",
+    "Absorb",
+    "Reflect"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Absorb\". Absorb means to take in."
+  },
+  {
+   "type": "know",
+   "q": "A red flower reflects red light. What does it do with the other colors?",
+   "options": [
+    "Reflects them too",
+    "Absorbs them",
+    "Turns them red"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Absorbs them\". A red flower absorbs the other colors."
+  },
+  {
+   "type": "example",
+   "q": "Which object reflects green light and absorbs the other colors?",
+   "options": [
+    "A green leaf",
+    "A red apple",
+    "A yellow banana"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A green leaf\". We see a leaf as green because it reflects green."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of light being absorbed?",
+   "options": [
+    "A straw looking bent in water",
+    "A mirror bouncing light back",
+    "A dark rug taking in sunlight"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A dark rug taking in sunlight\". Taking in light is absorbing."
+  },
+  {
+   "type": "example",
+   "q": "A blue shirt looks blue. Which color of light does it reflect?",
+   "options": [
+    "Yellow",
+    "Red",
+    "Blue"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Blue\". We see the color an object reflects, and it absorbs the other colors."
+  },
+  {
+   "type": "example",
+   "q": "Which list matches each thing with the color it reflects?",
+   "options": [
+    "Banana: blue, grass: red, strawberry: green",
+    "Banana: green, grass: yellow, strawberry: blue",
+    "Banana: yellow, grass: green, strawberry: red"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Banana: yellow, grass: green, strawberry: red\". We see the color each object reflects."
+  },
+  {
+   "type": "example",
+   "q": "Red light shines on these things. Which one absorbs the red light?",
+   "options": [
+    "Blue jeans",
+    "A red strawberry",
+    "A red fire truck"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Blue jeans\". Blue jeans reflect blue and absorb other colors, like red."
+  },
+  {
+   "type": "apply",
+   "q": "Lily sees a red flower in the garden. Why does it look red?",
+   "options": [
+    "It reflects red and absorbs the other colors",
+    "It makes its own red light",
+    "It absorbs red and reflects the other colors"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It reflects red and absorbs the other colors\". We see the color that is reflected."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Mr. Park shines light through a prism and a rainbow appears on the wall. What does this show?",
+   "options": [
+    "The prism is full of paint",
+    "Light is made of different colors",
+    "Light is only white"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Light is made of different colors\". Light is made of different colors."
+  },
+  {
+   "type": "apply",
+   "q": "On a sunny day, Sam wears a black shirt and Ava wears a white shirt. Whose shirt absorbs more light?",
+   "options": [
+    "Neither shirt absorbs any light",
+    "Ava's white shirt",
+    "Sam's black shirt"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Sam's black shirt\". Black takes in almost all colors of light; white reflects them."
+  },
+  {
+   "type": "apply",
+   "q": "A strawberry absorbs the blue and green light that hits it. Which color does it reflect to your eyes?",
+   "options": [
+    "Green",
+    "Red",
+    "Blue"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Red\". The color we see is the color reflected."
+  },
+  {
+   "type": "apply",
+   "q": "A paper towel soaks up spilled milk. Which science word means this kind of 'taking in'?",
+   "options": [
+    "Refract",
+    "Absorb",
+    "Reflect"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Absorb\". Absorb means to take in."
+  }
+ ]
+}

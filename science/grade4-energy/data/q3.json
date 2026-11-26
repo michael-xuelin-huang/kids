@@ -1,0 +1,1338 @@
+{
+ "transparent": [
+  {
+   "type": "know",
+   "q": "What does \"transparent\" mean?",
+   "options": [
+    "Blocks all light",
+    "Lets some light through, looks blurry",
+    "Lets light through so you see clearly"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Lets light through so you see clearly\". Transparent things let light pass through and you can see clearly through them."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Transparent means the same as opaque",
+    "Transparent things block all light",
+    "A clear glass window lets sunlight in"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A clear glass window lets sunlight in\". Clear glass is transparent, so light passes through it."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A transparent material lets light ____, and you can see clearly through it.",
+   "options": [
+    "stop inside it",
+    "pass through",
+    "stay out"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"pass through\". Light passes through transparent materials."
+  },
+  {
+   "type": "know",
+   "q": "What is the word for a material you can see clearly through?",
+   "options": [
+    "Translucent",
+    "Opaque",
+    "Transparent"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Transparent\". Transparent materials let light through so things look clear."
+  },
+  {
+   "type": "know",
+   "q": "Which kind of material lets the MOST light pass through?",
+   "options": [
+    "Opaque",
+    "Translucent",
+    "Transparent"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Transparent\". Transparent lets light through, translucent lets only some, and opaque lets none."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a transparent material?",
+   "options": [
+    "Air",
+    "Brick",
+    "Wax paper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Air\". You can see clearly through air, so it is transparent."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT transparent?",
+   "options": [
+    "A wood board",
+    "Plastic wrap",
+    "Air"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A wood board\". Wood blocks light, so it is opaque, not transparent."
+  },
+  {
+   "type": "example",
+   "q": "Which group is ALL transparent?",
+   "options": [
+    "Clear glass, air, plastic wrap",
+    "Wax paper, frosted paper, air",
+    "Metal, brick, clear glass"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Clear glass, air, plastic wrap\". Clear glass, air, and plastic wrap all let light through clearly."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs with clear glass and air?",
+   "options": [
+    "A metal spoon",
+    "Plastic wrap",
+    "Frosted paper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Plastic wrap\". Plastic wrap is transparent, just like clear glass and air."
+  },
+  {
+   "type": "example",
+   "q": "Which kitchen item is transparent?",
+   "options": [
+    "A wooden spoon",
+    "A metal pot",
+    "A clear drinking glass"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A clear drinking glass\". You can see clearly through a clear glass."
+  },
+  {
+   "type": "apply",
+   "q": "Mia wants to cover leftovers and still see the food clearly. What should she use?",
+   "options": [
+    "Wax paper",
+    "Plastic wrap",
+    "Aluminum foil"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Plastic wrap\". Plastic wrap is transparent, so you can see clearly through it."
+  },
+  {
+   "type": "apply",
+   "q": "Sam shines a flashlight at a clear glass window. What happens to the light?",
+   "options": [
+    "It passes through the glass",
+    "It turns into sound",
+    "It is all blocked"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It passes through the glass\". Clear glass is transparent, so light passes through."
+  },
+  {
+   "type": "apply",
+   "q": "A pet store wants a fish tank so people can see the fish clearly. What is the best material?",
+   "options": [
+    "Metal",
+    "Clear glass",
+    "Frosted paper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Clear glass\". Clear glass is transparent, so you can see the fish clearly."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Leo holds plastic wrap, wax paper, and a wood block in front of a lamp. Through which can he see the lamp clearly?",
+   "options": [
+    "The wood block",
+    "Plastic wrap",
+    "Wax paper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Plastic wrap\". Plastic wrap is transparent; wax paper is blurry and wood blocks light."
+  },
+  {
+   "type": "apply",
+   "q": "Why can you see the playground through the classroom window?",
+   "options": [
+    "Clear glass lets light pass through",
+    "Glass blocks all light",
+    "Glass makes its own light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Clear glass lets light pass through\". Clear glass is transparent, so light passes through it."
+  }
+ ],
+ "translucent": [
+  {
+   "type": "know",
+   "q": "What does \"translucent\" mean?",
+   "options": [
+    "Lets light through; things look clear",
+    "Blocks all light",
+    "Lets some light through; things look blurry"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Lets some light through; things look blurry\". Translucent things let some light through, so things behind look blurry."
+  },
+  {
+   "type": "know",
+   "q": "What is the word for a material that lets some light through but makes things look blurry?",
+   "options": [
+    "Translucent",
+    "Transparent",
+    "Opaque"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Translucent\". Translucent means some light passes through and things look blurry."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A translucent material lets ____ light pass through.",
+   "options": [
+    "some",
+    "no",
+    "all"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"some\". Translucent materials let only some light through."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Translucent lets less light through than transparent",
+    "Translucent blocks more light than opaque",
+    "Translucent means the same as opaque"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Translucent lets less light through than transparent\". Transparent lets light through, translucent only some, opaque none."
+  },
+  {
+   "type": "know",
+   "q": "You look at a friend through a translucent sheet. What do you see?",
+   "options": [
+    "A sharp, clear face",
+    "A blurry shape",
+    "Total darkness"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A blurry shape\". Translucent materials make things on the other side look blurry."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of a translucent material?",
+   "options": [
+    "Wax paper",
+    "Clear glass",
+    "Brick"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Wax paper\". Wax paper lets some light through and makes things look blurry."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT translucent?",
+   "options": [
+    "Wax paper",
+    "A metal pan",
+    "Frosted paper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A metal pan\". Metal blocks all light, so it is opaque."
+  },
+  {
+   "type": "example",
+   "q": "Which group is ALL translucent?",
+   "options": [
+    "Wax paper, frosted paper",
+    "Wood, brick",
+    "Air, plastic wrap"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Wax paper, frosted paper\". Wax paper and frosted paper let some light through and look blurry."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs with wax paper?",
+   "options": [
+    "Clear glass",
+    "A metal plate",
+    "Frosted paper"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Frosted paper\". Frosted paper is translucent, like wax paper."
+  },
+  {
+   "type": "example",
+   "q": "Which bathroom window is translucent?",
+   "options": [
+    "A wooden shutter",
+    "A clear glass window",
+    "A frosted glass window"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A frosted glass window\". Frosted glass lets some light in but things look blurry."
+  },
+  {
+   "type": "apply",
+   "q": "Ava wants a lamp shade that lets some light out but hides the shape of the bulb. Which is best?",
+   "options": [
+    "Clear plastic wrap",
+    "A metal sheet",
+    "Frosted paper"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Frosted paper\". Frosted paper is translucent, so some light gets through but the bulb looks blurry."
+  },
+  {
+   "type": "apply",
+   "q": "Ben tapes wax paper over a flashlight and shines it at the wall. What does he see?",
+   "options": [
+    "Light just as bright as before",
+    "A dimmer glow on the wall",
+    "No light at all"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A dimmer glow on the wall\". Wax paper is translucent, so only some light gets through."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Zoe looks at a toy through clear glass, wax paper, and a wood block. Which makes the toy look blurry?",
+   "options": [
+    "Clear glass",
+    "The wood block",
+    "Wax paper"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Wax paper\". Wax paper is translucent, so things behind it look blurry."
+  },
+  {
+   "type": "apply",
+   "q": "Kai covers a window with frosted paper. What happens in the room?",
+   "options": [
+    "The room gets brighter",
+    "Some light still comes in",
+    "The room goes totally dark"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Some light still comes in\". Frosted paper is translucent, so it lets some light through."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a toy look fuzzy behind wax paper?",
+   "options": [
+    "Wax paper makes its own light",
+    "Only some light gets through",
+    "No light gets through"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Only some light gets through\". Translucent wax paper lets some light through, so things look blurry."
+  }
+ ],
+ "opaque": [
+  {
+   "type": "know",
+   "q": "What does \"opaque\" mean?",
+   "options": [
+    "Blocks all light",
+    "Lets light through clearly",
+    "Lets some light through"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Blocks all light\". Opaque materials block light completely."
+  },
+  {
+   "type": "know",
+   "q": "What is the word for a material that no light can pass through?",
+   "options": [
+    "Transparent",
+    "Translucent",
+    "Opaque"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Opaque\". Opaque materials let no light pass through."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: An opaque material ____ light completely.",
+   "options": [
+    "makes",
+    "blocks",
+    "lets through"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"blocks\". Opaque materials block light completely."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true about opaque materials?",
+   "options": [
+    "You cannot see what is behind them",
+    "You can see clearly through them",
+    "They make things look a little blurry"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"You cannot see what is behind them\". No light passes through opaque things, so you cannot see behind them."
+  },
+  {
+   "type": "know",
+   "q": "Which kind of material lets the LEAST light pass through?",
+   "options": [
+    "Opaque",
+    "Translucent",
+    "Transparent"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Opaque\". Opaque materials let no light through at all."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of an opaque material?",
+   "options": [
+    "Air",
+    "Brick",
+    "Wax paper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Brick\". Brick blocks all light, so it is opaque."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT opaque?",
+   "options": [
+    "Wood",
+    "Plastic wrap",
+    "Metal"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Plastic wrap\". Plastic wrap is transparent; light passes through it."
+  },
+  {
+   "type": "example",
+   "q": "Which group is ALL opaque?",
+   "options": [
+    "Wax paper, metal, brick",
+    "Wood, metal, brick",
+    "Air, clear glass, wood"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Wood, metal, brick\". Wood, metal, and brick all block light completely."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs with wood and metal?",
+   "options": [
+    "Clear glass",
+    "Frosted paper",
+    "Brick"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Brick\". Brick is opaque, like wood and metal."
+  },
+  {
+   "type": "example",
+   "q": "Which thing on the playground is opaque?",
+   "options": [
+    "A metal slide",
+    "The air around it",
+    "A clear plastic window"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A metal slide\". Metal blocks all light, so a metal slide is opaque."
+  },
+  {
+   "type": "apply",
+   "q": "Lily wants to block ALL the sunlight from her window so she can nap. What should she use?",
+   "options": [
+    "Plastic wrap",
+    "Wax paper",
+    "A wooden board"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A wooden board\". Wood is opaque, so it blocks all light."
+  },
+  {
+   "type": "apply",
+   "q": "Max shines a flashlight at a brick wall. What happens to the light?",
+   "options": [
+    "No light passes through",
+    "It passes through clearly",
+    "Some blurry light passes through"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"No light passes through\". Brick is opaque, so it blocks light completely."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, which item makes the darkest shadow under a lamp?",
+   "options": [
+    "A sheet of wax paper",
+    "A metal plate",
+    "A clear plastic sheet"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A metal plate\". A metal plate is opaque and blocks all the light."
+  },
+  {
+   "type": "apply",
+   "q": "Why can't you see your friend behind a closed wooden door?",
+   "options": [
+    "Wood makes its own light",
+    "Wood lets all light through",
+    "Wood blocks all light"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Wood blocks all light\". Wood is opaque, so no light passes through it."
+  },
+  {
+   "type": "apply",
+   "q": "You want to hide a surprise gift so nobody can see it. Which container should you use?",
+   "options": [
+    "A clear glass jar",
+    "A wax paper bag",
+    "A metal tin"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A metal tin\". Metal is opaque, so no one can see what is inside."
+  }
+ ],
+ "heatconduct": [
+  {
+   "type": "know",
+   "q": "Which way does heat travel?",
+   "options": [
+    "From cooler objects to warmer objects",
+    "It never moves",
+    "From warmer objects to cooler objects"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"From warmer objects to cooler objects\". Heat always flows from warmer to cooler."
+  },
+  {
+   "type": "know",
+   "q": "What is a good conductor of heat?",
+   "options": [
+    "A material that stops heat",
+    "A material that makes light",
+    "A material that lets heat pass through easily"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A material that lets heat pass through easily\". Good conductors of heat let heat pass through easily."
+  },
+  {
+   "type": "know",
+   "q": "Heat is another name for which kind of energy?",
+   "options": [
+    "Sound energy",
+    "Thermal energy",
+    "Electrical energy"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Thermal energy\". Heat is thermal energy."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Plastic is a good conductor of heat",
+    "Wood is a good conductor of heat",
+    "Metals are good conductors of heat"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Metals are good conductors of heat\". Metals let heat pass through easily; wood and plastic do not."
+  },
+  {
+   "type": "know",
+   "q": "What do we call a material that does NOT let heat pass through easily?",
+   "options": [
+    "A good conductor of heat",
+    "A bad conductor of heat",
+    "A heat source"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A bad conductor of heat\". Bad conductors of heat, like wood and plastic, do not let heat pass easily."
+  },
+  {
+   "type": "example",
+   "q": "Which is a good conductor of heat?",
+   "options": [
+    "A metal spoon",
+    "A wooden spoon",
+    "A plastic spoon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A metal spoon\". Metal is a good conductor of heat."
+  },
+  {
+   "type": "example",
+   "q": "Which is a bad conductor of heat?",
+   "options": [
+    "A wooden spoon",
+    "A metal pot",
+    "An iron pan"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A wooden spoon\". Wood does not let heat pass through easily."
+  },
+  {
+   "type": "example",
+   "q": "Which group is ALL good conductors of heat?",
+   "options": [
+    "Wood, plastic, iron",
+    "Iron, copper, steel",
+    "Plastic, wood, copper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Iron, copper, steel\". Iron, copper, and steel are all metals, and metals conduct heat well."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs with a wooden spoon as a bad conductor of heat?",
+   "options": [
+    "A plastic spatula",
+    "A steel pot",
+    "A metal ladle"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A plastic spatula\". Plastic, like wood, is a bad conductor of heat."
+  },
+  {
+   "type": "example",
+   "q": "Which part of a cooking pot is made to be a bad conductor of heat?",
+   "options": [
+    "The metal bottom",
+    "The metal sides",
+    "The plastic handle"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The plastic handle\". Plastic is a bad conductor, so the handle stays cooler to touch."
+  },
+  {
+   "type": "apply",
+   "q": "You hold an ice cube in your warm hand. Which way does the heat move?",
+   "options": [
+    "From the ice to your hand",
+    "From your hand to the ice",
+    "It does not move"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"From your hand to the ice\". Heat flows from the warmer hand to the cooler ice."
+  },
+  {
+   "type": "apply",
+   "q": "Why does a metal spoon in hot soup get hot quickly?",
+   "options": [
+    "Metal makes its own heat",
+    "Metal is a good conductor of heat",
+    "Metal is a bad conductor of heat"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Metal is a good conductor of heat\". Metal lets heat pass through easily from the soup."
+  },
+  {
+   "type": "apply",
+   "q": "You touch a metal slide on a cold morning. Why does it feel cold?",
+   "options": [
+    "Cold moves from the metal into your hand",
+    "The slide makes cold energy",
+    "Heat moves from your hand into the metal"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Heat moves from your hand into the metal\". Heat flows from warmer to cooler, and metal carries it away fast."
+  },
+  {
+   "type": "apply",
+   "q": "A cup of hot cocoa sits on the table. What happens over time?",
+   "options": [
+    "It cools as heat moves into the cooler air",
+    "It gets hotter from the air",
+    "Cold moves into the cocoa"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It cools as heat moves into the cooler air\". Heat flows from the warmer cocoa to the cooler air."
+  },
+  {
+   "type": "apply",
+   "q": "In class, Kim puts a metal, a wooden, and a plastic spoon in hot water. Which handle gets warm first?",
+   "options": [
+    "The metal spoon",
+    "The wooden spoon",
+    "The plastic spoon"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The metal spoon\". Metal is a good conductor of heat; wood and plastic are not."
+  }
+ ],
+ "vibration": [
+  {
+   "type": "know",
+   "q": "What causes sound?",
+   "options": [
+    "Matter vibrating",
+    "Light bending",
+    "Heat flowing"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Matter vibrating\". Sound happens when matter vibrates."
+  },
+  {
+   "type": "know",
+   "q": "What does \"vibrate\" mean?",
+   "options": [
+    "Stay perfectly still",
+    "Move quickly back and forth",
+    "Glow brightly"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Move quickly back and forth\". To vibrate is to move quickly back and forth."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Sound travels in ____.",
+   "options": [
+    "puddles",
+    "waves",
+    "sparks"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"waves\". Sound travels in waves."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true about air particles when sound travels?",
+   "options": [
+    "They vibrate in place and bump their neighbors",
+    "They fly all the way to your ear",
+    "They stay totally still"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"They vibrate in place and bump their neighbors\". Particles pass the energy along; they do not travel with the wave."
+  },
+  {
+   "type": "know",
+   "q": "What is the word for moving quickly back and forth?",
+   "options": [
+    "Reflecting",
+    "Conducting",
+    "Vibrating"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Vibrating\". Vibrating means moving quickly back and forth."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of something vibrating to make sound?",
+   "options": [
+    "A shadow on the wall",
+    "A rock sitting still",
+    "A plucked guitar string"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A plucked guitar string\". A plucked guitar string moves back and forth, making sound."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT an example of vibrating to make sound?",
+   "options": [
+    "A book resting on a desk",
+    "A ringing bell",
+    "A buzzing bee's wings"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A book resting on a desk\". A resting book is not moving back and forth, so it makes no sound."
+  },
+  {
+   "type": "example",
+   "q": "Which group ALL vibrate when they make sound?",
+   "options": [
+    "A sunbeam, a mirror, a guitar string",
+    "Drum skin, a shadow, a rainbow",
+    "Drum skin, guitar string, vocal cords"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Drum skin, guitar string, vocal cords\". Drum skins, strings, and vocal cords all vibrate to make sound."
+  },
+  {
+   "type": "example",
+   "q": "Which belongs with a ringing bell and a beating drum?",
+   "options": [
+    "A quiet pillow",
+    "A beam of light",
+    "A twanging rubber band"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A twanging rubber band\". A twanging rubber band vibrates and makes sound, like a bell and drum."
+  },
+  {
+   "type": "example",
+   "q": "What part of your body vibrates when you talk?",
+   "options": [
+    "Your hair",
+    "Your vocal cords",
+    "Your fingernails"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Your vocal cords\". Your vocal cords in your throat vibrate to make your voice."
+  },
+  {
+   "type": "apply",
+   "q": "Jay snaps a stretched rubber band. Why does it make a sound?",
+   "options": [
+    "It vibrates back and forth",
+    "It gets cold",
+    "It gives off light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It vibrates back and forth\". The rubber band vibrates, and vibrating matter makes sound."
+  },
+  {
+   "type": "apply",
+   "q": "You touch your throat while you hum. What do you feel?",
+   "options": [
+    "Ice-cold skin",
+    "Buzzing vibrations",
+    "Nothing moving at all"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Buzzing vibrations\". Humming makes your vocal cords vibrate."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, rice on a drum jumps when the drum is hit. What does this show?",
+   "options": [
+    "The drum is hot",
+    "The rice is magnetic",
+    "The drum skin vibrates"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The drum skin vibrates\". The drum skin moves quickly back and forth, making the rice bounce."
+  },
+  {
+   "type": "apply",
+   "q": "After plucking a guitar string, you press it still with your finger. What happens to the sound?",
+   "options": [
+    "It stops",
+    "It turns into light",
+    "It gets louder"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"It stops\". No vibration means no sound."
+  },
+  {
+   "type": "apply",
+   "q": "Ms. Park strikes a tuning fork and dips its tips in water. What happens?",
+   "options": [
+    "The water freezes",
+    "The water splashes",
+    "The water glows"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The water splashes\". The vibrating fork shakes the water."
+  }
+ ],
+ "volume": [
+  {
+   "type": "know",
+   "q": "What is the volume of a sound?",
+   "options": [
+    "How high or low it is",
+    "How fast it travels",
+    "How loud or soft it is"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"How loud or soft it is\". Volume tells how loud or soft a sound is."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: A louder sound has ____ energy.",
+   "options": [
+    "no",
+    "less",
+    "more"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"more\". More energy means a louder sound."
+  },
+  {
+   "type": "know",
+   "q": "What is the word for how loud or soft a sound is?",
+   "options": [
+    "Volume",
+    "Pitch",
+    "Medium"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Volume\". Volume is how loud or soft a sound is."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Volume is a property of sound",
+    "Volume means how hot something is",
+    "Volume is a kind of light"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Volume is a property of sound\". Volume is a property of sound."
+  },
+  {
+   "type": "know",
+   "q": "Compared with a shout, a soft whisper has ____ energy.",
+   "options": [
+    "more",
+    "less",
+    "the same"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"less\". Softer sounds have less energy."
+  },
+  {
+   "type": "example",
+   "q": "Which sound has the highest volume?",
+   "options": [
+    "A ticking watch",
+    "A fire truck siren",
+    "A whisper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A fire truck siren\". A siren is very loud, so it has high volume."
+  },
+  {
+   "type": "example",
+   "q": "Which sound is the softest?",
+   "options": [
+    "A pencil writing on paper",
+    "A cheering crowd",
+    "A jet engine"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A pencil writing on paper\". A pencil on paper is a very soft sound."
+  },
+  {
+   "type": "example",
+   "q": "Which list goes from softest to loudest?",
+   "options": [
+    "Shouting, whisper, talking",
+    "Whisper, talking, shouting",
+    "Talking, shouting, whisper"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Whisper, talking, shouting\". A whisper is softest and a shout is loudest."
+  },
+  {
+   "type": "example",
+   "q": "Which is an example of using a LOW volume?",
+   "options": [
+    "Yelling on the playground",
+    "Banging a drum hard",
+    "Whispering in the library"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Whispering in the library\". Whispering is a soft sound with low volume."
+  },
+  {
+   "type": "example",
+   "q": "Which belongs with a shout and a siren as a LOUD sound?",
+   "options": [
+    "A thunder clap",
+    "A soft hum",
+    "A whisper"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A thunder clap\". Thunder is very loud, like a shout or a siren."
+  },
+  {
+   "type": "apply",
+   "q": "Nora taps a drum gently, then hits it hard. How does the second sound compare?",
+   "options": [
+    "It is softer",
+    "It is louder",
+    "It is silent"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"It is louder\". Hitting harder gives the sound more energy, so it is louder."
+  },
+  {
+   "type": "apply",
+   "q": "Why does hitting a drum harder make a louder sound?",
+   "options": [
+    "The drum gets colder",
+    "The sound gets less energy",
+    "The sound gets more energy"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The sound gets more energy\". More energy means a louder sound."
+  },
+  {
+   "type": "apply",
+   "q": "Your baby brother is sleeping. What should you do with the TV?",
+   "options": [
+    "Make the screen brighter",
+    "Turn the volume up",
+    "Turn the volume down"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Turn the volume down\". Turning the volume down makes the sound softer."
+  },
+  {
+   "type": "apply",
+   "q": "Pia plucks a guitar string very gently. How can she make the sound louder?",
+   "options": [
+    "Pluck it more gently",
+    "Pluck it harder",
+    "Hold the string still"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Pluck it harder\". Plucking harder gives the sound more energy, so it is louder."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Eli drops the same ball onto a table from low and from high. Which drop is louder?",
+   "options": [
+    "The high drop",
+    "They are always silent",
+    "The low drop"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"The high drop\". The high drop hits with more energy, so the sound is louder."
+  }
+ ],
+ "medium": [
+  {
+   "type": "know",
+   "q": "What is a medium?",
+   "options": [
+    "A kind of loud sound",
+    "A type of light",
+    "A material sound travels through"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A material sound travels through\". A medium is a material that sound waves travel through."
+  },
+  {
+   "type": "know",
+   "q": "Sound travels FASTEST through which?",
+   "options": [
+    "Gases",
+    "Solids",
+    "Liquids"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Solids\". Particles in solids are packed most closely, so sound is fastest."
+  },
+  {
+   "type": "know",
+   "q": "Sound travels SLOWEST through which?",
+   "options": [
+    "Liquids",
+    "Gases",
+    "Solids"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Gases\". Gas particles are spread out, so sound is slowest in gases."
+  },
+  {
+   "type": "know",
+   "q": "Can sound travel through empty space?",
+   "options": [
+    "Yes, faster than in air",
+    "No, there is no medium",
+    "Yes, but only at night"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"No, there is no medium\". With no medium, there is no sound."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Sound travels fastest in solids because the particles are ____.",
+   "options": [
+    "spread far apart",
+    "not there at all",
+    "packed more closely"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"packed more closely\". Closely packed particles pass the sound along faster."
+  },
+  {
+   "type": "example",
+   "q": "Which is a LIQUID medium for sound?",
+   "options": [
+    "Air",
+    "Wood",
+    "Water"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Water\". Water is a liquid, and sound can travel through it."
+  },
+  {
+   "type": "example",
+   "q": "Which is a SOLID medium for sound?",
+   "options": [
+    "A wooden table",
+    "Pool water",
+    "Air"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A wooden table\". A wooden table is a solid that sound can travel through."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a medium that sound can travel through?",
+   "options": [
+    "Water",
+    "Steel",
+    "Empty space"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Empty space\". Empty space has no matter, so sound cannot travel through it."
+  },
+  {
+   "type": "example",
+   "q": "Which list goes from SLOWEST to FASTEST for sound?",
+   "options": [
+    "Air, water, steel",
+    "Steel, water, air",
+    "Water, air, steel"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Air, water, steel\". Sound is slowest in gas, faster in liquid, fastest in solid."
+  },
+  {
+   "type": "example",
+   "q": "Which group has a gas, a liquid, AND a solid medium?",
+   "options": [
+    "Air, water, wood",
+    "Water, milk, juice",
+    "Wood, metal, brick"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Air, water, wood\". Air is a gas, water is a liquid, and wood is a solid."
+  },
+  {
+   "type": "apply",
+   "q": "Astronauts on the Moon need radios to talk. Why can't they hear each other's voices?",
+   "options": [
+    "There is no air to carry sound",
+    "Their voices are too loud",
+    "Sound only works on weekends"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"There is no air to carry sound\". Without a medium like air, there is no sound."
+  },
+  {
+   "type": "apply",
+   "q": "You put your ear on a desk while a friend taps the far end. Compared with through the air, the sound travels...",
+   "options": [
+    "faster through the desk",
+    "not at all through the desk",
+    "slower through the desk"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"faster through the desk\". Sound travels faster through solids than through gases."
+  },
+  {
+   "type": "apply",
+   "q": "At the swimming pool, does sound travel faster through the pool water or the air?",
+   "options": [
+    "The air",
+    "The pool water",
+    "Same speed in both"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The pool water\". Sound travels faster through liquids than through gases."
+  },
+  {
+   "type": "apply",
+   "q": "Two cups are joined by a tight string to make a toy phone. What carries the sound between the cups?",
+   "options": [
+    "Heat from your hand",
+    "The tight string",
+    "Light in the cups"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The tight string\". The string is a solid medium that carries the sound."
+  },
+  {
+   "type": "apply",
+   "q": "A bell rings inside a jar. Then all the air is pumped out. What happens to the sound?",
+   "options": [
+    "It gets faster",
+    "It gets louder",
+    "It fades away"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"It fades away\". With no air as a medium, the sound cannot travel."
+  }
+ ],
+ "conductor": [
+  {
+   "type": "know",
+   "q": "What is an electrical conductor?",
+   "options": [
+    "A material that makes sound",
+    "A material that blocks electrical energy",
+    "A material that lets electrical energy pass easily"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A material that lets electrical energy pass easily\". Conductors let electrical energy pass through easily."
+  },
+  {
+   "type": "know",
+   "q": "Which statement is true?",
+   "options": [
+    "Water is a strong conductor of electricity",
+    "Graphite blocks electricity",
+    "Water blocks electricity"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Water is a strong conductor of electricity\". Water is a strong electrical conductor."
+  },
+  {
+   "type": "know",
+   "q": "Fill in the blank: Metals are ____ conductors of electricity.",
+   "options": [
+    "bad",
+    "never",
+    "good"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"good\". Metals let electricity pass through easily."
+  },
+  {
+   "type": "know",
+   "q": "What is the word for a material that lets electrical energy pass through easily?",
+   "options": [
+    "Conductor",
+    "Medium",
+    "Insulator"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Conductor\". A conductor lets electrical energy pass through easily."
+  },
+  {
+   "type": "know",
+   "q": "Pencil \"lead\" conducts electricity. What is it really made of?",
+   "options": [
+    "Graphite",
+    "Glass",
+    "Rubber"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Graphite\". Pencil lead is graphite, a good conductor."
+  },
+  {
+   "type": "example",
+   "q": "Which is a good electrical conductor?",
+   "options": [
+    "A plastic ruler",
+    "A rubber band",
+    "A metal paper clip"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"A metal paper clip\". Metal is a good conductor of electricity."
+  },
+  {
+   "type": "example",
+   "q": "Which is NOT a good electrical conductor?",
+   "options": [
+    "Pencil graphite",
+    "A glass marble",
+    "A metal key"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A glass marble\". Glass is an insulator, not a conductor."
+  },
+  {
+   "type": "example",
+   "q": "Which group is ALL electrical conductors?",
+   "options": [
+    "Plastic, wood, water",
+    "Rubber, glass, metal",
+    "Metal, graphite, water"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"Metal, graphite, water\". Metal, graphite, and water all let electricity pass through."
+  },
+  {
+   "type": "example",
+   "q": "Which item belongs with a steel nail and aluminum foil?",
+   "options": [
+    "A metal coin",
+    "A wooden stick",
+    "A rubber eraser"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"A metal coin\". A metal coin is a conductor, like the nail and the foil."
+  },
+  {
+   "type": "example",
+   "q": "Which part of an electric cord is the conductor?",
+   "options": [
+    "The rubber plug cover",
+    "The plastic coating",
+    "The metal wire inside"
+   ],
+   "ans": 2,
+   "hint": "The answer is \"The metal wire inside\". The metal wire carries the electricity; plastic and rubber are insulators."
+  },
+  {
+   "type": "apply",
+   "q": "Ana puts a metal spoon across the gap in a bulb circuit. What happens?",
+   "options": [
+    "The spoon turns to rubber",
+    "The bulb lights up",
+    "The bulb stays dark"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"The bulb lights up\". Metal is a conductor, so electricity flows to the bulb."
+  },
+  {
+   "type": "apply",
+   "q": "Why should you never use a hair dryer near a filled bathtub?",
+   "options": [
+    "Water is an insulator",
+    "Water is a strong conductor",
+    "Water blocks electricity"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Water is a strong conductor\". Water conducts electricity well, which is dangerous."
+  },
+  {
+   "type": "apply",
+   "q": "At a science fair, Leo draws a thick pencil line, adds it to a circuit, and the bulb lights up. Why?",
+   "options": [
+    "Paper makes electricity",
+    "Graphite is a conductor",
+    "Graphite is an insulator"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"Graphite is a conductor\". Graphite (pencil lead) is a good conductor, so electricity flows through the line."
+  },
+  {
+   "type": "apply",
+   "q": "Which item could close a broken circuit so a buzzer sounds?",
+   "options": [
+    "A wooden craft stick",
+    "A strip of aluminum foil",
+    "A rubber band"
+   ],
+   "ans": 1,
+   "hint": "The answer is \"A strip of aluminum foil\". Aluminum foil is metal, so it conducts electricity."
+  },
+  {
+   "type": "apply",
+   "q": "In a flashlight, metal strips touch the battery and the bulb. What do the strips do?",
+   "options": [
+    "Carry electricity to the bulb",
+    "Block the electricity",
+    "Turn light into sound"
+   ],
+   "ans": 0,
+   "hint": "The answer is \"Carry electricity to the bulb\". Metal strips are conductors that let electricity flow."
+  }
+ ]
+}
